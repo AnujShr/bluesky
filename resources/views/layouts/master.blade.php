@@ -17,11 +17,12 @@
     {{--<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">--}}
     {{--<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">--}}
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('css/'.$routeName.'.css')}}">
     @yield('style')
 
     {{--main page styles--}}
-    <link rel="stylesheet" type="text/css" href="styles/{{$routeName}}.css">
-    <link rel="stylesheet" type="text/css" href="styles/{{$routeName}}_responsive.css">
+{{--    <link rel="stylesheet" type="text/css" href="styles/{{$routeName}}.css">--}}
+{{--    <link rel="stylesheet" type="text/css" href="styles/{{$routeName}}_responsive.css">--}}
 </head>
 <body>
 
