@@ -14,7 +14,8 @@
                                     us</a></li>
                             <li class="{{Route::currentRouteNamed('properties')?'active':''}}"><a
                                         href="{{route('properties')}}">Properties</a></li>
-                            <li><a href="news.html">News</a></li>
+                            <li class="{{Route::currentRouteNamed('news')?'active':''}}"><a
+                                        href="{{route('news')}}">News</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </nav>
