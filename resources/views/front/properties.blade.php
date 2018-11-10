@@ -11,7 +11,7 @@
                             <div class="home_title">Search results</div>
                             <div class="breadcrumbs ml-auto">
                                 <ul>
-                                    <li><a href="{{route('properties')}}">Home</a></li>
+                                    <li><a href="{{route('home')}}">Home</a></li>
                                     <li>Search Results</li>
                                 </ul>
                             </div>
@@ -48,7 +48,7 @@
                         <div class="property_footer d-flex flex-row align-items-center justify-content-start">
                             <div>
                                 <div class="property_icon"><img src="images/icon_1.png" alt="">
-                            </div>
+                                </div>
                                 <span>650 Ftsq</span></div>
 
                             <div>
@@ -280,4 +280,7 @@
             </div>
         </div>
     </div>
+@endsection
+@section('js')
+    <script src="{{asset('plugins/scrollmagic/ScrollMagic.min.js')}}"></script>
 @endsection

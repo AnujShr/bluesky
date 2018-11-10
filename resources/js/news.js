@@ -1,0 +1,1 @@
+    require('./front/news.js');

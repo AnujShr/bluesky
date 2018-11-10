@@ -18,9 +18,14 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('front.about');
 })->name('about');
+
 Route::get('/properties', function () {
     return view('front.properties');
 })->name('properties');
+
+Route::get('/news', function () {
+    return view('front.news');
+})->name('news');
 
 Auth::routes();
 

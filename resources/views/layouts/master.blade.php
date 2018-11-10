@@ -42,7 +42,7 @@
     @include('layouts.front.footer')
 
 </div>
-<script src="{{asset('plugins/scrollmagic/ScrollMagic.min.js')}}"></script>
+@yield('js')
 <script src="{{asset('js/app.js')}}"></script>
 <script src="{{asset('js/'.$routeName.'.js')}}"></script>
 </body>

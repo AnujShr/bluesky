@@ -4,7 +4,9 @@
     "/css/home.css": "/css/home.css",
     "/css/about.css": "/css/about.css",
     "/css/properties.css": "/css/properties.css",
+    "/css/news.css": "/css/news.css",
     "/js/properties.js": "/js/properties.js",
     "/js/about.js": "/js/about.js",
+    "/js/news.js": "/js/news.js",
     "/js/home.js": "/js/home.js"
 }
