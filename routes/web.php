@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('front.home');
 })->name('home');
 
+Route::get('/about', function () {
+    return view('front.about');
+})->name('about');
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

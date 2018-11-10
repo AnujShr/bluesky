@@ -1,9 +1,126 @@
 @extends('layouts.master')
 
-@section('style')
-    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+@section('home')
+    <div class="home">
+        <!-- Home Slider -->
+        <div class="home_slider_container">
+            <div class="owl-carousel owl-theme home_slider">
+
+                <!-- Slide -->
+                <div class="owl-item">
+                    <div class="home_slider_background" style="background-image:url(images/home_slider_1.jpg)"></div>
+                    <div class="slide_container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="slide_content">
+                                        <div class="home_subtitle">super offer</div>
+                                        <div class="home_title">Villa with sea view</div>
+                                        <div class="home_details">
+                                            <ul class="home_details_list d-flex flex-row align-items-center justify-content-start">
+                                                <li>
+                                                    <div class="home_details_image"><img src="images/icon_1.png" alt="">
+                                                    </div>
+                                                    <span> 650 Ftsq</span>
+                                                </li>
+                                                <li>
+                                                    <div class="home_details_image"><img src="images/icon_2.png" alt="">
+                                                    </div>
+                                                    <span> 3 Bedrooms</span>
+                                                </li>
+                                                <li>
+                                                    <div class="home_details_image"><img src="images/icon_3.png" alt="">
+                                                    </div>
+                                                    <span> 2 Bathrooms</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="home_price">$ 1. 245 999</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide -->
+                <div class="owl-item">
+                    <div class="home_slider_background" style="background-image:url(images/home_slider_1.jpg)"></div>
+                    <div class="slide_container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="slide_content">
+                                        <div class="home_subtitle">super offer</div>
+                                        <div class="home_title">Villa with sea view</div>
+                                        <div class="home_details">
+                                            <ul class="home_details_list d-flex flex-row align-items-center justify-content-start">
+                                                <li>
+                                                    <div class="home_details_image"><img src="images/icon_1.png" alt="">
+                                                    </div>
+                                                    <span> 650 Ftsq</span>
+                                                </li>
+                                                <li>
+                                                    <div class="home_details_image"><img src="images/icon_2.png" alt="">
+                                                    </div>
+                                                    <span> 3 Bedrooms</span>
+                                                </li>
+                                                <li>
+                                                    <div class="home_details_image"><img src="images/icon_3.png" alt="">
+                                                    </div>
+                                                    <span> 2 Bathrooms</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="home_price">$ 1. 245 999</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide -->
+                <div class="owl-item">
+                    <div class="home_slider_background" style="background-image:url(images/home_slider_1.jpg)"></div>
+                    <div class="slide_container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="slide_content">
+                                        <div class="home_subtitle">super offer</div>
+                                        <div class="home_title">Villa with sea view</div>
+                                        <div class="home_details">
+                                            <ul class="home_details_list d-flex flex-row align-items-center justify-content-start">
+                                                <li>
+                                                    <div class="home_details_image"><img src="images/icon_1.png" alt="">
+                                                    </div>
+                                                    <span> 650 Ftsq</span>
+                                                </li>
+                                                <li>
+                                                    <div class="home_details_image"><img src="images/icon_2.png" alt="">
+                                                    </div>
+                                                    <span> 3 Bedrooms</span>
+                                                </li>
+                                                <li>
+                                                    <div class="home_details_image"><img src="images/icon_3.png" alt="">
+                                                    </div>
+                                                    <span> 2 Bathrooms</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="home_price">$ 1. 245 999</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 @endsection
 
 @section('content')
@@ -52,62 +169,62 @@
                             </div>
 
                             <!-- Slide -->
-                              <div class="owl-item">
-                                  <div class="recent_item">
-                                      <div class="recent_item_inner">
-                                          <div class="recent_item_image">
-                                              <img src="images/property_2.jpg" alt="">
-                                              <div class="tag_offer property_tag"><a href="#">Offer</a></div>
-                                          </div>
-                                          <div class="recent_item_body text-center">
-                                              <div class="recent_item_location">Los Angeles</div>
-                                              <div class="recent_item_title"><a href="property.html">2 Floor Town
-                                                      House</a></div>
-                                              <div class="recent_item_price">$ 1. 234 981</div>
-                                          </div>
-                                          <div class="recent_item_footer d-flex flex-row align-items-center justify-content-start">
-                                              <div>
-                                                  <div class="recent_icon"><img src="images/icon_1.png" alt=""></div>
-                                                  <span>650 Ftsq</span></div>
-                                              <div>
-                                                  <div class="recent_icon"><img src="images/icon_2.png" alt=""></div>
-                                                  <span>3 Bedrooms</span></div>
-                                              <div>
-                                                  <div class="recent_icon"><img src="images/icon_3.png" alt=""></div>
-                                                  <span>3 Bathrooms</span></div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
+                            <div class="owl-item">
+                                <div class="recent_item">
+                                    <div class="recent_item_inner">
+                                        <div class="recent_item_image">
+                                            <img src="images/property_2.jpg" alt="">
+                                            <div class="tag_offer property_tag"><a href="#">Offer</a></div>
+                                        </div>
+                                        <div class="recent_item_body text-center">
+                                            <div class="recent_item_location">Los Angeles</div>
+                                            <div class="recent_item_title"><a href="property.html">2 Floor Town
+                                                    House</a></div>
+                                            <div class="recent_item_price">$ 1. 234 981</div>
+                                        </div>
+                                        <div class="recent_item_footer d-flex flex-row align-items-center justify-content-start">
+                                            <div>
+                                                <div class="recent_icon"><img src="images/icon_1.png" alt=""></div>
+                                                <span>650 Ftsq</span></div>
+                                            <div>
+                                                <div class="recent_icon"><img src="images/icon_2.png" alt=""></div>
+                                                <span>3 Bedrooms</span></div>
+                                            <div>
+                                                <div class="recent_icon"><img src="images/icon_3.png" alt=""></div>
+                                                <span>3 Bathrooms</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                              {{--<!-- Slide -->--}}
-                              <div class="owl-item">
-                                  <div class="recent_item">
-                                      <div class="recent_item_inner">
-                                          <div class="recent_item_image">
-                                              <img src="images/property_3.jpg" alt="">
-                                              <div class="tag_featured property_tag"><a href="#">Featured</a></div>
-                                          </div>
-                                          <div class="recent_item_body text-center">
-                                              <div class="recent_item_location">Florida</div>
-                                              <div class="recent_item_title"><a href="property.html">Vacation Home</a>
-                                              </div>
-                                              <div class="recent_item_price">$ 1. 234 981</div>
-                                          </div>
-                                          <div class="recent_item_footer d-flex flex-row align-items-center justify-content-start">
-                                              <div>
-                                                  <div class="recent_icon"><img src="images/icon_1.png" alt=""></div>
-                                                  <span>650 Ftsq</span></div>
-                                              <div>
-                                                  <div class="recent_icon"><img src="images/icon_2.png" alt=""></div>
-                                                  <span>3 Bedrooms</span></div>
-                                              <div>
-                                                  <div class="recent_icon"><img src="images/icon_3.png" alt=""></div>
-                                                  <span>3 Bathrooms</span></div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
+                            {{--<!-- Slide -->--}}
+                            <div class="owl-item">
+                                <div class="recent_item">
+                                    <div class="recent_item_inner">
+                                        <div class="recent_item_image">
+                                            <img src="images/property_3.jpg" alt="">
+                                            <div class="tag_featured property_tag"><a href="#">Featured</a></div>
+                                        </div>
+                                        <div class="recent_item_body text-center">
+                                            <div class="recent_item_location">Florida</div>
+                                            <div class="recent_item_title"><a href="property.html">Vacation Home</a>
+                                            </div>
+                                            <div class="recent_item_price">$ 1. 234 981</div>
+                                        </div>
+                                        <div class="recent_item_footer d-flex flex-row align-items-center justify-content-start">
+                                            <div>
+                                                <div class="recent_icon"><img src="images/icon_1.png" alt=""></div>
+                                                <span>650 Ftsq</span></div>
+                                            <div>
+                                                <div class="recent_icon"><img src="images/icon_2.png" alt=""></div>
+                                                <span>3 Bedrooms</span></div>
+                                            <div>
+                                                <div class="recent_icon"><img src="images/icon_3.png" alt=""></div>
+                                                <span>3 Bathrooms</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
 
