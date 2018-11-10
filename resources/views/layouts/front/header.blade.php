@@ -8,9 +8,9 @@
                     </div>
                     <nav class="main_nav">
                         <ul>
-                            <li class="active"><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About us</a></li>
-                            <li><a href="properties.html">Properties</a></li>
+                            <li class="{{ Route::currentRouteNamed('home')?'active':''}}"><a href="{{route('home')}}">Home</a></li>
+                            <li class="{{Route::currentRouteNamed('about')?'active':''}}"><a href="{{route('about')}}">About us</a></li>
+                            <li class="{{Route::currentRouteNamed('properties')?'active':''}}"><a href="{{route('properties')}}">Properties</a></li>
                             <li><a href="news.html">News</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
