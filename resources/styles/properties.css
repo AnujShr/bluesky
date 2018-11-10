@@ -15,16 +15,6 @@
 9. Newsletter
 10. Footer
 
-
-
-******************************/
-
-/***********
-1. Fonts
-***********/
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700,800,900');
-
 /*********************************
 2. Body and some general stuff
 *********************************/
@@ -816,7 +806,7 @@ section
 }
 .property_footer > div:not(:last-child)
 {
-	margin-right: 20px;
+	margin-right: 14px;
 }
 .property_icon
 {

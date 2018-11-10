@@ -1,4 +1,3 @@
 require('greensock');
 require('../plugins/OwlCarousel2-2.2.1/owl.carousel.js');
-require('./front/about.js');
-
+require('./front/properties.js');

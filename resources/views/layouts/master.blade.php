@@ -14,15 +14,8 @@
     <script>
         let activeRoute = '{{ Route::currentRouteName()}}';
     </script>
-    {{--<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">--}}
-    {{--<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">--}}
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/'.$routeName.'.css')}}">
-    @yield('style')
-
-    {{--main page styles--  }}
-    {{--    <link rel="stylesheet" type="text/css" href="styles/{{$routeName}}.css">--}}
-    {{--    <link rel="stylesheet" type="text/css" href="styles/{{$routeName}}_responsive.css">--}}
 </head>
 <body>
 
@@ -49,10 +42,8 @@
     @include('layouts.front.footer')
 
 </div>
+<script src="{{asset('plugins/scrollmagic/ScrollMagic.min.js')}}"></script>
 <script src="{{asset('js/app.js')}}"></script>
-@yield('js')
 <script src="{{asset('js/'.$routeName.'.js')}}"></script>
-
-
 </body>
 </html>
