@@ -3318,6 +3318,32 @@ module.exports = __webpack_require__(48);
 
 __webpack_require__(2);
 __webpack_require__(49);
+$(function () {
+    $('.newsletter_button').click(function (e) {
+        e.preventDefault();
+        var form = $('#newsletter_form');
+        var formData = form.serialize();
+        $.ajax({
+            'url': 'newsletter-subscribe',
+            'type': 'post',
+            'data': formData,
+            'success': function success(response) {
+                form[0].reset();
+                alert('Success');
+                location.reload();
+            },
+            error: function error(errors) {
+                $.each(errors.responseJSON.errors, function (key, value) {
+                    var keys = $('#' + key);
+                    keys.addClass('form-group has-danger');
+                    keys.children('span').html(value[0]);
+                    keys.children('span').addClass('text-danger');
+                    keys.children('input').addClass('form-control is-invalid');
+                });
+            }
+        });
+    });
+});
 
 /***/ }),
 

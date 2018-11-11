@@ -872,6 +872,12 @@ section {
     transition: all 200ms ease;
 }
 
+.has-danger > span
+{
+    margin-left: 50px;
+    font-size: 15px;
+    font-style: italic;
+}
 .recent_item_footer > div:not(:last-child) {
     margin-right: 14px;
 }

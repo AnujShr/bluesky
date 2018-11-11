@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NewsLetterSubscriptionFormRequest;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,18 +12,16 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('home');
+    }
+
+    public function newsLetterSubscribe(NewsLetterSubscriptionFormRequest $form)
+    {
+        $form->save();
+        $return['success'] = true;
+        return response($return, 200);
     }
 }

@@ -10,9 +10,13 @@
                         <div class="newsletter_subtitle">Search your dream home</div>
                     </div>
                     <div class="newsletter_form_container">
-                        <form action="#" class="newsletter_form">
-                            <input type="email" class="newsletter_input" placeholder="Your e-mail address"
-                                   required="required">
+                        <form id="newsletter_form" class="newsletter_form">
+                            {{csrf_field()}}
+                            <div id="email">
+                                <input type="email" name="email" class="newsletter_input"
+                                       placeholder="Your e-mail address">
+                                <span class="error"></span>
+                            </div>
                             <button class="newsletter_button">subscribe now</button>
                         </form>
                     </div>
