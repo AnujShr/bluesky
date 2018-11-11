@@ -42,8 +42,8 @@
     @include('layouts.front.footer')
 
 </div>
-@yield('js')
 <script src="{{asset('js/app.js')}}"></script>
+@yield('js')
 <script src="{{asset('js/'.$routeName.'.js')}}"></script>
 </body>
 </html>

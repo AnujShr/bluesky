@@ -27,5 +27,6 @@ Route::get('/news', function () {
     return view('front.news');
 })->name('news');
 Route::view('/contact', 'front.contact')->name('contact');
+Route::view('/property', 'front.property')->name('property');
 Auth::routes();
 

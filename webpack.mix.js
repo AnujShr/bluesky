@@ -17,9 +17,11 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/properties.js', 'public/js')
     .js('resources/js/news.js', 'public/js')
     .js('resources/js/contact.js', 'public/js')
+    .js('resources/js/property.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/home.scss', 'public/css')
     .sass('resources/sass/about.scss', 'public/css')
     .sass('resources/sass/properties.scss', 'public/css')
     .sass('resources/sass/news.scss', 'public/css')
-    .sass('resources/sass/contact.scss', 'public/css');
+    .sass('resources/sass/contact.scss', 'public/css')
+    .sass('resources/sass/property.scss', 'public/css');
