@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Mail\ClientMail;
 use App\NewsLetterSubscription;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Response;
@@ -29,6 +30,7 @@ class NewsLetterSubscriptionFormRequest extends FormRequest
             'email' => 'required|email|unique:news_letter_subscriptions,email'
         ];
     }
+
     public function response(array $errors)
     {
         return Response::json([
@@ -37,10 +39,21 @@ class NewsLetterSubscriptionFormRequest extends FormRequest
             ]
         ]);
     }
+
     public function save()
     {
         NewsLetterSubscription::query()->create([
             'email' => $this->email
         ]);
     }
+
+    public function sendMail($email)
+    {
+        $payload['subject'] = 'Newsletter Subscription';
+        $payload['email'] = $email;
+        $payload['view'] = 'email.newsletter';
+        app('mailer')->queue(new ClientMail($payload));
+        return null;
+    }
+
 }
