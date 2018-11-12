@@ -311,5 +311,5 @@
     </div>
 @endsection
 @section('js')
-    <script src="{{asset('plugin/rangeslider.js-2.3.0/rangeslider.min.js')}}"></script>
+    <script src="{{asset('plugins/rangeslider.js-2.3.0/rangeslider.min.js')}}"></script>
 @endsection

@@ -16,7 +16,8 @@
                                         href="{{route('properties')}}">Properties</a></li>
                             <li class="{{Route::currentRouteNamed('news')?'active':''}}"><a
                                         href="{{route('news')}}">News</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li class="{{Route::currentRouteNamed('contact')?'active':''}}"><a
+                                        href="{{route('contact')}}">Contact</a></li>
                         </ul>
                     </nav>
                     <div class="phone_num ml-auto">

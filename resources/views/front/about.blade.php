@@ -196,3 +196,6 @@
         </div>
     </div>
 @endsection
+@section('js')
+    <script src="{{asset('plugins/scrollmagic/ScrollMagic.min.js')}}"></script>
+@endsection
