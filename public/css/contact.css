@@ -753,121 +753,6 @@ section
 }
 
 /*********************************
-7. Contact
-*********************************/
-
-.contact
-{
-	width: 100%;
-	background: #FFFFFF;
-	padding-top: 119px;
-	padding-bottom: 105px;
-}
-.contact .section_title
-{
-	font-weight: 700;
-}
-.contact_info_text
-{
-	margin-top: 42px;
-}
-.contact_info_content
-{
-	margin-top: 50px;
-	padding-right: 170px;
-}
-.contact_info_list li
-{
-	font-size: 14px;
-	font-weight: 500;
-	color: #828282;
-}
-.contact_info_list li:not(:last-child)
-{
-	margin-bottom: 23px;
-}
-.contact_info_list li > div:first-child
-{
-	color: #3f6fce;
-}
-.contact_form_container
-{
-
-}
-.contact_form
-{
-	display: block;
-	position: relative;
-	width: 100%;
-}
-.contact_form > div:not(:last-child)
-{
-	margin-bottom: 17px;
-}
-.contact_input
-{
-	width: 100%;
-	height: 48px;
-	background: #f1f6f9;
-	border-radius: 24px;
-	padding-left: 38px;
-	border: none;
-	outline: none;
-}
-.contact_textarea
-{
-	height: 153px;
-	padding-top: 17px;
-}
-.contact_input::-webkit-input-placeholder
-{
-	font-size: 12px !important;
-	font-weight: 500 !important;
-	font-style: italic;
-	color: #838383 !important;
-}
-.contact_input:-moz-placeholder
-{
-	font-size: 12px !important;
-	font-weight: 500 !important;
-	font-style: italic;
-	color: #838383 !important;
-}
-.contact_input::-moz-placeholder
-{
-	font-size: 12px !important;
-	font-weight: 500 !important;
-	font-style: italic;
-	color: #838383 !important;
-} 
-.contact_input:-ms-input-placeholder
-{ 
-	font-size: 12px !important;
-	font-weight: 500 !important;
-	font-style: italic;
-	color: #838383 !important;
-}
-.contact_input::input-placeholder
-{
-	font-size: 12px !important;
-	font-weight: 500 !important;
-	font-style: italic;
-	color: #838383 !important;
-}
-.contact_button
-{
-	border: none;
-	outline: none;
-	color: #FFFFFF;
-	text-transform: uppercase;
-	font-size: 14px;
-	font-weight: 700;
-	color: #FFFFFF;
-	cursor: pointer;
-	margin-top: 10px;
-}
-
-/*********************************
 8. Map
 *********************************/
 
@@ -1133,6 +1018,13 @@ section
 {
 	text-transform: uppercase;
 	font-weight: 600;
+}
+
+.contact_section{
+	color:black;
+}
+.valid-text {
+	color:green;
 }@charset "utf-8";
 /* CSS Document */
 

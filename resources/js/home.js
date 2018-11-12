@@ -12,7 +12,6 @@ $(function() {
             'success': function (response) {
                 form[0].reset();
                 alert('Success');
-                location.reload();
             },
             error: function (errors) {
                 $.each(errors.responseJSON.errors,function(key,value){

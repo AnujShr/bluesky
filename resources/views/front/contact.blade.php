@@ -27,72 +27,97 @@
         <div class="container">
             <div class="row">
 
-                <!-- Contact Info -->
-                <div class="col-lg-4">
-                    <div class="contact_info">
-                        <div class="section_title">Get in touch with us</div>
-                        <div class="section_subtitle">Say hello</div>
-                        <div class="contact_info_text"><p>Donec ullamcorper nulla non metus auctor fringi lla. Curabitur
-                                blandit tempus porttitor.Sed lectus urna, ultricies sit amet risus eget.</p></div>
-                        <div class="contact_info_content">
-                            <ul class="contact_info_list">
-                                <li>
-                                    <div>Address:</div>
-                                    <div>1481 Creekside Lane Avila Beach, CA 93424</div>
-                                </li>
-                                <li>
-                                    <div>Phone:</div>
-                                    <div>+53 345 7953 32453</div>
-                                </li>
-                                <li>
-                                    <div>Email:</div>
-                                    <div>yourmail@gmail.com</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Contact Form -->
-                <div class="col-lg-8">
-                    <div class="contact_form_container">
-                        <form action="#" class="contact_form" id="contact_form">
-                            <div class="row">
-                                <!-- Name -->
-                                <div class="col-lg-6 contact_name_col">
-                                    <input type="text" class="contact_input" placeholder="Name" required="required">
+                <div class="col-md-12 contact_section">
+                    <section class="mb-4">
+                        <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+                        <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not
+                            hesitate to contact us directly. Our team will come back to you within
+                            a matter of hours to help you.</p>
+
+                        <div class="row">
+                            <div class="col-md-9 mb-md-0 mb-5">
+                                <form id="contact-form" name="contact-form" method="POST">
+                                    {!! csrf_field() !!}
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="md-form mb-0">
+                                                <input type="text" id="name" name="name" class="form-control">
+                                                <label for="name" class="">Your name</label>
+                                                <span class="error"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="md-form mb-0">
+                                                <input type="text" id="email" name="email" class="form-control">
+                                                <label for="email" class="">Your email</label>
+                                                <span class="error"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="md-form mb-0">
+                                                <input type="text" id="subject" name="subject" class="form-control">
+                                                <label for="subject" class="">Subject</label>
+                                                <span class="error"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="md-form">
+                                                <textarea type="text" id="message" name="message" rows="1"
+                                                          class="form-control md-textarea"></textarea>
+                                                <label for="message">Your message</label>
+                                                <span class="error"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="text-center text-md-left">
+                                    <a class="btn btn-primary contact_button">Send</a>
                                 </div>
-                                <!-- Email -->
-                                <div class="col-lg-6">
-                                    <input type="email" class="contact_input" placeholder="E-mail" required="required">
-                                </div>
+                                <div class="status"></div>
                             </div>
-                            <div><input type="text" class="contact_input" placeholder="Subject"></div>
-                            <div><textarea class="contact_textarea contact_input" placeholder="Message"
-                                           required="required"></textarea></div>
-                            <button class="contact_button button">send</button>
-                        </form>
+
+                            <div class="col-md-3 text-center">
+                                <ul class="list-unstyled mb-0">
+                                    <li><i class="fa fa-map-marker fa-2x"></i>
+                                        <p>San Francisco, CA 94126, USA</p>
+                                    </li>
+
+                                    <li><i class="fa fa-phone mt-4 fa-2x"></i>
+                                        <p>+ 01 234 567 89</p>
+                                    </li>
+
+                                    <li><i class="fa fa-envelope mt-4 fa-2x"></i>
+                                        <p>contact@mdbootstrap.com</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="contact_map">
+            <!-- Google Map -->
+            <div class="map">
+                <div id="google_map" class="google_map">
+                    <div class="map_container">
+                        <div id="map"></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="contact_map">
-        <!-- Google Map -->
-        <div class="map">
-            <div id="google_map" class="google_map">
-                <div class="map_container">
-                    <div id="map"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+        @endsection
 
-@endsection
-
-@section('js')
-    <script src="{{asset('plugin/rangeslider.js-2.3.0/rangeslider.min.js')}}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCgi--a_yluiQAjqYxqkN_Y-72WrdCtfso"></script>
-
+        @section('js')
+            <script src="{{asset('plugins/rangeslider.js-2.3.0/rangeslider.min.js')}}"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCgi--a_yluiQAjqYxqkN_Y-72WrdCtfso"></script>
 @endsection
 

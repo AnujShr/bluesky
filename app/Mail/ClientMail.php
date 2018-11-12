@@ -31,13 +31,13 @@ class ClientMail extends Mailable
      */
     public function build()
     {
-        $message = $this->data['message'] ?? '';
+        $payload = $this->data['payload'] ?? '';
         $subject = $this->data['subject'];
         $application_user = config('bluesky.application.user_name');
         $application_user_email = config('bluesky.application.email');
         $email = $this->data['email'];
         return $this->from([$application_user_email, $application_user])
             ->to($email)
-            ->subject($subject)->markdown($this->data['view'])->with('message', $message);
+            ->subject($subject)->markdown($this->data['view'])->with('message', $payload);
     }
 }

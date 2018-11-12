@@ -7,10 +7,10 @@
     "/css/news.css": "/css/news.css",
     "/css/contact.css": "/css/contact.css",
     "/css/property.css": "/css/property.css",
+    "/js/property.js": "/js/property.js",
     "/js/properties.js": "/js/properties.js",
     "/js/about.js": "/js/about.js",
     "/js/home.js": "/js/home.js",
     "/js/news.js": "/js/news.js",
-    "/js/contact.js": "/js/contact.js",
-    "/js/property.js": "/js/property.js"
+    "/js/contact.js": "/js/contact.js"
 }

@@ -21,6 +21,8 @@
     },
     "dependencies": {
         "greensock": "^1.20.2",
+        "izitoast": "^1.4.0",
+        "mdbootstrap": "^4.5.14",
         "scrollmagic": "^2.0.6"
     }
 }

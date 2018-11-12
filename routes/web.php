@@ -26,8 +26,11 @@ Route::get('/properties', function () {
 Route::get('/news', function () {
     return view('front.news');
 })->name('news');
-Route::view('/contact', 'front.contact')->name('contact');
+
+Route::get('/contact', 'ContactController@index')->name('contact');
+Route::post('/contact', 'ContactController@store')->name('contact');
 Route::view('/property', 'front.property')->name('property');
-Route::post('/newsletter-subscribe','HomeController@newsLetterSubscribe')->name('newsletter');
+Route::post('/newsletter-subscribe', 'HomeController@newsLetterSubscribe')->name('newsletter');
+
 Auth::routes();
 
