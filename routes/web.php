@@ -11,6 +11,9 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('front.home');
 })->name('home');
@@ -32,5 +35,10 @@ Route::post('/contact', 'ContactController@store')->name('contact');
 Route::view('/property', 'front.property')->name('property');
 Route::post('/newsletter-subscribe', 'HomeController@newsLetterSubscribe')->name('newsletter');
 
+Route::view('/admin', 'admin.dashboard')->name('admin.home');
+Route::view('/admin/users', 'admin.dashboard')->name('admin.users');
+Route::view('admin/pages/about', 'admin.dashboard')->name('admin.about');
+Route::view('admin/pages/contact', 'admin.dashboard')->name('admin.contact');
+Route::view('admin/help-center/faqs', 'admin.dashboard')->name('admin.faq');
 Auth::routes();
 
