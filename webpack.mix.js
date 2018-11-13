@@ -26,4 +26,5 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/news.scss', 'public/css')
     .sass('resources/sass/contact.scss', 'public/css')
     .sass('resources/sass/property.scss', 'public/css')
-    .sass('resources/sass/admin/app.scss', 'public/css/admin')
+    .sass('resources/sass/admin/app.scss', 'public/css/admin');
+    // .copy('node_modules/gentelella/build/', 'resources/gentellea/',false);
