@@ -60,12 +60,12 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 59);
+/******/ 	return __webpack_require__(__webpack_require__.s = 358);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 1:
+/***/ 2:
 /***/ (function(module, exports) {
 
 var g;
@@ -93,7 +93,230 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 116:
+/***/ 358:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(359);
+
+
+/***/ }),
+
+/***/ 359:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_izitoast__ = __webpack_require__(361);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_izitoast___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_izitoast__);
+__webpack_require__(360);
+
+
+__WEBPACK_IMPORTED_MODULE_0_izitoast___default.a.settings({
+    timeout: 5000, // default timeout
+    resetOnHover: true,
+    // icon:'icomoon',
+    transitionIn: 'flipInX',
+    transitionOut: 'flipOutX',
+    position: 'topRight' // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
+});
+
+$(function () {
+
+    var form = $('#contact-form');
+    form[0].reset();
+
+    $('.contact_button').on('click', function (e) {
+        e.preventDefault();
+        clearErrorDisplay();
+        $.ajax({
+            'url': 'contact',
+            'type': 'post',
+            'datatype': 'json',
+            'data': form.serialize(),
+            'success': function success(response) {
+                form[0].reset();
+                __WEBPACK_IMPORTED_MODULE_0_izitoast___default.a.success({
+                    timeout: 5000,
+                    icon: 'fa fa-bullhorn',
+                    title: 'Contact',
+                    message: 'Message Send Succesfully!'
+                });
+            },
+            'error': function error(errors) {
+                __WEBPACK_IMPORTED_MODULE_0_izitoast___default.a.error({
+                    timeout: 0,
+                    icon: 'fa fa-exclamation',
+                    title: 'Error',
+                    message: 'Please check highlighted field!',
+                    position: "bottomLeft"
+                });
+
+                var el = $('#contact-form');
+                $.each(errors.responseJSON.errors, function (key, value) {
+
+                    var elm = $('#' + key);
+                    elm.addClass('invalid');
+                    elm.parent('div').children('span').addClass('text-danger').html(value[0]);
+                });
+                el.find("input,textarea").each(function (id, dom) {
+                    if ($(dom).hasClass('invalid') === false) {
+                        $(dom).addClass('valid valid-text');
+                    }
+                });
+            }
+        });
+    });
+
+    function clearErrorDisplay() {
+        var el = $('#contact-form');
+
+        el.find("input,textarea").removeClass('invalid');
+        el.find('span').removeClass('text-danger').html('');
+    }
+});
+
+/***/ }),
+
+/***/ 360:
+/***/ (function(module, exports) {
+
+/* JS Document */
+
+/******************************
+
+ [Table of Contents]
+
+ 1. Vars and Inits
+ 2. Set Header
+ 3. Init Menu
+ 4. Init Google Map
+
+
+ ******************************/
+
+$(document).ready(function () {
+    "use strict";
+
+    /*
+      1. Vars and Inits
+      */
+
+    var header = $('.header');
+    var menu = $('.menu');
+    var menuActive = false;
+    var map;
+
+    setHeader();
+
+    $(window).on('resize', function () {
+        setHeader();
+
+        setTimeout(function () {
+            $(window).trigger('resize.px.parallax');
+        }, 375);
+    });
+
+    $(document).on('scroll', function () {
+        setHeader();
+    });
+
+    initMenu();
+    initGoogleMap();
+
+    /*
+      2. Set Header
+      */
+
+    function setHeader() {
+        if ($(window).scrollTop() > 127) {
+            header.addClass('scrolled');
+        } else {
+            header.removeClass('scrolled');
+        }
+    }
+
+    /*
+      3. Init Menu
+      */
+
+    function initMenu() {
+        if ($('.hamburger').length && $('.menu').length) {
+            var hamb = $('.hamburger');
+            var close = $('.menu_close_container');
+
+            hamb.on('click', function () {
+                if (!menuActive) {
+                    openMenu();
+                } else {
+                    closeMenu();
+                }
+            });
+
+            close.on('click', function () {
+                if (!menuActive) {
+                    openMenu();
+                } else {
+                    closeMenu();
+                }
+            });
+        }
+    }
+
+    function openMenu() {
+        menu.addClass('active');
+        menuActive = true;
+    }
+
+    function closeMenu() {
+        menu.removeClass('active');
+        menuActive = false;
+    }
+
+    /*
+    4. Init Google Map
+    */
+
+    function initGoogleMap() {
+        var myLatlng = new google.maps.LatLng(34.063685, -118.272936);
+        var uluru = { lat: 34.063685, lng: -118.272936 };
+        var mapOptions = {
+            center: myLatlng,
+            zoom: 14,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            draggable: true,
+            scrollwheel: false,
+            zoomControl: true,
+            zoomControlOptions: {
+                position: google.maps.ControlPosition.RIGHT_CENTER
+            },
+            mapTypeControl: false,
+            scaleControl: false,
+            streetViewControl: false,
+            rotateControl: false,
+            fullscreenControl: true,
+            styles: [{
+                "featureType": "road.highway",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                    "color": "#ffeba1"
+                }]
+            }]
+
+            // Initialize a map with options
+        };map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        // Re-center map after window resize
+        google.maps.event.addDomListener(window, 'resize', function () {
+            setTimeout(function () {
+                google.maps.event.trigger(map, "resize");
+                map.setCenter(myLatlng);
+            }, 1400);
+        });
+    }
+});
+
+/***/ }),
+
+/***/ 361:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -1391,230 +1614,7 @@ module.exports = g;
 
 	return $iziToast;
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-
-/***/ 59:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(60);
-
-
-/***/ }),
-
-/***/ 60:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_izitoast__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_izitoast___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_izitoast__);
-__webpack_require__(61);
-
-
-__WEBPACK_IMPORTED_MODULE_0_izitoast___default.a.settings({
-    timeout: 5000, // default timeout
-    resetOnHover: true,
-    // icon:'icomoon',
-    transitionIn: 'flipInX',
-    transitionOut: 'flipOutX',
-    position: 'topRight' // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
-});
-
-$(function () {
-
-    var form = $('#contact-form');
-    form[0].reset();
-
-    $('.contact_button').on('click', function (e) {
-        e.preventDefault();
-        clearErrorDisplay();
-        $.ajax({
-            'url': 'contact',
-            'type': 'post',
-            'datatype': 'json',
-            'data': form.serialize(),
-            'success': function success(response) {
-                form[0].reset();
-                __WEBPACK_IMPORTED_MODULE_0_izitoast___default.a.success({
-                    timeout: 5000,
-                    icon: 'fa fa-bullhorn',
-                    title: 'Contact',
-                    message: 'Message Send Succesfully!'
-                });
-            },
-            'error': function error(errors) {
-                __WEBPACK_IMPORTED_MODULE_0_izitoast___default.a.error({
-                    timeout: 0,
-                    icon: 'fa fa-exclamation',
-                    title: 'Error',
-                    message: 'Please check highlighted field!',
-                    position: "bottomLeft"
-                });
-
-                var el = $('#contact-form');
-                $.each(errors.responseJSON.errors, function (key, value) {
-
-                    var elm = $('#' + key);
-                    elm.addClass('invalid');
-                    elm.parent('div').children('span').addClass('text-danger').html(value[0]);
-                });
-                el.find("input,textarea").each(function (id, dom) {
-                    if ($(dom).hasClass('invalid') === false) {
-                        $(dom).addClass('valid valid-text');
-                    }
-                });
-            }
-        });
-    });
-
-    function clearErrorDisplay() {
-        var el = $('#contact-form');
-
-        el.find("input,textarea").removeClass('invalid');
-        el.find('span').removeClass('text-danger').html('');
-    }
-});
-
-/***/ }),
-
-/***/ 61:
-/***/ (function(module, exports) {
-
-/* JS Document */
-
-/******************************
-
- [Table of Contents]
-
- 1. Vars and Inits
- 2. Set Header
- 3. Init Menu
- 4. Init Google Map
-
-
- ******************************/
-
-$(document).ready(function () {
-    "use strict";
-
-    /*
-      1. Vars and Inits
-      */
-
-    var header = $('.header');
-    var menu = $('.menu');
-    var menuActive = false;
-    var map;
-
-    setHeader();
-
-    $(window).on('resize', function () {
-        setHeader();
-
-        setTimeout(function () {
-            $(window).trigger('resize.px.parallax');
-        }, 375);
-    });
-
-    $(document).on('scroll', function () {
-        setHeader();
-    });
-
-    initMenu();
-    initGoogleMap();
-
-    /*
-      2. Set Header
-      */
-
-    function setHeader() {
-        if ($(window).scrollTop() > 127) {
-            header.addClass('scrolled');
-        } else {
-            header.removeClass('scrolled');
-        }
-    }
-
-    /*
-      3. Init Menu
-      */
-
-    function initMenu() {
-        if ($('.hamburger').length && $('.menu').length) {
-            var hamb = $('.hamburger');
-            var close = $('.menu_close_container');
-
-            hamb.on('click', function () {
-                if (!menuActive) {
-                    openMenu();
-                } else {
-                    closeMenu();
-                }
-            });
-
-            close.on('click', function () {
-                if (!menuActive) {
-                    openMenu();
-                } else {
-                    closeMenu();
-                }
-            });
-        }
-    }
-
-    function openMenu() {
-        menu.addClass('active');
-        menuActive = true;
-    }
-
-    function closeMenu() {
-        menu.removeClass('active');
-        menuActive = false;
-    }
-
-    /*
-    4. Init Google Map
-    */
-
-    function initGoogleMap() {
-        var myLatlng = new google.maps.LatLng(34.063685, -118.272936);
-        var uluru = { lat: 34.063685, lng: -118.272936 };
-        var mapOptions = {
-            center: myLatlng,
-            zoom: 14,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            draggable: true,
-            scrollwheel: false,
-            zoomControl: true,
-            zoomControlOptions: {
-                position: google.maps.ControlPosition.RIGHT_CENTER
-            },
-            mapTypeControl: false,
-            scaleControl: false,
-            streetViewControl: false,
-            rotateControl: false,
-            fullscreenControl: true,
-            styles: [{
-                "featureType": "road.highway",
-                "elementType": "geometry.fill",
-                "stylers": [{
-                    "color": "#ffeba1"
-                }]
-            }]
-
-            // Initialize a map with options
-        };map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        // Re-center map after window resize
-        google.maps.event.addDomListener(window, 'resize', function () {
-            setTimeout(function () {
-                google.maps.event.trigger(map, "resize");
-                map.setCenter(myLatlng);
-            }, 1400);
-        });
-    }
-});
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ })
 
