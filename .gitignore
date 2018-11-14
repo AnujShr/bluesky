@@ -15,3 +15,4 @@ yarn-error.log
 .env
 .phpunit.result.cache
 .idea
+_ide_helper.php
