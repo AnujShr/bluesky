@@ -50,6 +50,26 @@
                 </ul>
             </div>
             <div class="menu_section">
+                <h3>Articles</h3>
+                <ul class="nav side-menu">
+                    <li><a><i class="fa fa-bug"></i> Posts<span
+                                    class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="e_commerce.html">Add Articles</a></li>
+                            <li><a href="projects.html">Edit Articles</a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-windows"></i>Category<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="page_403.html">Add a Category</a></li>
+                            <li><a href="pricing_tables.html">Edit Category</a></li>
+                        </ul>
+                    </li>
+                    {{--                    <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span
+                                                        class="label label-success pull-right">Coming Soon</span></a></li>--}}
+                </ul>
+            </div>
+            <div class="menu_section">
                 <h3>Settings</h3>
                 <ul class="nav side-menu">
                     <li><a><i class="fa fa-bug"></i> Site Setting<span
