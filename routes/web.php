@@ -35,7 +35,7 @@ Route::post('/newsletter-subscribe', 'HomeController@newsLetterSubscribe')->name
 
 Route::view('/admin', 'admin.dashboard')->name('admin.home');
 Route::view('/admin/users', 'admin.dashboard')->name('admin.users');
-Route::view('admin/pages/about', 'admin.dashboard')->name('admin.about');
+Route::view('admin/pages/about', 'admin.about.index')->name('admin.about');
 Route::view('admin/pages/contact', 'admin.dashboard')->name('admin.contact');
 Route::view('admin/help-center/faqs', 'admin.dashboard')->name('admin.faq');
 Auth::routes();
