@@ -11,7 +11,7 @@
                     {!! Form::input('file','image','',['id' => 'imgInp']) !!}
                 </span>
             </span>
-        {!! Form::input('text','text',null,['class' => 'form-control', 'readonly']) !!}
+        {!! Form::input('text','text',null,['class' => 'text form-control', 'readonly']) !!}
     </div>
     <div class="has-error">@errorBlockImage('image')</div>
 
@@ -21,17 +21,17 @@
         </div>
     </div>
 
-    @if(isset($conent['image']) && $conent['image'])
-        <div class="polaroid">
-            <img src="{{$content['image']}}"/>
-            {!! Form::hidden('old_image',$content['image']) !!}
+    @if(isset($content['image']) && $content['image'])
+        <div class="polaroid" style="display: block">
+            <img src="{{asset('storage/uploads/admin/about/'.$content['image'])}}"/>
+            {!! Form::hidden('oldImage',$content['image']) !!}
         </div>
     @endif`
 </div>
 
 <div class="form-group @hasError('title') ">
     {!!Form::label('title', 'Title', ['class' => "control-label"])!!}
-    {!!Form::input('text', 'title', $content->title??'', ['class' => "form-control ",  'required' => 'required'])!!}
+    {!!Form::input('text', 'title', $content['title']??'', ['class' => "form-control ",  'required' => 'required'])!!}
     @errorBlock('title')
 
 </div>
@@ -43,7 +43,7 @@
 </div>
 <div class="form-group @hasError('content')">
     {!!Form::label('content', 'Content', ['class' => "control-label"])!!}
-    {!!Form::textarea('content', $content['content']??'',
+    {!!Form::textarea('description', $content['description']??'',
     ['class' => 'form-control summernote'])!!}
     @errorBlock('content')
 </div>

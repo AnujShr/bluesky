@@ -1,4 +1,5 @@
 if (activeRoute === 'admin.page.detail') {
+    $('.text').val = '';
     $(function () {
         $.ajax({
             url: 'https://api.github.com/emojis',

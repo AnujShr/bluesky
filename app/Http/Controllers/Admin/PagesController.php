@@ -19,11 +19,11 @@ class PagesController extends Controller
     {
         $page = Pages::query()->whereSlug($page)->first();
         abort_if(!$page, 404);
-        $pageDetail = PageDetail::query()->wherePageId($page->page_id)->first();
         $content = $meta = '';
+        $pageDetail = PageDetail::query()->wherePageId($page->id)->first();
         if ($pageDetail) {
-            $content = json_decode($pageDetail->content);
-            $meta = json_decode($pageDetail->meta);
+            $content = json_decode($pageDetail->content, true);
+            $meta = json_decode($pageDetail->meta, true);
         }
         return view('admin.pages.edit', compact('page', 'content', 'meta'));
 
@@ -32,6 +32,7 @@ class PagesController extends Controller
     public function store(PageFormRequest $page)
     {
         $page->save();
+        return back();
 
     }
 }
