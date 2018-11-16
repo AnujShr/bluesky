@@ -28,11 +28,7 @@
                 <ul class="nav side-menu">
                     <li><a href="{{route('admin.home')}}"><i class="fa fa-home"></i> Home </a></li>
                     <li><a href="{{route('admin.users')}}"><i class="fa fa-home"></i> Users</a></li>
-                    <li><a><i class="fa fa-file-text-o"></i> Pages <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                            <li><a href="{{route('admin.about')}}">About Us</a></li>
-                            <li><a href="{{route('admin.contact')}}">Contact</a></li>
-                        </ul>
+                    <li><a href="{{route('admin.pages')}}"><i class="fa fa-file-text-o"></i> Pages</a>
                     </li>
                     <li><a><i class="fa fa-edit"></i> Help Center<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">

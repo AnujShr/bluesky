@@ -8,6 +8,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>blueSky</title>
     <link href="{{asset('css/admin/app.css')}}" rel="stylesheet">
+    <script>
+        var activeRoute = '{{Route::currentRouteName()}}'
+    </script>
 </head>
 
 <body class="nav-md">
@@ -22,7 +25,7 @@
 </body>
 
 <script src="{{asset('js/admin/app.js')}}"></script>
-
+@yield('js')
 {{--@endsection--}}
 
 </html>

@@ -12,7 +12,10 @@ $(function(){
     require('../../gentellea/skycons/skycons.js');
     require('../../gentellea/DateJS/build/date.js');
     require('../../gentellea/bootstrap-daterangepicker/daterangepicker.js');
-    require('../../gentellea/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js');
     require('../../gentellea/google-code-prettify/src/prettify.js');
-    require('../../gentellea/js/custom.min.js');
+    require('summernote');
+    require('codemirror/lib/codemirror.js');
+    require('codemirror/mode/htmlembedded/htmlembedded.js');
+    require('../../gentellea/js/custom.js');
+    require('../../js/admin/about.js')
 });
