@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\PageDetail;
 use App\Pages;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Storage;
@@ -46,7 +45,6 @@ class PageFormRequest extends FormRequest
             ];
         elseif ($slug == 'contact')
             return [
-                'name' => 'required|unique:pages',
                 'title' => 'required|max:150',
                 'description' => 'required',
                 'address' => 'required',
@@ -59,17 +57,23 @@ class PageFormRequest extends FormRequest
     public function save()
     {
         $content['title'] = $this->title;
-        $content['image'] = ($this->image) ? $this->saveImage() : $this->oldImage;
-        $content['slogan'] = $this->slogan;
         $content['description'] = $this->description;
+        if ($this->slug == 'about-us'):
+            $content['image'] = ($this->image) ? $this->saveImage() : $this->oldImage;
+            $content['slogan'] = $this->slogan;
+        else:
+            $content['phone'] = $this->phone;
+            $content['email'] = $this->email;
+            $content['address'] = $this->address;
+        endif;
         $meta['meta_title'] = $this->meta_title;
         $meta['meta_description'] = $this->meta_description;
         $content = json_encode($content);
         $meta = json_encode($meta);
-        $page_id = Pages::query()->where('slug', $this->slug)->value('id');
-        PageDetail::query()->updateOrCreate(
+        $page = Pages::query()->where('slug', $this->slug)->first();
+        $page->pageDetail()->updateOrCreate(
             [
-                'page_id' => $page_id]
+                'page_id' => $page->id]
             , [
             'content' => $content,
             'meta' => $meta

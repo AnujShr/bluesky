@@ -22,16 +22,9 @@
                     <div class="x_panel">
                         <div class="x_title">
                             <h2>{{$page->name}}</h2>
-                            <ul class="nav navbar-right panel_toolbox">
-                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                </li>
-                                <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                </li>
-                            </ul>
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
-
                             {!!Form::open([
                                 'url'        => route('admin.page.update', [$page->slug]),
                                 'method'     => 'POST',
@@ -39,16 +32,21 @@
                                 'novalidate' => 'novalidate'
                              ])
                            !!}
-                            @include('admin.pages.templates.about')
-                            @include('admin.pages.templates.meta')
-                            {!! Form::submit('Submit',['class'=>'btn btn-primary']) !!}
-                            {!! Form::close() !!}
+                            @include('admin.pages.templates.'.$page->slug)
                         </div>
+                    </div>
+                    <div class="x_panel">
+
+                        <div class="x_content">
+                            @include('admin.pages.templates.meta')
+                        </div>
+                        {!! Form::submit('Submit',['class'=>'btn btn-primary']) !!}
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
 @endsection
 
 

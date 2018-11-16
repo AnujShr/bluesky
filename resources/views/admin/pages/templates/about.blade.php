@@ -41,10 +41,10 @@
         ['class' => 'form-control'])!!}
     @errorBlock('slogan')
 </div>
-<div class="form-group @hasError('content')">
-    {!!Form::label('content', 'Content', ['class' => "control-label"])!!}
+<div class="form-group @hasError('description')">
+    {!!Form::label('content', 'Description', ['class' => "control-label"])!!}
     {!!Form::textarea('description', $content['description']??'',
     ['class' => 'form-control summernote'])!!}
-    @errorBlock('content')
+    @errorBlock('description')
 </div>
 
