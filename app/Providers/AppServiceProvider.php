@@ -14,7 +14,30 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Schema::defaultStringLength(191);
+        Schema::defaultStringLength(255);
+
+        \Blade::directive('errorBlock', function ($input) {
+            return
+                '<?php if($errors->has(' . $input . ')):?>
+                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                    <span class=\'help-block\'>
+                            <strong><?php echo $errors->first(' . $input . ') ?></strong>
+                    </span>
+                 <?php endif;?>';
+        });
+        \Blade::directive('errorBlockImage', function ($input) {
+            return
+                '<?php if($errors->has(' . $input . ')):?>
+                    <span class=\'help-block\'>
+                            <strong><?php echo $errors->first(' . $input . ') ?></strong>
+                    </span>
+                 <?php endif;?>';
+        });
+
+        \Blade::directive('hasError', function ($input) {
+            return
+                '<?php if($errors->has(' . $input . ')):?>has-error has-feedback<?php endif;?>';
+        });
     }
 
     /**

@@ -60,24 +60,24 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 346);
+/******/ 	return __webpack_require__(__webpack_require__.s = 353);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 346:
+/***/ 353:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(347);
+module.exports = __webpack_require__(354);
 
 
 /***/ }),
 
-/***/ 347:
+/***/ 354:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(4);
-__webpack_require__(348);
+__webpack_require__(6);
+__webpack_require__(355);
 $(function () {
     $('.newsletter_button').click(function (e) {
         e.preventDefault();
@@ -106,7 +106,7 @@ $(function () {
 
 /***/ }),
 
-/***/ 348:
+/***/ 355:
 /***/ (function(module, exports) {
 
 /* JS Document */
@@ -277,7 +277,7 @@ $(document).ready(function () {
 
 /***/ }),
 
-/***/ 4:
+/***/ 6:
 /***/ (function(module, exports) {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };

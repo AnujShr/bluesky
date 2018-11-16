@@ -12,7 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .js('resources/js/admin/app.js','public/js/admin')
+    .js('resources/js/admin/app.js', 'public/js/admin')
     .js('resources/js/home.js', 'public/js')
     .js('resources/js/about.js', 'public/js')
     .js('resources/js/properties.js', 'public/js')
@@ -27,4 +27,4 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/contact.scss', 'public/css')
     .sass('resources/sass/property.scss', 'public/css')
     .sass('resources/sass/admin/app.scss', 'public/css/admin');
-    // .copy('node_modules/gentelella/build/', 'resources/gentellea/',false);
+// .copy('node_modules/gentelella/build/', 'resources/gentellea/',false);
