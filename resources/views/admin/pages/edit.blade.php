@@ -7,7 +7,7 @@
                     <div class="container">
                         <ol class="breadcrumb breadcrumb-arrow">
                             <li><a href="{{route('admin.home')}}"><i class="fa fa-home"></i> Home </a></li>
-                            <li><a href="{{route('admin.pages')}}"><i class="fa fa-file-text-o"></i> Pages </a></li>
+                            <li><a href="{{route('admin.pages')}}"><i class="fa fa-file-text-o"></i> {{slugToTitle($page->group)}}</a></li>
                             <li class="active"><span>{{$page->name}}</span></li>
                         </ol>
                     </div>
@@ -45,6 +45,7 @@
 
             </div>
         </div>
+    </div>
 
 @endsection
 
