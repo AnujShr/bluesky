@@ -10,7 +10,9 @@ $(function () {
         $SIDEBAR_MENU.find('a[href="' + PARENT_URL + '"]').parent('li').addClass('current-page')
         $SIDEBAR_MENU.find('a').filter(function () {
             return this.href === PARENT_URL;
-        }).parent('li').addClass('current-page').parents('ul').parent().addClass('active');
+        }).parent('li').addClass('current-page').parents('ul').slideDown(function () {
+            setContentHeight();
+        }).parent().addClass('active');
     }
     //Summernote JS using smiley
     $(function () {

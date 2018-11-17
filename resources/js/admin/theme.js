@@ -424,7 +424,6 @@ function init_compose() {
     if (typeof ($.fn.slideToggle) === 'undefined') {
         return;
     }
-    console.log('init_compose');
 
     $('#compose, .compose-close').click(function () {
         $('.compose').slideToggle();
@@ -454,56 +453,13 @@ function init_SmartWizard() {
 
 function init_DataTables() {
 
-    console.log('run_datatables');
 
     if (typeof ($.fn.DataTable) === 'undefined') {
         return;
     }
-    console.log('init_DataTables');
 
-    var handleDataTableButtons = function () {
-        if ($("#datatable-buttons").length) {
-            $("#datatable-buttons").DataTable({
-                dom: "Bfrtip",
-                buttons: [
-                    {
-                        extend: "copy",
-                        className: "btn-sm"
-                    },
-                    {
-                        extend: "csv",
-                        className: "btn-sm"
-                    },
-                    {
-                        extend: "excel",
-                        className: "btn-sm"
-                    },
-                    {
-                        extend: "pdfHtml5",
-                        className: "btn-sm"
-                    },
-                    {
-                        extend: "print",
-                        className: "btn-sm"
-                    },
-                ],
-                responsive: true
-            });
-        }
-    };
-
-    TableManageButtons = function () {
-        "use strict";
-        return {
-            init: function () {
-                handleDataTableButtons();
-            }
-        };
-    }();
 
     $('#datatable').DataTable();
-
-    TableManageButtons.init();
 
 };
 

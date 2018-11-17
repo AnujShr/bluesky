@@ -753,7 +753,6 @@ div.CodeMirror-dragcursors {
 
 /* Help users use markselection to safely style text background */
 span.CodeMirror-selectedtext { background: none; }
-
 .breadcrumb-arrow {
     height: 36px;
     padding: 0;

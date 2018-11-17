@@ -22,4 +22,5 @@ $(function () {
     require('../admin/theme.js');
     require('../admin/main');
     require('../../js/admin/about.js');
+    require('../../js/admin/category.js');
 });
