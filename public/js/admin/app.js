@@ -62513,6 +62513,7 @@ $(function () {
     __webpack_require__(3);
     __webpack_require__(345);
     __webpack_require__(351);
+    __webpack_require__(485);
     __webpack_require__(352);
 });
 
@@ -115327,7 +115328,6 @@ function init_sidebar() {
     };
 
     $SIDEBAR_MENU.find('a').on('click', function (ev) {
-        console.log('clicked - sidebar_menu');
         var $li = $(this).parent();
 
         if ($li.is('.active')) {
@@ -115356,8 +115356,6 @@ function init_sidebar() {
 
     // toggle small or large menu
     $MENU_TOGGLE.on('click', function () {
-        console.log('clicked - menu toggle');
-
         if ($BODY.hasClass('nav-md')) {
             $SIDEBAR_MENU.find('li.active ul').hide();
             $SIDEBAR_MENU.find('li.active').addClass('active-sm').removeClass('active');
@@ -115374,10 +115372,19 @@ function init_sidebar() {
             $(this).dataTable().fnDraw();
         });
     });
-
-    // check active menu
     $SIDEBAR_MENU.find('a[href="' + CURRENT_URL + '"]').parent('li').addClass('current-page');
-
+    // check active menu
+    // var varsa = varsaAgain = $SIDEBAR_MENU;
+    // varsa = varsa.find('a[href="' + CURRENT_URL + '"]').parent('li').addClass('current-page');
+    // if (varsa.length === 0) {
+    //     let url = CURRENT_URL.substr(CURRENT_URL.lastIndexOf('/') + 1);
+    //     url = CURRENT_URL.replace(new RegExp(url), '').slice(0, -1);
+    //     console.log(window.location.pathname.split('/').length);
+    //     if (window.location.pathname.split('/').length >= 4) {
+    //         varsaAgain = varsaAgain.find('a[href="' + url + '"]').parent('li').addClass('current-page');
+    //         varsa = varsaAgain;
+    //     }
+    // }
     $SIDEBAR_MENU.find('a').filter(function () {
         return this.href == CURRENT_URL;
     }).parent('li').addClass('current-page').parents('ul').slideDown(function () {
@@ -119842,6 +119849,159 @@ if (activeRoute === 'admin.page.detail') {
         readURL(this);
     });
 }
+
+/***/ }),
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */,
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */,
+/* 393 */,
+/* 394 */,
+/* 395 */,
+/* 396 */,
+/* 397 */,
+/* 398 */,
+/* 399 */,
+/* 400 */,
+/* 401 */,
+/* 402 */,
+/* 403 */,
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */,
+/* 413 */,
+/* 414 */,
+/* 415 */,
+/* 416 */,
+/* 417 */,
+/* 418 */,
+/* 419 */,
+/* 420 */,
+/* 421 */,
+/* 422 */,
+/* 423 */,
+/* 424 */,
+/* 425 */,
+/* 426 */,
+/* 427 */,
+/* 428 */,
+/* 429 */,
+/* 430 */,
+/* 431 */,
+/* 432 */,
+/* 433 */,
+/* 434 */,
+/* 435 */,
+/* 436 */,
+/* 437 */,
+/* 438 */,
+/* 439 */,
+/* 440 */,
+/* 441 */,
+/* 442 */,
+/* 443 */,
+/* 444 */,
+/* 445 */,
+/* 446 */,
+/* 447 */,
+/* 448 */,
+/* 449 */,
+/* 450 */,
+/* 451 */,
+/* 452 */,
+/* 453 */,
+/* 454 */,
+/* 455 */,
+/* 456 */,
+/* 457 */,
+/* 458 */,
+/* 459 */,
+/* 460 */,
+/* 461 */,
+/* 462 */,
+/* 463 */,
+/* 464 */,
+/* 465 */,
+/* 466 */,
+/* 467 */,
+/* 468 */,
+/* 469 */,
+/* 470 */,
+/* 471 */,
+/* 472 */,
+/* 473 */,
+/* 474 */,
+/* 475 */,
+/* 476 */,
+/* 477 */,
+/* 478 */,
+/* 479 */,
+/* 480 */,
+/* 481 */,
+/* 482 */,
+/* 483 */,
+/* 484 */,
+/* 485 */
+/***/ (function(module, exports) {
+
+$(function () {
+    $SIDEBAR_MENU = $('#sidebar-menu');
+    var $CURRENT_URL = void 0;
+    if (!$SIDEBAR_MENU.find('.current-page').length) {
+        $CURRENT_URL = window.location.href;
+        var PARENT_URL = $CURRENT_URL.split('/');
+        PARENT_URL.pop();
+        PARENT_URL = PARENT_URL.join('/');
+        console.log(PARENT_URL);
+        console.log($SIDEBAR_MENU.find('a[href="' + PARENT_URL + '"]').parent('li').addClass('current-page'));
+        $SIDEBAR_MENU.find('a[href="' + PARENT_URL + '"]').parent('li').addClass('current-page');
+        $SIDEBAR_MENU.find('a').filter(function () {
+            return this.href === PARENT_URL;
+        }).parent('li').addClass('current-page').parents('ul').parent().addClass('active');
+    }
+});
 
 /***/ })
 /******/ ]);

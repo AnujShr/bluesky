@@ -27,7 +27,7 @@
                         <div class="x_content">
                             {!!Form::open([
                                 'url'        => route('admin.page.update', [$page->slug]),
-                                'method'     => 'POST',
+                                'method'     => 'PUT',
                                 'files'      => true,
                                 'novalidate' => 'novalidate'
                              ])!!}

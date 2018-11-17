@@ -23,9 +23,10 @@
     </div>
 </div>
 </body>
+<script>
+</script>
 
 <script src="{{asset('js/admin/app.js')}}"></script>
 @yield('js')
 {{--@endsection--}}
-
 </html>

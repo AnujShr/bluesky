@@ -14,7 +14,7 @@ class HelpcenterController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -30,7 +30,7 @@ class HelpcenterController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -41,7 +41,7 @@ class HelpcenterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\helpcenter  $helpcenter
+     * @param  \App\helpcenter $helpcenter
      * @return \Illuminate\Http\Response
      */
     public function show(helpcenter $helpcenter)
@@ -52,7 +52,7 @@ class HelpcenterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\helpcenter  $helpcenter
+     * @param  \App\helpcenter $helpcenter
      * @return \Illuminate\Http\Response
      */
     public function edit(helpcenter $helpcenter)
@@ -63,8 +63,8 @@ class HelpcenterController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\helpcenter  $helpcenter
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\helpcenter $helpcenter
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, helpcenter $helpcenter)
@@ -75,7 +75,7 @@ class HelpcenterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\helpcenter  $helpcenter
+     * @param  \App\helpcenter $helpcenter
      * @return \Illuminate\Http\Response
      */
     public function destroy(helpcenter $helpcenter)

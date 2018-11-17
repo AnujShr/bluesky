@@ -17,5 +17,6 @@ $(function(){
     require('codemirror/lib/codemirror.js');
     require('codemirror/mode/htmlembedded/htmlembedded.js');
     require('../../gentellea/js/custom.js');
-    require('../../js/admin/about.js')
+    require('../admin/main');
+    require('../../js/admin/about.js');
 });
