@@ -49,28 +49,9 @@ class User extends Authenticatable
             abort(401, 'This action is unauthorized.');
     }
 
-    /**
-     * Check multiple roles
-     * @param array $roles
-     * @return bool
-     */
-
-    public function hasAnyRole($roles)
-
+    public function isSuperAdmin()
     {
-        return null !== $this->roles()->whereIn(‘name’, $roles)->first();
-    }
-
-    /**
-     * Check one role
-     * @param string $role
-     * @return bool
-     */
-
-    public function hasRole($role)
-
-    {
-        return null !== $this->roles()->where(‘name’, $role)->first();
+        return $this->roles()->where('name', 'admin')->exists();
     }
 }
 
