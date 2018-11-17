@@ -30,20 +30,19 @@
                                 'method'     => 'POST',
                                 'files'      => true,
                                 'novalidate' => 'novalidate'
-                             ])
-                           !!}
+                             ])!!}
                             @include('admin.pages.templates.'.$page->slug)
                         </div>
                     </div>
-                    <div class="x_panel">
-
-                        <div class="x_content">
-                            @include('admin.pages.templates.meta')
-                        </div>
-                        {!! Form::submit('Submit',['class'=>'btn btn-primary']) !!}
-                        {!! Form::close() !!}
-                    </div>
                 </div>
+                <div class="x_panel">
+                    <div class="x_content">
+                        @include('admin.pages.templates.meta')
+                    </div>
+                    {!! Form::submit('Submit',['class'=>'btn btn-primary']) !!}
+                    {!! Form::close() !!}
+                </div>
+
             </div>
         </div>
 
