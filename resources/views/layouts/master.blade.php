@@ -14,6 +14,8 @@
     <script>
         let activeRoute = '{{ Route::currentRouteName()}}';
     </script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css"/>
+
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/'.$routeName.'.css')}}">
 </head>

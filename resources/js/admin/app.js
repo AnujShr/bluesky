@@ -1,7 +1,10 @@
 window.moment = require('moment');
 require('../bootstrap');
 
-$(function(){
+$(function () {
+    require('../../gentellea/fastclick/lib/fastclick.js');
+    require('../../gentellea/datatables.net/js/jquery.dataTables.min');
+    require('../../gentellea/datatables.net-bs/js/dataTables.bootstrap.min');
     require('../../gentellea/fastclick/lib/fastclick.js');
     require('../../gentellea/nprogress/nprogress.js');
     require('../../gentellea/Chart.js/dist/Chart.min.js');
@@ -16,7 +19,7 @@ $(function(){
     require('summernote');
     require('codemirror/lib/codemirror.js');
     require('codemirror/mode/htmlembedded/htmlembedded.js');
-    require('../../gentellea/js/custom.js');
+    require('../admin/theme.js');
     require('../admin/main');
     require('../../js/admin/about.js');
 });

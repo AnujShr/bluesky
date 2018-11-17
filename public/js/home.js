@@ -60,24 +60,24 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 353);
+/******/ 	return __webpack_require__(__webpack_require__.s = 356);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 353:
+/***/ 356:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(354);
+module.exports = __webpack_require__(357);
 
 
 /***/ }),
 
-/***/ 354:
+/***/ 357:
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(6);
-__webpack_require__(355);
+__webpack_require__(358);
 $(function () {
     $('.newsletter_button').click(function (e) {
         e.preventDefault();
@@ -106,7 +106,7 @@ $(function () {
 
 /***/ }),
 
-/***/ 355:
+/***/ 358:
 /***/ (function(module, exports) {
 
 /* JS Document */

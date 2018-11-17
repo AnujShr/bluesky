@@ -20,15 +20,16 @@
     {!!Form::label('phone', 'Address', ['class' => "control-label"])!!}
     {!!Form::input('text', 'phone', $content['phone']??'', ['class' => "form-control ",  'required' => 'required'])!!}
     @errorBlock('phone')
+</div>
 
-    <div class="form-group @hasError('address')">
-        {!!Form::label('address', 'Phone no', ['class' => "control-label"])!!}
-        {!!Form::input('text', 'address', $content['address']??'', ['class' => "form-control ",  'required' => 'required'])!!}
-        @errorBlock('address')
-    </div>
+<div class="form-group @hasError('address')">
+    {!!Form::label('address', 'Phone no', ['class' => "control-label"])!!}
+    {!!Form::input('text', 'address', $content['address']??'', ['class' => "form-control ",  'required' => 'required'])!!}
+    @errorBlock('address')
+</div>
 
-    <div class="form-group @hasError('email')">
-        {!!Form::label('email', 'Email', ['class' => "control-label"])!!}
-        {!!Form::input('text', 'email', $content['email']??'', ['class' => "form-control ",  'required' => 'required'])!!}
-        @errorBlock('email')
-    </div>
+<div class="form-group @hasError('email')">
+    {!!Form::label('email', 'Email', ['class' => "control-label"])!!}
+    {!!Form::input('text', 'email', $content['email']??'', ['class' => "form-control ",  'required' => 'required'])!!}
+    @errorBlock('email')
+</div>

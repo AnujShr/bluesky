@@ -39,8 +39,10 @@
                     <li><a><i class="fa fa-anchor"></i> Terms and Condition <span
                                     class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="{{route('admin.terms.detail','use-term-condition')}}">Users Terms and Condition </a></li>
-                            <li><a href="{{route('admin.terms.detail','site-term-condition')}}">Site Terms and Condition </a></li>
+                            <li><a href="{{route('admin.terms.detail','use-term-condition')}}">Users Terms and
+                                    Condition </a></li>
+                            <li><a href="{{route('admin.terms.detail','site-term-condition')}}">Site Terms and
+                                    Condition </a></li>
                         </ul>
                     </li>
                 </ul>
@@ -57,6 +59,7 @@
                     </li>
                     <li><a><i class="fa fa-tag"></i>Category<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
+                            <li><a href="{{route('admin.category.index')}}">All Categories</a></li>
                             <li><a href="page_403.html">Add a Category</a></li>
                             <li><a href="pricing_tables.html">Edit Category</a></li>
                         </ul>

@@ -44,6 +44,8 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'Ad
 
     Route::get('/help-center/{name}', 'PagesController@edit')->name('admin.helpcenter.detail');
     Route::get('/terms-and-condition/{name}', 'PagesController@edit')->name('admin.terms.detail');
+
+    Route::get('/category', 'CategoryController@index')->name('admin.category.index');
 });
 
 Auth::routes();

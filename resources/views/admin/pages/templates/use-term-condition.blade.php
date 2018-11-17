@@ -1,1 +1,0 @@
-@include('admin.pages.templates.partial.__form')

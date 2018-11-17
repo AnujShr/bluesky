@@ -1,4 +1,5 @@
 $(function () {
+    $('#datatable-responsives').DataTable();
     $SIDEBAR_MENU = $('#sidebar-menu');
     let $CURRENT_URL;
     if (!$SIDEBAR_MENU.find('.current-page').length) {
