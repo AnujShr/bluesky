@@ -11,7 +11,7 @@ class PagesController extends Controller
 {
     public function index()
     {
-        $pages = Pages::where('group', 'page')->get();
+        $pages = Pages::where('group', 'pages')->get();
         return view('admin.pages.index', compact('pages'));
     }
 
