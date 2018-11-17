@@ -16,20 +16,45 @@ class PagesTableSeeder extends Seeder
         $pages = [
             [
                 'slug' => 'about-us',
-                'name' => 'About Us'
+                'name' => 'About Us',
+                'group' => 'page'
             ],
             [
                 'slug' => 'contact',
-                'name' => 'Contact'
+                'name' => 'Contact',
+                'group' => 'page'
             ],
             [
                 'slug' => 'feedback',
-                'name' => 'Feedback'
+                'name' => 'Feedback',
+                'group' => 'page'
 
+            ],
+            [
+                'slug' => 'privacy-policy',
+                'name' => 'Privacy Policy',
+                'group' => 'privacy-terms'
+
+            ],
+            [
+                'slug' => 'faqs',
+                'name' => 'FAQs',
+                'group' => 'privacy-terms'
+
+            ],
+            [
+                'slug' => 'site-term-condition',
+                'name' => 'Site Terms And Conditions',
+                'group' => 'privacy-terms'
+            ],
+            [
+                'slug' => 'use-term-condition',
+                'name' => 'Use Terms And Condition',
+                'group' => 'privacy-terms'
             ]
         ];
         foreach ($pages as $page) {
-            Pages::create($page);
+            Pages::query()->create($page);
         }
     }
 }

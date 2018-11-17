@@ -11,7 +11,7 @@ class PagesController extends Controller
 {
     public function index()
     {
-        $pages = Pages::all();
+        $pages = Pages::where('group', 'page')->get();
         return view('admin.pages.index', compact('pages'));
     }
 
@@ -19,6 +19,7 @@ class PagesController extends Controller
     {
         $page = Pages::query()->whereSlug($page)->first();
         abort_if(!$page, 404);
+
         $content = $meta = '';
         $pageDetail = PageDetail::query()->wherePageId($page->id)->first();
         if ($pageDetail) {

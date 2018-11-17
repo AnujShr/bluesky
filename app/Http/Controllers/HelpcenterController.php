@@ -10,11 +10,11 @@ class HelpcenterController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return void
      */
-    public function index()
+    public function index($slug)
     {
-
+        return ('admin.pages.in');
     }
 
     /**

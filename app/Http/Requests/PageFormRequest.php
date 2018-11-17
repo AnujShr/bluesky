@@ -36,22 +36,36 @@ class PageFormRequest extends FormRequest
     public function rules()
     {
         $slug = $this->slug;
-        if ($slug == 'about-us')
-            return [
-                'title' => 'required|max:150',
-                'slogan' => 'required|max:150',
-                'image' => 'mimes:jpeg,jpg,png|required_without:oldImage',
-                'description' => 'required',
-            ];
-        elseif ($slug == 'contact')
-            return [
-                'title' => 'required|max:150',
-                'description' => 'required',
-                'address' => 'required',
-                'phone' => 'required',
-                'email' => 'required|email',
-            ];
-        return abort(400);
+        switch ($slug):
+            case "about-us" :
+                return [
+                    'title' => 'required|max:150',
+                    'slogan' => 'required|max:150',
+                    'image' => 'mimes:jpeg,jpg,png|required_without:oldImage',
+                    'description' => 'required',
+                ];
+            case "contact":
+                return [
+                    'title' => 'required|max:150',
+                    'description' => 'required',
+                    'address' => 'required',
+                    'phone' => 'required',
+                    'email' => 'required|email',
+                ];
+            case "privacy-policy":
+                return [
+                    'title' => 'required|max:200',
+                    'description' => 'required'
+                ];
+            case "faqs":
+                return [
+                    'title' => 'required|max:200',
+                    'description' => 'required'
+                ];
+            default:
+                return abort(400);
+        endswitch;
+
     }
 
     public function save()
@@ -61,7 +75,7 @@ class PageFormRequest extends FormRequest
         if ($this->slug == 'about-us'):
             $content['image'] = ($this->image) ? $this->saveImage() : $this->oldImage;
             $content['slogan'] = $this->slogan;
-        else:
+        elseif ($this->slug == 'contact'):
             $content['phone'] = $this->phone;
             $content['email'] = $this->email;
             $content['address'] = $this->address;
@@ -73,7 +87,8 @@ class PageFormRequest extends FormRequest
         $page = Pages::query()->where('slug', $this->slug)->first();
         $page->pageDetail()->updateOrCreate(
             [
-                'page_id' => $page->id]
+                'page_id' => $page->id
+            ]
             , [
             'content' => $content,
             'meta' => $meta

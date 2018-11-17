@@ -11,7 +11,6 @@
 |
 */
 
-
 Route::get('/', function () {
     return view('front.home');
 })->name('home');
@@ -34,12 +33,18 @@ Route::view('/property', 'front.property')->name('property');
 Route::post('/newsletter-subscribe', 'HomeController@newsLetterSubscribe')->name('newsletter');
 
 Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'Admin'], function () {
+
     Route::view('/', 'admin.dashboard')->name('admin.home');
     Route::view('/users', 'admin.dashboard')->name('admin.users');
+
     Route::get('/pages', 'PagesController@index')->name('admin.pages');
     Route::get('/pages/{name}', 'PagesController@edit')->name('admin.page.detail');
-    Route::post('/pages/{name}', 'PagesController@store')->name('admin.page.update');
-    Route::view('/help-center/faqs', 'admin.dashboard')->name('admin.faq');
+
+    Route::put('/pages/{name}', 'PagesController@store')->name('admin.page.update');
+
+    Route::get('/help-center/{name}', 'PagesController@edit')->name('admin.helpcenter.detail');
+    Route::get('/terms-and-condition/{name}', 'PagesController@edit')->name('admin.terms.detail');
 });
+
 Auth::routes();
 

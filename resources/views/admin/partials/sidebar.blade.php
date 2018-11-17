@@ -32,15 +32,15 @@
                     </li>
                     <li><a><i class="fa fa-life-saver"></i> Help Center<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="{{route('admin.faq')}}">Privacy Policy</a></li>
-                            <li><a href="{{route('admin.faq')}}">FAQs</a></li>
+                            <li><a href="{{route('admin.helpcenter.detail','privacy-policy')}}">Privacy Policy</a></li>
+                            <li><a href="{{route('admin.helpcenter.detail','faqs')}}">FAQs</a></li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-anchor"></i> Terms and Condition <span
                                     class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="general_elements.html">Users Terms and Condition </a></li>
-                            <li><a href="media_gallery.html">Site Terms and Condition </a></li>
+                            <li><a href="{{route('admin.terms.detail','use-term-condition')}}">Users Terms and Condition </a></li>
+                            <li><a href="{{route('admin.terms.detail','site-term-condition')}}">Site Terms and Condition </a></li>
                         </ul>
                     </li>
                 </ul>
