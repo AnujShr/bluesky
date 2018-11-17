@@ -50,11 +50,11 @@
             <div class="menu_section">
                 <h3>Articles</h3>
                 <ul class="nav side-menu">
-                    <li><a><i class="fa fa-inbox"></i> Posts<span
+                    <li><a><i class="fa fa-inbox"></i> Article<span
                                     class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="e_commerce.html">Add Articles</a></li>
-                            <li><a href="projects.html">Edit Articles</a></li>
+                            <li><a href="e_commerce.html">All Articles</a></li>
+                            <li><a href="projects.html">Add  Article</a></li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-tag"></i>Category<span class="fa fa-chevron-down"></span></a>

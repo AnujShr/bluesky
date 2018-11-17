@@ -11,16 +11,21 @@
             ])!!}
                 <div class="form-group @hasError('title')">
                     {!!Form::label('title', 'Category Title :', ['class' => "control-label"])!!}
-                    {!!Form::input('text', 'title', $content['title']??'', ['class' => "form-control",'id'=>'title'])!!}
+                    {!!Form::input('text', 'title', $category->name??'', ['class' => "form-control",'id'=>'title'])!!}
                     @errorBlock('title')
                 </div>
                 <div class="form-group @hasError('title')">
                     {!!Form::label('slug', 'Category Slug :', ['class' => "control-label"])!!}
-                    {!!Form::input('text', 'slug', $content['title']??'', ['class' => "form-control",'readonly' ,'id'=>'slug'])!!}
+                    {!!Form::input('text', 'slug', $category->slug??'', ['class' => "form-control",'readonly' ,'id'=>'slug'])!!}
                     @errorBlock('title')
                 </div>
                 {!! Form::submit('Submit',['class' => 'btn btn-primary']) !!}
             </div>
         </div>
+        @isset($category)
+            <Script>
+                let id = {{$category->id}};
+            </Script>
+        @endisset
     </div>
 @endsection

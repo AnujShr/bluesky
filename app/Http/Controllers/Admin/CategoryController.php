@@ -26,6 +26,7 @@ class CategoryController extends Controller
 
     public function show(Category $category)
     {
+
         $crumbs['title'] = 'Edit Category';
         $crumbs['subgroup'] = 'all-categories';
         $crumbs = array_merge($crumbs, $this->bread);
@@ -49,10 +50,14 @@ class CategoryController extends Controller
     public function getSlug()
     {
         $data = request()->text;
+        $id = request()->id ?? null;
         $slug = Category::query()->where('slug', $data);
-        if ($slug->exists()) {
+        if ($slug->exists() && !$id) {
             $data = Category::incrementSlug($data);
             return response($data);
+        } elseif ($slug->exists() && $id) {
+            $slugs = Category::query()->where('id', (int)$id)->first();
+            return $slugs->slug;
         } else {
             return str_slug($data);
         }
