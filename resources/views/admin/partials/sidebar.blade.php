@@ -27,16 +27,16 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                     <li><a href="{{route('admin.home')}}"><i class="fa fa-home"></i> Home </a></li>
-                    <li><a href="{{route('admin.users')}}"><i class="fa fa-home"></i> Users</a></li>
+                    <li><a href="{{route('admin.users')}}"><i class="fa fa-users"></i> Users</a></li>
                     <li><a href="{{route('admin.pages')}}"><i class="fa fa-file-text-o"></i> Pages</a>
                     </li>
-                    <li><a><i class="fa fa-edit"></i> Help Center<span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-life-saver"></i> Help Center<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="{{route('admin.faq')}}">Privacy Policy</a></li>
                             <li><a href="{{route('admin.faq')}}">FAQs</a></li>
                         </ul>
                     </li>
-                    <li><a><i class="fa fa-desktop"></i> Terms and Condition <span
+                    <li><a><i class="fa fa-anchor"></i> Terms and Condition <span
                                     class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="general_elements.html">Users Terms and Condition </a></li>
@@ -48,14 +48,14 @@
             <div class="menu_section">
                 <h3>Articles</h3>
                 <ul class="nav side-menu">
-                    <li><a><i class="fa fa-bug"></i> Posts<span
+                    <li><a><i class="fa fa-inbox"></i> Posts<span
                                     class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="e_commerce.html">Add Articles</a></li>
                             <li><a href="projects.html">Edit Articles</a></li>
                         </ul>
                     </li>
-                    <li><a><i class="fa fa-windows"></i>Category<span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-tag"></i>Category<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="page_403.html">Add a Category</a></li>
                             <li><a href="pricing_tables.html">Edit Category</a></li>
@@ -81,8 +81,8 @@
                             <li><a href="pricing_tables.html">Footer</a></li>
                         </ul>
                     </li>
-{{--                    <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span
-                                    class="label label-success pull-right">Coming Soon</span></a></li>--}}
+                    {{--                    <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span
+                                                        class="label label-success pull-right">Coming Soon</span></a></li>--}}
                 </ul>
             </div>
 
