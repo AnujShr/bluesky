@@ -17,7 +17,24 @@ class Category extends Model
                 return $mathces[1] + 1;
             }, $max);
         }
-
         return "{$slug}-1";
+    }
+
+    public static function getSlug($data, $id)
+    {
+        $slug = self::query()->where('slug', $data);
+        if ($slug->exists() && is_null($id)) {
+            $data = self::incrementSlug($data);
+            return response($data);
+        } elseif ($slug->exists() && $id) {
+            $slugs = self::query()->where('id', (int)$id)->first();
+            if (strtolower($slugs->name) == strtolower($data)) {
+                return $slugs->slug;
+            } else {
+                return self::incrementSlug($data);
+            }
+        } else {
+            return str_slug($data);
+        }
     }
 }

@@ -25,22 +25,31 @@ class CategoryFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
+            'name' => 'required',
             'slug' => 'required'
         ];
     }
 
-    public function update()
+    public function save()
     {
-        if (isset($this->id)) {
-            $category = Category::query()->find($this->id);
-        } else {
-            $category = new Category();
-        }
+        $category = new Category;
+        $this->store($category);
 
-        $category->name = $this->title;
+    }
+
+    public function update($category)
+    {
+        $this->store($category);
+    }
+
+    /**
+     * @param $category
+     * @param $categoy
+     */
+    public function store($category): void
+    {
+        $category->name = $this->name;
         $category->slug = $this->slug;
         $category->save();
-
     }
 }

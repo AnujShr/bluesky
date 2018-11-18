@@ -14,3 +14,9 @@ function slugToTitle($text) // Converts $title to Title Case, and returns the re
     return str_replace('-', ' ', implode(' ', $words));
 }
 
+function breadcrumb($bread, $crumbs): array
+{
+    $breadcrumb = array_merge($bread, $crumbs);
+    return $breadcrumb;
+}
+

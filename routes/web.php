@@ -45,12 +45,37 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'Ad
     Route::get('/help-center/{name}', 'PagesController@edit')->name('admin.helpcenter.detail');
     Route::get('/terms-and-condition/{name}', 'PagesController@edit')->name('admin.terms.detail');
 
-    Route::get('/category/get-slug', 'CategoryController@getSlug')->name('admin.category.slug');
+
+    /**
+     * Articles category routes
+     */
     Route::get('/category', 'CategoryController@index')->name('admin.category.index');
-    Route::get('/category/add', 'CategoryController@addCategory')->name('admin.category.add');
+
+
+    Route::get('/category/create', 'CategoryController@create')->name('admin.category.add');
+    Route::post('/category/create', 'CategoryController@create')->name('admin.category.add');
+
+    Route::get('/category/get-slug/', 'CategoryController@getSlug')->name('admin.category.slug');
+
+    Route::get('/category/{category}', 'CategoryController@edit')->name('admin.category.edit');
+    Route::post('/category/{category}', 'CategoryController@update')->name('admin.category.update');
     Route::delete('/category/{category}', 'CategoryController@destroy')->name('admin.category.destroy');
-    Route::get('/category/{category}', 'CategoryController@show')->name('admin.category.edit');
-    Route::post('/category/save-category', 'CategoryController@update')->name('admin.category.update');
+
+
+    /**
+     * Articles route
+     */
+    Route::get('/articles', 'ArticlesController@index')->name('admin.articles.index');
+
+    Route::get('/articles/add-article', 'ArticlesController@addArticle')->name('admin.articles.add');
+    Route::post('/articles/add-article', 'ArticlesController@create')->name('admin.articles.add');
+
+    Route::get('/articles/{article}', 'ArticlesController@edit')->name('admin.articles.edit');
+    Route::post('/articles/{article}', 'ArticlesController@update')->name('admin.articles.edit');
+    Route::delete('/articles/{article}', 'ArticlesController@destroy')->name('admin.articles.destroy');
+
+    Route::post('/articles/save-article', 'ArticlesController@update')->name('admin.articles.update');
+
 });
 
 Auth::routes();

@@ -21,12 +21,14 @@
     },
     "dependencies": {
         "codemirror": "^5.41.0",
+        "datatables.net-bs": "^1.10.19",
         "gentelella": "^1.4.0",
         "greensock": "^1.20.2",
         "izitoast": "^1.4.0",
         "mdbootstrap": "^4.5.14",
         "moment": "^2.22.2",
         "scrollmagic": "^2.0.6",
+        "select2": "^4.0.6-rc.1",
         "summernote": "^0.8.10"
     }
 }

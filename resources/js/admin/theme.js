@@ -454,6 +454,8 @@ function init_SmartWizard() {
 function init_DataTables() {
 
 
+    $('#datatable').DataTable();
+
     if (typeof ($.fn.DataTable) === 'undefined') {
         return;
     }
