@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Policies\PropertyPolicy;
+use App\Property;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -14,6 +16,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         'App\Model' => 'App\Policies\ModelPolicy',
+        Property::class => PropertyPolicy::class,
     ];
 
     /**
@@ -23,8 +26,13 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Gate::before(function ($user, $ability) {
+            if ($user->isSuperAdmin()) {
+                return true;
+            }
+        });
+
         $this->registerPolicies();
 
-        //
     }
 }

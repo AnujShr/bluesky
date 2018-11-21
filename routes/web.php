@@ -11,7 +11,6 @@
 |
 */
 
-
 Route::get('/', function () {
     return view('front.home');
 })->name('home');
@@ -34,12 +33,50 @@ Route::view('/property', 'front.property')->name('property');
 Route::post('/newsletter-subscribe', 'HomeController@newsLetterSubscribe')->name('newsletter');
 
 Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'Admin'], function () {
+
     Route::view('/', 'admin.dashboard')->name('admin.home');
     Route::view('/users', 'admin.dashboard')->name('admin.users');
+
     Route::get('/pages', 'PagesController@index')->name('admin.pages');
     Route::get('/pages/{name}', 'PagesController@edit')->name('admin.page.detail');
-    Route::post('/pages/{name}', 'PagesController@store')->name('admin.page.update');
-    Route::view('/help-center/faqs', 'admin.dashboard')->name('admin.faq');
+
+    Route::put('/pages/{name}', 'PagesController@store')->name('admin.page.update');
+
+    Route::get('/help-center/{name}', 'PagesController@edit')->name('admin.helpcenter.detail');
+    Route::get('/terms-and-condition/{name}', 'PagesController@edit')->name('admin.terms.detail');
+
+
+    /**
+     * Article category routes
+     */
+    Route::get('/category', 'CategoryController@index')->name('admin.category.index');
+
+
+    Route::get('/category/create', 'CategoryController@create')->name('admin.category.add');
+    Route::post('/category/create', 'CategoryController@store')->name('admin.category.add');
+
+    Route::get('/category/get-slug/', 'CategoryController@getSlug')->name('admin.category.slug');
+
+    Route::get('/category/{category}', 'CategoryController@edit')->name('admin.category.edit');
+    Route::post('/category/{category}', 'CategoryController@update')->name('admin.category.update');
+    Route::delete('/category/{category}', 'CategoryController@destroy')->name('admin.category.destroy');
+
+
+    /**
+     * Article route
+     */
+    Route::get('/articles', 'ArticleController@index')->name('admin.articles.index');
+
+    Route::get('/articles/create', 'ArticleController@create')->name('admin.articles.create');
+    Route::post('/articles/create', 'ArticleController@store')->name('admin.articles.create');
+
+    Route::get('/articles/{article}', 'ArticleController@edit')->name('admin.articles.edit');
+    Route::put('/articles/{article}', 'ArticleController@update')->name('admin.articles.edit');
+
+    Route::delete('/articles/{article}', 'ArticleController@destroy')->name('admin.article.destroy');
+
+
 });
+
 Auth::routes();
 

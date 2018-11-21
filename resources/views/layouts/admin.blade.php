@@ -16,16 +16,16 @@
 <body class="nav-md">
 <div class="container body">
     <div class="main_container">
-        @include('admin.partials.sidebar')
-        @include('admin.partials.top-navigation')
+        @include('layouts.admin.sidebar')
+        @include('layouts.admin.top-navigation')
         @yield('content')
-        @include('admin.partials.footer')
+        @include('layouts.admin.footer')
     </div>
 </div>
 </body>
-
+<script>
+</script>
 <script src="{{asset('js/admin/app.js')}}"></script>
-@yield('js')
-{{--@endsection--}}
 
+@yield('js')
 </html>
