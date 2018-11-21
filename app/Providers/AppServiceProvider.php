@@ -39,8 +39,7 @@ class AppServiceProvider extends ServiceProvider
 
         \Blade::directive('hasError', function ($input) {
             return
-/*                '<?php if($errors->has(' . $input . ')):?>has-error has-feedback<?php endif;?>';*/
-                '<?php if($errors->has(' . $input . ')):?>parsley-error<?php endif;?>';
+                '<?php if($errors->has(' . $input . ')):?>has-error has-feedback<?php endif;?>';
         });
         \Blade::directive('image', function ($input) {
             return
