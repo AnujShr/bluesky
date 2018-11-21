@@ -16,10 +16,10 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('content');
-            $table->string('image');
-            $table->string('status');
-            $table->string('published');
+            $table->text('description');
+            $table->string('image')->nullable();
+            $table->string('status')->default(0);
+            $table->date('published')->nullable();
             $table->timestamps();
         });
     }

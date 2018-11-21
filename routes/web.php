@@ -47,13 +47,13 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'Ad
 
 
     /**
-     * Articles category routes
+     * Article category routes
      */
     Route::get('/category', 'CategoryController@index')->name('admin.category.index');
 
 
     Route::get('/category/create', 'CategoryController@create')->name('admin.category.add');
-    Route::post('/category/create', 'CategoryController@create')->name('admin.category.add');
+    Route::post('/category/create', 'CategoryController@store')->name('admin.category.add');
 
     Route::get('/category/get-slug/', 'CategoryController@getSlug')->name('admin.category.slug');
 
@@ -63,18 +63,18 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'Ad
 
 
     /**
-     * Articles route
+     * Article route
      */
-    Route::get('/articles', 'ArticlesController@index')->name('admin.articles.index');
+    Route::get('/articles', 'ArticleController@index')->name('admin.articles.index');
 
-    Route::get('/articles/add-article', 'ArticlesController@addArticle')->name('admin.articles.add');
-    Route::post('/articles/add-article', 'ArticlesController@create')->name('admin.articles.add');
+    Route::get('/articles/create', 'ArticleController@create')->name('admin.articles.create');
+    Route::post('/articles/create', 'ArticleController@store')->name('admin.articles.create');
 
-    Route::get('/articles/{article}', 'ArticlesController@edit')->name('admin.articles.edit');
-    Route::post('/articles/{article}', 'ArticlesController@update')->name('admin.articles.edit');
-    Route::delete('/articles/{article}', 'ArticlesController@destroy')->name('admin.articles.destroy');
+    Route::get('/articles/{article}', 'ArticleController@edit')->name('admin.articles.edit');
+    Route::put('/articles/{article}', 'ArticleController@update')->name('admin.articles.edit');
 
-    Route::post('/articles/save-article', 'ArticlesController@update')->name('admin.articles.update');
+    Route::delete('/articles/{article}', 'ArticleController@destroy')->name('admin.article.destroy');
+
 
 });
 

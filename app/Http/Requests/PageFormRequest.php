@@ -95,6 +95,9 @@ class PageFormRequest extends FormRequest
         ]);
     }
 
+    /**
+     * @return string
+     */
     public function saveImage()
     {
         $image = $this->image;
@@ -112,7 +115,7 @@ class PageFormRequest extends FormRequest
                 $constraint->aspectRatio();
                 $constraint->upsize();
             })->save(storage_path($pathTo . $fileName));
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $error = true;
         }
         if (!$error) {

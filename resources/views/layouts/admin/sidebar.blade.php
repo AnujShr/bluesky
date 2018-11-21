@@ -50,11 +50,11 @@
             <div class="menu_section">
                 <h3>Articles</h3>
                 <ul class="nav side-menu">
-                    <li><a><i class="fa fa-inbox"></i> Article<span
+                    <li><a><i class="glyphicon glyphicon-book"></i> Article<span
                                     class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="{{route('admin.articles.index')}}">All Articles</a></li>
-                            <li><a href="{{route('admin.articles.add')}}">Add Article</a></li>
+                            <li><a href="{{route('admin.articles.create')}}">Add Article</a></li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-tag"></i>Category<span class="fa fa-chevron-down"></span></a>

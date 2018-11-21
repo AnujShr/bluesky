@@ -8,16 +8,21 @@ class Category extends Model
 {
     protected $fillable = ['slug', 'name'];
 
+    public function articles()
+    {
+        return $this->belongsToMany(Article::class);
+    }
+
     public static function incrementSlug($slug)
     {
         // get the slug of the latest created post
         $max = static::whereName($slug)->latest('id')->value('slug');;
         if (is_numeric($max[-1])) {
             return preg_replace_callback('/(\d+)$/', function ($mathces) {
-                return $mathces[1] + 1;
+                return str_slug($mathces[1] + 1);
             }, $max);
         }
-        return "{$slug}-1";
+        return str_slug($slug) . "-1";
     }
 
     public static function getSlug($data, $id)

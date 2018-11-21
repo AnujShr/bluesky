@@ -45,7 +45,7 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param CategoryFormRequest $request
+     * @param CategoryFormRequest $requestw
      * @return void
      */
     public function store(CategoryFormRequest $request)
