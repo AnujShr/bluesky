@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 371);
+/******/ 	return __webpack_require__(__webpack_require__.s = 373);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -93,30 +93,32 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 371:
+/***/ 373:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(372);
+module.exports = __webpack_require__(374);
 
 
 /***/ }),
 
-/***/ 372:
+/***/ 374:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_izitoast__ = __webpack_require__(374);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_izitoast__ = __webpack_require__(376);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_izitoast___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_izitoast__);
-__webpack_require__(373);
+__webpack_require__(375);
 
 
 __WEBPACK_IMPORTED_MODULE_0_izitoast___default.a.settings({
     timeout: 5000, // default timeout
     resetOnHover: true,
     // icon:'icomoon',
+    closeOnEscape: true,
     transitionIn: 'flipInX',
     transitionOut: 'flipOutX',
+    displayMode: 2,
     position: 'topRight' // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
 });
 
@@ -177,7 +179,7 @@ $(function () {
 
 /***/ }),
 
-/***/ 373:
+/***/ 375:
 /***/ (function(module, exports) {
 
 /* JS Document */
@@ -317,7 +319,7 @@ $(document).ready(function () {
 
 /***/ }),
 
-/***/ 374:
+/***/ 376:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*

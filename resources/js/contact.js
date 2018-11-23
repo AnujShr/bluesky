@@ -5,8 +5,10 @@ iziToast.settings({
     timeout: 5000, // default timeout
     resetOnHover: true,
     // icon:'icomoon',
+    closeOnEscape:true,
     transitionIn: 'flipInX',
     transitionOut: 'flipOutX',
+    displayMode:2,
     position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
 });
 
