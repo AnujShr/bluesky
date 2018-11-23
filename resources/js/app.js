@@ -7,7 +7,7 @@
 require('./bootstrap');
 require('../plugins/easing/easing.js');
 require('../plugins/parallax-js-master/parallax.min.js');
-
+require('mdbootstrap/js/mdb.min');
 
 // window.Vue = require('vue');
 
