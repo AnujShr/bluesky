@@ -25,7 +25,7 @@ class SiteSettingController extends Controller
         $crumbs['title'] = 'Site Setting';
         $crumbs = breadcrumb($this->breads, $crumbs);
         $setting = Setting::whereGroup('site')->first();
-        $content = json_decode($setting->content, true);
+        $content = ($setting) ? json_decode($setting->content, true) : '';
         return view('admin.setting.site-setting.index', compact('crumbs', 'content'));
     }
 

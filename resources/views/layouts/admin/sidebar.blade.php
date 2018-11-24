@@ -82,7 +82,8 @@
                     <li><a><i class="fa fa-cog"></i> Home Setting<span
                                     class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="{{route('admin.setting.home')}}">Home Setting</a></li>
+                            <li><a href="{{route('admin.setting.feature-property')}}">Feature Properties</a></li>
+                            <li><a href="{{route('admin.setting.feature-town')}}">Feature Towns</a></li>
                         </ul>
                     </li>
                 </ul>

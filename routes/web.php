@@ -83,7 +83,12 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'Ad
      */
     Route::get('/settings/site-setting', 'SiteSettingController@index')->name('admin.setting.site');
     Route::post('/settings/site-setting', 'SiteSettingController@store')->name('admin.setting.site');
-    Route::get('/settings/home-setting', 'HomeSettingController@index')->name('admin.setting.home');
+
+    Route::get('/settings/feature-property', 'HomeSettingController@featureProperty')->name('admin.setting.feature-property');
+    Route::post('/settings/feature-property', 'HomeSettingController@storeFeatureProperty')->name('admin.setting.feature-property');
+
+    Route::get('/settings/feature-town', 'HomeSettingController@featureTown')->name('admin.setting.feature-town');
+    Route::post('/settings/feature-town', 'HomeSettingController@storeFeatureTown')->name('admin.setting.feature-town');
 });
 
 Auth::routes();

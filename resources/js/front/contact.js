@@ -42,7 +42,7 @@ $(document).ready(function () {
     });
 
     initMenu();
-    initGoogleMap();
+    // initGoogleMap();
 
     /*
 

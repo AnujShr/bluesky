@@ -1,6 +1,17 @@
 require('./front/contact');
 import iziToast from 'izitoast';
 
+var marker = L.icon({
+    iconUrl: 'marker-icon.png',
+    shadowUrl: 'marker-shadow.png',
+
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    tooltipAnchor: [16, -28],
+    shadowSize: [41, 41]
+});
+
 iziToast.settings({
     timeout: 5000, // default timeout
     resetOnHover: true,
@@ -14,6 +25,16 @@ iziToast.settings({
 
 $(function () {
 
+    var map = L.map('map').setView([51.505, -0.09], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+
+    L.marker([51.5, -0.09], {icon: marker}).addTo(map)
+        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+        .openPopup();
     let form = $('#contact-form');
     form[0].reset();
 

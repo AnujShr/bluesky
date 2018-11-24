@@ -8,7 +8,7 @@ require('./bootstrap');
 require('../plugins/easing/easing.js');
 require('../plugins/parallax-js-master/parallax.min.js');
 require('mdbootstrap/js/mdb.min');
-
+require('leaflet');
 // window.Vue = require('vue');
 
 /**
