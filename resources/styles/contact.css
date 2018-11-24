@@ -33,7 +33,6 @@ body {
     font-size: 14px;
     font-weight: 400;
     background: #FFFFFF;
-    color: #a5a5a5;
 }
 
 div {
@@ -142,9 +141,6 @@ h6::selection {
 
 }
 
-.form-control {
-    color: #db5246;
-}
 
 section {
     display: block;
@@ -276,13 +272,6 @@ section {
     line-height: 0.75;
 }
 
-.section_subtitle {
-    font-size: 14px;
-    font-weight: 500;
-    color: #828282;
-    line-height: 0.75;
-    margin-top: 15px;
-}
 
 /*********************************
 5. Home
@@ -341,6 +330,10 @@ section {
 
 .breadcrumbs ul li a:hover {
     color: #2cd983;
+}
+
+.contact_button{
+    width: 150px;
 }
 
 /*********************************

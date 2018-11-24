@@ -4,7 +4,7 @@
             <div class="col">
                 <div class="header_content d-flex flex-row align-items-center justify-content-start">
                     <div class="logo">
-                        <a href="#"><img src="images/logo.png" alt=""></a>
+                        <a href="{{route('home')}}"><img src="images/logo.png" alt=""></a>
                     </div>
                     <nav class="main_nav">
                         <ul>

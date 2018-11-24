@@ -24,15 +24,16 @@
                         <td>{{$article->published_date}}</td>
                         <td>{{$article->status}}</td>
                         <td>
-                        {!! Form::open(
-                    [
-                        'url'=>route('admin.article.destroy',$article->id),
-                        'method' => 'delete'
-                    ]) !!}
-                        <a href="{{route('admin.articles.edit',$article->id)}}"
-                           class="btn btn-info">Edit</a>{!! Form::submit('DELETE',['class' => 'delete-category btn btn-danger']) !!}
-                        {!! Form::close() !!}
-                        </td></tr>
+                            {!! Form::open(
+                        [
+                            'url'=>route('admin.article.destroy',$article->id),
+                            'method' => 'delete'
+                        ]) !!}
+                            <a href="{{route('admin.articles.edit',$article->id)}}"
+                               class="btn btn-info">Edit</a>{!! Form::submit('DELETE',['class' => 'delete-category btn btn-danger']) !!}
+                            {!! Form::close() !!}
+                        </td>
+                    </tr>
                 @endforeach
                 </tbody>
             </table>

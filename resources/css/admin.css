@@ -1,3 +1,7 @@
+/**
+*BREADCRUMBS
+*/
+
 .breadcrumb-arrow {
     height: 36px;
     padding: 0;
@@ -96,6 +100,10 @@
     color: #434a54
 }
 
+/**
+* Image upload and preview
+**/
+
 .btn-file {
     position: relative;
     overflow: hidden;
@@ -135,4 +143,6 @@ div.text-container {
     padding: 10px 20px;
 }
 
-
+/**
+* Vertical Tabs
+**/

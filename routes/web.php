@@ -37,6 +37,9 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'Ad
     Route::view('/', 'admin.dashboard')->name('admin.home');
     Route::view('/users', 'admin.dashboard')->name('admin.users');
 
+    /**
+     * Page routes
+     */
     Route::get('/pages', 'PagesController@index')->name('admin.pages');
     Route::get('/pages/{name}', 'PagesController@edit')->name('admin.page.detail');
 
@@ -75,7 +78,12 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'Ad
 
     Route::delete('/articles/{article}', 'ArticleController@destroy')->name('admin.article.destroy');
 
-
+    /**
+     * Setting routes
+     */
+    Route::get('/settings/site-setting', 'SiteSettingController@index')->name('admin.setting.site');
+    Route::post('/settings/site-setting', 'SiteSettingController@store')->name('admin.setting.site');
+    Route::get('/settings/home-setting', 'HomeSettingController@index')->name('admin.setting.home');
 });
 
 Auth::routes();
