@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Setting;
-use Illuminate\Http\Request;
 
 class SiteSettingController extends Controller
 {
@@ -31,69 +30,33 @@ class SiteSettingController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return void
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @return void
      */
     public function store()
     {
+        $setting = Setting::where('group', 'site')->first();
+
+        $content = isset($setting->content) ? json_decode($setting->content, true) : '';
+
+        $data = request()->all();
+
+        $input['meta']['title'] = $data['title'] ?? (isset($content['meta']['title']) ?? '');
+        $input['meta']['keywords'] = $data['keywords'] ?? $content['meta']['keywords'] ?? '';
+        $input['meta']['description'] = $data['description'] ?? $content['meta']['description'] ?? '';
+
+        $input['contact']['email'] = $data['email'] ?? $content['contact']['email'] ?? '';
+        $input['contact']['phone'] = $data['phone'] ?? $content['contact']['phone'] ?? '';
+
+        $input['social']['facebook'] = $data['facebook'] ?? $content['social']['facebook'] ?? '';
+        $input['social']['twitter'] = $data['twitter'] ?? $content['social']['twitter'] ?? '';
+        $input['social']['instagram'] = $data['instagram'] ?? $content['social']['instagram'] ?? '';
+
         $setting = new Setting;
-        $setting->saveSetting(request()->all(), 'site');
+
+        $setting->saveSetting(json_encode($input), 'site');
+
         return back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return void
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }
