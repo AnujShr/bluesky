@@ -28,6 +28,7 @@
 
                             {!! Form::label('description','Description') !!}
                             {!! Form::textarea('description',$content['meta']['description']??'',["class"=>"form-control","rows"=>"5"]) !!}
+
                         </div>
                     </div>
                 </div>
@@ -52,7 +53,7 @@
                                 </div>
 
                                 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                                    {!! Form::text('email',$content['contact']['phone']??'',['class'=>'form-control has-feedback-left', 'placeholder'=>"Phone"]) !!}
+                                    {!! Form::text('phone',$content['contact']['phone']??'',['class'=>'form-control has-feedback-left', 'placeholder'=>"Phone"]) !!}
                                     <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -69,6 +70,19 @@
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
                                 </ul>
+
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                {!! Form::label('facebook','Facebook') !!}
+                                {!! Form::text('facebook', $content['social']['facebook']??'',['class'=>'form-control']) !!}
+
+                                {!! Form::label('twitter','Twitter') !!}
+                                {!! Form::text('twitter', $content['social']['twitter']??'',['class'=>'form-control']) !!}
+
+                                {!! Form::label('instagram','Instagram') !!}
+                                {!! Form::text('instagram', $content['social']['instagram']??'',['class'=>'form-control']) !!}
+
                             </div>
                         </div>
                     </div>
