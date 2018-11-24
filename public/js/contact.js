@@ -128,6 +128,7 @@ $(function () {
     form[0].reset();
 
     $('.contact_button').on('click', function (e) {
+        __WEBPACK_IMPORTED_MODULE_0_izitoast___default.a.destroy();
         e.preventDefault();
         clearErrorDisplay();
         $.ajax({
@@ -139,15 +140,15 @@ $(function () {
                 form[0].reset();
                 __WEBPACK_IMPORTED_MODULE_0_izitoast___default.a.success({
                     timeout: 5000,
-                    icon: 'fa fa-bullhorn',
-                    title: 'Contact',
+                    icon: 'fa fa-envelope',
+                    title: 'Sucess',
                     message: 'Message Send Succesfully!'
                 });
             },
             'error': function error(errors) {
                 __WEBPACK_IMPORTED_MODULE_0_izitoast___default.a.error({
                     timeout: 0,
-                    icon: 'fa fa-exclamation',
+                    icon: 'fa fa-exclamation-triangle',
                     title: 'Error',
                     message: 'Please check highlighted field!',
                     position: "bottomLeft"

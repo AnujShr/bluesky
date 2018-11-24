@@ -754,6 +754,10 @@ div.CodeMirror-dragcursors {
 
 /* Help users use markselection to safely style text background */
 span.CodeMirror-selectedtext { background: none; }
+/**
+*BREADCRUMBS
+*/
+
 .breadcrumb-arrow {
     height: 36px;
     padding: 0;
@@ -852,6 +856,10 @@ span.CodeMirror-selectedtext { background: none; }
     color: #434a54
 }
 
+/**
+* Image upload and preview
+**/
+
 .btn-file {
     position: relative;
     overflow: hidden;
@@ -892,7 +900,9 @@ div.text-container {
     padding: 10px 20px;
 }
 
-
+/**
+* Vertical Tabs
+**/
 
 html, body {
 
