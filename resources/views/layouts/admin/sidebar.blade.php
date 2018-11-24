@@ -50,7 +50,7 @@
             <div class="menu_section">
                 <h3>Articles</h3>
                 <ul class="nav side-menu">
-                    <li><a><i class="glyphicon glyphicon-book"></i> Article<span
+                    <li><a><i class="fa fa-book"></i> Article<span
                                     class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="{{route('admin.articles.index')}}">All Articles</a></li>
@@ -70,21 +70,21 @@
             <div class="menu_section">
                 <h3>Settings</h3>
                 <ul class="nav side-menu">
-                    <li><a><i class="fa fa-bug"></i> Site Setting<span
+                    <li><a><i class="fa fa-cog"></i> Settings<span
                                     class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="e_commerce.html">Meta Setting</a></li>
-                            <li><a href="projects.html">Contacts</a></li>
+                            <li><a href="{{route('admin.setting.site')}}">Site Setting</a></li>
                         </ul>
                     </li>
-                    <li><a><i class="fa fa-windows"></i> Home Settings <span class="fa fa-chevron-down"></span></a>
+                </ul>
+                <h3>Home Setting</h3>
+                <ul class="nav side-menu">
+                    <li><a><i class="fa fa-cog"></i> Home Setting<span
+                                    class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="page_403.html">Header</a></li>
-                            <li><a href="pricing_tables.html">Footer</a></li>
+                            <li><a href="{{route('admin.setting.home')}}">Home Setting</a></li>
                         </ul>
                     </li>
-                    {{--                    <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span
-                                                        class="label label-success pull-right">Coming Soon</span></a></li>--}}
                 </ul>
             </div>
 

@@ -4,10 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Elegant Account Login Form with Avatar Icon</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700,800,900" rel="stylesheet">
-    {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--}}
+    <title>BlueSky Login</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <style type="text/css">
         .class {
@@ -17,7 +14,6 @@
             z-index: -5;
             filter: brightness(85%);
         }
-
 
         body {
             color: #999;
@@ -117,7 +113,9 @@
         }
 
         .login-form a {
-            color: #4aba70;
+            font-style: oblique;
+            font-weight: 600;
+            color: #007bff;
         }
     </style>
 </head>
@@ -127,10 +125,10 @@
     <form action="{{route('login')}}" method="post">
         {!! csrf_field() !!}
 
-        <div class="avatar"><i class="fa fa-user-circle"></i></div>
+        <div class="avatar"><i class="fa fa-user"></i></div>
         <h4 class="modal-title">Login to Your Account</h4>
         <div class="form-group">
-            <input type="text" name="email" class="form-control" placeholder="Email" required="required">
+            <input type="text" name="email" class="form-control" placeholder="Email">
         </div>
         <div class="form-group">
             <input name="password" type="password" class="form-control" placeholder="Password" required="required">

@@ -5,10 +5,10 @@ iziToast.settings({
     timeout: 5000, // default timeout
     resetOnHover: true,
     // icon:'icomoon',
-    closeOnEscape:true,
+    closeOnEscape: true,
     transitionIn: 'flipInX',
     transitionOut: 'flipOutX',
-    displayMode:2,
+    displayMode: 2,
     position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
 });
 
@@ -18,6 +18,7 @@ $(function () {
     form[0].reset();
 
     $('.contact_button').on('click', function (e) {
+        iziToast.destroy();
         e.preventDefault();
         clearErrorDisplay();
         $.ajax({
@@ -29,18 +30,18 @@ $(function () {
                 form[0].reset();
                 iziToast.success({
                     timeout: 5000,
-                    icon: 'fa fa-bullhorn',
-                    title: 'Contact',
+                    icon: 'fa fa-envelope',
+                    title: 'Sucess',
                     message: 'Message Send Succesfully!'
                 });
             },
             'error': function (errors) {
                 iziToast.error({
                     timeout: 0,
-                    icon: 'fa fa-exclamation',
+                    icon: 'fa fa-exclamation-triangle',
                     title: 'Error',
                     message: 'Please check highlighted field!',
-                    position: "bottomLeft"
+                    position: "bottomLeft",
                 });
 
                 let el = $('#contact-form');
