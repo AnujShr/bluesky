@@ -6,6 +6,7 @@ use App\Article;
 use App\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticleFormRequest;
+use Storage;
 
 class ArticleController extends Controller
 {
@@ -75,12 +76,11 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-
         $crumbs['title'] = 'Edit Article';
         $crumbs = breadcrumb($this->bread, $crumbs);
         $category = Category::all()->pluck('name', 'id');
         $articleCategory = $article->categories->pluck('id')->toArray();
-        return view('admin.articles.edit', compact('crumbs', 'article', 'category','articleCategory'));
+        return view('admin.articles.edit', compact('crumbs', 'article', 'category', 'articleCategory'));
     }
 
     /**
@@ -100,13 +100,17 @@ class ArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param Article $article
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(Article $article)
     {
-        if ($this->user()->isSuperAdmin()) {
-
+        if (auth()->user()->isSuperAdmin()) {
+            $id = $article->id;
+            Storage::deleteDirectory('public/uploads/articles/' . $id);
+            $article->delete();
         }
+        return back()->with('message', 'Article Deleted Successfully!');
     }
 }

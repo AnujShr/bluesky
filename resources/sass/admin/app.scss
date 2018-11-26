@@ -1,5 +1,5 @@
 @import "../../gentellea/bootstrap/dist/css/bootstrap.min.css";
-@import "../../gentellea/font-awesome/css/font-awesome.min.css";
+@import "~font-awesome/css/font-awesome";
 @import "../../gentellea/nprogress/nprogress.css";
 @import "../../gentellea/animate.css/animate.min.css";
 @import "../../gentellea/iCheck/skins/flat/green.css";
@@ -14,4 +14,3 @@
 @import "../../css/admin.css";
 @import "../../gentellea/css/custom.css";
 @import "~datatables.net-bs/css/dataTables.bootstrap.min.css";
-@import url('https://bootswatch.com/3/superhero/bootstrap.css');

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Article;
+use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
@@ -32,6 +33,7 @@ class ArticleFormRequest extends FormRequest
             'category' => 'required',
             'description' => 'required',
             'image' => 'mimes:jpeg,jpg,png|required_without:oldImage|dimensions:min_width:700,min_height:300',
+            'published' => 'date'
         ];
     }
 
@@ -47,7 +49,7 @@ class ArticleFormRequest extends FormRequest
         $article->title = $this->title;
 //        $article->category = $this->category;
         $article->description = $this->description;
-        $article->published = $this->published;
+        $article->published = Carbon::parse($this->published);
         $article->save();
         $article->categories()->sync($this->category);
         $id = $article->id;

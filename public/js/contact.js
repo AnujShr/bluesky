@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 373);
+/******/ 	return __webpack_require__(__webpack_require__.s = 374);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -93,22 +93,22 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 373:
+/***/ 374:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(374);
+module.exports = __webpack_require__(375);
 
 
 /***/ }),
 
-/***/ 374:
+/***/ 375:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_izitoast__ = __webpack_require__(376);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_izitoast__ = __webpack_require__(377);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_izitoast___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_izitoast__);
-__webpack_require__(375);
+__webpack_require__(376);
 
 
 var marker = L.icon({
@@ -194,11 +194,28 @@ $(function () {
         el.find("input,textarea").removeClass('invalid');
         el.find('span').removeClass('text-danger').html('');
     }
+
+    var lat, lng;
+
+    map.addEventListener('mousemove', function (ev) {
+        lat = ev.latlng.lat;
+        lng = ev.latlng.lng;
+    });
+    document.getElementById("map").addEventListener("contextmenu", function (event) {
+        // Prevent the browser's context menu from appearing
+        event.preventDefault();
+
+        // Add marker
+        // L.marker([lat, lng], ....).addTo(map);
+        alert(lat + ' - ' + lng);
+
+        return false; // To disable default popup.
+    });
 });
 
 /***/ }),
 
-/***/ 375:
+/***/ 376:
 /***/ (function(module, exports) {
 
 /* JS Document */
@@ -338,7 +355,7 @@ $(document).ready(function () {
 
 /***/ }),
 
-/***/ 376:
+/***/ 377:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*

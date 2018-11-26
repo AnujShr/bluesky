@@ -1,5 +1,4 @@
 @extends('admin.layouts')
-
 @section('page-content')
     <div class="x_panel">
         <div class="x_content">
@@ -8,33 +7,38 @@
                 <tr>
                     <th>#</th>
                     <th>Name</th>
-                    <th>slug</th>
+                    <th>Title</th>
+                    <th>Rating</th>
+                    <th>Image</th>
                     <th>Action</th>
                 </tr>
                 </thead>
 
                 <tbody>
-                @foreach($categories as $category)
+                @foreach($testimonials as $testimonial)
                     <tr>
                         <td>
                             {{$loop->iteration}}
                         </td>
-                        <td>{{$category->name}}</td>
-                        <td>{{$category->slug}}</td>
+                        <td>{{$testimonial->name}}</td>
+                        <td>{{$testimonial->title}}</td>
+                        <td>{{$testimonial->rating}}</td>
+                        <td></td>
                         <td>
                             {!! Form::open(
                         [
-                            'url'=>route('admin.category.destroy',$category->id),
+                            'url'=>route('admin.testimonial.destroy',$testimonial->id),
                             'method' => 'delete'
                         ]) !!}
-
-                            <a href="{{route('admin.category.edit',$category->id)}}"
+                            <a href="{{route('admin.testimonial.edit',$testimonial->id)}}"
                                class="btn btn-info">Edit</a>{!! Form::submit('DELETE',['class' => 'delete-confirm btn btn-danger']) !!}
-                        {!! Form::close() !!}
+                            {!! Form::close() !!}
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
         </div>
     </div>
+
 @endsection

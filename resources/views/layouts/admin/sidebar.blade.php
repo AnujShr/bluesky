@@ -29,6 +29,12 @@
                     <li><a href="{{route('admin.home')}}"><i class="fa fa-home"></i> Home </a></li>
                     <li><a href="{{route('admin.users')}}"><i class="fa fa-users"></i> Users</a></li>
                     <li><a href="{{route('admin.pages')}}"><i class="fa fa-file-text-o"></i> Pages</a>
+                    <li><a href="{{route('admin.testimonial')}}"><i class="fa fa-wechat"></i> Testimonial</a>
+                        <ul class="nav child_menu">
+                            <li><a href="{{route('admin.helpcenter.detail','privacy-policy')}}">All Testimonial</a></li>
+                            <li><a href="{{route('admin.helpcenter.detail','faqs')}}">Add Testimonial</a></li>
+                        </ul>
+
                     </li>
                     <li><a><i class="fa fa-life-saver"></i> Help Center<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">

@@ -1,4 +1,3 @@
-`
 <div class="page-title">
     <div class="full_title">
         <div class="container">
@@ -10,7 +9,7 @@
                 @isset($crumbs['group'])
                     @php
                         $group = str_slug($crumbs['group']);
-                        $groupLink = (!in_array($group,['help-center','terms-and-condition','setting']));
+                        $groupLink = (!in_array($group,['help-center','terms-and-condition','setting','testimonial']));
                         $link = $groupLink ? $group : null;
                     @endphp
                     <li><a href={{$link?'/admin/'.$link:'javascript:void(0)'}}><i
@@ -24,4 +23,4 @@
             </ol>
         </div>
     </div>
-</div>`
+</div>

@@ -89,6 +89,10 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'Ad
 
     Route::get('/settings/feature-town', 'HomeSettingController@featureTown')->name('admin.setting.feature-town');
     Route::post('/settings/feature-town', 'HomeSettingController@storeFeatureTown')->name('admin.setting.feature-town');
+
+    Route::get('/setting/testimonial', 'TestimonialController@index')->name('admin.testimonial');
+    Route::get('/setting/testimonial/create', 'TestimonialController@create')->name('admin.testimonial.create');
+//    Route::get('/setting/testimonial', 'TestimonialController@edit')->name('admin.testimonial.edit');
 });
 
 Auth::routes();

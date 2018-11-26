@@ -26,7 +26,6 @@ class CategoryFormRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'slug' => 'required'
         ];
     }
 
@@ -39,7 +38,8 @@ class CategoryFormRequest extends FormRequest
 
     public function update($category)
     {
-        $this->store($category);
+        $category->slug = null;
+        $category->update(['name' => $this->name]);
     }
 
     /**
@@ -49,7 +49,6 @@ class CategoryFormRequest extends FormRequest
     public function store($category): void
     {
         $category->name = $this->name;
-        $category->slug = $this->slug;
         $category->save();
     }
 }
