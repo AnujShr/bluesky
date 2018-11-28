@@ -10,9 +10,9 @@ class Property extends Model
         'status', 'lat', 'lng', 'country', 'location', 'price', 'currency', 'features'
     ];
 
-    public function property_detail()
+    public function property_details()
     {
-        return $this->hasOne(PropertyDetail::class);
+        return $this->hasMany(PropertyDetail::class);
     }
 
 }

@@ -1,19 +1,7 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('front.home');
-})->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/about', function () {
     return view('front.about');
@@ -94,6 +82,12 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'Ad
     Route::get('/setting/testimonial/create', 'TestimonialController@create')->name('admin.testimonial.create');
 //    Route::get('/setting/testimonial', 'TestimonialController@edit')->name('admin.testimonial.edit');
 });
+
+
+Route::group(['middleware' => ['realtors'], 'prefix' => 'realtors'], function () {
+    Route::get('/', 'RealtorController@index')->name('realtors');
+});
+
 
 Auth::routes();
 

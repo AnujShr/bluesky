@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class PropertyDetail extends Model
 {
     protected $fillable = [
-        'slug', 'title', 'address', 'description'
+        'property_id', 'slug', 'title', 'address', 'description'
     ];
+
+    public function property()
+    {
+        return $this->belongsTo(Property::class);
+    }
 }
