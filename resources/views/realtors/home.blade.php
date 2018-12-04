@@ -1,137 +1,106 @@
 @extends('layouts.realtors.master')
 
 @section('content')
-
-
-    <div class="wrapper">
-        <!-- Sidebar  -->
-        <nav id="sidebar" >
-            <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
+    <!-- Page Content  -->
+    <section class="status">
+        <div class="row text-center h-100">
+            <div class="col-md-4 text-center">
+                <div class="card shadow main">
+                    <div class="card-body content child">
+                        <span>Down</span>
+                        <span>Up</span>
+                    </div>
+                </div>
             </div>
+            <div class="col-md-4 text-center">
+                <div class="card shadow">
+                    <div class="card-body content">
+                        <p>Up</p>
+                        <span>Down</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="card shadow">
+                    <div class="card-body content">
+                        <p>Up</p>
+                        <span>Down</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <ul class="list-unstyled components">
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fa fa-home"></i>
-                        Home
-                    </a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Home 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 3</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-briefcase"></i>
-                        About
-                    </a>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fa fa-copy"></i>
-                        Pages
-                    </a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-image"></i>
-                        Portfolio
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-question"></i>
-                        FAQ
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-paper-plane"></i>
-                        Contact
-                    </a>
-                </li>
-            </ul>
+    <section class="recent-enquiries">
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive-md">
+                    <div class="head-text">
+                        <span>Recent Specific Request</span>
 
-        </nav>
-
-        <!-- Page Content  -->
-        <div id="content">
-            <button type="button" id="sidebarCollapse" class="btn btn-info">
-                <i class="fa fa-align-left"></i>
-            </button>
-            <span class="heading">Heading</span>
-            <h2>Collapsible Sidebar Using Bootstrap 4</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex
-                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit
-                anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex
-                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit
-                anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex
-                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit
-                anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex
-                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit
-                anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h3>Lorem Ipsum Dolor</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex
-                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit
-                anim id est laborum.</p>
+                    </div>
+                    <table class="table table-striped enquiry_table">
+                        <tr>
+                            <td><p>{{\Carbon\Carbon::now()->format('d M Y')}}</p></td>
+                            <td><p>Name</p></td>
+                            <td class="enquiry"><p>This is a specific request</p></td>
+                            <td><a href="#"><i class="fa fa-eye fa-2x "></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><p>{{\Carbon\Carbon::now()->format('d M Y')}}</p></td>
+                            <td><p>Name</p></td>
+                            <td class="enquiry"><p>This is a specific request with a long content for me to see its
+                                    layout as </p></td>
+                            <td><a href="#"><i class="fa fa-eye fa-2x"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><p>{{\Carbon\Carbon::now()->format('d M Y')}}</p></td>
+                            <td><p>Name NameName NameName NameName Name</p></td>
+                            <td class="enquiry"><p>This is a specific request</p></td>
+                            <td><a href="#"><i class="fa fa-eye fa-2x "></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><p>{{\Carbon\Carbon::now()->format('d M Y')}}</p></td>
+                            <td><p>Name</p></td>
+                            <td class="enquiry"><p>This is a specific request</p></td>
+                            <td><a href="#"><i class="fa fa-eye fa-2x "></i></a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="line"></div>
+    <div class="card-deck">
+        <div class="card">
+            <div class="card-header">
+                Most Viewed
+            </div>
+            <div class="card-body">
+                <div class="general-property">
+                    <div class="general-img">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="prop-detail">
+                        <p>Name</p>
+                        <p>price</p>
+                    </div>
+                </div>
+                <p class="card-text">Some text inside the first card</p>
+                <p class="card-text">Some more text to increase the height</p>
+                <p class="card-text">Some more text to increase the height</p>
+                <p class="card-text">Some more text to increase the height</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                Most Recent Properties
+            </div>
+            <div class="card-body">
+                <p class="card-text">Some text inside the second card</p>
+                <p class="card-text">Some text inside the second card</p>
+                <p class="card-text">Some text inside the second card</p>
+            </div>
         </div>
     </div>
-
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
 @endsection

@@ -22,8 +22,14 @@
 <body>
 
 <div class="super_container">
-    @include('layouts.front.header')
-        @yield('content')
+    <div class="wrapper">
+        @include('realtors.partials.sidebar')
+        <div id="content">
+            @include('layouts.front.header')
+            @yield('content')
+        </div>
+    </div>
+
 
     <!-- Header -->
 
