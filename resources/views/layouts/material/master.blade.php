@@ -2,11 +2,15 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8"/>
     <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon.png">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- Compiled and minified JavaScript -->
+
     <title>
         BlueSky Realtors
     </title>
@@ -16,131 +20,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
     <link href="{{asset('css/material/app.css')}}" rel="stylesheet"/>
+    <style>
+
+    </style>
 </head>
 
 <body class="">
 <div class="wrapper ">
-    <div class="sidebar" data-color="danger" data-background-color="black" data-image="img/sidebar-4.jpg">
-        <!--
-          Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-          Tip 2: you can also add an image using data-image tag
-      -->
-        <div class="logo">
-            <a href="{{route('home')}}" class="simple-text logo-normal">
-                <img src="images/logo.png" alt="">
-            </a>
-        </div>
-        <div class="sidebar-wrapper">
-            <ul class="nav">
-                <li class="nav-item active  ">
-                    <a class="nav-link" href="./dashboard.html">
-                        <i class="material-icons">dashboard</i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./user.html">
-                        <i class="material-icons">person</i>
-                        <p>User Profile</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./tables.html">
-                        <i class="material-icons">content_paste</i>
-                        <p>Table List</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./typography.html">
-                        <i class="material-icons">library_books</i>
-                        <p>Typography</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./icons.html">
-                        <i class="material-icons">bubble_chart</i>
-                        <p>Icons</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./map.html">
-                        <i class="material-icons">location_ons</i>
-                        <p>Maps</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./notifications.html">
-                        <i class="material-icons">notifications</i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    @include('layouts.material.partials.sidebar')
     <div class="main-panel">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
-            <div class="container-fluid">
-                <div class="navbar-wrapper">
-                    <a class="navbar-brand" href="#pablo">Dashboard</a>
-                </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="navbar-toggler-icon icon-bar"></span>
-                    <span class="navbar-toggler-icon icon-bar"></span>
-                    <span class="navbar-toggler-icon icon-bar"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end">
-                    <form class="navbar-form">
-                        <div class="input-group no-border">
-                            <input type="text" value="" class="form-control" placeholder="Search...">
-                            <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                                <i class="material-icons">search</i>
-                                <div class="ripple-container"></div>
-                            </button>
-                        </div>
-                    </form>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#pablo">
-                                <i class="material-icons">dashboard</i>
-                                <p class="d-lg-none d-md-block">
-                                    Stats
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="material-icons">notifications</i>
-                                <span class="notification">5</span>
-                                <p class="d-lg-none d-md-block">
-                                    Some Actions
-                                </p>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                                <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                                <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                                <a class="dropdown-item" href="#">Another Notification</a>
-                                <a class="dropdown-item" href="#">Another One</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#pablo">
-                                <i class="material-icons">person</i>
-                                <p class="d-lg-none d-md-block">
-                                    Account
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- End Navbar -->
+    @include('layouts.material.partials.navbar')
+
+    <!-- End Navbar -->
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -212,413 +104,759 @@
                         </div>
                     </div>
                 </div>
+                <section class="enquiry">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-danger">
+                                    <h4 class="card-title">Recent Specific Enquiries</h4>
+                                    <p class="card-category">New enquiry on 15th September, 2018</p>
+                                </div>
+                                <div class="card-body table-responsive">
+                                    <table class="table table-info table-striped">
+                                        <tbody>
+                                        <tr>
+                                            <td class="enq-date">{{\Carbon\Carbon::today()->format('d, M Y')}}</td>
+                                            <td class="enq-name">Dakota Hello Rice</td>
+                                            <td class="enq-enquiry">This is a long enquiry</td>
+                                            <td class="enq-action"><i class="material-icons">
+                                                    visibility
+                                                </i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{\Carbon\Carbon::today()->format('d, M Y')}}</td>
+                                            <td>Minerva Hooper</td>
+                                            <td>$23,789</td>
+                                            <td><i class="material-icons">
+                                                    visibility
+                                                </i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{\Carbon\Carbon::today()->format('d, M Y')}}</td>
+                                            <td>Sage Rodriguez</td>
+                                            <td>$56,142</td>
+                                            <td><i class="material-icons">
+                                                    visibility
+                                                </i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{\Carbon\Carbon::today()->format('d, M Y')}}</td>
+                                            <td>Philip Chaney</td>
+                                            <td>$38,735</td>
+                                            <td><i class="material-icons">
+                                                    visibility
+                                                </i></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card card-chart">
-                            <div class="card-header card-header-success">
-                                <div class="ct-chart" id="dailySalesChart"></div>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title">Daily Sales</h4>
-                                <p class="card-category">
-                                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase
-                                    in today sales.</p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="stats">
-                                    <i class="material-icons">access_time</i> updated 4 minutes ago
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-chart">
-                            <div class="card-header card-header-warning">
-                                <div class="ct-chart" id="websiteViewsChart"></div>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title">Email Subscriptions</h4>
-                                <p class="card-category">Last Campaign Performance</p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="stats">
-                                    <i class="material-icons">access_time</i> campaign sent 2 days ago
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-chart">
-                            <div class="card-header card-header-danger">
-                                <div class="ct-chart" id="completedTasksChart"></div>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title">Completed Tasks</h4>
-                                <p class="card-category">Last Campaign Performance</p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="stats">
-                                    <i class="material-icons">access_time</i> campaign sent 2 days ago
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                        <div class="card">
-                            <div class="card-header card-header-tabs card-header-primary">
-                                <div class="nav-tabs-navigation">
-                                    <div class="nav-tabs-wrapper">
-                                        <span class="nav-tabs-title">Tasks:</span>
-                                        <ul class="nav nav-tabs" data-tabs="tabs">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" href="#profile" data-toggle="tab">
-                                                    <i class="material-icons">bug_report</i> Bugs
-                                                    <div class="ripple-container"></div>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#messages" data-toggle="tab">
-                                                    <i class="material-icons">code</i> Website
-                                                    <div class="ripple-container"></div>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#settings" data-toggle="tab">
-                                                    <i class="material-icons">cloud</i> Server
-                                                    <div class="ripple-container"></div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="profile">
-                                        <table class="table">
-                                            <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                   checked>
-                                                            <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-primary btn-link btn-sm">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-link btn-sm">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value="">
-                                                            <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-primary btn-link btn-sm">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-link btn-sm">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value="">
-                                                            <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Flooded: One year later, assessing what was lost and what was found
-                                                    when a ravaging rain swept through metro Detroit
-                                                </td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-primary btn-link btn-sm">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-link btn-sm">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                   checked>
-                                                            <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Create 4 Invisible User Experiences you Never Knew About</td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-primary btn-link btn-sm">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-link btn-sm">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="tab-pane" id="messages">
-                                        <table class="table">
-                                            <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                   checked>
-                                                            <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Flooded: One year later, assessing what was lost and what was found
-                                                    when a ravaging rain swept through metro Detroit
-                                                </td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-primary btn-link btn-sm">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-link btn-sm">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value="">
-                                                            <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-primary btn-link btn-sm">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-link btn-sm">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="tab-pane" id="settings">
-                                        <table class="table">
-                                            <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value="">
-                                                            <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-primary btn-link btn-sm">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-link btn-sm">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                   checked>
-                                                            <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Flooded: One year later, assessing what was lost and what was found
-                                                    when a ravaging rain swept through metro Detroit
-                                                </td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-primary btn-link btn-sm">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-link btn-sm">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                   checked>
-                                                            <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-primary btn-link btn-sm">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-link btn-sm">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-lg-12 col-md-12">
                         <div class="card">
                             <div class="card-header card-header-warning">
-                                <h4 class="card-title">Employees Stats</h4>
-                                <p class="card-category">New employees on 15th September, 2016</p>
+                                <h4 class="card-title">Recent Properties</h4>
+                                <p class="card-category">{{\Carbon\Carbon::now()}}</p>
                             </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-hover">
-                                    <thead class="text-warning">
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Salary</th>
-                                    <th>Country</th>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Dakota Rice</td>
-                                        <td>$36,738</td>
-                                        <td>Niger</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Minerva Hooper</td>
-                                        <td>$23,789</td>
-                                        <td>Curaçao</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Sage Rodriguez</td>
-                                        <td>$56,142</td>
-                                        <td>Netherlands</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Philip Chaney</td>
-                                        <td>$38,735</td>
-                                        <td>Korea, South</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+
+                            <div class="card-body">
+                                <section class="container">
+                                    <div class="row active-with-click">
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <article class="list-card Red">
+                                                <h2>
+                                                    <span>Christopher Walken</span>
+                                                    <strong>
+                                                        <i class="fa fa-fw fa-star"></i>
+                                                        The Deer Hunter
+                                                    </strong>
+                                                </h2>
+                                                <div class="mc-content">
+                                                    <div class="img-container" style="padding-left: 0px;  padding-right: 0px;">
+                                                        <img class="img-fluid"
+                                                             src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-christopher-walken.jpg">
+                                                    </div>
+                                                    <div class="mc-description">
+                                                        He has appeared in more than 100 films and television shows,
+                                                        including The Deer Hunter, Annie Hall, The Prophecy trilogy, The
+                                                        Dogs of War ...
+                                                    </div>
+                                                </div>
+                                                <a class="mc-btn-action">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                                <div class="mc-footer">
+                                                    <h4>
+                                                        Social
+                                                    </h4>
+                                                    <a class="fa fa-fw fa-facebook"></a>
+                                                    <a class="fa fa-fw fa-twitter"></a>
+                                                    <a class="fa fa-fw fa-linkedin"></a>
+                                                    <a class="fa fa-fw fa-google-plus"></a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <article class="list-card Pink">
+                                                <h2>
+                                                    <span>Sean Penn</span>
+                                                    <strong>
+                                                        <i class="fa fa-fw fa-star"></i>
+                                                        Mystic River
+                                                    </strong>
+                                                </h2>
+                                                <div class="mc-content">
+                                                    <div class="img-container">
+                                                        <img class="img-fluid"
+                                                             src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-sean-penn.jpg">
+                                                    </div>
+                                                    <div class="mc-description">
+                                                        He has won two Academy Awards, for his roles in the mystery
+                                                        drama
+                                                        Mystic River (2003) and the biopic Milk (2008). Penn began his
+                                                        acting career in television with a brief appearance in a 1974
+                                                        episode of Little House on the Prairie ...
+                                                    </div>
+                                                </div>
+                                                <a class="mc-btn-action">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                                <div class="mc-footer">
+                                                    <h4>
+                                                        Social
+                                                    </h4>
+                                                    <a class="fa fa-fw fa-facebook"></a>
+                                                    <a class="fa fa-fw fa-twitter"></a>
+                                                    <a class="fa fa-fw fa-linkedin"></a>
+                                                    <a class="fa fa-fw fa-google-plus"></a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <article class="list-card Purple">
+                                                <h2>
+                                                    <span>Clint Eastwood</span>
+                                                    <strong>
+                                                        <i class="fa fa-fw fa-star"></i>
+                                                        Million Dollar Baby
+                                                    </strong>
+                                                </h2>
+                                                <div class="mc-content">
+                                                    <div class="img-container">
+                                                        <img class="img-fluid"
+                                                             src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-clint-eastwood.jpg">
+                                                    </div>
+                                                    <div class="mc-description">
+                                                        He rose to international fame with his role as the Man with No
+                                                        Name
+                                                        in Sergio Leone's Dollars trilogy of spaghetti Westerns during
+                                                        the
+                                                        1960s ...
+                                                    </div>
+                                                </div>
+                                                <a class="mc-btn-action">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                                <div class="mc-footer">
+                                                    <h4>
+                                                        Social
+                                                    </h4>
+                                                    <a class="fa fa-fw fa-facebook"></a>
+                                                    <a class="fa fa-fw fa-twitter"></a>
+                                                    <a class="fa fa-fw fa-linkedin"></a>
+                                                    <a class="fa fa-fw fa-google-plus"></a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <article class="list-card Deep-Purple">
+                                                <h2>
+                                                    <span>Dustin Hoffman</span>
+                                                    <strong>
+                                                        <i class="fa fa-fw fa-star"></i>
+                                                        Kramer vs. Kramer
+                                                    </strong>
+                                                </h2>
+                                                <div class="mc-content">
+                                                    <div class="img-container">
+                                                        <img class="img-fluid"
+                                                             src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-dustin-hoffman.jpg">
+                                                    </div>
+                                                    <div class="mc-description">
+                                                        He has been known for his versatile portrayals of antiheroes and
+                                                        vulnerable characters.[3] He won the Academy Award for Kramer
+                                                        vs.
+                                                        Kramer in 1979 ...
+                                                    </div>
+                                                </div>
+                                                <a class="mc-btn-action">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                                <div class="mc-footer">
+                                                    <h4>
+                                                        Social
+                                                    </h4>
+                                                    <a class="fa fa-fw fa-facebook"></a>
+                                                    <a class="fa fa-fw fa-twitter"></a>
+                                                    <a class="fa fa-fw fa-linkedin"></a>
+                                                    <a class="fa fa-fw fa-google-plus"></a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <article class="list-card Indigo">
+                                                <h2>
+                                                    <span>Edward Norton</span>
+                                                    <strong>
+                                                        <i class="fa fa-fw fa-star"></i>
+                                                        American History X
+                                                    </strong>
+                                                </h2>
+                                                <div class="mc-content">
+                                                    <div class="img-container">
+                                                        <img class="img-fluid"
+                                                             src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-edward-norton.jpg">
+                                                    </div>
+                                                    <div class="mc-description">
+                                                        He has been nominated for three Academy Awards for his work in
+                                                        the
+                                                        films Primal Fear, American History X and Birdman. He also
+                                                        starred
+                                                        in other roles ...
+                                                    </div>
+                                                </div>
+                                                <a class="mc-btn-action">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                                <div class="mc-footer">
+                                                    <h4>
+                                                        Social
+                                                    </h4>
+                                                    <a class="fa fa-fw fa-facebook"></a>
+                                                    <a class="fa fa-fw fa-twitter"></a>
+                                                    <a class="fa fa-fw fa-linkedin"></a>
+                                                    <a class="fa fa-fw fa-google-plus"></a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <article class="list-card Blue">
+                                                <h2>
+                                                    <span>Michael Caine</span>
+                                                    <strong>
+                                                        <i class="fa fa-fw fa-star"></i>
+                                                        Educated Rita
+                                                    </strong>
+                                                </h2>
+                                                <div class="mc-content">
+                                                    <div class="img-container">
+                                                        <img class="img-fluid"
+                                                             src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-michael-caine.jpg">
+                                                    </div>
+                                                    <div class="mc-description">
+                                                        English actor and author. Renowned for his distinctive working
+                                                        class
+                                                        cockney accent, Caine has appeared in over 115 films and is
+                                                        regarded
+                                                        as a British ...
+                                                    </div>
+                                                </div>
+                                                <a class="mc-btn-action">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                                <div class="mc-footer">
+                                                    <h4>
+                                                        Social
+                                                    </h4>
+                                                    <a class="fa fa-fw fa-facebook"></a>
+                                                    <a class="fa fa-fw fa-twitter"></a>
+                                                    <a class="fa fa-fw fa-linkedin"></a>
+                                                    <a class="fa fa-fw fa-google-plus"></a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <article class="list-card Light-Blue">
+                                                <h2>
+                                                    <span>Harvey Keitel</span>
+                                                    <strong>
+                                                        <i class="fa fa-fw fa-star"></i>
+                                                        Pulp Fiction
+                                                    </strong>
+                                                </h2>
+                                                <div class="mc-content">
+                                                    <div class="img-container">
+                                                        <img class="img-fluid"
+                                                             src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-harvey-keitel.jpg">
+                                                    </div>
+                                                    <div class="mc-description">
+                                                        Some of his most notable starring roles were in Martin
+                                                        Scorsese's
+                                                        Mean Streets and Taxi Driver, Ridley Scott's The Duellists and
+                                                        Thelma & Louise, Quentin Tarantino ...
+                                                    </div>
+                                                </div>
+                                                <a class="mc-btn-action">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                                <div class="mc-footer">
+                                                    <h4>
+                                                        Social
+                                                    </h4>
+                                                    <a class="fa fa-fw fa-facebook"></a>
+                                                    <a class="fa fa-fw fa-twitter"></a>
+                                                    <a class="fa fa-fw fa-linkedin"></a>
+                                                    <a class="fa fa-fw fa-google-plus"></a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <article class="list-card Cyan">
+                                                <h2>
+                                                    <span>Jack Nicholson</span>
+                                                    <strong>
+                                                        <i class="fa fa-fw fa-star"></i>
+                                                        The Shining
+                                                    </strong>
+                                                </h2>
+                                                <div class="mc-content">
+                                                    <div class="img-container">
+                                                        <img class="img-fluid"
+                                                             src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-jack-nicholson.jpg">
+                                                    </div>
+                                                    <div class="mc-description">
+                                                        Throughout his career, Nicholson has portrayed unique and
+                                                        challenging roles, many of which include dark portrayals of
+                                                        excitable, neurotic and psychopathic characters ...
+                                                    </div>
+                                                </div>
+                                                <a class="mc-btn-action">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                                <div class="mc-footer">
+                                                    <h4>
+                                                        Social
+                                                    </h4>
+                                                    <a class="fa fa-fw fa-facebook"></a>
+                                                    <a class="fa fa-fw fa-twitter"></a>
+                                                    <a class="fa fa-fw fa-linkedin"></a>
+                                                    <a class="fa fa-fw fa-google-plus"></a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <article class="list-card Teal">
+                                                <h2>
+                                                    <span>Jeff Bridges</span>
+                                                    <strong>
+                                                        <i class="fa fa-fw fa-star"></i>
+                                                        The Big Lebowski
+                                                    </strong>
+                                                </h2>
+                                                <div class="mc-content">
+                                                    <div class="img-container">
+                                                        <img class="img-fluid"
+                                                             src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-jeff-bridges.jpg">
+                                                    </div>
+                                                    <div class="mc-description">
+                                                        He comes from a well-known acting family and began his televised
+                                                        acting in 1958 as a child with his father, Lloyd Bridges, and
+                                                        brother, Beau, on television's Sea Hunt ...
+                                                    </div>
+                                                </div>
+                                                <a class="mc-btn-action">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                                <div class="mc-footer">
+                                                    <h4>
+                                                        Social
+                                                    </h4>
+                                                    <a class="fa fa-fw fa-facebook"></a>
+                                                    <a class="fa fa-fw fa-twitter"></a>
+                                                    <a class="fa fa-fw fa-linkedin"></a>
+                                                    <a class="fa fa-fw fa-google-plus"></a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <article class="list-card Green">
+                                                <h2>
+                                                    <span>Joaquin Phoenix</span>
+                                                    <strong>
+                                                        <i class="fa fa-fw fa-star"></i>
+                                                        Her
+                                                    </strong>
+                                                </h2>
+                                                <div class="mc-content">
+                                                    <div class="img-container">
+                                                        <img class="img-fluid"
+                                                             src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-joaquin-phoenix.jpg">
+                                                    </div>
+                                                    <div class="mc-description">
+                                                        is an American actor, producer, music video director, musician
+                                                        and
+                                                        activist. For his work as an artist, Phoenix has received a
+                                                        Grammy
+                                                        Award, a Golden Globe Award and three Academy ...
+                                                    </div>
+                                                </div>
+                                                <a class="mc-btn-action">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                                <div class="mc-footer">
+                                                    <h4>
+                                                        Social
+                                                    </h4>
+                                                    <a class="fa fa-fw fa-facebook"></a>
+                                                    <a class="fa fa-fw fa-twitter"></a>
+                                                    <a class="fa fa-fw fa-linkedin"></a>
+                                                    <a class="fa fa-fw fa-google-plus"></a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <article class="list-card Light-Green">
+                                                <h2>
+                                                    <span>Tom Hanks</span>
+                                                    <strong>
+                                                        <i class="fa fa-fw fa-star"></i>
+                                                        Forrest Gump
+                                                    </strong>
+                                                </h2>
+                                                <div class="mc-content">
+                                                    <div class="img-container">
+                                                        <img class="img-fluid"
+                                                             src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-tom-hanks.jpg">
+                                                    </div>
+                                                    <div class="mc-description">
+                                                        He is known for his roles in Big (1988), Philadelphia (1993),
+                                                        Forrest Gump (1994), Apollo 13 (1995), Saving Private Ryan,
+                                                        You've
+                                                        Got Mail (both 1998), The Green Mile (1999), Cast Away (2000)
+                                                        ...
+                                                    </div>
+                                                </div>
+                                                <a class="mc-btn-action">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                                <div class="mc-footer">
+                                                    <h4>
+                                                        Social
+                                                    </h4>
+                                                    <a class="fa fa-fw fa-facebook"></a>
+                                                    <a class="fa fa-fw fa-twitter"></a>
+                                                    <a class="fa fa-fw fa-linkedin"></a>
+                                                    <a class="fa fa-fw fa-google-plus"></a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <article class="list-card Lime">
+                                                <h2>
+                                                    <span>Philip Seymour Hoffman</span>
+                                                    <strong>
+                                                        <i class="fa fa-fw fa-star"></i>
+                                                        25th Hour
+                                                    </strong>
+                                                </h2>
+                                                <div class="mc-content">
+                                                    <div class="img-container">
+                                                        <img class="img-fluid"
+                                                             src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-philip-seymour-hoffman.jpg">
+                                                    </div>
+                                                    <div class="mc-description">
+                                                        Best known for his distinctive supporting and character roles –
+                                                        typically lowlifes, bullies, and misfits – Hoffman was a regular
+                                                        presence in films from the early 1990s until his death at age
+                                                        46.
+                                                    </div>
+                                                </div>
+                                                <a class="mc-btn-action">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                                <div class="mc-footer">
+                                                    <h4>
+                                                        Social
+                                                    </h4>
+                                                    <a class="fa fa-fw fa-facebook"></a>
+                                                    <a class="fa fa-fw fa-twitter"></a>
+                                                    <a class="fa fa-fw fa-linkedin"></a>
+                                                    <a class="fa fa-fw fa-google-plus"></a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <article class="list-card Yellow">
+                                                <h2>
+                                                    <span>Paul Newman</span>
+                                                    <strong>
+                                                        <i class="fa fa-fw fa-star"></i>
+                                                        The Color of Money
+                                                    </strong>
+                                                </h2>
+                                                <div class="mc-content">
+                                                    <div class="img-container">
+                                                        <img class="img-fluid"
+                                                             src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-paul-newman.jpg">
+                                                    </div>
+                                                    <div class="mc-description">
+                                                        He won numerous awards, including an Academy Award for his
+                                                        performance in the 1986 film The Color of Money,[3] a BAFTA
+                                                        Award, a
+                                                        Screen Actors Guild Award, a Cannes Film Festival Award, an Emmy
+                                                        Award ...
+                                                    </div>
+                                                </div>
+                                                <a class="mc-btn-action">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                                <div class="mc-footer">
+                                                    <h4>
+                                                        Social
+                                                    </h4>
+                                                    <a class="fa fa-fw fa-facebook"></a>
+                                                    <a class="fa fa-fw fa-twitter"></a>
+                                                    <a class="fa fa-fw fa-linkedin"></a>
+                                                    <a class="fa fa-fw fa-google-plus"></a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <article class="list-card Amber">
+                                                <h2>
+                                                    <span>Marlon Brando</span>
+                                                    <strong>
+                                                        <i class="fa fa-fw fa-star"></i>
+                                                        The Godfather
+                                                    </strong>
+                                                </h2>
+                                                <div class="mc-content">
+                                                    <div class="img-container">
+                                                        <img class="img-fluid"
+                                                             src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-marlon-brando.jpg">
+                                                    </div>
+                                                    <div class="mc-description">
+                                                        He is hailed for bringing a gripping realism to film acting, and
+                                                        is
+                                                        frequently cited as the greatest and most influential actor of
+                                                        all
+                                                        time.[2] A cultural icon, Brando is most famous for his Academy
+                                                        ...
+                                                    </div>
+                                                </div>
+                                                <a class="mc-btn-action">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                                <div class="mc-footer">
+                                                    <h4>
+                                                        Social
+                                                    </h4>
+                                                    <a class="fa fa-fw fa-facebook"></a>
+                                                    <a class="fa fa-fw fa-twitter"></a>
+                                                    <a class="fa fa-fw fa-linkedin"></a>
+                                                    <a class="fa fa-fw fa-google-plus"></a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <article class="list-card Orange">
+                                                <h2>
+                                                    <span>Kevin Spacey</span>
+                                                    <strong>
+                                                        <i class="fa fa-fw fa-star"></i>
+                                                        American Beauty
+                                                    </strong>
+                                                </h2>
+                                                <div class="mc-content">
+                                                    <div class="img-container">
+                                                        <img class="img-fluid"
+                                                             src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-kevin-spacey.jpg">
+                                                    </div>
+                                                    <div class="mc-description">
+                                                        He began his career as a stage actor during the 1980s, before
+                                                        being
+                                                        cast in supporting roles in film and television. He gained
+                                                        critical
+                                                        acclaim in the early 1990s, culminating in his first Academy
+                                                        Award
+                                                        ...
+                                                    </div>
+                                                </div>
+                                                <a class="mc-btn-action">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                                <div class="mc-footer">
+                                                    <h4>
+                                                        Social
+                                                    </h4>
+                                                    <a class="fa fa-fw fa-facebook"></a>
+                                                    <a class="fa fa-fw fa-twitter"></a>
+                                                    <a class="fa fa-fw fa-linkedin"></a>
+                                                    <a class="fa fa-fw fa-google-plus"></a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <article class="list-card Deep-Orange">
+                                                <h2>
+                                                    <span>Robert De Niro</span>
+                                                    <strong>
+                                                        <i class="fa fa-fw fa-star"></i>
+                                                        Taxy Driver
+                                                    </strong>
+                                                </h2>
+                                                <div class="mc-content">
+                                                    <div class="img-container">
+                                                        <img class="img-fluid"
+                                                             src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-robert-de-niro.jpg">
+                                                    </div>
+                                                    <div class="mc-description">
+                                                        His first major film roles were in the sports drama Bang the
+                                                        Drum
+                                                        Slowly (1973) and Martin Scorsese's crime film Mean Streets
+                                                        (1973).
+                                                        In 1974, after being turned down for the role of Sonny Corleone
+                                                        in
+                                                        the crime ...
+                                                    </div>
+                                                </div>
+                                                <a class="mc-btn-action">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                                <div class="mc-footer">
+                                                    <h4>
+                                                        Social
+                                                    </h4>
+                                                    <a class="fa fa-fw fa-facebook"></a>
+                                                    <a class="fa fa-fw fa-twitter"></a>
+                                                    <a class="fa fa-fw fa-linkedin"></a>
+                                                    <a class="fa fa-fw fa-google-plus"></a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <article class="list-card Brown">
+                                                <h2>
+                                                    <span>Steve Mcqueen</span>
+                                                    <strong>
+                                                        <i class="fa fa-fw fa-star"></i>
+                                                        Papillon
+                                                    </strong>
+                                                </h2>
+                                                <div class="mc-content">
+                                                    <div class="img-container">
+                                                        <img class="img-fluid"
+                                                             src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-steve-mcqueen.jpg">
+                                                    </div>
+                                                    <div class="mc-description">
+                                                        Called "The King of Cool", his "anti-hero" persona, developed at
+                                                        the
+                                                        height of the Vietnam War-era counterculture, made him a top
+                                                        box-office draw of the 1960s and 1970s. McQueen received an
+                                                        Academy
+                                                        Award nomination for his ...
+                                                    </div>
+                                                </div>
+                                                <a class="mc-btn-action">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                                <div class="mc-footer">
+                                                    <h4>
+                                                        Social
+                                                    </h4>
+                                                    <a class="fa fa-fw fa-facebook"></a>
+                                                    <a class="fa fa-fw fa-twitter"></a>
+                                                    <a class="fa fa-fw fa-linkedin"></a>
+                                                    <a class="fa fa-fw fa-google-plus"></a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <article class="list-card Grey">
+                                                <h2>
+                                                    <span>Rugter Hauer</span>
+                                                    <strong>
+                                                        <i class="fa fa-fw fa-star"></i>
+                                                        Blade Runner
+                                                    </strong>
+                                                </h2>
+                                                <div class="mc-content">
+                                                    <div class="img-container">
+                                                        <img class="img-fluid"
+                                                             src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-rugter-hauer.jpg">
+                                                    </div>
+                                                    <div class="mc-description">
+                                                        Blonde, blue-eyed, tall and handsome Dutch actor Rutger Hauer
+                                                        has an
+                                                        international reputation for playing everything from romantic
+                                                        leads
+                                                        to action heroes to sinister villains. Hauer was born in
+                                                        Breukelen,
+                                                        a town in the province ...
+                                                    </div>
+                                                </div>
+                                                <a class="mc-btn-action">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                                <div class="mc-footer">
+                                                    <h4>
+                                                        Social
+                                                    </h4>
+                                                    <a class="fa fa-fw fa-facebook"></a>
+                                                    <a class="fa fa-fw fa-twitter"></a>
+                                                    <a class="fa fa-fw fa-linkedin"></a>
+                                                    <a class="fa fa-fw fa-google-plus"></a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <article class="list-card Blue-Grey">
+                                                <h2>
+                                                    <span>Morgan Freeman</span>
+                                                    <strong>
+                                                        <i class="fa fa-fw fa-star"></i>
+                                                        Glory
+                                                    </strong>
+                                                </h2>
+                                                <div class="mc-content">
+                                                    <div class="img-container">
+                                                        <img class="img-fluid"
+                                                             src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-morgan-freeman.jpg">
+                                                    </div>
+                                                    <div class="mc-description">
+                                                        Freeman has received Academy Award nominations for his
+                                                        performances
+                                                        in Street Smart, Driving Miss Daisy, The Shawshank Redemption
+                                                        and
+                                                        Invictus ...
+                                                    </div>
+                                                </div>
+                                                <a class="mc-btn-action">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                                <div class="mc-footer">
+                                                    <h4>
+                                                        Social
+                                                    </h4>
+                                                    <a class="fa fa-fw fa-facebook"></a>
+                                                    <a class="fa fa-fw fa-twitter"></a>
+                                                    <a class="fa fa-fw fa-linkedin"></a>
+                                                    <a class="fa fa-fw fa-google-plus"></a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </section>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="float-left">
-                    <ul>
-                        <li>
-                            <a href="https://www.creative-tim.com">
-                                Creative Tim
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://creative-tim.com/presentation">
-                                About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://blog.creative-tim.com">
-                                Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.creative-tim.com/license">
-                                Licenses
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="copyright float-right">
-                    &copy;
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script>
-                    , made with <i class="material-icons">favorite</i> by
-                    <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-                </div>
-            </div>
-        </footer>
     </div>
 </div>
 <!--   Core JS Files   -->
@@ -630,3 +868,4 @@
 </body>
 
 </html>
+
