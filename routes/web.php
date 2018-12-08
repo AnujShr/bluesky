@@ -86,8 +86,9 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'Ad
 
 Route::group(['middleware' => ['realtors'], 'prefix' => 'realtors'], function () {
     Route::get('/', 'RealtorController@index')->name('realtors');
+    Route::get('/add-property', 'PropertyController@index');
+
 });
-Route::view('/material','layouts.material.master');
 
 Auth::routes();
 

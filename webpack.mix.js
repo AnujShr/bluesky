@@ -31,5 +31,6 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/admin/app.scss', 'public/css/admin')
     .sass('resources/sass/login.scss', 'public/css/')
     .sass('resources/sass/realtors/realtors.scss', 'public/css')
+    .less('resources/sass/material/material-cards.less', 'public/css/material')
     .sass('resources/sass/material/app.scss', 'public/css/material');
 // .copy('node_modules/gentelella/build/', 'resources/gentellea/',false);

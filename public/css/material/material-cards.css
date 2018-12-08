@@ -1,26 +1,7 @@
-.enq-date {
-  min-width: 15%;
-}
-
-.enq-name {
-  min-width: 15%;
-}
-
-.enq-enquiry {
-  min-width: 60%
-}
-
-.enquiry {
-  td:last-child {
-    min-width: 10%;
-  }
-}
-
-.fa-spin-fast {
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,200,500,600,700);.fa-spin-fast {
   -webkit-animation: fa-spin-fast 0.2s infinite linear;
   animation: fa-spin-fast 0.2s infinite linear;
 }
-
 @-webkit-keyframes fa-spin-fast {
   0% {
     -webkit-transform: rotate(0deg);
@@ -31,7 +12,6 @@
     transform: rotate(359deg);
   }
 }
-
 @keyframes fa-spin-fast {
   0% {
     -webkit-transform: rotate(0deg);
@@ -42,14 +22,12 @@
     transform: rotate(359deg);
   }
 }
-
 .list-card {
   position: relative;
   height: 0;
   padding-bottom: calc(100% - 16px);
   margin-bottom: 6.6em;
 }
-
 .list-card h2 {
   position: absolute;
   top: calc(100% - 16px);
@@ -57,27 +35,21 @@
   width: 100%;
   padding: 10px 16px;
   color: #fff;
-  font-size: 1.1em;
+  font-size: 1.4em;
   line-height: 1.6em;
   margin: 0;
   z-index: 10;
   -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 .list-card h2 span {
   display: block;
 }
-
 .list-card h2 strong {
   font-weight: 400;
   display: block;
-  font-size: .8em;
+  font-size: 0.8em;
 }
-
 .list-card h2:before,
 .list-card h2:after {
   content: ' ';
@@ -87,35 +59,28 @@
   width: 0;
   border: 8px solid;
   -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 .list-card h2:after {
   top: auto;
   bottom: 0;
 }
-
-.list-card.mc-active {
-  padding-bottom: 0;
-  height: auto;
+@media screen and (max-width: 767px) {
+  .list-card.mc-active {
+    padding-bottom: 0;
+    height: auto;
+  }
 }
-
 .list-card.mc-active h2 {
   top: 0;
   padding: 10px 16px 10px 90px;
 }
-
 .list-card.mc-active h2:before {
   top: 0;
 }
-
 .list-card.mc-active h2:after {
   bottom: -16px;
 }
-
 .list-card .mc-content {
   position: absolute;
   right: 0;
@@ -123,18 +88,12 @@
   bottom: 16px;
   left: 16px;
   -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 .list-card .mc-btn-action {
   position: absolute;
   right: 16px;
   top: 15px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
   border-radius: 50%;
   border: 5px solid;
   width: 54px;
@@ -145,16 +104,11 @@
   cursor: pointer;
   z-index: 20;
   -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 .list-card.mc-active .mc-btn-action {
   top: 62px;
 }
-
 .list-card .mc-description {
   position: absolute;
   top: 100%;
@@ -165,22 +119,14 @@
   opacity: 0;
   filter: alpha(opacity=0);
   -webkit-transition: all 1.2s;
-  -moz-transition: all 1.2s;
-  -ms-transition: all 1.2s;
-  -o-transition: all 1.2s;
   transition: all 1.2s;
 }
-
 .list-card .mc-footer {
   height: 0;
   overflow: hidden;
   -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 .list-card .mc-footer h4 {
   position: absolute;
   top: 200px;
@@ -190,12 +136,8 @@
   font-size: 16px;
   font-weight: 700;
   -webkit-transition: all 1.4s;
-  -moz-transition: all 1.4s;
-  -ms-transition: all 1.4s;
-  -o-transition: all 1.4s;
   transition: all 1.4s;
 }
-
 .list-card .mc-footer a {
   display: block;
   float: left;
@@ -210,47 +152,26 @@
   text-decoration: none;
   top: 200px;
 }
-
 .list-card .mc-footer a:nth-child(1) {
   -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-
 .list-card .mc-footer a:nth-child(2) {
   -webkit-transition: all 0.6s;
-  -moz-transition: all 0.6s;
-  -ms-transition: all 0.6s;
-  -o-transition: all 0.6s;
   transition: all 0.6s;
 }
-
 .list-card .mc-footer a:nth-child(3) {
   -webkit-transition: all 0.7s;
-  -moz-transition: all 0.7s;
-  -ms-transition: all 0.7s;
-  -o-transition: all 0.7s;
   transition: all 0.7s;
 }
-
 .list-card .mc-footer a:nth-child(4) {
   -webkit-transition: all 0.8s;
-  -moz-transition: all 0.8s;
-  -ms-transition: all 0.8s;
-  -o-transition: all 0.8s;
   transition: all 0.8s;
 }
-
 .list-card .mc-footer a:nth-child(5) {
   -webkit-transition: all 0.9s;
-  -moz-transition: all 0.9s;
-  -ms-transition: all 0.9s;
-  -o-transition: all 0.9s;
   transition: all 0.9s;
 }
-
 .list-card .img-container {
   overflow: hidden;
   position: absolute;
@@ -260,15 +181,9 @@
   height: 100%;
   z-index: 3;
   -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 .list-card.mc-active .img-container {
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
   border-radius: 50%;
   left: 0;
   top: 12px;
@@ -276,26 +191,31 @@
   height: 60px;
   z-index: 20;
 }
-
 .list-card.mc-active .mc-content {
   padding-top: 5.6em;
-  position: relative;
-  margin-right: 16px;
 }
-
+@media screen and (max-width: 767px) {
+  .list-card.mc-active .mc-content {
+    position: relative;
+    margin-right: 16px;
+  }
+}
 .list-card.mc-active .mc-description {
   top: 50px;
   padding-top: 5.6em;
   opacity: 1;
   filter: alpha(opacity=100);
-  position: relative;
-  top: auto;
-  right: auto;
-  left: auto;
-  padding: 50px 30px 70px 30px;
-  bottom: 0;
 }
-
+@media screen and (max-width: 767px) {
+  .list-card.mc-active .mc-description {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    padding: 50px 30px 70px 30px;
+    bottom: 0;
+  }
+}
 .list-card.mc-active .mc-footer {
   overflow: visible;
   position: absolute;
@@ -306,1211 +226,981 @@
   padding-top: 15px;
   padding-left: 25px;
 }
-
 .list-card.mc-active .mc-footer a {
   top: 0;
 }
-
 .list-card.mc-active .mc-footer h4 {
   top: -32px;
 }
-
 .list-card.Red h2 {
   background-color: #F44336;
 }
-
 .list-card.Red h2:after {
   border-top-color: #F44336;
   border-right-color: #F44336;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Red h2:before {
   border-top-color: transparent;
   border-right-color: #B71C1C;
   border-bottom-color: #B71C1C;
   border-left-color: transparent;
 }
-
 .list-card.Red.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #F44336;
   border-bottom-color: #F44336;
   border-left-color: transparent;
 }
-
 .list-card.Red.mc-active h2:after {
   border-top-color: #B71C1C;
   border-right-color: #B71C1C;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Red .mc-btn-action {
   background-color: #F44336;
 }
-
 .list-card.Red .mc-btn-action:hover {
   background-color: #B71C1C;
 }
-
 .list-card.Red .mc-footer h4 {
   color: #B71C1C;
 }
-
 .list-card.Red .mc-footer a {
   background-color: #B71C1C;
 }
-
 .list-card.Red.mc-active .mc-content {
   background-color: #FFEBEE;
 }
-
 .list-card.Red.mc-active .mc-footer {
   background-color: #FFCDD2;
 }
-
 .list-card.Red.mc-active .mc-btn-action {
   border-color: #FFEBEE;
 }
-
 .list-card.Blue-Grey h2 {
   background-color: #607D8B;
 }
-
 .list-card.Blue-Grey h2:after {
   border-top-color: #607D8B;
   border-right-color: #607D8B;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Blue-Grey h2:before {
   border-top-color: transparent;
   border-right-color: #263238;
   border-bottom-color: #263238;
   border-left-color: transparent;
 }
-
 .list-card.Blue-Grey.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #607D8B;
   border-bottom-color: #607D8B;
   border-left-color: transparent;
 }
-
 .list-card.Blue-Grey.mc-active h2:after {
   border-top-color: #263238;
   border-right-color: #263238;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Blue-Grey .mc-btn-action {
   background-color: #607D8B;
 }
-
 .list-card.Blue-Grey .mc-btn-action:hover {
   background-color: #263238;
 }
-
 .list-card.Blue-Grey .mc-footer h4 {
   color: #263238;
 }
-
 .list-card.Blue-Grey .mc-footer a {
   background-color: #263238;
 }
-
 .list-card.Blue-Grey.mc-active .mc-content {
   background-color: #ECEFF1;
 }
-
 .list-card.Blue-Grey.mc-active .mc-footer {
   background-color: #CFD8DC;
 }
-
 .list-card.Blue-Grey.mc-active .mc-btn-action {
   border-color: #ECEFF1;
 }
-
 .list-card.Pink h2 {
   background-color: #E91E63;
 }
-
 .list-card.Pink h2:after {
   border-top-color: #E91E63;
   border-right-color: #E91E63;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Pink h2:before {
   border-top-color: transparent;
   border-right-color: #880E4F;
   border-bottom-color: #880E4F;
   border-left-color: transparent;
 }
-
 .list-card.Pink.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #E91E63;
   border-bottom-color: #E91E63;
   border-left-color: transparent;
 }
-
 .list-card.Pink.mc-active h2:after {
   border-top-color: #880E4F;
   border-right-color: #880E4F;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Pink .mc-btn-action {
   background-color: #E91E63;
 }
-
 .list-card.Pink .mc-btn-action:hover {
   background-color: #880E4F;
 }
-
 .list-card.Pink .mc-footer h4 {
   color: #880E4F;
 }
-
 .list-card.Pink .mc-footer a {
   background-color: #880E4F;
 }
-
 .list-card.Pink.mc-active .mc-content {
   background-color: #FCE4EC;
 }
-
 .list-card.Pink.mc-active .mc-footer {
   background-color: #F8BBD0;
 }
-
 .list-card.Pink.mc-active .mc-btn-action {
   border-color: #FCE4EC;
 }
-
 .list-card.Purple h2 {
   background-color: #9C27B0;
 }
-
 .list-card.Purple h2:after {
   border-top-color: #9C27B0;
   border-right-color: #9C27B0;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Purple h2:before {
   border-top-color: transparent;
   border-right-color: #4A148C;
   border-bottom-color: #4A148C;
   border-left-color: transparent;
 }
-
 .list-card.Purple.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #9C27B0;
   border-bottom-color: #9C27B0;
   border-left-color: transparent;
 }
-
 .list-card.Purple.mc-active h2:after {
   border-top-color: #4A148C;
   border-right-color: #4A148C;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Purple .mc-btn-action {
   background-color: #9C27B0;
 }
-
 .list-card.Purple .mc-btn-action:hover {
   background-color: #4A148C;
 }
-
 .list-card.Purple .mc-footer h4 {
   color: #4A148C;
 }
-
 .list-card.Purple .mc-footer a {
   background-color: #4A148C;
 }
-
 .list-card.Purple.mc-active .mc-content {
   background-color: #F3E5F5;
 }
-
 .list-card.Purple.mc-active .mc-footer {
   background-color: #E1BEE7;
 }
-
 .list-card.Purple.mc-active .mc-btn-action {
   border-color: #F3E5F5;
 }
-
 .list-card.Deep-Purple h2 {
   background-color: #673AB7;
 }
-
 .list-card.Deep-Purple h2:after {
   border-top-color: #673AB7;
   border-right-color: #673AB7;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Deep-Purple h2:before {
   border-top-color: transparent;
   border-right-color: #311B92;
   border-bottom-color: #311B92;
   border-left-color: transparent;
 }
-
 .list-card.Deep-Purple.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #673AB7;
   border-bottom-color: #673AB7;
   border-left-color: transparent;
 }
-
 .list-card.Deep-Purple.mc-active h2:after {
   border-top-color: #311B92;
   border-right-color: #311B92;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Deep-Purple .mc-btn-action {
   background-color: #673AB7;
 }
-
 .list-card.Deep-Purple .mc-btn-action:hover {
   background-color: #311B92;
 }
-
 .list-card.Deep-Purple .mc-footer h4 {
   color: #311B92;
 }
-
 .list-card.Deep-Purple .mc-footer a {
   background-color: #311B92;
 }
-
 .list-card.Deep-Purple.mc-active .mc-content {
   background-color: #EDE7F6;
 }
-
 .list-card.Deep-Purple.mc-active .mc-footer {
   background-color: #D1C4E9;
 }
-
 .list-card.Deep-Purple.mc-active .mc-btn-action {
   border-color: #EDE7F6;
 }
-
 .list-card.Indigo h2 {
   background-color: #3F51B5;
 }
-
 .list-card.Indigo h2:after {
   border-top-color: #3F51B5;
   border-right-color: #3F51B5;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Indigo h2:before {
   border-top-color: transparent;
   border-right-color: #1A237E;
   border-bottom-color: #1A237E;
   border-left-color: transparent;
 }
-
 .list-card.Indigo.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #3F51B5;
   border-bottom-color: #3F51B5;
   border-left-color: transparent;
 }
-
 .list-card.Indigo.mc-active h2:after {
   border-top-color: #1A237E;
   border-right-color: #1A237E;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Indigo .mc-btn-action {
   background-color: #3F51B5;
 }
-
 .list-card.Indigo .mc-btn-action:hover {
   background-color: #1A237E;
 }
-
 .list-card.Indigo .mc-footer h4 {
   color: #1A237E;
 }
-
 .list-card.Indigo .mc-footer a {
   background-color: #1A237E;
 }
-
 .list-card.Indigo.mc-active .mc-content {
   background-color: #E8EAF6;
 }
-
 .list-card.Indigo.mc-active .mc-footer {
   background-color: #C5CAE9;
 }
-
 .list-card.Indigo.mc-active .mc-btn-action {
   border-color: #E8EAF6;
 }
-
 .list-card.Blue h2 {
   background-color: #2196F3;
 }
-
 .list-card.Blue h2:after {
   border-top-color: #2196F3;
   border-right-color: #2196F3;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Blue h2:before {
   border-top-color: transparent;
   border-right-color: #0D47A1;
   border-bottom-color: #0D47A1;
   border-left-color: transparent;
 }
-
 .list-card.Blue.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #2196F3;
   border-bottom-color: #2196F3;
   border-left-color: transparent;
 }
-
 .list-card.Blue.mc-active h2:after {
   border-top-color: #0D47A1;
   border-right-color: #0D47A1;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Blue .mc-btn-action {
   background-color: #2196F3;
 }
-
 .list-card.Blue .mc-btn-action:hover {
   background-color: #0D47A1;
 }
-
 .list-card.Blue .mc-footer h4 {
   color: #0D47A1;
 }
-
 .list-card.Blue .mc-footer a {
   background-color: #0D47A1;
 }
-
 .list-card.Blue.mc-active .mc-content {
   background-color: #E3F2FD;
 }
-
 .list-card.Blue.mc-active .mc-footer {
   background-color: #BBDEFB;
 }
-
 .list-card.Blue.mc-active .mc-btn-action {
   border-color: #E3F2FD;
 }
-
 .list-card.Light-Blue h2 {
   background-color: #03A9F4;
 }
-
 .list-card.Light-Blue h2:after {
   border-top-color: #03A9F4;
   border-right-color: #03A9F4;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Light-Blue h2:before {
   border-top-color: transparent;
   border-right-color: #01579B;
   border-bottom-color: #01579B;
   border-left-color: transparent;
 }
-
 .list-card.Light-Blue.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #03A9F4;
   border-bottom-color: #03A9F4;
   border-left-color: transparent;
 }
-
 .list-card.Light-Blue.mc-active h2:after {
   border-top-color: #01579B;
   border-right-color: #01579B;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Light-Blue .mc-btn-action {
   background-color: #03A9F4;
 }
-
 .list-card.Light-Blue .mc-btn-action:hover {
   background-color: #01579B;
 }
-
 .list-card.Light-Blue .mc-footer h4 {
   color: #01579B;
 }
-
 .list-card.Light-Blue .mc-footer a {
   background-color: #01579B;
 }
-
 .list-card.Light-Blue.mc-active .mc-content {
   background-color: #E1F5FE;
 }
-
 .list-card.Light-Blue.mc-active .mc-footer {
   background-color: #B3E5FC;
 }
-
 .list-card.Light-Blue.mc-active .mc-btn-action {
   border-color: #E1F5FE;
 }
-
 .list-card.Cyan h2 {
   background-color: #00BCD4;
 }
-
 .list-card.Cyan h2:after {
   border-top-color: #00BCD4;
   border-right-color: #00BCD4;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Cyan h2:before {
   border-top-color: transparent;
   border-right-color: #006064;
   border-bottom-color: #006064;
   border-left-color: transparent;
 }
-
 .list-card.Cyan.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #00BCD4;
   border-bottom-color: #00BCD4;
   border-left-color: transparent;
 }
-
 .list-card.Cyan.mc-active h2:after {
   border-top-color: #006064;
   border-right-color: #006064;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Cyan .mc-btn-action {
   background-color: #00BCD4;
 }
-
 .list-card.Cyan .mc-btn-action:hover {
   background-color: #006064;
 }
-
 .list-card.Cyan .mc-footer h4 {
   color: #006064;
 }
-
 .list-card.Cyan .mc-footer a {
   background-color: #006064;
 }
-
 .list-card.Cyan.mc-active .mc-content {
   background-color: #E0F7FA;
 }
-
 .list-card.Cyan.mc-active .mc-footer {
   background-color: #B2EBF2;
 }
-
 .list-card.Cyan.mc-active .mc-btn-action {
   border-color: #E0F7FA;
 }
-
 .list-card.Teal h2 {
   background-color: #009688;
 }
-
 .list-card.Teal h2:after {
   border-top-color: #009688;
   border-right-color: #009688;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Teal h2:before {
   border-top-color: transparent;
   border-right-color: #004D40;
   border-bottom-color: #004D40;
   border-left-color: transparent;
 }
-
 .list-card.Teal.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #009688;
   border-bottom-color: #009688;
   border-left-color: transparent;
 }
-
 .list-card.Teal.mc-active h2:after {
   border-top-color: #004D40;
   border-right-color: #004D40;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Teal .mc-btn-action {
   background-color: #009688;
 }
-
 .list-card.Teal .mc-btn-action:hover {
   background-color: #004D40;
 }
-
 .list-card.Teal .mc-footer h4 {
   color: #004D40;
 }
-
 .list-card.Teal .mc-footer a {
   background-color: #004D40;
 }
-
 .list-card.Teal.mc-active .mc-content {
   background-color: #E0F2F1;
 }
-
 .list-card.Teal.mc-active .mc-footer {
   background-color: #B2DFDB;
 }
-
 .list-card.Teal.mc-active .mc-btn-action {
   border-color: #E0F2F1;
 }
-
 .list-card.Green h2 {
   background-color: #4CAF50;
 }
-
 .list-card.Green h2:after {
   border-top-color: #4CAF50;
   border-right-color: #4CAF50;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Green h2:before {
   border-top-color: transparent;
   border-right-color: #1B5E20;
   border-bottom-color: #1B5E20;
   border-left-color: transparent;
 }
-
 .list-card.Green.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #4CAF50;
   border-bottom-color: #4CAF50;
   border-left-color: transparent;
 }
-
 .list-card.Green.mc-active h2:after {
   border-top-color: #1B5E20;
   border-right-color: #1B5E20;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Green .mc-btn-action {
   background-color: #4CAF50;
 }
-
 .list-card.Green .mc-btn-action:hover {
   background-color: #1B5E20;
 }
-
 .list-card.Green .mc-footer h4 {
   color: #1B5E20;
 }
-
 .list-card.Green .mc-footer a {
   background-color: #1B5E20;
 }
-
 .list-card.Green.mc-active .mc-content {
   background-color: #E8F5E9;
 }
-
 .list-card.Green.mc-active .mc-footer {
   background-color: #C8E6C9;
 }
-
 .list-card.Green.mc-active .mc-btn-action {
   border-color: #E8F5E9;
 }
-
 .list-card.Light-Green h2 {
   background-color: #8BC34A;
 }
-
 .list-card.Light-Green h2:after {
   border-top-color: #8BC34A;
   border-right-color: #8BC34A;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Light-Green h2:before {
   border-top-color: transparent;
   border-right-color: #33691E;
   border-bottom-color: #33691E;
   border-left-color: transparent;
 }
-
 .list-card.Light-Green.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #8BC34A;
   border-bottom-color: #8BC34A;
   border-left-color: transparent;
 }
-
 .list-card.Light-Green.mc-active h2:after {
   border-top-color: #33691E;
   border-right-color: #33691E;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Light-Green .mc-btn-action {
   background-color: #8BC34A;
 }
-
 .list-card.Light-Green .mc-btn-action:hover {
   background-color: #33691E;
 }
-
 .list-card.Light-Green .mc-footer h4 {
   color: #33691E;
 }
-
 .list-card.Light-Green .mc-footer a {
   background-color: #33691E;
 }
-
 .list-card.Light-Green.mc-active .mc-content {
   background-color: #F1F8E9;
 }
-
 .list-card.Light-Green.mc-active .mc-footer {
   background-color: #DCEDC8;
 }
-
 .list-card.Light-Green.mc-active .mc-btn-action {
   border-color: #F1F8E9;
 }
-
 .list-card.Lime h2 {
   background-color: #CDDC39;
 }
-
 .list-card.Lime h2:after {
   border-top-color: #CDDC39;
   border-right-color: #CDDC39;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Lime h2:before {
   border-top-color: transparent;
   border-right-color: #827717;
   border-bottom-color: #827717;
   border-left-color: transparent;
 }
-
 .list-card.Lime.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #CDDC39;
   border-bottom-color: #CDDC39;
   border-left-color: transparent;
 }
-
 .list-card.Lime.mc-active h2:after {
   border-top-color: #827717;
   border-right-color: #827717;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Lime .mc-btn-action {
   background-color: #CDDC39;
 }
-
 .list-card.Lime .mc-btn-action:hover {
   background-color: #827717;
 }
-
 .list-card.Lime .mc-footer h4 {
   color: #827717;
 }
-
 .list-card.Lime .mc-footer a {
   background-color: #827717;
 }
-
 .list-card.Lime.mc-active .mc-content {
   background-color: #F9FBE7;
 }
-
 .list-card.Lime.mc-active .mc-footer {
   background-color: #F0F4C3;
 }
-
 .list-card.Lime.mc-active .mc-btn-action {
   border-color: #F9FBE7;
 }
-
 .list-card.Yellow h2 {
   background-color: #FFEB3B;
 }
-
 .list-card.Yellow h2:after {
   border-top-color: #FFEB3B;
   border-right-color: #FFEB3B;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Yellow h2:before {
   border-top-color: transparent;
   border-right-color: #F57F17;
   border-bottom-color: #F57F17;
   border-left-color: transparent;
 }
-
 .list-card.Yellow.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #FFEB3B;
   border-bottom-color: #FFEB3B;
   border-left-color: transparent;
 }
-
 .list-card.Yellow.mc-active h2:after {
   border-top-color: #F57F17;
   border-right-color: #F57F17;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Yellow .mc-btn-action {
   background-color: #FFEB3B;
 }
-
 .list-card.Yellow .mc-btn-action:hover {
   background-color: #F57F17;
 }
-
 .list-card.Yellow .mc-footer h4 {
   color: #F57F17;
 }
-
 .list-card.Yellow .mc-footer a {
   background-color: #F57F17;
 }
-
 .list-card.Yellow.mc-active .mc-content {
   background-color: #FFFDE7;
 }
-
 .list-card.Yellow.mc-active .mc-footer {
   background-color: #FFF9C4;
 }
-
 .list-card.Yellow.mc-active .mc-btn-action {
   border-color: #FFFDE7;
 }
-
 .list-card.Amber h2 {
   background-color: #FFC107;
 }
-
 .list-card.Amber h2:after {
   border-top-color: #FFC107;
   border-right-color: #FFC107;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Amber h2:before {
   border-top-color: transparent;
   border-right-color: #FF6F00;
   border-bottom-color: #FF6F00;
   border-left-color: transparent;
 }
-
 .list-card.Amber.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #FFC107;
   border-bottom-color: #FFC107;
   border-left-color: transparent;
 }
-
 .list-card.Amber.mc-active h2:after {
   border-top-color: #FF6F00;
   border-right-color: #FF6F00;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Amber .mc-btn-action {
   background-color: #FFC107;
 }
-
 .list-card.Amber .mc-btn-action:hover {
   background-color: #FF6F00;
 }
-
 .list-card.Amber .mc-footer h4 {
   color: #FF6F00;
 }
-
 .list-card.Amber .mc-footer a {
   background-color: #FF6F00;
 }
-
 .list-card.Amber.mc-active .mc-content {
   background-color: #FFF8E1;
 }
-
 .list-card.Amber.mc-active .mc-footer {
   background-color: #FFECB3;
 }
-
 .list-card.Amber.mc-active .mc-btn-action {
   border-color: #FFF8E1;
 }
-
 .list-card.Orange h2 {
   background-color: #FF9800;
 }
-
 .list-card.Orange h2:after {
   border-top-color: #FF9800;
   border-right-color: #FF9800;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Orange h2:before {
   border-top-color: transparent;
   border-right-color: #E65100;
   border-bottom-color: #E65100;
   border-left-color: transparent;
 }
-
 .list-card.Orange.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #FF9800;
   border-bottom-color: #FF9800;
   border-left-color: transparent;
 }
-
 .list-card.Orange.mc-active h2:after {
   border-top-color: #E65100;
   border-right-color: #E65100;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Orange .mc-btn-action {
   background-color: #FF9800;
 }
-
 .list-card.Orange .mc-btn-action:hover {
   background-color: #E65100;
 }
-
 .list-card.Orange .mc-footer h4 {
   color: #E65100;
 }
-
 .list-card.Orange .mc-footer a {
   background-color: #E65100;
 }
-
 .list-card.Orange.mc-active .mc-content {
   background-color: #FFF3E0;
 }
-
 .list-card.Orange.mc-active .mc-footer {
   background-color: #FFE0B2;
 }
-
 .list-card.Orange.mc-active .mc-btn-action {
   border-color: #FFF3E0;
 }
-
 .list-card.Deep-Orange h2 {
   background-color: #FF5722;
 }
-
 .list-card.Deep-Orange h2:after {
   border-top-color: #FF5722;
   border-right-color: #FF5722;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Deep-Orange h2:before {
   border-top-color: transparent;
   border-right-color: #BF360C;
   border-bottom-color: #BF360C;
   border-left-color: transparent;
 }
-
 .list-card.Deep-Orange.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #FF5722;
   border-bottom-color: #FF5722;
   border-left-color: transparent;
 }
-
 .list-card.Deep-Orange.mc-active h2:after {
   border-top-color: #BF360C;
   border-right-color: #BF360C;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Deep-Orange .mc-btn-action {
   background-color: #FF5722;
 }
-
 .list-card.Deep-Orange .mc-btn-action:hover {
   background-color: #BF360C;
 }
-
 .list-card.Deep-Orange .mc-footer h4 {
   color: #BF360C;
 }
-
 .list-card.Deep-Orange .mc-footer a {
   background-color: #BF360C;
 }
-
 .list-card.Deep-Orange.mc-active .mc-content {
   background-color: #FBE9E7;
 }
-
 .list-card.Deep-Orange.mc-active .mc-footer {
   background-color: #FFCCBC;
 }
-
 .list-card.Deep-Orange.mc-active .mc-btn-action {
   border-color: #FBE9E7;
 }
-
 .list-card.Brown h2 {
   background-color: #795548;
 }
-
 .list-card.Brown h2:after {
   border-top-color: #795548;
   border-right-color: #795548;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Brown h2:before {
   border-top-color: transparent;
   border-right-color: #3E2723;
   border-bottom-color: #3E2723;
   border-left-color: transparent;
 }
-
 .list-card.Brown.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #795548;
   border-bottom-color: #795548;
   border-left-color: transparent;
 }
-
 .list-card.Brown.mc-active h2:after {
   border-top-color: #3E2723;
   border-right-color: #3E2723;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Brown .mc-btn-action {
   background-color: #795548;
 }
-
 .list-card.Brown .mc-btn-action:hover {
   background-color: #3E2723;
 }
-
 .list-card.Brown .mc-footer h4 {
   color: #3E2723;
 }
-
 .list-card.Brown .mc-footer a {
   background-color: #3E2723;
 }
-
 .list-card.Brown.mc-active .mc-content {
   background-color: #EFEBE9;
 }
-
 .list-card.Brown.mc-active .mc-footer {
   background-color: #D7CCC8;
 }
-
 .list-card.Brown.mc-active .mc-btn-action {
   border-color: #EFEBE9;
 }
-
 .list-card.Grey h2 {
   background-color: #9E9E9E;
 }
-
 .list-card.Grey h2:after {
   border-top-color: #9E9E9E;
   border-right-color: #9E9E9E;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Grey h2:before {
   border-top-color: transparent;
   border-right-color: #212121;
   border-bottom-color: #212121;
   border-left-color: transparent;
 }
-
 .list-card.Grey.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #9E9E9E;
   border-bottom-color: #9E9E9E;
   border-left-color: transparent;
 }
-
 .list-card.Grey.mc-active h2:after {
   border-top-color: #212121;
   border-right-color: #212121;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Grey .mc-btn-action {
   background-color: #9E9E9E;
 }
-
 .list-card.Grey .mc-btn-action:hover {
   background-color: #212121;
 }
-
 .list-card.Grey .mc-footer h4 {
   color: #212121;
 }
-
 .list-card.Grey .mc-footer a {
   background-color: #212121;
 }
-
 .list-card.Grey.mc-active .mc-content {
   background-color: #FAFAFA;
 }
-
 .list-card.Grey.mc-active .mc-footer {
   background-color: #F5F5F5;
 }
-
 .list-card.Grey.mc-active .mc-btn-action {
   border-color: #FAFAFA;
 }
-
 .list-card.Blue-Grey h2 {
   background-color: #607D8B;
 }
-
 .list-card.Blue-Grey h2:after {
   border-top-color: #607D8B;
   border-right-color: #607D8B;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Blue-Grey h2:before {
   border-top-color: transparent;
   border-right-color: #263238;
   border-bottom-color: #263238;
   border-left-color: transparent;
 }
-
 .list-card.Blue-Grey.mc-active h2:before {
   border-top-color: transparent;
   border-right-color: #607D8B;
   border-bottom-color: #607D8B;
   border-left-color: transparent;
 }
-
 .list-card.Blue-Grey.mc-active h2:after {
   border-top-color: #263238;
   border-right-color: #263238;
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
-
 .list-card.Blue-Grey .mc-btn-action {
   background-color: #607D8B;
 }
-
 .list-card.Blue-Grey .mc-btn-action:hover {
   background-color: #263238;
 }
-
 .list-card.Blue-Grey .mc-footer h4 {
   color: #263238;
 }
-
 .list-card.Blue-Grey .mc-footer a {
   background-color: #263238;
 }
-
 .list-card.Blue-Grey.mc-active .mc-content {
   background-color: #ECEFF1;
 }
-
 .list-card.Blue-Grey.mc-active .mc-footer {
   background-color: #CFD8DC;
 }
-
 .list-card.Blue-Grey.mc-active .mc-btn-action {
   border-color: #ECEFF1;
+}
+body {
+  background-color: #ECEFF1;
+  color: #37474F;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+h1,
+h2,
+h3 {
+  font-weight: 200;
 }

@@ -1,4 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons");
 @import "~material-dashboard/assets/scss/material-dashboard";
-//@import "../../plugins/material-cards-master/dist/material-cards-auto-height.css";
-@import "../material/material";
+@import "~bootstrap-select/sass/bootstrap-select";
+
+.dropdown-item.active {
+  background-color: #9c27b0;
+}
+
+.enq-date {
+  min-width: 15%;
+}
+
+.enq-name {
+  min-width: 15%;
+}
+
+.enq-enquiry {
+  min-width: 60%
+}
+
+.enquiry {
+  td:last-child {
+    min-width: 10%;
+  }
+}
+

@@ -5,9 +5,9 @@ require('material-dashboard/assets/js/core/bootstrap-material-design.min');
 require('material-dashboard/assets/js/plugins/perfect-scrollbar.jquery.min');
 
 require('../material/matrial-dashboard');
-
+require('bootstrap-select/dist/js/bootstrap-select.min');
 require('../../plugins/material-cards-master/js/jquery.material-cards');
-$(function() {
+$(function () {
     $('.list-card > .mc-btn-action').click(function () {
         var card = $(this).parent('.list-card');
         var icon = $(this).children('i');
@@ -16,7 +16,7 @@ $(function() {
         if (card.hasClass('mc-active')) {
             card.removeClass('mc-active');
 
-            window.setTimeout(function() {
+            window.setTimeout(function () {
                 icon
                     .removeClass('fa-arrow-left')
                     .removeClass('fa-spin-fast')
@@ -26,7 +26,7 @@ $(function() {
         } else {
             card.addClass('mc-active');
 
-            window.setTimeout(function() {
+            window.setTimeout(function () {
                 icon
                     .removeClass('fa-bars')
                     .removeClass('fa-spin-fast')
