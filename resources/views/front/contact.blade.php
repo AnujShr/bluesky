@@ -105,6 +105,8 @@
         </div>
         <div class="contact_map">
             <!-- Google Map -->
+
+
             <div class="map">
                 <div id="google_map" class="google_map">
                     <div class="map_container">
@@ -113,10 +115,30 @@
                 </div>
             </div>
         </div>
+
+
+
+
+
+
+        <div class="map">
+                <div id="google_map" class="google_map">
+                    <div class="map_container">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script>
+
+
+
+    </script>
         @endsection
 
         @section('js')
             <script src="{{asset('plugins/rangeslider.js-2.3.0/rangeslider.min.js')}}"></script>
-            <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCgi--a_yluiQAjqYxqkN_Y-72WrdCtfso"></script>
+            {{--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCgi--a_yluiQAjqYxqkN_Y-72WrdCtfso"></script>--}}
 @endsection
 

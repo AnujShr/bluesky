@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 164);
+/******/ 	return __webpack_require__(__webpack_require__.s = 162);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -71,8 +71,8 @@
 "use strict";
 
 
-var bind = __webpack_require__(8);
-var isBuffer = __webpack_require__(20);
+var bind = __webpack_require__(7);
+var isBuffer = __webpack_require__(19);
 
 /*global toString:true*/
 
@@ -10773,15 +10773,14 @@ return jQuery;
 
 
 /***/ }),
-/* 4 */,
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(1);
-var normalizeHeaderName = __webpack_require__(23);
+var normalizeHeaderName = __webpack_require__(22);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -10797,10 +10796,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(9);
+    adapter = __webpack_require__(8);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(9);
+    adapter = __webpack_require__(8);
   }
   return adapter;
 }
@@ -10875,11 +10874,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(21)))
 
 /***/ }),
-/* 6 */,
-/* 7 */
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13422,7 +13420,8 @@ Popper.Defaults = Defaults;
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
 
 /***/ }),
-/* 8 */
+/* 6 */,
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13440,19 +13439,19 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(1);
-var settle = __webpack_require__(24);
-var buildURL = __webpack_require__(26);
-var parseHeaders = __webpack_require__(27);
-var isURLSameOrigin = __webpack_require__(28);
-var createError = __webpack_require__(10);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(29);
+var settle = __webpack_require__(23);
+var buildURL = __webpack_require__(25);
+var parseHeaders = __webpack_require__(26);
+var isURLSameOrigin = __webpack_require__(27);
+var createError = __webpack_require__(9);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(28);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -13549,7 +13548,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(30);
+      var cookies = __webpack_require__(29);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -13627,13 +13626,13 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(25);
+var enhanceError = __webpack_require__(24);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -13652,7 +13651,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13664,7 +13663,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13690,8 +13689,8 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 13 */,
-/* 14 */
+/* 12 */,
+/* 13 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -13719,11 +13718,11 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(16);
+window._ = __webpack_require__(15);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -13732,9 +13731,9 @@ window._ = __webpack_require__(16);
  */
 
 try {
-  window.Popper = __webpack_require__(7).default;
+  window.Popper = __webpack_require__(5).default;
   window.$ = window.jQuery = __webpack_require__(3);
-  __webpack_require__(17);
+  __webpack_require__(16);
 } catch (e) {}
 
 /**
@@ -13743,7 +13742,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(18);
+window.axios = __webpack_require__(17);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -13779,7 +13778,7 @@ if (token) {
 // });
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -30891,10 +30890,10 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(14)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(13)(module)))
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -30903,7 +30902,7 @@ if (token) {
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
-   true ? factory(exports, __webpack_require__(3), __webpack_require__(7)) :
+   true ? factory(exports, __webpack_require__(3), __webpack_require__(5)) :
   typeof define === 'function' && define.amd ? define(['exports', 'jquery', 'popper.js'], factory) :
   (factory((global.bootstrap = {}),global.jQuery,global.Popper));
 }(this, (function (exports,$,Popper) { 'use strict';
@@ -34844,22 +34843,22 @@ if (token) {
 
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(19);
+module.exports = __webpack_require__(18);
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(1);
-var bind = __webpack_require__(8);
-var Axios = __webpack_require__(21);
-var defaults = __webpack_require__(5);
+var bind = __webpack_require__(7);
+var Axios = __webpack_require__(20);
+var defaults = __webpack_require__(4);
 
 /**
  * Create an instance of Axios
@@ -34892,15 +34891,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(12);
-axios.CancelToken = __webpack_require__(36);
-axios.isCancel = __webpack_require__(11);
+axios.Cancel = __webpack_require__(11);
+axios.CancelToken = __webpack_require__(35);
+axios.isCancel = __webpack_require__(10);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(37);
+axios.spread = __webpack_require__(36);
 
 module.exports = axios;
 
@@ -34909,7 +34908,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports) {
 
 /*!
@@ -34936,16 +34935,16 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
+var defaults = __webpack_require__(4);
 var utils = __webpack_require__(1);
-var InterceptorManager = __webpack_require__(31);
-var dispatchRequest = __webpack_require__(32);
+var InterceptorManager = __webpack_require__(30);
+var dispatchRequest = __webpack_require__(31);
 
 /**
  * Create a new instance of Axios
@@ -35022,7 +35021,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -35212,7 +35211,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35231,13 +35230,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(10);
+var createError = __webpack_require__(9);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -35264,7 +35263,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35292,7 +35291,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35365,7 +35364,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35425,7 +35424,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35500,7 +35499,7 @@ module.exports = (
 
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35543,7 +35542,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35603,7 +35602,7 @@ module.exports = (
 
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35662,18 +35661,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 32 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(1);
-var transformData = __webpack_require__(33);
-var isCancel = __webpack_require__(11);
-var defaults = __webpack_require__(5);
-var isAbsoluteURL = __webpack_require__(34);
-var combineURLs = __webpack_require__(35);
+var transformData = __webpack_require__(32);
+var isCancel = __webpack_require__(10);
+var defaults = __webpack_require__(4);
+var isAbsoluteURL = __webpack_require__(33);
+var combineURLs = __webpack_require__(34);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -35755,7 +35754,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 33 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35782,7 +35781,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 34 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35803,7 +35802,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 35 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35824,13 +35823,13 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 36 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(12);
+var Cancel = __webpack_require__(11);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -35888,7 +35887,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 37 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35922,6 +35921,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
+/* 37 */,
 /* 38 */,
 /* 39 */,
 /* 40 */,
@@ -36046,12 +36046,11 @@ module.exports = function spread(callback) {
 /* 159 */,
 /* 160 */,
 /* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(165);
+__webpack_require__(163);
+__webpack_require__(168);
 __webpack_require__(169);
 __webpack_require__(170);
 __webpack_require__(171);
@@ -36060,11 +36059,13 @@ __webpack_require__(173);
 __webpack_require__(174);
 __webpack_require__(175);
 __webpack_require__(176);
-module.exports = __webpack_require__(177);
+__webpack_require__(177);
+__webpack_require__(178);
+module.exports = __webpack_require__(179);
 
 
 /***/ }),
-/* 165 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -36073,11 +36074,11 @@ module.exports = __webpack_require__(177);
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(15);
+__webpack_require__(14);
+__webpack_require__(164);
+__webpack_require__(165);
 __webpack_require__(166);
 __webpack_require__(167);
-__webpack_require__(168);
-
 // window.Vue = require('vue');
 
 /**
@@ -36107,7 +36108,7 @@ __webpack_require__(168);
 // });
 
 /***/ }),
-/* 166 */
+/* 164 */
 /***/ (function(module, exports) {
 
 /*
@@ -36319,7 +36320,7 @@ jQuery.extend(jQuery.easing, {
  */
 
 /***/ }),
-/* 167 */
+/* 165 */
 /***/ (function(module, exports) {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -36410,16 +36411,13898 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 }(jQuery, window, document);
 
 /***/ }),
-/* 168 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;var require;var require;var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var WOW;jQuery.easing.jswing=jQuery.easing.swing,jQuery.extend(jQuery.easing,{def:"easeOutQuad",swing:function(t,e,i,n,a){return jQuery.easing[jQuery.easing.def](t,e,i,n,a)},easeInQuad:function(t,e,i,n,a){return n*(e/=a)*e+i},easeOutQuad:function(t,e,i,n,a){return-n*(e/=a)*(e-2)+i},easeInOutQuad:function(t,e,i,n,a){return(e/=a/2)<1?n/2*e*e+i:-n/2*(--e*(e-2)-1)+i},easeInCubic:function(t,e,i,n,a){return n*(e/=a)*e*e+i},easeOutCubic:function(t,e,i,n,a){return n*((e=e/a-1)*e*e+1)+i},easeInOutCubic:function(t,e,i,n,a){return(e/=a/2)<1?n/2*e*e*e+i:n/2*((e-=2)*e*e+2)+i},easeInQuart:function(t,e,i,n,a){return n*(e/=a)*e*e*e+i},easeOutQuart:function(t,e,i,n,a){return-n*((e=e/a-1)*e*e*e-1)+i},easeInOutQuart:function(t,e,i,n,a){return(e/=a/2)<1?n/2*e*e*e*e+i:-n/2*((e-=2)*e*e*e-2)+i},easeInQuint:function(t,e,i,n,a){return n*(e/=a)*e*e*e*e+i},easeOutQuint:function(t,e,i,n,a){return n*((e=e/a-1)*e*e*e*e+1)+i},easeInOutQuint:function(t,e,i,n,a){return(e/=a/2)<1?n/2*e*e*e*e*e+i:n/2*((e-=2)*e*e*e*e+2)+i},easeInSine:function(t,e,i,n,a){return-n*Math.cos(e/a*(Math.PI/2))+n+i},easeOutSine:function(t,e,i,n,a){return n*Math.sin(e/a*(Math.PI/2))+i},easeInOutSine:function(t,e,i,n,a){return-n/2*(Math.cos(Math.PI*e/a)-1)+i},easeInExpo:function(t,e,i,n,a){return 0==e?i:n*Math.pow(2,10*(e/a-1))+i},easeOutExpo:function(t,e,i,n,a){return e==a?i+n:n*(1-Math.pow(2,-10*e/a))+i},easeInOutExpo:function(t,e,i,n,a){return 0==e?i:e==a?i+n:(e/=a/2)<1?n/2*Math.pow(2,10*(e-1))+i:n/2*(2-Math.pow(2,-10*--e))+i},easeInCirc:function(t,e,i,n,a){return-n*(Math.sqrt(1-(e/=a)*e)-1)+i},easeOutCirc:function(t,e,i,n,a){return n*Math.sqrt(1-(e=e/a-1)*e)+i},easeInOutCirc:function(t,e,i,n,a){return(e/=a/2)<1?-n/2*(Math.sqrt(1-e*e)-1)+i:n/2*(Math.sqrt(1-(e-=2)*e)+1)+i},easeInElastic:function(t,e,i,n,a){var r=1.70158,o=0,s=n;if(0==e)return i;if(1==(e/=a))return i+n;if(o||(o=.3*a),s<Math.abs(n)){s=n;r=o/4}else r=o/(2*Math.PI)*Math.asin(n/s);return-s*Math.pow(2,10*(e-=1))*Math.sin((e*a-r)*(2*Math.PI)/o)+i},easeOutElastic:function(t,e,i,n,a){var r=1.70158,o=0,s=n;if(0==e)return i;if(1==(e/=a))return i+n;if(o||(o=.3*a),s<Math.abs(n)){s=n;r=o/4}else r=o/(2*Math.PI)*Math.asin(n/s);return s*Math.pow(2,-10*e)*Math.sin((e*a-r)*(2*Math.PI)/o)+n+i},easeInOutElastic:function(t,e,i,n,a){var r=1.70158,o=0,s=n;if(0==e)return i;if(2==(e/=a/2))return i+n;if(o||(o=a*(.3*1.5)),s<Math.abs(n)){s=n;r=o/4}else r=o/(2*Math.PI)*Math.asin(n/s);return e<1?s*Math.pow(2,10*(e-=1))*Math.sin((e*a-r)*(2*Math.PI)/o)*-.5+i:s*Math.pow(2,-10*(e-=1))*Math.sin((e*a-r)*(2*Math.PI)/o)*.5+n+i},easeInBack:function(t,e,i,n,a,r){return void 0==r&&(r=1.70158),n*(e/=a)*e*((r+1)*e-r)+i},easeOutBack:function(t,e,i,n,a,r){return void 0==r&&(r=1.70158),n*((e=e/a-1)*e*((r+1)*e+r)+1)+i},easeInOutBack:function(t,e,i,n,a,r){return void 0==r&&(r=1.70158),(e/=a/2)<1?n/2*(e*e*((1+(r*=1.525))*e-r))+i:n/2*((e-=2)*e*((1+(r*=1.525))*e+r)+2)+i},easeInBounce:function(t,e,i,n,a){return n-jQuery.easing.easeOutBounce(t,a-e,0,n,a)+i},easeOutBounce:function(t,e,i,n,a){return(e/=a)<1/2.75?n*(7.5625*e*e)+i:e<2/2.75?n*(7.5625*(e-=1.5/2.75)*e+.75)+i:e<2.5/2.75?n*(7.5625*(e-=2.25/2.75)*e+.9375)+i:n*(7.5625*(e-=2.625/2.75)*e+.984375)+i},easeInOutBounce:function(t,e,i,n,a){return e<a/2?.5*jQuery.easing.easeInBounce(t,2*e,0,n,a)+i:.5*jQuery.easing.easeOutBounce(t,2*e-a,0,n,a)+.5*n+i}}),jQuery.Velocity?console.log("Velocity is already loaded. You may be needlessly importing Velocity again; note that Materialize includes Velocity."):(function(t){function e(t){var e=t.length,n=i.type(t);return"function"!==n&&!i.isWindow(t)&&(!(1!==t.nodeType||!e)||("array"===n||0===e||"number"==typeof e&&e>0&&e-1 in t))}if(!t.jQuery){var i=function(t,e){return new i.fn.init(t,e)};i.isWindow=function(t){return null!=t&&t==t.window},i.type=function(t){return null==t?t+"":"object"==typeof t||"function"==typeof t?a[o.call(t)]||"object":typeof t},i.isArray=Array.isArray||function(t){return"array"===i.type(t)},i.isPlainObject=function(t){var e;if(!t||"object"!==i.type(t)||t.nodeType||i.isWindow(t))return!1;try{if(t.constructor&&!r.call(t,"constructor")&&!r.call(t.constructor.prototype,"isPrototypeOf"))return!1}catch(t){return!1}for(e in t);return void 0===e||r.call(t,e)},i.each=function(t,i,n){var a=0,r=t.length,o=e(t);if(n){if(o)for(;r>a&&!1!==i.apply(t[a],n);a++);else for(a in t)if(!1===i.apply(t[a],n))break}else if(o)for(;r>a&&!1!==i.call(t[a],a,t[a]);a++);else for(a in t)if(!1===i.call(t[a],a,t[a]))break;return t},i.data=function(t,e,a){if(void 0===a){var r=(o=t[i.expando])&&n[o];if(void 0===e)return r;if(r&&e in r)return r[e]}else if(void 0!==e){var o=t[i.expando]||(t[i.expando]=++i.uuid);return n[o]=n[o]||{},n[o][e]=a,a}},i.removeData=function(t,e){var a=t[i.expando],r=a&&n[a];r&&i.each(e,function(t,e){delete r[e]})},i.extend=function(){var t,e,n,a,r,o,s=arguments[0]||{},l=1,u=arguments.length,d=!1;for("boolean"==typeof s&&(d=s,s=arguments[l]||{},l++),"object"!=typeof s&&"function"!==i.type(s)&&(s={}),l===u&&(s=this,l--);u>l;l++)if(null!=(r=arguments[l]))for(a in r)t=s[a],s!==(n=r[a])&&(d&&n&&(i.isPlainObject(n)||(e=i.isArray(n)))?(e?(e=!1,o=t&&i.isArray(t)?t:[]):o=t&&i.isPlainObject(t)?t:{},s[a]=i.extend(d,o,n)):void 0!==n&&(s[a]=n));return s},i.queue=function(t,n,a){if(t){n=(n||"fx")+"queue";var r=i.data(t,n);return a?(!r||i.isArray(a)?r=i.data(t,n,function(t,i){var n=i||[];return null!=t&&(e(Object(t))?function(t,e){for(var i=+e.length,n=0,a=t.length;i>n;)t[a++]=e[n++];if(i!=i)for(;void 0!==e[n];)t[a++]=e[n++];t.length=a}(n,"string"==typeof t?[t]:t):[].push.call(n,t)),n}(a)):r.push(a),r):r||[]}},i.dequeue=function(t,e){i.each(t.nodeType?[t]:t,function(t,n){e=e||"fx";var a=i.queue(n,e),r=a.shift();"inprogress"===r&&(r=a.shift()),r&&("fx"===e&&a.unshift("inprogress"),r.call(n,function(){i.dequeue(n,e)}))})},i.fn=i.prototype={init:function(t){if(t.nodeType)return this[0]=t,this;throw new Error("Not a DOM node.")},offset:function(){var e=this[0].getBoundingClientRect?this[0].getBoundingClientRect():{top:0,left:0};return{top:e.top+(t.pageYOffset||document.scrollTop||0)-(document.clientTop||0),left:e.left+(t.pageXOffset||document.scrollLeft||0)-(document.clientLeft||0)}},position:function(){function t(){for(var t=this.offsetParent||document;t&&"html"===!t.nodeType.toLowerCase&&"static"===t.style.position;)t=t.offsetParent;return t||document}var e=this[0],t=t.apply(e),n=this.offset(),a=/^(?:body|html)$/i.test(t.nodeName)?{top:0,left:0}:i(t).offset();return n.top-=parseFloat(e.style.marginTop)||0,n.left-=parseFloat(e.style.marginLeft)||0,t.style&&(a.top+=parseFloat(t.style.borderTopWidth)||0,a.left+=parseFloat(t.style.borderLeftWidth)||0),{top:n.top-a.top,left:n.left-a.left}}};var n={};i.expando="velocity"+(new Date).getTime(),i.uuid=0;for(var a={},r=a.hasOwnProperty,o=a.toString,s="Boolean Number String Function Array Date RegExp Object Error".split(" "),l=0;l<s.length;l++)a["[object "+s[l]+"]"]=s[l].toLowerCase();i.fn.init.prototype=i.fn,t.Velocity={Utilities:i}}}(window),function(t){"object"==typeof module&&"object"==typeof module.exports?module.exports=t(): true?!(__WEBPACK_AMD_DEFINE_FACTORY__ = (t),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
 				__WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):t()}(function(){return function(t,e,i,n){function a(t){return f.isWrapped(t)?t=[].slice.call(t):f.isNode(t)&&(t=[t]),t}function r(t){var e=d.data(t,"velocity");return null===e?n:e}function o(t,i,n,a){function r(t,e){return 1-3*e+3*t}function o(t,e){return 3*e-6*t}function s(t){return 3*t}function l(t,e,i){return((r(e,i)*t+o(e,i))*t+s(e))*t}function u(t,e,i){return 3*r(e,i)*t*t+2*o(e,i)*t+s(e)}function d(e,i){for(var a=0;f>a;++a){var r=u(i,t,n);if(0===r)return i;i-=(l(i,t,n)-e)/r}return i}function c(e,i,a){var r,o,s=0;do{(r=l(o=i+(a-i)/2,t,n)-e)>0?a=o:i=o}while(Math.abs(r)>g&&++s<m);return o}function h(){k=!0,(t!=i||n!=a)&&function(){for(var e=0;v>e;++e)w[e]=l(e*b,t,n)}()}var f=4,p=.001,g=1e-7,m=10,v=11,b=1/(v-1),y="Float32Array"in e;if(4!==arguments.length)return!1;for(var x=0;4>x;++x)if("number"!=typeof arguments[x]||isNaN(arguments[x])||!isFinite(arguments[x]))return!1;t=Math.min(t,1),n=Math.min(n,1),t=Math.max(t,0),n=Math.max(n,0);var w=y?new Float32Array(v):new Array(v),k=!1,S=function(e){return k||h(),t===i&&n===a?e:0===e?0:1===e?1:l(function(e){for(var i=0,a=1,r=v-1;a!=r&&w[a]<=e;++a)i+=b;var o=i+(e-w[--a])/(w[a+1]-w[a])*b,s=u(o,t,n);return s>=p?d(e,o):0==s?o:c(e,i,i+b)}(e),i,a)};S.getControlPoints=function(){return[{x:t,y:i},{x:n,y:a}]};var C="generateBezier("+[t,i,n,a]+")";return S.toString=function(){return C},S}function s(t,e){var i=t;return f.isString(t)?v.Easings[t]||(i=!1):i=f.isArray(t)&&1===t.length?function(t){return function(e){return Math.round(e*t)*(1/t)}}.apply(null,t):f.isArray(t)&&2===t.length?b.apply(null,t.concat([e])):!(!f.isArray(t)||4!==t.length)&&o.apply(null,t),!1===i&&(i=v.Easings[v.defaults.easing]?v.defaults.easing:m),i}function l(t){if(t){var e=(new Date).getTime(),i=v.State.calls.length;i>1e4&&(v.State.calls=function(t){for(var e=-1,i=t?t.length:0,n=[];++e<i;){var a=t[e];a&&n.push(a)}return n}(v.State.calls));for(var a=0;i>a;a++)if(v.State.calls[a]){var o=v.State.calls[a],s=o[0],c=o[2],h=o[3],p=!!h,g=null;h||(h=v.State.calls[a][3]=e-16);for(var m=Math.min((e-h)/c.duration,1),b=0,x=s.length;x>b;b++){var k=s[b],S=k.element;if(r(S)){var C=!1;if(c.display!==n&&null!==c.display&&"none"!==c.display){if("flex"===c.display){d.each(["-webkit-box","-moz-box","-ms-flexbox","-webkit-flex"],function(t,e){y.setPropertyValue(S,"display",e)})}y.setPropertyValue(S,"display",c.display)}for(var M in c.visibility!==n&&"hidden"!==c.visibility&&y.setPropertyValue(S,"visibility",c.visibility),k)if("element"!==M){var P,A=k[M],T=f.isString(A.easing)?v.Easings[A.easing]:A.easing;if(1===m)P=A.endValue;else{var _=A.endValue-A.startValue;if(P=A.startValue+_*T(m,c,_),!p&&P===A.currentValue)continue}if(A.currentValue=P,"tween"===M)g=P;else{if(y.Hooks.registered[M]){var I=y.Hooks.getRoot(M),D=r(S).rootPropertyValueCache[I];D&&(A.rootPropertyValue=D)}var F=y.setPropertyValue(S,M,A.currentValue+(0===parseFloat(P)?"":A.unitType),A.rootPropertyValue,A.scrollData);y.Hooks.registered[M]&&(r(S).rootPropertyValueCache[I]=y.Normalizations.registered[I]?y.Normalizations.registered[I]("extract",null,F[1]):F[1]),"transform"===F[0]&&(C=!0)}}c.mobileHA&&r(S).transformCache.translate3d===n&&(r(S).transformCache.translate3d="(0px, 0px, 0px)",C=!0),C&&y.flushTransformCache(S)}}c.display!==n&&"none"!==c.display&&(v.State.calls[a][2].display=!1),c.visibility!==n&&"hidden"!==c.visibility&&(v.State.calls[a][2].visibility=!1),c.progress&&c.progress.call(o[1],o[1],m,Math.max(0,h+c.duration-e),h,g),1===m&&u(a)}}v.State.isTicking&&w(l)}function u(t,e){if(!v.State.calls[t])return!1;for(var i=v.State.calls[t][0],a=v.State.calls[t][1],o=v.State.calls[t][2],s=v.State.calls[t][4],l=!1,u=0,c=i.length;c>u;u++){var h=i[u].element;if(e||o.loop||("none"===o.display&&y.setPropertyValue(h,"display",o.display),"hidden"===o.visibility&&y.setPropertyValue(h,"visibility",o.visibility)),!0!==o.loop&&(d.queue(h)[1]===n||!/\.velocityQueueEntryFlag/i.test(d.queue(h)[1]))&&r(h)){r(h).isAnimating=!1,r(h).rootPropertyValueCache={};var f=!1;d.each(y.Lists.transforms3D,function(t,e){var i=/^scale/.test(e)?1:0,a=r(h).transformCache[e];r(h).transformCache[e]!==n&&new RegExp("^\\("+i+"[^.]").test(a)&&(f=!0,delete r(h).transformCache[e])}),o.mobileHA&&(f=!0,delete r(h).transformCache.translate3d),f&&y.flushTransformCache(h),y.Values.removeClass(h,"velocity-animating")}if(!e&&o.complete&&!o.loop&&u===c-1)try{o.complete.call(a,a)}catch(t){setTimeout(function(){throw t},1)}s&&!0!==o.loop&&s(a),r(h)&&!0===o.loop&&!e&&(d.each(r(h).tweensContainer,function(t,e){/^rotate/.test(t)&&360===parseFloat(e.endValue)&&(e.endValue=0,e.startValue=360),/^backgroundPosition/.test(t)&&100===parseFloat(e.endValue)&&"%"===e.unitType&&(e.endValue=0,e.startValue=100)}),v(h,"reverse",{loop:!0,delay:o.delay})),!1!==o.queue&&d.dequeue(h,o.queue)}v.State.calls[t]=!1;for(var p=0,g=v.State.calls.length;g>p;p++)if(!1!==v.State.calls[p]){l=!0;break}!1===l&&(v.State.isTicking=!1,delete v.State.calls,v.State.calls=[])}var d,c=function(){if(i.documentMode)return i.documentMode;for(var t=7;t>4;t--){var e=i.createElement("div");if(e.innerHTML="\x3c!--[if IE "+t+"]><span></span><![endif]--\x3e",e.getElementsByTagName("span").length)return e=null,t}return n}(),h=function(){var t=0;return e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||function(e){var i,n=(new Date).getTime();return i=Math.max(0,16-(n-t)),t=n+i,setTimeout(function(){e(n+i)},i)}}(),f={isString:function(t){return"string"==typeof t},isArray:Array.isArray||function(t){return"[object Array]"===Object.prototype.toString.call(t)},isFunction:function(t){return"[object Function]"===Object.prototype.toString.call(t)},isNode:function(t){return t&&t.nodeType},isNodeList:function(t){return"object"==typeof t&&/^\[object (HTMLCollection|NodeList|Object)\]$/.test(Object.prototype.toString.call(t))&&t.length!==n&&(0===t.length||"object"==typeof t[0]&&t[0].nodeType>0)},isWrapped:function(t){return t&&(t.jquery||e.Zepto&&e.Zepto.zepto.isZ(t))},isSVG:function(t){return e.SVGElement&&t instanceof e.SVGElement},isEmptyObject:function(t){for(var e in t)return!1;return!0}},p=!1;if(t.fn&&t.fn.jquery?(d=t,p=!0):d=e.Velocity.Utilities,8>=c&&!p)throw new Error("Velocity: IE8 and below require jQuery to be loaded before Velocity.");if(!(7>=c)){var g=400,m="swing",v={State:{isMobile:/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),isAndroid:/Android/i.test(navigator.userAgent),isGingerbread:/Android 2\.3\.[3-7]/i.test(navigator.userAgent),isChrome:e.chrome,isFirefox:/Firefox/i.test(navigator.userAgent),prefixElement:i.createElement("div"),prefixMatches:{},scrollAnchor:null,scrollPropertyLeft:null,scrollPropertyTop:null,isTicking:!1,calls:[]},CSS:{},Utilities:d,Redirects:{},Easings:{},Promise:e.Promise,defaults:{queue:"",duration:g,easing:m,begin:n,complete:n,progress:n,display:n,visibility:n,loop:!1,delay:!1,mobileHA:!0,_cacheValues:!0},init:function(t){d.data(t,"velocity",{isSVG:f.isSVG(t),isAnimating:!1,computedStyle:null,tweensContainer:null,rootPropertyValueCache:{},transformCache:{}})},hook:null,mock:!1,version:{major:1,minor:2,patch:2},debug:!1};e.pageYOffset!==n?(v.State.scrollAnchor=e,v.State.scrollPropertyLeft="pageXOffset",v.State.scrollPropertyTop="pageYOffset"):(v.State.scrollAnchor=i.documentElement||i.body.parentNode||i.body,v.State.scrollPropertyLeft="scrollLeft",v.State.scrollPropertyTop="scrollTop");var b=function(){function t(t){return-t.tension*t.x-t.friction*t.v}function e(e,i,n){var a={x:e.x+n.dx*i,v:e.v+n.dv*i,tension:e.tension,friction:e.friction};return{dx:a.v,dv:t(a)}}function i(i,n){var a={dx:i.v,dv:t(i)},r=e(i,.5*n,a),o=e(i,.5*n,r),s=e(i,n,o),l=1/6*(a.dx+2*(r.dx+o.dx)+s.dx),u=1/6*(a.dv+2*(r.dv+o.dv)+s.dv);return i.x=i.x+l*n,i.v=i.v+u*n,i}return function t(e,n,a){var r,o,s,l={x:-1,v:0,tension:null,friction:null},u=[0],d=0;for(e=parseFloat(e)||500,n=parseFloat(n)||20,a=a||null,l.tension=e,l.friction=n,(r=null!==a)?o=(d=t(e,n))/a*.016:o=.016;s=i(s||l,o),u.push(1+s.x),d+=16,Math.abs(s.x)>1e-4&&Math.abs(s.v)>1e-4;);return r?function(t){return u[t*(u.length-1)|0]}:d}}();v.Easings={linear:function(t){return t},swing:function(t){return.5-Math.cos(t*Math.PI)/2},spring:function(t){return 1-Math.cos(4.5*t*Math.PI)*Math.exp(6*-t)}},d.each([["ease",[.25,.1,.25,1]],["ease-in",[.42,0,1,1]],["ease-out",[0,0,.58,1]],["ease-in-out",[.42,0,.58,1]],["easeInSine",[.47,0,.745,.715]],["easeOutSine",[.39,.575,.565,1]],["easeInOutSine",[.445,.05,.55,.95]],["easeInQuad",[.55,.085,.68,.53]],["easeOutQuad",[.25,.46,.45,.94]],["easeInOutQuad",[.455,.03,.515,.955]],["easeInCubic",[.55,.055,.675,.19]],["easeOutCubic",[.215,.61,.355,1]],["easeInOutCubic",[.645,.045,.355,1]],["easeInQuart",[.895,.03,.685,.22]],["easeOutQuart",[.165,.84,.44,1]],["easeInOutQuart",[.77,0,.175,1]],["easeInQuint",[.755,.05,.855,.06]],["easeOutQuint",[.23,1,.32,1]],["easeInOutQuint",[.86,0,.07,1]],["easeInExpo",[.95,.05,.795,.035]],["easeOutExpo",[.19,1,.22,1]],["easeInOutExpo",[1,0,0,1]],["easeInCirc",[.6,.04,.98,.335]],["easeOutCirc",[.075,.82,.165,1]],["easeInOutCirc",[.785,.135,.15,.86]]],function(t,e){v.Easings[e[0]]=o.apply(null,e[1])});var y=v.CSS={RegEx:{isHex:/^#([A-f\d]{3}){1,2}$/i,valueUnwrap:/^[A-z]+\((.*)\)$/i,wrappedValueAlreadyExtracted:/[0-9.]+ [0-9.]+ [0-9.]+( [0-9.]+)?/,valueSplit:/([A-z]+\(.+\))|(([A-z0-9#-.]+?)(?=\s|$))/gi},Lists:{colors:["fill","stroke","stopColor","color","backgroundColor","borderColor","borderTopColor","borderRightColor","borderBottomColor","borderLeftColor","outlineColor"],transformsBase:["translateX","translateY","scale","scaleX","scaleY","skewX","skewY","rotateZ"],transforms3D:["transformPerspective","translateZ","scaleZ","rotateX","rotateY"]},Hooks:{templates:{textShadow:["Color X Y Blur","black 0px 0px 0px"],boxShadow:["Color X Y Blur Spread","black 0px 0px 0px 0px"],clip:["Top Right Bottom Left","0px 0px 0px 0px"],backgroundPosition:["X Y","0% 0%"],transformOrigin:["X Y Z","50% 50% 0px"],perspectiveOrigin:["X Y","50% 50%"]},registered:{},register:function(){for(var t=0;t<y.Lists.colors.length;t++){var e="color"===y.Lists.colors[t]?"0 0 0 1":"255 255 255 1";y.Hooks.templates[y.Lists.colors[t]]=["Red Green Blue Alpha",e]}var i,n,a;if(c)for(i in y.Hooks.templates){a=(n=y.Hooks.templates[i])[0].split(" ");var r=n[1].match(y.RegEx.valueSplit);"Color"===a[0]&&(a.push(a.shift()),r.push(r.shift()),y.Hooks.templates[i]=[a.join(" "),r.join(" ")])}for(i in y.Hooks.templates)for(var t in a=(n=y.Hooks.templates[i])[0].split(" ")){var o=i+a[t],s=t;y.Hooks.registered[o]=[i,s]}},getRoot:function(t){var e=y.Hooks.registered[t];return e?e[0]:t},cleanRootPropertyValue:function(t,e){return y.RegEx.valueUnwrap.test(e)&&(e=e.match(y.RegEx.valueUnwrap)[1]),y.Values.isCSSNullValue(e)&&(e=y.Hooks.templates[t][1]),e},extractValue:function(t,e){var i=y.Hooks.registered[t];if(i){var n=i[0],a=i[1];return(e=y.Hooks.cleanRootPropertyValue(n,e)).toString().match(y.RegEx.valueSplit)[a]}return e},injectValue:function(t,e,i){var n=y.Hooks.registered[t];if(n){var a,r=n[0],o=n[1];return(a=(i=y.Hooks.cleanRootPropertyValue(r,i)).toString().match(y.RegEx.valueSplit))[o]=e,a.join(" ")}return i}},Normalizations:{registered:{clip:function(t,e,i){switch(t){case"name":return"clip";case"extract":var n;return y.RegEx.wrappedValueAlreadyExtracted.test(i)?n=i:n=(n=i.toString().match(y.RegEx.valueUnwrap))?n[1].replace(/,(\s+)?/g," "):i,n;case"inject":return"rect("+i+")"}},blur:function(t,e,i){switch(t){case"name":return v.State.isFirefox?"filter":"-webkit-filter";case"extract":var n=parseFloat(i);if(!n&&0!==n){var a=i.toString().match(/blur\(([0-9]+[A-z]+)\)/i);n=a?a[1]:0}return n;case"inject":return parseFloat(i)?"blur("+i+")":"none"}},opacity:function(t,e,i){if(8>=c)switch(t){case"name":return"filter";case"extract":var n=i.toString().match(/alpha\(opacity=(.*)\)/i);return n?n[1]/100:1;case"inject":return e.style.zoom=1,parseFloat(i)>=1?"":"alpha(opacity="+parseInt(100*parseFloat(i),10)+")"}else switch(t){case"name":return"opacity";case"extract":case"inject":return i}}},register:function(){9>=c||v.State.isGingerbread||(y.Lists.transformsBase=y.Lists.transformsBase.concat(y.Lists.transforms3D));for(var t=0;t<y.Lists.transformsBase.length;t++)!function(){var e=y.Lists.transformsBase[t];y.Normalizations.registered[e]=function(t,i,a){switch(t){case"name":return"transform";case"extract":return r(i)===n||r(i).transformCache[e]===n?/^scale/i.test(e)?1:0:r(i).transformCache[e].replace(/[()]/g,"");case"inject":var o=!1;switch(e.substr(0,e.length-1)){case"translate":o=!/(%|px|em|rem|vw|vh|\d)$/i.test(a);break;case"scal":case"scale":v.State.isAndroid&&r(i).transformCache[e]===n&&1>a&&(a=1),o=!/(\d)$/i.test(a);break;case"skew":o=!/(deg|\d)$/i.test(a);break;case"rotate":o=!/(deg|\d)$/i.test(a)}return o||(r(i).transformCache[e]="("+a+")"),r(i).transformCache[e]}}}();for(t=0;t<y.Lists.colors.length;t++)!function(){var e=y.Lists.colors[t];y.Normalizations.registered[e]=function(t,i,a){switch(t){case"name":return e;case"extract":var r;if(y.RegEx.wrappedValueAlreadyExtracted.test(a))r=a;else{var o,s={black:"rgb(0, 0, 0)",blue:"rgb(0, 0, 255)",gray:"rgb(128, 128, 128)",green:"rgb(0, 128, 0)",red:"rgb(255, 0, 0)",white:"rgb(255, 255, 255)"};/^[A-z]+$/i.test(a)?o=s[a]!==n?s[a]:s.black:y.RegEx.isHex.test(a)?o="rgb("+y.Values.hexToRgb(a).join(" ")+")":/^rgba?\(/i.test(a)||(o=s.black),r=(o||a).toString().match(y.RegEx.valueUnwrap)[1].replace(/,(\s+)?/g," ")}return 8>=c||3!==r.split(" ").length||(r+=" 1"),r;case"inject":return 8>=c?4===a.split(" ").length&&(a=a.split(/\s+/).slice(0,3).join(" ")):3===a.split(" ").length&&(a+=" 1"),(8>=c?"rgb":"rgba")+"("+a.replace(/\s+/g,",").replace(/\.(\d)+(?=,)/g,"")+")"}}}()}},Names:{camelCase:function(t){return t.replace(/-(\w)/g,function(t,e){return e.toUpperCase()})},SVGAttribute:function(t){var e="width|height|x|y|cx|cy|r|rx|ry|x1|x2|y1|y2";return(c||v.State.isAndroid&&!v.State.isChrome)&&(e+="|transform"),new RegExp("^("+e+")$","i").test(t)},prefixCheck:function(t){if(v.State.prefixMatches[t])return[v.State.prefixMatches[t],!0];for(var e=["","Webkit","Moz","ms","O"],i=0,n=e.length;n>i;i++){var a;if(a=0===i?t:e[i]+t.replace(/^\w/,function(t){return t.toUpperCase()}),f.isString(v.State.prefixElement.style[a]))return v.State.prefixMatches[t]=a,[a,!0]}return[t,!1]}},Values:{hexToRgb:function(t){var e;return t=t.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i,function(t,e,i,n){return e+e+i+i+n+n}),(e=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(t))?[parseInt(e[1],16),parseInt(e[2],16),parseInt(e[3],16)]:[0,0,0]},isCSSNullValue:function(t){return 0==t||/^(none|auto|transparent|(rgba\(0, ?0, ?0, ?0\)))$/i.test(t)},getUnitType:function(t){return/^(rotate|skew)/i.test(t)?"deg":/(^(scale|scaleX|scaleY|scaleZ|alpha|flexGrow|flexHeight|zIndex|fontWeight)$)|((opacity|red|green|blue|alpha)$)/i.test(t)?"":"px"},getDisplayType:function(t){var e=t&&t.tagName.toString().toLowerCase();return/^(b|big|i|small|tt|abbr|acronym|cite|code|dfn|em|kbd|strong|samp|var|a|bdo|br|img|map|object|q|script|span|sub|sup|button|input|label|select|textarea)$/i.test(e)?"inline":/^(li)$/i.test(e)?"list-item":/^(tr)$/i.test(e)?"table-row":/^(table)$/i.test(e)?"table":/^(tbody)$/i.test(e)?"table-row-group":"block"},addClass:function(t,e){t.classList?t.classList.add(e):t.className+=(t.className.length?" ":"")+e},removeClass:function(t,e){t.classList?t.classList.remove(e):t.className=t.className.toString().replace(new RegExp("(^|\\s)"+e.split(" ").join("|")+"(\\s|$)","gi")," ")}},getPropertyValue:function(t,i,a,o){function s(t,i){function a(){h&&y.setPropertyValue(t,"display","none")}var l=0;if(8>=c)l=d.css(t,i);else{var u,h=!1;if(/^(width|height)$/.test(i)&&0===y.getPropertyValue(t,"display")&&(h=!0,y.setPropertyValue(t,"display",y.Values.getDisplayType(t))),!o){if("height"===i&&"border-box"!==y.getPropertyValue(t,"boxSizing").toString().toLowerCase()){var f=t.offsetHeight-(parseFloat(y.getPropertyValue(t,"borderTopWidth"))||0)-(parseFloat(y.getPropertyValue(t,"borderBottomWidth"))||0)-(parseFloat(y.getPropertyValue(t,"paddingTop"))||0)-(parseFloat(y.getPropertyValue(t,"paddingBottom"))||0);return a(),f}if("width"===i&&"border-box"!==y.getPropertyValue(t,"boxSizing").toString().toLowerCase()){var p=t.offsetWidth-(parseFloat(y.getPropertyValue(t,"borderLeftWidth"))||0)-(parseFloat(y.getPropertyValue(t,"borderRightWidth"))||0)-(parseFloat(y.getPropertyValue(t,"paddingLeft"))||0)-(parseFloat(y.getPropertyValue(t,"paddingRight"))||0);return a(),p}}u=r(t)===n?e.getComputedStyle(t,null):r(t).computedStyle?r(t).computedStyle:r(t).computedStyle=e.getComputedStyle(t,null),"borderColor"===i&&(i="borderTopColor"),(""===(l=9===c&&"filter"===i?u.getPropertyValue(i):u[i])||null===l)&&(l=t.style[i]),a()}if("auto"===l&&/^(top|right|bottom|left)$/i.test(i)){var g=s(t,"position");("fixed"===g||"absolute"===g&&/top|left/i.test(i))&&(l=d(t).position()[i]+"px")}return l}var l;if(y.Hooks.registered[i]){var u=i,h=y.Hooks.getRoot(u);a===n&&(a=y.getPropertyValue(t,y.Names.prefixCheck(h)[0])),y.Normalizations.registered[h]&&(a=y.Normalizations.registered[h]("extract",t,a)),l=y.Hooks.extractValue(u,a)}else if(y.Normalizations.registered[i]){var f,p;"transform"!==(f=y.Normalizations.registered[i]("name",t))&&(p=s(t,y.Names.prefixCheck(f)[0]),y.Values.isCSSNullValue(p)&&y.Hooks.templates[i]&&(p=y.Hooks.templates[i][1])),l=y.Normalizations.registered[i]("extract",t,p)}if(!/^[\d-]/.test(l))if(r(t)&&r(t).isSVG&&y.Names.SVGAttribute(i))if(/^(height|width)$/i.test(i))try{l=t.getBBox()[i]}catch(t){l=0}else l=t.getAttribute(i);else l=s(t,y.Names.prefixCheck(i)[0]);return y.Values.isCSSNullValue(l)&&(l=0),v.debug>=2&&console.log("Get "+i+": "+l),l},setPropertyValue:function(t,i,n,a,o){var s=i;if("scroll"===i)o.container?o.container["scroll"+o.direction]=n:"Left"===o.direction?e.scrollTo(n,o.alternateValue):e.scrollTo(o.alternateValue,n);else if(y.Normalizations.registered[i]&&"transform"===y.Normalizations.registered[i]("name",t))y.Normalizations.registered[i]("inject",t,n),s="transform",n=r(t).transformCache[i];else{if(y.Hooks.registered[i]){var l=i,u=y.Hooks.getRoot(i);a=a||y.getPropertyValue(t,u),n=y.Hooks.injectValue(l,n,a),i=u}if(y.Normalizations.registered[i]&&(n=y.Normalizations.registered[i]("inject",t,n),i=y.Normalizations.registered[i]("name",t)),s=y.Names.prefixCheck(i)[0],8>=c)try{t.style[s]=n}catch(t){v.debug&&console.log("Browser does not support ["+n+"] for ["+s+"]")}else r(t)&&r(t).isSVG&&y.Names.SVGAttribute(i)?t.setAttribute(i,n):t.style[s]=n;v.debug>=2&&console.log("Set "+i+" ("+s+"): "+n)}return[s,n]},flushTransformCache:function(t){function e(e){return parseFloat(y.getPropertyValue(t,e))}var i="";if((c||v.State.isAndroid&&!v.State.isChrome)&&r(t).isSVG){var n={translate:[e("translateX"),e("translateY")],skewX:[e("skewX")],skewY:[e("skewY")],scale:1!==e("scale")?[e("scale"),e("scale")]:[e("scaleX"),e("scaleY")],rotate:[e("rotateZ"),0,0]};d.each(r(t).transformCache,function(t){/^translate/i.test(t)?t="translate":/^scale/i.test(t)?t="scale":/^rotate/i.test(t)&&(t="rotate"),n[t]&&(i+=t+"("+n[t].join(" ")+") ",delete n[t])})}else{var a,o;d.each(r(t).transformCache,function(e){return a=r(t).transformCache[e],"transformPerspective"===e?(o=a,!0):(9===c&&"rotateZ"===e&&(e="rotate"),void(i+=e+a+" "))}),o&&(i="perspective"+o+" "+i)}y.setPropertyValue(t,"transform",i)}};y.Hooks.register(),y.Normalizations.register(),v.hook=function(t,e,i){var o=n;return t=a(t),d.each(t,function(t,a){if(r(a)===n&&v.init(a),i===n)o===n&&(o=v.CSS.getPropertyValue(a,e));else{var s=v.CSS.setPropertyValue(a,e,i);"transform"===s[0]&&v.CSS.flushTransformCache(a),o=s}}),o};var x=function(){function t(){return c?A.promise||null:h}function o(){function t(t){function h(t,e){var i=n,a=n,r=n;return f.isArray(t)?(i=t[0],!f.isArray(t[1])&&/^[\d-]/.test(t[1])||f.isFunction(t[1])||y.RegEx.isHex.test(t[1])?r=t[1]:(f.isString(t[1])&&!y.RegEx.isHex.test(t[1])||f.isArray(t[1]))&&(a=e?t[1]:s(t[1],u.duration),t[2]!==n&&(r=t[2]))):i=t,e||(a=a||u.easing),f.isFunction(i)&&(i=i.call(o,C,S)),f.isFunction(r)&&(r=r.call(o,C,S)),[i||0,a,r]}function p(t,e){var i,n;return n=(e||"0").toString().toLowerCase().replace(/[%A-z]+$/,function(t){return i=t,""}),i||(i=y.Values.getUnitType(t)),[n,i]}function g(){var t={myParent:o.parentNode||i.body,position:y.getPropertyValue(o,"position"),fontSize:y.getPropertyValue(o,"fontSize")},n=t.position===L.lastPosition&&t.myParent===L.lastParent,a=t.fontSize===L.lastFontSize;L.lastParent=t.myParent,L.lastPosition=t.position,L.lastFontSize=t.fontSize;var s=100,l={};if(a&&n)l.emToPx=L.lastEmToPx,l.percentToPxWidth=L.lastPercentToPxWidth,l.percentToPxHeight=L.lastPercentToPxHeight;else{var u=r(o).isSVG?i.createElementNS("http://www.w3.org/2000/svg","rect"):i.createElement("div");v.init(u),t.myParent.appendChild(u),d.each(["overflow","overflowX","overflowY"],function(t,e){v.CSS.setPropertyValue(u,e,"hidden")}),v.CSS.setPropertyValue(u,"position",t.position),v.CSS.setPropertyValue(u,"fontSize",t.fontSize),v.CSS.setPropertyValue(u,"boxSizing","content-box"),d.each(["minWidth","maxWidth","width","minHeight","maxHeight","height"],function(t,e){v.CSS.setPropertyValue(u,e,s+"%")}),v.CSS.setPropertyValue(u,"paddingLeft",s+"em"),l.percentToPxWidth=L.lastPercentToPxWidth=(parseFloat(y.getPropertyValue(u,"width",null,!0))||1)/s,l.percentToPxHeight=L.lastPercentToPxHeight=(parseFloat(y.getPropertyValue(u,"height",null,!0))||1)/s,l.emToPx=L.lastEmToPx=(parseFloat(y.getPropertyValue(u,"paddingLeft"))||1)/s,t.myParent.removeChild(u)}return null===L.remToPx&&(L.remToPx=parseFloat(y.getPropertyValue(i.body,"fontSize"))||16),null===L.vwToPx&&(L.vwToPx=parseFloat(e.innerWidth)/100,L.vhToPx=parseFloat(e.innerHeight)/100),l.remToPx=L.remToPx,l.vwToPx=L.vwToPx,l.vhToPx=L.vhToPx,v.debug>=1&&console.log("Unit ratios: "+JSON.stringify(l),o),l}if(u.begin&&0===C)try{u.begin.call(m,m)}catch(t){setTimeout(function(){throw t},1)}if("scroll"===P){var x,k,M,T=/^x$/i.test(u.axis)?"Left":"Top",_=parseFloat(u.offset)||0;u.container?f.isWrapped(u.container)||f.isNode(u.container)?(u.container=u.container[0]||u.container,M=(x=u.container["scroll"+T])+d(o).position()[T.toLowerCase()]+_):u.container=null:(x=v.State.scrollAnchor[v.State["scrollProperty"+T]],k=v.State.scrollAnchor[v.State["scrollProperty"+("Left"===T?"Top":"Left")]],M=d(o).offset()[T.toLowerCase()]+_),c={scroll:{rootPropertyValue:!1,startValue:x,currentValue:x,endValue:M,unitType:"",easing:u.easing,scrollData:{container:u.container,direction:T,alternateValue:k}},element:o},v.debug&&console.log("tweensContainer (scroll): ",c.scroll,o)}else if("reverse"===P){if(!r(o).tweensContainer)return void d.dequeue(o,u.queue);"none"===r(o).opts.display&&(r(o).opts.display="auto"),"hidden"===r(o).opts.visibility&&(r(o).opts.visibility="visible"),r(o).opts.loop=!1,r(o).opts.begin=null,r(o).opts.complete=null,w.easing||delete u.easing,w.duration||delete u.duration,u=d.extend({},r(o).opts,u);var I=d.extend(!0,{},r(o).tweensContainer);for(var D in I)if("element"!==D){var F=I[D].startValue;I[D].startValue=I[D].currentValue=I[D].endValue,I[D].endValue=F,f.isEmptyObject(w)||(I[D].easing=u.easing),v.debug&&console.log("reverse tweensContainer ("+D+"): "+JSON.stringify(I[D]),o)}c=I}else if("start"===P){for(var O in r(o).tweensContainer&&!0===r(o).isAnimating&&(I=r(o).tweensContainer),d.each(b,function(t,e){if(RegExp("^"+y.Lists.colors.join("$|^")+"$").test(t)){var i=h(e,!0),a=i[0],r=i[1],o=i[2];if(y.RegEx.isHex.test(a)){for(var s=["Red","Green","Blue"],l=y.Values.hexToRgb(a),u=o?y.Values.hexToRgb(o):n,d=0;d<s.length;d++){var c=[l[d]];r&&c.push(r),u!==n&&c.push(u[d]),b[t+s[d]]=c}delete b[t]}}}),b){var V=h(b[O]),z=V[0],N=V[1],E=V[2];O=y.Names.camelCase(O);var W=y.Hooks.getRoot(O),B=!1;if(r(o).isSVG||"tween"===W||!1!==y.Names.prefixCheck(W)[1]||y.Normalizations.registered[W]!==n){(u.display!==n&&null!==u.display&&"none"!==u.display||u.visibility!==n&&"hidden"!==u.visibility)&&/opacity|filter/.test(O)&&!E&&0!==z&&(E=0),u._cacheValues&&I&&I[O]?(E===n&&(E=I[O].endValue+I[O].unitType),B=r(o).rootPropertyValueCache[W]):y.Hooks.registered[O]?E===n?(B=y.getPropertyValue(o,W),E=y.getPropertyValue(o,O,B)):B=y.Hooks.templates[W][1]:E===n&&(E=y.getPropertyValue(o,O));var H,j,q,Y=!1;if(E=(H=p(O,E))[0],q=H[1],z=(H=p(O,z))[0].replace(/^([+-\/*])=/,function(t,e){return Y=e,""}),j=H[1],E=parseFloat(E)||0,z=parseFloat(z)||0,"%"===j&&(/^(fontSize|lineHeight)$/.test(O)?(z/=100,j="em"):/^scale/.test(O)?(z/=100,j=""):/(Red|Green|Blue)$/i.test(O)&&(z=z/100*255,j="")),/[\/*]/.test(Y))j=q;else if(q!==j&&0!==E)if(0===z)j=q;else{a=a||g();var U=/margin|padding|left|right|width|text|word|letter/i.test(O)||/X$/.test(O)||"x"===O?"x":"y";switch(q){case"%":E*="x"===U?a.percentToPxWidth:a.percentToPxHeight;break;case"px":break;default:E*=a[q+"ToPx"]}switch(j){case"%":E*=1/("x"===U?a.percentToPxWidth:a.percentToPxHeight);break;case"px":break;default:E*=1/a[j+"ToPx"]}}switch(Y){case"+":z=E+z;break;case"-":z=E-z;break;case"*":z*=E;break;case"/":z=E/z}c[O]={rootPropertyValue:B,startValue:E,currentValue:E,endValue:z,unitType:j,easing:N},v.debug&&console.log("tweensContainer ("+O+"): "+JSON.stringify(c[O]),o)}else v.debug&&console.log("Skipping ["+W+"] due to a lack of browser support.")}c.element=o}c.element&&(y.Values.addClass(o,"velocity-animating"),R.push(c),""===u.queue&&(r(o).tweensContainer=c,r(o).opts=u),r(o).isAnimating=!0,C===S-1?(v.State.calls.push([R,m,u,null,A.resolver]),!1===v.State.isTicking&&(v.State.isTicking=!0,l())):C++)}var a,o=this,u=d.extend({},v.defaults,w),c={};switch(r(o)===n&&v.init(o),parseFloat(u.delay)&&!1!==u.queue&&d.queue(o,u.queue,function(t){v.velocityQueueEntryFlag=!0,r(o).delayTimer={setTimeout:setTimeout(t,parseFloat(u.delay)),next:t}}),u.duration.toString().toLowerCase()){case"fast":u.duration=200;break;case"normal":u.duration=g;break;case"slow":u.duration=600;break;default:u.duration=parseFloat(u.duration)||1}!1!==v.mock&&(!0===v.mock?u.duration=u.delay=1:(u.duration*=parseFloat(v.mock)||1,u.delay*=parseFloat(v.mock)||1)),u.easing=s(u.easing,u.duration),u.begin&&!f.isFunction(u.begin)&&(u.begin=null),u.progress&&!f.isFunction(u.progress)&&(u.progress=null),u.complete&&!f.isFunction(u.complete)&&(u.complete=null),u.display!==n&&null!==u.display&&(u.display=u.display.toString().toLowerCase(),"auto"===u.display&&(u.display=v.CSS.Values.getDisplayType(o))),u.visibility!==n&&null!==u.visibility&&(u.visibility=u.visibility.toString().toLowerCase()),u.mobileHA=u.mobileHA&&v.State.isMobile&&!v.State.isGingerbread,!1===u.queue?u.delay?setTimeout(t,u.delay):t():d.queue(o,u.queue,function(e,i){return!0===i?(A.promise&&A.resolver(m),!0):(v.velocityQueueEntryFlag=!0,void t())}),""!==u.queue&&"fx"!==u.queue||"inprogress"===d.queue(o)[0]||d.dequeue(o)}var c,h,p,m,b,w,k=arguments[0]&&(arguments[0].p||d.isPlainObject(arguments[0].properties)&&!arguments[0].properties.names||f.isString(arguments[0].properties));if(f.isWrapped(this)?(c=!1,p=0,m=this,h=this):(c=!0,p=1,m=k?arguments[0].elements||arguments[0].e:arguments[0]),m=a(m)){k?(b=arguments[0].properties||arguments[0].p,w=arguments[0].options||arguments[0].o):(b=arguments[p],w=arguments[p+1]);var S=m.length,C=0;if(!/^(stop|finish)$/i.test(b)&&!d.isPlainObject(w)){w={};for(var M=p+1;M<arguments.length;M++)f.isArray(arguments[M])||!/^(fast|normal|slow)$/i.test(arguments[M])&&!/^\d/.test(arguments[M])?f.isString(arguments[M])||f.isArray(arguments[M])?w.easing=arguments[M]:f.isFunction(arguments[M])&&(w.complete=arguments[M]):w.duration=arguments[M]}var P,A={promise:null,resolver:null,rejecter:null};switch(c&&v.Promise&&(A.promise=new v.Promise(function(t,e){A.resolver=t,A.rejecter=e})),b){case"scroll":P="scroll";break;case"reverse":P="reverse";break;case"finish":case"stop":d.each(m,function(t,e){r(e)&&r(e).delayTimer&&(clearTimeout(r(e).delayTimer.setTimeout),r(e).delayTimer.next&&r(e).delayTimer.next(),delete r(e).delayTimer)});var T=[];return d.each(v.State.calls,function(t,e){e&&d.each(e[1],function(i,a){var o=w===n?"":w;return!0!==o&&e[2].queue!==o&&(w!==n||!1!==e[2].queue)||void d.each(m,function(i,n){n===a&&((!0===w||f.isString(w))&&(d.each(d.queue(n,f.isString(w)?w:""),function(t,e){f.isFunction(e)&&e(null,!0)}),d.queue(n,f.isString(w)?w:"",[])),"stop"===b?(r(n)&&r(n).tweensContainer&&!1!==o&&d.each(r(n).tweensContainer,function(t,e){e.endValue=e.currentValue}),T.push(t)):"finish"===b&&(e[2].duration=1))})})}),"stop"===b&&(d.each(T,function(t,e){u(e,!0)}),A.promise&&A.resolver(m)),t();default:if(!d.isPlainObject(b)||f.isEmptyObject(b)){if(f.isString(b)&&v.Redirects[b]){var _=(O=d.extend({},w)).duration,I=O.delay||0;return!0===O.backwards&&(m=d.extend(!0,[],m).reverse()),d.each(m,function(t,e){parseFloat(O.stagger)?O.delay=I+parseFloat(O.stagger)*t:f.isFunction(O.stagger)&&(O.delay=I+O.stagger.call(e,t,S)),O.drag&&(O.duration=parseFloat(_)||(/^(callout|transition)/.test(b)?1e3:g),O.duration=Math.max(O.duration*(O.backwards?1-t/S:(t+1)/S),.75*O.duration,200)),v.Redirects[b].call(e,e,O||{},t,S,m,A.promise?A:n)}),t()}var D="Velocity: First argument ("+b+") was not a property map, a known action, or a registered redirect. Aborting.";return A.promise?A.rejecter(new Error(D)):console.log(D),t()}P="start"}var F,O,L={lastParent:null,lastPosition:null,lastFontSize:null,lastPercentToPxWidth:null,lastPercentToPxHeight:null,lastEmToPx:null,remToPx:null,vwToPx:null,vhToPx:null},R=[];if(d.each(m,function(t,e){f.isNode(e)&&o.call(e)}),(O=d.extend({},v.defaults,w)).loop=parseInt(O.loop),F=2*O.loop-1,O.loop)for(var V=0;F>V;V++){var z={delay:O.delay,progress:O.progress};V===F-1&&(z.display=O.display,z.visibility=O.visibility,z.complete=O.complete),x(m,"reverse",z)}return t()}};(v=d.extend(x,v)).animate=x;var w=e.requestAnimationFrame||h;return v.State.isMobile||i.hidden===n||i.addEventListener("visibilitychange",function(){i.hidden?(w=function(t){return setTimeout(function(){t(!0)},16)},l()):w=e.requestAnimationFrame||h}),t.Velocity=v,t!==e&&(t.fn.velocity=x,t.fn.velocity.defaults=v.defaults),d.each(["Down","Up"],function(t,e){v.Redirects["slide"+e]=function(t,i,a,r,o,s){var l=d.extend({},i),u=l.begin,c=l.complete,h={height:"",marginTop:"",marginBottom:"",paddingTop:"",paddingBottom:""},f={};l.display===n&&(l.display="Down"===e?"inline"===v.CSS.Values.getDisplayType(t)?"inline-block":"block":"none"),l.begin=function(){for(var i in u&&u.call(o,o),h){f[i]=t.style[i];var n=v.CSS.getPropertyValue(t,i);h[i]="Down"===e?[n,0]:[0,n]}f.overflow=t.style.overflow,t.style.overflow="hidden"},l.complete=function(){for(var e in f)t.style[e]=f[e];c&&c.call(o,o),s&&s.resolver(o)},v(t,h,l)}}),d.each(["In","Out"],function(t,e){v.Redirects["fade"+e]=function(t,i,a,r,o,s){var l=d.extend({},i),u={opacity:"In"===e?1:0},c=l.complete;l.complete=a!==r-1?l.begin=null:function(){c&&c.call(o,o),s&&s.resolver(o)},l.display===n&&(l.display="In"===e?"auto":"none"),v(this,u,l)}}),v}jQuery.fn.velocity=jQuery.fn.animate}(window.jQuery||window.Zepto||window,window,document)})),function(t){if(true)module.exports=t();else if("function"==typeof define&&define.amd)define([],t);else{("undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this).Chart=t()}}(function(){return function(){return function t(e,i,n){function a(o,s){if(!i[o]){if(!e[o]){var l="function"==typeof require&&require;if(!s&&l)return require(o,!0);if(r)return r(o,!0);var u=new Error("Cannot find module '"+o+"'");throw u.code="MODULE_NOT_FOUND",u}var d=i[o]={exports:{}};e[o][0].call(d.exports,function(t){return a(e[o][1][t]||t)},d,d.exports,t,e,i,n)}return i[o].exports}for(var r="function"==typeof require&&require,o=0;o<n.length;o++)a(n[o]);return a}}()({1:[function(t,e,i){},{}],2:[function(t,e,i){var n=t(6);function a(t){if(t){var e=[0,0,0],i=1,a=t.match(/^#([a-fA-F0-9]{3})$/i);if(a){a=a[1];for(var r=0;r<e.length;r++)e[r]=parseInt(a[r]+a[r],16)}else if(a=t.match(/^#([a-fA-F0-9]{6})$/i)){a=a[1];for(r=0;r<e.length;r++)e[r]=parseInt(a.slice(2*r,2*r+2),16)}else if(a=t.match(/^rgba?\(\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/i)){for(r=0;r<e.length;r++)e[r]=parseInt(a[r+1]);i=parseFloat(a[4])}else if(a=t.match(/^rgba?\(\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/i)){for(r=0;r<e.length;r++)e[r]=Math.round(2.55*parseFloat(a[r+1]));i=parseFloat(a[4])}else if(a=t.match(/(\w+)/)){if("transparent"==a[1])return[0,0,0,0];if(!(e=n[a[1]]))return}for(r=0;r<e.length;r++)e[r]=d(e[r],0,255);return i=i||0==i?d(i,0,1):1,e[3]=i,e}}function r(t){if(t){var e=t.match(/^hsla?\(\s*([+-]?\d+)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)/);if(e){var i=parseFloat(e[4]);return[d(parseInt(e[1]),0,360),d(parseFloat(e[2]),0,100),d(parseFloat(e[3]),0,100),d(isNaN(i)?1:i,0,1)]}}}function o(t){if(t){var e=t.match(/^hwb\(\s*([+-]?\d+)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)/);if(e){var i=parseFloat(e[4]);return[d(parseInt(e[1]),0,360),d(parseFloat(e[2]),0,100),d(parseFloat(e[3]),0,100),d(isNaN(i)?1:i,0,1)]}}}function s(t,e){return void 0===e&&(e=void 0!==t[3]?t[3]:1),"rgba("+t[0]+", "+t[1]+", "+t[2]+", "+e+")"}function l(t,e){return"rgba("+Math.round(t[0]/255*100)+"%, "+Math.round(t[1]/255*100)+"%, "+Math.round(t[2]/255*100)+"%, "+(e||t[3]||1)+")"}function u(t,e){return void 0===e&&(e=void 0!==t[3]?t[3]:1),"hsla("+t[0]+", "+t[1]+"%, "+t[2]+"%, "+e+")"}function d(t,e,i){return Math.min(Math.max(e,t),i)}function c(t){var e=t.toString(16).toUpperCase();return e.length<2?"0"+e:e}e.exports={getRgba:a,getHsla:r,getRgb:function(t){var e=a(t);return e&&e.slice(0,3)},getHsl:function(t){var e=r(t);return e&&e.slice(0,3)},getHwb:o,getAlpha:function(t){var e=a(t);if(e)return e[3];if(e=r(t))return e[3];if(e=o(t))return e[3]},hexString:function(t){return"#"+c(t[0])+c(t[1])+c(t[2])},rgbString:function(t,e){if(e<1||t[3]&&t[3]<1)return s(t,e);return"rgb("+t[0]+", "+t[1]+", "+t[2]+")"},rgbaString:s,percentString:function(t,e){if(e<1||t[3]&&t[3]<1)return l(t,e);var i=Math.round(t[0]/255*100),n=Math.round(t[1]/255*100),a=Math.round(t[2]/255*100);return"rgb("+i+"%, "+n+"%, "+a+"%)"},percentaString:l,hslString:function(t,e){if(e<1||t[3]&&t[3]<1)return u(t,e);return"hsl("+t[0]+", "+t[1]+"%, "+t[2]+"%)"},hslaString:u,hwbString:function(t,e){void 0===e&&(e=void 0!==t[3]?t[3]:1);return"hwb("+t[0]+", "+t[1]+"%, "+t[2]+"%"+(void 0!==e&&1!==e?", "+e:"")+")"},keyword:function(t){return h[t.slice(0,3)]}};var h={};for(var f in n)h[n[f]]=f},{6:6}],3:[function(t,e,i){var n=t(5),a=t(2),r=function(t){return t instanceof r?t:this instanceof r?(this.valid=!1,this.values={rgb:[0,0,0],hsl:[0,0,0],hsv:[0,0,0],hwb:[0,0,0],cmyk:[0,0,0,0],alpha:1},void("string"==typeof t?(e=a.getRgba(t))?this.setValues("rgb",e):(e=a.getHsla(t))?this.setValues("hsl",e):(e=a.getHwb(t))&&this.setValues("hwb",e):"object"==typeof t&&(void 0!==(e=t).r||void 0!==e.red?this.setValues("rgb",e):void 0!==e.l||void 0!==e.lightness?this.setValues("hsl",e):void 0!==e.v||void 0!==e.value?this.setValues("hsv",e):void 0!==e.w||void 0!==e.whiteness?this.setValues("hwb",e):void 0===e.c&&void 0===e.cyan||this.setValues("cmyk",e)))):new r(t);var e};r.prototype={isValid:function(){return this.valid},rgb:function(){return this.setSpace("rgb",arguments)},hsl:function(){return this.setSpace("hsl",arguments)},hsv:function(){return this.setSpace("hsv",arguments)},hwb:function(){return this.setSpace("hwb",arguments)},cmyk:function(){return this.setSpace("cmyk",arguments)},rgbArray:function(){return this.values.rgb},hslArray:function(){return this.values.hsl},hsvArray:function(){return this.values.hsv},hwbArray:function(){var t=this.values;return 1!==t.alpha?t.hwb.concat([t.alpha]):t.hwb},cmykArray:function(){return this.values.cmyk},rgbaArray:function(){var t=this.values;return t.rgb.concat([t.alpha])},hslaArray:function(){var t=this.values;return t.hsl.concat([t.alpha])},alpha:function(t){return void 0===t?this.values.alpha:(this.setValues("alpha",t),this)},red:function(t){return this.setChannel("rgb",0,t)},green:function(t){return this.setChannel("rgb",1,t)},blue:function(t){return this.setChannel("rgb",2,t)},hue:function(t){return t&&(t=(t%=360)<0?360+t:t),this.setChannel("hsl",0,t)},saturation:function(t){return this.setChannel("hsl",1,t)},lightness:function(t){return this.setChannel("hsl",2,t)},saturationv:function(t){return this.setChannel("hsv",1,t)},whiteness:function(t){return this.setChannel("hwb",1,t)},blackness:function(t){return this.setChannel("hwb",2,t)},value:function(t){return this.setChannel("hsv",2,t)},cyan:function(t){return this.setChannel("cmyk",0,t)},magenta:function(t){return this.setChannel("cmyk",1,t)},yellow:function(t){return this.setChannel("cmyk",2,t)},black:function(t){return this.setChannel("cmyk",3,t)},hexString:function(){return a.hexString(this.values.rgb)},rgbString:function(){return a.rgbString(this.values.rgb,this.values.alpha)},rgbaString:function(){return a.rgbaString(this.values.rgb,this.values.alpha)},percentString:function(){return a.percentString(this.values.rgb,this.values.alpha)},hslString:function(){return a.hslString(this.values.hsl,this.values.alpha)},hslaString:function(){return a.hslaString(this.values.hsl,this.values.alpha)},hwbString:function(){return a.hwbString(this.values.hwb,this.values.alpha)},keyword:function(){return a.keyword(this.values.rgb,this.values.alpha)},rgbNumber:function(){var t=this.values.rgb;return t[0]<<16|t[1]<<8|t[2]},luminosity:function(){for(var t=this.values.rgb,e=[],i=0;i<t.length;i++){var n=t[i]/255;e[i]=n<=.03928?n/12.92:Math.pow((n+.055)/1.055,2.4)}return.2126*e[0]+.7152*e[1]+.0722*e[2]},contrast:function(t){var e=this.luminosity(),i=t.luminosity();return e>i?(e+.05)/(i+.05):(i+.05)/(e+.05)},level:function(t){var e=this.contrast(t);return e>=7.1?"AAA":e>=4.5?"AA":""},dark:function(){var t=this.values.rgb;return(299*t[0]+587*t[1]+114*t[2])/1e3<128},light:function(){return!this.dark()},negate:function(){for(var t=[],e=0;e<3;e++)t[e]=255-this.values.rgb[e];return this.setValues("rgb",t),this},lighten:function(t){var e=this.values.hsl;return e[2]+=e[2]*t,this.setValues("hsl",e),this},darken:function(t){var e=this.values.hsl;return e[2]-=e[2]*t,this.setValues("hsl",e),this},saturate:function(t){var e=this.values.hsl;return e[1]+=e[1]*t,this.setValues("hsl",e),this},desaturate:function(t){var e=this.values.hsl;return e[1]-=e[1]*t,this.setValues("hsl",e),this},whiten:function(t){var e=this.values.hwb;return e[1]+=e[1]*t,this.setValues("hwb",e),this},blacken:function(t){var e=this.values.hwb;return e[2]+=e[2]*t,this.setValues("hwb",e),this},greyscale:function(){var t=this.values.rgb,e=.3*t[0]+.59*t[1]+.11*t[2];return this.setValues("rgb",[e,e,e]),this},clearer:function(t){var e=this.values.alpha;return this.setValues("alpha",e-e*t),this},opaquer:function(t){var e=this.values.alpha;return this.setValues("alpha",e+e*t),this},rotate:function(t){var e=this.values.hsl,i=(e[0]+t)%360;return e[0]=i<0?360+i:i,this.setValues("hsl",e),this},mix:function(t,e){var i=t,n=void 0===e?.5:e,a=2*n-1,r=this.alpha()-i.alpha(),o=((a*r==-1?a:(a+r)/(1+a*r))+1)/2,s=1-o;return this.rgb(o*this.red()+s*i.red(),o*this.green()+s*i.green(),o*this.blue()+s*i.blue()).alpha(this.alpha()*n+i.alpha()*(1-n))},toJSON:function(){return this.rgb()},clone:function(){var t,e,i=new r,n=this.values,a=i.values;for(var o in n)n.hasOwnProperty(o)&&(t=n[o],"[object Array]"===(e={}.toString.call(t))?a[o]=t.slice(0):"[object Number]"===e?a[o]=t:console.error("unexpected color value:",t));return i}},r.prototype.spaces={rgb:["red","green","blue"],hsl:["hue","saturation","lightness"],hsv:["hue","saturation","value"],hwb:["hue","whiteness","blackness"],cmyk:["cyan","magenta","yellow","black"]},r.prototype.maxes={rgb:[255,255,255],hsl:[360,100,100],hsv:[360,100,100],hwb:[360,100,100],cmyk:[100,100,100,100]},r.prototype.getValues=function(t){for(var e=this.values,i={},n=0;n<t.length;n++)i[t.charAt(n)]=e[t][n];return 1!==e.alpha&&(i.a=e.alpha),i},r.prototype.setValues=function(t,e){var i,a,r=this.values,o=this.spaces,s=this.maxes,l=1;if(this.valid=!0,"alpha"===t)l=e;else if(e.length)r[t]=e.slice(0,t.length),l=e[t.length];else if(void 0!==e[t.charAt(0)]){for(i=0;i<t.length;i++)r[t][i]=e[t.charAt(i)];l=e.a}else if(void 0!==e[o[t][0]]){var u=o[t];for(i=0;i<t.length;i++)r[t][i]=e[u[i]];l=e.alpha}if(r.alpha=Math.max(0,Math.min(1,void 0===l?r.alpha:l)),"alpha"===t)return!1;for(i=0;i<t.length;i++)a=Math.max(0,Math.min(s[t][i],r[t][i])),r[t][i]=Math.round(a);for(var d in o)d!==t&&(r[d]=n[t][d](r[t]));return!0},r.prototype.setSpace=function(t,e){var i=e[0];return void 0===i?this.getValues(t):("number"==typeof i&&(i=Array.prototype.slice.call(e)),this.setValues(t,i),this)},r.prototype.setChannel=function(t,e,i){var n=this.values[t];return void 0===i?n[e]:i===n[e]?this:(n[e]=i,this.setValues(t,n),this)},"undefined"!=typeof window&&(window.Color=r),e.exports=r},{2:2,5:5}],4:[function(t,e,i){function n(t){var e,i,n=t[0]/255,a=t[1]/255,r=t[2]/255,o=Math.min(n,a,r),s=Math.max(n,a,r),l=s-o;return s==o?e=0:n==s?e=(a-r)/l:a==s?e=2+(r-n)/l:r==s&&(e=4+(n-a)/l),(e=Math.min(60*e,360))<0&&(e+=360),i=(o+s)/2,[e,100*(s==o?0:i<=.5?l/(s+o):l/(2-s-o)),100*i]}function a(t){var e,i,n=t[0],a=t[1],r=t[2],o=Math.min(n,a,r),s=Math.max(n,a,r),l=s-o;return i=0==s?0:l/s*1e3/10,s==o?e=0:n==s?e=(a-r)/l:a==s?e=2+(r-n)/l:r==s&&(e=4+(n-a)/l),(e=Math.min(60*e,360))<0&&(e+=360),[e,i,s/255*1e3/10]}function o(t){var e=t[0],i=t[1],a=t[2];return[n(t)[0],100*(1/255*Math.min(e,Math.min(i,a))),100*(a=1-1/255*Math.max(e,Math.max(i,a)))]}function s(t){var e,i=t[0]/255,n=t[1]/255,a=t[2]/255;return[100*((1-i-(e=Math.min(1-i,1-n,1-a)))/(1-e)||0),100*((1-n-e)/(1-e)||0),100*((1-a-e)/(1-e)||0),100*e]}function l(t){return M[JSON.stringify(t)]}function u(t){var e=t[0]/255,i=t[1]/255,n=t[2]/255;return[100*(.4124*(e=e>.04045?Math.pow((e+.055)/1.055,2.4):e/12.92)+.3576*(i=i>.04045?Math.pow((i+.055)/1.055,2.4):i/12.92)+.1805*(n=n>.04045?Math.pow((n+.055)/1.055,2.4):n/12.92)),100*(.2126*e+.7152*i+.0722*n),100*(.0193*e+.1192*i+.9505*n)]}function d(t){var e=u(t),i=e[0],n=e[1],a=e[2];return n/=100,a/=108.883,i=(i/=95.047)>.008856?Math.pow(i,1/3):7.787*i+16/116,[116*(n=n>.008856?Math.pow(n,1/3):7.787*n+16/116)-16,500*(i-n),200*(n-(a=a>.008856?Math.pow(a,1/3):7.787*a+16/116))]}function c(t){var e,i,n,a,r,o=t[0]/360,s=t[1]/100,l=t[2]/100;if(0==s)return[r=255*l,r,r];e=2*l-(i=l<.5?l*(1+s):l+s-l*s),a=[0,0,0];for(var u=0;u<3;u++)(n=o+1/3*-(u-1))<0&&n++,n>1&&n--,r=6*n<1?e+6*(i-e)*n:2*n<1?i:3*n<2?e+(i-e)*(2/3-n)*6:e,a[u]=255*r;return a}function h(t){var e=t[0]/60,i=t[1]/100,n=t[2]/100,a=Math.floor(e)%6,r=e-Math.floor(e),o=255*n*(1-i),s=255*n*(1-i*r),l=255*n*(1-i*(1-r));n*=255;switch(a){case 0:return[n,l,o];case 1:return[s,n,o];case 2:return[o,n,l];case 3:return[o,s,n];case 4:return[l,o,n];case 5:return[n,o,s]}}function f(t){var e,i,n,a,o=t[0]/360,s=t[1]/100,l=t[2]/100,u=s+l;switch(u>1&&(s/=u,l/=u),i=1-l,n=6*o-(e=Math.floor(6*o)),0!=(1&e)&&(n=1-n),a=s+n*(i-s),e){default:case 6:case 0:r=i,g=a,b=s;break;case 1:r=a,g=i,b=s;break;case 2:r=s,g=i,b=a;break;case 3:r=s,g=a,b=i;break;case 4:r=a,g=s,b=i;break;case 5:r=i,g=s,b=a}return[255*r,255*g,255*b]}function p(t){var e=t[0]/100,i=t[1]/100,n=t[2]/100,a=t[3]/100;return[255*(1-Math.min(1,e*(1-a)+a)),255*(1-Math.min(1,i*(1-a)+a)),255*(1-Math.min(1,n*(1-a)+a))]}function m(t){var e,i,n,a=t[0]/100,r=t[1]/100,o=t[2]/100;return i=-.9689*a+1.8758*r+.0415*o,n=.0557*a+-.204*r+1.057*o,e=(e=3.2406*a+-1.5372*r+-.4986*o)>.0031308?1.055*Math.pow(e,1/2.4)-.055:e*=12.92,i=i>.0031308?1.055*Math.pow(i,1/2.4)-.055:i*=12.92,n=n>.0031308?1.055*Math.pow(n,1/2.4)-.055:n*=12.92,[255*(e=Math.min(Math.max(0,e),1)),255*(i=Math.min(Math.max(0,i),1)),255*(n=Math.min(Math.max(0,n),1))]}function v(t){var e=t[0],i=t[1],n=t[2];return i/=100,n/=108.883,e=(e/=95.047)>.008856?Math.pow(e,1/3):7.787*e+16/116,[116*(i=i>.008856?Math.pow(i,1/3):7.787*i+16/116)-16,500*(e-i),200*(i-(n=n>.008856?Math.pow(n,1/3):7.787*n+16/116))]}function y(t){var e,i,n,a,r=t[0],o=t[1],s=t[2];return r<=8?a=(i=100*r/903.3)/100*7.787+16/116:(i=100*Math.pow((r+16)/116,3),a=Math.pow(i/100,1/3)),[e=e/95.047<=.008856?e=95.047*(o/500+a-16/116)/7.787:95.047*Math.pow(o/500+a,3),i,n=n/108.883<=.008859?n=108.883*(a-s/200-16/116)/7.787:108.883*Math.pow(a-s/200,3)]}function x(t){var e,i=t[0],n=t[1],a=t[2];return(e=360*Math.atan2(a,n)/2/Math.PI)<0&&(e+=360),[i,Math.sqrt(n*n+a*a),e]}function w(t){return m(y(t))}function k(t){var e,i=t[0],n=t[1];return e=t[2]/360*2*Math.PI,[i,n*Math.cos(e),n*Math.sin(e)]}function S(t){return C[t]}e.exports={rgb2hsl:n,rgb2hsv:a,rgb2hwb:o,rgb2cmyk:s,rgb2keyword:l,rgb2xyz:u,rgb2lab:d,rgb2lch:function(t){return x(d(t))},hsl2rgb:c,hsl2hsv:function(t){var e=t[0],i=t[1]/100,n=t[2]/100;if(0===n)return[0,0,0];return[e,100*(2*(i*=(n*=2)<=1?n:2-n)/(n+i)),100*((n+i)/2)]},hsl2hwb:function(t){return o(c(t))},hsl2cmyk:function(t){return s(c(t))},hsl2keyword:function(t){return l(c(t))},hsv2rgb:h,hsv2hsl:function(t){var e,i,n=t[0],a=t[1]/100,r=t[2]/100;return e=a*r,[n,100*(e=(e/=(i=(2-a)*r)<=1?i:2-i)||0),100*(i/=2)]},hsv2hwb:function(t){return o(h(t))},hsv2cmyk:function(t){return s(h(t))},hsv2keyword:function(t){return l(h(t))},hwb2rgb:f,hwb2hsl:function(t){return n(f(t))},hwb2hsv:function(t){return a(f(t))},hwb2cmyk:function(t){return s(f(t))},hwb2keyword:function(t){return l(f(t))},cmyk2rgb:p,cmyk2hsl:function(t){return n(p(t))},cmyk2hsv:function(t){return a(p(t))},cmyk2hwb:function(t){return o(p(t))},cmyk2keyword:function(t){return l(p(t))},keyword2rgb:S,keyword2hsl:function(t){return n(S(t))},keyword2hsv:function(t){return a(S(t))},keyword2hwb:function(t){return o(S(t))},keyword2cmyk:function(t){return s(S(t))},keyword2lab:function(t){return d(S(t))},keyword2xyz:function(t){return u(S(t))},xyz2rgb:m,xyz2lab:v,xyz2lch:function(t){return x(v(t))},lab2xyz:y,lab2rgb:w,lab2lch:x,lch2lab:k,lch2xyz:function(t){return y(k(t))},lch2rgb:function(t){return w(k(t))}};var C={aliceblue:[240,248,255],antiquewhite:[250,235,215],aqua:[0,255,255],aquamarine:[127,255,212],azure:[240,255,255],beige:[245,245,220],bisque:[255,228,196],black:[0,0,0],blanchedalmond:[255,235,205],blue:[0,0,255],blueviolet:[138,43,226],brown:[165,42,42],burlywood:[222,184,135],cadetblue:[95,158,160],chartreuse:[127,255,0],chocolate:[210,105,30],coral:[255,127,80],cornflowerblue:[100,149,237],cornsilk:[255,248,220],crimson:[220,20,60],cyan:[0,255,255],darkblue:[0,0,139],darkcyan:[0,139,139],darkgoldenrod:[184,134,11],darkgray:[169,169,169],darkgreen:[0,100,0],darkgrey:[169,169,169],darkkhaki:[189,183,107],darkmagenta:[139,0,139],darkolivegreen:[85,107,47],darkorange:[255,140,0],darkorchid:[153,50,204],darkred:[139,0,0],darksalmon:[233,150,122],darkseagreen:[143,188,143],darkslateblue:[72,61,139],darkslategray:[47,79,79],darkslategrey:[47,79,79],darkturquoise:[0,206,209],darkviolet:[148,0,211],deeppink:[255,20,147],deepskyblue:[0,191,255],dimgray:[105,105,105],dimgrey:[105,105,105],dodgerblue:[30,144,255],firebrick:[178,34,34],floralwhite:[255,250,240],forestgreen:[34,139,34],fuchsia:[255,0,255],gainsboro:[220,220,220],ghostwhite:[248,248,255],gold:[255,215,0],goldenrod:[218,165,32],gray:[128,128,128],green:[0,128,0],greenyellow:[173,255,47],grey:[128,128,128],honeydew:[240,255,240],hotpink:[255,105,180],indianred:[205,92,92],indigo:[75,0,130],ivory:[255,255,240],khaki:[240,230,140],lavender:[230,230,250],lavenderblush:[255,240,245],lawngreen:[124,252,0],lemonchiffon:[255,250,205],lightblue:[173,216,230],lightcoral:[240,128,128],lightcyan:[224,255,255],lightgoldenrodyellow:[250,250,210],lightgray:[211,211,211],lightgreen:[144,238,144],lightgrey:[211,211,211],lightpink:[255,182,193],lightsalmon:[255,160,122],lightseagreen:[32,178,170],lightskyblue:[135,206,250],lightslategray:[119,136,153],lightslategrey:[119,136,153],lightsteelblue:[176,196,222],lightyellow:[255,255,224],lime:[0,255,0],limegreen:[50,205,50],linen:[250,240,230],magenta:[255,0,255],maroon:[128,0,0],mediumaquamarine:[102,205,170],mediumblue:[0,0,205],mediumorchid:[186,85,211],mediumpurple:[147,112,219],mediumseagreen:[60,179,113],mediumslateblue:[123,104,238],mediumspringgreen:[0,250,154],mediumturquoise:[72,209,204],mediumvioletred:[199,21,133],midnightblue:[25,25,112],mintcream:[245,255,250],mistyrose:[255,228,225],moccasin:[255,228,181],navajowhite:[255,222,173],navy:[0,0,128],oldlace:[253,245,230],olive:[128,128,0],olivedrab:[107,142,35],orange:[255,165,0],orangered:[255,69,0],orchid:[218,112,214],palegoldenrod:[238,232,170],palegreen:[152,251,152],paleturquoise:[175,238,238],palevioletred:[219,112,147],papayawhip:[255,239,213],peachpuff:[255,218,185],peru:[205,133,63],pink:[255,192,203],plum:[221,160,221],powderblue:[176,224,230],purple:[128,0,128],rebeccapurple:[102,51,153],red:[255,0,0],rosybrown:[188,143,143],royalblue:[65,105,225],saddlebrown:[139,69,19],salmon:[250,128,114],sandybrown:[244,164,96],seagreen:[46,139,87],seashell:[255,245,238],sienna:[160,82,45],silver:[192,192,192],skyblue:[135,206,235],slateblue:[106,90,205],slategray:[112,128,144],slategrey:[112,128,144],snow:[255,250,250],springgreen:[0,255,127],steelblue:[70,130,180],tan:[210,180,140],teal:[0,128,128],thistle:[216,191,216],tomato:[255,99,71],turquoise:[64,224,208],violet:[238,130,238],wheat:[245,222,179],white:[255,255,255],whitesmoke:[245,245,245],yellow:[255,255,0],yellowgreen:[154,205,50]},M={};for(var P in C)M[JSON.stringify(C[P])]=P},{}],5:[function(t,e,i){var n=t(4),a=function(){return new u};for(var r in n){a[r+"Raw"]=function(t){return function(e){return"number"==typeof e&&(e=Array.prototype.slice.call(arguments)),n[t](e)}}(r);var o=/(\w+)2(\w+)/.exec(r),s=o[1],l=o[2];(a[s]=a[s]||{})[l]=a[r]=function(t){return function(e){"number"==typeof e&&(e=Array.prototype.slice.call(arguments));var i=n[t](e);if("string"==typeof i||void 0===i)return i;for(var a=0;a<i.length;a++)i[a]=Math.round(i[a]);return i}}(r)}var u=function(){this.convs={}};u.prototype.routeSpace=function(t,e){var i=e[0];return void 0===i?this.getValues(t):("number"==typeof i&&(i=Array.prototype.slice.call(e)),this.setValues(t,i))},u.prototype.setValues=function(t,e){return this.space=t,this.convs={},this.convs[t]=e,this},u.prototype.getValues=function(t){var e=this.convs[t];if(!e){var i=this.space,n=this.convs[i];e=a[i][t](n),this.convs[t]=e}return e},["rgb","hsl","hsv","cmyk","keyword"].forEach(function(t){u.prototype[t]=function(e){return this.routeSpace(t,arguments)}}),e.exports=a},{4:4}],6:[function(t,e,i){"use strict";e.exports={aliceblue:[240,248,255],antiquewhite:[250,235,215],aqua:[0,255,255],aquamarine:[127,255,212],azure:[240,255,255],beige:[245,245,220],bisque:[255,228,196],black:[0,0,0],blanchedalmond:[255,235,205],blue:[0,0,255],blueviolet:[138,43,226],brown:[165,42,42],burlywood:[222,184,135],cadetblue:[95,158,160],chartreuse:[127,255,0],chocolate:[210,105,30],coral:[255,127,80],cornflowerblue:[100,149,237],cornsilk:[255,248,220],crimson:[220,20,60],cyan:[0,255,255],darkblue:[0,0,139],darkcyan:[0,139,139],darkgoldenrod:[184,134,11],darkgray:[169,169,169],darkgreen:[0,100,0],darkgrey:[169,169,169],darkkhaki:[189,183,107],darkmagenta:[139,0,139],darkolivegreen:[85,107,47],darkorange:[255,140,0],darkorchid:[153,50,204],darkred:[139,0,0],darksalmon:[233,150,122],darkseagreen:[143,188,143],darkslateblue:[72,61,139],darkslategray:[47,79,79],darkslategrey:[47,79,79],darkturquoise:[0,206,209],darkviolet:[148,0,211],deeppink:[255,20,147],deepskyblue:[0,191,255],dimgray:[105,105,105],dimgrey:[105,105,105],dodgerblue:[30,144,255],firebrick:[178,34,34],floralwhite:[255,250,240],forestgreen:[34,139,34],fuchsia:[255,0,255],gainsboro:[220,220,220],ghostwhite:[248,248,255],gold:[255,215,0],goldenrod:[218,165,32],gray:[128,128,128],green:[0,128,0],greenyellow:[173,255,47],grey:[128,128,128],honeydew:[240,255,240],hotpink:[255,105,180],indianred:[205,92,92],indigo:[75,0,130],ivory:[255,255,240],khaki:[240,230,140],lavender:[230,230,250],lavenderblush:[255,240,245],lawngreen:[124,252,0],lemonchiffon:[255,250,205],lightblue:[173,216,230],lightcoral:[240,128,128],lightcyan:[224,255,255],lightgoldenrodyellow:[250,250,210],lightgray:[211,211,211],lightgreen:[144,238,144],lightgrey:[211,211,211],lightpink:[255,182,193],lightsalmon:[255,160,122],lightseagreen:[32,178,170],lightskyblue:[135,206,250],lightslategray:[119,136,153],lightslategrey:[119,136,153],lightsteelblue:[176,196,222],lightyellow:[255,255,224],lime:[0,255,0],limegreen:[50,205,50],linen:[250,240,230],magenta:[255,0,255],maroon:[128,0,0],mediumaquamarine:[102,205,170],mediumblue:[0,0,205],mediumorchid:[186,85,211],mediumpurple:[147,112,219],mediumseagreen:[60,179,113],mediumslateblue:[123,104,238],mediumspringgreen:[0,250,154],mediumturquoise:[72,209,204],mediumvioletred:[199,21,133],midnightblue:[25,25,112],mintcream:[245,255,250],mistyrose:[255,228,225],moccasin:[255,228,181],navajowhite:[255,222,173],navy:[0,0,128],oldlace:[253,245,230],olive:[128,128,0],olivedrab:[107,142,35],orange:[255,165,0],orangered:[255,69,0],orchid:[218,112,214],palegoldenrod:[238,232,170],palegreen:[152,251,152],paleturquoise:[175,238,238],palevioletred:[219,112,147],papayawhip:[255,239,213],peachpuff:[255,218,185],peru:[205,133,63],pink:[255,192,203],plum:[221,160,221],powderblue:[176,224,230],purple:[128,0,128],rebeccapurple:[102,51,153],red:[255,0,0],rosybrown:[188,143,143],royalblue:[65,105,225],saddlebrown:[139,69,19],salmon:[250,128,114],sandybrown:[244,164,96],seagreen:[46,139,87],seashell:[255,245,238],sienna:[160,82,45],silver:[192,192,192],skyblue:[135,206,235],slateblue:[106,90,205],slategray:[112,128,144],slategrey:[112,128,144],snow:[255,250,250],springgreen:[0,255,127],steelblue:[70,130,180],tan:[210,180,140],teal:[0,128,128],thistle:[216,191,216],tomato:[255,99,71],turquoise:[64,224,208],violet:[238,130,238],wheat:[245,222,179],white:[255,255,255],whitesmoke:[245,245,245],yellow:[255,255,0],yellowgreen:[154,205,50]}},{}],7:[function(t,e,i){var n=t(30)();n.helpers=t(46),t(28)(n),n.Animation=t(22),n.animationService=t(23),n.defaults=t(26),n.Element=t(27),n.elements=t(41),n.Interaction=t(29),n.layouts=t(31),n.platform=t(49),n.plugins=t(32),n.Scale=t(33),n.scaleService=t(34),n.Ticks=t(35),n.Tooltip=t(36),t(24)(n),t(25)(n),t(56)(n),t(54)(n),t(55)(n),t(57)(n),t(58)(n),t(59)(n),t(15)(n),t(16)(n),t(17)(n),t(18)(n),t(19)(n),t(20)(n),t(21)(n),t(8)(n),t(9)(n),t(10)(n),t(11)(n),t(12)(n),t(13)(n),t(14)(n);var a=t(50);for(var r in a)a.hasOwnProperty(r)&&n.plugins.register(a[r]);n.platform.initialize(),e.exports=n,"undefined"!=typeof window&&(window.Chart=n),n.Legend=a.legend._element,n.Title=a.title._element,n.pluginService=n.plugins,n.PluginBase=n.Element.extend({}),n.canvasHelpers=n.helpers.canvas,n.layoutService=n.layouts},{10:10,11:11,12:12,13:13,14:14,15:15,16:16,17:17,18:18,19:19,20:20,21:21,22:22,23:23,24:24,25:25,26:26,27:27,28:28,29:29,30:30,31:31,32:32,33:33,34:34,35:35,36:36,41:41,46:46,49:49,50:50,54:54,55:55,56:56,57:57,58:58,59:59,8:8,9:9}],8:[function(t,e,i){"use strict";e.exports=function(t){t.Bar=function(e,i){return i.type="bar",new t(e,i)}}},{}],9:[function(t,e,i){"use strict";e.exports=function(t){t.Bubble=function(e,i){return i.type="bubble",new t(e,i)}}},{}],10:[function(t,e,i){"use strict";e.exports=function(t){t.Doughnut=function(e,i){return i.type="doughnut",new t(e,i)}}},{}],11:[function(t,e,i){"use strict";e.exports=function(t){t.Line=function(e,i){return i.type="line",new t(e,i)}}},{}],12:[function(t,e,i){"use strict";e.exports=function(t){t.PolarArea=function(e,i){return i.type="polarArea",new t(e,i)}}},{}],13:[function(t,e,i){"use strict";e.exports=function(t){t.Radar=function(e,i){return i.type="radar",new t(e,i)}}},{}],14:[function(t,e,i){"use strict";e.exports=function(t){t.Scatter=function(e,i){return i.type="scatter",new t(e,i)}}},{}],15:[function(t,e,i){"use strict";var n=t(26),a=t(41),r=t(46);n._set("bar",{hover:{mode:"label"},scales:{xAxes:[{type:"category",categoryPercentage:.8,barPercentage:.9,offset:!0,gridLines:{offsetGridLines:!0}}],yAxes:[{type:"linear"}]}}),n._set("horizontalBar",{hover:{mode:"index",axis:"y"},scales:{xAxes:[{type:"linear",position:"bottom"}],yAxes:[{position:"left",type:"category",categoryPercentage:.8,barPercentage:.9,offset:!0,gridLines:{offsetGridLines:!0}}]},elements:{rectangle:{borderSkipped:"left"}},tooltips:{callbacks:{title:function(t,e){var i="";return t.length>0&&(t[0].yLabel?i=t[0].yLabel:e.labels.length>0&&t[0].index<e.labels.length&&(i=e.labels[t[0].index])),i},label:function(t,e){return(e.datasets[t.datasetIndex].label||"")+": "+t.xLabel}},mode:"index",axis:"y"}}),e.exports=function(t){t.controllers.bar=t.DatasetController.extend({dataElementType:a.Rectangle,initialize:function(){var e;t.DatasetController.prototype.initialize.apply(this,arguments),(e=this.getMeta()).stack=this.getDataset().stack,e.bar=!0},update:function(t){var e,i,n=this.getMeta().data;for(this._ruler=this.getRuler(),e=0,i=n.length;e<i;++e)this.updateElement(n[e],e,t)},updateElement:function(t,e,i){var n=this,a=n.chart,o=n.getMeta(),s=n.getDataset(),l=t.custom||{},u=a.options.elements.rectangle;t._xScale=n.getScaleForId(o.xAxisID),t._yScale=n.getScaleForId(o.yAxisID),t._datasetIndex=n.index,t._index=e,t._model={datasetLabel:s.label,label:a.data.labels[e],borderSkipped:l.borderSkipped?l.borderSkipped:u.borderSkipped,backgroundColor:l.backgroundColor?l.backgroundColor:r.valueAtIndexOrDefault(s.backgroundColor,e,u.backgroundColor),borderColor:l.borderColor?l.borderColor:r.valueAtIndexOrDefault(s.borderColor,e,u.borderColor),borderWidth:l.borderWidth?l.borderWidth:r.valueAtIndexOrDefault(s.borderWidth,e,u.borderWidth)},n.updateElementGeometry(t,e,i),t.pivot()},updateElementGeometry:function(t,e,i){var n=this,a=t._model,r=n.getValueScale(),o=r.getBasePixel(),s=r.isHorizontal(),l=n._ruler||n.getRuler(),u=n.calculateBarValuePixels(n.index,e),d=n.calculateBarIndexPixels(n.index,e,l);a.horizontal=s,a.base=i?o:u.base,a.x=s?i?o:u.head:d.center,a.y=s?d.center:i?o:u.head,a.height=s?d.size:void 0,a.width=s?void 0:d.size},getValueScaleId:function(){return this.getMeta().yAxisID},getIndexScaleId:function(){return this.getMeta().xAxisID},getValueScale:function(){return this.getScaleForId(this.getValueScaleId())},getIndexScale:function(){return this.getScaleForId(this.getIndexScaleId())},_getStacks:function(t){var e,i,n=this.chart,a=this.getIndexScale().options.stacked,r=void 0===t?n.data.datasets.length:t+1,o=[];for(e=0;e<r;++e)(i=n.getDatasetMeta(e)).bar&&n.isDatasetVisible(e)&&(!1===a||!0===a&&-1===o.indexOf(i.stack)||void 0===a&&(void 0===i.stack||-1===o.indexOf(i.stack)))&&o.push(i.stack);return o},getStackCount:function(){return this._getStacks().length},getStackIndex:function(t,e){var i=this._getStacks(t),n=void 0!==e?i.indexOf(e):-1;return-1===n?i.length-1:n},getRuler:function(){var t,e,i=this.getIndexScale(),n=this.getStackCount(),a=this.index,o=i.isHorizontal(),s=o?i.left:i.top,l=s+(o?i.width:i.height),u=[];for(t=0,e=this.getMeta().data.length;t<e;++t)u.push(i.getPixelForValue(null,t,a));return{min:r.isNullOrUndef(i.options.barThickness)?function(t,e){var i,n,a,r,o=t.isHorizontal()?t.width:t.height,s=t.getTicks();for(a=1,r=e.length;a<r;++a)o=Math.min(o,e[a]-e[a-1]);for(a=0,r=s.length;a<r;++a)n=t.getPixelForTick(a),o=a>0?Math.min(o,n-i):o,i=n;return o}(i,u):-1,pixels:u,start:s,end:l,stackCount:n,scale:i}},calculateBarValuePixels:function(t,e){var i,n,a,r,o,s,l=this.chart,u=this.getMeta(),d=this.getValueScale(),c=l.data.datasets,h=d.getRightValue(c[t].data[e]),f=d.options.stacked,p=u.stack,g=0;if(f||void 0===f&&void 0!==p)for(i=0;i<t;++i)(n=l.getDatasetMeta(i)).bar&&n.stack===p&&n.controller.getValueScaleId()===d.id&&l.isDatasetVisible(i)&&(a=d.getRightValue(c[i].data[e]),(h<0&&a<0||h>=0&&a>0)&&(g+=a));return r=d.getPixelForValue(g),{size:s=((o=d.getPixelForValue(g+h))-r)/2,base:r,head:o,center:o+s/2}},calculateBarIndexPixels:function(t,e,i){var n=i.scale.options,a="flex"===n.barThickness?function(t,e,i){var n,a=e.pixels,r=a[t],o=t>0?a[t-1]:null,s=t<a.length-1?a[t+1]:null,l=i.categoryPercentage;return null===o&&(o=r-(null===s?e.end-r:s-r)),null===s&&(s=r+r-o),n=r-(r-o)/2*l,{chunk:(s-o)/2*l/e.stackCount,ratio:i.barPercentage,start:n}}(e,i,n):function(t,e,i){var n,a,o=i.barThickness,s=e.stackCount,l=e.pixels[t];return r.isNullOrUndef(o)?(n=e.min*i.categoryPercentage,a=i.barPercentage):(n=o*s,a=1),{chunk:n/s,ratio:a,start:l-n/2}}(e,i,n),o=this.getStackIndex(t,this.getMeta().stack),s=a.start+a.chunk*o+a.chunk/2,l=Math.min(r.valueOrDefault(n.maxBarThickness,1/0),a.chunk*a.ratio);return{base:s-l/2,head:s+l/2,center:s,size:l}},draw:function(){var t=this.chart,e=this.getValueScale(),i=this.getMeta().data,n=this.getDataset(),a=i.length,o=0;for(r.canvas.clipArea(t.ctx,t.chartArea);o<a;++o)isNaN(e.getRightValue(n.data[o]))||i[o].draw();r.canvas.unclipArea(t.ctx)}}),t.controllers.horizontalBar=t.controllers.bar.extend({getValueScaleId:function(){return this.getMeta().xAxisID},getIndexScaleId:function(){return this.getMeta().yAxisID}})}},{26:26,41:41,46:46}],16:[function(t,e,i){"use strict";var n=t(26),a=t(41),r=t(46);n._set("bubble",{hover:{mode:"single"},scales:{xAxes:[{type:"linear",position:"bottom",id:"x-axis-0"}],yAxes:[{type:"linear",position:"left",id:"y-axis-0"}]},tooltips:{callbacks:{title:function(){return""},label:function(t,e){var i=e.datasets[t.datasetIndex].label||"",n=e.datasets[t.datasetIndex].data[t.index];return i+": ("+t.xLabel+", "+t.yLabel+", "+n.r+")"}}}}),e.exports=function(t){t.controllers.bubble=t.DatasetController.extend({dataElementType:a.Point,update:function(t){var e=this,i=e.getMeta().data;r.each(i,function(i,n){e.updateElement(i,n,t)})},updateElement:function(t,e,i){var n=this,a=n.getMeta(),r=t.custom||{},o=n.getScaleForId(a.xAxisID),s=n.getScaleForId(a.yAxisID),l=n._resolveElementOptions(t,e),u=n.getDataset().data[e],d=n.index,c=i?o.getPixelForDecimal(.5):o.getPixelForValue("object"==typeof u?u:NaN,e,d),h=i?s.getBasePixel():s.getPixelForValue(u,e,d);t._xScale=o,t._yScale=s,t._options=l,t._datasetIndex=d,t._index=e,t._model={backgroundColor:l.backgroundColor,borderColor:l.borderColor,borderWidth:l.borderWidth,hitRadius:l.hitRadius,pointStyle:l.pointStyle,rotation:l.rotation,radius:i?0:l.radius,skip:r.skip||isNaN(c)||isNaN(h),x:c,y:h},t.pivot()},setHoverStyle:function(t){var e=t._model,i=t._options;t.$previousStyle={backgroundColor:e.backgroundColor,borderColor:e.borderColor,borderWidth:e.borderWidth,radius:e.radius},e.backgroundColor=r.valueOrDefault(i.hoverBackgroundColor,r.getHoverColor(i.backgroundColor)),e.borderColor=r.valueOrDefault(i.hoverBorderColor,r.getHoverColor(i.borderColor)),e.borderWidth=r.valueOrDefault(i.hoverBorderWidth,i.borderWidth),e.radius=i.radius+i.hoverRadius},_resolveElementOptions:function(t,e){var i,n,a,o=this.chart,s=o.data.datasets[this.index],l=t.custom||{},u=o.options.elements.point,d=r.options.resolve,c=s.data[e],h={},f={chart:o,dataIndex:e,dataset:s,datasetIndex:this.index},p=["backgroundColor","borderColor","borderWidth","hoverBackgroundColor","hoverBorderColor","hoverBorderWidth","hoverRadius","hitRadius","pointStyle","rotation"];for(i=0,n=p.length;i<n;++i)h[a=p[i]]=d([l[a],s[a],u[a]],f,e);return h.radius=d([l.radius,c?c.r:void 0,s.radius,u.radius],f,e),h}})}},{26:26,41:41,46:46}],17:[function(t,e,i){"use strict";var n=t(26),a=t(41),r=t(46);n._set("doughnut",{animation:{animateRotate:!0,animateScale:!1},hover:{mode:"single"},legendCallback:function(t){var e=[];e.push('<ul class="'+t.id+'-legend">');var i=t.data,n=i.datasets,a=i.labels;if(n.length)for(var r=0;r<n[0].data.length;++r)e.push('<li><span style="background-color:'+n[0].backgroundColor[r]+'"></span>'),a[r]&&e.push(a[r]),e.push("</li>");return e.push("</ul>"),e.join("")},legend:{labels:{generateLabels:function(t){var e=t.data;return e.labels.length&&e.datasets.length?e.labels.map(function(i,n){var a=t.getDatasetMeta(0),o=e.datasets[0],s=a.data[n],l=s&&s.custom||{},u=r.valueAtIndexOrDefault,d=t.options.elements.arc;return{text:i,fillStyle:l.backgroundColor?l.backgroundColor:u(o.backgroundColor,n,d.backgroundColor),strokeStyle:l.borderColor?l.borderColor:u(o.borderColor,n,d.borderColor),lineWidth:l.borderWidth?l.borderWidth:u(o.borderWidth,n,d.borderWidth),hidden:isNaN(o.data[n])||a.data[n].hidden,index:n}}):[]}},onClick:function(t,e){var i,n,a,r=e.index,o=this.chart;for(i=0,n=(o.data.datasets||[]).length;i<n;++i)(a=o.getDatasetMeta(i)).data[r]&&(a.data[r].hidden=!a.data[r].hidden);o.update()}},cutoutPercentage:50,rotation:-.5*Math.PI,circumference:2*Math.PI,tooltips:{callbacks:{title:function(){return""},label:function(t,e){var i=e.labels[t.index],n=": "+e.datasets[t.datasetIndex].data[t.index];return r.isArray(i)?(i=i.slice())[0]+=n:i+=n,i}}}}),n._set("pie",r.clone(n.doughnut)),n._set("pie",{cutoutPercentage:0}),e.exports=function(t){t.controllers.doughnut=t.controllers.pie=t.DatasetController.extend({dataElementType:a.Arc,linkScales:r.noop,getRingIndex:function(t){for(var e=0,i=0;i<t;++i)this.chart.isDatasetVisible(i)&&++e;return e},update:function(t){var e=this,i=e.chart,n=i.chartArea,a=i.options,o=a.elements.arc,s=n.right-n.left-o.borderWidth,l=n.bottom-n.top-o.borderWidth,u=Math.min(s,l),d={x:0,y:0},c=e.getMeta(),h=a.cutoutPercentage,f=a.circumference;if(f<2*Math.PI){var p=a.rotation%(2*Math.PI),g=(p+=2*Math.PI*(p>=Math.PI?-1:p<-Math.PI?1:0))+f,m={x:Math.cos(p),y:Math.sin(p)},v={x:Math.cos(g),y:Math.sin(g)},b=p<=0&&g>=0||p<=2*Math.PI&&2*Math.PI<=g,y=p<=.5*Math.PI&&.5*Math.PI<=g||p<=2.5*Math.PI&&2.5*Math.PI<=g,x=p<=-Math.PI&&-Math.PI<=g||p<=Math.PI&&Math.PI<=g,w=p<=.5*-Math.PI&&.5*-Math.PI<=g||p<=1.5*Math.PI&&1.5*Math.PI<=g,k=h/100,S={x:x?-1:Math.min(m.x*(m.x<0?1:k),v.x*(v.x<0?1:k)),y:w?-1:Math.min(m.y*(m.y<0?1:k),v.y*(v.y<0?1:k))},C={x:b?1:Math.max(m.x*(m.x>0?1:k),v.x*(v.x>0?1:k)),y:y?1:Math.max(m.y*(m.y>0?1:k),v.y*(v.y>0?1:k))},M={width:.5*(C.x-S.x),height:.5*(C.y-S.y)};u=Math.min(s/M.width,l/M.height),d={x:-.5*(C.x+S.x),y:-.5*(C.y+S.y)}}i.borderWidth=e.getMaxBorderWidth(c.data),i.outerRadius=Math.max((u-i.borderWidth)/2,0),i.innerRadius=Math.max(h?i.outerRadius/100*h:0,0),i.radiusLength=(i.outerRadius-i.innerRadius)/i.getVisibleDatasetCount(),i.offsetX=d.x*i.outerRadius,i.offsetY=d.y*i.outerRadius,c.total=e.calculateTotal(),e.outerRadius=i.outerRadius-i.radiusLength*e.getRingIndex(e.index),e.innerRadius=Math.max(e.outerRadius-i.radiusLength,0),r.each(c.data,function(i,n){e.updateElement(i,n,t)})},updateElement:function(t,e,i){var n=this,a=n.chart,o=a.chartArea,s=a.options,l=s.animation,u=(o.left+o.right)/2,d=(o.top+o.bottom)/2,c=s.rotation,h=s.rotation,f=n.getDataset(),p=i&&l.animateRotate?0:t.hidden?0:n.calculateCircumference(f.data[e])*(s.circumference/(2*Math.PI)),g=i&&l.animateScale?0:n.innerRadius,m=i&&l.animateScale?0:n.outerRadius,v=r.valueAtIndexOrDefault;r.extend(t,{_datasetIndex:n.index,_index:e,_model:{x:u+a.offsetX,y:d+a.offsetY,startAngle:c,endAngle:h,circumference:p,outerRadius:m,innerRadius:g,label:v(f.label,e,a.data.labels[e])}});var b=t._model,y=t.custom||{},x=r.valueAtIndexOrDefault,w=this.chart.options.elements.arc;b.backgroundColor=y.backgroundColor?y.backgroundColor:x(f.backgroundColor,e,w.backgroundColor),b.borderColor=y.borderColor?y.borderColor:x(f.borderColor,e,w.borderColor),b.borderWidth=y.borderWidth?y.borderWidth:x(f.borderWidth,e,w.borderWidth),i&&l.animateRotate||(b.startAngle=0===e?s.rotation:n.getMeta().data[e-1]._model.endAngle,b.endAngle=b.startAngle+b.circumference),t.pivot()},calculateTotal:function(){var t,e=this.getDataset(),i=this.getMeta(),n=0;return r.each(i.data,function(i,a){t=e.data[a],isNaN(t)||i.hidden||(n+=Math.abs(t))}),n},calculateCircumference:function(t){var e=this.getMeta().total;return e>0&&!isNaN(t)?2*Math.PI*(Math.abs(t)/e):0},getMaxBorderWidth:function(t){for(var e,i,n=0,a=this.index,r=t.length,o=0;o<r;o++)e=t[o]._model?t[o]._model.borderWidth:0,n=(i=t[o]._chart?t[o]._chart.config.data.datasets[a].hoverBorderWidth:0)>(n=e>n?e:n)?i:n;return n}})}},{26:26,41:41,46:46}],18:[function(t,e,i){"use strict";var n=t(26),a=t(41),r=t(46);n._set("line",{showLines:!0,spanGaps:!1,hover:{mode:"label"},scales:{xAxes:[{type:"category",id:"x-axis-0"}],yAxes:[{type:"linear",id:"y-axis-0"}]}}),e.exports=function(t){function e(t,e){return r.valueOrDefault(t.showLine,e.showLines)}t.controllers.line=t.DatasetController.extend({datasetElementType:a.Line,dataElementType:a.Point,update:function(t){var i,n,a,o=this,s=o.getMeta(),l=s.dataset,u=s.data||[],d=o.chart.options,c=d.elements.line,h=o.getScaleForId(s.yAxisID),f=o.getDataset(),p=e(f,d);for(p&&(a=l.custom||{},void 0!==f.tension&&void 0===f.lineTension&&(f.lineTension=f.tension),l._scale=h,l._datasetIndex=o.index,l._children=u,l._model={spanGaps:f.spanGaps?f.spanGaps:d.spanGaps,tension:a.tension?a.tension:r.valueOrDefault(f.lineTension,c.tension),backgroundColor:a.backgroundColor?a.backgroundColor:f.backgroundColor||c.backgroundColor,borderWidth:a.borderWidth?a.borderWidth:f.borderWidth||c.borderWidth,borderColor:a.borderColor?a.borderColor:f.borderColor||c.borderColor,borderCapStyle:a.borderCapStyle?a.borderCapStyle:f.borderCapStyle||c.borderCapStyle,borderDash:a.borderDash?a.borderDash:f.borderDash||c.borderDash,borderDashOffset:a.borderDashOffset?a.borderDashOffset:f.borderDashOffset||c.borderDashOffset,borderJoinStyle:a.borderJoinStyle?a.borderJoinStyle:f.borderJoinStyle||c.borderJoinStyle,fill:a.fill?a.fill:void 0!==f.fill?f.fill:c.fill,steppedLine:a.steppedLine?a.steppedLine:r.valueOrDefault(f.steppedLine,c.stepped),cubicInterpolationMode:a.cubicInterpolationMode?a.cubicInterpolationMode:r.valueOrDefault(f.cubicInterpolationMode,c.cubicInterpolationMode)},l.pivot()),i=0,n=u.length;i<n;++i)o.updateElement(u[i],i,t);for(p&&0!==l._model.tension&&o.updateBezierControlPoints(),i=0,n=u.length;i<n;++i)u[i].pivot()},getPointBackgroundColor:function(t,e){var i=this.chart.options.elements.point.backgroundColor,n=this.getDataset(),a=t.custom||{};return a.backgroundColor?i=a.backgroundColor:n.pointBackgroundColor?i=r.valueAtIndexOrDefault(n.pointBackgroundColor,e,i):n.backgroundColor&&(i=n.backgroundColor),i},getPointBorderColor:function(t,e){var i=this.chart.options.elements.point.borderColor,n=this.getDataset(),a=t.custom||{};return a.borderColor?i=a.borderColor:n.pointBorderColor?i=r.valueAtIndexOrDefault(n.pointBorderColor,e,i):n.borderColor&&(i=n.borderColor),i},getPointBorderWidth:function(t,e){var i=this.chart.options.elements.point.borderWidth,n=this.getDataset(),a=t.custom||{};return isNaN(a.borderWidth)?!isNaN(n.pointBorderWidth)||r.isArray(n.pointBorderWidth)?i=r.valueAtIndexOrDefault(n.pointBorderWidth,e,i):isNaN(n.borderWidth)||(i=n.borderWidth):i=a.borderWidth,i},getPointRotation:function(t,e){var i=this.chart.options.elements.point.rotation,n=this.getDataset(),a=t.custom||{};return isNaN(a.rotation)?isNaN(n.pointRotation)&&!r.isArray(n.pointRotation)||(i=r.valueAtIndexOrDefault(n.pointRotation,e,i)):i=a.rotation,i},updateElement:function(t,e,i){var n,a,o=this,s=o.getMeta(),l=t.custom||{},u=o.getDataset(),d=o.index,c=u.data[e],h=o.getScaleForId(s.yAxisID),f=o.getScaleForId(s.xAxisID),p=o.chart.options.elements.point;void 0!==u.radius&&void 0===u.pointRadius&&(u.pointRadius=u.radius),void 0!==u.hitRadius&&void 0===u.pointHitRadius&&(u.pointHitRadius=u.hitRadius),n=f.getPixelForValue("object"==typeof c?c:NaN,e,d),a=i?h.getBasePixel():o.calculatePointY(c,e,d),t._xScale=f,t._yScale=h,t._datasetIndex=d,t._index=e,t._model={x:n,y:a,skip:l.skip||isNaN(n)||isNaN(a),radius:l.radius||r.valueAtIndexOrDefault(u.pointRadius,e,p.radius),pointStyle:l.pointStyle||r.valueAtIndexOrDefault(u.pointStyle,e,p.pointStyle),rotation:o.getPointRotation(t,e),backgroundColor:o.getPointBackgroundColor(t,e),borderColor:o.getPointBorderColor(t,e),borderWidth:o.getPointBorderWidth(t,e),tension:s.dataset._model?s.dataset._model.tension:0,steppedLine:!!s.dataset._model&&s.dataset._model.steppedLine,hitRadius:l.hitRadius||r.valueAtIndexOrDefault(u.pointHitRadius,e,p.hitRadius)}},calculatePointY:function(t,e,i){var n,a,r,o=this.chart,s=this.getMeta(),l=this.getScaleForId(s.yAxisID),u=0,d=0;if(l.options.stacked){for(n=0;n<i;n++)if(a=o.data.datasets[n],"line"===(r=o.getDatasetMeta(n)).type&&r.yAxisID===l.id&&o.isDatasetVisible(n)){var c=Number(l.getRightValue(a.data[e]));c<0?d+=c||0:u+=c||0}var h=Number(l.getRightValue(t));return h<0?l.getPixelForValue(d+h):l.getPixelForValue(u+h)}return l.getPixelForValue(t)},updateBezierControlPoints:function(){var t,e,i,n,a=this.getMeta(),o=this.chart.chartArea,s=a.data||[];function l(t,e,i){return Math.max(Math.min(t,i),e)}if(a.dataset._model.spanGaps&&(s=s.filter(function(t){return!t._model.skip})),"monotone"===a.dataset._model.cubicInterpolationMode)r.splineCurveMonotone(s);else for(t=0,e=s.length;t<e;++t)i=s[t]._model,n=r.splineCurve(r.previousItem(s,t)._model,i,r.nextItem(s,t)._model,a.dataset._model.tension),i.controlPointPreviousX=n.previous.x,i.controlPointPreviousY=n.previous.y,i.controlPointNextX=n.next.x,i.controlPointNextY=n.next.y;if(this.chart.options.elements.line.capBezierPoints)for(t=0,e=s.length;t<e;++t)(i=s[t]._model).controlPointPreviousX=l(i.controlPointPreviousX,o.left,o.right),i.controlPointPreviousY=l(i.controlPointPreviousY,o.top,o.bottom),i.controlPointNextX=l(i.controlPointNextX,o.left,o.right),i.controlPointNextY=l(i.controlPointNextY,o.top,o.bottom)},draw:function(){var t,i=this.chart,n=this.getMeta(),a=n.data||[],o=i.chartArea,s=a.length,l=0;for(e(this.getDataset(),i.options)&&(t=(n.dataset._model.borderWidth||0)/2,r.canvas.clipArea(i.ctx,{left:o.left,right:o.right,top:o.top-t,bottom:o.bottom+t}),n.dataset.draw(),r.canvas.unclipArea(i.ctx));l<s;++l)a[l].draw(o)},setHoverStyle:function(t){var e=this.chart.data.datasets[t._datasetIndex],i=t._index,n=t.custom||{},a=t._model;t.$previousStyle={backgroundColor:a.backgroundColor,borderColor:a.borderColor,borderWidth:a.borderWidth,radius:a.radius},a.backgroundColor=n.hoverBackgroundColor||r.valueAtIndexOrDefault(e.pointHoverBackgroundColor,i,r.getHoverColor(a.backgroundColor)),a.borderColor=n.hoverBorderColor||r.valueAtIndexOrDefault(e.pointHoverBorderColor,i,r.getHoverColor(a.borderColor)),a.borderWidth=n.hoverBorderWidth||r.valueAtIndexOrDefault(e.pointHoverBorderWidth,i,a.borderWidth),a.radius=n.hoverRadius||r.valueAtIndexOrDefault(e.pointHoverRadius,i,this.chart.options.elements.point.hoverRadius)}})}},{26:26,41:41,46:46}],19:[function(t,e,i){"use strict";var n=t(26),a=t(41),r=t(46);n._set("polarArea",{scale:{type:"radialLinear",angleLines:{display:!1},gridLines:{circular:!0},pointLabels:{display:!1},ticks:{beginAtZero:!0}},animation:{animateRotate:!0,animateScale:!0},startAngle:-.5*Math.PI,legendCallback:function(t){var e=[];e.push('<ul class="'+t.id+'-legend">');var i=t.data,n=i.datasets,a=i.labels;if(n.length)for(var r=0;r<n[0].data.length;++r)e.push('<li><span style="background-color:'+n[0].backgroundColor[r]+'"></span>'),a[r]&&e.push(a[r]),e.push("</li>");return e.push("</ul>"),e.join("")},legend:{labels:{generateLabels:function(t){var e=t.data;return e.labels.length&&e.datasets.length?e.labels.map(function(i,n){var a=t.getDatasetMeta(0),o=e.datasets[0],s=a.data[n].custom||{},l=r.valueAtIndexOrDefault,u=t.options.elements.arc;return{text:i,fillStyle:s.backgroundColor?s.backgroundColor:l(o.backgroundColor,n,u.backgroundColor),strokeStyle:s.borderColor?s.borderColor:l(o.borderColor,n,u.borderColor),lineWidth:s.borderWidth?s.borderWidth:l(o.borderWidth,n,u.borderWidth),hidden:isNaN(o.data[n])||a.data[n].hidden,index:n}}):[]}},onClick:function(t,e){var i,n,a,r=e.index,o=this.chart;for(i=0,n=(o.data.datasets||[]).length;i<n;++i)(a=o.getDatasetMeta(i)).data[r].hidden=!a.data[r].hidden;o.update()}},tooltips:{callbacks:{title:function(){return""},label:function(t,e){return e.labels[t.index]+": "+t.yLabel}}}}),e.exports=function(t){t.controllers.polarArea=t.DatasetController.extend({dataElementType:a.Arc,linkScales:r.noop,update:function(t){var e,i,n,a=this,o=a.getDataset(),s=a.getMeta(),l=a.chart.options.startAngle||0,u=a._starts=[],d=a._angles=[];for(a._updateRadius(),s.count=a.countVisibleElements(),e=0,i=o.data.length;e<i;e++)u[e]=l,n=a._computeAngle(e),d[e]=n,l+=n;r.each(s.data,function(e,i){a.updateElement(e,i,t)})},_updateRadius:function(){var t=this,e=t.chart,i=e.chartArea,n=e.options,a=n.elements.arc,r=Math.min(i.right-i.left,i.bottom-i.top);e.outerRadius=Math.max((r-a.borderWidth/2)/2,0),e.innerRadius=Math.max(n.cutoutPercentage?e.outerRadius/100*n.cutoutPercentage:1,0),e.radiusLength=(e.outerRadius-e.innerRadius)/e.getVisibleDatasetCount(),t.outerRadius=e.outerRadius-e.radiusLength*t.index,t.innerRadius=t.outerRadius-e.radiusLength},updateElement:function(t,e,i){var n=this,a=n.chart,o=n.getDataset(),s=a.options,l=s.animation,u=a.scale,d=a.data.labels,c=u.xCenter,h=u.yCenter,f=s.startAngle,p=t.hidden?0:u.getDistanceFromCenterForValue(o.data[e]),g=n._starts[e],m=g+(t.hidden?0:n._angles[e]),v=l.animateScale?0:u.getDistanceFromCenterForValue(o.data[e]);r.extend(t,{_datasetIndex:n.index,_index:e,_scale:u,_model:{x:c,y:h,innerRadius:0,outerRadius:i?v:p,startAngle:i&&l.animateRotate?f:g,endAngle:i&&l.animateRotate?f:m,label:r.valueAtIndexOrDefault(d,e,d[e])}});var b=this.chart.options.elements.arc,y=t.custom||{},x=r.valueAtIndexOrDefault,w=t._model;w.backgroundColor=y.backgroundColor?y.backgroundColor:x(o.backgroundColor,e,b.backgroundColor),w.borderColor=y.borderColor?y.borderColor:x(o.borderColor,e,b.borderColor),w.borderWidth=y.borderWidth?y.borderWidth:x(o.borderWidth,e,b.borderWidth),t.pivot()},countVisibleElements:function(){var t=this.getDataset(),e=this.getMeta(),i=0;return r.each(e.data,function(e,n){isNaN(t.data[n])||e.hidden||i++}),i},_computeAngle:function(t){var e=this,i=this.getMeta().count,n=e.getDataset(),a=e.getMeta();if(isNaN(n.data[t])||a.data[t].hidden)return 0;var o={chart:e.chart,dataIndex:t,dataset:n,datasetIndex:e.index};return r.options.resolve([e.chart.options.elements.arc.angle,2*Math.PI/i],o,t)}})}},{26:26,41:41,46:46}],20:[function(t,e,i){"use strict";var n=t(26),a=t(41),r=t(46);n._set("radar",{scale:{type:"radialLinear"},elements:{line:{tension:0}}}),e.exports=function(t){t.controllers.radar=t.DatasetController.extend({datasetElementType:a.Line,dataElementType:a.Point,linkScales:r.noop,update:function(t){var e=this,i=e.getMeta(),n=i.dataset,a=i.data,o=n.custom||{},s=e.getDataset(),l=e.chart.options.elements.line,u=e.chart.scale;void 0!==s.tension&&void 0===s.lineTension&&(s.lineTension=s.tension),r.extend(i.dataset,{_datasetIndex:e.index,_scale:u,_children:a,_loop:!0,_model:{tension:o.tension?o.tension:r.valueOrDefault(s.lineTension,l.tension),backgroundColor:o.backgroundColor?o.backgroundColor:s.backgroundColor||l.backgroundColor,borderWidth:o.borderWidth?o.borderWidth:s.borderWidth||l.borderWidth,borderColor:o.borderColor?o.borderColor:s.borderColor||l.borderColor,fill:o.fill?o.fill:void 0!==s.fill?s.fill:l.fill,borderCapStyle:o.borderCapStyle?o.borderCapStyle:s.borderCapStyle||l.borderCapStyle,borderDash:o.borderDash?o.borderDash:s.borderDash||l.borderDash,borderDashOffset:o.borderDashOffset?o.borderDashOffset:s.borderDashOffset||l.borderDashOffset,borderJoinStyle:o.borderJoinStyle?o.borderJoinStyle:s.borderJoinStyle||l.borderJoinStyle}}),i.dataset.pivot(),r.each(a,function(i,n){e.updateElement(i,n,t)},e),e.updateBezierControlPoints()},updateElement:function(t,e,i){var n=this,a=t.custom||{},o=n.getDataset(),s=n.chart.scale,l=n.chart.options.elements.point,u=s.getPointPositionForValue(e,o.data[e]);void 0!==o.radius&&void 0===o.pointRadius&&(o.pointRadius=o.radius),void 0!==o.hitRadius&&void 0===o.pointHitRadius&&(o.pointHitRadius=o.hitRadius),r.extend(t,{_datasetIndex:n.index,_index:e,_scale:s,_model:{x:i?s.xCenter:u.x,y:i?s.yCenter:u.y,tension:a.tension?a.tension:r.valueOrDefault(o.lineTension,n.chart.options.elements.line.tension),radius:a.radius?a.radius:r.valueAtIndexOrDefault(o.pointRadius,e,l.radius),backgroundColor:a.backgroundColor?a.backgroundColor:r.valueAtIndexOrDefault(o.pointBackgroundColor,e,l.backgroundColor),borderColor:a.borderColor?a.borderColor:r.valueAtIndexOrDefault(o.pointBorderColor,e,l.borderColor),borderWidth:a.borderWidth?a.borderWidth:r.valueAtIndexOrDefault(o.pointBorderWidth,e,l.borderWidth),pointStyle:a.pointStyle?a.pointStyle:r.valueAtIndexOrDefault(o.pointStyle,e,l.pointStyle),rotation:a.rotation?a.rotation:r.valueAtIndexOrDefault(o.pointRotation,e,l.rotation),hitRadius:a.hitRadius?a.hitRadius:r.valueAtIndexOrDefault(o.pointHitRadius,e,l.hitRadius)}}),t._model.skip=a.skip?a.skip:isNaN(t._model.x)||isNaN(t._model.y)},updateBezierControlPoints:function(){var t=this.chart.chartArea,e=this.getMeta();r.each(e.data,function(i,n){var a=i._model,o=r.splineCurve(r.previousItem(e.data,n,!0)._model,a,r.nextItem(e.data,n,!0)._model,a.tension);a.controlPointPreviousX=Math.max(Math.min(o.previous.x,t.right),t.left),a.controlPointPreviousY=Math.max(Math.min(o.previous.y,t.bottom),t.top),a.controlPointNextX=Math.max(Math.min(o.next.x,t.right),t.left),a.controlPointNextY=Math.max(Math.min(o.next.y,t.bottom),t.top),i.pivot()})},setHoverStyle:function(t){var e=this.chart.data.datasets[t._datasetIndex],i=t.custom||{},n=t._index,a=t._model;t.$previousStyle={backgroundColor:a.backgroundColor,borderColor:a.borderColor,borderWidth:a.borderWidth,radius:a.radius},a.radius=i.hoverRadius?i.hoverRadius:r.valueAtIndexOrDefault(e.pointHoverRadius,n,this.chart.options.elements.point.hoverRadius),a.backgroundColor=i.hoverBackgroundColor?i.hoverBackgroundColor:r.valueAtIndexOrDefault(e.pointHoverBackgroundColor,n,r.getHoverColor(a.backgroundColor)),a.borderColor=i.hoverBorderColor?i.hoverBorderColor:r.valueAtIndexOrDefault(e.pointHoverBorderColor,n,r.getHoverColor(a.borderColor)),a.borderWidth=i.hoverBorderWidth?i.hoverBorderWidth:r.valueAtIndexOrDefault(e.pointHoverBorderWidth,n,a.borderWidth)}})}},{26:26,41:41,46:46}],21:[function(t,e,i){"use strict";t(26)._set("scatter",{hover:{mode:"single"},scales:{xAxes:[{id:"x-axis-1",type:"linear",position:"bottom"}],yAxes:[{id:"y-axis-1",type:"linear",position:"left"}]},showLines:!1,tooltips:{callbacks:{title:function(){return""},label:function(t){return"("+t.xLabel+", "+t.yLabel+")"}}}}),e.exports=function(t){t.controllers.scatter=t.controllers.line}},{26:26}],22:[function(t,e,i){"use strict";var n=t(27);i=e.exports=n.extend({chart:null,currentStep:0,numSteps:60,easing:"",render:null,onAnimationProgress:null,onAnimationComplete:null});Object.defineProperty(i.prototype,"animationObject",{get:function(){return this}}),Object.defineProperty(i.prototype,"chartInstance",{get:function(){return this.chart},set:function(t){this.chart=t}})},{27:27}],23:[function(t,e,i){"use strict";var n=t(26),a=t(46);n._set("global",{animation:{duration:1e3,easing:"easeOutQuart",onProgress:a.noop,onComplete:a.noop}}),e.exports={frameDuration:17,animations:[],dropFrames:0,request:null,addAnimation:function(t,e,i,n){var a,r,o=this.animations;for(e.chart=t,n||(t.animating=!0),a=0,r=o.length;a<r;++a)if(o[a].chart===t)return void(o[a]=e);o.push(e),1===o.length&&this.requestAnimationFrame()},cancelAnimation:function(t){var e=a.findIndex(this.animations,function(e){return e.chart===t});-1!==e&&(this.animations.splice(e,1),t.animating=!1)},requestAnimationFrame:function(){var t=this;null===t.request&&(t.request=a.requestAnimFrame.call(window,function(){t.request=null,t.startDigest()}))},startDigest:function(){var t=this,e=Date.now(),i=0;t.dropFrames>1&&(i=Math.floor(t.dropFrames),t.dropFrames=t.dropFrames%1),t.advance(1+i);var n=Date.now();t.dropFrames+=(n-e)/t.frameDuration,t.animations.length>0&&t.requestAnimationFrame()},advance:function(t){for(var e,i,n=this.animations,r=0;r<n.length;)i=(e=n[r]).chart,e.currentStep=(e.currentStep||0)+t,e.currentStep=Math.min(e.currentStep,e.numSteps),a.callback(e.render,[i,e],i),a.callback(e.onAnimationProgress,[e],i),e.currentStep>=e.numSteps?(a.callback(e.onAnimationComplete,[e],i),i.animating=!1,n.splice(r,1)):++r}}},{26:26,46:46}],24:[function(t,e,i){"use strict";var n=t(22),a=t(23),r=t(26),o=t(46),s=t(29),l=t(31),u=t(49),d=t(32),c=t(34),h=t(36);e.exports=function(t){function e(t){return"top"===t||"bottom"===t}t.types={},t.instances={},t.controllers={},o.extend(t.prototype,{construct:function(e,i){var n=this;i=function(t){var e=(t=t||{}).data=t.data||{};return e.datasets=e.datasets||[],e.labels=e.labels||[],t.options=o.configMerge(r.global,r[t.type],t.options||{}),t}(i);var a=u.acquireContext(e,i),s=a&&a.canvas,l=s&&s.height,d=s&&s.width;n.id=o.uid(),n.ctx=a,n.canvas=s,n.config=i,n.width=d,n.height=l,n.aspectRatio=l?d/l:null,n.options=i.options,n._bufferedRender=!1,n.chart=n,n.controller=n,t.instances[n.id]=n,Object.defineProperty(n,"data",{get:function(){return n.config.data},set:function(t){n.config.data=t}}),a&&s?(n.initialize(),n.update()):console.error("Failed to create chart: can't acquire context from the given item")},initialize:function(){var t=this;return d.notify(t,"beforeInit"),o.retinaScale(t,t.options.devicePixelRatio),t.bindEvents(),t.options.responsive&&t.resize(!0),t.ensureScalesHaveIDs(),t.buildOrUpdateScales(),t.initToolTip(),d.notify(t,"afterInit"),t},clear:function(){return o.canvas.clear(this),this},stop:function(){return a.cancelAnimation(this),this},resize:function(t){var e=this,i=e.options,n=e.canvas,a=i.maintainAspectRatio&&e.aspectRatio||null,r=Math.max(0,Math.floor(o.getMaximumWidth(n))),s=Math.max(0,Math.floor(a?r/a:o.getMaximumHeight(n)));if((e.width!==r||e.height!==s)&&(n.width=e.width=r,n.height=e.height=s,n.style.width=r+"px",n.style.height=s+"px",o.retinaScale(e,i.devicePixelRatio),!t)){var l={width:r,height:s};d.notify(e,"resize",[l]),e.options.onResize&&e.options.onResize(e,l),e.stop(),e.update({duration:e.options.responsiveAnimationDuration})}},ensureScalesHaveIDs:function(){var t=this.options,e=t.scales||{},i=t.scale;o.each(e.xAxes,function(t,e){t.id=t.id||"x-axis-"+e}),o.each(e.yAxes,function(t,e){t.id=t.id||"y-axis-"+e}),i&&(i.id=i.id||"scale")},buildOrUpdateScales:function(){var t=this,i=t.options,n=t.scales||{},a=[],r=Object.keys(n).reduce(function(t,e){return t[e]=!1,t},{});i.scales&&(a=a.concat((i.scales.xAxes||[]).map(function(t){return{options:t,dtype:"category",dposition:"bottom"}}),(i.scales.yAxes||[]).map(function(t){return{options:t,dtype:"linear",dposition:"left"}}))),i.scale&&a.push({options:i.scale,dtype:"radialLinear",isDefault:!0,dposition:"chartArea"}),o.each(a,function(i){var a=i.options,s=a.id,l=o.valueOrDefault(a.type,i.dtype);e(a.position)!==e(i.dposition)&&(a.position=i.dposition),r[s]=!0;var u=null;if(s in n&&n[s].type===l)(u=n[s]).options=a,u.ctx=t.ctx,u.chart=t;else{var d=c.getScaleConstructor(l);if(!d)return;u=new d({id:s,type:l,options:a,ctx:t.ctx,chart:t}),n[u.id]=u}u.mergeTicksOptions(),i.isDefault&&(t.scale=u)}),o.each(r,function(t,e){t||delete n[e]}),t.scales=n,c.addScalesToLayout(this)},buildOrUpdateControllers:function(){var e=this,i=[],n=[];return o.each(e.data.datasets,function(a,r){var o=e.getDatasetMeta(r),s=a.type||e.config.type;if(o.type&&o.type!==s&&(e.destroyDatasetMeta(r),o=e.getDatasetMeta(r)),o.type=s,i.push(o.type),o.controller)o.controller.updateIndex(r),o.controller.linkScales();else{var l=t.controllers[o.type];if(void 0===l)throw new Error('"'+o.type+'" is not a chart type.');o.controller=new l(e,r),n.push(o.controller)}},e),n},resetElements:function(){var t=this;o.each(t.data.datasets,function(e,i){t.getDatasetMeta(i).controller.reset()},t)},reset:function(){this.resetElements(),this.tooltip.initialize()},update:function(e){var i,n,a=this;if(e&&"object"==typeof e||(e={duration:e,lazy:arguments[1]}),n=(i=a).options,o.each(i.scales,function(t){l.removeBox(i,t)}),n=o.configMerge(t.defaults.global,t.defaults[i.config.type],n),i.options=i.config.options=n,i.ensureScalesHaveIDs(),i.buildOrUpdateScales(),i.tooltip._options=n.tooltips,i.tooltip.initialize(),d._invalidate(a),!1!==d.notify(a,"beforeUpdate")){a.tooltip._data=a.data;var r=a.buildOrUpdateControllers();o.each(a.data.datasets,function(t,e){a.getDatasetMeta(e).controller.buildOrUpdateElements()},a),a.updateLayout(),a.options.animation&&a.options.animation.duration&&o.each(r,function(t){t.reset()}),a.updateDatasets(),a.tooltip.initialize(),a.lastActive=[],d.notify(a,"afterUpdate"),a._bufferedRender?a._bufferedRequest={duration:e.duration,easing:e.easing,lazy:e.lazy}:a.render(e)}},updateLayout:function(){!1!==d.notify(this,"beforeLayout")&&(l.update(this,this.width,this.height),d.notify(this,"afterScaleUpdate"),d.notify(this,"afterLayout"))},updateDatasets:function(){if(!1!==d.notify(this,"beforeDatasetsUpdate")){for(var t=0,e=this.data.datasets.length;t<e;++t)this.updateDataset(t);d.notify(this,"afterDatasetsUpdate")}},updateDataset:function(t){var e=this.getDatasetMeta(t),i={meta:e,index:t};!1!==d.notify(this,"beforeDatasetUpdate",[i])&&(e.controller.update(),d.notify(this,"afterDatasetUpdate",[i]))},render:function(t){var e=this;t&&"object"==typeof t||(t={duration:t,lazy:arguments[1]});var i=t.duration,r=t.lazy;if(!1!==d.notify(e,"beforeRender")){var s=e.options.animation,l=function(t){d.notify(e,"afterRender"),o.callback(s&&s.onComplete,[t],e)};if(s&&(void 0!==i&&0!==i||void 0===i&&0!==s.duration)){var u=new n({numSteps:(i||s.duration)/16.66,easing:t.easing||s.easing,render:function(t,e){var i=o.easing.effects[e.easing],n=e.currentStep,a=n/e.numSteps;t.draw(i(a),a,n)},onAnimationProgress:s.onProgress,onAnimationComplete:l});a.addAnimation(e,u,i,r)}else e.draw(),l(new n({numSteps:0,chart:e}));return e}},draw:function(t){var e=this;e.clear(),o.isNullOrUndef(t)&&(t=1),e.transition(t),e.width<=0||e.height<=0||!1!==d.notify(e,"beforeDraw",[t])&&(o.each(e.boxes,function(t){t.draw(e.chartArea)},e),e.scale&&e.scale.draw(),e.drawDatasets(t),e._drawTooltip(t),d.notify(e,"afterDraw",[t]))},transition:function(t){for(var e=0,i=(this.data.datasets||[]).length;e<i;++e)this.isDatasetVisible(e)&&this.getDatasetMeta(e).controller.transition(t);this.tooltip.transition(t)},drawDatasets:function(t){var e=this;if(!1!==d.notify(e,"beforeDatasetsDraw",[t])){for(var i=(e.data.datasets||[]).length-1;i>=0;--i)e.isDatasetVisible(i)&&e.drawDataset(i,t);d.notify(e,"afterDatasetsDraw",[t])}},drawDataset:function(t,e){var i=this.getDatasetMeta(t),n={meta:i,index:t,easingValue:e};!1!==d.notify(this,"beforeDatasetDraw",[n])&&(i.controller.draw(e),d.notify(this,"afterDatasetDraw",[n]))},_drawTooltip:function(t){var e=this.tooltip,i={tooltip:e,easingValue:t};!1!==d.notify(this,"beforeTooltipDraw",[i])&&(e.draw(),d.notify(this,"afterTooltipDraw",[i]))},getElementAtEvent:function(t){return s.modes.single(this,t)},getElementsAtEvent:function(t){return s.modes.label(this,t,{intersect:!0})},getElementsAtXAxis:function(t){return s.modes["x-axis"](this,t,{intersect:!0})},getElementsAtEventForMode:function(t,e,i){var n=s.modes[e];return"function"==typeof n?n(this,t,i):[]},getDatasetAtEvent:function(t){return s.modes.dataset(this,t,{intersect:!0})},getDatasetMeta:function(t){var e=this.data.datasets[t];e._meta||(e._meta={});var i=e._meta[this.id];return i||(i=e._meta[this.id]={type:null,data:[],dataset:null,controller:null,hidden:null,xAxisID:null,yAxisID:null}),i},getVisibleDatasetCount:function(){for(var t=0,e=0,i=this.data.datasets.length;e<i;++e)this.isDatasetVisible(e)&&t++;return t},isDatasetVisible:function(t){var e=this.getDatasetMeta(t);return"boolean"==typeof e.hidden?!e.hidden:!this.data.datasets[t].hidden},generateLegend:function(){return this.options.legendCallback(this)},destroyDatasetMeta:function(t){var e=this.id,i=this.data.datasets[t],n=i._meta&&i._meta[e];n&&(n.controller.destroy(),delete i._meta[e])},destroy:function(){var e,i,n=this,a=n.canvas;for(n.stop(),e=0,i=n.data.datasets.length;e<i;++e)n.destroyDatasetMeta(e);a&&(n.unbindEvents(),o.canvas.clear(n),u.releaseContext(n.ctx),n.canvas=null,n.ctx=null),d.notify(n,"destroy"),delete t.instances[n.id]},toBase64Image:function(){return this.canvas.toDataURL.apply(this.canvas,arguments)},initToolTip:function(){var t=this;t.tooltip=new h({_chart:t,_chartInstance:t,_data:t.data,_options:t.options.tooltips},t)},bindEvents:function(){var t=this,e=t._listeners={},i=function(){t.eventHandler.apply(t,arguments)};o.each(t.options.events,function(n){u.addEventListener(t,n,i),e[n]=i}),t.options.responsive&&(i=function(){t.resize()},u.addEventListener(t,"resize",i),e.resize=i)},unbindEvents:function(){var t=this,e=t._listeners;e&&(delete t._listeners,o.each(e,function(e,i){u.removeEventListener(t,i,e)}))},updateHoverStyle:function(t,e,i){var n,a,r,o=i?"setHoverStyle":"removeHoverStyle";for(a=0,r=t.length;a<r;++a)(n=t[a])&&this.getDatasetMeta(n._datasetIndex).controller[o](n)},eventHandler:function(t){var e=this,i=e.tooltip;if(!1!==d.notify(e,"beforeEvent",[t])){e._bufferedRender=!0,e._bufferedRequest=null;var n=e.handleEvent(t);i&&(n=i._start?i.handleEvent(t):n|i.handleEvent(t)),d.notify(e,"afterEvent",[t]);var a=e._bufferedRequest;return a?e.render(a):n&&!e.animating&&(e.stop(),e.render({duration:e.options.hover.animationDuration,lazy:!0})),e._bufferedRender=!1,e._bufferedRequest=null,e}},handleEvent:function(t){var e,i=this,n=i.options||{},a=n.hover;return i.lastActive=i.lastActive||[],"mouseout"===t.type?i.active=[]:i.active=i.getElementsAtEventForMode(t,a.mode,a),o.callback(n.onHover||n.hover.onHover,[t.native,i.active],i),"mouseup"!==t.type&&"click"!==t.type||n.onClick&&n.onClick.call(i,t.native,i.active),i.lastActive.length&&i.updateHoverStyle(i.lastActive,a.mode,!1),i.active.length&&a.mode&&i.updateHoverStyle(i.active,a.mode,!0),e=!o.arrayEquals(i.active,i.lastActive),i.lastActive=i.active,e}}),t.Controller=t}},{22:22,23:23,26:26,29:29,31:31,32:32,34:34,36:36,46:46,49:49}],25:[function(t,e,i){"use strict";var n=t(46);e.exports=function(t){var e=["push","pop","shift","splice","unshift"];function i(t,i){var n=t._chartjs;if(n){var a=n.listeners,r=a.indexOf(i);-1!==r&&a.splice(r,1),a.length>0||(e.forEach(function(e){delete t[e]}),delete t._chartjs)}}t.DatasetController=function(t,e){this.initialize(t,e)},n.extend(t.DatasetController.prototype,{datasetElementType:null,dataElementType:null,initialize:function(t,e){this.chart=t,this.index=e,this.linkScales(),this.addElements()},updateIndex:function(t){this.index=t},linkScales:function(){var t=this,e=t.getMeta(),i=t.getDataset();null!==e.xAxisID&&e.xAxisID in t.chart.scales||(e.xAxisID=i.xAxisID||t.chart.options.scales.xAxes[0].id),null!==e.yAxisID&&e.yAxisID in t.chart.scales||(e.yAxisID=i.yAxisID||t.chart.options.scales.yAxes[0].id)},getDataset:function(){return this.chart.data.datasets[this.index]},getMeta:function(){return this.chart.getDatasetMeta(this.index)},getScaleForId:function(t){return this.chart.scales[t]},reset:function(){this.update(!0)},destroy:function(){this._data&&i(this._data,this)},createMetaDataset:function(){var t=this.datasetElementType;return t&&new t({_chart:this.chart,_datasetIndex:this.index})},createMetaData:function(t){var e=this.dataElementType;return e&&new e({_chart:this.chart,_datasetIndex:this.index,_index:t})},addElements:function(){var t,e,i=this.getMeta(),n=this.getDataset().data||[],a=i.data;for(t=0,e=n.length;t<e;++t)a[t]=a[t]||this.createMetaData(t);i.dataset=i.dataset||this.createMetaDataset()},addElementAndReset:function(t){var e=this.createMetaData(t);this.getMeta().data.splice(t,0,e),this.updateElement(e,t,!0)},buildOrUpdateElements:function(){var t,a,r=this,o=r.getDataset(),s=o.data||(o.data=[]);r._data!==s&&(r._data&&i(r._data,r),a=r,(t=s)._chartjs?t._chartjs.listeners.push(a):(Object.defineProperty(t,"_chartjs",{configurable:!0,enumerable:!1,value:{listeners:[a]}}),e.forEach(function(e){var i="onData"+e.charAt(0).toUpperCase()+e.slice(1),a=t[e];Object.defineProperty(t,e,{configurable:!0,enumerable:!1,value:function(){var e=Array.prototype.slice.call(arguments),r=a.apply(this,e);return n.each(t._chartjs.listeners,function(t){"function"==typeof t[i]&&t[i].apply(t,e)}),r}})})),r._data=s),r.resyncElements()},update:n.noop,transition:function(t){for(var e=this.getMeta(),i=e.data||[],n=i.length,a=0;a<n;++a)i[a].transition(t);e.dataset&&e.dataset.transition(t)},draw:function(){var t=this.getMeta(),e=t.data||[],i=e.length,n=0;for(t.dataset&&t.dataset.draw();n<i;++n)e[n].draw()},removeHoverStyle:function(t){n.merge(t._model,t.$previousStyle||{}),delete t.$previousStyle},setHoverStyle:function(t){var e=this.chart.data.datasets[t._datasetIndex],i=t._index,a=t.custom||{},r=n.valueAtIndexOrDefault,o=n.getHoverColor,s=t._model;t.$previousStyle={backgroundColor:s.backgroundColor,borderColor:s.borderColor,borderWidth:s.borderWidth},s.backgroundColor=a.hoverBackgroundColor?a.hoverBackgroundColor:r(e.hoverBackgroundColor,i,o(s.backgroundColor)),s.borderColor=a.hoverBorderColor?a.hoverBorderColor:r(e.hoverBorderColor,i,o(s.borderColor)),s.borderWidth=a.hoverBorderWidth?a.hoverBorderWidth:r(e.hoverBorderWidth,i,s.borderWidth)},resyncElements:function(){var t=this.getMeta(),e=this.getDataset().data,i=t.data.length,n=e.length;n<i?t.data.splice(n,i-n):n>i&&this.insertElements(i,n-i)},insertElements:function(t,e){for(var i=0;i<e;++i)this.addElementAndReset(t+i)},onDataPush:function(){this.insertElements(this.getDataset().data.length-1,arguments.length)},onDataPop:function(){this.getMeta().data.pop()},onDataShift:function(){this.getMeta().data.shift()},onDataSplice:function(t,e){this.getMeta().data.splice(t,e),this.insertElements(t,arguments.length-2)},onDataUnshift:function(){this.insertElements(0,arguments.length)}}),t.DatasetController.extend=n.inherits}},{46:46}],26:[function(t,e,i){"use strict";var n=t(46);e.exports={_set:function(t,e){return n.merge(this[t]||(this[t]={}),e)}}},{46:46}],27:[function(t,e,i){"use strict";var n=t(3),a=t(46);var r=function(t){a.extend(this,t),this.initialize.apply(this,arguments)};a.extend(r.prototype,{initialize:function(){this.hidden=!1},pivot:function(){var t=this;return t._view||(t._view=a.clone(t._model)),t._start={},t},transition:function(t){var e=this,i=e._model,a=e._start,r=e._view;return i&&1!==t?(r||(r=e._view={}),a||(a=e._start={}),function(t,e,i,a){var r,o,s,l,u,d,c,h,f,p=Object.keys(i);for(r=0,o=p.length;r<o;++r)if(d=i[s=p[r]],e.hasOwnProperty(s)||(e[s]=d),(l=e[s])!==d&&"_"!==s[0]){if(t.hasOwnProperty(s)||(t[s]=l),(c=typeof d)==typeof(u=t[s]))if("string"===c){if((h=n(u)).valid&&(f=n(d)).valid){e[s]=f.mix(h,a).rgbString();continue}}else if("number"===c&&isFinite(u)&&isFinite(d)){e[s]=u+(d-u)*a;continue}e[s]=d}}(a,r,i,t),e):(e._view=i,e._start=null,e)},tooltipPosition:function(){return{x:this._model.x,y:this._model.y}},hasValue:function(){return a.isNumber(this._model.x)&&a.isNumber(this._model.y)}}),r.extend=a.inherits,e.exports=r},{3:3,46:46}],28:[function(t,e,i){"use strict";var n=t(3),a=t(26),r=t(46),o=t(34);e.exports=function(){function t(t,e,i){var n;return"string"==typeof t?(n=parseInt(t,10),-1!==t.indexOf("%")&&(n=n/100*e.parentNode[i])):n=t,n}function e(t){return void 0!==t&&null!==t&&"none"!==t}function i(i,n,a){var o=document.defaultView,s=r._getParentNode(i),l=o.getComputedStyle(i)[n],u=o.getComputedStyle(s)[n],d=e(l),c=e(u),h=Number.POSITIVE_INFINITY;return d||c?Math.min(d?t(l,i,a):h,c?t(u,s,a):h):"none"}r.configMerge=function(){return r.merge(r.clone(arguments[0]),[].slice.call(arguments,1),{merger:function(t,e,i,n){var a=e[t]||{},s=i[t];"scales"===t?e[t]=r.scaleMerge(a,s):"scale"===t?e[t]=r.merge(a,[o.getScaleDefaults(s.type),s]):r._merger(t,e,i,n)}})},r.scaleMerge=function(){return r.merge(r.clone(arguments[0]),[].slice.call(arguments,1),{merger:function(t,e,i,n){if("xAxes"===t||"yAxes"===t){var a,s,l,u=i[t].length;for(e[t]||(e[t]=[]),a=0;a<u;++a)l=i[t][a],s=r.valueOrDefault(l.type,"xAxes"===t?"category":"linear"),a>=e[t].length&&e[t].push({}),!e[t][a].type||l.type&&l.type!==e[t][a].type?r.merge(e[t][a],[o.getScaleDefaults(s),l]):r.merge(e[t][a],l)}else r._merger(t,e,i,n)}})},r.where=function(t,e){if(r.isArray(t)&&Array.prototype.filter)return t.filter(e);var i=[];return r.each(t,function(t){e(t)&&i.push(t)}),i},r.findIndex=Array.prototype.findIndex?function(t,e,i){return t.findIndex(e,i)}:function(t,e,i){i=void 0===i?t:i;for(var n=0,a=t.length;n<a;++n)if(e.call(i,t[n],n,t))return n;return-1},r.findNextWhere=function(t,e,i){r.isNullOrUndef(i)&&(i=-1);for(var n=i+1;n<t.length;n++){var a=t[n];if(e(a))return a}},r.findPreviousWhere=function(t,e,i){r.isNullOrUndef(i)&&(i=t.length);for(var n=i-1;n>=0;n--){var a=t[n];if(e(a))return a}},r.isNumber=function(t){return!isNaN(parseFloat(t))&&isFinite(t)},r.almostEquals=function(t,e,i){return Math.abs(t-e)<i},r.almostWhole=function(t,e){var i=Math.round(t);return i-e<t&&i+e>t},r.max=function(t){return t.reduce(function(t,e){return isNaN(e)?t:Math.max(t,e)},Number.NEGATIVE_INFINITY)},r.min=function(t){return t.reduce(function(t,e){return isNaN(e)?t:Math.min(t,e)},Number.POSITIVE_INFINITY)},r.sign=Math.sign?function(t){return Math.sign(t)}:function(t){return 0===(t=+t)||isNaN(t)?t:t>0?1:-1},r.log10=Math.log10?function(t){return Math.log10(t)}:function(t){var e=Math.log(t)*Math.LOG10E,i=Math.round(e);return t===Math.pow(10,i)?i:e},r.toRadians=function(t){return t*(Math.PI/180)},r.toDegrees=function(t){return t*(180/Math.PI)},r.getAngleFromPoint=function(t,e){var i=e.x-t.x,n=e.y-t.y,a=Math.sqrt(i*i+n*n),r=Math.atan2(n,i);return r<-.5*Math.PI&&(r+=2*Math.PI),{angle:r,distance:a}},r.distanceBetweenPoints=function(t,e){return Math.sqrt(Math.pow(e.x-t.x,2)+Math.pow(e.y-t.y,2))},r.aliasPixel=function(t){return t%2==0?0:.5},r.splineCurve=function(t,e,i,n){var a=t.skip?e:t,r=e,o=i.skip?e:i,s=Math.sqrt(Math.pow(r.x-a.x,2)+Math.pow(r.y-a.y,2)),l=Math.sqrt(Math.pow(o.x-r.x,2)+Math.pow(o.y-r.y,2)),u=s/(s+l),d=l/(s+l),c=n*(u=isNaN(u)?0:u),h=n*(d=isNaN(d)?0:d);return{previous:{x:r.x-c*(o.x-a.x),y:r.y-c*(o.y-a.y)},next:{x:r.x+h*(o.x-a.x),y:r.y+h*(o.y-a.y)}}},r.EPSILON=Number.EPSILON||1e-14,r.splineCurveMonotone=function(t){var e,i,n,a,o,s,l,u,d,c=(t||[]).map(function(t){return{model:t._model,deltaK:0,mK:0}}),h=c.length;for(e=0;e<h;++e)if(!(n=c[e]).model.skip){if(i=e>0?c[e-1]:null,(a=e<h-1?c[e+1]:null)&&!a.model.skip){var f=a.model.x-n.model.x;n.deltaK=0!==f?(a.model.y-n.model.y)/f:0}!i||i.model.skip?n.mK=n.deltaK:!a||a.model.skip?n.mK=i.deltaK:this.sign(i.deltaK)!==this.sign(n.deltaK)?n.mK=0:n.mK=(i.deltaK+n.deltaK)/2}for(e=0;e<h-1;++e)n=c[e],a=c[e+1],n.model.skip||a.model.skip||(r.almostEquals(n.deltaK,0,this.EPSILON)?n.mK=a.mK=0:(o=n.mK/n.deltaK,s=a.mK/n.deltaK,(u=Math.pow(o,2)+Math.pow(s,2))<=9||(l=3/Math.sqrt(u),n.mK=o*l*n.deltaK,a.mK=s*l*n.deltaK)));for(e=0;e<h;++e)(n=c[e]).model.skip||(i=e>0?c[e-1]:null,a=e<h-1?c[e+1]:null,i&&!i.model.skip&&(d=(n.model.x-i.model.x)/3,n.model.controlPointPreviousX=n.model.x-d,n.model.controlPointPreviousY=n.model.y-d*n.mK),a&&!a.model.skip&&(d=(a.model.x-n.model.x)/3,n.model.controlPointNextX=n.model.x+d,n.model.controlPointNextY=n.model.y+d*n.mK))},r.nextItem=function(t,e,i){return i?e>=t.length-1?t[0]:t[e+1]:e>=t.length-1?t[t.length-1]:t[e+1]},r.previousItem=function(t,e,i){return i?e<=0?t[t.length-1]:t[e-1]:e<=0?t[0]:t[e-1]},r.niceNum=function(t,e){var i=Math.floor(r.log10(t)),n=t/Math.pow(10,i);return(e?n<1.5?1:n<3?2:n<7?5:10:n<=1?1:n<=2?2:n<=5?5:10)*Math.pow(10,i)},r.requestAnimFrame="undefined"==typeof window?function(t){t()}:window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(t){return window.setTimeout(t,1e3/60)},r.getRelativePosition=function(t,e){var i,n,a=t.originalEvent||t,o=t.target||t.srcElement,s=o.getBoundingClientRect(),l=a.touches;l&&l.length>0?(i=l[0].clientX,n=l[0].clientY):(i=a.clientX,n=a.clientY);var u=parseFloat(r.getStyle(o,"padding-left")),d=parseFloat(r.getStyle(o,"padding-top")),c=parseFloat(r.getStyle(o,"padding-right")),h=parseFloat(r.getStyle(o,"padding-bottom")),f=s.right-s.left-u-c,p=s.bottom-s.top-d-h;return{x:i=Math.round((i-s.left-u)/f*o.width/e.currentDevicePixelRatio),y:n=Math.round((n-s.top-d)/p*o.height/e.currentDevicePixelRatio)}},r.getConstraintWidth=function(t){return i(t,"max-width","clientWidth")},r.getConstraintHeight=function(t){return i(t,"max-height","clientHeight")},r._calculatePadding=function(t,e,i){return(e=r.getStyle(t,e)).indexOf("%")>-1?i/parseInt(e,10):parseInt(e,10)},r._getParentNode=function(t){var e=t.parentNode;return e&&e.host&&(e=e.host),e},r.getMaximumWidth=function(t){var e=r._getParentNode(t);if(!e)return t.clientWidth;var i=e.clientWidth,n=i-r._calculatePadding(e,"padding-left",i)-r._calculatePadding(e,"padding-right",i),a=r.getConstraintWidth(t);return isNaN(a)?n:Math.min(n,a)},r.getMaximumHeight=function(t){var e=r._getParentNode(t);if(!e)return t.clientHeight;var i=e.clientHeight,n=i-r._calculatePadding(e,"padding-top",i)-r._calculatePadding(e,"padding-bottom",i),a=r.getConstraintHeight(t);return isNaN(a)?n:Math.min(n,a)},r.getStyle=function(t,e){return t.currentStyle?t.currentStyle[e]:document.defaultView.getComputedStyle(t,null).getPropertyValue(e)},r.retinaScale=function(t,e){var i=t.currentDevicePixelRatio=e||"undefined"!=typeof window&&window.devicePixelRatio||1;if(1!==i){var n=t.canvas,a=t.height,r=t.width;n.height=a*i,n.width=r*i,t.ctx.scale(i,i),n.style.height||n.style.width||(n.style.height=a+"px",n.style.width=r+"px")}},r.fontString=function(t,e,i){return e+" "+t+"px "+i},r.longestText=function(t,e,i,n){var a=(n=n||{}).data=n.data||{},o=n.garbageCollect=n.garbageCollect||[];n.font!==e&&(a=n.data={},o=n.garbageCollect=[],n.font=e),t.font=e;var s=0;r.each(i,function(e){void 0!==e&&null!==e&&!0!==r.isArray(e)?s=r.measureText(t,a,o,s,e):r.isArray(e)&&r.each(e,function(e){void 0===e||null===e||r.isArray(e)||(s=r.measureText(t,a,o,s,e))})});var l=o.length/2;if(l>i.length){for(var u=0;u<l;u++)delete a[o[u]];o.splice(0,l)}return s},r.measureText=function(t,e,i,n,a){var r=e[a];return r||(r=e[a]=t.measureText(a).width,i.push(a)),r>n&&(n=r),n},r.numberOfLabelLines=function(t){var e=1;return r.each(t,function(t){r.isArray(t)&&t.length>e&&(e=t.length)}),e},r.color=n?function(t){return t instanceof CanvasGradient&&(t=a.global.defaultColor),n(t)}:function(t){return console.error("Color.js not found!"),t},r.getHoverColor=function(t){return t instanceof CanvasPattern?t:r.color(t).saturate(.5).darken(.1).rgbString()}}},{26:26,3:3,34:34,46:46}],29:[function(t,e,i){"use strict";var n=t(46);function a(t,e){return t.native?{x:t.x,y:t.y}:n.getRelativePosition(t,e)}function r(t,e){var i,n,a,r,o;for(n=0,r=t.data.datasets.length;n<r;++n)if(t.isDatasetVisible(n))for(a=0,o=(i=t.getDatasetMeta(n)).data.length;a<o;++a){var s=i.data[a];s._view.skip||e(s)}}function o(t,e){var i=[];return r(t,function(t){t.inRange(e.x,e.y)&&i.push(t)}),i}function s(t,e,i,n){var a=Number.POSITIVE_INFINITY,o=[];return r(t,function(t){if(!i||t.inRange(e.x,e.y)){var r=t.getCenterPoint(),s=n(e,r);s<a?(o=[t],a=s):s===a&&o.push(t)}}),o}function l(t){var e=-1!==t.indexOf("x"),i=-1!==t.indexOf("y");return function(t,n){var a=e?Math.abs(t.x-n.x):0,r=i?Math.abs(t.y-n.y):0;return Math.sqrt(Math.pow(a,2)+Math.pow(r,2))}}function u(t,e,i){var n=a(e,t);i.axis=i.axis||"x";var r=l(i.axis),u=i.intersect?o(t,n):s(t,n,!1,r),d=[];return u.length?(t.data.datasets.forEach(function(e,i){if(t.isDatasetVisible(i)){var n=t.getDatasetMeta(i).data[u[0]._index];n&&!n._view.skip&&d.push(n)}}),d):[]}e.exports={modes:{single:function(t,e){var i=a(e,t),n=[];return r(t,function(t){if(t.inRange(i.x,i.y))return n.push(t),n}),n.slice(0,1)},label:u,index:u,dataset:function(t,e,i){var n=a(e,t);i.axis=i.axis||"xy";var r=l(i.axis),u=i.intersect?o(t,n):s(t,n,!1,r);return u.length>0&&(u=t.getDatasetMeta(u[0]._datasetIndex).data),u},"x-axis":function(t,e){return u(t,e,{intersect:!1})},point:function(t,e){return o(t,a(e,t))},nearest:function(t,e,i){var n=a(e,t);i.axis=i.axis||"xy";var r=l(i.axis),o=s(t,n,i.intersect,r);return o.length>1&&o.sort(function(t,e){var i=t.getArea()-e.getArea();return 0===i&&(i=t._datasetIndex-e._datasetIndex),i}),o.slice(0,1)},x:function(t,e,i){var n=a(e,t),o=[],s=!1;return r(t,function(t){t.inXRange(n.x)&&o.push(t),t.inRange(n.x,n.y)&&(s=!0)}),i.intersect&&!s&&(o=[]),o},y:function(t,e,i){var n=a(e,t),o=[],s=!1;return r(t,function(t){t.inYRange(n.y)&&o.push(t),t.inRange(n.x,n.y)&&(s=!0)}),i.intersect&&!s&&(o=[]),o}}}},{46:46}],30:[function(t,e,i){"use strict";t(26)._set("global",{responsive:!0,responsiveAnimationDuration:0,maintainAspectRatio:!0,events:["mousemove","mouseout","click","touchstart","touchmove"],hover:{onHover:null,mode:"nearest",intersect:!0,animationDuration:400},onClick:null,defaultColor:"rgba(0,0,0,0.1)",defaultFontColor:"#666",defaultFontFamily:"'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",defaultFontSize:12,defaultFontStyle:"normal",showLines:!0,elements:{},layout:{padding:{top:0,right:0,bottom:0,left:0}}}),e.exports=function(){var t=function(t,e){return this.construct(t,e),this};return t.Chart=t,t}},{26:26}],31:[function(t,e,i){"use strict";var n=t(46);function a(t,e){return n.where(t,function(t){return t.position===e})}function r(t,e){t.forEach(function(t,e){return t._tmpIndex_=e,t}),t.sort(function(t,i){var n=e?i:t,a=e?t:i;return n.weight===a.weight?n._tmpIndex_-a._tmpIndex_:n.weight-a.weight}),t.forEach(function(t){delete t._tmpIndex_})}e.exports={defaults:{},addBox:function(t,e){t.boxes||(t.boxes=[]),e.fullWidth=e.fullWidth||!1,e.position=e.position||"top",e.weight=e.weight||0,t.boxes.push(e)},removeBox:function(t,e){var i=t.boxes?t.boxes.indexOf(e):-1;-1!==i&&t.boxes.splice(i,1)},configure:function(t,e,i){for(var n,a=["fullWidth","position","weight"],r=a.length,o=0;o<r;++o)n=a[o],i.hasOwnProperty(n)&&(e[n]=i[n])},update:function(t,e,i){if(t){var o=t.options.layout||{},s=n.options.toPadding(o.padding),l=s.left,u=s.right,d=s.top,c=s.bottom,h=a(t.boxes,"left"),f=a(t.boxes,"right"),p=a(t.boxes,"top"),g=a(t.boxes,"bottom"),m=a(t.boxes,"chartArea");r(h,!0),r(f,!1),r(p,!0),r(g,!1);var v=e-l-u,b=i-d-c,y=b/2,x=(e-v/2)/(h.length+f.length),w=(i-y)/(p.length+g.length),k=v,S=b,C=[];n.each(h.concat(f,p,g),function(t){var e,i=t.isHorizontal();i?(e=t.update(t.fullWidth?v:k,w),S-=e.height):(e=t.update(x,S),k-=e.width),C.push({horizontal:i,minSize:e,box:t})});var M=0,P=0,A=0,T=0;n.each(p.concat(g),function(t){if(t.getPadding){var e=t.getPadding();M=Math.max(M,e.left),P=Math.max(P,e.right)}}),n.each(h.concat(f),function(t){if(t.getPadding){var e=t.getPadding();A=Math.max(A,e.top),T=Math.max(T,e.bottom)}});var _=l,I=u,D=d,F=c;n.each(h.concat(f),E),n.each(h,function(t){_+=t.width}),n.each(f,function(t){I+=t.width}),n.each(p.concat(g),E),n.each(p,function(t){D+=t.height}),n.each(g,function(t){F+=t.height}),n.each(h.concat(f),function(t){var e=n.findNextWhere(C,function(e){return e.box===t}),i={left:0,right:0,top:D,bottom:F};e&&t.update(e.minSize.width,S,i)}),_=l,I=u,D=d,F=c,n.each(h,function(t){_+=t.width}),n.each(f,function(t){I+=t.width}),n.each(p,function(t){D+=t.height}),n.each(g,function(t){F+=t.height});var O=Math.max(M-_,0);_+=O,I+=Math.max(P-I,0);var L=Math.max(A-D,0);D+=L,F+=Math.max(T-F,0);var R=i-D-F,V=e-_-I;V===k&&R===S||(n.each(h,function(t){t.height=R}),n.each(f,function(t){t.height=R}),n.each(p,function(t){t.fullWidth||(t.width=V)}),n.each(g,function(t){t.fullWidth||(t.width=V)}),S=R,k=V);var z=l+O,N=d+L;n.each(h.concat(p),W),z+=k,N+=S,n.each(f,W),n.each(g,W),t.chartArea={left:_,top:D,right:_+k,bottom:D+S},n.each(m,function(e){e.left=t.chartArea.left,e.top=t.chartArea.top,e.right=t.chartArea.right,e.bottom=t.chartArea.bottom,e.update(k,S)})}function E(t){var e=n.findNextWhere(C,function(e){return e.box===t});if(e)if(t.isHorizontal()){var i={left:Math.max(_,M),right:Math.max(I,P),top:0,bottom:0};t.update(t.fullWidth?v:k,b/2,i)}else t.update(e.minSize.width,S)}function W(t){t.isHorizontal()?(t.left=t.fullWidth?l:_,t.right=t.fullWidth?e-u:_+k,t.top=N,t.bottom=N+t.height,N=t.bottom):(t.left=z,t.right=z+t.width,t.top=D,t.bottom=D+S,z=t.right)}}}},{46:46}],32:[function(t,e,i){"use strict";var n=t(26),a=t(46);n._set("global",{plugins:{}}),e.exports={_plugins:[],_cacheId:0,register:function(t){var e=this._plugins;[].concat(t).forEach(function(t){-1===e.indexOf(t)&&e.push(t)}),this._cacheId++},unregister:function(t){var e=this._plugins;[].concat(t).forEach(function(t){var i=e.indexOf(t);-1!==i&&e.splice(i,1)}),this._cacheId++},clear:function(){this._plugins=[],this._cacheId++},count:function(){return this._plugins.length},getAll:function(){return this._plugins},notify:function(t,e,i){var n,a,r,o,s,l=this.descriptors(t),u=l.length;for(n=0;n<u;++n)if("function"==typeof(s=(r=(a=l[n]).plugin)[e])&&((o=[t].concat(i||[])).push(a.options),!1===s.apply(r,o)))return!1;return!0},descriptors:function(t){var e=t.$plugins||(t.$plugins={});if(e.id===this._cacheId)return e.descriptors;var i=[],r=[],o=t&&t.config||{},s=o.options&&o.options.plugins||{};return this._plugins.concat(o.plugins||[]).forEach(function(t){if(-1===i.indexOf(t)){var e=t.id,o=s[e];!1!==o&&(!0===o&&(o=a.clone(n.global.plugins[e])),i.push(t),r.push({plugin:t,options:o||{}}))}}),e.descriptors=r,e.id=this._cacheId,r},_invalidate:function(t){delete t.$plugins}}},{26:26,46:46}],33:[function(t,e,i){"use strict";var n=t(26),a=t(27),r=t(46),o=t(35);function s(t){var e,i,n=[];for(e=0,i=t.length;e<i;++e)n.push(t[e].label);return n}function l(t,e,i){var n=t.getPixelForTick(e);return i&&(n-=0===e?(t.getPixelForTick(1)-n)/2:(n-t.getPixelForTick(e-1))/2),n}function u(t,e,i){return r.isArray(e)?r.longestText(t,i,e):t.measureText(e).width}function d(t){var e=r.valueOrDefault,i=n.global,a=e(t.fontSize,i.defaultFontSize),o=e(t.fontStyle,i.defaultFontStyle),s=e(t.fontFamily,i.defaultFontFamily);return{size:a,style:o,family:s,font:r.fontString(a,o,s)}}function c(t){return r.options.toLineHeight(r.valueOrDefault(t.lineHeight,1.2),r.valueOrDefault(t.fontSize,n.global.defaultFontSize))}n._set("scale",{display:!0,position:"left",offset:!1,gridLines:{display:!0,color:"rgba(0, 0, 0, 0.1)",lineWidth:1,drawBorder:!0,drawOnChartArea:!0,drawTicks:!0,tickMarkLength:10,zeroLineWidth:1,zeroLineColor:"rgba(0,0,0,0.25)",zeroLineBorderDash:[],zeroLineBorderDashOffset:0,offsetGridLines:!1,borderDash:[],borderDashOffset:0},scaleLabel:{display:!1,labelString:"",lineHeight:1.2,padding:{top:4,bottom:4}},ticks:{beginAtZero:!1,minRotation:0,maxRotation:50,mirror:!1,padding:0,reverse:!1,display:!0,autoSkip:!0,autoSkipPadding:0,labelOffset:0,callback:o.formatters.values,minor:{},major:{}}}),e.exports=a.extend({getPadding:function(){return{left:this.paddingLeft||0,top:this.paddingTop||0,right:this.paddingRight||0,bottom:this.paddingBottom||0}},getTicks:function(){return this._ticks},mergeTicksOptions:function(){var t=this.options.ticks;for(var e in!1===t.minor&&(t.minor={display:!1}),!1===t.major&&(t.major={display:!1}),t)"major"!==e&&"minor"!==e&&(void 0===t.minor[e]&&(t.minor[e]=t[e]),void 0===t.major[e]&&(t.major[e]=t[e]))},beforeUpdate:function(){r.callback(this.options.beforeUpdate,[this])},update:function(t,e,i){var n,a,o,s,l,u,d=this;for(d.beforeUpdate(),d.maxWidth=t,d.maxHeight=e,d.margins=r.extend({left:0,right:0,top:0,bottom:0},i),d.longestTextCache=d.longestTextCache||{},d.beforeSetDimensions(),d.setDimensions(),d.afterSetDimensions(),d.beforeDataLimits(),d.determineDataLimits(),d.afterDataLimits(),d.beforeBuildTicks(),l=d.buildTicks()||[],d.afterBuildTicks(),d.beforeTickToLabelConversion(),o=d.convertTicksToLabels(l)||d.ticks,d.afterTickToLabelConversion(),d.ticks=o,n=0,a=o.length;n<a;++n)s=o[n],(u=l[n])?u.label=s:l.push(u={label:s,major:!1});return d._ticks=l,d.beforeCalculateTickRotation(),d.calculateTickRotation(),d.afterCalculateTickRotation(),d.beforeFit(),d.fit(),d.afterFit(),d.afterUpdate(),d.minSize},afterUpdate:function(){r.callback(this.options.afterUpdate,[this])},beforeSetDimensions:function(){r.callback(this.options.beforeSetDimensions,[this])},setDimensions:function(){var t=this;t.isHorizontal()?(t.width=t.maxWidth,t.left=0,t.right=t.width):(t.height=t.maxHeight,t.top=0,t.bottom=t.height),t.paddingLeft=0,t.paddingTop=0,t.paddingRight=0,t.paddingBottom=0},afterSetDimensions:function(){r.callback(this.options.afterSetDimensions,[this])},beforeDataLimits:function(){r.callback(this.options.beforeDataLimits,[this])},determineDataLimits:r.noop,afterDataLimits:function(){r.callback(this.options.afterDataLimits,[this])},beforeBuildTicks:function(){r.callback(this.options.beforeBuildTicks,[this])},buildTicks:r.noop,afterBuildTicks:function(){r.callback(this.options.afterBuildTicks,[this])},beforeTickToLabelConversion:function(){r.callback(this.options.beforeTickToLabelConversion,[this])},convertTicksToLabels:function(){var t=this.options.ticks;this.ticks=this.ticks.map(t.userCallback||t.callback,this)},afterTickToLabelConversion:function(){r.callback(this.options.afterTickToLabelConversion,[this])},beforeCalculateTickRotation:function(){r.callback(this.options.beforeCalculateTickRotation,[this])},calculateTickRotation:function(){var t=this,e=t.ctx,i=t.options.ticks,n=s(t._ticks),a=d(i);e.font=a.font;var o=i.minRotation||0;if(n.length&&t.options.display&&t.isHorizontal())for(var l,u=r.longestText(e,a.font,n,t.longestTextCache),c=u,h=t.getPixelForTick(1)-t.getPixelForTick(0)-6;c>h&&o<i.maxRotation;){var f=r.toRadians(o);if(l=Math.cos(f),Math.sin(f)*u>t.maxHeight){o--;break}o++,c=l*u}t.labelRotation=o},afterCalculateTickRotation:function(){r.callback(this.options.afterCalculateTickRotation,[this])},beforeFit:function(){r.callback(this.options.beforeFit,[this])},fit:function(){var t=this,e=t.minSize={width:0,height:0},i=s(t._ticks),n=t.options,a=n.ticks,o=n.scaleLabel,l=n.gridLines,h=n.display,f=t.isHorizontal(),p=d(a),g=n.gridLines.tickMarkLength;if(e.width=f?t.isFullWidth()?t.maxWidth-t.margins.left-t.margins.right:t.maxWidth:h&&l.drawTicks?g:0,e.height=f?h&&l.drawTicks?g:0:t.maxHeight,o.display&&h){var m=c(o)+r.options.toPadding(o.padding).height;f?e.height+=m:e.width+=m}if(a.display&&h){var v=r.longestText(t.ctx,p.font,i,t.longestTextCache),b=r.numberOfLabelLines(i),y=.5*p.size,x=t.options.ticks.padding;if(f){t.longestLabelWidth=v;var w=r.toRadians(t.labelRotation),k=Math.cos(w),S=Math.sin(w)*v+p.size*b+y*(b-1)+y;e.height=Math.min(t.maxHeight,e.height+S+x),t.ctx.font=p.font;var C=u(t.ctx,i[0],p.font),M=u(t.ctx,i[i.length-1],p.font);0!==t.labelRotation?(t.paddingLeft="bottom"===n.position?k*C+3:k*y+3,t.paddingRight="bottom"===n.position?k*y+3:k*M+3):(t.paddingLeft=C/2+3,t.paddingRight=M/2+3)}else a.mirror?v=0:v+=x+y,e.width=Math.min(t.maxWidth,e.width+v),t.paddingTop=p.size/2,t.paddingBottom=p.size/2}t.handleMargins(),t.width=e.width,t.height=e.height},handleMargins:function(){var t=this;t.margins&&(t.paddingLeft=Math.max(t.paddingLeft-t.margins.left,0),t.paddingTop=Math.max(t.paddingTop-t.margins.top,0),t.paddingRight=Math.max(t.paddingRight-t.margins.right,0),t.paddingBottom=Math.max(t.paddingBottom-t.margins.bottom,0))},afterFit:function(){r.callback(this.options.afterFit,[this])},isHorizontal:function(){return"top"===this.options.position||"bottom"===this.options.position},isFullWidth:function(){return this.options.fullWidth},getRightValue:function(t){if(r.isNullOrUndef(t))return NaN;if("number"==typeof t&&!isFinite(t))return NaN;if(t)if(this.isHorizontal()){if(void 0!==t.x)return this.getRightValue(t.x)}else if(void 0!==t.y)return this.getRightValue(t.y);return t},getLabelForIndex:r.noop,getPixelForValue:r.noop,getValueForPixel:r.noop,getPixelForTick:function(t){var e=this,i=e.options.offset;if(e.isHorizontal()){var n=(e.width-(e.paddingLeft+e.paddingRight))/Math.max(e._ticks.length-(i?0:1),1),a=n*t+e.paddingLeft;i&&(a+=n/2);var r=e.left+Math.round(a);return r+=e.isFullWidth()?e.margins.left:0}var o=e.height-(e.paddingTop+e.paddingBottom);return e.top+t*(o/(e._ticks.length-1))},getPixelForDecimal:function(t){var e=this;if(e.isHorizontal()){var i=(e.width-(e.paddingLeft+e.paddingRight))*t+e.paddingLeft,n=e.left+Math.round(i);return n+=e.isFullWidth()?e.margins.left:0}return e.top+t*e.height},getBasePixel:function(){return this.getPixelForValue(this.getBaseValue())},getBaseValue:function(){var t=this.min,e=this.max;return this.beginAtZero?0:t<0&&e<0?e:t>0&&e>0?t:0},_autoSkip:function(t){var e,i,n,a,o=this,s=o.isHorizontal(),l=o.options.ticks.minor,u=t.length,d=r.toRadians(o.labelRotation),c=Math.cos(d),h=o.longestLabelWidth*c,f=[];for(l.maxTicksLimit&&(a=l.maxTicksLimit),s&&(e=!1,(h+l.autoSkipPadding)*u>o.width-(o.paddingLeft+o.paddingRight)&&(e=1+Math.floor((h+l.autoSkipPadding)*u/(o.width-(o.paddingLeft+o.paddingRight)))),a&&u>a&&(e=Math.max(e,Math.floor(u/a)))),i=0;i<u;i++)n=t[i],(e>1&&i%e>0||i%e==0&&i+e>=u)&&i!==u-1&&delete n.label,f.push(n);return f},draw:function(t){var e=this,i=e.options;if(i.display){var a=e.ctx,o=n.global,s=i.ticks.minor,u=i.ticks.major||s,h=i.gridLines,f=i.scaleLabel,p=0!==e.labelRotation,g=e.isHorizontal(),m=s.autoSkip?e._autoSkip(e.getTicks()):e.getTicks(),v=r.valueOrDefault(s.fontColor,o.defaultFontColor),b=d(s),y=r.valueOrDefault(u.fontColor,o.defaultFontColor),x=d(u),w=h.drawTicks?h.tickMarkLength:0,k=r.valueOrDefault(f.fontColor,o.defaultFontColor),S=d(f),C=r.options.toPadding(f.padding),M=r.toRadians(e.labelRotation),P=[],A=e.options.gridLines.lineWidth,T="right"===i.position?e.left:e.right-A-w,_="right"===i.position?e.left+w:e.right,I="bottom"===i.position?e.top+A:e.bottom-w-A,D="bottom"===i.position?e.top+A+w:e.bottom+A;if(r.each(m,function(n,a){if(!r.isNullOrUndef(n.label)){var u,d,c,f,v,b,y,x,k,S,C,F,O,L,R=n.label;a===e.zeroLineIndex&&i.offset===h.offsetGridLines?(u=h.zeroLineWidth,d=h.zeroLineColor,c=h.zeroLineBorderDash,f=h.zeroLineBorderDashOffset):(u=r.valueAtIndexOrDefault(h.lineWidth,a),d=r.valueAtIndexOrDefault(h.color,a),c=r.valueOrDefault(h.borderDash,o.borderDash),f=r.valueOrDefault(h.borderDashOffset,o.borderDashOffset));var V="middle",z="middle",N=s.padding;if(g){var E=w+N;"bottom"===i.position?(z=p?"middle":"top",V=p?"right":"center",L=e.top+E):(z=p?"middle":"bottom",V=p?"left":"center",L=e.bottom-E);var W=l(e,a,h.offsetGridLines&&m.length>1);W<e.left&&(d="rgba(0,0,0,0)"),W+=r.aliasPixel(u),O=e.getPixelForTick(a)+s.labelOffset,v=y=k=C=W,b=I,x=D,S=t.top,F=t.bottom+A}else{var B,H="left"===i.position;s.mirror?(V=H?"left":"right",B=N):(V=H?"right":"left",B=w+N),O=H?e.right-B:e.left+B;var j=l(e,a,h.offsetGridLines&&m.length>1);j<e.top&&(d="rgba(0,0,0,0)"),j+=r.aliasPixel(u),L=e.getPixelForTick(a)+s.labelOffset,v=T,y=_,k=t.left,C=t.right+A,b=x=S=F=j}P.push({tx1:v,ty1:b,tx2:y,ty2:x,x1:k,y1:S,x2:C,y2:F,labelX:O,labelY:L,glWidth:u,glColor:d,glBorderDash:c,glBorderDashOffset:f,rotation:-1*M,label:R,major:n.major,textBaseline:z,textAlign:V})}}),r.each(P,function(t){if(h.display&&(a.save(),a.lineWidth=t.glWidth,a.strokeStyle=t.glColor,a.setLineDash&&(a.setLineDash(t.glBorderDash),a.lineDashOffset=t.glBorderDashOffset),a.beginPath(),h.drawTicks&&(a.moveTo(t.tx1,t.ty1),a.lineTo(t.tx2,t.ty2)),h.drawOnChartArea&&(a.moveTo(t.x1,t.y1),a.lineTo(t.x2,t.y2)),a.stroke(),a.restore()),s.display){a.save(),a.translate(t.labelX,t.labelY),a.rotate(t.rotation),a.font=t.major?x.font:b.font,a.fillStyle=t.major?y:v,a.textBaseline=t.textBaseline,a.textAlign=t.textAlign;var i=t.label;if(r.isArray(i))for(var n=i.length,o=1.5*b.size,l=e.isHorizontal()?0:-o*(n-1)/2,u=0;u<n;++u)a.fillText(""+i[u],0,l),l+=o;else a.fillText(i,0,0);a.restore()}}),f.display){var F,O,L=0,R=c(f)/2;if(g)F=e.left+(e.right-e.left)/2,O="bottom"===i.position?e.bottom-R-C.bottom:e.top+R+C.top;else{var V="left"===i.position;F=V?e.left+R+C.top:e.right-R-C.top,O=e.top+(e.bottom-e.top)/2,L=V?-.5*Math.PI:.5*Math.PI}a.save(),a.translate(F,O),a.rotate(L),a.textAlign="center",a.textBaseline="middle",a.fillStyle=k,a.font=S.font,a.fillText(f.labelString,0,0),a.restore()}if(h.drawBorder){a.lineWidth=r.valueAtIndexOrDefault(h.lineWidth,0),a.strokeStyle=r.valueAtIndexOrDefault(h.color,0);var z=e.left,N=e.right+A,E=e.top,W=e.bottom+A,B=r.aliasPixel(a.lineWidth);g?(E=W="top"===i.position?e.bottom:e.top,E+=B,W+=B):(z=N="left"===i.position?e.right:e.left,z+=B,N+=B),a.beginPath(),a.moveTo(z,E),a.lineTo(N,W),a.stroke()}}}})},{26:26,27:27,35:35,46:46}],34:[function(t,e,i){"use strict";var n=t(26),a=t(46),r=t(31);e.exports={constructors:{},defaults:{},registerScaleType:function(t,e,i){this.constructors[t]=e,this.defaults[t]=a.clone(i)},getScaleConstructor:function(t){return this.constructors.hasOwnProperty(t)?this.constructors[t]:void 0},getScaleDefaults:function(t){return this.defaults.hasOwnProperty(t)?a.merge({},[n.scale,this.defaults[t]]):{}},updateScaleDefaults:function(t,e){this.defaults.hasOwnProperty(t)&&(this.defaults[t]=a.extend(this.defaults[t],e))},addScalesToLayout:function(t){a.each(t.scales,function(e){e.fullWidth=e.options.fullWidth,e.position=e.options.position,e.weight=e.options.weight,r.addBox(t,e)})}}},{26:26,31:31,46:46}],35:[function(t,e,i){"use strict";var n=t(46);e.exports={formatters:{values:function(t){return n.isArray(t)?t:""+t},linear:function(t,e,i){var a=i.length>3?i[2]-i[1]:i[1]-i[0];Math.abs(a)>1&&t!==Math.floor(t)&&(a=t-Math.floor(t));var r=n.log10(Math.abs(a)),o="";if(0!==t)if(Math.max(Math.abs(i[0]),Math.abs(i[i.length-1]))<1e-4){var s=n.log10(Math.abs(t));o=t.toExponential(Math.floor(s)-Math.floor(r))}else{var l=-1*Math.floor(r);l=Math.max(Math.min(l,20),0),o=t.toFixed(l)}else o="0";return o},logarithmic:function(t,e,i){var a=t/Math.pow(10,Math.floor(n.log10(t)));return 0===t?"0":1===a||2===a||5===a||0===e||e===i.length-1?t.toExponential():""}}}},{46:46}],36:[function(t,e,i){"use strict";var n=t(26),a=t(27),r=t(46);n._set("global",{tooltips:{enabled:!0,custom:null,mode:"nearest",position:"average",intersect:!0,backgroundColor:"rgba(0,0,0,0.8)",titleFontStyle:"bold",titleSpacing:2,titleMarginBottom:6,titleFontColor:"#fff",titleAlign:"left",bodySpacing:2,bodyFontColor:"#fff",bodyAlign:"left",footerFontStyle:"bold",footerSpacing:2,footerMarginTop:6,footerFontColor:"#fff",footerAlign:"left",yPadding:6,xPadding:6,caretPadding:2,caretSize:5,cornerRadius:6,multiKeyBackground:"#fff",displayColors:!0,borderColor:"rgba(0,0,0,0)",borderWidth:0,callbacks:{beforeTitle:r.noop,title:function(t,e){var i="",n=e.labels,a=n?n.length:0;if(t.length>0){var r=t[0];r.xLabel?i=r.xLabel:a>0&&r.index<a&&(i=n[r.index])}return i},afterTitle:r.noop,beforeBody:r.noop,beforeLabel:r.noop,label:function(t,e){var i=e.datasets[t.datasetIndex].label||"";return i&&(i+=": "),i+=t.yLabel},labelColor:function(t,e){var i=e.getDatasetMeta(t.datasetIndex).data[t.index]._view;return{borderColor:i.borderColor,backgroundColor:i.backgroundColor}},labelTextColor:function(){return this._options.bodyFontColor},afterLabel:r.noop,afterBody:r.noop,beforeFooter:r.noop,footer:r.noop,afterFooter:r.noop}}});var o={average:function(t){if(!t.length)return!1;var e,i,n=0,a=0,r=0;for(e=0,i=t.length;e<i;++e){var o=t[e];if(o&&o.hasValue()){var s=o.tooltipPosition();n+=s.x,a+=s.y,++r}}return{x:Math.round(n/r),y:Math.round(a/r)}},nearest:function(t,e){var i,n,a,o=e.x,s=e.y,l=Number.POSITIVE_INFINITY;for(i=0,n=t.length;i<n;++i){var u=t[i];if(u&&u.hasValue()){var d=u.getCenterPoint(),c=r.distanceBetweenPoints(e,d);c<l&&(l=c,a=u)}}if(a){var h=a.tooltipPosition();o=h.x,s=h.y}return{x:o,y:s}}};function s(t,e){var i=r.color(t);return i.alpha(e*i.alpha()).rgbaString()}function l(t,e){return e&&(r.isArray(e)?Array.prototype.push.apply(t,e):t.push(e)),t}function u(t){return("string"==typeof t||t instanceof String)&&t.indexOf("\n")>-1?t.split("\n"):t}function d(t){var e=n.global,i=r.valueOrDefault;return{xPadding:t.xPadding,yPadding:t.yPadding,xAlign:t.xAlign,yAlign:t.yAlign,bodyFontColor:t.bodyFontColor,_bodyFontFamily:i(t.bodyFontFamily,e.defaultFontFamily),_bodyFontStyle:i(t.bodyFontStyle,e.defaultFontStyle),_bodyAlign:t.bodyAlign,bodyFontSize:i(t.bodyFontSize,e.defaultFontSize),bodySpacing:t.bodySpacing,titleFontColor:t.titleFontColor,_titleFontFamily:i(t.titleFontFamily,e.defaultFontFamily),_titleFontStyle:i(t.titleFontStyle,e.defaultFontStyle),titleFontSize:i(t.titleFontSize,e.defaultFontSize),_titleAlign:t.titleAlign,titleSpacing:t.titleSpacing,titleMarginBottom:t.titleMarginBottom,footerFontColor:t.footerFontColor,_footerFontFamily:i(t.footerFontFamily,e.defaultFontFamily),_footerFontStyle:i(t.footerFontStyle,e.defaultFontStyle),footerFontSize:i(t.footerFontSize,e.defaultFontSize),_footerAlign:t.footerAlign,footerSpacing:t.footerSpacing,footerMarginTop:t.footerMarginTop,caretSize:t.caretSize,cornerRadius:t.cornerRadius,backgroundColor:t.backgroundColor,opacity:0,legendColorBackground:t.multiKeyBackground,displayColors:t.displayColors,borderColor:t.borderColor,borderWidth:t.borderWidth}}function c(t){return l([],u(t))}(e.exports=a.extend({initialize:function(){this._model=d(this._options),this._lastActive=[]},getTitle:function(){var t=this._options.callbacks,e=t.beforeTitle.apply(this,arguments),i=t.title.apply(this,arguments),n=t.afterTitle.apply(this,arguments),a=[];return a=l(a=l(a=l(a,u(e)),u(i)),u(n))},getBeforeBody:function(){return c(this._options.callbacks.beforeBody.apply(this,arguments))},getBody:function(t,e){var i=this,n=i._options.callbacks,a=[];return r.each(t,function(t){var r={before:[],lines:[],after:[]};l(r.before,u(n.beforeLabel.call(i,t,e))),l(r.lines,n.label.call(i,t,e)),l(r.after,u(n.afterLabel.call(i,t,e))),a.push(r)}),a},getAfterBody:function(){return c(this._options.callbacks.afterBody.apply(this,arguments))},getFooter:function(){var t=this._options.callbacks,e=t.beforeFooter.apply(this,arguments),i=t.footer.apply(this,arguments),n=t.afterFooter.apply(this,arguments),a=[];return a=l(a=l(a=l(a,u(e)),u(i)),u(n))},update:function(t){var e,i,n,a,s,l,u,c=this,h=c._options,f=c._model,p=c._model=d(h),g=c._active,m=c._data,v={xAlign:f.xAlign,yAlign:f.yAlign},b={x:f.x,y:f.y},y={width:f.width,height:f.height},x={x:f.caretX,y:f.caretY};if(g.length){p.opacity=1;var w=[],k=[];x=o[h.position].call(c,g,c._eventPosition);var S=[];for(e=0,i=g.length;e<i;++e)S.push((n=g[e],a=void 0,s=void 0,void 0,void 0,a=n._xScale,s=n._yScale||n._scale,l=n._index,u=n._datasetIndex,{xLabel:a?a.getLabelForIndex(l,u):"",yLabel:s?s.getLabelForIndex(l,u):"",index:l,datasetIndex:u,x:n._model.x,y:n._model.y}));h.filter&&(S=S.filter(function(t){return h.filter(t,m)})),h.itemSort&&(S=S.sort(function(t,e){return h.itemSort(t,e,m)})),r.each(S,function(t){w.push(h.callbacks.labelColor.call(c,t,c._chart)),k.push(h.callbacks.labelTextColor.call(c,t,c._chart))}),p.title=c.getTitle(S,m),p.beforeBody=c.getBeforeBody(S,m),p.body=c.getBody(S,m),p.afterBody=c.getAfterBody(S,m),p.footer=c.getFooter(S,m),p.x=Math.round(x.x),p.y=Math.round(x.y),p.caretPadding=h.caretPadding,p.labelColors=w,p.labelTextColors=k,p.dataPoints=S,b=function(t,e,i,n){var a=t.x,r=t.y,o=t.caretSize,s=t.caretPadding,l=t.cornerRadius,u=i.xAlign,d=i.yAlign,c=o+s,h=l+s;return"right"===u?a-=e.width:"center"===u&&((a-=e.width/2)+e.width>n.width&&(a=n.width-e.width),a<0&&(a=0)),"top"===d?r+=c:r-="bottom"===d?e.height+c:e.height/2,"center"===d?"left"===u?a+=c:"right"===u&&(a-=c):"left"===u?a-=h:"right"===u&&(a+=h),{x:a,y:r}}(p,y=function(t,e){var i=t._chart.ctx,n=2*e.yPadding,a=0,o=e.body,s=o.reduce(function(t,e){return t+e.before.length+e.lines.length+e.after.length},0);s+=e.beforeBody.length+e.afterBody.length;var l=e.title.length,u=e.footer.length,d=e.titleFontSize,c=e.bodyFontSize,h=e.footerFontSize;n+=l*d,n+=l?(l-1)*e.titleSpacing:0,n+=l?e.titleMarginBottom:0,n+=s*c,n+=s?(s-1)*e.bodySpacing:0,n+=u?e.footerMarginTop:0,n+=u*h,n+=u?(u-1)*e.footerSpacing:0;var f=0,p=function(t){a=Math.max(a,i.measureText(t).width+f)};return i.font=r.fontString(d,e._titleFontStyle,e._titleFontFamily),r.each(e.title,p),i.font=r.fontString(c,e._bodyFontStyle,e._bodyFontFamily),r.each(e.beforeBody.concat(e.afterBody),p),f=e.displayColors?c+2:0,r.each(o,function(t){r.each(t.before,p),r.each(t.lines,p),r.each(t.after,p)}),f=0,i.font=r.fontString(h,e._footerFontStyle,e._footerFontFamily),r.each(e.footer,p),{width:a+=2*e.xPadding,height:n}}(this,p),v=function(t,e){var i,n,a,r,o,s=t._model,l=t._chart,u=t._chart.chartArea,d="center",c="center";s.y<e.height?c="top":s.y>l.height-e.height&&(c="bottom");var h=(u.left+u.right)/2,f=(u.top+u.bottom)/2;"center"===c?(i=function(t){return t<=h},n=function(t){return t>h}):(i=function(t){return t<=e.width/2},n=function(t){return t>=l.width-e.width/2}),a=function(t){return t+e.width+s.caretSize+s.caretPadding>l.width},r=function(t){return t-e.width-s.caretSize-s.caretPadding<0},o=function(t){return t<=f?"top":"bottom"},i(s.x)?(d="left",a(s.x)&&(d="center",c=o(s.y))):n(s.x)&&(d="right",r(s.x)&&(d="center",c=o(s.y)));var p=t._options;return{xAlign:p.xAlign?p.xAlign:d,yAlign:p.yAlign?p.yAlign:c}}(this,y),c._chart)}else p.opacity=0;return p.xAlign=v.xAlign,p.yAlign=v.yAlign,p.x=b.x,p.y=b.y,p.width=y.width,p.height=y.height,p.caretX=x.x,p.caretY=x.y,c._model=p,t&&h.custom&&h.custom.call(c,p),c},drawCaret:function(t,e){var i=this._chart.ctx,n=this._view,a=this.getCaretPosition(t,e,n);i.lineTo(a.x1,a.y1),i.lineTo(a.x2,a.y2),i.lineTo(a.x3,a.y3)},getCaretPosition:function(t,e,i){var n,a,r,o,s,l,u=i.caretSize,d=i.cornerRadius,c=i.xAlign,h=i.yAlign,f=t.x,p=t.y,g=e.width,m=e.height;if("center"===h)s=p+m/2,"left"===c?(a=(n=f)-u,r=n,o=s+u,l=s-u):(a=(n=f+g)+u,r=n,o=s-u,l=s+u);else if("left"===c?(n=(a=f+d+u)-u,r=a+u):"right"===c?(n=(a=f+g-d-u)-u,r=a+u):(n=(a=i.caretX)-u,r=a+u),"top"===h)s=(o=p)-u,l=o;else{s=(o=p+m)+u,l=o;var v=r;r=n,n=v}return{x1:n,x2:a,x3:r,y1:o,y2:s,y3:l}},drawTitle:function(t,e,i,n){var a=e.title;if(a.length){i.textAlign=e._titleAlign,i.textBaseline="top";var o,l,u=e.titleFontSize,d=e.titleSpacing;for(i.fillStyle=s(e.titleFontColor,n),i.font=r.fontString(u,e._titleFontStyle,e._titleFontFamily),o=0,l=a.length;o<l;++o)i.fillText(a[o],t.x,t.y),t.y+=u+d,o+1===a.length&&(t.y+=e.titleMarginBottom-d)}},drawBody:function(t,e,i,n){var a=e.bodyFontSize,o=e.bodySpacing,l=e.body;i.textAlign=e._bodyAlign,i.textBaseline="top",i.font=r.fontString(a,e._bodyFontStyle,e._bodyFontFamily);var u=0,d=function(e){i.fillText(e,t.x+u,t.y),t.y+=a+o};i.fillStyle=s(e.bodyFontColor,n),r.each(e.beforeBody,d);var c=e.displayColors;u=c?a+2:0,r.each(l,function(o,l){var u=s(e.labelTextColors[l],n);i.fillStyle=u,r.each(o.before,d),r.each(o.lines,function(r){c&&(i.fillStyle=s(e.legendColorBackground,n),i.fillRect(t.x,t.y,a,a),i.lineWidth=1,i.strokeStyle=s(e.labelColors[l].borderColor,n),i.strokeRect(t.x,t.y,a,a),i.fillStyle=s(e.labelColors[l].backgroundColor,n),i.fillRect(t.x+1,t.y+1,a-2,a-2),i.fillStyle=u),d(r)}),r.each(o.after,d)}),u=0,r.each(e.afterBody,d),t.y-=o},drawFooter:function(t,e,i,n){var a=e.footer;a.length&&(t.y+=e.footerMarginTop,i.textAlign=e._footerAlign,i.textBaseline="top",i.fillStyle=s(e.footerFontColor,n),i.font=r.fontString(e.footerFontSize,e._footerFontStyle,e._footerFontFamily),r.each(a,function(n){i.fillText(n,t.x,t.y),t.y+=e.footerFontSize+e.footerSpacing}))},drawBackground:function(t,e,i,n,a){i.fillStyle=s(e.backgroundColor,a),i.strokeStyle=s(e.borderColor,a),i.lineWidth=e.borderWidth;var r=e.xAlign,o=e.yAlign,l=t.x,u=t.y,d=n.width,c=n.height,h=e.cornerRadius;i.beginPath(),i.moveTo(l+h,u),"top"===o&&this.drawCaret(t,n),i.lineTo(l+d-h,u),i.quadraticCurveTo(l+d,u,l+d,u+h),"center"===o&&"right"===r&&this.drawCaret(t,n),i.lineTo(l+d,u+c-h),i.quadraticCurveTo(l+d,u+c,l+d-h,u+c),"bottom"===o&&this.drawCaret(t,n),i.lineTo(l+h,u+c),i.quadraticCurveTo(l,u+c,l,u+c-h),"center"===o&&"left"===r&&this.drawCaret(t,n),i.lineTo(l,u+h),i.quadraticCurveTo(l,u,l+h,u),i.closePath(),i.fill(),e.borderWidth>0&&i.stroke()},draw:function(){var t=this._chart.ctx,e=this._view;if(0!==e.opacity){var i={width:e.width,height:e.height},n={x:e.x,y:e.y},a=Math.abs(e.opacity<.001)?0:e.opacity,r=e.title.length||e.beforeBody.length||e.body.length||e.afterBody.length||e.footer.length;this._options.enabled&&r&&(this.drawBackground(n,e,t,i,a),n.x+=e.xPadding,n.y+=e.yPadding,this.drawTitle(n,e,t,a),this.drawBody(n,e,t,a),this.drawFooter(n,e,t,a))}},handleEvent:function(t){var e,i=this,n=i._options;return i._lastActive=i._lastActive||[],"mouseout"===t.type?i._active=[]:i._active=i._chart.getElementsAtEventForMode(t,n.mode,n),(e=!r.arrayEquals(i._active,i._lastActive))&&(i._lastActive=i._active,(n.enabled||n.custom)&&(i._eventPosition={x:t.x,y:t.y},i.update(!0),i.pivot())),e}})).positioners=o},{26:26,27:27,46:46}],37:[function(t,e,i){"use strict";var n=t(26),a=t(27),r=t(46);n._set("global",{elements:{arc:{backgroundColor:n.global.defaultColor,borderColor:"#fff",borderWidth:2}}}),e.exports=a.extend({inLabelRange:function(t){var e=this._view;return!!e&&Math.pow(t-e.x,2)<Math.pow(e.radius+e.hoverRadius,2)},inRange:function(t,e){var i=this._view;if(i){for(var n=r.getAngleFromPoint(i,{x:t,y:e}),a=n.angle,o=n.distance,s=i.startAngle,l=i.endAngle;l<s;)l+=2*Math.PI;for(;a>l;)a-=2*Math.PI;for(;a<s;)a+=2*Math.PI;var u=a>=s&&a<=l,d=o>=i.innerRadius&&o<=i.outerRadius;return u&&d}return!1},getCenterPoint:function(){var t=this._view,e=(t.startAngle+t.endAngle)/2,i=(t.innerRadius+t.outerRadius)/2;return{x:t.x+Math.cos(e)*i,y:t.y+Math.sin(e)*i}},getArea:function(){var t=this._view;return Math.PI*((t.endAngle-t.startAngle)/(2*Math.PI))*(Math.pow(t.outerRadius,2)-Math.pow(t.innerRadius,2))},tooltipPosition:function(){var t=this._view,e=t.startAngle+(t.endAngle-t.startAngle)/2,i=(t.outerRadius-t.innerRadius)/2+t.innerRadius;return{x:t.x+Math.cos(e)*i,y:t.y+Math.sin(e)*i}},draw:function(){var t=this._chart.ctx,e=this._view,i=e.startAngle,n=e.endAngle;t.beginPath(),t.arc(e.x,e.y,e.outerRadius,i,n),t.arc(e.x,e.y,e.innerRadius,n,i,!0),t.closePath(),t.strokeStyle=e.borderColor,t.lineWidth=e.borderWidth,t.fillStyle=e.backgroundColor,t.fill(),t.lineJoin="bevel",e.borderWidth&&t.stroke()}})},{26:26,27:27,46:46}],38:[function(t,e,i){"use strict";var n=t(26),a=t(27),r=t(46),o=n.global;n._set("global",{elements:{line:{tension:.4,backgroundColor:o.defaultColor,borderWidth:3,borderColor:o.defaultColor,borderCapStyle:"butt",borderDash:[],borderDashOffset:0,borderJoinStyle:"miter",capBezierPoints:!0,fill:!0}}}),e.exports=a.extend({draw:function(){var t,e,i,n,a=this._view,s=this._chart.ctx,l=a.spanGaps,u=this._children.slice(),d=o.elements.line,c=-1;for(this._loop&&u.length&&u.push(u[0]),s.save(),s.lineCap=a.borderCapStyle||d.borderCapStyle,s.setLineDash&&s.setLineDash(a.borderDash||d.borderDash),s.lineDashOffset=a.borderDashOffset||d.borderDashOffset,s.lineJoin=a.borderJoinStyle||d.borderJoinStyle,s.lineWidth=a.borderWidth||d.borderWidth,s.strokeStyle=a.borderColor||o.defaultColor,s.beginPath(),c=-1,t=0;t<u.length;++t)e=u[t],i=r.previousItem(u,t),n=e._view,0===t?n.skip||(s.moveTo(n.x,n.y),c=t):(i=-1===c?i:u[c],n.skip||(c!==t-1&&!l||-1===c?s.moveTo(n.x,n.y):r.canvas.lineTo(s,i._view,e._view),c=t));s.stroke(),s.restore()}})},{26:26,27:27,46:46}],39:[function(t,e,i){"use strict";var n=t(26),a=t(27),r=t(46),o=n.global.defaultColor;function s(t){var e=this._view;return!!e&&Math.abs(t-e.x)<e.radius+e.hitRadius}n._set("global",{elements:{point:{radius:3,pointStyle:"circle",backgroundColor:o,borderColor:o,borderWidth:1,hitRadius:1,hoverRadius:4,hoverBorderWidth:1}}}),e.exports=a.extend({inRange:function(t,e){var i=this._view;return!!i&&Math.pow(t-i.x,2)+Math.pow(e-i.y,2)<Math.pow(i.hitRadius+i.radius,2)},inLabelRange:s,inXRange:s,inYRange:function(t){var e=this._view;return!!e&&Math.abs(t-e.y)<e.radius+e.hitRadius},getCenterPoint:function(){var t=this._view;return{x:t.x,y:t.y}},getArea:function(){return Math.PI*Math.pow(this._view.radius,2)},tooltipPosition:function(){var t=this._view;return{x:t.x,y:t.y,padding:t.radius+t.borderWidth}},draw:function(t){var e=this._view,i=this._model,a=this._chart.ctx,s=e.pointStyle,l=e.rotation,u=e.radius,d=e.x,c=e.y;e.skip||(void 0===t||i.x>=t.left&&1.01*t.right>=i.x&&i.y>=t.top&&1.01*t.bottom>=i.y)&&(a.strokeStyle=e.borderColor||o,a.lineWidth=r.valueOrDefault(e.borderWidth,n.global.elements.point.borderWidth),a.fillStyle=e.backgroundColor||o,r.canvas.drawPoint(a,s,u,d,c,l))}})},{26:26,27:27,46:46}],40:[function(t,e,i){"use strict";var n=t(26),a=t(27);function r(t){return void 0!==t._view.width}function o(t){var e,i,n,a,o=t._view;if(r(t)){var s=o.width/2;e=o.x-s,i=o.x+s,n=Math.min(o.y,o.base),a=Math.max(o.y,o.base)}else{var l=o.height/2;e=Math.min(o.x,o.base),i=Math.max(o.x,o.base),n=o.y-l,a=o.y+l}return{left:e,top:n,right:i,bottom:a}}n._set("global",{elements:{rectangle:{backgroundColor:n.global.defaultColor,borderColor:n.global.defaultColor,borderSkipped:"bottom",borderWidth:0}}}),e.exports=a.extend({draw:function(){var t,e,i,n,a,r,o,s=this._chart.ctx,l=this._view,u=l.borderWidth;if(l.horizontal?(t=l.base,e=l.x,i=l.y-l.height/2,n=l.y+l.height/2,a=e>t?1:-1,r=1,o=l.borderSkipped||"left"):(t=l.x-l.width/2,e=l.x+l.width/2,i=l.y,a=1,r=(n=l.base)>i?1:-1,o=l.borderSkipped||"bottom"),u){var d=Math.min(Math.abs(t-e),Math.abs(i-n)),c=(u=u>d?d:u)/2,h=t+("left"!==o?c*a:0),f=e+("right"!==o?-c*a:0),p=i+("top"!==o?c*r:0),g=n+("bottom"!==o?-c*r:0);h!==f&&(i=p,n=g),p!==g&&(t=h,e=f)}s.beginPath(),s.fillStyle=l.backgroundColor,s.strokeStyle=l.borderColor,s.lineWidth=u;var m=[[t,n],[t,i],[e,i],[e,n]],v=["bottom","left","top","right"].indexOf(o,0);function b(t){return m[(v+t)%4]}-1===v&&(v=0);var y=b(0);s.moveTo(y[0],y[1]);for(var x=1;x<4;x++)y=b(x),s.lineTo(y[0],y[1]);s.fill(),u&&s.stroke()},height:function(){var t=this._view;return t.base-t.y},inRange:function(t,e){var i=!1;if(this._view){var n=o(this);i=t>=n.left&&t<=n.right&&e>=n.top&&e<=n.bottom}return i},inLabelRange:function(t,e){if(!this._view)return!1;var i=o(this);return r(this)?t>=i.left&&t<=i.right:e>=i.top&&e<=i.bottom},inXRange:function(t){var e=o(this);return t>=e.left&&t<=e.right},inYRange:function(t){var e=o(this);return t>=e.top&&t<=e.bottom},getCenterPoint:function(){var t,e,i=this._view;return r(this)?(t=i.x,e=(i.y+i.base)/2):(t=(i.x+i.base)/2,e=i.y),{x:t,y:e}},getArea:function(){var t=this._view;return t.width*Math.abs(t.y-t.base)},tooltipPosition:function(){var t=this._view;return{x:t.x,y:t.y}}})},{26:26,27:27}],41:[function(t,e,i){"use strict";e.exports={},e.exports.Arc=t(37),e.exports.Line=t(38),e.exports.Point=t(39),e.exports.Rectangle=t(40)},{37:37,38:38,39:39,40:40}],42:[function(t,e,i){"use strict";var n=t(43);i=e.exports={clear:function(t){t.ctx.clearRect(0,0,t.width,t.height)},roundedRect:function(t,e,i,n,a,r){if(r){var o=Math.min(r,a/2-1e-7,n/2-1e-7);t.moveTo(e+o,i),t.lineTo(e+n-o,i),t.arcTo(e+n,i,e+n,i+o,o),t.lineTo(e+n,i+a-o),t.arcTo(e+n,i+a,e+n-o,i+a,o),t.lineTo(e+o,i+a),t.arcTo(e,i+a,e,i+a-o,o),t.lineTo(e,i+o),t.arcTo(e,i,e+o,i,o),t.closePath(),t.moveTo(e,i)}else t.rect(e,i,n,a)},drawPoint:function(t,e,i,n,a,r){var o,s,l,u,d,c;if(r=r||0,!e||"object"!=typeof e||"[object HTMLImageElement]"!==(o=e.toString())&&"[object HTMLCanvasElement]"!==o){if(!(isNaN(i)||i<=0)){switch(t.save(),t.translate(n,a),t.rotate(r*Math.PI/180),t.beginPath(),e){default:t.arc(0,0,i,0,2*Math.PI),t.closePath();break;case"triangle":d=(s=3*i/Math.sqrt(3))*Math.sqrt(3)/2,t.moveTo(-s/2,d/3),t.lineTo(s/2,d/3),t.lineTo(0,-2*d/3),t.closePath();break;case"rect":c=1/Math.SQRT2*i,t.rect(-c,-c,2*c,2*c);break;case"rectRounded":var h=i/Math.SQRT2,f=-h,p=-h,g=Math.SQRT2*i;this.roundedRect(t,f,p,g,g,.425*i);break;case"rectRot":c=1/Math.SQRT2*i,t.moveTo(-c,0),t.lineTo(0,c),t.lineTo(c,0),t.lineTo(0,-c),t.closePath();break;case"cross":t.moveTo(0,i),t.lineTo(0,-i),t.moveTo(-i,0),t.lineTo(i,0);break;case"crossRot":l=Math.cos(Math.PI/4)*i,u=Math.sin(Math.PI/4)*i,t.moveTo(-l,-u),t.lineTo(l,u),t.moveTo(-l,u),t.lineTo(l,-u);break;case"star":t.moveTo(0,i),t.lineTo(0,-i),t.moveTo(-i,0),t.lineTo(i,0),l=Math.cos(Math.PI/4)*i,u=Math.sin(Math.PI/4)*i,t.moveTo(-l,-u),t.lineTo(l,u),t.moveTo(-l,u),t.lineTo(l,-u);break;case"line":t.moveTo(-i,0),t.lineTo(i,0);break;case"dash":t.moveTo(0,0),t.lineTo(i,0)}t.fill(),t.stroke(),t.restore()}}else t.drawImage(e,n-e.width/2,a-e.height/2,e.width,e.height)},clipArea:function(t,e){t.save(),t.beginPath(),t.rect(e.left,e.top,e.right-e.left,e.bottom-e.top),t.clip()},unclipArea:function(t){t.restore()},lineTo:function(t,e,i,n){if(i.steppedLine)return"after"===i.steppedLine&&!n||"after"!==i.steppedLine&&n?t.lineTo(e.x,i.y):t.lineTo(i.x,e.y),void t.lineTo(i.x,i.y);i.tension?t.bezierCurveTo(n?e.controlPointPreviousX:e.controlPointNextX,n?e.controlPointPreviousY:e.controlPointNextY,n?i.controlPointNextX:i.controlPointPreviousX,n?i.controlPointNextY:i.controlPointPreviousY,i.x,i.y):t.lineTo(i.x,i.y)}};n.clear=i.clear,n.drawRoundedRectangle=function(t){t.beginPath(),i.roundedRect.apply(i,arguments)}},{43:43}],43:[function(t,e,i){"use strict";var n,a={noop:function(){},uid:(n=0,function(){return n++}),isNullOrUndef:function(t){return null===t||void 0===t},isArray:Array.isArray?Array.isArray:function(t){return"[object Array]"===Object.prototype.toString.call(t)},isObject:function(t){return null!==t&&"[object Object]"===Object.prototype.toString.call(t)},valueOrDefault:function(t,e){return void 0===t?e:t},valueAtIndexOrDefault:function(t,e,i){return a.valueOrDefault(a.isArray(t)?t[e]:t,i)},callback:function(t,e,i){if(t&&"function"==typeof t.call)return t.apply(i,e)},each:function(t,e,i,n){var r,o,s;if(a.isArray(t))if(o=t.length,n)for(r=o-1;r>=0;r--)e.call(i,t[r],r);else for(r=0;r<o;r++)e.call(i,t[r],r);else if(a.isObject(t))for(o=(s=Object.keys(t)).length,r=0;r<o;r++)e.call(i,t[s[r]],s[r])},arrayEquals:function(t,e){var i,n,r,o;if(!t||!e||t.length!==e.length)return!1;for(i=0,n=t.length;i<n;++i)if(r=t[i],o=e[i],r instanceof Array&&o instanceof Array){if(!a.arrayEquals(r,o))return!1}else if(r!==o)return!1;return!0},clone:function(t){if(a.isArray(t))return t.map(a.clone);if(a.isObject(t)){for(var e={},i=Object.keys(t),n=i.length,r=0;r<n;++r)e[i[r]]=a.clone(t[i[r]]);return e}return t},_merger:function(t,e,i,n){var r=e[t],o=i[t];a.isObject(r)&&a.isObject(o)?a.merge(r,o,n):e[t]=a.clone(o)},_mergerIf:function(t,e,i){var n=e[t],r=i[t];a.isObject(n)&&a.isObject(r)?a.mergeIf(n,r):e.hasOwnProperty(t)||(e[t]=a.clone(r))},merge:function(t,e,i){var n,r,o,s,l,u=a.isArray(e)?e:[e],d=u.length;if(!a.isObject(t))return t;for(n=(i=i||{}).merger||a._merger,r=0;r<d;++r)if(e=u[r],a.isObject(e))for(l=0,s=(o=Object.keys(e)).length;l<s;++l)n(o[l],t,e,i);return t},mergeIf:function(t,e){return a.merge(t,e,{merger:a._mergerIf})},extend:function(t){for(var e=function(e,i){t[i]=e},i=1,n=arguments.length;i<n;++i)a.each(arguments[i],e);return t},inherits:function(t){var e=this,i=t&&t.hasOwnProperty("constructor")?t.constructor:function(){return e.apply(this,arguments)},n=function(){this.constructor=i};return n.prototype=e.prototype,i.prototype=new n,i.extend=a.inherits,t&&a.extend(i.prototype,t),i.__super__=e.prototype,i}};e.exports=a,a.callCallback=a.callback,a.indexOf=function(t,e,i){return Array.prototype.indexOf.call(t,e,i)},a.getValueOrDefault=a.valueOrDefault,a.getValueAtIndexOrDefault=a.valueAtIndexOrDefault},{}],44:[function(t,e,i){"use strict";var n=t(43),a={linear:function(t){return t},easeInQuad:function(t){return t*t},easeOutQuad:function(t){return-t*(t-2)},easeInOutQuad:function(t){return(t/=.5)<1?.5*t*t:-.5*(--t*(t-2)-1)},easeInCubic:function(t){return t*t*t},easeOutCubic:function(t){return(t-=1)*t*t+1},easeInOutCubic:function(t){return(t/=.5)<1?.5*t*t*t:.5*((t-=2)*t*t+2)},easeInQuart:function(t){return t*t*t*t},easeOutQuart:function(t){return-((t-=1)*t*t*t-1)},easeInOutQuart:function(t){return(t/=.5)<1?.5*t*t*t*t:-.5*((t-=2)*t*t*t-2)},easeInQuint:function(t){return t*t*t*t*t},easeOutQuint:function(t){return(t-=1)*t*t*t*t+1},easeInOutQuint:function(t){return(t/=.5)<1?.5*t*t*t*t*t:.5*((t-=2)*t*t*t*t+2)},easeInSine:function(t){return 1-Math.cos(t*(Math.PI/2))},easeOutSine:function(t){return Math.sin(t*(Math.PI/2))},easeInOutSine:function(t){return-.5*(Math.cos(Math.PI*t)-1)},easeInExpo:function(t){return 0===t?0:Math.pow(2,10*(t-1))},easeOutExpo:function(t){return 1===t?1:1-Math.pow(2,-10*t)},easeInOutExpo:function(t){return 0===t?0:1===t?1:(t/=.5)<1?.5*Math.pow(2,10*(t-1)):.5*(2-Math.pow(2,-10*--t))},easeInCirc:function(t){return t>=1?t:-(Math.sqrt(1-t*t)-1)},easeOutCirc:function(t){return Math.sqrt(1-(t-=1)*t)},easeInOutCirc:function(t){return(t/=.5)<1?-.5*(Math.sqrt(1-t*t)-1):.5*(Math.sqrt(1-(t-=2)*t)+1)},easeInElastic:function(t){var e=1.70158,i=0,n=1;return 0===t?0:1===t?1:(i||(i=.3),n<1?(n=1,e=i/4):e=i/(2*Math.PI)*Math.asin(1/n),-n*Math.pow(2,10*(t-=1))*Math.sin((t-e)*(2*Math.PI)/i))},easeOutElastic:function(t){var e=1.70158,i=0,n=1;return 0===t?0:1===t?1:(i||(i=.3),n<1?(n=1,e=i/4):e=i/(2*Math.PI)*Math.asin(1/n),n*Math.pow(2,-10*t)*Math.sin((t-e)*(2*Math.PI)/i)+1)},easeInOutElastic:function(t){var e=1.70158,i=0,n=1;return 0===t?0:2==(t/=.5)?1:(i||(i=.45),n<1?(n=1,e=i/4):e=i/(2*Math.PI)*Math.asin(1/n),t<1?n*Math.pow(2,10*(t-=1))*Math.sin((t-e)*(2*Math.PI)/i)*-.5:n*Math.pow(2,-10*(t-=1))*Math.sin((t-e)*(2*Math.PI)/i)*.5+1)},easeInBack:function(t){var e=1.70158;return t*t*((e+1)*t-e)},easeOutBack:function(t){var e=1.70158;return(t-=1)*t*((e+1)*t+e)+1},easeInOutBack:function(t){var e=1.70158;return(t/=.5)<1?t*t*((1+(e*=1.525))*t-e)*.5:.5*((t-=2)*t*((1+(e*=1.525))*t+e)+2)},easeInBounce:function(t){return 1-a.easeOutBounce(1-t)},easeOutBounce:function(t){return t<1/2.75?7.5625*t*t:t<2/2.75?7.5625*(t-=1.5/2.75)*t+.75:t<2.5/2.75?7.5625*(t-=2.25/2.75)*t+.9375:7.5625*(t-=2.625/2.75)*t+.984375},easeInOutBounce:function(t){return t<.5?.5*a.easeInBounce(2*t):.5*a.easeOutBounce(2*t-1)+.5}};e.exports={effects:a},n.easingEffects=a},{43:43}],45:[function(t,e,i){"use strict";var n=t(43);e.exports={toLineHeight:function(t,e){var i=(""+t).match(/^(normal|(\d+(?:\.\d+)?)(px|em|%)?)$/);if(!i||"normal"===i[1])return 1.2*e;switch(t=+i[2],i[3]){case"px":return t;case"%":t/=100}return e*t},toPadding:function(t){var e,i,a,r;return n.isObject(t)?(e=+t.top||0,i=+t.right||0,a=+t.bottom||0,r=+t.left||0):e=i=a=r=+t||0,{top:e,right:i,bottom:a,left:r,height:e+a,width:r+i}},resolve:function(t,e,i){var a,r,o;for(a=0,r=t.length;a<r;++a)if(void 0!==(o=t[a])&&(void 0!==e&&"function"==typeof o&&(o=o(e)),void 0!==i&&n.isArray(o)&&(o=o[i]),void 0!==o))return o}}},{43:43}],46:[function(t,e,i){"use strict";e.exports=t(43),e.exports.easing=t(44),e.exports.canvas=t(42),e.exports.options=t(45)},{42:42,43:43,44:44,45:45}],47:[function(t,e,i){e.exports={acquireContext:function(t){return t&&t.canvas&&(t=t.canvas),t&&t.getContext("2d")||null}}},{}],48:[function(t,e,i){"use strict";var n=t(46),a="$chartjs",r="chartjs-",o=r+"render-monitor",s=r+"render-animation",l=["animationstart","webkitAnimationStart"],u={touchstart:"mousedown",touchmove:"mousemove",touchend:"mouseup",pointerenter:"mouseenter",pointerdown:"mousedown",pointermove:"mousemove",pointerup:"mouseup",pointerleave:"mouseout",pointerout:"mouseout"};function d(t,e){var i=n.getStyle(t,e),a=i&&i.match(/^(\d+)(\.\d+)?px$/);return a?Number(a[1]):void 0}var c=!!function(){var t=!1;try{var e=Object.defineProperty({},"passive",{get:function(){t=!0}});window.addEventListener("e",null,e)}catch(t){}return t}()&&{passive:!0};function h(t,e,i){t.addEventListener(e,i,c)}function f(t,e,i){t.removeEventListener(e,i,c)}function p(t,e,i,n,a){return{type:t,chart:e,native:a||null,x:void 0!==i?i:null,y:void 0!==n?n:null}}function g(t,e,i){var u,d,c,f,g=t[a]||(t[a]={}),m=g.resizer=function(t){var e=document.createElement("div"),i=r+"size-monitor",n="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;";e.style.cssText=n,e.className=i,e.innerHTML='<div class="'+i+'-expand" style="'+n+'"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="'+i+'-shrink" style="'+n+'"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div>';var a=e.childNodes[0],o=e.childNodes[1];e._reset=function(){a.scrollLeft=1e6,a.scrollTop=1e6,o.scrollLeft=1e6,o.scrollTop=1e6};var s=function(){e._reset(),t()};return h(a,"scroll",s.bind(a,"expand")),h(o,"scroll",s.bind(o,"shrink")),e}((u=function(){if(g.resizer)return e(p("resize",i))},c=!1,f=[],function(){f=Array.prototype.slice.call(arguments),d=d||this,c||(c=!0,n.requestAnimFrame.call(window,function(){c=!1,u.apply(d,f)}))}));!function(t,e){var i=t[a]||(t[a]={}),r=i.renderProxy=function(t){t.animationName===s&&e()};n.each(l,function(e){h(t,e,r)}),i.reflow=!!t.offsetParent,t.classList.add(o)}(t,function(){if(g.resizer){var e=t.parentNode;e&&e!==m.parentNode&&e.insertBefore(m,e.firstChild),m._reset()}})}function m(t){var e=t[a]||{},i=e.resizer;delete e.resizer,function(t){var e=t[a]||{},i=e.renderProxy;i&&(n.each(l,function(e){f(t,e,i)}),delete e.renderProxy),t.classList.remove(o)}(t),i&&i.parentNode&&i.parentNode.removeChild(i)}e.exports={_enabled:"undefined"!=typeof window&&"undefined"!=typeof document,initialize:function(){var t,e,i,n="from{opacity:0.99}to{opacity:1}";e="@-webkit-keyframes "+s+"{"+n+"}@keyframes "+s+"{"+n+"}."+o+"{-webkit-animation:"+s+" 0.001s;animation:"+s+" 0.001s;}",i=(t=this)._style||document.createElement("style"),t._style||(t._style=i,e="/* Chart.js */\n"+e,i.setAttribute("type","text/css"),document.getElementsByTagName("head")[0].appendChild(i)),i.appendChild(document.createTextNode(e))},acquireContext:function(t,e){"string"==typeof t?t=document.getElementById(t):t.length&&(t=t[0]),t&&t.canvas&&(t=t.canvas);var i=t&&t.getContext&&t.getContext("2d");return i&&i.canvas===t?(function(t,e){var i=t.style,n=t.getAttribute("height"),r=t.getAttribute("width");if(t[a]={initial:{height:n,width:r,style:{display:i.display,height:i.height,width:i.width}}},i.display=i.display||"block",null===r||""===r){var o=d(t,"width");void 0!==o&&(t.width=o)}if(null===n||""===n)if(""===t.style.height)t.height=t.width/(e.options.aspectRatio||2);else{var s=d(t,"height");void 0!==o&&(t.height=s)}}(t,e),i):null},releaseContext:function(t){var e=t.canvas;if(e[a]){var i=e[a].initial;["height","width"].forEach(function(t){var a=i[t];n.isNullOrUndef(a)?e.removeAttribute(t):e.setAttribute(t,a)}),n.each(i.style||{},function(t,i){e.style[i]=t}),e.width=e.width,delete e[a]}},addEventListener:function(t,e,i){var r=t.canvas;if("resize"!==e){var o=i[a]||(i[a]={});h(r,e,(o.proxies||(o.proxies={}))[t.id+"_"+e]=function(e){i(function(t,e){var i=u[t.type]||t.type,a=n.getRelativePosition(t,e);return p(i,e,a.x,a.y,t)}(e,t))})}else g(r,i,t)},removeEventListener:function(t,e,i){var n=t.canvas;if("resize"!==e){var r=((i[a]||{}).proxies||{})[t.id+"_"+e];r&&f(n,e,r)}else m(n)}},n.addEvent=h,n.removeEvent=f},{46:46}],49:[function(t,e,i){"use strict";var n=t(46),a=t(47),r=t(48),o=r._enabled?r:a;e.exports=n.extend({initialize:function(){},acquireContext:function(){},releaseContext:function(){},addEventListener:function(){},removeEventListener:function(){}},o)},{46:46,47:47,48:48}],50:[function(t,e,i){"use strict";e.exports={},e.exports.filler=t(51),e.exports.legend=t(52),e.exports.title=t(53)},{51:51,52:52,53:53}],51:[function(t,e,i){"use strict";var n=t(26),a=t(41),r=t(46);n._set("global",{plugins:{filler:{propagate:!0}}});var o={dataset:function(t){var e=t.fill,i=t.chart,n=i.getDatasetMeta(e),a=n&&i.isDatasetVisible(e)&&n.dataset._children||[],r=a.length||0;return r?function(t,e){return e<r&&a[e]._view||null}:null},boundary:function(t){var e=t.boundary,i=e?e.x:null,n=e?e.y:null;return function(t){return{x:null===i?t.x:i,y:null===n?t.y:n}}}};function s(t,e,i){var n,a=t._model||{},r=a.fill;if(void 0===r&&(r=!!a.backgroundColor),!1===r||null===r)return!1;if(!0===r)return"origin";if(n=parseFloat(r,10),isFinite(n)&&Math.floor(n)===n)return"-"!==r[0]&&"+"!==r[0]||(n=e+n),!(n===e||n<0||n>=i)&&n;switch(r){case"bottom":return"start";case"top":return"end";case"zero":return"origin";case"origin":case"start":case"end":return r;default:return!1}}function l(t){var e,i=t.el._model||{},n=t.el._scale||{},a=t.fill,r=null;if(isFinite(a))return null;if("start"===a?r=void 0===i.scaleBottom?n.bottom:i.scaleBottom:"end"===a?r=void 0===i.scaleTop?n.top:i.scaleTop:void 0!==i.scaleZero?r=i.scaleZero:n.getBasePosition?r=n.getBasePosition():n.getBasePixel&&(r=n.getBasePixel()),void 0!==r&&null!==r){if(void 0!==r.x&&void 0!==r.y)return r;if("number"==typeof r&&isFinite(r))return{x:(e=n.isHorizontal())?r:null,y:e?null:r}}return null}function u(t,e,i){var n,a=t[e].fill,r=[e];if(!i)return a;for(;!1!==a&&-1===r.indexOf(a);){if(!isFinite(a))return a;if(!(n=t[a]))return!1;if(n.visible)return a;r.push(a),a=n.fill}return!1}function d(t){var e=t.fill,i="dataset";return!1===e?null:(isFinite(e)||(i="boundary"),o[i](t))}function c(t){return t&&!t.skip}function h(t,e,i,n,a){var o;if(n&&a){for(t.moveTo(e[0].x,e[0].y),o=1;o<n;++o)r.canvas.lineTo(t,e[o-1],e[o]);for(t.lineTo(i[a-1].x,i[a-1].y),o=a-1;o>0;--o)r.canvas.lineTo(t,i[o],i[o-1],!0)}}e.exports={id:"filler",afterDatasetsUpdate:function(t,e){var i,n,r,o,c=(t.data.datasets||[]).length,h=e.propagate,f=[];for(n=0;n<c;++n)o=null,(r=(i=t.getDatasetMeta(n)).dataset)&&r._model&&r instanceof a.Line&&(o={visible:t.isDatasetVisible(n),fill:s(r,n,c),chart:t,el:r}),i.$filler=o,f.push(o);for(n=0;n<c;++n)(o=f[n])&&(o.fill=u(f,n,h),o.boundary=l(o),o.mapper=d(o))},beforeDatasetDraw:function(t,e){var i=e.meta.$filler;if(i){var a=t.ctx,o=i.el,s=o._view,l=o._children||[],u=i.mapper,d=s.backgroundColor||n.global.defaultColor;u&&d&&l.length&&(r.canvas.clipArea(a,t.chartArea),function(t,e,i,n,a,r){var o,s,l,u,d,f,p,g=e.length,m=n.spanGaps,v=[],b=[],y=0,x=0;for(t.beginPath(),o=0,s=g+!!r;o<s;++o)d=i(u=e[l=o%g]._view,l,n),f=c(u),p=c(d),f&&p?(y=v.push(u),x=b.push(d)):y&&x&&(m?(f&&v.push(u),p&&b.push(d)):(h(t,v,b,y,x),y=x=0,v=[],b=[]));h(t,v,b,y,x),t.closePath(),t.fillStyle=a,t.fill()}(a,l,u,s,d,o._loop),r.canvas.unclipArea(a))}}}},{26:26,41:41,46:46}],52:[function(t,e,i){"use strict";var n=t(26),a=t(27),r=t(46),o=t(31),s=r.noop;function l(t,e){return t.usePointStyle?e*Math.SQRT2:t.boxWidth}n._set("global",{legend:{display:!0,position:"top",fullWidth:!0,reverse:!1,weight:1e3,onClick:function(t,e){var i=e.datasetIndex,n=this.chart,a=n.getDatasetMeta(i);a.hidden=null===a.hidden?!n.data.datasets[i].hidden:null,n.update()},onHover:null,labels:{boxWidth:40,padding:10,generateLabels:function(t){var e=t.data;return r.isArray(e.datasets)?e.datasets.map(function(e,i){return{text:e.label,fillStyle:r.isArray(e.backgroundColor)?e.backgroundColor[0]:e.backgroundColor,hidden:!t.isDatasetVisible(i),lineCap:e.borderCapStyle,lineDash:e.borderDash,lineDashOffset:e.borderDashOffset,lineJoin:e.borderJoinStyle,lineWidth:e.borderWidth,strokeStyle:e.borderColor,pointStyle:e.pointStyle,datasetIndex:i}},this):[]}}},legendCallback:function(t){var e=[];e.push('<ul class="'+t.id+'-legend">');for(var i=0;i<t.data.datasets.length;i++)e.push('<li><span style="background-color:'+t.data.datasets[i].backgroundColor+'"></span>'),t.data.datasets[i].label&&e.push(t.data.datasets[i].label),e.push("</li>");return e.push("</ul>"),e.join("")}});var u=a.extend({initialize:function(t){r.extend(this,t),this.legendHitBoxes=[],this.doughnutMode=!1},beforeUpdate:s,update:function(t,e,i){var n=this;return n.beforeUpdate(),n.maxWidth=t,n.maxHeight=e,n.margins=i,n.beforeSetDimensions(),n.setDimensions(),n.afterSetDimensions(),n.beforeBuildLabels(),n.buildLabels(),n.afterBuildLabels(),n.beforeFit(),n.fit(),n.afterFit(),n.afterUpdate(),n.minSize},afterUpdate:s,beforeSetDimensions:s,setDimensions:function(){var t=this;t.isHorizontal()?(t.width=t.maxWidth,t.left=0,t.right=t.width):(t.height=t.maxHeight,t.top=0,t.bottom=t.height),t.paddingLeft=0,t.paddingTop=0,t.paddingRight=0,t.paddingBottom=0,t.minSize={width:0,height:0}},afterSetDimensions:s,beforeBuildLabels:s,buildLabels:function(){var t=this,e=t.options.labels||{},i=r.callback(e.generateLabels,[t.chart],t)||[];e.filter&&(i=i.filter(function(i){return e.filter(i,t.chart.data)})),t.options.reverse&&i.reverse(),t.legendItems=i},afterBuildLabels:s,beforeFit:s,fit:function(){var t=this,e=t.options,i=e.labels,a=e.display,o=t.ctx,s=n.global,u=r.valueOrDefault,d=u(i.fontSize,s.defaultFontSize),c=u(i.fontStyle,s.defaultFontStyle),h=u(i.fontFamily,s.defaultFontFamily),f=r.fontString(d,c,h),p=t.legendHitBoxes=[],g=t.minSize,m=t.isHorizontal();if(m?(g.width=t.maxWidth,g.height=a?10:0):(g.width=a?10:0,g.height=t.maxHeight),a)if(o.font=f,m){var v=t.lineWidths=[0],b=t.legendItems.length?d+i.padding:0;o.textAlign="left",o.textBaseline="top",r.each(t.legendItems,function(e,n){var a=l(i,d)+d/2+o.measureText(e.text).width;v[v.length-1]+a+i.padding>=t.width&&(b+=d+i.padding,v[v.length]=t.left),p[n]={left:0,top:0,width:a,height:d},v[v.length-1]+=a+i.padding}),g.height+=b}else{var y=i.padding,x=t.columnWidths=[],w=i.padding,k=0,S=0,C=d+y;r.each(t.legendItems,function(t,e){var n=l(i,d)+d/2+o.measureText(t.text).width;S+C>g.height&&(w+=k+i.padding,x.push(k),k=0,S=0),k=Math.max(k,n),S+=C,p[e]={left:0,top:0,width:n,height:d}}),w+=k,x.push(k),g.width+=w}t.width=g.width,t.height=g.height},afterFit:s,isHorizontal:function(){return"top"===this.options.position||"bottom"===this.options.position},draw:function(){var t=this,e=t.options,i=e.labels,a=n.global,o=a.elements.line,s=t.width,u=t.lineWidths;if(e.display){var d,c=t.ctx,h=r.valueOrDefault,f=h(i.fontColor,a.defaultFontColor),p=h(i.fontSize,a.defaultFontSize),g=h(i.fontStyle,a.defaultFontStyle),m=h(i.fontFamily,a.defaultFontFamily),v=r.fontString(p,g,m);c.textAlign="left",c.textBaseline="middle",c.lineWidth=.5,c.strokeStyle=f,c.fillStyle=f,c.font=v;var b=l(i,p),y=t.legendHitBoxes,x=t.isHorizontal();d=x?{x:t.left+(s-u[0])/2,y:t.top+i.padding,line:0}:{x:t.left+i.padding,y:t.top+i.padding,line:0};var w=p+i.padding;r.each(t.legendItems,function(n,l){var f=c.measureText(n.text).width,g=b+p/2+f,m=d.x,v=d.y;x?m+g>=s&&(v=d.y+=w,d.line++,m=d.x=t.left+(s-u[d.line])/2):v+w>t.bottom&&(m=d.x=m+t.columnWidths[d.line]+i.padding,v=d.y=t.top+i.padding,d.line++),function(t,i,n){if(!(isNaN(b)||b<=0)){c.save(),c.fillStyle=h(n.fillStyle,a.defaultColor),c.lineCap=h(n.lineCap,o.borderCapStyle),c.lineDashOffset=h(n.lineDashOffset,o.borderDashOffset),c.lineJoin=h(n.lineJoin,o.borderJoinStyle),c.lineWidth=h(n.lineWidth,o.borderWidth),c.strokeStyle=h(n.strokeStyle,a.defaultColor);var s=0===h(n.lineWidth,o.borderWidth);if(c.setLineDash&&c.setLineDash(h(n.lineDash,o.borderDash)),e.labels&&e.labels.usePointStyle){var l=p*Math.SQRT2/2,u=l/Math.SQRT2,d=t+u,f=i+u;r.canvas.drawPoint(c,n.pointStyle,l,d,f)}else s||c.strokeRect(t,i,b,p),c.fillRect(t,i,b,p);c.restore()}}(m,v,n),y[l].left=m,y[l].top=v,function(t,e,i,n){var a=p/2,r=b+a+t,o=e+a;c.fillText(i.text,r,o),i.hidden&&(c.beginPath(),c.lineWidth=2,c.moveTo(r,o),c.lineTo(r+n,o),c.stroke())}(m,v,n,f),x?d.x+=g+i.padding:d.y+=w})}},handleEvent:function(t){var e=this,i=e.options,n="mouseup"===t.type?"click":t.type,a=!1;if("mousemove"===n){if(!i.onHover)return}else{if("click"!==n)return;if(!i.onClick)return}var r=t.x,o=t.y;if(r>=e.left&&r<=e.right&&o>=e.top&&o<=e.bottom)for(var s=e.legendHitBoxes,l=0;l<s.length;++l){var u=s[l];if(r>=u.left&&r<=u.left+u.width&&o>=u.top&&o<=u.top+u.height){if("click"===n){i.onClick.call(e,t.native,e.legendItems[l]),a=!0;break}if("mousemove"===n){i.onHover.call(e,t.native,e.legendItems[l]),a=!0;break}}}return a}});function d(t,e){var i=new u({ctx:t.ctx,options:e,chart:t});o.configure(t,i,e),o.addBox(t,i),t.legend=i}e.exports={id:"legend",_element:u,beforeInit:function(t){var e=t.options.legend;e&&d(t,e)},beforeUpdate:function(t){var e=t.options.legend,i=t.legend;e?(r.mergeIf(e,n.global.legend),i?(o.configure(t,i,e),i.options=e):d(t,e)):i&&(o.removeBox(t,i),delete t.legend)},afterEvent:function(t,e){var i=t.legend;i&&i.handleEvent(e)}}},{26:26,27:27,31:31,46:46}],53:[function(t,e,i){"use strict";var n=t(26),a=t(27),r=t(46),o=t(31),s=r.noop;n._set("global",{title:{display:!1,fontStyle:"bold",fullWidth:!0,lineHeight:1.2,padding:10,position:"top",text:"",weight:2e3}});var l=a.extend({initialize:function(t){r.extend(this,t),this.legendHitBoxes=[]},beforeUpdate:s,update:function(t,e,i){var n=this;return n.beforeUpdate(),n.maxWidth=t,n.maxHeight=e,n.margins=i,n.beforeSetDimensions(),n.setDimensions(),n.afterSetDimensions(),n.beforeBuildLabels(),n.buildLabels(),n.afterBuildLabels(),n.beforeFit(),n.fit(),n.afterFit(),n.afterUpdate(),n.minSize},afterUpdate:s,beforeSetDimensions:s,setDimensions:function(){var t=this;t.isHorizontal()?(t.width=t.maxWidth,t.left=0,t.right=t.width):(t.height=t.maxHeight,t.top=0,t.bottom=t.height),t.paddingLeft=0,t.paddingTop=0,t.paddingRight=0,t.paddingBottom=0,t.minSize={width:0,height:0}},afterSetDimensions:s,beforeBuildLabels:s,buildLabels:s,afterBuildLabels:s,beforeFit:s,fit:function(){var t=this,e=r.valueOrDefault,i=t.options,a=i.display,o=e(i.fontSize,n.global.defaultFontSize),s=t.minSize,l=r.isArray(i.text)?i.text.length:1,u=r.options.toLineHeight(i.lineHeight,o),d=a?l*u+2*i.padding:0;t.isHorizontal()?(s.width=t.maxWidth,s.height=d):(s.width=d,s.height=t.maxHeight),t.width=s.width,t.height=s.height},afterFit:s,isHorizontal:function(){var t=this.options.position;return"top"===t||"bottom"===t},draw:function(){var t=this,e=t.ctx,i=r.valueOrDefault,a=t.options,o=n.global;if(a.display){var s,l,u,d=i(a.fontSize,o.defaultFontSize),c=i(a.fontStyle,o.defaultFontStyle),h=i(a.fontFamily,o.defaultFontFamily),f=r.fontString(d,c,h),p=r.options.toLineHeight(a.lineHeight,d),g=p/2+a.padding,m=0,v=t.top,b=t.left,y=t.bottom,x=t.right;e.fillStyle=i(a.fontColor,o.defaultFontColor),e.font=f,t.isHorizontal()?(l=b+(x-b)/2,u=v+g,s=x-b):(l="left"===a.position?b+g:x-g,u=v+(y-v)/2,s=y-v,m=Math.PI*("left"===a.position?-.5:.5)),e.save(),e.translate(l,u),e.rotate(m),e.textAlign="center",e.textBaseline="middle";var w=a.text;if(r.isArray(w))for(var k=0,S=0;S<w.length;++S)e.fillText(w[S],0,k,s),k+=p;else e.fillText(w,0,0,s);e.restore()}}});function u(t,e){var i=new l({ctx:t.ctx,options:e,chart:t});o.configure(t,i,e),o.addBox(t,i),t.titleBlock=i}e.exports={id:"title",_element:l,beforeInit:function(t){var e=t.options.title;e&&u(t,e)},beforeUpdate:function(t){var e=t.options.title,i=t.titleBlock;e?(r.mergeIf(e,n.global.title),i?(o.configure(t,i,e),i.options=e):u(t,e)):i&&(o.removeBox(t,i),delete t.titleBlock)}}},{26:26,27:27,31:31,46:46}],54:[function(t,e,i){"use strict";var n=t(33),a=t(34);e.exports=function(){var t=n.extend({getLabels:function(){var t=this.chart.data;return this.options.labels||(this.isHorizontal()?t.xLabels:t.yLabels)||t.labels},determineDataLimits:function(){var t,e=this,i=e.getLabels();e.minIndex=0,e.maxIndex=i.length-1,void 0!==e.options.ticks.min&&(t=i.indexOf(e.options.ticks.min),e.minIndex=-1!==t?t:e.minIndex),void 0!==e.options.ticks.max&&(t=i.indexOf(e.options.ticks.max),e.maxIndex=-1!==t?t:e.maxIndex),e.min=i[e.minIndex],e.max=i[e.maxIndex]},buildTicks:function(){var t=this,e=t.getLabels();t.ticks=0===t.minIndex&&t.maxIndex===e.length-1?e:e.slice(t.minIndex,t.maxIndex+1)},getLabelForIndex:function(t,e){var i=this,n=i.chart.data,a=i.isHorizontal();return n.yLabels&&!a?i.getRightValue(n.datasets[e].data[t]):i.ticks[t-i.minIndex]},getPixelForValue:function(t,e){var i,n=this,a=n.options.offset,r=Math.max(n.maxIndex+1-n.minIndex-(a?0:1),1);if(void 0!==t&&null!==t&&(i=n.isHorizontal()?t.x:t.y),void 0!==i||void 0!==t&&isNaN(e)){var o=n.getLabels();t=i||t;var s=o.indexOf(t);e=-1!==s?s:e}if(n.isHorizontal()){var l=n.width/r,u=l*(e-n.minIndex);return a&&(u+=l/2),n.left+Math.round(u)}var d=n.height/r,c=d*(e-n.minIndex);return a&&(c+=d/2),n.top+Math.round(c)},getPixelForTick:function(t){return this.getPixelForValue(this.ticks[t],t+this.minIndex,null)},getValueForPixel:function(t){var e=this,i=e.options.offset,n=Math.max(e._ticks.length-(i?0:1),1),a=e.isHorizontal(),r=(a?e.width:e.height)/n;return t-=a?e.left:e.top,i&&(t-=r/2),(t<=0?0:Math.round(t/r))+e.minIndex},getBasePixel:function(){return this.bottom}});a.registerScaleType("category",t,{position:"bottom"})}},{33:33,34:34}],55:[function(t,e,i){"use strict";var n=t(26),a=t(46),r=t(34),o=t(35);e.exports=function(t){var e={position:"left",ticks:{callback:o.formatters.linear}},i=t.LinearScaleBase.extend({determineDataLimits:function(){var t=this,e=t.options,i=t.chart,n=i.data.datasets,r=t.isHorizontal();function o(e){return r?e.xAxisID===t.id:e.yAxisID===t.id}t.min=null,t.max=null;var s=e.stacked;if(void 0===s&&a.each(n,function(t,e){if(!s){var n=i.getDatasetMeta(e);i.isDatasetVisible(e)&&o(n)&&void 0!==n.stack&&(s=!0)}}),e.stacked||s){var l={};a.each(n,function(n,r){var s=i.getDatasetMeta(r),u=[s.type,void 0===e.stacked&&void 0===s.stack?r:"",s.stack].join(".");void 0===l[u]&&(l[u]={positiveValues:[],negativeValues:[]});var d=l[u].positiveValues,c=l[u].negativeValues;i.isDatasetVisible(r)&&o(s)&&a.each(n.data,function(i,n){var a=+t.getRightValue(i);isNaN(a)||s.data[n].hidden||(d[n]=d[n]||0,c[n]=c[n]||0,e.relativePoints?d[n]=100:a<0?c[n]+=a:d[n]+=a)})}),a.each(l,function(e){var i=e.positiveValues.concat(e.negativeValues),n=a.min(i),r=a.max(i);t.min=null===t.min?n:Math.min(t.min,n),t.max=null===t.max?r:Math.max(t.max,r)})}else a.each(n,function(e,n){var r=i.getDatasetMeta(n);i.isDatasetVisible(n)&&o(r)&&a.each(e.data,function(e,i){var n=+t.getRightValue(e);isNaN(n)||r.data[i].hidden||(null===t.min?t.min=n:n<t.min&&(t.min=n),null===t.max?t.max=n:n>t.max&&(t.max=n))})});t.min=isFinite(t.min)&&!isNaN(t.min)?t.min:0,t.max=isFinite(t.max)&&!isNaN(t.max)?t.max:1,this.handleTickRangeOptions()},getTickLimit:function(){var t,e=this.options.ticks;if(this.isHorizontal())t=Math.min(e.maxTicksLimit?e.maxTicksLimit:11,Math.ceil(this.width/50));else{var i=a.valueOrDefault(e.fontSize,n.global.defaultFontSize);t=Math.min(e.maxTicksLimit?e.maxTicksLimit:11,Math.ceil(this.height/(2*i)))}return t},handleDirectionalChanges:function(){this.isHorizontal()||this.ticks.reverse()},getLabelForIndex:function(t,e){return+this.getRightValue(this.chart.data.datasets[e].data[t])},getPixelForValue:function(t){var e=this,i=e.start,n=+e.getRightValue(t),a=e.end-i;return e.isHorizontal()?e.left+e.width/a*(n-i):e.bottom-e.height/a*(n-i)},getValueForPixel:function(t){var e=this,i=e.isHorizontal(),n=i?e.width:e.height,a=(i?t-e.left:e.bottom-t)/n;return e.start+(e.end-e.start)*a},getPixelForTick:function(t){return this.getPixelForValue(this.ticksAsNumbers[t])}});r.registerScaleType("linear",i,e)}},{26:26,34:34,35:35,46:46}],56:[function(t,e,i){"use strict";var n=t(46),a=t(33);e.exports=function(t){var e=n.noop;t.LinearScaleBase=a.extend({getRightValue:function(t){return"string"==typeof t?+t:a.prototype.getRightValue.call(this,t)},handleTickRangeOptions:function(){var t=this,e=t.options.ticks;if(e.beginAtZero){var i=n.sign(t.min),a=n.sign(t.max);i<0&&a<0?t.max=0:i>0&&a>0&&(t.min=0)}var r=void 0!==e.min||void 0!==e.suggestedMin,o=void 0!==e.max||void 0!==e.suggestedMax;void 0!==e.min?t.min=e.min:void 0!==e.suggestedMin&&(null===t.min?t.min=e.suggestedMin:t.min=Math.min(t.min,e.suggestedMin)),void 0!==e.max?t.max=e.max:void 0!==e.suggestedMax&&(null===t.max?t.max=e.suggestedMax:t.max=Math.max(t.max,e.suggestedMax)),r!==o&&t.min>=t.max&&(r?t.max=t.min+1:t.min=t.max-1),t.min===t.max&&(t.max++,e.beginAtZero||t.min--)},getTickLimit:e,handleDirectionalChanges:e,buildTicks:function(){var t=this,e=t.options.ticks,i=t.getTickLimit(),a={maxTicks:i=Math.max(2,i),min:e.min,max:e.max,precision:e.precision,stepSize:n.valueOrDefault(e.fixedStepSize,e.stepSize)},r=t.ticks=function(t,e){var i,a,r,o=[];if(t.stepSize&&t.stepSize>0)r=t.stepSize;else{var s=n.niceNum(e.max-e.min,!1);r=n.niceNum(s/(t.maxTicks-1),!0),void 0!==(a=t.precision)&&(i=Math.pow(10,a),r=Math.ceil(r*i)/i)}var l=Math.floor(e.min/r)*r,u=Math.ceil(e.max/r)*r;n.isNullOrUndef(t.min)||n.isNullOrUndef(t.max)||!t.stepSize||n.almostWhole((t.max-t.min)/t.stepSize,r/1e3)&&(l=t.min,u=t.max);var d=(u-l)/r;d=n.almostEquals(d,Math.round(d),r/1e3)?Math.round(d):Math.ceil(d),a=1,r<1&&(a=Math.pow(10,1-Math.floor(n.log10(r))),l=Math.round(l*a)/a,u=Math.round(u*a)/a),o.push(void 0!==t.min?t.min:l);for(var c=1;c<d;++c)o.push(Math.round((l+c*r)*a)/a);return o.push(void 0!==t.max?t.max:u),o}(a,t);t.handleDirectionalChanges(),t.max=n.max(r),t.min=n.min(r),e.reverse?(r.reverse(),t.start=t.max,t.end=t.min):(t.start=t.min,t.end=t.max)},convertTicksToLabels:function(){var t=this;t.ticksAsNumbers=t.ticks.slice(),t.zeroLineIndex=t.ticks.indexOf(0),a.prototype.convertTicksToLabels.call(t)}})}},{33:33,46:46}],57:[function(t,e,i){"use strict";var n=t(46),a=t(33),r=t(34),o=t(35);e.exports=function(t){var e={position:"left",ticks:{callback:o.formatters.logarithmic}},i=a.extend({determineDataLimits:function(){var t=this,e=t.options,i=t.chart,a=i.data.datasets,r=t.isHorizontal();function o(e){return r?e.xAxisID===t.id:e.yAxisID===t.id}t.min=null,t.max=null,t.minNotZero=null;var s=e.stacked;if(void 0===s&&n.each(a,function(t,e){if(!s){var n=i.getDatasetMeta(e);i.isDatasetVisible(e)&&o(n)&&void 0!==n.stack&&(s=!0)}}),e.stacked||s){var l={};n.each(a,function(a,r){var s=i.getDatasetMeta(r),u=[s.type,void 0===e.stacked&&void 0===s.stack?r:"",s.stack].join(".");i.isDatasetVisible(r)&&o(s)&&(void 0===l[u]&&(l[u]=[]),n.each(a.data,function(e,i){var n=l[u],a=+t.getRightValue(e);isNaN(a)||s.data[i].hidden||a<0||(n[i]=n[i]||0,n[i]+=a)}))}),n.each(l,function(e){if(e.length>0){var i=n.min(e),a=n.max(e);t.min=null===t.min?i:Math.min(t.min,i),t.max=null===t.max?a:Math.max(t.max,a)}})}else n.each(a,function(e,a){var r=i.getDatasetMeta(a);i.isDatasetVisible(a)&&o(r)&&n.each(e.data,function(e,i){var n=+t.getRightValue(e);isNaN(n)||r.data[i].hidden||n<0||(null===t.min?t.min=n:n<t.min&&(t.min=n),null===t.max?t.max=n:n>t.max&&(t.max=n),0!==n&&(null===t.minNotZero||n<t.minNotZero)&&(t.minNotZero=n))})});this.handleTickRangeOptions()},handleTickRangeOptions:function(){var t=this,e=t.options.ticks,i=n.valueOrDefault;t.min=i(e.min,t.min),t.max=i(e.max,t.max),t.min===t.max&&(0!==t.min&&null!==t.min?(t.min=Math.pow(10,Math.floor(n.log10(t.min))-1),t.max=Math.pow(10,Math.floor(n.log10(t.max))+1)):(t.min=1,t.max=10)),null===t.min&&(t.min=Math.pow(10,Math.floor(n.log10(t.max))-1)),null===t.max&&(t.max=0!==t.min?Math.pow(10,Math.floor(n.log10(t.min))+1):10),null===t.minNotZero&&(t.min>0?t.minNotZero=t.min:t.max<1?t.minNotZero=Math.pow(10,Math.floor(n.log10(t.max))):t.minNotZero=1)},buildTicks:function(){var t=this,e=t.options.ticks,i=!t.isHorizontal(),a={min:e.min,max:e.max},r=t.ticks=function(t,e){var i,a,r=[],o=n.valueOrDefault,s=o(t.min,Math.pow(10,Math.floor(n.log10(e.min)))),l=Math.floor(n.log10(e.max)),u=Math.ceil(e.max/Math.pow(10,l));0===s?(i=Math.floor(n.log10(e.minNotZero)),a=Math.floor(e.minNotZero/Math.pow(10,i)),r.push(s),s=a*Math.pow(10,i)):(i=Math.floor(n.log10(s)),a=Math.floor(s/Math.pow(10,i)));var d=i<0?Math.pow(10,Math.abs(i)):1;do{r.push(s),10==++a&&(a=1,d=++i>=0?1:d),s=Math.round(a*Math.pow(10,i)*d)/d}while(i<l||i===l&&a<u);var c=o(t.max,s);return r.push(c),r}(a,t);t.max=n.max(r),t.min=n.min(r),e.reverse?(i=!i,t.start=t.max,t.end=t.min):(t.start=t.min,t.end=t.max),i&&r.reverse()},convertTicksToLabels:function(){this.tickValues=this.ticks.slice(),a.prototype.convertTicksToLabels.call(this)},getLabelForIndex:function(t,e){return+this.getRightValue(this.chart.data.datasets[e].data[t])},getPixelForTick:function(t){return this.getPixelForValue(this.tickValues[t])},_getFirstTickValue:function(t){var e=Math.floor(n.log10(t));return Math.floor(t/Math.pow(10,e))*Math.pow(10,e)},getPixelForValue:function(e){var i,a,r,o,s,l=this,u=l.options.ticks.reverse,d=n.log10,c=l._getFirstTickValue(l.minNotZero),h=0;return e=+l.getRightValue(e),u?(r=l.end,o=l.start,s=-1):(r=l.start,o=l.end,s=1),l.isHorizontal()?(i=l.width,a=u?l.right:l.left):(i=l.height,s*=-1,a=u?l.top:l.bottom),e!==r&&(0===r&&(i-=h=n.getValueOrDefault(l.options.ticks.fontSize,t.defaults.global.defaultFontSize),r=c),0!==e&&(h+=i/(d(o)-d(r))*(d(e)-d(r))),a+=s*h),a},getValueForPixel:function(e){var i,a,r,o,s=this,l=s.options.ticks.reverse,u=n.log10,d=s._getFirstTickValue(s.minNotZero);if(l?(a=s.end,r=s.start):(a=s.start,r=s.end),s.isHorizontal()?(i=s.width,o=l?s.right-e:e-s.left):(i=s.height,o=l?e-s.top:s.bottom-e),o!==a){if(0===a){var c=n.getValueOrDefault(s.options.ticks.fontSize,t.defaults.global.defaultFontSize);o-=c,i-=c,a=d}o*=u(r)-u(a),o/=i,o=Math.pow(10,u(a)+o)}return o}});r.registerScaleType("logarithmic",i,e)}},{33:33,34:34,35:35,46:46}],58:[function(t,e,i){"use strict";var n=t(26),a=t(46),r=t(34),o=t(35);e.exports=function(t){var e=n.global,i={display:!0,animate:!0,position:"chartArea",angleLines:{display:!0,color:"rgba(0, 0, 0, 0.1)",lineWidth:1},gridLines:{circular:!1},ticks:{showLabelBackdrop:!0,backdropColor:"rgba(255,255,255,0.75)",backdropPaddingY:2,backdropPaddingX:2,callback:o.formatters.linear},pointLabels:{display:!0,fontSize:10,callback:function(t){return t}}};function s(t){var e=t.options;return e.angleLines.display||e.pointLabels.display?t.chart.data.labels.length:0}function l(t){var i=t.options.pointLabels,n=a.valueOrDefault(i.fontSize,e.defaultFontSize),r=a.valueOrDefault(i.fontStyle,e.defaultFontStyle),o=a.valueOrDefault(i.fontFamily,e.defaultFontFamily);return{size:n,style:r,family:o,font:a.fontString(n,r,o)}}function u(t,e,i,n,a){return t===n||t===a?{start:e-i/2,end:e+i/2}:t<n||t>a?{start:e-i-5,end:e}:{start:e,end:e+i+5}}function d(t){return 0===t||180===t?"center":t<180?"left":"right"}function c(t,e,i,n){if(a.isArray(e))for(var r=i.y,o=1.5*n,s=0;s<e.length;++s)t.fillText(e[s],i.x,r),r+=o;else t.fillText(e,i.x,i.y)}function h(t,e,i){90===t||270===t?i.y-=e.h/2:(t>270||t<90)&&(i.y-=e.h)}function f(t){return a.isNumber(t)?t:0}var p=t.LinearScaleBase.extend({setDimensions:function(){var t=this,i=t.options,n=i.ticks;t.width=t.maxWidth,t.height=t.maxHeight,t.xCenter=Math.round(t.width/2),t.yCenter=Math.round(t.height/2);var r=a.min([t.height,t.width]),o=a.valueOrDefault(n.fontSize,e.defaultFontSize);t.drawingArea=i.display?r/2-(o/2+n.backdropPaddingY):r/2},determineDataLimits:function(){var t=this,e=t.chart,i=Number.POSITIVE_INFINITY,n=Number.NEGATIVE_INFINITY;a.each(e.data.datasets,function(r,o){if(e.isDatasetVisible(o)){var s=e.getDatasetMeta(o);a.each(r.data,function(e,a){var r=+t.getRightValue(e);isNaN(r)||s.data[a].hidden||(i=Math.min(r,i),n=Math.max(r,n))})}}),t.min=i===Number.POSITIVE_INFINITY?0:i,t.max=n===Number.NEGATIVE_INFINITY?0:n,t.handleTickRangeOptions()},getTickLimit:function(){var t=this.options.ticks,i=a.valueOrDefault(t.fontSize,e.defaultFontSize);return Math.min(t.maxTicksLimit?t.maxTicksLimit:11,Math.ceil(this.drawingArea/(1.5*i)))},convertTicksToLabels:function(){var e=this;t.LinearScaleBase.prototype.convertTicksToLabels.call(e),e.pointLabels=e.chart.data.labels.map(e.options.pointLabels.callback,e)},getLabelForIndex:function(t,e){return+this.getRightValue(this.chart.data.datasets[e].data[t])},fit:function(){var t,e;this.options.pointLabels.display?function(t){var e,i,n,r=l(t),o=Math.min(t.height/2,t.width/2),d={r:t.width,l:0,t:t.height,b:0},c={};t.ctx.font=r.font,t._pointLabelSizes=[];var h,f,p,g=s(t);for(e=0;e<g;e++){n=t.getPointPosition(e,o),h=t.ctx,f=r.size,p=t.pointLabels[e]||"",i=a.isArray(p)?{w:a.longestText(h,h.font,p),h:p.length*f+1.5*(p.length-1)*f}:{w:h.measureText(p).width,h:f},t._pointLabelSizes[e]=i;var m=t.getIndexAngle(e),v=a.toDegrees(m)%360,b=u(v,n.x,i.w,0,180),y=u(v,n.y,i.h,90,270);b.start<d.l&&(d.l=b.start,c.l=m),b.end>d.r&&(d.r=b.end,c.r=m),y.start<d.t&&(d.t=y.start,c.t=m),y.end>d.b&&(d.b=y.end,c.b=m)}t.setReductions(o,d,c)}(this):(t=this,e=Math.min(t.height/2,t.width/2),t.drawingArea=Math.round(e),t.setCenterPoint(0,0,0,0))},setReductions:function(t,e,i){var n=e.l/Math.sin(i.l),a=Math.max(e.r-this.width,0)/Math.sin(i.r),r=-e.t/Math.cos(i.t),o=-Math.max(e.b-this.height,0)/Math.cos(i.b);n=f(n),a=f(a),r=f(r),o=f(o),this.drawingArea=Math.min(Math.round(t-(n+a)/2),Math.round(t-(r+o)/2)),this.setCenterPoint(n,a,r,o)},setCenterPoint:function(t,e,i,n){var a=this,r=a.width-e-a.drawingArea,o=t+a.drawingArea,s=i+a.drawingArea,l=a.height-n-a.drawingArea;a.xCenter=Math.round((o+r)/2+a.left),a.yCenter=Math.round((s+l)/2+a.top)},getIndexAngle:function(t){return t*(2*Math.PI/s(this))+(this.chart.options&&this.chart.options.startAngle?this.chart.options.startAngle:0)*Math.PI*2/360},getDistanceFromCenterForValue:function(t){var e=this;if(null===t)return 0;var i=e.drawingArea/(e.max-e.min);return e.options.ticks.reverse?(e.max-t)*i:(t-e.min)*i},getPointPosition:function(t,e){var i=this.getIndexAngle(t)-Math.PI/2;return{x:Math.round(Math.cos(i)*e)+this.xCenter,y:Math.round(Math.sin(i)*e)+this.yCenter}},getPointPositionForValue:function(t,e){return this.getPointPosition(t,this.getDistanceFromCenterForValue(e))},getBasePosition:function(){var t=this.min,e=this.max;return this.getPointPositionForValue(0,this.beginAtZero?0:t<0&&e<0?e:t>0&&e>0?t:0)},draw:function(){var t=this,i=t.options,n=i.gridLines,r=i.ticks,o=a.valueOrDefault;if(i.display){var u=t.ctx,f=this.getIndexAngle(0),p=o(r.fontSize,e.defaultFontSize),g=o(r.fontStyle,e.defaultFontStyle),m=o(r.fontFamily,e.defaultFontFamily),v=a.fontString(p,g,m);a.each(t.ticks,function(i,l){if(l>0||r.reverse){var d=t.getDistanceFromCenterForValue(t.ticksAsNumbers[l]);if(n.display&&0!==l&&function(t,e,i,n){var r=t.ctx;if(r.strokeStyle=a.valueAtIndexOrDefault(e.color,n-1),r.lineWidth=a.valueAtIndexOrDefault(e.lineWidth,n-1),t.options.gridLines.circular)r.beginPath(),r.arc(t.xCenter,t.yCenter,i,0,2*Math.PI),r.closePath(),r.stroke();else{var o=s(t);if(0===o)return;r.beginPath();var l=t.getPointPosition(0,i);r.moveTo(l.x,l.y);for(var u=1;u<o;u++)l=t.getPointPosition(u,i),r.lineTo(l.x,l.y);r.closePath(),r.stroke()}}(t,n,d,l),r.display){var c=o(r.fontColor,e.defaultFontColor);if(u.font=v,u.save(),u.translate(t.xCenter,t.yCenter),u.rotate(f),r.showLabelBackdrop){var h=u.measureText(i).width;u.fillStyle=r.backdropColor,u.fillRect(-h/2-r.backdropPaddingX,-d-p/2-r.backdropPaddingY,h+2*r.backdropPaddingX,p+2*r.backdropPaddingY)}u.textAlign="center",u.textBaseline="middle",u.fillStyle=c,u.fillText(i,0,-d),u.restore()}}}),(i.angleLines.display||i.pointLabels.display)&&function(t){var i=t.ctx,n=t.options,r=n.angleLines,o=n.pointLabels;i.lineWidth=r.lineWidth,i.strokeStyle=r.color;var u=t.getDistanceFromCenterForValue(n.ticks.reverse?t.min:t.max),f=l(t);i.textBaseline="top";for(var p=s(t)-1;p>=0;p--){if(r.display){var g=t.getPointPosition(p,u);i.beginPath(),i.moveTo(t.xCenter,t.yCenter),i.lineTo(g.x,g.y),i.stroke(),i.closePath()}if(o.display){var m=t.getPointPosition(p,u+5),v=a.valueAtIndexOrDefault(o.fontColor,p,e.defaultFontColor);i.font=f.font,i.fillStyle=v;var b=t.getIndexAngle(p),y=a.toDegrees(b);i.textAlign=d(y),h(y,t._pointLabelSizes[p],m),c(i,t.pointLabels[p]||"",m,f.size)}}}(t)}}});r.registerScaleType("radialLinear",p,i)}},{26:26,34:34,35:35,46:46}],59:[function(t,e,i){"use strict";var n=t(1);n="function"==typeof n?n:window.moment;var a=t(26),r=t(46),o=t(33),s=t(34),l=Number.MIN_SAFE_INTEGER||-9007199254740991,u=Number.MAX_SAFE_INTEGER||9007199254740991,d={millisecond:{common:!0,size:1,steps:[1,2,5,10,20,50,100,250,500]},second:{common:!0,size:1e3,steps:[1,2,5,10,15,30]},minute:{common:!0,size:6e4,steps:[1,2,5,10,15,30]},hour:{common:!0,size:36e5,steps:[1,2,3,6,12]},day:{common:!0,size:864e5,steps:[1,2,5]},week:{common:!1,size:6048e5,steps:[1,2,3,4]},month:{common:!0,size:2628e6,steps:[1,2,3]},quarter:{common:!1,size:7884e6,steps:[1,2,3,4]},year:{common:!0,size:3154e7}},c=Object.keys(d);function h(t,e){return t-e}function f(t){var e,i,n,a={},r=[];for(e=0,i=t.length;e<i;++e)a[n=t[e]]||(a[n]=!0,r.push(n));return r}function p(t,e,i,n){var a=function(t,e,i){for(var n,a,r,o=0,s=t.length-1;o>=0&&o<=s;){if(a=t[(n=o+s>>1)-1]||null,r=t[n],!a)return{lo:null,hi:r};if(r[e]<i)o=n+1;else{if(!(a[e]>i))return{lo:a,hi:r};s=n-1}}return{lo:r,hi:null}}(t,e,i),r=a.lo?a.hi?a.lo:t[t.length-2]:t[0],o=a.lo?a.hi?a.hi:t[t.length-1]:t[1],s=o[e]-r[e],l=s?(i-r[e])/s:0,u=(o[n]-r[n])*l;return r[n]+u}function g(t,e){var i=e.parser,a=e.parser||e.format;return"function"==typeof i?i(t):"string"==typeof t&&"string"==typeof a?n(t,a):(t instanceof n||(t=n(t)),t.isValid()?t:"function"==typeof a?a(t):t)}function m(t,e){if(r.isNullOrUndef(t))return null;var i=e.options.time,n=g(e.getRightValue(t),i);return n.isValid()?(i.round&&n.startOf(i.round),n.valueOf()):null}function v(t){for(var e=c.indexOf(t)+1,i=c.length;e<i;++e)if(d[c[e]].common)return c[e]}function b(t,e,i,a){var o,s=a.time,l=s.unit||function(t,e,i,n){var a,r,o,s=c.length;for(a=c.indexOf(t);a<s-1;++a)if(o=(r=d[c[a]]).steps?r.steps[r.steps.length-1]:u,r.common&&Math.ceil((i-e)/(o*r.size))<=n)return c[a];return c[s-1]}(s.minUnit,t,e,i),h=v(l),f=r.valueOrDefault(s.stepSize,s.unitStepSize),p="week"===l&&s.isoWeekday,g=a.ticks.major.enabled,m=d[l],b=n(t),y=n(e),x=[];for(f||(f=function(t,e,i,n){var a,r,o,s=e-t,l=d[i],u=l.size,c=l.steps;if(!c)return Math.ceil(s/(n*u));for(a=0,r=c.length;a<r&&(o=c[a],!(Math.ceil(s/(u*o))<=n));++a);return o}(t,e,l,i)),p&&(b=b.isoWeekday(p),y=y.isoWeekday(p)),b=b.startOf(p?"day":l),(y=y.startOf(p?"day":l))<e&&y.add(1,l),o=n(b),g&&h&&!p&&!s.round&&(o.startOf(h),o.add(~~((b-o)/(m.size*f))*f,l));o<y;o.add(f,l))x.push(+o);return x.push(+o),x}e.exports=function(){var t=o.extend({initialize:function(){if(!n)throw new Error("Chart.js - Moment.js could not be found! You must include it before Chart.js to use the time scale. Download at https://momentjs.com");this.mergeTicksOptions(),o.prototype.initialize.call(this)},update:function(){var t=this.options;return t.time&&t.time.format&&console.warn("options.time.format is deprecated and replaced by options.time.parser."),o.prototype.update.apply(this,arguments)},getRightValue:function(t){return t&&void 0!==t.t&&(t=t.t),o.prototype.getRightValue.call(this,t)},determineDataLimits:function(){var t,e,i,a,o,s,d=this,c=d.chart,p=d.options.time,g=p.unit||"day",v=u,b=l,y=[],x=[],w=[];for(t=0,i=c.data.labels.length;t<i;++t)w.push(m(c.data.labels[t],d));for(t=0,i=(c.data.datasets||[]).length;t<i;++t)if(c.isDatasetVisible(t))if(o=c.data.datasets[t].data,r.isObject(o[0]))for(x[t]=[],e=0,a=o.length;e<a;++e)s=m(o[e],d),y.push(s),x[t][e]=s;else y.push.apply(y,w),x[t]=w.slice(0);else x[t]=[];w.length&&(w=f(w).sort(h),v=Math.min(v,w[0]),b=Math.max(b,w[w.length-1])),y.length&&(y=f(y).sort(h),v=Math.min(v,y[0]),b=Math.max(b,y[y.length-1])),v=m(p.min,d)||v,b=m(p.max,d)||b,v=v===u?+n().startOf(g):v,b=b===l?+n().endOf(g)+1:b,d.min=Math.min(v,b),d.max=Math.max(v+1,b),d._horizontal=d.isHorizontal(),d._table=[],d._timestamps={data:y,datasets:x,labels:w}},buildTicks:function(){var t,e,i,a=this,r=a.min,o=a.max,s=a.options,l=s.time,u=[],h=[];switch(s.ticks.source){case"data":u=a._timestamps.data;break;case"labels":u=a._timestamps.labels;break;case"auto":default:u=b(r,o,a.getLabelCapacity(r),s)}for("ticks"===s.bounds&&u.length&&(r=u[0],o=u[u.length-1]),r=m(l.min,a)||r,o=m(l.max,a)||o,t=0,e=u.length;t<e;++t)(i=u[t])>=r&&i<=o&&h.push(i);return a.min=r,a.max=o,a._unit=l.unit||function(t,e,i,a){var r,o,s=n.duration(n(a).diff(n(i)));for(r=c.length-1;r>=c.indexOf(e);r--)if(o=c[r],d[o].common&&s.as(o)>=t.length)return o;return c[e?c.indexOf(e):0]}(h,l.minUnit,a.min,a.max),a._majorUnit=v(a._unit),a._table=function(t,e,i,n){if("linear"===n||!t.length)return[{time:e,pos:0},{time:i,pos:1}];var a,r,o,s,l,u=[],d=[e];for(a=0,r=t.length;a<r;++a)(s=t[a])>e&&s<i&&d.push(s);for(d.push(i),a=0,r=d.length;a<r;++a)l=d[a+1],o=d[a-1],s=d[a],void 0!==o&&void 0!==l&&Math.round((l+o)/2)===s||u.push({time:s,pos:a/(r-1)});return u}(a._timestamps.data,r,o,s.distribution),a._offsets=function(t,e,i,n,a){var r,o,s=0,l=0;return a.offset&&e.length&&(a.time.min||(r=e.length>1?e[1]:n,o=e[0],s=(p(t,"time",r,"pos")-p(t,"time",o,"pos"))/2),a.time.max||(r=e[e.length-1],o=e.length>1?e[e.length-2]:i,l=(p(t,"time",r,"pos")-p(t,"time",o,"pos"))/2)),{left:s,right:l}}(a._table,h,r,o,s),a._labelFormat=function(t,e){var i,n,a,r=t.length;for(i=0;i<r;i++){if(0!==(n=g(t[i],e)).millisecond())return"MMM D, YYYY h:mm:ss.SSS a";0===n.second()&&0===n.minute()&&0===n.hour()||(a=!0)}return a?"MMM D, YYYY h:mm:ss a":"MMM D, YYYY"}(a._timestamps.data,l),function(t,e){var i,a,r,o,s=[];for(i=0,a=t.length;i<a;++i)r=t[i],o=!!e&&r===+n(r).startOf(e),s.push({value:r,major:o});return s}(h,a._majorUnit)},getLabelForIndex:function(t,e){var i=this.chart.data,n=this.options.time,a=i.labels&&t<i.labels.length?i.labels[t]:"",o=i.datasets[e].data[t];return r.isObject(o)&&(a=this.getRightValue(o)),n.tooltipFormat?g(a,n).format(n.tooltipFormat):"string"==typeof a?a:g(a,n).format(this._labelFormat)},tickFormatFunction:function(t,e,i,n){var a=this.options,o=t.valueOf(),s=a.time.displayFormats,l=s[this._unit],u=this._majorUnit,d=s[u],c=t.clone().startOf(u).valueOf(),h=a.ticks.major,f=h.enabled&&u&&d&&o===c,p=t.format(n||(f?d:l)),g=f?h:a.ticks.minor,m=r.valueOrDefault(g.callback,g.userCallback);return m?m(p,e,i):p},convertTicksToLabels:function(t){var e,i,a=[];for(e=0,i=t.length;e<i;++e)a.push(this.tickFormatFunction(n(t[e].value),e,t));return a},getPixelForOffset:function(t){var e=this,i=e._horizontal?e.width:e.height,n=e._horizontal?e.left:e.top,a=p(e._table,"time",t,"pos");return n+i*(e._offsets.left+a)/(e._offsets.left+1+e._offsets.right)},getPixelForValue:function(t,e,i){var n=null;if(void 0!==e&&void 0!==i&&(n=this._timestamps.datasets[i][e]),null===n&&(n=m(t,this)),null!==n)return this.getPixelForOffset(n)},getPixelForTick:function(t){var e=this.getTicks();return t>=0&&t<e.length?this.getPixelForOffset(e[t].value):null},getValueForPixel:function(t){var e=this,i=e._horizontal?e.width:e.height,a=e._horizontal?e.left:e.top,r=(i?(t-a)/i:0)*(e._offsets.left+1+e._offsets.left)-e._offsets.right,o=p(e._table,"pos",r,"time");return n(o)},getLabelWidth:function(t){var e=this.options.ticks,i=this.ctx.measureText(t).width,n=r.toRadians(e.maxRotation),o=Math.cos(n),s=Math.sin(n);return i*o+r.valueOrDefault(e.fontSize,a.global.defaultFontSize)*s},getLabelCapacity:function(t){var e=this,i=e.options.time.displayFormats.millisecond,a=e.tickFormatFunction(n(t),0,[],i),r=e.getLabelWidth(a),o=e.isHorizontal()?e.width:e.height,s=Math.floor(o/r);return s>0?s:1}});s.registerScaleType("time",t,{position:"bottom",distribution:"linear",bounds:"data",time:{parser:!1,format:!1,unit:!1,round:!1,displayFormat:!1,isoWeekday:!1,minUnit:"millisecond",displayFormats:{millisecond:"h:mm:ss.SSS a",second:"h:mm:ss a",minute:"h:mm a",hour:"hA",day:"MMM D",week:"ll",month:"MMM YYYY",quarter:"[Q]Q - YYYY",year:"YYYY"}},ticks:{autoSkip:!1,source:"auto",major:{enabled:!1}}})}},{1:1,26:26,33:33,34:34,46:46}]},{},[7])(7)}),function(t){WOW=function(){return{init:function(){var e=[],i=1;function n(){var i=window.innerHeight,n=window.scrollY;t(".wow").each(function(){if("visible"!=t(this).css("visibility")&&(i+n-100>a(this)&&n<a(this)||i+n-100>a(this)+t(this).height()&&n<a(this)+t(this).height()||i+n==t(document).height()&&a(this)+100>t(document).height())){var r=t(this).index(".wow"),o=t(this).attr("data-wow-delay");if(o){o=t(this).attr("data-wow-delay").slice(0,-1);var s=this;parseFloat(o);t(s).addClass("animated"),t(s).css({visibility:"visible"}),t(s).css({"animation-delay":o}),t(s).css({"animation-name":e[r]});var l=1e3*t(this).css("animation-duration").slice(0,-1);t(this).attr("data-wow-delay")&&(l+=1e3*t(this).attr("data-wow-delay").slice(0,-1));s=this;setTimeout(function(){t(s).removeClass("animated")},l)}else{t(this).addClass("animated"),t(this).css({visibility:"visible"}),t(this).css({"animation-name":e[r]});l=1e3*t(this).css("animation-duration").slice(0,-1),s=this;setTimeout(function(){t(s).removeClass("animated")},l)}}})}function a(t){var e=t.getBoundingClientRect(),i=document.body,n=document.documentElement,a=window.pageYOffset||n.scrollTop||i.scrollTop,r=n.clientTop||i.clientTop||0,o=e.top+a-r;return Math.round(o)}t(".wow").each(function(){t(this).css({visibility:"hidden"}),e[t(this).index(".wow")]=t(this).css("animation-name"),t(this).css({"animation-name":"none"})}),t(window).scroll(function(){var e,r;i?(e=window.innerHeight,r=window.scrollY,t(".wow.animated").each(function(){if(e+r-100>a(this)&&r>a(this)+100||e+r-100<a(this)&&r<a(this)+100||a(this)+t(this).height>t(document).height()-100)t(this).removeClass("animated"),t(this).css({"animation-name":"none"}),t(this).css({visibility:"hidden"});else{var i=1e3*t(this).css("animation-duration").slice(0,-1);t(this).attr("data-wow-delay")&&(i+=1e3*t(this).attr("data-wow-delay").slice(0,-1));var n=this;setTimeout(function(){t(n).removeClass("animated")},i)}}),n(),i--):n()}),t(".wow").each(function(){var i=t(this).index(".wow"),n=t(this).attr("data-wow-delay");n?(n=t(this).attr("data-wow-delay").slice(0,-1),parseFloat(n),t(this).addClass("animated"),t(this).css({visibility:"visible"}),t(this).css({"animation-delay":n+"s"}),t(this).css({"animation-name":e[i]})):(t(this).addClass("animated"),t(this).css({visibility:"visible"}),t(this).css({"animation-name":e[i]}))})}}}}(jQuery),function(t){t(window).on("scroll",function(){var e=t(".navbar");e.length&&(e.offset().top>50?t(".scrolling-navbar").addClass("top-nav-collapse"):t(".scrolling-navbar").removeClass("top-nav-collapse"))})}(jQuery),function(t,e){"use strict"; true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function(){return t.Waves=e.call(t),t.Waves}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):"object"==typeof exports?module.exports=e.call(t):t.Waves=e.call(t)}("object"==typeof global?global:this,function(){"use strict";var t=t||{},e=document.querySelectorAll.bind(document),i=Object.prototype.toString,n="ontouchstart"in window;function a(t){var e=typeof t;return"function"===e||"object"===e&&!!t}function r(t){var n,r=i.call(t);return"[object String]"===r?e(t):a(t)&&/^\[object (Array|HTMLCollection|NodeList|Object)\]$/.test(r)&&t.hasOwnProperty("length")?t:a(n=t)&&n.nodeType>0?[t]:[]}function o(t){var e,i,n={top:0,left:0},a=t&&t.ownerDocument;return e=a.documentElement,void 0!==t.getBoundingClientRect&&(n=t.getBoundingClientRect()),i=function(t){return null!==(e=t)&&e===e.window?t:9===t.nodeType&&t.defaultView;var e}(a),{top:n.top+i.pageYOffset-e.clientTop,left:n.left+i.pageXOffset-e.clientLeft}}function s(t){var e="";for(var i in t)t.hasOwnProperty(i)&&(e+=i+":"+t[i]+";");return e}var l={duration:750,delay:200,show:function(t,e,i){if(2===t.button)return!1;e=e||this;var n=document.createElement("div");n.className="waves-ripple waves-rippling",e.appendChild(n);var a=o(e),r=0,u=0;"touches"in t&&t.touches.length?(r=t.touches[0].pageY-a.top,u=t.touches[0].pageX-a.left):(r=t.pageY-a.top,u=t.pageX-a.left),u=u>=0?u:0,r=r>=0?r:0;var d="scale("+e.clientWidth/100*3+")",c="translate(0,0)";i&&(c="translate("+i.x+"px, "+i.y+"px)"),n.setAttribute("data-hold",Date.now()),n.setAttribute("data-x",u),n.setAttribute("data-y",r),n.setAttribute("data-scale",d),n.setAttribute("data-translate",c);var h={top:r+"px",left:u+"px"};n.classList.add("waves-notransition"),n.setAttribute("style",s(h)),n.classList.remove("waves-notransition"),h["-webkit-transform"]=d+" "+c,h["-moz-transform"]=d+" "+c,h["-ms-transform"]=d+" "+c,h["-o-transform"]=d+" "+c,h.transform=d+" "+c,h.opacity="1";var f="mousemove"===t.type?2500:l.duration;h["-webkit-transition-duration"]=f+"ms",h["-moz-transition-duration"]=f+"ms",h["-o-transition-duration"]=f+"ms",h["transition-duration"]=f+"ms",n.setAttribute("style",s(h))},hide:function(t,e){for(var i=(e=e||this).getElementsByClassName("waves-rippling"),a=0,r=i.length;a<r;a++)d(t,e,i[a]);n&&(e.removeEventListener("touchend",l.hide),e.removeEventListener("touchcancel",l.hide)),e.removeEventListener("mouseup",l.hide),e.removeEventListener("mouseleave",l.hide)}},u={input:function(t){var e=t.parentNode;if("i"!==e.tagName.toLowerCase()||!e.classList.contains("waves-effect")){var i=document.createElement("i");i.className=t.className+" waves-input-wrapper",t.className="waves-button-input",e.replaceChild(i,t),i.appendChild(t);var n=window.getComputedStyle(t,null),a=n.color,r=n.backgroundColor;i.setAttribute("style","color:"+a+";background:"+r),t.setAttribute("style","background-color:rgba(0,0,0,0);")}},img:function(t){var e=t.parentNode;if("i"!==e.tagName.toLowerCase()||!e.classList.contains("waves-effect")){var i=document.createElement("i");e.replaceChild(i,t),i.appendChild(t)}}};function d(t,e,i){if(i){i.classList.remove("waves-rippling");var n=i.getAttribute("data-x"),a=i.getAttribute("data-y"),r=i.getAttribute("data-scale"),o=i.getAttribute("data-translate"),u=350-(Date.now()-Number(i.getAttribute("data-hold")));u<0&&(u=0),"mousemove"===t.type&&(u=150);var d="mousemove"===t.type?2500:l.duration;setTimeout(function(){var t={top:a+"px",left:n+"px",opacity:"0","-webkit-transition-duration":d+"ms","-moz-transition-duration":d+"ms","-o-transition-duration":d+"ms","transition-duration":d+"ms","-webkit-transform":r+" "+o,"-moz-transform":r+" "+o,"-ms-transform":r+" "+o,"-o-transform":r+" "+o,transform:r+" "+o};i.setAttribute("style",s(t)),setTimeout(function(){try{e.removeChild(i)}catch(t){return!1}},d)},u)}}var c={touches:0,allowEvent:function(t){var e=!0;return/^(mousedown|mousemove)$/.test(t.type)&&c.touches&&(e=!1),e},registerEvent:function(t){var e=t.type;"touchstart"===e?c.touches+=1:/^(touchend|touchcancel)$/.test(e)&&setTimeout(function(){c.touches&&(c.touches-=1)},500)}};function h(t){var e=function(t){if(!1===c.allowEvent(t))return null;for(var e=null,i=t.target||t.srcElement;i.parentElement;){if(!(i instanceof SVGElement)&&i.classList.contains("waves-effect")){e=i;break}i=i.parentElement}return e}(t);if(null!==e){if(e.disabled||e.getAttribute("disabled")||e.classList.contains("disabled"))return;if(c.registerEvent(t),"touchstart"===t.type&&l.delay){var i=!1,a=setTimeout(function(){a=null,l.show(t,e)},l.delay),r=function(n){a&&(clearTimeout(a),a=null,l.show(t,e)),i||(i=!0,l.hide(n,e)),s()},o=function(t){a&&(clearTimeout(a),a=null),r(t),s()};e.addEventListener("touchmove",o,!1),e.addEventListener("touchend",r,!1),e.addEventListener("touchcancel",r,!1);var s=function(){e.removeEventListener("touchmove",o),e.removeEventListener("touchend",r),e.removeEventListener("touchcancel",r)}}else l.show(t,e),n&&(e.addEventListener("touchend",l.hide,!1),e.addEventListener("touchcancel",l.hide,!1)),e.addEventListener("mouseup",l.hide,!1),e.addEventListener("mouseleave",l.hide,!1)}}return t.init=function(t){var e=document.body;"duration"in(t=t||{})&&(l.duration=t.duration),"delay"in t&&(l.delay=t.delay),n&&(e.addEventListener("touchstart",h,!1),e.addEventListener("touchcancel",c.registerEvent,!1),e.addEventListener("touchend",c.registerEvent,!1)),e.addEventListener("mousedown",h,!1)},t.attach=function(t,e){var n,a;t=r(t),"[object Array]"===i.call(e)&&(e=e.join(" ")),e=e?" "+e:"";for(var o=0,s=t.length;o<s;o++)a=(n=t[o]).tagName.toLowerCase(),-1!==["input","img"].indexOf(a)&&(u[a](n),n=n.parentElement),-1===n.className.indexOf("waves-effect")&&(n.className+=" waves-effect"+e)},t.ripple=function(t,e){var i=(t=r(t)).length;if((e=e||{}).wait=e.wait||0,e.position=e.position||null,i)for(var n,a,s,u={},d=0,c={type:"mousedown",button:1},h=function(t,e){return function(){l.hide(t,e)}};d<i;d++)if(n=t[d],a=e.position||{x:n.clientWidth/2,y:n.clientHeight/2},s=o(n),u.x=s.left+a.x,u.y=s.top+a.y,c.pageX=u.x,c.pageY=u.y,l.show(c,n),e.wait>=0&&null!==e.wait){setTimeout(h({type:"mouseup",button:1},n),e.wait)}},t.calm=function(t){for(var e={type:"mouseup",button:1},i=0,n=(t=r(t)).length;i<n;i++)l.hide(e,t[i])},t.displayEffect=function(e){console.error("Waves.displayEffect() has been deprecated and will be removed in future version. Please use Waves.init() to initialize Waves effect"),t.init(e)},t}),Waves.attach(".btn:not(.btn-flat), .btn-floating",["waves-light"]),Waves.attach(".btn-flat",["waves-effect"]),Waves.attach(".chip",["waves-effect"]),Waves.attach(".view a .mask",["waves-light"]),Waves.attach(".waves-light",["waves-light"]),Waves.attach(".navbar-nav a:not(.navbar-brand), .nav-icons li a, .nav-tabs .nav-item:not(.dropdown)",["waves-light"]),Waves.attach(".pager li a",["waves-light"]),Waves.attach(".pagination .page-item .page-link",["waves-effect"]),Waves.init();var _this=void 0;!function(t){var e,i,n="".concat(["text","password","email","url","tel","number","search","search-md"].map(function(t){return"input[type=".concat(t,"]")}).join(", "),", textarea"),a=function(t){var e=t.siblings("label, i"),i=t.val().length,n=t.attr("placeholder");e["".concat(i||n?"add":"remove","Class")]("active")},r=function(t){if(t.hasClass("validate")){var e=t.val(),i=!e.length,n=!t[0].validity.badInput;if(i&&n)t.removeClass("valid").removeClass("invalid");else{var a=t.is(":valid"),r=Number(t.attr("length"))||0;a&&(!r||r>e.length)?t.removeClass("invalid").addClass("valid"):t.removeClass("valid").addClass("invalid")}}},o=function(){var e=t(_this);if(e.val().length){var i=t(".hiddendiv"),n=e.css("font-family"),a=e.css("font-size");a&&i.css("font-size",a),n&&i.css("font-family",n),"off"===e.attr("wrap")&&i.css("overflow-wrap","normal").css("white-space","pre"),i.text("".concat(e.val(),"\n"));var r=i.html().replace(/\n/g,"<br>");i.html(r),i.css("width",e.is(":visible")?e.width():t(window).width()/2),e.css("height",i.height())}};t(n).each(function(e,i){var n=t(i),r=n.siblings("label, i");a(n),i.validity.badInput&&r.addClass("active")}),t(document).on("focus",n,function(e){t(e.target).siblings("label, i").addClass("active")}),t(document).on("blur",n,function(e){var i=t(e.target),n=!i.val(),a=!e.target.validity.badInput,o=void 0===i.attr("placeholder");n&&a&&o&&i.siblings("label, i").removeClass("active"),r(i)}),t(document).on("change",n,function(e){var i=t(e.target);a(i),r(i)}),t("input[autofocus]").siblings("label, i").addClass("active"),t(document).on("reset",function(e){var i=t(e.target);i.is("form")&&(i.find(n).removeClass("valid").removeClass("invalid").each(function(e,i){var n=t(i),a=!n.val(),r=!n.attr("placeholder");a&&r&&n.siblings("label, i").removeClass("active")}),i.find("select.initialized").each(function(e,i){var n=t(i),a=n.siblings("input.select-dropdown"),r=n.children("[selected]").val();n.val(r),a.val(r)}))}),(i=t(".md-textarea-auto")).length&&(e=window.attachEvent?function(t,e,i){t.attachEvent("on".concat(e),i)}:function(t,e,i){t.addEventListener(e,i,!1)},i.each(function(){var t=this;function i(){t.style.height="auto",t.style.height="".concat(t.scrollHeight,"px")}function n(){window.setTimeout(i,0)}e(t,"change",i),e(t,"cut",n),e(t,"paste",n),e(t,"drop",n),e(t,"keydown",n),i()}));var s=t("body");if(!t(".hiddendiv").first().length){var l=t('<div class="hiddendiv common"></div>');s.append(l)}t(".materialize-textarea").each(o),s.on("keyup keydown",".materialize-textarea",o)}(jQuery),$("body").on("shown.bs.modal",".modal",function(){$(".modal-backdrop").length||($modal_dialog=$(this).children(".modal-dialog"),$modal_dialog.hasClass("modal-side")&&($(this).addClass("modal-scrolling"),$("body").addClass("scrollable")),$modal_dialog.hasClass("modal-frame")&&($(this).addClass("modal-content-clickable"),$("body").addClass("scrollable")))}),$("body").on("hidden.bs.modal",".modal",function(){$("body").removeClass("scrollable")});
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):t()}(function(){return function(t,e,i,n){function a(t){return f.isWrapped(t)?t=[].slice.call(t):f.isNode(t)&&(t=[t]),t}function r(t){var e=d.data(t,"velocity");return null===e?n:e}function o(t,i,n,a){function r(t,e){return 1-3*e+3*t}function o(t,e){return 3*e-6*t}function s(t){return 3*t}function l(t,e,i){return((r(e,i)*t+o(e,i))*t+s(e))*t}function u(t,e,i){return 3*r(e,i)*t*t+2*o(e,i)*t+s(e)}function d(e,i){for(var a=0;f>a;++a){var r=u(i,t,n);if(0===r)return i;i-=(l(i,t,n)-e)/r}return i}function c(e,i,a){var r,o,s=0;do{(r=l(o=i+(a-i)/2,t,n)-e)>0?a=o:i=o}while(Math.abs(r)>g&&++s<m);return o}function h(){k=!0,(t!=i||n!=a)&&function(){for(var e=0;v>e;++e)w[e]=l(e*b,t,n)}()}var f=4,p=.001,g=1e-7,m=10,v=11,b=1/(v-1),y="Float32Array"in e;if(4!==arguments.length)return!1;for(var x=0;4>x;++x)if("number"!=typeof arguments[x]||isNaN(arguments[x])||!isFinite(arguments[x]))return!1;t=Math.min(t,1),n=Math.min(n,1),t=Math.max(t,0),n=Math.max(n,0);var w=y?new Float32Array(v):new Array(v),k=!1,S=function(e){return k||h(),t===i&&n===a?e:0===e?0:1===e?1:l(function(e){for(var i=0,a=1,r=v-1;a!=r&&w[a]<=e;++a)i+=b;var o=i+(e-w[--a])/(w[a+1]-w[a])*b,s=u(o,t,n);return s>=p?d(e,o):0==s?o:c(e,i,i+b)}(e),i,a)};S.getControlPoints=function(){return[{x:t,y:i},{x:n,y:a}]};var C="generateBezier("+[t,i,n,a]+")";return S.toString=function(){return C},S}function s(t,e){var i=t;return f.isString(t)?v.Easings[t]||(i=!1):i=f.isArray(t)&&1===t.length?function(t){return function(e){return Math.round(e*t)*(1/t)}}.apply(null,t):f.isArray(t)&&2===t.length?b.apply(null,t.concat([e])):!(!f.isArray(t)||4!==t.length)&&o.apply(null,t),!1===i&&(i=v.Easings[v.defaults.easing]?v.defaults.easing:m),i}function l(t){if(t){var e=(new Date).getTime(),i=v.State.calls.length;i>1e4&&(v.State.calls=function(t){for(var e=-1,i=t?t.length:0,n=[];++e<i;){var a=t[e];a&&n.push(a)}return n}(v.State.calls));for(var a=0;i>a;a++)if(v.State.calls[a]){var o=v.State.calls[a],s=o[0],c=o[2],h=o[3],p=!!h,g=null;h||(h=v.State.calls[a][3]=e-16);for(var m=Math.min((e-h)/c.duration,1),b=0,x=s.length;x>b;b++){var k=s[b],S=k.element;if(r(S)){var C=!1;if(c.display!==n&&null!==c.display&&"none"!==c.display){if("flex"===c.display){d.each(["-webkit-box","-moz-box","-ms-flexbox","-webkit-flex"],function(t,e){y.setPropertyValue(S,"display",e)})}y.setPropertyValue(S,"display",c.display)}for(var M in c.visibility!==n&&"hidden"!==c.visibility&&y.setPropertyValue(S,"visibility",c.visibility),k)if("element"!==M){var P,T=k[M],A=f.isString(T.easing)?v.Easings[T.easing]:T.easing;if(1===m)P=T.endValue;else{var _=T.endValue-T.startValue;if(P=T.startValue+_*A(m,c,_),!p&&P===T.currentValue)continue}if(T.currentValue=P,"tween"===M)g=P;else{if(y.Hooks.registered[M]){var I=y.Hooks.getRoot(M),D=r(S).rootPropertyValueCache[I];D&&(T.rootPropertyValue=D)}var F=y.setPropertyValue(S,M,T.currentValue+(0===parseFloat(P)?"":T.unitType),T.rootPropertyValue,T.scrollData);y.Hooks.registered[M]&&(r(S).rootPropertyValueCache[I]=y.Normalizations.registered[I]?y.Normalizations.registered[I]("extract",null,F[1]):F[1]),"transform"===F[0]&&(C=!0)}}c.mobileHA&&r(S).transformCache.translate3d===n&&(r(S).transformCache.translate3d="(0px, 0px, 0px)",C=!0),C&&y.flushTransformCache(S)}}c.display!==n&&"none"!==c.display&&(v.State.calls[a][2].display=!1),c.visibility!==n&&"hidden"!==c.visibility&&(v.State.calls[a][2].visibility=!1),c.progress&&c.progress.call(o[1],o[1],m,Math.max(0,h+c.duration-e),h,g),1===m&&u(a)}}v.State.isTicking&&w(l)}function u(t,e){if(!v.State.calls[t])return!1;for(var i=v.State.calls[t][0],a=v.State.calls[t][1],o=v.State.calls[t][2],s=v.State.calls[t][4],l=!1,u=0,c=i.length;c>u;u++){var h=i[u].element;if(e||o.loop||("none"===o.display&&y.setPropertyValue(h,"display",o.display),"hidden"===o.visibility&&y.setPropertyValue(h,"visibility",o.visibility)),!0!==o.loop&&(d.queue(h)[1]===n||!/\.velocityQueueEntryFlag/i.test(d.queue(h)[1]))&&r(h)){r(h).isAnimating=!1,r(h).rootPropertyValueCache={};var f=!1;d.each(y.Lists.transforms3D,function(t,e){var i=/^scale/.test(e)?1:0,a=r(h).transformCache[e];r(h).transformCache[e]!==n&&new RegExp("^\\("+i+"[^.]").test(a)&&(f=!0,delete r(h).transformCache[e])}),o.mobileHA&&(f=!0,delete r(h).transformCache.translate3d),f&&y.flushTransformCache(h),y.Values.removeClass(h,"velocity-animating")}if(!e&&o.complete&&!o.loop&&u===c-1)try{o.complete.call(a,a)}catch(t){setTimeout(function(){throw t},1)}s&&!0!==o.loop&&s(a),r(h)&&!0===o.loop&&!e&&(d.each(r(h).tweensContainer,function(t,e){/^rotate/.test(t)&&360===parseFloat(e.endValue)&&(e.endValue=0,e.startValue=360),/^backgroundPosition/.test(t)&&100===parseFloat(e.endValue)&&"%"===e.unitType&&(e.endValue=0,e.startValue=100)}),v(h,"reverse",{loop:!0,delay:o.delay})),!1!==o.queue&&d.dequeue(h,o.queue)}v.State.calls[t]=!1;for(var p=0,g=v.State.calls.length;g>p;p++)if(!1!==v.State.calls[p]){l=!0;break}!1===l&&(v.State.isTicking=!1,delete v.State.calls,v.State.calls=[])}var d,c=function(){if(i.documentMode)return i.documentMode;for(var t=7;t>4;t--){var e=i.createElement("div");if(e.innerHTML="\x3c!--[if IE "+t+"]><span></span><![endif]--\x3e",e.getElementsByTagName("span").length)return e=null,t}return n}(),h=function(){var t=0;return e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||function(e){var i,n=(new Date).getTime();return i=Math.max(0,16-(n-t)),t=n+i,setTimeout(function(){e(n+i)},i)}}(),f={isString:function(t){return"string"==typeof t},isArray:Array.isArray||function(t){return"[object Array]"===Object.prototype.toString.call(t)},isFunction:function(t){return"[object Function]"===Object.prototype.toString.call(t)},isNode:function(t){return t&&t.nodeType},isNodeList:function(t){return"object"==typeof t&&/^\[object (HTMLCollection|NodeList|Object)\]$/.test(Object.prototype.toString.call(t))&&t.length!==n&&(0===t.length||"object"==typeof t[0]&&t[0].nodeType>0)},isWrapped:function(t){return t&&(t.jquery||e.Zepto&&e.Zepto.zepto.isZ(t))},isSVG:function(t){return e.SVGElement&&t instanceof e.SVGElement},isEmptyObject:function(t){for(var e in t)return!1;return!0}},p=!1;if(t.fn&&t.fn.jquery?(d=t,p=!0):d=e.Velocity.Utilities,8>=c&&!p)throw new Error("Velocity: IE8 and below require jQuery to be loaded before Velocity.");if(!(7>=c)){var g=400,m="swing",v={State:{isMobile:/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),isAndroid:/Android/i.test(navigator.userAgent),isGingerbread:/Android 2\.3\.[3-7]/i.test(navigator.userAgent),isChrome:e.chrome,isFirefox:/Firefox/i.test(navigator.userAgent),prefixElement:i.createElement("div"),prefixMatches:{},scrollAnchor:null,scrollPropertyLeft:null,scrollPropertyTop:null,isTicking:!1,calls:[]},CSS:{},Utilities:d,Redirects:{},Easings:{},Promise:e.Promise,defaults:{queue:"",duration:g,easing:m,begin:n,complete:n,progress:n,display:n,visibility:n,loop:!1,delay:!1,mobileHA:!0,_cacheValues:!0},init:function(t){d.data(t,"velocity",{isSVG:f.isSVG(t),isAnimating:!1,computedStyle:null,tweensContainer:null,rootPropertyValueCache:{},transformCache:{}})},hook:null,mock:!1,version:{major:1,minor:2,patch:2},debug:!1};e.pageYOffset!==n?(v.State.scrollAnchor=e,v.State.scrollPropertyLeft="pageXOffset",v.State.scrollPropertyTop="pageYOffset"):(v.State.scrollAnchor=i.documentElement||i.body.parentNode||i.body,v.State.scrollPropertyLeft="scrollLeft",v.State.scrollPropertyTop="scrollTop");var b=function(){function t(t){return-t.tension*t.x-t.friction*t.v}function e(e,i,n){var a={x:e.x+n.dx*i,v:e.v+n.dv*i,tension:e.tension,friction:e.friction};return{dx:a.v,dv:t(a)}}function i(i,n){var a={dx:i.v,dv:t(i)},r=e(i,.5*n,a),o=e(i,.5*n,r),s=e(i,n,o),l=1/6*(a.dx+2*(r.dx+o.dx)+s.dx),u=1/6*(a.dv+2*(r.dv+o.dv)+s.dv);return i.x=i.x+l*n,i.v=i.v+u*n,i}return function t(e,n,a){var r,o,s,l={x:-1,v:0,tension:null,friction:null},u=[0],d=0;for(e=parseFloat(e)||500,n=parseFloat(n)||20,a=a||null,l.tension=e,l.friction=n,(r=null!==a)?o=(d=t(e,n))/a*.016:o=.016;s=i(s||l,o),u.push(1+s.x),d+=16,Math.abs(s.x)>1e-4&&Math.abs(s.v)>1e-4;);return r?function(t){return u[t*(u.length-1)|0]}:d}}();v.Easings={linear:function(t){return t},swing:function(t){return.5-Math.cos(t*Math.PI)/2},spring:function(t){return 1-Math.cos(4.5*t*Math.PI)*Math.exp(6*-t)}},d.each([["ease",[.25,.1,.25,1]],["ease-in",[.42,0,1,1]],["ease-out",[0,0,.58,1]],["ease-in-out",[.42,0,.58,1]],["easeInSine",[.47,0,.745,.715]],["easeOutSine",[.39,.575,.565,1]],["easeInOutSine",[.445,.05,.55,.95]],["easeInQuad",[.55,.085,.68,.53]],["easeOutQuad",[.25,.46,.45,.94]],["easeInOutQuad",[.455,.03,.515,.955]],["easeInCubic",[.55,.055,.675,.19]],["easeOutCubic",[.215,.61,.355,1]],["easeInOutCubic",[.645,.045,.355,1]],["easeInQuart",[.895,.03,.685,.22]],["easeOutQuart",[.165,.84,.44,1]],["easeInOutQuart",[.77,0,.175,1]],["easeInQuint",[.755,.05,.855,.06]],["easeOutQuint",[.23,1,.32,1]],["easeInOutQuint",[.86,0,.07,1]],["easeInExpo",[.95,.05,.795,.035]],["easeOutExpo",[.19,1,.22,1]],["easeInOutExpo",[1,0,0,1]],["easeInCirc",[.6,.04,.98,.335]],["easeOutCirc",[.075,.82,.165,1]],["easeInOutCirc",[.785,.135,.15,.86]]],function(t,e){v.Easings[e[0]]=o.apply(null,e[1])});var y=v.CSS={RegEx:{isHex:/^#([A-f\d]{3}){1,2}$/i,valueUnwrap:/^[A-z]+\((.*)\)$/i,wrappedValueAlreadyExtracted:/[0-9.]+ [0-9.]+ [0-9.]+( [0-9.]+)?/,valueSplit:/([A-z]+\(.+\))|(([A-z0-9#-.]+?)(?=\s|$))/gi},Lists:{colors:["fill","stroke","stopColor","color","backgroundColor","borderColor","borderTopColor","borderRightColor","borderBottomColor","borderLeftColor","outlineColor"],transformsBase:["translateX","translateY","scale","scaleX","scaleY","skewX","skewY","rotateZ"],transforms3D:["transformPerspective","translateZ","scaleZ","rotateX","rotateY"]},Hooks:{templates:{textShadow:["Color X Y Blur","black 0px 0px 0px"],boxShadow:["Color X Y Blur Spread","black 0px 0px 0px 0px"],clip:["Top Right Bottom Left","0px 0px 0px 0px"],backgroundPosition:["X Y","0% 0%"],transformOrigin:["X Y Z","50% 50% 0px"],perspectiveOrigin:["X Y","50% 50%"]},registered:{},register:function(){for(var t=0;t<y.Lists.colors.length;t++){var e="color"===y.Lists.colors[t]?"0 0 0 1":"255 255 255 1";y.Hooks.templates[y.Lists.colors[t]]=["Red Green Blue Alpha",e]}var i,n,a;if(c)for(i in y.Hooks.templates){a=(n=y.Hooks.templates[i])[0].split(" ");var r=n[1].match(y.RegEx.valueSplit);"Color"===a[0]&&(a.push(a.shift()),r.push(r.shift()),y.Hooks.templates[i]=[a.join(" "),r.join(" ")])}for(i in y.Hooks.templates)for(var t in a=(n=y.Hooks.templates[i])[0].split(" ")){var o=i+a[t],s=t;y.Hooks.registered[o]=[i,s]}},getRoot:function(t){var e=y.Hooks.registered[t];return e?e[0]:t},cleanRootPropertyValue:function(t,e){return y.RegEx.valueUnwrap.test(e)&&(e=e.match(y.RegEx.valueUnwrap)[1]),y.Values.isCSSNullValue(e)&&(e=y.Hooks.templates[t][1]),e},extractValue:function(t,e){var i=y.Hooks.registered[t];if(i){var n=i[0],a=i[1];return(e=y.Hooks.cleanRootPropertyValue(n,e)).toString().match(y.RegEx.valueSplit)[a]}return e},injectValue:function(t,e,i){var n=y.Hooks.registered[t];if(n){var a,r=n[0],o=n[1];return(a=(i=y.Hooks.cleanRootPropertyValue(r,i)).toString().match(y.RegEx.valueSplit))[o]=e,a.join(" ")}return i}},Normalizations:{registered:{clip:function(t,e,i){switch(t){case"name":return"clip";case"extract":var n;return y.RegEx.wrappedValueAlreadyExtracted.test(i)?n=i:n=(n=i.toString().match(y.RegEx.valueUnwrap))?n[1].replace(/,(\s+)?/g," "):i,n;case"inject":return"rect("+i+")"}},blur:function(t,e,i){switch(t){case"name":return v.State.isFirefox?"filter":"-webkit-filter";case"extract":var n=parseFloat(i);if(!n&&0!==n){var a=i.toString().match(/blur\(([0-9]+[A-z]+)\)/i);n=a?a[1]:0}return n;case"inject":return parseFloat(i)?"blur("+i+")":"none"}},opacity:function(t,e,i){if(8>=c)switch(t){case"name":return"filter";case"extract":var n=i.toString().match(/alpha\(opacity=(.*)\)/i);return n?n[1]/100:1;case"inject":return e.style.zoom=1,parseFloat(i)>=1?"":"alpha(opacity="+parseInt(100*parseFloat(i),10)+")"}else switch(t){case"name":return"opacity";case"extract":case"inject":return i}}},register:function(){9>=c||v.State.isGingerbread||(y.Lists.transformsBase=y.Lists.transformsBase.concat(y.Lists.transforms3D));for(var t=0;t<y.Lists.transformsBase.length;t++)!function(){var e=y.Lists.transformsBase[t];y.Normalizations.registered[e]=function(t,i,a){switch(t){case"name":return"transform";case"extract":return r(i)===n||r(i).transformCache[e]===n?/^scale/i.test(e)?1:0:r(i).transformCache[e].replace(/[()]/g,"");case"inject":var o=!1;switch(e.substr(0,e.length-1)){case"translate":o=!/(%|px|em|rem|vw|vh|\d)$/i.test(a);break;case"scal":case"scale":v.State.isAndroid&&r(i).transformCache[e]===n&&1>a&&(a=1),o=!/(\d)$/i.test(a);break;case"skew":o=!/(deg|\d)$/i.test(a);break;case"rotate":o=!/(deg|\d)$/i.test(a)}return o||(r(i).transformCache[e]="("+a+")"),r(i).transformCache[e]}}}();for(t=0;t<y.Lists.colors.length;t++)!function(){var e=y.Lists.colors[t];y.Normalizations.registered[e]=function(t,i,a){switch(t){case"name":return e;case"extract":var r;if(y.RegEx.wrappedValueAlreadyExtracted.test(a))r=a;else{var o,s={black:"rgb(0, 0, 0)",blue:"rgb(0, 0, 255)",gray:"rgb(128, 128, 128)",green:"rgb(0, 128, 0)",red:"rgb(255, 0, 0)",white:"rgb(255, 255, 255)"};/^[A-z]+$/i.test(a)?o=s[a]!==n?s[a]:s.black:y.RegEx.isHex.test(a)?o="rgb("+y.Values.hexToRgb(a).join(" ")+")":/^rgba?\(/i.test(a)||(o=s.black),r=(o||a).toString().match(y.RegEx.valueUnwrap)[1].replace(/,(\s+)?/g," ")}return 8>=c||3!==r.split(" ").length||(r+=" 1"),r;case"inject":return 8>=c?4===a.split(" ").length&&(a=a.split(/\s+/).slice(0,3).join(" ")):3===a.split(" ").length&&(a+=" 1"),(8>=c?"rgb":"rgba")+"("+a.replace(/\s+/g,",").replace(/\.(\d)+(?=,)/g,"")+")"}}}()}},Names:{camelCase:function(t){return t.replace(/-(\w)/g,function(t,e){return e.toUpperCase()})},SVGAttribute:function(t){var e="width|height|x|y|cx|cy|r|rx|ry|x1|x2|y1|y2";return(c||v.State.isAndroid&&!v.State.isChrome)&&(e+="|transform"),new RegExp("^("+e+")$","i").test(t)},prefixCheck:function(t){if(v.State.prefixMatches[t])return[v.State.prefixMatches[t],!0];for(var e=["","Webkit","Moz","ms","O"],i=0,n=e.length;n>i;i++){var a;if(a=0===i?t:e[i]+t.replace(/^\w/,function(t){return t.toUpperCase()}),f.isString(v.State.prefixElement.style[a]))return v.State.prefixMatches[t]=a,[a,!0]}return[t,!1]}},Values:{hexToRgb:function(t){var e;return t=t.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i,function(t,e,i,n){return e+e+i+i+n+n}),(e=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(t))?[parseInt(e[1],16),parseInt(e[2],16),parseInt(e[3],16)]:[0,0,0]},isCSSNullValue:function(t){return 0==t||/^(none|auto|transparent|(rgba\(0, ?0, ?0, ?0\)))$/i.test(t)},getUnitType:function(t){return/^(rotate|skew)/i.test(t)?"deg":/(^(scale|scaleX|scaleY|scaleZ|alpha|flexGrow|flexHeight|zIndex|fontWeight)$)|((opacity|red|green|blue|alpha)$)/i.test(t)?"":"px"},getDisplayType:function(t){var e=t&&t.tagName.toString().toLowerCase();return/^(b|big|i|small|tt|abbr|acronym|cite|code|dfn|em|kbd|strong|samp|var|a|bdo|br|img|map|object|q|script|span|sub|sup|button|input|label|select|textarea)$/i.test(e)?"inline":/^(li)$/i.test(e)?"list-item":/^(tr)$/i.test(e)?"table-row":/^(table)$/i.test(e)?"table":/^(tbody)$/i.test(e)?"table-row-group":"block"},addClass:function(t,e){t.classList?t.classList.add(e):t.className+=(t.className.length?" ":"")+e},removeClass:function(t,e){t.classList?t.classList.remove(e):t.className=t.className.toString().replace(new RegExp("(^|\\s)"+e.split(" ").join("|")+"(\\s|$)","gi")," ")}},getPropertyValue:function(t,i,a,o){function s(t,i){function a(){h&&y.setPropertyValue(t,"display","none")}var l=0;if(8>=c)l=d.css(t,i);else{var u,h=!1;if(/^(width|height)$/.test(i)&&0===y.getPropertyValue(t,"display")&&(h=!0,y.setPropertyValue(t,"display",y.Values.getDisplayType(t))),!o){if("height"===i&&"border-box"!==y.getPropertyValue(t,"boxSizing").toString().toLowerCase()){var f=t.offsetHeight-(parseFloat(y.getPropertyValue(t,"borderTopWidth"))||0)-(parseFloat(y.getPropertyValue(t,"borderBottomWidth"))||0)-(parseFloat(y.getPropertyValue(t,"paddingTop"))||0)-(parseFloat(y.getPropertyValue(t,"paddingBottom"))||0);return a(),f}if("width"===i&&"border-box"!==y.getPropertyValue(t,"boxSizing").toString().toLowerCase()){var p=t.offsetWidth-(parseFloat(y.getPropertyValue(t,"borderLeftWidth"))||0)-(parseFloat(y.getPropertyValue(t,"borderRightWidth"))||0)-(parseFloat(y.getPropertyValue(t,"paddingLeft"))||0)-(parseFloat(y.getPropertyValue(t,"paddingRight"))||0);return a(),p}}u=r(t)===n?e.getComputedStyle(t,null):r(t).computedStyle?r(t).computedStyle:r(t).computedStyle=e.getComputedStyle(t,null),"borderColor"===i&&(i="borderTopColor"),(""===(l=9===c&&"filter"===i?u.getPropertyValue(i):u[i])||null===l)&&(l=t.style[i]),a()}if("auto"===l&&/^(top|right|bottom|left)$/i.test(i)){var g=s(t,"position");("fixed"===g||"absolute"===g&&/top|left/i.test(i))&&(l=d(t).position()[i]+"px")}return l}var l;if(y.Hooks.registered[i]){var u=i,h=y.Hooks.getRoot(u);a===n&&(a=y.getPropertyValue(t,y.Names.prefixCheck(h)[0])),y.Normalizations.registered[h]&&(a=y.Normalizations.registered[h]("extract",t,a)),l=y.Hooks.extractValue(u,a)}else if(y.Normalizations.registered[i]){var f,p;"transform"!==(f=y.Normalizations.registered[i]("name",t))&&(p=s(t,y.Names.prefixCheck(f)[0]),y.Values.isCSSNullValue(p)&&y.Hooks.templates[i]&&(p=y.Hooks.templates[i][1])),l=y.Normalizations.registered[i]("extract",t,p)}if(!/^[\d-]/.test(l))if(r(t)&&r(t).isSVG&&y.Names.SVGAttribute(i))if(/^(height|width)$/i.test(i))try{l=t.getBBox()[i]}catch(t){l=0}else l=t.getAttribute(i);else l=s(t,y.Names.prefixCheck(i)[0]);return y.Values.isCSSNullValue(l)&&(l=0),v.debug>=2&&console.log("Get "+i+": "+l),l},setPropertyValue:function(t,i,n,a,o){var s=i;if("scroll"===i)o.container?o.container["scroll"+o.direction]=n:"Left"===o.direction?e.scrollTo(n,o.alternateValue):e.scrollTo(o.alternateValue,n);else if(y.Normalizations.registered[i]&&"transform"===y.Normalizations.registered[i]("name",t))y.Normalizations.registered[i]("inject",t,n),s="transform",n=r(t).transformCache[i];else{if(y.Hooks.registered[i]){var l=i,u=y.Hooks.getRoot(i);a=a||y.getPropertyValue(t,u),n=y.Hooks.injectValue(l,n,a),i=u}if(y.Normalizations.registered[i]&&(n=y.Normalizations.registered[i]("inject",t,n),i=y.Normalizations.registered[i]("name",t)),s=y.Names.prefixCheck(i)[0],8>=c)try{t.style[s]=n}catch(t){v.debug&&console.log("Browser does not support ["+n+"] for ["+s+"]")}else r(t)&&r(t).isSVG&&y.Names.SVGAttribute(i)?t.setAttribute(i,n):t.style[s]=n;v.debug>=2&&console.log("Set "+i+" ("+s+"): "+n)}return[s,n]},flushTransformCache:function(t){function e(e){return parseFloat(y.getPropertyValue(t,e))}var i="";if((c||v.State.isAndroid&&!v.State.isChrome)&&r(t).isSVG){var n={translate:[e("translateX"),e("translateY")],skewX:[e("skewX")],skewY:[e("skewY")],scale:1!==e("scale")?[e("scale"),e("scale")]:[e("scaleX"),e("scaleY")],rotate:[e("rotateZ"),0,0]};d.each(r(t).transformCache,function(t){/^translate/i.test(t)?t="translate":/^scale/i.test(t)?t="scale":/^rotate/i.test(t)&&(t="rotate"),n[t]&&(i+=t+"("+n[t].join(" ")+") ",delete n[t])})}else{var a,o;d.each(r(t).transformCache,function(e){return a=r(t).transformCache[e],"transformPerspective"===e?(o=a,!0):(9===c&&"rotateZ"===e&&(e="rotate"),void(i+=e+a+" "))}),o&&(i="perspective"+o+" "+i)}y.setPropertyValue(t,"transform",i)}};y.Hooks.register(),y.Normalizations.register(),v.hook=function(t,e,i){var o=n;return t=a(t),d.each(t,function(t,a){if(r(a)===n&&v.init(a),i===n)o===n&&(o=v.CSS.getPropertyValue(a,e));else{var s=v.CSS.setPropertyValue(a,e,i);"transform"===s[0]&&v.CSS.flushTransformCache(a),o=s}}),o};var x=function(){function t(){return c?T.promise||null:h}function o(){function t(t){function h(t,e){var i=n,a=n,r=n;return f.isArray(t)?(i=t[0],!f.isArray(t[1])&&/^[\d-]/.test(t[1])||f.isFunction(t[1])||y.RegEx.isHex.test(t[1])?r=t[1]:(f.isString(t[1])&&!y.RegEx.isHex.test(t[1])||f.isArray(t[1]))&&(a=e?t[1]:s(t[1],u.duration),t[2]!==n&&(r=t[2]))):i=t,e||(a=a||u.easing),f.isFunction(i)&&(i=i.call(o,C,S)),f.isFunction(r)&&(r=r.call(o,C,S)),[i||0,a,r]}function p(t,e){var i,n;return n=(e||"0").toString().toLowerCase().replace(/[%A-z]+$/,function(t){return i=t,""}),i||(i=y.Values.getUnitType(t)),[n,i]}function g(){var t={myParent:o.parentNode||i.body,position:y.getPropertyValue(o,"position"),fontSize:y.getPropertyValue(o,"fontSize")},n=t.position===L.lastPosition&&t.myParent===L.lastParent,a=t.fontSize===L.lastFontSize;L.lastParent=t.myParent,L.lastPosition=t.position,L.lastFontSize=t.fontSize;var s=100,l={};if(a&&n)l.emToPx=L.lastEmToPx,l.percentToPxWidth=L.lastPercentToPxWidth,l.percentToPxHeight=L.lastPercentToPxHeight;else{var u=r(o).isSVG?i.createElementNS("http://www.w3.org/2000/svg","rect"):i.createElement("div");v.init(u),t.myParent.appendChild(u),d.each(["overflow","overflowX","overflowY"],function(t,e){v.CSS.setPropertyValue(u,e,"hidden")}),v.CSS.setPropertyValue(u,"position",t.position),v.CSS.setPropertyValue(u,"fontSize",t.fontSize),v.CSS.setPropertyValue(u,"boxSizing","content-box"),d.each(["minWidth","maxWidth","width","minHeight","maxHeight","height"],function(t,e){v.CSS.setPropertyValue(u,e,s+"%")}),v.CSS.setPropertyValue(u,"paddingLeft",s+"em"),l.percentToPxWidth=L.lastPercentToPxWidth=(parseFloat(y.getPropertyValue(u,"width",null,!0))||1)/s,l.percentToPxHeight=L.lastPercentToPxHeight=(parseFloat(y.getPropertyValue(u,"height",null,!0))||1)/s,l.emToPx=L.lastEmToPx=(parseFloat(y.getPropertyValue(u,"paddingLeft"))||1)/s,t.myParent.removeChild(u)}return null===L.remToPx&&(L.remToPx=parseFloat(y.getPropertyValue(i.body,"fontSize"))||16),null===L.vwToPx&&(L.vwToPx=parseFloat(e.innerWidth)/100,L.vhToPx=parseFloat(e.innerHeight)/100),l.remToPx=L.remToPx,l.vwToPx=L.vwToPx,l.vhToPx=L.vhToPx,v.debug>=1&&console.log("Unit ratios: "+JSON.stringify(l),o),l}if(u.begin&&0===C)try{u.begin.call(m,m)}catch(t){setTimeout(function(){throw t},1)}if("scroll"===P){var x,k,M,A=/^x$/i.test(u.axis)?"Left":"Top",_=parseFloat(u.offset)||0;u.container?f.isWrapped(u.container)||f.isNode(u.container)?(u.container=u.container[0]||u.container,M=(x=u.container["scroll"+A])+d(o).position()[A.toLowerCase()]+_):u.container=null:(x=v.State.scrollAnchor[v.State["scrollProperty"+A]],k=v.State.scrollAnchor[v.State["scrollProperty"+("Left"===A?"Top":"Left")]],M=d(o).offset()[A.toLowerCase()]+_),c={scroll:{rootPropertyValue:!1,startValue:x,currentValue:x,endValue:M,unitType:"",easing:u.easing,scrollData:{container:u.container,direction:A,alternateValue:k}},element:o},v.debug&&console.log("tweensContainer (scroll): ",c.scroll,o)}else if("reverse"===P){if(!r(o).tweensContainer)return void d.dequeue(o,u.queue);"none"===r(o).opts.display&&(r(o).opts.display="auto"),"hidden"===r(o).opts.visibility&&(r(o).opts.visibility="visible"),r(o).opts.loop=!1,r(o).opts.begin=null,r(o).opts.complete=null,w.easing||delete u.easing,w.duration||delete u.duration,u=d.extend({},r(o).opts,u);var I=d.extend(!0,{},r(o).tweensContainer);for(var D in I)if("element"!==D){var F=I[D].startValue;I[D].startValue=I[D].currentValue=I[D].endValue,I[D].endValue=F,f.isEmptyObject(w)||(I[D].easing=u.easing),v.debug&&console.log("reverse tweensContainer ("+D+"): "+JSON.stringify(I[D]),o)}c=I}else if("start"===P){for(var O in r(o).tweensContainer&&!0===r(o).isAnimating&&(I=r(o).tweensContainer),d.each(b,function(t,e){if(RegExp("^"+y.Lists.colors.join("$|^")+"$").test(t)){var i=h(e,!0),a=i[0],r=i[1],o=i[2];if(y.RegEx.isHex.test(a)){for(var s=["Red","Green","Blue"],l=y.Values.hexToRgb(a),u=o?y.Values.hexToRgb(o):n,d=0;d<s.length;d++){var c=[l[d]];r&&c.push(r),u!==n&&c.push(u[d]),b[t+s[d]]=c}delete b[t]}}}),b){var V=h(b[O]),z=V[0],N=V[1],E=V[2];O=y.Names.camelCase(O);var W=y.Hooks.getRoot(O),B=!1;if(r(o).isSVG||"tween"===W||!1!==y.Names.prefixCheck(W)[1]||y.Normalizations.registered[W]!==n){(u.display!==n&&null!==u.display&&"none"!==u.display||u.visibility!==n&&"hidden"!==u.visibility)&&/opacity|filter/.test(O)&&!E&&0!==z&&(E=0),u._cacheValues&&I&&I[O]?(E===n&&(E=I[O].endValue+I[O].unitType),B=r(o).rootPropertyValueCache[W]):y.Hooks.registered[O]?E===n?(B=y.getPropertyValue(o,W),E=y.getPropertyValue(o,O,B)):B=y.Hooks.templates[W][1]:E===n&&(E=y.getPropertyValue(o,O));var H,j,q,Y=!1;if(E=(H=p(O,E))[0],q=H[1],z=(H=p(O,z))[0].replace(/^([+-\/*])=/,function(t,e){return Y=e,""}),j=H[1],E=parseFloat(E)||0,z=parseFloat(z)||0,"%"===j&&(/^(fontSize|lineHeight)$/.test(O)?(z/=100,j="em"):/^scale/.test(O)?(z/=100,j=""):/(Red|Green|Blue)$/i.test(O)&&(z=z/100*255,j="")),/[\/*]/.test(Y))j=q;else if(q!==j&&0!==E)if(0===z)j=q;else{a=a||g();var U=/margin|padding|left|right|width|text|word|letter/i.test(O)||/X$/.test(O)||"x"===O?"x":"y";switch(q){case"%":E*="x"===U?a.percentToPxWidth:a.percentToPxHeight;break;case"px":break;default:E*=a[q+"ToPx"]}switch(j){case"%":E*=1/("x"===U?a.percentToPxWidth:a.percentToPxHeight);break;case"px":break;default:E*=1/a[j+"ToPx"]}}switch(Y){case"+":z=E+z;break;case"-":z=E-z;break;case"*":z*=E;break;case"/":z=E/z}c[O]={rootPropertyValue:B,startValue:E,currentValue:E,endValue:z,unitType:j,easing:N},v.debug&&console.log("tweensContainer ("+O+"): "+JSON.stringify(c[O]),o)}else v.debug&&console.log("Skipping ["+W+"] due to a lack of browser support.")}c.element=o}c.element&&(y.Values.addClass(o,"velocity-animating"),R.push(c),""===u.queue&&(r(o).tweensContainer=c,r(o).opts=u),r(o).isAnimating=!0,C===S-1?(v.State.calls.push([R,m,u,null,T.resolver]),!1===v.State.isTicking&&(v.State.isTicking=!0,l())):C++)}var a,o=this,u=d.extend({},v.defaults,w),c={};switch(r(o)===n&&v.init(o),parseFloat(u.delay)&&!1!==u.queue&&d.queue(o,u.queue,function(t){v.velocityQueueEntryFlag=!0,r(o).delayTimer={setTimeout:setTimeout(t,parseFloat(u.delay)),next:t}}),u.duration.toString().toLowerCase()){case"fast":u.duration=200;break;case"normal":u.duration=g;break;case"slow":u.duration=600;break;default:u.duration=parseFloat(u.duration)||1}!1!==v.mock&&(!0===v.mock?u.duration=u.delay=1:(u.duration*=parseFloat(v.mock)||1,u.delay*=parseFloat(v.mock)||1)),u.easing=s(u.easing,u.duration),u.begin&&!f.isFunction(u.begin)&&(u.begin=null),u.progress&&!f.isFunction(u.progress)&&(u.progress=null),u.complete&&!f.isFunction(u.complete)&&(u.complete=null),u.display!==n&&null!==u.display&&(u.display=u.display.toString().toLowerCase(),"auto"===u.display&&(u.display=v.CSS.Values.getDisplayType(o))),u.visibility!==n&&null!==u.visibility&&(u.visibility=u.visibility.toString().toLowerCase()),u.mobileHA=u.mobileHA&&v.State.isMobile&&!v.State.isGingerbread,!1===u.queue?u.delay?setTimeout(t,u.delay):t():d.queue(o,u.queue,function(e,i){return!0===i?(T.promise&&T.resolver(m),!0):(v.velocityQueueEntryFlag=!0,void t())}),""!==u.queue&&"fx"!==u.queue||"inprogress"===d.queue(o)[0]||d.dequeue(o)}var c,h,p,m,b,w,k=arguments[0]&&(arguments[0].p||d.isPlainObject(arguments[0].properties)&&!arguments[0].properties.names||f.isString(arguments[0].properties));if(f.isWrapped(this)?(c=!1,p=0,m=this,h=this):(c=!0,p=1,m=k?arguments[0].elements||arguments[0].e:arguments[0]),m=a(m)){k?(b=arguments[0].properties||arguments[0].p,w=arguments[0].options||arguments[0].o):(b=arguments[p],w=arguments[p+1]);var S=m.length,C=0;if(!/^(stop|finish)$/i.test(b)&&!d.isPlainObject(w)){w={};for(var M=p+1;M<arguments.length;M++)f.isArray(arguments[M])||!/^(fast|normal|slow)$/i.test(arguments[M])&&!/^\d/.test(arguments[M])?f.isString(arguments[M])||f.isArray(arguments[M])?w.easing=arguments[M]:f.isFunction(arguments[M])&&(w.complete=arguments[M]):w.duration=arguments[M]}var P,T={promise:null,resolver:null,rejecter:null};switch(c&&v.Promise&&(T.promise=new v.Promise(function(t,e){T.resolver=t,T.rejecter=e})),b){case"scroll":P="scroll";break;case"reverse":P="reverse";break;case"finish":case"stop":d.each(m,function(t,e){r(e)&&r(e).delayTimer&&(clearTimeout(r(e).delayTimer.setTimeout),r(e).delayTimer.next&&r(e).delayTimer.next(),delete r(e).delayTimer)});var A=[];return d.each(v.State.calls,function(t,e){e&&d.each(e[1],function(i,a){var o=w===n?"":w;return!0!==o&&e[2].queue!==o&&(w!==n||!1!==e[2].queue)||void d.each(m,function(i,n){n===a&&((!0===w||f.isString(w))&&(d.each(d.queue(n,f.isString(w)?w:""),function(t,e){f.isFunction(e)&&e(null,!0)}),d.queue(n,f.isString(w)?w:"",[])),"stop"===b?(r(n)&&r(n).tweensContainer&&!1!==o&&d.each(r(n).tweensContainer,function(t,e){e.endValue=e.currentValue}),A.push(t)):"finish"===b&&(e[2].duration=1))})})}),"stop"===b&&(d.each(A,function(t,e){u(e,!0)}),T.promise&&T.resolver(m)),t();default:if(!d.isPlainObject(b)||f.isEmptyObject(b)){if(f.isString(b)&&v.Redirects[b]){var _=(O=d.extend({},w)).duration,I=O.delay||0;return!0===O.backwards&&(m=d.extend(!0,[],m).reverse()),d.each(m,function(t,e){parseFloat(O.stagger)?O.delay=I+parseFloat(O.stagger)*t:f.isFunction(O.stagger)&&(O.delay=I+O.stagger.call(e,t,S)),O.drag&&(O.duration=parseFloat(_)||(/^(callout|transition)/.test(b)?1e3:g),O.duration=Math.max(O.duration*(O.backwards?1-t/S:(t+1)/S),.75*O.duration,200)),v.Redirects[b].call(e,e,O||{},t,S,m,T.promise?T:n)}),t()}var D="Velocity: First argument ("+b+") was not a property map, a known action, or a registered redirect. Aborting.";return T.promise?T.rejecter(new Error(D)):console.log(D),t()}P="start"}var F,O,L={lastParent:null,lastPosition:null,lastFontSize:null,lastPercentToPxWidth:null,lastPercentToPxHeight:null,lastEmToPx:null,remToPx:null,vwToPx:null,vhToPx:null},R=[];if(d.each(m,function(t,e){f.isNode(e)&&o.call(e)}),(O=d.extend({},v.defaults,w)).loop=parseInt(O.loop),F=2*O.loop-1,O.loop)for(var V=0;F>V;V++){var z={delay:O.delay,progress:O.progress};V===F-1&&(z.display=O.display,z.visibility=O.visibility,z.complete=O.complete),x(m,"reverse",z)}return t()}};(v=d.extend(x,v)).animate=x;var w=e.requestAnimationFrame||h;return v.State.isMobile||i.hidden===n||i.addEventListener("visibilitychange",function(){i.hidden?(w=function(t){return setTimeout(function(){t(!0)},16)},l()):w=e.requestAnimationFrame||h}),t.Velocity=v,t!==e&&(t.fn.velocity=x,t.fn.velocity.defaults=v.defaults),d.each(["Down","Up"],function(t,e){v.Redirects["slide"+e]=function(t,i,a,r,o,s){var l=d.extend({},i),u=l.begin,c=l.complete,h={height:"",marginTop:"",marginBottom:"",paddingTop:"",paddingBottom:""},f={};l.display===n&&(l.display="Down"===e?"inline"===v.CSS.Values.getDisplayType(t)?"inline-block":"block":"none"),l.begin=function(){for(var i in u&&u.call(o,o),h){f[i]=t.style[i];var n=v.CSS.getPropertyValue(t,i);h[i]="Down"===e?[n,0]:[0,n]}f.overflow=t.style.overflow,t.style.overflow="hidden"},l.complete=function(){for(var e in f)t.style[e]=f[e];c&&c.call(o,o),s&&s.resolver(o)},v(t,h,l)}}),d.each(["In","Out"],function(t,e){v.Redirects["fade"+e]=function(t,i,a,r,o,s){var l=d.extend({},i),u={opacity:"In"===e?1:0},c=l.complete;l.complete=a!==r-1?l.begin=null:function(){c&&c.call(o,o),s&&s.resolver(o)},l.display===n&&(l.display="In"===e?"auto":"none"),v(this,u,l)}}),v}jQuery.fn.velocity=jQuery.fn.animate}(window.jQuery||window.Zepto||window,window,document)})),function(t){if(true)module.exports=t();else if("function"==typeof define&&define.amd)define([],t);else{("undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this).Chart=t()}}(function(){return function(){return function t(e,i,n){function a(o,s){if(!i[o]){if(!e[o]){var l="function"==typeof require&&require;if(!s&&l)return require(o,!0);if(r)return r(o,!0);var u=new Error("Cannot find module '"+o+"'");throw u.code="MODULE_NOT_FOUND",u}var d=i[o]={exports:{}};e[o][0].call(d.exports,function(t){return a(e[o][1][t]||t)},d,d.exports,t,e,i,n)}return i[o].exports}for(var r="function"==typeof require&&require,o=0;o<n.length;o++)a(n[o]);return a}}()({1:[function(t,e,i){},{}],2:[function(t,e,i){var n=t(6);function a(t){if(t){var e=[0,0,0],i=1,a=t.match(/^#([a-fA-F0-9]{3})$/i);if(a){a=a[1];for(var r=0;r<e.length;r++)e[r]=parseInt(a[r]+a[r],16)}else if(a=t.match(/^#([a-fA-F0-9]{6})$/i)){a=a[1];for(r=0;r<e.length;r++)e[r]=parseInt(a.slice(2*r,2*r+2),16)}else if(a=t.match(/^rgba?\(\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/i)){for(r=0;r<e.length;r++)e[r]=parseInt(a[r+1]);i=parseFloat(a[4])}else if(a=t.match(/^rgba?\(\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/i)){for(r=0;r<e.length;r++)e[r]=Math.round(2.55*parseFloat(a[r+1]));i=parseFloat(a[4])}else if(a=t.match(/(\w+)/)){if("transparent"==a[1])return[0,0,0,0];if(!(e=n[a[1]]))return}for(r=0;r<e.length;r++)e[r]=d(e[r],0,255);return i=i||0==i?d(i,0,1):1,e[3]=i,e}}function r(t){if(t){var e=t.match(/^hsla?\(\s*([+-]?\d+)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)/);if(e){var i=parseFloat(e[4]);return[d(parseInt(e[1]),0,360),d(parseFloat(e[2]),0,100),d(parseFloat(e[3]),0,100),d(isNaN(i)?1:i,0,1)]}}}function o(t){if(t){var e=t.match(/^hwb\(\s*([+-]?\d+)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)/);if(e){var i=parseFloat(e[4]);return[d(parseInt(e[1]),0,360),d(parseFloat(e[2]),0,100),d(parseFloat(e[3]),0,100),d(isNaN(i)?1:i,0,1)]}}}function s(t,e){return void 0===e&&(e=void 0!==t[3]?t[3]:1),"rgba("+t[0]+", "+t[1]+", "+t[2]+", "+e+")"}function l(t,e){return"rgba("+Math.round(t[0]/255*100)+"%, "+Math.round(t[1]/255*100)+"%, "+Math.round(t[2]/255*100)+"%, "+(e||t[3]||1)+")"}function u(t,e){return void 0===e&&(e=void 0!==t[3]?t[3]:1),"hsla("+t[0]+", "+t[1]+"%, "+t[2]+"%, "+e+")"}function d(t,e,i){return Math.min(Math.max(e,t),i)}function c(t){var e=t.toString(16).toUpperCase();return e.length<2?"0"+e:e}e.exports={getRgba:a,getHsla:r,getRgb:function(t){var e=a(t);return e&&e.slice(0,3)},getHsl:function(t){var e=r(t);return e&&e.slice(0,3)},getHwb:o,getAlpha:function(t){var e=a(t);if(e)return e[3];if(e=r(t))return e[3];if(e=o(t))return e[3]},hexString:function(t){return"#"+c(t[0])+c(t[1])+c(t[2])},rgbString:function(t,e){if(e<1||t[3]&&t[3]<1)return s(t,e);return"rgb("+t[0]+", "+t[1]+", "+t[2]+")"},rgbaString:s,percentString:function(t,e){if(e<1||t[3]&&t[3]<1)return l(t,e);var i=Math.round(t[0]/255*100),n=Math.round(t[1]/255*100),a=Math.round(t[2]/255*100);return"rgb("+i+"%, "+n+"%, "+a+"%)"},percentaString:l,hslString:function(t,e){if(e<1||t[3]&&t[3]<1)return u(t,e);return"hsl("+t[0]+", "+t[1]+"%, "+t[2]+"%)"},hslaString:u,hwbString:function(t,e){void 0===e&&(e=void 0!==t[3]?t[3]:1);return"hwb("+t[0]+", "+t[1]+"%, "+t[2]+"%"+(void 0!==e&&1!==e?", "+e:"")+")"},keyword:function(t){return h[t.slice(0,3)]}};var h={};for(var f in n)h[n[f]]=f},{6:6}],3:[function(t,e,i){var n=t(5),a=t(2),r=function(t){return t instanceof r?t:this instanceof r?(this.valid=!1,this.values={rgb:[0,0,0],hsl:[0,0,0],hsv:[0,0,0],hwb:[0,0,0],cmyk:[0,0,0,0],alpha:1},void("string"==typeof t?(e=a.getRgba(t))?this.setValues("rgb",e):(e=a.getHsla(t))?this.setValues("hsl",e):(e=a.getHwb(t))&&this.setValues("hwb",e):"object"==typeof t&&(void 0!==(e=t).r||void 0!==e.red?this.setValues("rgb",e):void 0!==e.l||void 0!==e.lightness?this.setValues("hsl",e):void 0!==e.v||void 0!==e.value?this.setValues("hsv",e):void 0!==e.w||void 0!==e.whiteness?this.setValues("hwb",e):void 0===e.c&&void 0===e.cyan||this.setValues("cmyk",e)))):new r(t);var e};r.prototype={isValid:function(){return this.valid},rgb:function(){return this.setSpace("rgb",arguments)},hsl:function(){return this.setSpace("hsl",arguments)},hsv:function(){return this.setSpace("hsv",arguments)},hwb:function(){return this.setSpace("hwb",arguments)},cmyk:function(){return this.setSpace("cmyk",arguments)},rgbArray:function(){return this.values.rgb},hslArray:function(){return this.values.hsl},hsvArray:function(){return this.values.hsv},hwbArray:function(){var t=this.values;return 1!==t.alpha?t.hwb.concat([t.alpha]):t.hwb},cmykArray:function(){return this.values.cmyk},rgbaArray:function(){var t=this.values;return t.rgb.concat([t.alpha])},hslaArray:function(){var t=this.values;return t.hsl.concat([t.alpha])},alpha:function(t){return void 0===t?this.values.alpha:(this.setValues("alpha",t),this)},red:function(t){return this.setChannel("rgb",0,t)},green:function(t){return this.setChannel("rgb",1,t)},blue:function(t){return this.setChannel("rgb",2,t)},hue:function(t){return t&&(t=(t%=360)<0?360+t:t),this.setChannel("hsl",0,t)},saturation:function(t){return this.setChannel("hsl",1,t)},lightness:function(t){return this.setChannel("hsl",2,t)},saturationv:function(t){return this.setChannel("hsv",1,t)},whiteness:function(t){return this.setChannel("hwb",1,t)},blackness:function(t){return this.setChannel("hwb",2,t)},value:function(t){return this.setChannel("hsv",2,t)},cyan:function(t){return this.setChannel("cmyk",0,t)},magenta:function(t){return this.setChannel("cmyk",1,t)},yellow:function(t){return this.setChannel("cmyk",2,t)},black:function(t){return this.setChannel("cmyk",3,t)},hexString:function(){return a.hexString(this.values.rgb)},rgbString:function(){return a.rgbString(this.values.rgb,this.values.alpha)},rgbaString:function(){return a.rgbaString(this.values.rgb,this.values.alpha)},percentString:function(){return a.percentString(this.values.rgb,this.values.alpha)},hslString:function(){return a.hslString(this.values.hsl,this.values.alpha)},hslaString:function(){return a.hslaString(this.values.hsl,this.values.alpha)},hwbString:function(){return a.hwbString(this.values.hwb,this.values.alpha)},keyword:function(){return a.keyword(this.values.rgb,this.values.alpha)},rgbNumber:function(){var t=this.values.rgb;return t[0]<<16|t[1]<<8|t[2]},luminosity:function(){for(var t=this.values.rgb,e=[],i=0;i<t.length;i++){var n=t[i]/255;e[i]=n<=.03928?n/12.92:Math.pow((n+.055)/1.055,2.4)}return.2126*e[0]+.7152*e[1]+.0722*e[2]},contrast:function(t){var e=this.luminosity(),i=t.luminosity();return e>i?(e+.05)/(i+.05):(i+.05)/(e+.05)},level:function(t){var e=this.contrast(t);return e>=7.1?"AAA":e>=4.5?"AA":""},dark:function(){var t=this.values.rgb;return(299*t[0]+587*t[1]+114*t[2])/1e3<128},light:function(){return!this.dark()},negate:function(){for(var t=[],e=0;e<3;e++)t[e]=255-this.values.rgb[e];return this.setValues("rgb",t),this},lighten:function(t){var e=this.values.hsl;return e[2]+=e[2]*t,this.setValues("hsl",e),this},darken:function(t){var e=this.values.hsl;return e[2]-=e[2]*t,this.setValues("hsl",e),this},saturate:function(t){var e=this.values.hsl;return e[1]+=e[1]*t,this.setValues("hsl",e),this},desaturate:function(t){var e=this.values.hsl;return e[1]-=e[1]*t,this.setValues("hsl",e),this},whiten:function(t){var e=this.values.hwb;return e[1]+=e[1]*t,this.setValues("hwb",e),this},blacken:function(t){var e=this.values.hwb;return e[2]+=e[2]*t,this.setValues("hwb",e),this},greyscale:function(){var t=this.values.rgb,e=.3*t[0]+.59*t[1]+.11*t[2];return this.setValues("rgb",[e,e,e]),this},clearer:function(t){var e=this.values.alpha;return this.setValues("alpha",e-e*t),this},opaquer:function(t){var e=this.values.alpha;return this.setValues("alpha",e+e*t),this},rotate:function(t){var e=this.values.hsl,i=(e[0]+t)%360;return e[0]=i<0?360+i:i,this.setValues("hsl",e),this},mix:function(t,e){var i=t,n=void 0===e?.5:e,a=2*n-1,r=this.alpha()-i.alpha(),o=((a*r==-1?a:(a+r)/(1+a*r))+1)/2,s=1-o;return this.rgb(o*this.red()+s*i.red(),o*this.green()+s*i.green(),o*this.blue()+s*i.blue()).alpha(this.alpha()*n+i.alpha()*(1-n))},toJSON:function(){return this.rgb()},clone:function(){var t,e,i=new r,n=this.values,a=i.values;for(var o in n)n.hasOwnProperty(o)&&(t=n[o],"[object Array]"===(e={}.toString.call(t))?a[o]=t.slice(0):"[object Number]"===e?a[o]=t:console.error("unexpected color value:",t));return i}},r.prototype.spaces={rgb:["red","green","blue"],hsl:["hue","saturation","lightness"],hsv:["hue","saturation","value"],hwb:["hue","whiteness","blackness"],cmyk:["cyan","magenta","yellow","black"]},r.prototype.maxes={rgb:[255,255,255],hsl:[360,100,100],hsv:[360,100,100],hwb:[360,100,100],cmyk:[100,100,100,100]},r.prototype.getValues=function(t){for(var e=this.values,i={},n=0;n<t.length;n++)i[t.charAt(n)]=e[t][n];return 1!==e.alpha&&(i.a=e.alpha),i},r.prototype.setValues=function(t,e){var i,a,r=this.values,o=this.spaces,s=this.maxes,l=1;if(this.valid=!0,"alpha"===t)l=e;else if(e.length)r[t]=e.slice(0,t.length),l=e[t.length];else if(void 0!==e[t.charAt(0)]){for(i=0;i<t.length;i++)r[t][i]=e[t.charAt(i)];l=e.a}else if(void 0!==e[o[t][0]]){var u=o[t];for(i=0;i<t.length;i++)r[t][i]=e[u[i]];l=e.alpha}if(r.alpha=Math.max(0,Math.min(1,void 0===l?r.alpha:l)),"alpha"===t)return!1;for(i=0;i<t.length;i++)a=Math.max(0,Math.min(s[t][i],r[t][i])),r[t][i]=Math.round(a);for(var d in o)d!==t&&(r[d]=n[t][d](r[t]));return!0},r.prototype.setSpace=function(t,e){var i=e[0];return void 0===i?this.getValues(t):("number"==typeof i&&(i=Array.prototype.slice.call(e)),this.setValues(t,i),this)},r.prototype.setChannel=function(t,e,i){var n=this.values[t];return void 0===i?n[e]:i===n[e]?this:(n[e]=i,this.setValues(t,n),this)},"undefined"!=typeof window&&(window.Color=r),e.exports=r},{2:2,5:5}],4:[function(t,e,i){function n(t){var e,i,n=t[0]/255,a=t[1]/255,r=t[2]/255,o=Math.min(n,a,r),s=Math.max(n,a,r),l=s-o;return s==o?e=0:n==s?e=(a-r)/l:a==s?e=2+(r-n)/l:r==s&&(e=4+(n-a)/l),(e=Math.min(60*e,360))<0&&(e+=360),i=(o+s)/2,[e,100*(s==o?0:i<=.5?l/(s+o):l/(2-s-o)),100*i]}function a(t){var e,i,n=t[0],a=t[1],r=t[2],o=Math.min(n,a,r),s=Math.max(n,a,r),l=s-o;return i=0==s?0:l/s*1e3/10,s==o?e=0:n==s?e=(a-r)/l:a==s?e=2+(r-n)/l:r==s&&(e=4+(n-a)/l),(e=Math.min(60*e,360))<0&&(e+=360),[e,i,s/255*1e3/10]}function o(t){var e=t[0],i=t[1],a=t[2];return[n(t)[0],100*(1/255*Math.min(e,Math.min(i,a))),100*(a=1-1/255*Math.max(e,Math.max(i,a)))]}function s(t){var e,i=t[0]/255,n=t[1]/255,a=t[2]/255;return[100*((1-i-(e=Math.min(1-i,1-n,1-a)))/(1-e)||0),100*((1-n-e)/(1-e)||0),100*((1-a-e)/(1-e)||0),100*e]}function l(t){return M[JSON.stringify(t)]}function u(t){var e=t[0]/255,i=t[1]/255,n=t[2]/255;return[100*(.4124*(e=e>.04045?Math.pow((e+.055)/1.055,2.4):e/12.92)+.3576*(i=i>.04045?Math.pow((i+.055)/1.055,2.4):i/12.92)+.1805*(n=n>.04045?Math.pow((n+.055)/1.055,2.4):n/12.92)),100*(.2126*e+.7152*i+.0722*n),100*(.0193*e+.1192*i+.9505*n)]}function d(t){var e=u(t),i=e[0],n=e[1],a=e[2];return n/=100,a/=108.883,i=(i/=95.047)>.008856?Math.pow(i,1/3):7.787*i+16/116,[116*(n=n>.008856?Math.pow(n,1/3):7.787*n+16/116)-16,500*(i-n),200*(n-(a=a>.008856?Math.pow(a,1/3):7.787*a+16/116))]}function c(t){var e,i,n,a,r,o=t[0]/360,s=t[1]/100,l=t[2]/100;if(0==s)return[r=255*l,r,r];e=2*l-(i=l<.5?l*(1+s):l+s-l*s),a=[0,0,0];for(var u=0;u<3;u++)(n=o+1/3*-(u-1))<0&&n++,n>1&&n--,r=6*n<1?e+6*(i-e)*n:2*n<1?i:3*n<2?e+(i-e)*(2/3-n)*6:e,a[u]=255*r;return a}function h(t){var e=t[0]/60,i=t[1]/100,n=t[2]/100,a=Math.floor(e)%6,r=e-Math.floor(e),o=255*n*(1-i),s=255*n*(1-i*r),l=255*n*(1-i*(1-r));n*=255;switch(a){case 0:return[n,l,o];case 1:return[s,n,o];case 2:return[o,n,l];case 3:return[o,s,n];case 4:return[l,o,n];case 5:return[n,o,s]}}function f(t){var e,i,n,a,o=t[0]/360,s=t[1]/100,l=t[2]/100,u=s+l;switch(u>1&&(s/=u,l/=u),i=1-l,n=6*o-(e=Math.floor(6*o)),0!=(1&e)&&(n=1-n),a=s+n*(i-s),e){default:case 6:case 0:r=i,g=a,b=s;break;case 1:r=a,g=i,b=s;break;case 2:r=s,g=i,b=a;break;case 3:r=s,g=a,b=i;break;case 4:r=a,g=s,b=i;break;case 5:r=i,g=s,b=a}return[255*r,255*g,255*b]}function p(t){var e=t[0]/100,i=t[1]/100,n=t[2]/100,a=t[3]/100;return[255*(1-Math.min(1,e*(1-a)+a)),255*(1-Math.min(1,i*(1-a)+a)),255*(1-Math.min(1,n*(1-a)+a))]}function m(t){var e,i,n,a=t[0]/100,r=t[1]/100,o=t[2]/100;return i=-.9689*a+1.8758*r+.0415*o,n=.0557*a+-.204*r+1.057*o,e=(e=3.2406*a+-1.5372*r+-.4986*o)>.0031308?1.055*Math.pow(e,1/2.4)-.055:e*=12.92,i=i>.0031308?1.055*Math.pow(i,1/2.4)-.055:i*=12.92,n=n>.0031308?1.055*Math.pow(n,1/2.4)-.055:n*=12.92,[255*(e=Math.min(Math.max(0,e),1)),255*(i=Math.min(Math.max(0,i),1)),255*(n=Math.min(Math.max(0,n),1))]}function v(t){var e=t[0],i=t[1],n=t[2];return i/=100,n/=108.883,e=(e/=95.047)>.008856?Math.pow(e,1/3):7.787*e+16/116,[116*(i=i>.008856?Math.pow(i,1/3):7.787*i+16/116)-16,500*(e-i),200*(i-(n=n>.008856?Math.pow(n,1/3):7.787*n+16/116))]}function y(t){var e,i,n,a,r=t[0],o=t[1],s=t[2];return r<=8?a=(i=100*r/903.3)/100*7.787+16/116:(i=100*Math.pow((r+16)/116,3),a=Math.pow(i/100,1/3)),[e=e/95.047<=.008856?e=95.047*(o/500+a-16/116)/7.787:95.047*Math.pow(o/500+a,3),i,n=n/108.883<=.008859?n=108.883*(a-s/200-16/116)/7.787:108.883*Math.pow(a-s/200,3)]}function x(t){var e,i=t[0],n=t[1],a=t[2];return(e=360*Math.atan2(a,n)/2/Math.PI)<0&&(e+=360),[i,Math.sqrt(n*n+a*a),e]}function w(t){return m(y(t))}function k(t){var e,i=t[0],n=t[1];return e=t[2]/360*2*Math.PI,[i,n*Math.cos(e),n*Math.sin(e)]}function S(t){return C[t]}e.exports={rgb2hsl:n,rgb2hsv:a,rgb2hwb:o,rgb2cmyk:s,rgb2keyword:l,rgb2xyz:u,rgb2lab:d,rgb2lch:function(t){return x(d(t))},hsl2rgb:c,hsl2hsv:function(t){var e=t[0],i=t[1]/100,n=t[2]/100;if(0===n)return[0,0,0];return[e,100*(2*(i*=(n*=2)<=1?n:2-n)/(n+i)),100*((n+i)/2)]},hsl2hwb:function(t){return o(c(t))},hsl2cmyk:function(t){return s(c(t))},hsl2keyword:function(t){return l(c(t))},hsv2rgb:h,hsv2hsl:function(t){var e,i,n=t[0],a=t[1]/100,r=t[2]/100;return e=a*r,[n,100*(e=(e/=(i=(2-a)*r)<=1?i:2-i)||0),100*(i/=2)]},hsv2hwb:function(t){return o(h(t))},hsv2cmyk:function(t){return s(h(t))},hsv2keyword:function(t){return l(h(t))},hwb2rgb:f,hwb2hsl:function(t){return n(f(t))},hwb2hsv:function(t){return a(f(t))},hwb2cmyk:function(t){return s(f(t))},hwb2keyword:function(t){return l(f(t))},cmyk2rgb:p,cmyk2hsl:function(t){return n(p(t))},cmyk2hsv:function(t){return a(p(t))},cmyk2hwb:function(t){return o(p(t))},cmyk2keyword:function(t){return l(p(t))},keyword2rgb:S,keyword2hsl:function(t){return n(S(t))},keyword2hsv:function(t){return a(S(t))},keyword2hwb:function(t){return o(S(t))},keyword2cmyk:function(t){return s(S(t))},keyword2lab:function(t){return d(S(t))},keyword2xyz:function(t){return u(S(t))},xyz2rgb:m,xyz2lab:v,xyz2lch:function(t){return x(v(t))},lab2xyz:y,lab2rgb:w,lab2lch:x,lch2lab:k,lch2xyz:function(t){return y(k(t))},lch2rgb:function(t){return w(k(t))}};var C={aliceblue:[240,248,255],antiquewhite:[250,235,215],aqua:[0,255,255],aquamarine:[127,255,212],azure:[240,255,255],beige:[245,245,220],bisque:[255,228,196],black:[0,0,0],blanchedalmond:[255,235,205],blue:[0,0,255],blueviolet:[138,43,226],brown:[165,42,42],burlywood:[222,184,135],cadetblue:[95,158,160],chartreuse:[127,255,0],chocolate:[210,105,30],coral:[255,127,80],cornflowerblue:[100,149,237],cornsilk:[255,248,220],crimson:[220,20,60],cyan:[0,255,255],darkblue:[0,0,139],darkcyan:[0,139,139],darkgoldenrod:[184,134,11],darkgray:[169,169,169],darkgreen:[0,100,0],darkgrey:[169,169,169],darkkhaki:[189,183,107],darkmagenta:[139,0,139],darkolivegreen:[85,107,47],darkorange:[255,140,0],darkorchid:[153,50,204],darkred:[139,0,0],darksalmon:[233,150,122],darkseagreen:[143,188,143],darkslateblue:[72,61,139],darkslategray:[47,79,79],darkslategrey:[47,79,79],darkturquoise:[0,206,209],darkviolet:[148,0,211],deeppink:[255,20,147],deepskyblue:[0,191,255],dimgray:[105,105,105],dimgrey:[105,105,105],dodgerblue:[30,144,255],firebrick:[178,34,34],floralwhite:[255,250,240],forestgreen:[34,139,34],fuchsia:[255,0,255],gainsboro:[220,220,220],ghostwhite:[248,248,255],gold:[255,215,0],goldenrod:[218,165,32],gray:[128,128,128],green:[0,128,0],greenyellow:[173,255,47],grey:[128,128,128],honeydew:[240,255,240],hotpink:[255,105,180],indianred:[205,92,92],indigo:[75,0,130],ivory:[255,255,240],khaki:[240,230,140],lavender:[230,230,250],lavenderblush:[255,240,245],lawngreen:[124,252,0],lemonchiffon:[255,250,205],lightblue:[173,216,230],lightcoral:[240,128,128],lightcyan:[224,255,255],lightgoldenrodyellow:[250,250,210],lightgray:[211,211,211],lightgreen:[144,238,144],lightgrey:[211,211,211],lightpink:[255,182,193],lightsalmon:[255,160,122],lightseagreen:[32,178,170],lightskyblue:[135,206,250],lightslategray:[119,136,153],lightslategrey:[119,136,153],lightsteelblue:[176,196,222],lightyellow:[255,255,224],lime:[0,255,0],limegreen:[50,205,50],linen:[250,240,230],magenta:[255,0,255],maroon:[128,0,0],mediumaquamarine:[102,205,170],mediumblue:[0,0,205],mediumorchid:[186,85,211],mediumpurple:[147,112,219],mediumseagreen:[60,179,113],mediumslateblue:[123,104,238],mediumspringgreen:[0,250,154],mediumturquoise:[72,209,204],mediumvioletred:[199,21,133],midnightblue:[25,25,112],mintcream:[245,255,250],mistyrose:[255,228,225],moccasin:[255,228,181],navajowhite:[255,222,173],navy:[0,0,128],oldlace:[253,245,230],olive:[128,128,0],olivedrab:[107,142,35],orange:[255,165,0],orangered:[255,69,0],orchid:[218,112,214],palegoldenrod:[238,232,170],palegreen:[152,251,152],paleturquoise:[175,238,238],palevioletred:[219,112,147],papayawhip:[255,239,213],peachpuff:[255,218,185],peru:[205,133,63],pink:[255,192,203],plum:[221,160,221],powderblue:[176,224,230],purple:[128,0,128],rebeccapurple:[102,51,153],red:[255,0,0],rosybrown:[188,143,143],royalblue:[65,105,225],saddlebrown:[139,69,19],salmon:[250,128,114],sandybrown:[244,164,96],seagreen:[46,139,87],seashell:[255,245,238],sienna:[160,82,45],silver:[192,192,192],skyblue:[135,206,235],slateblue:[106,90,205],slategray:[112,128,144],slategrey:[112,128,144],snow:[255,250,250],springgreen:[0,255,127],steelblue:[70,130,180],tan:[210,180,140],teal:[0,128,128],thistle:[216,191,216],tomato:[255,99,71],turquoise:[64,224,208],violet:[238,130,238],wheat:[245,222,179],white:[255,255,255],whitesmoke:[245,245,245],yellow:[255,255,0],yellowgreen:[154,205,50]},M={};for(var P in C)M[JSON.stringify(C[P])]=P},{}],5:[function(t,e,i){var n=t(4),a=function(){return new u};for(var r in n){a[r+"Raw"]=function(t){return function(e){return"number"==typeof e&&(e=Array.prototype.slice.call(arguments)),n[t](e)}}(r);var o=/(\w+)2(\w+)/.exec(r),s=o[1],l=o[2];(a[s]=a[s]||{})[l]=a[r]=function(t){return function(e){"number"==typeof e&&(e=Array.prototype.slice.call(arguments));var i=n[t](e);if("string"==typeof i||void 0===i)return i;for(var a=0;a<i.length;a++)i[a]=Math.round(i[a]);return i}}(r)}var u=function(){this.convs={}};u.prototype.routeSpace=function(t,e){var i=e[0];return void 0===i?this.getValues(t):("number"==typeof i&&(i=Array.prototype.slice.call(e)),this.setValues(t,i))},u.prototype.setValues=function(t,e){return this.space=t,this.convs={},this.convs[t]=e,this},u.prototype.getValues=function(t){var e=this.convs[t];if(!e){var i=this.space,n=this.convs[i];e=a[i][t](n),this.convs[t]=e}return e},["rgb","hsl","hsv","cmyk","keyword"].forEach(function(t){u.prototype[t]=function(e){return this.routeSpace(t,arguments)}}),e.exports=a},{4:4}],6:[function(t,e,i){"use strict";e.exports={aliceblue:[240,248,255],antiquewhite:[250,235,215],aqua:[0,255,255],aquamarine:[127,255,212],azure:[240,255,255],beige:[245,245,220],bisque:[255,228,196],black:[0,0,0],blanchedalmond:[255,235,205],blue:[0,0,255],blueviolet:[138,43,226],brown:[165,42,42],burlywood:[222,184,135],cadetblue:[95,158,160],chartreuse:[127,255,0],chocolate:[210,105,30],coral:[255,127,80],cornflowerblue:[100,149,237],cornsilk:[255,248,220],crimson:[220,20,60],cyan:[0,255,255],darkblue:[0,0,139],darkcyan:[0,139,139],darkgoldenrod:[184,134,11],darkgray:[169,169,169],darkgreen:[0,100,0],darkgrey:[169,169,169],darkkhaki:[189,183,107],darkmagenta:[139,0,139],darkolivegreen:[85,107,47],darkorange:[255,140,0],darkorchid:[153,50,204],darkred:[139,0,0],darksalmon:[233,150,122],darkseagreen:[143,188,143],darkslateblue:[72,61,139],darkslategray:[47,79,79],darkslategrey:[47,79,79],darkturquoise:[0,206,209],darkviolet:[148,0,211],deeppink:[255,20,147],deepskyblue:[0,191,255],dimgray:[105,105,105],dimgrey:[105,105,105],dodgerblue:[30,144,255],firebrick:[178,34,34],floralwhite:[255,250,240],forestgreen:[34,139,34],fuchsia:[255,0,255],gainsboro:[220,220,220],ghostwhite:[248,248,255],gold:[255,215,0],goldenrod:[218,165,32],gray:[128,128,128],green:[0,128,0],greenyellow:[173,255,47],grey:[128,128,128],honeydew:[240,255,240],hotpink:[255,105,180],indianred:[205,92,92],indigo:[75,0,130],ivory:[255,255,240],khaki:[240,230,140],lavender:[230,230,250],lavenderblush:[255,240,245],lawngreen:[124,252,0],lemonchiffon:[255,250,205],lightblue:[173,216,230],lightcoral:[240,128,128],lightcyan:[224,255,255],lightgoldenrodyellow:[250,250,210],lightgray:[211,211,211],lightgreen:[144,238,144],lightgrey:[211,211,211],lightpink:[255,182,193],lightsalmon:[255,160,122],lightseagreen:[32,178,170],lightskyblue:[135,206,250],lightslategray:[119,136,153],lightslategrey:[119,136,153],lightsteelblue:[176,196,222],lightyellow:[255,255,224],lime:[0,255,0],limegreen:[50,205,50],linen:[250,240,230],magenta:[255,0,255],maroon:[128,0,0],mediumaquamarine:[102,205,170],mediumblue:[0,0,205],mediumorchid:[186,85,211],mediumpurple:[147,112,219],mediumseagreen:[60,179,113],mediumslateblue:[123,104,238],mediumspringgreen:[0,250,154],mediumturquoise:[72,209,204],mediumvioletred:[199,21,133],midnightblue:[25,25,112],mintcream:[245,255,250],mistyrose:[255,228,225],moccasin:[255,228,181],navajowhite:[255,222,173],navy:[0,0,128],oldlace:[253,245,230],olive:[128,128,0],olivedrab:[107,142,35],orange:[255,165,0],orangered:[255,69,0],orchid:[218,112,214],palegoldenrod:[238,232,170],palegreen:[152,251,152],paleturquoise:[175,238,238],palevioletred:[219,112,147],papayawhip:[255,239,213],peachpuff:[255,218,185],peru:[205,133,63],pink:[255,192,203],plum:[221,160,221],powderblue:[176,224,230],purple:[128,0,128],rebeccapurple:[102,51,153],red:[255,0,0],rosybrown:[188,143,143],royalblue:[65,105,225],saddlebrown:[139,69,19],salmon:[250,128,114],sandybrown:[244,164,96],seagreen:[46,139,87],seashell:[255,245,238],sienna:[160,82,45],silver:[192,192,192],skyblue:[135,206,235],slateblue:[106,90,205],slategray:[112,128,144],slategrey:[112,128,144],snow:[255,250,250],springgreen:[0,255,127],steelblue:[70,130,180],tan:[210,180,140],teal:[0,128,128],thistle:[216,191,216],tomato:[255,99,71],turquoise:[64,224,208],violet:[238,130,238],wheat:[245,222,179],white:[255,255,255],whitesmoke:[245,245,245],yellow:[255,255,0],yellowgreen:[154,205,50]}},{}],7:[function(t,e,i){var n=t(30)();n.helpers=t(46),t(28)(n),n.Animation=t(22),n.animationService=t(23),n.defaults=t(26),n.Element=t(27),n.elements=t(41),n.Interaction=t(29),n.layouts=t(31),n.platform=t(49),n.plugins=t(32),n.Scale=t(33),n.scaleService=t(34),n.Ticks=t(35),n.Tooltip=t(36),t(24)(n),t(25)(n),t(56)(n),t(54)(n),t(55)(n),t(57)(n),t(58)(n),t(59)(n),t(15)(n),t(16)(n),t(17)(n),t(18)(n),t(19)(n),t(20)(n),t(21)(n),t(8)(n),t(9)(n),t(10)(n),t(11)(n),t(12)(n),t(13)(n),t(14)(n);var a=t(50);for(var r in a)a.hasOwnProperty(r)&&n.plugins.register(a[r]);n.platform.initialize(),e.exports=n,"undefined"!=typeof window&&(window.Chart=n),n.Legend=a.legend._element,n.Title=a.title._element,n.pluginService=n.plugins,n.PluginBase=n.Element.extend({}),n.canvasHelpers=n.helpers.canvas,n.layoutService=n.layouts},{10:10,11:11,12:12,13:13,14:14,15:15,16:16,17:17,18:18,19:19,20:20,21:21,22:22,23:23,24:24,25:25,26:26,27:27,28:28,29:29,30:30,31:31,32:32,33:33,34:34,35:35,36:36,41:41,46:46,49:49,50:50,54:54,55:55,56:56,57:57,58:58,59:59,8:8,9:9}],8:[function(t,e,i){"use strict";e.exports=function(t){t.Bar=function(e,i){return i.type="bar",new t(e,i)}}},{}],9:[function(t,e,i){"use strict";e.exports=function(t){t.Bubble=function(e,i){return i.type="bubble",new t(e,i)}}},{}],10:[function(t,e,i){"use strict";e.exports=function(t){t.Doughnut=function(e,i){return i.type="doughnut",new t(e,i)}}},{}],11:[function(t,e,i){"use strict";e.exports=function(t){t.Line=function(e,i){return i.type="line",new t(e,i)}}},{}],12:[function(t,e,i){"use strict";e.exports=function(t){t.PolarArea=function(e,i){return i.type="polarArea",new t(e,i)}}},{}],13:[function(t,e,i){"use strict";e.exports=function(t){t.Radar=function(e,i){return i.type="radar",new t(e,i)}}},{}],14:[function(t,e,i){"use strict";e.exports=function(t){t.Scatter=function(e,i){return i.type="scatter",new t(e,i)}}},{}],15:[function(t,e,i){"use strict";var n=t(26),a=t(41),r=t(46);n._set("bar",{hover:{mode:"label"},scales:{xAxes:[{type:"category",categoryPercentage:.8,barPercentage:.9,offset:!0,gridLines:{offsetGridLines:!0}}],yAxes:[{type:"linear"}]}}),n._set("horizontalBar",{hover:{mode:"index",axis:"y"},scales:{xAxes:[{type:"linear",position:"bottom"}],yAxes:[{position:"left",type:"category",categoryPercentage:.8,barPercentage:.9,offset:!0,gridLines:{offsetGridLines:!0}}]},elements:{rectangle:{borderSkipped:"left"}},tooltips:{callbacks:{title:function(t,e){var i="";return t.length>0&&(t[0].yLabel?i=t[0].yLabel:e.labels.length>0&&t[0].index<e.labels.length&&(i=e.labels[t[0].index])),i},label:function(t,e){return(e.datasets[t.datasetIndex].label||"")+": "+t.xLabel}},mode:"index",axis:"y"}}),e.exports=function(t){t.controllers.bar=t.DatasetController.extend({dataElementType:a.Rectangle,initialize:function(){var e;t.DatasetController.prototype.initialize.apply(this,arguments),(e=this.getMeta()).stack=this.getDataset().stack,e.bar=!0},update:function(t){var e,i,n=this.getMeta().data;for(this._ruler=this.getRuler(),e=0,i=n.length;e<i;++e)this.updateElement(n[e],e,t)},updateElement:function(t,e,i){var n=this,a=n.chart,o=n.getMeta(),s=n.getDataset(),l=t.custom||{},u=a.options.elements.rectangle;t._xScale=n.getScaleForId(o.xAxisID),t._yScale=n.getScaleForId(o.yAxisID),t._datasetIndex=n.index,t._index=e,t._model={datasetLabel:s.label,label:a.data.labels[e],borderSkipped:l.borderSkipped?l.borderSkipped:u.borderSkipped,backgroundColor:l.backgroundColor?l.backgroundColor:r.valueAtIndexOrDefault(s.backgroundColor,e,u.backgroundColor),borderColor:l.borderColor?l.borderColor:r.valueAtIndexOrDefault(s.borderColor,e,u.borderColor),borderWidth:l.borderWidth?l.borderWidth:r.valueAtIndexOrDefault(s.borderWidth,e,u.borderWidth)},n.updateElementGeometry(t,e,i),t.pivot()},updateElementGeometry:function(t,e,i){var n=this,a=t._model,r=n.getValueScale(),o=r.getBasePixel(),s=r.isHorizontal(),l=n._ruler||n.getRuler(),u=n.calculateBarValuePixels(n.index,e),d=n.calculateBarIndexPixels(n.index,e,l);a.horizontal=s,a.base=i?o:u.base,a.x=s?i?o:u.head:d.center,a.y=s?d.center:i?o:u.head,a.height=s?d.size:void 0,a.width=s?void 0:d.size},getValueScaleId:function(){return this.getMeta().yAxisID},getIndexScaleId:function(){return this.getMeta().xAxisID},getValueScale:function(){return this.getScaleForId(this.getValueScaleId())},getIndexScale:function(){return this.getScaleForId(this.getIndexScaleId())},_getStacks:function(t){var e,i,n=this.chart,a=this.getIndexScale().options.stacked,r=void 0===t?n.data.datasets.length:t+1,o=[];for(e=0;e<r;++e)(i=n.getDatasetMeta(e)).bar&&n.isDatasetVisible(e)&&(!1===a||!0===a&&-1===o.indexOf(i.stack)||void 0===a&&(void 0===i.stack||-1===o.indexOf(i.stack)))&&o.push(i.stack);return o},getStackCount:function(){return this._getStacks().length},getStackIndex:function(t,e){var i=this._getStacks(t),n=void 0!==e?i.indexOf(e):-1;return-1===n?i.length-1:n},getRuler:function(){var t,e,i=this.getIndexScale(),n=this.getStackCount(),a=this.index,o=i.isHorizontal(),s=o?i.left:i.top,l=s+(o?i.width:i.height),u=[];for(t=0,e=this.getMeta().data.length;t<e;++t)u.push(i.getPixelForValue(null,t,a));return{min:r.isNullOrUndef(i.options.barThickness)?function(t,e){var i,n,a,r,o=t.isHorizontal()?t.width:t.height,s=t.getTicks();for(a=1,r=e.length;a<r;++a)o=Math.min(o,e[a]-e[a-1]);for(a=0,r=s.length;a<r;++a)n=t.getPixelForTick(a),o=a>0?Math.min(o,n-i):o,i=n;return o}(i,u):-1,pixels:u,start:s,end:l,stackCount:n,scale:i}},calculateBarValuePixels:function(t,e){var i,n,a,r,o,s,l=this.chart,u=this.getMeta(),d=this.getValueScale(),c=l.data.datasets,h=d.getRightValue(c[t].data[e]),f=d.options.stacked,p=u.stack,g=0;if(f||void 0===f&&void 0!==p)for(i=0;i<t;++i)(n=l.getDatasetMeta(i)).bar&&n.stack===p&&n.controller.getValueScaleId()===d.id&&l.isDatasetVisible(i)&&(a=d.getRightValue(c[i].data[e]),(h<0&&a<0||h>=0&&a>0)&&(g+=a));return r=d.getPixelForValue(g),{size:s=((o=d.getPixelForValue(g+h))-r)/2,base:r,head:o,center:o+s/2}},calculateBarIndexPixels:function(t,e,i){var n=i.scale.options,a="flex"===n.barThickness?function(t,e,i){var n,a=e.pixels,r=a[t],o=t>0?a[t-1]:null,s=t<a.length-1?a[t+1]:null,l=i.categoryPercentage;return null===o&&(o=r-(null===s?e.end-r:s-r)),null===s&&(s=r+r-o),n=r-(r-o)/2*l,{chunk:(s-o)/2*l/e.stackCount,ratio:i.barPercentage,start:n}}(e,i,n):function(t,e,i){var n,a,o=i.barThickness,s=e.stackCount,l=e.pixels[t];return r.isNullOrUndef(o)?(n=e.min*i.categoryPercentage,a=i.barPercentage):(n=o*s,a=1),{chunk:n/s,ratio:a,start:l-n/2}}(e,i,n),o=this.getStackIndex(t,this.getMeta().stack),s=a.start+a.chunk*o+a.chunk/2,l=Math.min(r.valueOrDefault(n.maxBarThickness,1/0),a.chunk*a.ratio);return{base:s-l/2,head:s+l/2,center:s,size:l}},draw:function(){var t=this.chart,e=this.getValueScale(),i=this.getMeta().data,n=this.getDataset(),a=i.length,o=0;for(r.canvas.clipArea(t.ctx,t.chartArea);o<a;++o)isNaN(e.getRightValue(n.data[o]))||i[o].draw();r.canvas.unclipArea(t.ctx)}}),t.controllers.horizontalBar=t.controllers.bar.extend({getValueScaleId:function(){return this.getMeta().xAxisID},getIndexScaleId:function(){return this.getMeta().yAxisID}})}},{26:26,41:41,46:46}],16:[function(t,e,i){"use strict";var n=t(26),a=t(41),r=t(46);n._set("bubble",{hover:{mode:"single"},scales:{xAxes:[{type:"linear",position:"bottom",id:"x-axis-0"}],yAxes:[{type:"linear",position:"left",id:"y-axis-0"}]},tooltips:{callbacks:{title:function(){return""},label:function(t,e){var i=e.datasets[t.datasetIndex].label||"",n=e.datasets[t.datasetIndex].data[t.index];return i+": ("+t.xLabel+", "+t.yLabel+", "+n.r+")"}}}}),e.exports=function(t){t.controllers.bubble=t.DatasetController.extend({dataElementType:a.Point,update:function(t){var e=this,i=e.getMeta().data;r.each(i,function(i,n){e.updateElement(i,n,t)})},updateElement:function(t,e,i){var n=this,a=n.getMeta(),r=t.custom||{},o=n.getScaleForId(a.xAxisID),s=n.getScaleForId(a.yAxisID),l=n._resolveElementOptions(t,e),u=n.getDataset().data[e],d=n.index,c=i?o.getPixelForDecimal(.5):o.getPixelForValue("object"==typeof u?u:NaN,e,d),h=i?s.getBasePixel():s.getPixelForValue(u,e,d);t._xScale=o,t._yScale=s,t._options=l,t._datasetIndex=d,t._index=e,t._model={backgroundColor:l.backgroundColor,borderColor:l.borderColor,borderWidth:l.borderWidth,hitRadius:l.hitRadius,pointStyle:l.pointStyle,rotation:l.rotation,radius:i?0:l.radius,skip:r.skip||isNaN(c)||isNaN(h),x:c,y:h},t.pivot()},setHoverStyle:function(t){var e=t._model,i=t._options;t.$previousStyle={backgroundColor:e.backgroundColor,borderColor:e.borderColor,borderWidth:e.borderWidth,radius:e.radius},e.backgroundColor=r.valueOrDefault(i.hoverBackgroundColor,r.getHoverColor(i.backgroundColor)),e.borderColor=r.valueOrDefault(i.hoverBorderColor,r.getHoverColor(i.borderColor)),e.borderWidth=r.valueOrDefault(i.hoverBorderWidth,i.borderWidth),e.radius=i.radius+i.hoverRadius},_resolveElementOptions:function(t,e){var i,n,a,o=this.chart,s=o.data.datasets[this.index],l=t.custom||{},u=o.options.elements.point,d=r.options.resolve,c=s.data[e],h={},f={chart:o,dataIndex:e,dataset:s,datasetIndex:this.index},p=["backgroundColor","borderColor","borderWidth","hoverBackgroundColor","hoverBorderColor","hoverBorderWidth","hoverRadius","hitRadius","pointStyle","rotation"];for(i=0,n=p.length;i<n;++i)h[a=p[i]]=d([l[a],s[a],u[a]],f,e);return h.radius=d([l.radius,c?c.r:void 0,s.radius,u.radius],f,e),h}})}},{26:26,41:41,46:46}],17:[function(t,e,i){"use strict";var n=t(26),a=t(41),r=t(46);n._set("doughnut",{animation:{animateRotate:!0,animateScale:!1},hover:{mode:"single"},legendCallback:function(t){var e=[];e.push('<ul class="'+t.id+'-legend">');var i=t.data,n=i.datasets,a=i.labels;if(n.length)for(var r=0;r<n[0].data.length;++r)e.push('<li><span style="background-color:'+n[0].backgroundColor[r]+'"></span>'),a[r]&&e.push(a[r]),e.push("</li>");return e.push("</ul>"),e.join("")},legend:{labels:{generateLabels:function(t){var e=t.data;return e.labels.length&&e.datasets.length?e.labels.map(function(i,n){var a=t.getDatasetMeta(0),o=e.datasets[0],s=a.data[n],l=s&&s.custom||{},u=r.valueAtIndexOrDefault,d=t.options.elements.arc;return{text:i,fillStyle:l.backgroundColor?l.backgroundColor:u(o.backgroundColor,n,d.backgroundColor),strokeStyle:l.borderColor?l.borderColor:u(o.borderColor,n,d.borderColor),lineWidth:l.borderWidth?l.borderWidth:u(o.borderWidth,n,d.borderWidth),hidden:isNaN(o.data[n])||a.data[n].hidden,index:n}}):[]}},onClick:function(t,e){var i,n,a,r=e.index,o=this.chart;for(i=0,n=(o.data.datasets||[]).length;i<n;++i)(a=o.getDatasetMeta(i)).data[r]&&(a.data[r].hidden=!a.data[r].hidden);o.update()}},cutoutPercentage:50,rotation:-.5*Math.PI,circumference:2*Math.PI,tooltips:{callbacks:{title:function(){return""},label:function(t,e){var i=e.labels[t.index],n=": "+e.datasets[t.datasetIndex].data[t.index];return r.isArray(i)?(i=i.slice())[0]+=n:i+=n,i}}}}),n._set("pie",r.clone(n.doughnut)),n._set("pie",{cutoutPercentage:0}),e.exports=function(t){t.controllers.doughnut=t.controllers.pie=t.DatasetController.extend({dataElementType:a.Arc,linkScales:r.noop,getRingIndex:function(t){for(var e=0,i=0;i<t;++i)this.chart.isDatasetVisible(i)&&++e;return e},update:function(t){var e=this,i=e.chart,n=i.chartArea,a=i.options,o=a.elements.arc,s=n.right-n.left-o.borderWidth,l=n.bottom-n.top-o.borderWidth,u=Math.min(s,l),d={x:0,y:0},c=e.getMeta(),h=a.cutoutPercentage,f=a.circumference;if(f<2*Math.PI){var p=a.rotation%(2*Math.PI),g=(p+=2*Math.PI*(p>=Math.PI?-1:p<-Math.PI?1:0))+f,m={x:Math.cos(p),y:Math.sin(p)},v={x:Math.cos(g),y:Math.sin(g)},b=p<=0&&g>=0||p<=2*Math.PI&&2*Math.PI<=g,y=p<=.5*Math.PI&&.5*Math.PI<=g||p<=2.5*Math.PI&&2.5*Math.PI<=g,x=p<=-Math.PI&&-Math.PI<=g||p<=Math.PI&&Math.PI<=g,w=p<=.5*-Math.PI&&.5*-Math.PI<=g||p<=1.5*Math.PI&&1.5*Math.PI<=g,k=h/100,S={x:x?-1:Math.min(m.x*(m.x<0?1:k),v.x*(v.x<0?1:k)),y:w?-1:Math.min(m.y*(m.y<0?1:k),v.y*(v.y<0?1:k))},C={x:b?1:Math.max(m.x*(m.x>0?1:k),v.x*(v.x>0?1:k)),y:y?1:Math.max(m.y*(m.y>0?1:k),v.y*(v.y>0?1:k))},M={width:.5*(C.x-S.x),height:.5*(C.y-S.y)};u=Math.min(s/M.width,l/M.height),d={x:-.5*(C.x+S.x),y:-.5*(C.y+S.y)}}i.borderWidth=e.getMaxBorderWidth(c.data),i.outerRadius=Math.max((u-i.borderWidth)/2,0),i.innerRadius=Math.max(h?i.outerRadius/100*h:0,0),i.radiusLength=(i.outerRadius-i.innerRadius)/i.getVisibleDatasetCount(),i.offsetX=d.x*i.outerRadius,i.offsetY=d.y*i.outerRadius,c.total=e.calculateTotal(),e.outerRadius=i.outerRadius-i.radiusLength*e.getRingIndex(e.index),e.innerRadius=Math.max(e.outerRadius-i.radiusLength,0),r.each(c.data,function(i,n){e.updateElement(i,n,t)})},updateElement:function(t,e,i){var n=this,a=n.chart,o=a.chartArea,s=a.options,l=s.animation,u=(o.left+o.right)/2,d=(o.top+o.bottom)/2,c=s.rotation,h=s.rotation,f=n.getDataset(),p=i&&l.animateRotate?0:t.hidden?0:n.calculateCircumference(f.data[e])*(s.circumference/(2*Math.PI)),g=i&&l.animateScale?0:n.innerRadius,m=i&&l.animateScale?0:n.outerRadius,v=r.valueAtIndexOrDefault;r.extend(t,{_datasetIndex:n.index,_index:e,_model:{x:u+a.offsetX,y:d+a.offsetY,startAngle:c,endAngle:h,circumference:p,outerRadius:m,innerRadius:g,label:v(f.label,e,a.data.labels[e])}});var b=t._model,y=t.custom||{},x=r.valueAtIndexOrDefault,w=this.chart.options.elements.arc;b.backgroundColor=y.backgroundColor?y.backgroundColor:x(f.backgroundColor,e,w.backgroundColor),b.borderColor=y.borderColor?y.borderColor:x(f.borderColor,e,w.borderColor),b.borderWidth=y.borderWidth?y.borderWidth:x(f.borderWidth,e,w.borderWidth),i&&l.animateRotate||(b.startAngle=0===e?s.rotation:n.getMeta().data[e-1]._model.endAngle,b.endAngle=b.startAngle+b.circumference),t.pivot()},calculateTotal:function(){var t,e=this.getDataset(),i=this.getMeta(),n=0;return r.each(i.data,function(i,a){t=e.data[a],isNaN(t)||i.hidden||(n+=Math.abs(t))}),n},calculateCircumference:function(t){var e=this.getMeta().total;return e>0&&!isNaN(t)?2*Math.PI*(Math.abs(t)/e):0},getMaxBorderWidth:function(t){for(var e,i,n=0,a=this.index,r=t.length,o=0;o<r;o++)e=t[o]._model?t[o]._model.borderWidth:0,n=(i=t[o]._chart?t[o]._chart.config.data.datasets[a].hoverBorderWidth:0)>(n=e>n?e:n)?i:n;return n}})}},{26:26,41:41,46:46}],18:[function(t,e,i){"use strict";var n=t(26),a=t(41),r=t(46);n._set("line",{showLines:!0,spanGaps:!1,hover:{mode:"label"},scales:{xAxes:[{type:"category",id:"x-axis-0"}],yAxes:[{type:"linear",id:"y-axis-0"}]}}),e.exports=function(t){function e(t,e){return r.valueOrDefault(t.showLine,e.showLines)}t.controllers.line=t.DatasetController.extend({datasetElementType:a.Line,dataElementType:a.Point,update:function(t){var i,n,a,o=this,s=o.getMeta(),l=s.dataset,u=s.data||[],d=o.chart.options,c=d.elements.line,h=o.getScaleForId(s.yAxisID),f=o.getDataset(),p=e(f,d);for(p&&(a=l.custom||{},void 0!==f.tension&&void 0===f.lineTension&&(f.lineTension=f.tension),l._scale=h,l._datasetIndex=o.index,l._children=u,l._model={spanGaps:f.spanGaps?f.spanGaps:d.spanGaps,tension:a.tension?a.tension:r.valueOrDefault(f.lineTension,c.tension),backgroundColor:a.backgroundColor?a.backgroundColor:f.backgroundColor||c.backgroundColor,borderWidth:a.borderWidth?a.borderWidth:f.borderWidth||c.borderWidth,borderColor:a.borderColor?a.borderColor:f.borderColor||c.borderColor,borderCapStyle:a.borderCapStyle?a.borderCapStyle:f.borderCapStyle||c.borderCapStyle,borderDash:a.borderDash?a.borderDash:f.borderDash||c.borderDash,borderDashOffset:a.borderDashOffset?a.borderDashOffset:f.borderDashOffset||c.borderDashOffset,borderJoinStyle:a.borderJoinStyle?a.borderJoinStyle:f.borderJoinStyle||c.borderJoinStyle,fill:a.fill?a.fill:void 0!==f.fill?f.fill:c.fill,steppedLine:a.steppedLine?a.steppedLine:r.valueOrDefault(f.steppedLine,c.stepped),cubicInterpolationMode:a.cubicInterpolationMode?a.cubicInterpolationMode:r.valueOrDefault(f.cubicInterpolationMode,c.cubicInterpolationMode)},l.pivot()),i=0,n=u.length;i<n;++i)o.updateElement(u[i],i,t);for(p&&0!==l._model.tension&&o.updateBezierControlPoints(),i=0,n=u.length;i<n;++i)u[i].pivot()},getPointBackgroundColor:function(t,e){var i=this.chart.options.elements.point.backgroundColor,n=this.getDataset(),a=t.custom||{};return a.backgroundColor?i=a.backgroundColor:n.pointBackgroundColor?i=r.valueAtIndexOrDefault(n.pointBackgroundColor,e,i):n.backgroundColor&&(i=n.backgroundColor),i},getPointBorderColor:function(t,e){var i=this.chart.options.elements.point.borderColor,n=this.getDataset(),a=t.custom||{};return a.borderColor?i=a.borderColor:n.pointBorderColor?i=r.valueAtIndexOrDefault(n.pointBorderColor,e,i):n.borderColor&&(i=n.borderColor),i},getPointBorderWidth:function(t,e){var i=this.chart.options.elements.point.borderWidth,n=this.getDataset(),a=t.custom||{};return isNaN(a.borderWidth)?!isNaN(n.pointBorderWidth)||r.isArray(n.pointBorderWidth)?i=r.valueAtIndexOrDefault(n.pointBorderWidth,e,i):isNaN(n.borderWidth)||(i=n.borderWidth):i=a.borderWidth,i},getPointRotation:function(t,e){var i=this.chart.options.elements.point.rotation,n=this.getDataset(),a=t.custom||{};return isNaN(a.rotation)?isNaN(n.pointRotation)&&!r.isArray(n.pointRotation)||(i=r.valueAtIndexOrDefault(n.pointRotation,e,i)):i=a.rotation,i},updateElement:function(t,e,i){var n,a,o=this,s=o.getMeta(),l=t.custom||{},u=o.getDataset(),d=o.index,c=u.data[e],h=o.getScaleForId(s.yAxisID),f=o.getScaleForId(s.xAxisID),p=o.chart.options.elements.point;void 0!==u.radius&&void 0===u.pointRadius&&(u.pointRadius=u.radius),void 0!==u.hitRadius&&void 0===u.pointHitRadius&&(u.pointHitRadius=u.hitRadius),n=f.getPixelForValue("object"==typeof c?c:NaN,e,d),a=i?h.getBasePixel():o.calculatePointY(c,e,d),t._xScale=f,t._yScale=h,t._datasetIndex=d,t._index=e,t._model={x:n,y:a,skip:l.skip||isNaN(n)||isNaN(a),radius:l.radius||r.valueAtIndexOrDefault(u.pointRadius,e,p.radius),pointStyle:l.pointStyle||r.valueAtIndexOrDefault(u.pointStyle,e,p.pointStyle),rotation:o.getPointRotation(t,e),backgroundColor:o.getPointBackgroundColor(t,e),borderColor:o.getPointBorderColor(t,e),borderWidth:o.getPointBorderWidth(t,e),tension:s.dataset._model?s.dataset._model.tension:0,steppedLine:!!s.dataset._model&&s.dataset._model.steppedLine,hitRadius:l.hitRadius||r.valueAtIndexOrDefault(u.pointHitRadius,e,p.hitRadius)}},calculatePointY:function(t,e,i){var n,a,r,o=this.chart,s=this.getMeta(),l=this.getScaleForId(s.yAxisID),u=0,d=0;if(l.options.stacked){for(n=0;n<i;n++)if(a=o.data.datasets[n],"line"===(r=o.getDatasetMeta(n)).type&&r.yAxisID===l.id&&o.isDatasetVisible(n)){var c=Number(l.getRightValue(a.data[e]));c<0?d+=c||0:u+=c||0}var h=Number(l.getRightValue(t));return h<0?l.getPixelForValue(d+h):l.getPixelForValue(u+h)}return l.getPixelForValue(t)},updateBezierControlPoints:function(){var t,e,i,n,a=this.getMeta(),o=this.chart.chartArea,s=a.data||[];function l(t,e,i){return Math.max(Math.min(t,i),e)}if(a.dataset._model.spanGaps&&(s=s.filter(function(t){return!t._model.skip})),"monotone"===a.dataset._model.cubicInterpolationMode)r.splineCurveMonotone(s);else for(t=0,e=s.length;t<e;++t)i=s[t]._model,n=r.splineCurve(r.previousItem(s,t)._model,i,r.nextItem(s,t)._model,a.dataset._model.tension),i.controlPointPreviousX=n.previous.x,i.controlPointPreviousY=n.previous.y,i.controlPointNextX=n.next.x,i.controlPointNextY=n.next.y;if(this.chart.options.elements.line.capBezierPoints)for(t=0,e=s.length;t<e;++t)(i=s[t]._model).controlPointPreviousX=l(i.controlPointPreviousX,o.left,o.right),i.controlPointPreviousY=l(i.controlPointPreviousY,o.top,o.bottom),i.controlPointNextX=l(i.controlPointNextX,o.left,o.right),i.controlPointNextY=l(i.controlPointNextY,o.top,o.bottom)},draw:function(){var t,i=this.chart,n=this.getMeta(),a=n.data||[],o=i.chartArea,s=a.length,l=0;for(e(this.getDataset(),i.options)&&(t=(n.dataset._model.borderWidth||0)/2,r.canvas.clipArea(i.ctx,{left:o.left,right:o.right,top:o.top-t,bottom:o.bottom+t}),n.dataset.draw(),r.canvas.unclipArea(i.ctx));l<s;++l)a[l].draw(o)},setHoverStyle:function(t){var e=this.chart.data.datasets[t._datasetIndex],i=t._index,n=t.custom||{},a=t._model;t.$previousStyle={backgroundColor:a.backgroundColor,borderColor:a.borderColor,borderWidth:a.borderWidth,radius:a.radius},a.backgroundColor=n.hoverBackgroundColor||r.valueAtIndexOrDefault(e.pointHoverBackgroundColor,i,r.getHoverColor(a.backgroundColor)),a.borderColor=n.hoverBorderColor||r.valueAtIndexOrDefault(e.pointHoverBorderColor,i,r.getHoverColor(a.borderColor)),a.borderWidth=n.hoverBorderWidth||r.valueAtIndexOrDefault(e.pointHoverBorderWidth,i,a.borderWidth),a.radius=n.hoverRadius||r.valueAtIndexOrDefault(e.pointHoverRadius,i,this.chart.options.elements.point.hoverRadius)}})}},{26:26,41:41,46:46}],19:[function(t,e,i){"use strict";var n=t(26),a=t(41),r=t(46);n._set("polarArea",{scale:{type:"radialLinear",angleLines:{display:!1},gridLines:{circular:!0},pointLabels:{display:!1},ticks:{beginAtZero:!0}},animation:{animateRotate:!0,animateScale:!0},startAngle:-.5*Math.PI,legendCallback:function(t){var e=[];e.push('<ul class="'+t.id+'-legend">');var i=t.data,n=i.datasets,a=i.labels;if(n.length)for(var r=0;r<n[0].data.length;++r)e.push('<li><span style="background-color:'+n[0].backgroundColor[r]+'"></span>'),a[r]&&e.push(a[r]),e.push("</li>");return e.push("</ul>"),e.join("")},legend:{labels:{generateLabels:function(t){var e=t.data;return e.labels.length&&e.datasets.length?e.labels.map(function(i,n){var a=t.getDatasetMeta(0),o=e.datasets[0],s=a.data[n].custom||{},l=r.valueAtIndexOrDefault,u=t.options.elements.arc;return{text:i,fillStyle:s.backgroundColor?s.backgroundColor:l(o.backgroundColor,n,u.backgroundColor),strokeStyle:s.borderColor?s.borderColor:l(o.borderColor,n,u.borderColor),lineWidth:s.borderWidth?s.borderWidth:l(o.borderWidth,n,u.borderWidth),hidden:isNaN(o.data[n])||a.data[n].hidden,index:n}}):[]}},onClick:function(t,e){var i,n,a,r=e.index,o=this.chart;for(i=0,n=(o.data.datasets||[]).length;i<n;++i)(a=o.getDatasetMeta(i)).data[r].hidden=!a.data[r].hidden;o.update()}},tooltips:{callbacks:{title:function(){return""},label:function(t,e){return e.labels[t.index]+": "+t.yLabel}}}}),e.exports=function(t){t.controllers.polarArea=t.DatasetController.extend({dataElementType:a.Arc,linkScales:r.noop,update:function(t){var e,i,n,a=this,o=a.getDataset(),s=a.getMeta(),l=a.chart.options.startAngle||0,u=a._starts=[],d=a._angles=[];for(a._updateRadius(),s.count=a.countVisibleElements(),e=0,i=o.data.length;e<i;e++)u[e]=l,n=a._computeAngle(e),d[e]=n,l+=n;r.each(s.data,function(e,i){a.updateElement(e,i,t)})},_updateRadius:function(){var t=this,e=t.chart,i=e.chartArea,n=e.options,a=n.elements.arc,r=Math.min(i.right-i.left,i.bottom-i.top);e.outerRadius=Math.max((r-a.borderWidth/2)/2,0),e.innerRadius=Math.max(n.cutoutPercentage?e.outerRadius/100*n.cutoutPercentage:1,0),e.radiusLength=(e.outerRadius-e.innerRadius)/e.getVisibleDatasetCount(),t.outerRadius=e.outerRadius-e.radiusLength*t.index,t.innerRadius=t.outerRadius-e.radiusLength},updateElement:function(t,e,i){var n=this,a=n.chart,o=n.getDataset(),s=a.options,l=s.animation,u=a.scale,d=a.data.labels,c=u.xCenter,h=u.yCenter,f=s.startAngle,p=t.hidden?0:u.getDistanceFromCenterForValue(o.data[e]),g=n._starts[e],m=g+(t.hidden?0:n._angles[e]),v=l.animateScale?0:u.getDistanceFromCenterForValue(o.data[e]);r.extend(t,{_datasetIndex:n.index,_index:e,_scale:u,_model:{x:c,y:h,innerRadius:0,outerRadius:i?v:p,startAngle:i&&l.animateRotate?f:g,endAngle:i&&l.animateRotate?f:m,label:r.valueAtIndexOrDefault(d,e,d[e])}});var b=this.chart.options.elements.arc,y=t.custom||{},x=r.valueAtIndexOrDefault,w=t._model;w.backgroundColor=y.backgroundColor?y.backgroundColor:x(o.backgroundColor,e,b.backgroundColor),w.borderColor=y.borderColor?y.borderColor:x(o.borderColor,e,b.borderColor),w.borderWidth=y.borderWidth?y.borderWidth:x(o.borderWidth,e,b.borderWidth),t.pivot()},countVisibleElements:function(){var t=this.getDataset(),e=this.getMeta(),i=0;return r.each(e.data,function(e,n){isNaN(t.data[n])||e.hidden||i++}),i},_computeAngle:function(t){var e=this,i=this.getMeta().count,n=e.getDataset(),a=e.getMeta();if(isNaN(n.data[t])||a.data[t].hidden)return 0;var o={chart:e.chart,dataIndex:t,dataset:n,datasetIndex:e.index};return r.options.resolve([e.chart.options.elements.arc.angle,2*Math.PI/i],o,t)}})}},{26:26,41:41,46:46}],20:[function(t,e,i){"use strict";var n=t(26),a=t(41),r=t(46);n._set("radar",{scale:{type:"radialLinear"},elements:{line:{tension:0}}}),e.exports=function(t){t.controllers.radar=t.DatasetController.extend({datasetElementType:a.Line,dataElementType:a.Point,linkScales:r.noop,update:function(t){var e=this,i=e.getMeta(),n=i.dataset,a=i.data,o=n.custom||{},s=e.getDataset(),l=e.chart.options.elements.line,u=e.chart.scale;void 0!==s.tension&&void 0===s.lineTension&&(s.lineTension=s.tension),r.extend(i.dataset,{_datasetIndex:e.index,_scale:u,_children:a,_loop:!0,_model:{tension:o.tension?o.tension:r.valueOrDefault(s.lineTension,l.tension),backgroundColor:o.backgroundColor?o.backgroundColor:s.backgroundColor||l.backgroundColor,borderWidth:o.borderWidth?o.borderWidth:s.borderWidth||l.borderWidth,borderColor:o.borderColor?o.borderColor:s.borderColor||l.borderColor,fill:o.fill?o.fill:void 0!==s.fill?s.fill:l.fill,borderCapStyle:o.borderCapStyle?o.borderCapStyle:s.borderCapStyle||l.borderCapStyle,borderDash:o.borderDash?o.borderDash:s.borderDash||l.borderDash,borderDashOffset:o.borderDashOffset?o.borderDashOffset:s.borderDashOffset||l.borderDashOffset,borderJoinStyle:o.borderJoinStyle?o.borderJoinStyle:s.borderJoinStyle||l.borderJoinStyle}}),i.dataset.pivot(),r.each(a,function(i,n){e.updateElement(i,n,t)},e),e.updateBezierControlPoints()},updateElement:function(t,e,i){var n=this,a=t.custom||{},o=n.getDataset(),s=n.chart.scale,l=n.chart.options.elements.point,u=s.getPointPositionForValue(e,o.data[e]);void 0!==o.radius&&void 0===o.pointRadius&&(o.pointRadius=o.radius),void 0!==o.hitRadius&&void 0===o.pointHitRadius&&(o.pointHitRadius=o.hitRadius),r.extend(t,{_datasetIndex:n.index,_index:e,_scale:s,_model:{x:i?s.xCenter:u.x,y:i?s.yCenter:u.y,tension:a.tension?a.tension:r.valueOrDefault(o.lineTension,n.chart.options.elements.line.tension),radius:a.radius?a.radius:r.valueAtIndexOrDefault(o.pointRadius,e,l.radius),backgroundColor:a.backgroundColor?a.backgroundColor:r.valueAtIndexOrDefault(o.pointBackgroundColor,e,l.backgroundColor),borderColor:a.borderColor?a.borderColor:r.valueAtIndexOrDefault(o.pointBorderColor,e,l.borderColor),borderWidth:a.borderWidth?a.borderWidth:r.valueAtIndexOrDefault(o.pointBorderWidth,e,l.borderWidth),pointStyle:a.pointStyle?a.pointStyle:r.valueAtIndexOrDefault(o.pointStyle,e,l.pointStyle),rotation:a.rotation?a.rotation:r.valueAtIndexOrDefault(o.pointRotation,e,l.rotation),hitRadius:a.hitRadius?a.hitRadius:r.valueAtIndexOrDefault(o.pointHitRadius,e,l.hitRadius)}}),t._model.skip=a.skip?a.skip:isNaN(t._model.x)||isNaN(t._model.y)},updateBezierControlPoints:function(){var t=this.chart.chartArea,e=this.getMeta();r.each(e.data,function(i,n){var a=i._model,o=r.splineCurve(r.previousItem(e.data,n,!0)._model,a,r.nextItem(e.data,n,!0)._model,a.tension);a.controlPointPreviousX=Math.max(Math.min(o.previous.x,t.right),t.left),a.controlPointPreviousY=Math.max(Math.min(o.previous.y,t.bottom),t.top),a.controlPointNextX=Math.max(Math.min(o.next.x,t.right),t.left),a.controlPointNextY=Math.max(Math.min(o.next.y,t.bottom),t.top),i.pivot()})},setHoverStyle:function(t){var e=this.chart.data.datasets[t._datasetIndex],i=t.custom||{},n=t._index,a=t._model;t.$previousStyle={backgroundColor:a.backgroundColor,borderColor:a.borderColor,borderWidth:a.borderWidth,radius:a.radius},a.radius=i.hoverRadius?i.hoverRadius:r.valueAtIndexOrDefault(e.pointHoverRadius,n,this.chart.options.elements.point.hoverRadius),a.backgroundColor=i.hoverBackgroundColor?i.hoverBackgroundColor:r.valueAtIndexOrDefault(e.pointHoverBackgroundColor,n,r.getHoverColor(a.backgroundColor)),a.borderColor=i.hoverBorderColor?i.hoverBorderColor:r.valueAtIndexOrDefault(e.pointHoverBorderColor,n,r.getHoverColor(a.borderColor)),a.borderWidth=i.hoverBorderWidth?i.hoverBorderWidth:r.valueAtIndexOrDefault(e.pointHoverBorderWidth,n,a.borderWidth)}})}},{26:26,41:41,46:46}],21:[function(t,e,i){"use strict";t(26)._set("scatter",{hover:{mode:"single"},scales:{xAxes:[{id:"x-axis-1",type:"linear",position:"bottom"}],yAxes:[{id:"y-axis-1",type:"linear",position:"left"}]},showLines:!1,tooltips:{callbacks:{title:function(){return""},label:function(t){return"("+t.xLabel+", "+t.yLabel+")"}}}}),e.exports=function(t){t.controllers.scatter=t.controllers.line}},{26:26}],22:[function(t,e,i){"use strict";var n=t(27);i=e.exports=n.extend({chart:null,currentStep:0,numSteps:60,easing:"",render:null,onAnimationProgress:null,onAnimationComplete:null});Object.defineProperty(i.prototype,"animationObject",{get:function(){return this}}),Object.defineProperty(i.prototype,"chartInstance",{get:function(){return this.chart},set:function(t){this.chart=t}})},{27:27}],23:[function(t,e,i){"use strict";var n=t(26),a=t(46);n._set("global",{animation:{duration:1e3,easing:"easeOutQuart",onProgress:a.noop,onComplete:a.noop}}),e.exports={frameDuration:17,animations:[],dropFrames:0,request:null,addAnimation:function(t,e,i,n){var a,r,o=this.animations;for(e.chart=t,n||(t.animating=!0),a=0,r=o.length;a<r;++a)if(o[a].chart===t)return void(o[a]=e);o.push(e),1===o.length&&this.requestAnimationFrame()},cancelAnimation:function(t){var e=a.findIndex(this.animations,function(e){return e.chart===t});-1!==e&&(this.animations.splice(e,1),t.animating=!1)},requestAnimationFrame:function(){var t=this;null===t.request&&(t.request=a.requestAnimFrame.call(window,function(){t.request=null,t.startDigest()}))},startDigest:function(){var t=this,e=Date.now(),i=0;t.dropFrames>1&&(i=Math.floor(t.dropFrames),t.dropFrames=t.dropFrames%1),t.advance(1+i);var n=Date.now();t.dropFrames+=(n-e)/t.frameDuration,t.animations.length>0&&t.requestAnimationFrame()},advance:function(t){for(var e,i,n=this.animations,r=0;r<n.length;)i=(e=n[r]).chart,e.currentStep=(e.currentStep||0)+t,e.currentStep=Math.min(e.currentStep,e.numSteps),a.callback(e.render,[i,e],i),a.callback(e.onAnimationProgress,[e],i),e.currentStep>=e.numSteps?(a.callback(e.onAnimationComplete,[e],i),i.animating=!1,n.splice(r,1)):++r}}},{26:26,46:46}],24:[function(t,e,i){"use strict";var n=t(22),a=t(23),r=t(26),o=t(46),s=t(29),l=t(31),u=t(49),d=t(32),c=t(34),h=t(36);e.exports=function(t){function e(t){return"top"===t||"bottom"===t}t.types={},t.instances={},t.controllers={},o.extend(t.prototype,{construct:function(e,i){var n=this;i=function(t){var e=(t=t||{}).data=t.data||{};return e.datasets=e.datasets||[],e.labels=e.labels||[],t.options=o.configMerge(r.global,r[t.type],t.options||{}),t}(i);var a=u.acquireContext(e,i),s=a&&a.canvas,l=s&&s.height,d=s&&s.width;n.id=o.uid(),n.ctx=a,n.canvas=s,n.config=i,n.width=d,n.height=l,n.aspectRatio=l?d/l:null,n.options=i.options,n._bufferedRender=!1,n.chart=n,n.controller=n,t.instances[n.id]=n,Object.defineProperty(n,"data",{get:function(){return n.config.data},set:function(t){n.config.data=t}}),a&&s?(n.initialize(),n.update()):console.error("Failed to create chart: can't acquire context from the given item")},initialize:function(){var t=this;return d.notify(t,"beforeInit"),o.retinaScale(t,t.options.devicePixelRatio),t.bindEvents(),t.options.responsive&&t.resize(!0),t.ensureScalesHaveIDs(),t.buildOrUpdateScales(),t.initToolTip(),d.notify(t,"afterInit"),t},clear:function(){return o.canvas.clear(this),this},stop:function(){return a.cancelAnimation(this),this},resize:function(t){var e=this,i=e.options,n=e.canvas,a=i.maintainAspectRatio&&e.aspectRatio||null,r=Math.max(0,Math.floor(o.getMaximumWidth(n))),s=Math.max(0,Math.floor(a?r/a:o.getMaximumHeight(n)));if((e.width!==r||e.height!==s)&&(n.width=e.width=r,n.height=e.height=s,n.style.width=r+"px",n.style.height=s+"px",o.retinaScale(e,i.devicePixelRatio),!t)){var l={width:r,height:s};d.notify(e,"resize",[l]),e.options.onResize&&e.options.onResize(e,l),e.stop(),e.update({duration:e.options.responsiveAnimationDuration})}},ensureScalesHaveIDs:function(){var t=this.options,e=t.scales||{},i=t.scale;o.each(e.xAxes,function(t,e){t.id=t.id||"x-axis-"+e}),o.each(e.yAxes,function(t,e){t.id=t.id||"y-axis-"+e}),i&&(i.id=i.id||"scale")},buildOrUpdateScales:function(){var t=this,i=t.options,n=t.scales||{},a=[],r=Object.keys(n).reduce(function(t,e){return t[e]=!1,t},{});i.scales&&(a=a.concat((i.scales.xAxes||[]).map(function(t){return{options:t,dtype:"category",dposition:"bottom"}}),(i.scales.yAxes||[]).map(function(t){return{options:t,dtype:"linear",dposition:"left"}}))),i.scale&&a.push({options:i.scale,dtype:"radialLinear",isDefault:!0,dposition:"chartArea"}),o.each(a,function(i){var a=i.options,s=a.id,l=o.valueOrDefault(a.type,i.dtype);e(a.position)!==e(i.dposition)&&(a.position=i.dposition),r[s]=!0;var u=null;if(s in n&&n[s].type===l)(u=n[s]).options=a,u.ctx=t.ctx,u.chart=t;else{var d=c.getScaleConstructor(l);if(!d)return;u=new d({id:s,type:l,options:a,ctx:t.ctx,chart:t}),n[u.id]=u}u.mergeTicksOptions(),i.isDefault&&(t.scale=u)}),o.each(r,function(t,e){t||delete n[e]}),t.scales=n,c.addScalesToLayout(this)},buildOrUpdateControllers:function(){var e=this,i=[],n=[];return o.each(e.data.datasets,function(a,r){var o=e.getDatasetMeta(r),s=a.type||e.config.type;if(o.type&&o.type!==s&&(e.destroyDatasetMeta(r),o=e.getDatasetMeta(r)),o.type=s,i.push(o.type),o.controller)o.controller.updateIndex(r),o.controller.linkScales();else{var l=t.controllers[o.type];if(void 0===l)throw new Error('"'+o.type+'" is not a chart type.');o.controller=new l(e,r),n.push(o.controller)}},e),n},resetElements:function(){var t=this;o.each(t.data.datasets,function(e,i){t.getDatasetMeta(i).controller.reset()},t)},reset:function(){this.resetElements(),this.tooltip.initialize()},update:function(e){var i,n,a=this;if(e&&"object"==typeof e||(e={duration:e,lazy:arguments[1]}),n=(i=a).options,o.each(i.scales,function(t){l.removeBox(i,t)}),n=o.configMerge(t.defaults.global,t.defaults[i.config.type],n),i.options=i.config.options=n,i.ensureScalesHaveIDs(),i.buildOrUpdateScales(),i.tooltip._options=n.tooltips,i.tooltip.initialize(),d._invalidate(a),!1!==d.notify(a,"beforeUpdate")){a.tooltip._data=a.data;var r=a.buildOrUpdateControllers();o.each(a.data.datasets,function(t,e){a.getDatasetMeta(e).controller.buildOrUpdateElements()},a),a.updateLayout(),a.options.animation&&a.options.animation.duration&&o.each(r,function(t){t.reset()}),a.updateDatasets(),a.tooltip.initialize(),a.lastActive=[],d.notify(a,"afterUpdate"),a._bufferedRender?a._bufferedRequest={duration:e.duration,easing:e.easing,lazy:e.lazy}:a.render(e)}},updateLayout:function(){!1!==d.notify(this,"beforeLayout")&&(l.update(this,this.width,this.height),d.notify(this,"afterScaleUpdate"),d.notify(this,"afterLayout"))},updateDatasets:function(){if(!1!==d.notify(this,"beforeDatasetsUpdate")){for(var t=0,e=this.data.datasets.length;t<e;++t)this.updateDataset(t);d.notify(this,"afterDatasetsUpdate")}},updateDataset:function(t){var e=this.getDatasetMeta(t),i={meta:e,index:t};!1!==d.notify(this,"beforeDatasetUpdate",[i])&&(e.controller.update(),d.notify(this,"afterDatasetUpdate",[i]))},render:function(t){var e=this;t&&"object"==typeof t||(t={duration:t,lazy:arguments[1]});var i=t.duration,r=t.lazy;if(!1!==d.notify(e,"beforeRender")){var s=e.options.animation,l=function(t){d.notify(e,"afterRender"),o.callback(s&&s.onComplete,[t],e)};if(s&&(void 0!==i&&0!==i||void 0===i&&0!==s.duration)){var u=new n({numSteps:(i||s.duration)/16.66,easing:t.easing||s.easing,render:function(t,e){var i=o.easing.effects[e.easing],n=e.currentStep,a=n/e.numSteps;t.draw(i(a),a,n)},onAnimationProgress:s.onProgress,onAnimationComplete:l});a.addAnimation(e,u,i,r)}else e.draw(),l(new n({numSteps:0,chart:e}));return e}},draw:function(t){var e=this;e.clear(),o.isNullOrUndef(t)&&(t=1),e.transition(t),e.width<=0||e.height<=0||!1!==d.notify(e,"beforeDraw",[t])&&(o.each(e.boxes,function(t){t.draw(e.chartArea)},e),e.scale&&e.scale.draw(),e.drawDatasets(t),e._drawTooltip(t),d.notify(e,"afterDraw",[t]))},transition:function(t){for(var e=0,i=(this.data.datasets||[]).length;e<i;++e)this.isDatasetVisible(e)&&this.getDatasetMeta(e).controller.transition(t);this.tooltip.transition(t)},drawDatasets:function(t){var e=this;if(!1!==d.notify(e,"beforeDatasetsDraw",[t])){for(var i=(e.data.datasets||[]).length-1;i>=0;--i)e.isDatasetVisible(i)&&e.drawDataset(i,t);d.notify(e,"afterDatasetsDraw",[t])}},drawDataset:function(t,e){var i=this.getDatasetMeta(t),n={meta:i,index:t,easingValue:e};!1!==d.notify(this,"beforeDatasetDraw",[n])&&(i.controller.draw(e),d.notify(this,"afterDatasetDraw",[n]))},_drawTooltip:function(t){var e=this.tooltip,i={tooltip:e,easingValue:t};!1!==d.notify(this,"beforeTooltipDraw",[i])&&(e.draw(),d.notify(this,"afterTooltipDraw",[i]))},getElementAtEvent:function(t){return s.modes.single(this,t)},getElementsAtEvent:function(t){return s.modes.label(this,t,{intersect:!0})},getElementsAtXAxis:function(t){return s.modes["x-axis"](this,t,{intersect:!0})},getElementsAtEventForMode:function(t,e,i){var n=s.modes[e];return"function"==typeof n?n(this,t,i):[]},getDatasetAtEvent:function(t){return s.modes.dataset(this,t,{intersect:!0})},getDatasetMeta:function(t){var e=this.data.datasets[t];e._meta||(e._meta={});var i=e._meta[this.id];return i||(i=e._meta[this.id]={type:null,data:[],dataset:null,controller:null,hidden:null,xAxisID:null,yAxisID:null}),i},getVisibleDatasetCount:function(){for(var t=0,e=0,i=this.data.datasets.length;e<i;++e)this.isDatasetVisible(e)&&t++;return t},isDatasetVisible:function(t){var e=this.getDatasetMeta(t);return"boolean"==typeof e.hidden?!e.hidden:!this.data.datasets[t].hidden},generateLegend:function(){return this.options.legendCallback(this)},destroyDatasetMeta:function(t){var e=this.id,i=this.data.datasets[t],n=i._meta&&i._meta[e];n&&(n.controller.destroy(),delete i._meta[e])},destroy:function(){var e,i,n=this,a=n.canvas;for(n.stop(),e=0,i=n.data.datasets.length;e<i;++e)n.destroyDatasetMeta(e);a&&(n.unbindEvents(),o.canvas.clear(n),u.releaseContext(n.ctx),n.canvas=null,n.ctx=null),d.notify(n,"destroy"),delete t.instances[n.id]},toBase64Image:function(){return this.canvas.toDataURL.apply(this.canvas,arguments)},initToolTip:function(){var t=this;t.tooltip=new h({_chart:t,_chartInstance:t,_data:t.data,_options:t.options.tooltips},t)},bindEvents:function(){var t=this,e=t._listeners={},i=function(){t.eventHandler.apply(t,arguments)};o.each(t.options.events,function(n){u.addEventListener(t,n,i),e[n]=i}),t.options.responsive&&(i=function(){t.resize()},u.addEventListener(t,"resize",i),e.resize=i)},unbindEvents:function(){var t=this,e=t._listeners;e&&(delete t._listeners,o.each(e,function(e,i){u.removeEventListener(t,i,e)}))},updateHoverStyle:function(t,e,i){var n,a,r,o=i?"setHoverStyle":"removeHoverStyle";for(a=0,r=t.length;a<r;++a)(n=t[a])&&this.getDatasetMeta(n._datasetIndex).controller[o](n)},eventHandler:function(t){var e=this,i=e.tooltip;if(!1!==d.notify(e,"beforeEvent",[t])){e._bufferedRender=!0,e._bufferedRequest=null;var n=e.handleEvent(t);i&&(n=i._start?i.handleEvent(t):n|i.handleEvent(t)),d.notify(e,"afterEvent",[t]);var a=e._bufferedRequest;return a?e.render(a):n&&!e.animating&&(e.stop(),e.render({duration:e.options.hover.animationDuration,lazy:!0})),e._bufferedRender=!1,e._bufferedRequest=null,e}},handleEvent:function(t){var e,i=this,n=i.options||{},a=n.hover;return i.lastActive=i.lastActive||[],"mouseout"===t.type?i.active=[]:i.active=i.getElementsAtEventForMode(t,a.mode,a),o.callback(n.onHover||n.hover.onHover,[t.native,i.active],i),"mouseup"!==t.type&&"click"!==t.type||n.onClick&&n.onClick.call(i,t.native,i.active),i.lastActive.length&&i.updateHoverStyle(i.lastActive,a.mode,!1),i.active.length&&a.mode&&i.updateHoverStyle(i.active,a.mode,!0),e=!o.arrayEquals(i.active,i.lastActive),i.lastActive=i.active,e}}),t.Controller=t}},{22:22,23:23,26:26,29:29,31:31,32:32,34:34,36:36,46:46,49:49}],25:[function(t,e,i){"use strict";var n=t(46);e.exports=function(t){var e=["push","pop","shift","splice","unshift"];function i(t,i){var n=t._chartjs;if(n){var a=n.listeners,r=a.indexOf(i);-1!==r&&a.splice(r,1),a.length>0||(e.forEach(function(e){delete t[e]}),delete t._chartjs)}}t.DatasetController=function(t,e){this.initialize(t,e)},n.extend(t.DatasetController.prototype,{datasetElementType:null,dataElementType:null,initialize:function(t,e){this.chart=t,this.index=e,this.linkScales(),this.addElements()},updateIndex:function(t){this.index=t},linkScales:function(){var t=this,e=t.getMeta(),i=t.getDataset();null!==e.xAxisID&&e.xAxisID in t.chart.scales||(e.xAxisID=i.xAxisID||t.chart.options.scales.xAxes[0].id),null!==e.yAxisID&&e.yAxisID in t.chart.scales||(e.yAxisID=i.yAxisID||t.chart.options.scales.yAxes[0].id)},getDataset:function(){return this.chart.data.datasets[this.index]},getMeta:function(){return this.chart.getDatasetMeta(this.index)},getScaleForId:function(t){return this.chart.scales[t]},reset:function(){this.update(!0)},destroy:function(){this._data&&i(this._data,this)},createMetaDataset:function(){var t=this.datasetElementType;return t&&new t({_chart:this.chart,_datasetIndex:this.index})},createMetaData:function(t){var e=this.dataElementType;return e&&new e({_chart:this.chart,_datasetIndex:this.index,_index:t})},addElements:function(){var t,e,i=this.getMeta(),n=this.getDataset().data||[],a=i.data;for(t=0,e=n.length;t<e;++t)a[t]=a[t]||this.createMetaData(t);i.dataset=i.dataset||this.createMetaDataset()},addElementAndReset:function(t){var e=this.createMetaData(t);this.getMeta().data.splice(t,0,e),this.updateElement(e,t,!0)},buildOrUpdateElements:function(){var t,a,r=this,o=r.getDataset(),s=o.data||(o.data=[]);r._data!==s&&(r._data&&i(r._data,r),a=r,(t=s)._chartjs?t._chartjs.listeners.push(a):(Object.defineProperty(t,"_chartjs",{configurable:!0,enumerable:!1,value:{listeners:[a]}}),e.forEach(function(e){var i="onData"+e.charAt(0).toUpperCase()+e.slice(1),a=t[e];Object.defineProperty(t,e,{configurable:!0,enumerable:!1,value:function(){var e=Array.prototype.slice.call(arguments),r=a.apply(this,e);return n.each(t._chartjs.listeners,function(t){"function"==typeof t[i]&&t[i].apply(t,e)}),r}})})),r._data=s),r.resyncElements()},update:n.noop,transition:function(t){for(var e=this.getMeta(),i=e.data||[],n=i.length,a=0;a<n;++a)i[a].transition(t);e.dataset&&e.dataset.transition(t)},draw:function(){var t=this.getMeta(),e=t.data||[],i=e.length,n=0;for(t.dataset&&t.dataset.draw();n<i;++n)e[n].draw()},removeHoverStyle:function(t){n.merge(t._model,t.$previousStyle||{}),delete t.$previousStyle},setHoverStyle:function(t){var e=this.chart.data.datasets[t._datasetIndex],i=t._index,a=t.custom||{},r=n.valueAtIndexOrDefault,o=n.getHoverColor,s=t._model;t.$previousStyle={backgroundColor:s.backgroundColor,borderColor:s.borderColor,borderWidth:s.borderWidth},s.backgroundColor=a.hoverBackgroundColor?a.hoverBackgroundColor:r(e.hoverBackgroundColor,i,o(s.backgroundColor)),s.borderColor=a.hoverBorderColor?a.hoverBorderColor:r(e.hoverBorderColor,i,o(s.borderColor)),s.borderWidth=a.hoverBorderWidth?a.hoverBorderWidth:r(e.hoverBorderWidth,i,s.borderWidth)},resyncElements:function(){var t=this.getMeta(),e=this.getDataset().data,i=t.data.length,n=e.length;n<i?t.data.splice(n,i-n):n>i&&this.insertElements(i,n-i)},insertElements:function(t,e){for(var i=0;i<e;++i)this.addElementAndReset(t+i)},onDataPush:function(){this.insertElements(this.getDataset().data.length-1,arguments.length)},onDataPop:function(){this.getMeta().data.pop()},onDataShift:function(){this.getMeta().data.shift()},onDataSplice:function(t,e){this.getMeta().data.splice(t,e),this.insertElements(t,arguments.length-2)},onDataUnshift:function(){this.insertElements(0,arguments.length)}}),t.DatasetController.extend=n.inherits}},{46:46}],26:[function(t,e,i){"use strict";var n=t(46);e.exports={_set:function(t,e){return n.merge(this[t]||(this[t]={}),e)}}},{46:46}],27:[function(t,e,i){"use strict";var n=t(3),a=t(46);var r=function(t){a.extend(this,t),this.initialize.apply(this,arguments)};a.extend(r.prototype,{initialize:function(){this.hidden=!1},pivot:function(){var t=this;return t._view||(t._view=a.clone(t._model)),t._start={},t},transition:function(t){var e=this,i=e._model,a=e._start,r=e._view;return i&&1!==t?(r||(r=e._view={}),a||(a=e._start={}),function(t,e,i,a){var r,o,s,l,u,d,c,h,f,p=Object.keys(i);for(r=0,o=p.length;r<o;++r)if(d=i[s=p[r]],e.hasOwnProperty(s)||(e[s]=d),(l=e[s])!==d&&"_"!==s[0]){if(t.hasOwnProperty(s)||(t[s]=l),(c=typeof d)==typeof(u=t[s]))if("string"===c){if((h=n(u)).valid&&(f=n(d)).valid){e[s]=f.mix(h,a).rgbString();continue}}else if("number"===c&&isFinite(u)&&isFinite(d)){e[s]=u+(d-u)*a;continue}e[s]=d}}(a,r,i,t),e):(e._view=i,e._start=null,e)},tooltipPosition:function(){return{x:this._model.x,y:this._model.y}},hasValue:function(){return a.isNumber(this._model.x)&&a.isNumber(this._model.y)}}),r.extend=a.inherits,e.exports=r},{3:3,46:46}],28:[function(t,e,i){"use strict";var n=t(3),a=t(26),r=t(46),o=t(34);e.exports=function(){function t(t,e,i){var n;return"string"==typeof t?(n=parseInt(t,10),-1!==t.indexOf("%")&&(n=n/100*e.parentNode[i])):n=t,n}function e(t){return void 0!==t&&null!==t&&"none"!==t}function i(i,n,a){var o=document.defaultView,s=r._getParentNode(i),l=o.getComputedStyle(i)[n],u=o.getComputedStyle(s)[n],d=e(l),c=e(u),h=Number.POSITIVE_INFINITY;return d||c?Math.min(d?t(l,i,a):h,c?t(u,s,a):h):"none"}r.configMerge=function(){return r.merge(r.clone(arguments[0]),[].slice.call(arguments,1),{merger:function(t,e,i,n){var a=e[t]||{},s=i[t];"scales"===t?e[t]=r.scaleMerge(a,s):"scale"===t?e[t]=r.merge(a,[o.getScaleDefaults(s.type),s]):r._merger(t,e,i,n)}})},r.scaleMerge=function(){return r.merge(r.clone(arguments[0]),[].slice.call(arguments,1),{merger:function(t,e,i,n){if("xAxes"===t||"yAxes"===t){var a,s,l,u=i[t].length;for(e[t]||(e[t]=[]),a=0;a<u;++a)l=i[t][a],s=r.valueOrDefault(l.type,"xAxes"===t?"category":"linear"),a>=e[t].length&&e[t].push({}),!e[t][a].type||l.type&&l.type!==e[t][a].type?r.merge(e[t][a],[o.getScaleDefaults(s),l]):r.merge(e[t][a],l)}else r._merger(t,e,i,n)}})},r.where=function(t,e){if(r.isArray(t)&&Array.prototype.filter)return t.filter(e);var i=[];return r.each(t,function(t){e(t)&&i.push(t)}),i},r.findIndex=Array.prototype.findIndex?function(t,e,i){return t.findIndex(e,i)}:function(t,e,i){i=void 0===i?t:i;for(var n=0,a=t.length;n<a;++n)if(e.call(i,t[n],n,t))return n;return-1},r.findNextWhere=function(t,e,i){r.isNullOrUndef(i)&&(i=-1);for(var n=i+1;n<t.length;n++){var a=t[n];if(e(a))return a}},r.findPreviousWhere=function(t,e,i){r.isNullOrUndef(i)&&(i=t.length);for(var n=i-1;n>=0;n--){var a=t[n];if(e(a))return a}},r.isNumber=function(t){return!isNaN(parseFloat(t))&&isFinite(t)},r.almostEquals=function(t,e,i){return Math.abs(t-e)<i},r.almostWhole=function(t,e){var i=Math.round(t);return i-e<t&&i+e>t},r.max=function(t){return t.reduce(function(t,e){return isNaN(e)?t:Math.max(t,e)},Number.NEGATIVE_INFINITY)},r.min=function(t){return t.reduce(function(t,e){return isNaN(e)?t:Math.min(t,e)},Number.POSITIVE_INFINITY)},r.sign=Math.sign?function(t){return Math.sign(t)}:function(t){return 0===(t=+t)||isNaN(t)?t:t>0?1:-1},r.log10=Math.log10?function(t){return Math.log10(t)}:function(t){var e=Math.log(t)*Math.LOG10E,i=Math.round(e);return t===Math.pow(10,i)?i:e},r.toRadians=function(t){return t*(Math.PI/180)},r.toDegrees=function(t){return t*(180/Math.PI)},r.getAngleFromPoint=function(t,e){var i=e.x-t.x,n=e.y-t.y,a=Math.sqrt(i*i+n*n),r=Math.atan2(n,i);return r<-.5*Math.PI&&(r+=2*Math.PI),{angle:r,distance:a}},r.distanceBetweenPoints=function(t,e){return Math.sqrt(Math.pow(e.x-t.x,2)+Math.pow(e.y-t.y,2))},r.aliasPixel=function(t){return t%2==0?0:.5},r.splineCurve=function(t,e,i,n){var a=t.skip?e:t,r=e,o=i.skip?e:i,s=Math.sqrt(Math.pow(r.x-a.x,2)+Math.pow(r.y-a.y,2)),l=Math.sqrt(Math.pow(o.x-r.x,2)+Math.pow(o.y-r.y,2)),u=s/(s+l),d=l/(s+l),c=n*(u=isNaN(u)?0:u),h=n*(d=isNaN(d)?0:d);return{previous:{x:r.x-c*(o.x-a.x),y:r.y-c*(o.y-a.y)},next:{x:r.x+h*(o.x-a.x),y:r.y+h*(o.y-a.y)}}},r.EPSILON=Number.EPSILON||1e-14,r.splineCurveMonotone=function(t){var e,i,n,a,o,s,l,u,d,c=(t||[]).map(function(t){return{model:t._model,deltaK:0,mK:0}}),h=c.length;for(e=0;e<h;++e)if(!(n=c[e]).model.skip){if(i=e>0?c[e-1]:null,(a=e<h-1?c[e+1]:null)&&!a.model.skip){var f=a.model.x-n.model.x;n.deltaK=0!==f?(a.model.y-n.model.y)/f:0}!i||i.model.skip?n.mK=n.deltaK:!a||a.model.skip?n.mK=i.deltaK:this.sign(i.deltaK)!==this.sign(n.deltaK)?n.mK=0:n.mK=(i.deltaK+n.deltaK)/2}for(e=0;e<h-1;++e)n=c[e],a=c[e+1],n.model.skip||a.model.skip||(r.almostEquals(n.deltaK,0,this.EPSILON)?n.mK=a.mK=0:(o=n.mK/n.deltaK,s=a.mK/n.deltaK,(u=Math.pow(o,2)+Math.pow(s,2))<=9||(l=3/Math.sqrt(u),n.mK=o*l*n.deltaK,a.mK=s*l*n.deltaK)));for(e=0;e<h;++e)(n=c[e]).model.skip||(i=e>0?c[e-1]:null,a=e<h-1?c[e+1]:null,i&&!i.model.skip&&(d=(n.model.x-i.model.x)/3,n.model.controlPointPreviousX=n.model.x-d,n.model.controlPointPreviousY=n.model.y-d*n.mK),a&&!a.model.skip&&(d=(a.model.x-n.model.x)/3,n.model.controlPointNextX=n.model.x+d,n.model.controlPointNextY=n.model.y+d*n.mK))},r.nextItem=function(t,e,i){return i?e>=t.length-1?t[0]:t[e+1]:e>=t.length-1?t[t.length-1]:t[e+1]},r.previousItem=function(t,e,i){return i?e<=0?t[t.length-1]:t[e-1]:e<=0?t[0]:t[e-1]},r.niceNum=function(t,e){var i=Math.floor(r.log10(t)),n=t/Math.pow(10,i);return(e?n<1.5?1:n<3?2:n<7?5:10:n<=1?1:n<=2?2:n<=5?5:10)*Math.pow(10,i)},r.requestAnimFrame="undefined"==typeof window?function(t){t()}:window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(t){return window.setTimeout(t,1e3/60)},r.getRelativePosition=function(t,e){var i,n,a=t.originalEvent||t,o=t.target||t.srcElement,s=o.getBoundingClientRect(),l=a.touches;l&&l.length>0?(i=l[0].clientX,n=l[0].clientY):(i=a.clientX,n=a.clientY);var u=parseFloat(r.getStyle(o,"padding-left")),d=parseFloat(r.getStyle(o,"padding-top")),c=parseFloat(r.getStyle(o,"padding-right")),h=parseFloat(r.getStyle(o,"padding-bottom")),f=s.right-s.left-u-c,p=s.bottom-s.top-d-h;return{x:i=Math.round((i-s.left-u)/f*o.width/e.currentDevicePixelRatio),y:n=Math.round((n-s.top-d)/p*o.height/e.currentDevicePixelRatio)}},r.getConstraintWidth=function(t){return i(t,"max-width","clientWidth")},r.getConstraintHeight=function(t){return i(t,"max-height","clientHeight")},r._calculatePadding=function(t,e,i){return(e=r.getStyle(t,e)).indexOf("%")>-1?i/parseInt(e,10):parseInt(e,10)},r._getParentNode=function(t){var e=t.parentNode;return e&&e.host&&(e=e.host),e},r.getMaximumWidth=function(t){var e=r._getParentNode(t);if(!e)return t.clientWidth;var i=e.clientWidth,n=i-r._calculatePadding(e,"padding-left",i)-r._calculatePadding(e,"padding-right",i),a=r.getConstraintWidth(t);return isNaN(a)?n:Math.min(n,a)},r.getMaximumHeight=function(t){var e=r._getParentNode(t);if(!e)return t.clientHeight;var i=e.clientHeight,n=i-r._calculatePadding(e,"padding-top",i)-r._calculatePadding(e,"padding-bottom",i),a=r.getConstraintHeight(t);return isNaN(a)?n:Math.min(n,a)},r.getStyle=function(t,e){return t.currentStyle?t.currentStyle[e]:document.defaultView.getComputedStyle(t,null).getPropertyValue(e)},r.retinaScale=function(t,e){var i=t.currentDevicePixelRatio=e||"undefined"!=typeof window&&window.devicePixelRatio||1;if(1!==i){var n=t.canvas,a=t.height,r=t.width;n.height=a*i,n.width=r*i,t.ctx.scale(i,i),n.style.height||n.style.width||(n.style.height=a+"px",n.style.width=r+"px")}},r.fontString=function(t,e,i){return e+" "+t+"px "+i},r.longestText=function(t,e,i,n){var a=(n=n||{}).data=n.data||{},o=n.garbageCollect=n.garbageCollect||[];n.font!==e&&(a=n.data={},o=n.garbageCollect=[],n.font=e),t.font=e;var s=0;r.each(i,function(e){void 0!==e&&null!==e&&!0!==r.isArray(e)?s=r.measureText(t,a,o,s,e):r.isArray(e)&&r.each(e,function(e){void 0===e||null===e||r.isArray(e)||(s=r.measureText(t,a,o,s,e))})});var l=o.length/2;if(l>i.length){for(var u=0;u<l;u++)delete a[o[u]];o.splice(0,l)}return s},r.measureText=function(t,e,i,n,a){var r=e[a];return r||(r=e[a]=t.measureText(a).width,i.push(a)),r>n&&(n=r),n},r.numberOfLabelLines=function(t){var e=1;return r.each(t,function(t){r.isArray(t)&&t.length>e&&(e=t.length)}),e},r.color=n?function(t){return t instanceof CanvasGradient&&(t=a.global.defaultColor),n(t)}:function(t){return console.error("Color.js not found!"),t},r.getHoverColor=function(t){return t instanceof CanvasPattern?t:r.color(t).saturate(.5).darken(.1).rgbString()}}},{26:26,3:3,34:34,46:46}],29:[function(t,e,i){"use strict";var n=t(46);function a(t,e){return t.native?{x:t.x,y:t.y}:n.getRelativePosition(t,e)}function r(t,e){var i,n,a,r,o;for(n=0,r=t.data.datasets.length;n<r;++n)if(t.isDatasetVisible(n))for(a=0,o=(i=t.getDatasetMeta(n)).data.length;a<o;++a){var s=i.data[a];s._view.skip||e(s)}}function o(t,e){var i=[];return r(t,function(t){t.inRange(e.x,e.y)&&i.push(t)}),i}function s(t,e,i,n){var a=Number.POSITIVE_INFINITY,o=[];return r(t,function(t){if(!i||t.inRange(e.x,e.y)){var r=t.getCenterPoint(),s=n(e,r);s<a?(o=[t],a=s):s===a&&o.push(t)}}),o}function l(t){var e=-1!==t.indexOf("x"),i=-1!==t.indexOf("y");return function(t,n){var a=e?Math.abs(t.x-n.x):0,r=i?Math.abs(t.y-n.y):0;return Math.sqrt(Math.pow(a,2)+Math.pow(r,2))}}function u(t,e,i){var n=a(e,t);i.axis=i.axis||"x";var r=l(i.axis),u=i.intersect?o(t,n):s(t,n,!1,r),d=[];return u.length?(t.data.datasets.forEach(function(e,i){if(t.isDatasetVisible(i)){var n=t.getDatasetMeta(i).data[u[0]._index];n&&!n._view.skip&&d.push(n)}}),d):[]}e.exports={modes:{single:function(t,e){var i=a(e,t),n=[];return r(t,function(t){if(t.inRange(i.x,i.y))return n.push(t),n}),n.slice(0,1)},label:u,index:u,dataset:function(t,e,i){var n=a(e,t);i.axis=i.axis||"xy";var r=l(i.axis),u=i.intersect?o(t,n):s(t,n,!1,r);return u.length>0&&(u=t.getDatasetMeta(u[0]._datasetIndex).data),u},"x-axis":function(t,e){return u(t,e,{intersect:!1})},point:function(t,e){return o(t,a(e,t))},nearest:function(t,e,i){var n=a(e,t);i.axis=i.axis||"xy";var r=l(i.axis),o=s(t,n,i.intersect,r);return o.length>1&&o.sort(function(t,e){var i=t.getArea()-e.getArea();return 0===i&&(i=t._datasetIndex-e._datasetIndex),i}),o.slice(0,1)},x:function(t,e,i){var n=a(e,t),o=[],s=!1;return r(t,function(t){t.inXRange(n.x)&&o.push(t),t.inRange(n.x,n.y)&&(s=!0)}),i.intersect&&!s&&(o=[]),o},y:function(t,e,i){var n=a(e,t),o=[],s=!1;return r(t,function(t){t.inYRange(n.y)&&o.push(t),t.inRange(n.x,n.y)&&(s=!0)}),i.intersect&&!s&&(o=[]),o}}}},{46:46}],30:[function(t,e,i){"use strict";t(26)._set("global",{responsive:!0,responsiveAnimationDuration:0,maintainAspectRatio:!0,events:["mousemove","mouseout","click","touchstart","touchmove"],hover:{onHover:null,mode:"nearest",intersect:!0,animationDuration:400},onClick:null,defaultColor:"rgba(0,0,0,0.1)",defaultFontColor:"#666",defaultFontFamily:"'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",defaultFontSize:12,defaultFontStyle:"normal",showLines:!0,elements:{},layout:{padding:{top:0,right:0,bottom:0,left:0}}}),e.exports=function(){var t=function(t,e){return this.construct(t,e),this};return t.Chart=t,t}},{26:26}],31:[function(t,e,i){"use strict";var n=t(46);function a(t,e){return n.where(t,function(t){return t.position===e})}function r(t,e){t.forEach(function(t,e){return t._tmpIndex_=e,t}),t.sort(function(t,i){var n=e?i:t,a=e?t:i;return n.weight===a.weight?n._tmpIndex_-a._tmpIndex_:n.weight-a.weight}),t.forEach(function(t){delete t._tmpIndex_})}e.exports={defaults:{},addBox:function(t,e){t.boxes||(t.boxes=[]),e.fullWidth=e.fullWidth||!1,e.position=e.position||"top",e.weight=e.weight||0,t.boxes.push(e)},removeBox:function(t,e){var i=t.boxes?t.boxes.indexOf(e):-1;-1!==i&&t.boxes.splice(i,1)},configure:function(t,e,i){for(var n,a=["fullWidth","position","weight"],r=a.length,o=0;o<r;++o)n=a[o],i.hasOwnProperty(n)&&(e[n]=i[n])},update:function(t,e,i){if(t){var o=t.options.layout||{},s=n.options.toPadding(o.padding),l=s.left,u=s.right,d=s.top,c=s.bottom,h=a(t.boxes,"left"),f=a(t.boxes,"right"),p=a(t.boxes,"top"),g=a(t.boxes,"bottom"),m=a(t.boxes,"chartArea");r(h,!0),r(f,!1),r(p,!0),r(g,!1);var v=e-l-u,b=i-d-c,y=b/2,x=(e-v/2)/(h.length+f.length),w=(i-y)/(p.length+g.length),k=v,S=b,C=[];n.each(h.concat(f,p,g),function(t){var e,i=t.isHorizontal();i?(e=t.update(t.fullWidth?v:k,w),S-=e.height):(e=t.update(x,S),k-=e.width),C.push({horizontal:i,minSize:e,box:t})});var M=0,P=0,T=0,A=0;n.each(p.concat(g),function(t){if(t.getPadding){var e=t.getPadding();M=Math.max(M,e.left),P=Math.max(P,e.right)}}),n.each(h.concat(f),function(t){if(t.getPadding){var e=t.getPadding();T=Math.max(T,e.top),A=Math.max(A,e.bottom)}});var _=l,I=u,D=d,F=c;n.each(h.concat(f),E),n.each(h,function(t){_+=t.width}),n.each(f,function(t){I+=t.width}),n.each(p.concat(g),E),n.each(p,function(t){D+=t.height}),n.each(g,function(t){F+=t.height}),n.each(h.concat(f),function(t){var e=n.findNextWhere(C,function(e){return e.box===t}),i={left:0,right:0,top:D,bottom:F};e&&t.update(e.minSize.width,S,i)}),_=l,I=u,D=d,F=c,n.each(h,function(t){_+=t.width}),n.each(f,function(t){I+=t.width}),n.each(p,function(t){D+=t.height}),n.each(g,function(t){F+=t.height});var O=Math.max(M-_,0);_+=O,I+=Math.max(P-I,0);var L=Math.max(T-D,0);D+=L,F+=Math.max(A-F,0);var R=i-D-F,V=e-_-I;V===k&&R===S||(n.each(h,function(t){t.height=R}),n.each(f,function(t){t.height=R}),n.each(p,function(t){t.fullWidth||(t.width=V)}),n.each(g,function(t){t.fullWidth||(t.width=V)}),S=R,k=V);var z=l+O,N=d+L;n.each(h.concat(p),W),z+=k,N+=S,n.each(f,W),n.each(g,W),t.chartArea={left:_,top:D,right:_+k,bottom:D+S},n.each(m,function(e){e.left=t.chartArea.left,e.top=t.chartArea.top,e.right=t.chartArea.right,e.bottom=t.chartArea.bottom,e.update(k,S)})}function E(t){var e=n.findNextWhere(C,function(e){return e.box===t});if(e)if(t.isHorizontal()){var i={left:Math.max(_,M),right:Math.max(I,P),top:0,bottom:0};t.update(t.fullWidth?v:k,b/2,i)}else t.update(e.minSize.width,S)}function W(t){t.isHorizontal()?(t.left=t.fullWidth?l:_,t.right=t.fullWidth?e-u:_+k,t.top=N,t.bottom=N+t.height,N=t.bottom):(t.left=z,t.right=z+t.width,t.top=D,t.bottom=D+S,z=t.right)}}}},{46:46}],32:[function(t,e,i){"use strict";var n=t(26),a=t(46);n._set("global",{plugins:{}}),e.exports={_plugins:[],_cacheId:0,register:function(t){var e=this._plugins;[].concat(t).forEach(function(t){-1===e.indexOf(t)&&e.push(t)}),this._cacheId++},unregister:function(t){var e=this._plugins;[].concat(t).forEach(function(t){var i=e.indexOf(t);-1!==i&&e.splice(i,1)}),this._cacheId++},clear:function(){this._plugins=[],this._cacheId++},count:function(){return this._plugins.length},getAll:function(){return this._plugins},notify:function(t,e,i){var n,a,r,o,s,l=this.descriptors(t),u=l.length;for(n=0;n<u;++n)if("function"==typeof(s=(r=(a=l[n]).plugin)[e])&&((o=[t].concat(i||[])).push(a.options),!1===s.apply(r,o)))return!1;return!0},descriptors:function(t){var e=t.$plugins||(t.$plugins={});if(e.id===this._cacheId)return e.descriptors;var i=[],r=[],o=t&&t.config||{},s=o.options&&o.options.plugins||{};return this._plugins.concat(o.plugins||[]).forEach(function(t){if(-1===i.indexOf(t)){var e=t.id,o=s[e];!1!==o&&(!0===o&&(o=a.clone(n.global.plugins[e])),i.push(t),r.push({plugin:t,options:o||{}}))}}),e.descriptors=r,e.id=this._cacheId,r},_invalidate:function(t){delete t.$plugins}}},{26:26,46:46}],33:[function(t,e,i){"use strict";var n=t(26),a=t(27),r=t(46),o=t(35);function s(t){var e,i,n=[];for(e=0,i=t.length;e<i;++e)n.push(t[e].label);return n}function l(t,e,i){var n=t.getPixelForTick(e);return i&&(n-=0===e?(t.getPixelForTick(1)-n)/2:(n-t.getPixelForTick(e-1))/2),n}function u(t,e,i){return r.isArray(e)?r.longestText(t,i,e):t.measureText(e).width}function d(t){var e=r.valueOrDefault,i=n.global,a=e(t.fontSize,i.defaultFontSize),o=e(t.fontStyle,i.defaultFontStyle),s=e(t.fontFamily,i.defaultFontFamily);return{size:a,style:o,family:s,font:r.fontString(a,o,s)}}function c(t){return r.options.toLineHeight(r.valueOrDefault(t.lineHeight,1.2),r.valueOrDefault(t.fontSize,n.global.defaultFontSize))}n._set("scale",{display:!0,position:"left",offset:!1,gridLines:{display:!0,color:"rgba(0, 0, 0, 0.1)",lineWidth:1,drawBorder:!0,drawOnChartArea:!0,drawTicks:!0,tickMarkLength:10,zeroLineWidth:1,zeroLineColor:"rgba(0,0,0,0.25)",zeroLineBorderDash:[],zeroLineBorderDashOffset:0,offsetGridLines:!1,borderDash:[],borderDashOffset:0},scaleLabel:{display:!1,labelString:"",lineHeight:1.2,padding:{top:4,bottom:4}},ticks:{beginAtZero:!1,minRotation:0,maxRotation:50,mirror:!1,padding:0,reverse:!1,display:!0,autoSkip:!0,autoSkipPadding:0,labelOffset:0,callback:o.formatters.values,minor:{},major:{}}}),e.exports=a.extend({getPadding:function(){return{left:this.paddingLeft||0,top:this.paddingTop||0,right:this.paddingRight||0,bottom:this.paddingBottom||0}},getTicks:function(){return this._ticks},mergeTicksOptions:function(){var t=this.options.ticks;for(var e in!1===t.minor&&(t.minor={display:!1}),!1===t.major&&(t.major={display:!1}),t)"major"!==e&&"minor"!==e&&(void 0===t.minor[e]&&(t.minor[e]=t[e]),void 0===t.major[e]&&(t.major[e]=t[e]))},beforeUpdate:function(){r.callback(this.options.beforeUpdate,[this])},update:function(t,e,i){var n,a,o,s,l,u,d=this;for(d.beforeUpdate(),d.maxWidth=t,d.maxHeight=e,d.margins=r.extend({left:0,right:0,top:0,bottom:0},i),d.longestTextCache=d.longestTextCache||{},d.beforeSetDimensions(),d.setDimensions(),d.afterSetDimensions(),d.beforeDataLimits(),d.determineDataLimits(),d.afterDataLimits(),d.beforeBuildTicks(),l=d.buildTicks()||[],d.afterBuildTicks(),d.beforeTickToLabelConversion(),o=d.convertTicksToLabels(l)||d.ticks,d.afterTickToLabelConversion(),d.ticks=o,n=0,a=o.length;n<a;++n)s=o[n],(u=l[n])?u.label=s:l.push(u={label:s,major:!1});return d._ticks=l,d.beforeCalculateTickRotation(),d.calculateTickRotation(),d.afterCalculateTickRotation(),d.beforeFit(),d.fit(),d.afterFit(),d.afterUpdate(),d.minSize},afterUpdate:function(){r.callback(this.options.afterUpdate,[this])},beforeSetDimensions:function(){r.callback(this.options.beforeSetDimensions,[this])},setDimensions:function(){var t=this;t.isHorizontal()?(t.width=t.maxWidth,t.left=0,t.right=t.width):(t.height=t.maxHeight,t.top=0,t.bottom=t.height),t.paddingLeft=0,t.paddingTop=0,t.paddingRight=0,t.paddingBottom=0},afterSetDimensions:function(){r.callback(this.options.afterSetDimensions,[this])},beforeDataLimits:function(){r.callback(this.options.beforeDataLimits,[this])},determineDataLimits:r.noop,afterDataLimits:function(){r.callback(this.options.afterDataLimits,[this])},beforeBuildTicks:function(){r.callback(this.options.beforeBuildTicks,[this])},buildTicks:r.noop,afterBuildTicks:function(){r.callback(this.options.afterBuildTicks,[this])},beforeTickToLabelConversion:function(){r.callback(this.options.beforeTickToLabelConversion,[this])},convertTicksToLabels:function(){var t=this.options.ticks;this.ticks=this.ticks.map(t.userCallback||t.callback,this)},afterTickToLabelConversion:function(){r.callback(this.options.afterTickToLabelConversion,[this])},beforeCalculateTickRotation:function(){r.callback(this.options.beforeCalculateTickRotation,[this])},calculateTickRotation:function(){var t=this,e=t.ctx,i=t.options.ticks,n=s(t._ticks),a=d(i);e.font=a.font;var o=i.minRotation||0;if(n.length&&t.options.display&&t.isHorizontal())for(var l,u=r.longestText(e,a.font,n,t.longestTextCache),c=u,h=t.getPixelForTick(1)-t.getPixelForTick(0)-6;c>h&&o<i.maxRotation;){var f=r.toRadians(o);if(l=Math.cos(f),Math.sin(f)*u>t.maxHeight){o--;break}o++,c=l*u}t.labelRotation=o},afterCalculateTickRotation:function(){r.callback(this.options.afterCalculateTickRotation,[this])},beforeFit:function(){r.callback(this.options.beforeFit,[this])},fit:function(){var t=this,e=t.minSize={width:0,height:0},i=s(t._ticks),n=t.options,a=n.ticks,o=n.scaleLabel,l=n.gridLines,h=n.display,f=t.isHorizontal(),p=d(a),g=n.gridLines.tickMarkLength;if(e.width=f?t.isFullWidth()?t.maxWidth-t.margins.left-t.margins.right:t.maxWidth:h&&l.drawTicks?g:0,e.height=f?h&&l.drawTicks?g:0:t.maxHeight,o.display&&h){var m=c(o)+r.options.toPadding(o.padding).height;f?e.height+=m:e.width+=m}if(a.display&&h){var v=r.longestText(t.ctx,p.font,i,t.longestTextCache),b=r.numberOfLabelLines(i),y=.5*p.size,x=t.options.ticks.padding;if(f){t.longestLabelWidth=v;var w=r.toRadians(t.labelRotation),k=Math.cos(w),S=Math.sin(w)*v+p.size*b+y*(b-1)+y;e.height=Math.min(t.maxHeight,e.height+S+x),t.ctx.font=p.font;var C=u(t.ctx,i[0],p.font),M=u(t.ctx,i[i.length-1],p.font);0!==t.labelRotation?(t.paddingLeft="bottom"===n.position?k*C+3:k*y+3,t.paddingRight="bottom"===n.position?k*y+3:k*M+3):(t.paddingLeft=C/2+3,t.paddingRight=M/2+3)}else a.mirror?v=0:v+=x+y,e.width=Math.min(t.maxWidth,e.width+v),t.paddingTop=p.size/2,t.paddingBottom=p.size/2}t.handleMargins(),t.width=e.width,t.height=e.height},handleMargins:function(){var t=this;t.margins&&(t.paddingLeft=Math.max(t.paddingLeft-t.margins.left,0),t.paddingTop=Math.max(t.paddingTop-t.margins.top,0),t.paddingRight=Math.max(t.paddingRight-t.margins.right,0),t.paddingBottom=Math.max(t.paddingBottom-t.margins.bottom,0))},afterFit:function(){r.callback(this.options.afterFit,[this])},isHorizontal:function(){return"top"===this.options.position||"bottom"===this.options.position},isFullWidth:function(){return this.options.fullWidth},getRightValue:function(t){if(r.isNullOrUndef(t))return NaN;if("number"==typeof t&&!isFinite(t))return NaN;if(t)if(this.isHorizontal()){if(void 0!==t.x)return this.getRightValue(t.x)}else if(void 0!==t.y)return this.getRightValue(t.y);return t},getLabelForIndex:r.noop,getPixelForValue:r.noop,getValueForPixel:r.noop,getPixelForTick:function(t){var e=this,i=e.options.offset;if(e.isHorizontal()){var n=(e.width-(e.paddingLeft+e.paddingRight))/Math.max(e._ticks.length-(i?0:1),1),a=n*t+e.paddingLeft;i&&(a+=n/2);var r=e.left+Math.round(a);return r+=e.isFullWidth()?e.margins.left:0}var o=e.height-(e.paddingTop+e.paddingBottom);return e.top+t*(o/(e._ticks.length-1))},getPixelForDecimal:function(t){var e=this;if(e.isHorizontal()){var i=(e.width-(e.paddingLeft+e.paddingRight))*t+e.paddingLeft,n=e.left+Math.round(i);return n+=e.isFullWidth()?e.margins.left:0}return e.top+t*e.height},getBasePixel:function(){return this.getPixelForValue(this.getBaseValue())},getBaseValue:function(){var t=this.min,e=this.max;return this.beginAtZero?0:t<0&&e<0?e:t>0&&e>0?t:0},_autoSkip:function(t){var e,i,n,a,o=this,s=o.isHorizontal(),l=o.options.ticks.minor,u=t.length,d=r.toRadians(o.labelRotation),c=Math.cos(d),h=o.longestLabelWidth*c,f=[];for(l.maxTicksLimit&&(a=l.maxTicksLimit),s&&(e=!1,(h+l.autoSkipPadding)*u>o.width-(o.paddingLeft+o.paddingRight)&&(e=1+Math.floor((h+l.autoSkipPadding)*u/(o.width-(o.paddingLeft+o.paddingRight)))),a&&u>a&&(e=Math.max(e,Math.floor(u/a)))),i=0;i<u;i++)n=t[i],(e>1&&i%e>0||i%e==0&&i+e>=u)&&i!==u-1&&delete n.label,f.push(n);return f},draw:function(t){var e=this,i=e.options;if(i.display){var a=e.ctx,o=n.global,s=i.ticks.minor,u=i.ticks.major||s,h=i.gridLines,f=i.scaleLabel,p=0!==e.labelRotation,g=e.isHorizontal(),m=s.autoSkip?e._autoSkip(e.getTicks()):e.getTicks(),v=r.valueOrDefault(s.fontColor,o.defaultFontColor),b=d(s),y=r.valueOrDefault(u.fontColor,o.defaultFontColor),x=d(u),w=h.drawTicks?h.tickMarkLength:0,k=r.valueOrDefault(f.fontColor,o.defaultFontColor),S=d(f),C=r.options.toPadding(f.padding),M=r.toRadians(e.labelRotation),P=[],T=e.options.gridLines.lineWidth,A="right"===i.position?e.left:e.right-T-w,_="right"===i.position?e.left+w:e.right,I="bottom"===i.position?e.top+T:e.bottom-w-T,D="bottom"===i.position?e.top+T+w:e.bottom+T;if(r.each(m,function(n,a){if(!r.isNullOrUndef(n.label)){var u,d,c,f,v,b,y,x,k,S,C,F,O,L,R=n.label;a===e.zeroLineIndex&&i.offset===h.offsetGridLines?(u=h.zeroLineWidth,d=h.zeroLineColor,c=h.zeroLineBorderDash,f=h.zeroLineBorderDashOffset):(u=r.valueAtIndexOrDefault(h.lineWidth,a),d=r.valueAtIndexOrDefault(h.color,a),c=r.valueOrDefault(h.borderDash,o.borderDash),f=r.valueOrDefault(h.borderDashOffset,o.borderDashOffset));var V="middle",z="middle",N=s.padding;if(g){var E=w+N;"bottom"===i.position?(z=p?"middle":"top",V=p?"right":"center",L=e.top+E):(z=p?"middle":"bottom",V=p?"left":"center",L=e.bottom-E);var W=l(e,a,h.offsetGridLines&&m.length>1);W<e.left&&(d="rgba(0,0,0,0)"),W+=r.aliasPixel(u),O=e.getPixelForTick(a)+s.labelOffset,v=y=k=C=W,b=I,x=D,S=t.top,F=t.bottom+T}else{var B,H="left"===i.position;s.mirror?(V=H?"left":"right",B=N):(V=H?"right":"left",B=w+N),O=H?e.right-B:e.left+B;var j=l(e,a,h.offsetGridLines&&m.length>1);j<e.top&&(d="rgba(0,0,0,0)"),j+=r.aliasPixel(u),L=e.getPixelForTick(a)+s.labelOffset,v=A,y=_,k=t.left,C=t.right+T,b=x=S=F=j}P.push({tx1:v,ty1:b,tx2:y,ty2:x,x1:k,y1:S,x2:C,y2:F,labelX:O,labelY:L,glWidth:u,glColor:d,glBorderDash:c,glBorderDashOffset:f,rotation:-1*M,label:R,major:n.major,textBaseline:z,textAlign:V})}}),r.each(P,function(t){if(h.display&&(a.save(),a.lineWidth=t.glWidth,a.strokeStyle=t.glColor,a.setLineDash&&(a.setLineDash(t.glBorderDash),a.lineDashOffset=t.glBorderDashOffset),a.beginPath(),h.drawTicks&&(a.moveTo(t.tx1,t.ty1),a.lineTo(t.tx2,t.ty2)),h.drawOnChartArea&&(a.moveTo(t.x1,t.y1),a.lineTo(t.x2,t.y2)),a.stroke(),a.restore()),s.display){a.save(),a.translate(t.labelX,t.labelY),a.rotate(t.rotation),a.font=t.major?x.font:b.font,a.fillStyle=t.major?y:v,a.textBaseline=t.textBaseline,a.textAlign=t.textAlign;var i=t.label;if(r.isArray(i))for(var n=i.length,o=1.5*b.size,l=e.isHorizontal()?0:-o*(n-1)/2,u=0;u<n;++u)a.fillText(""+i[u],0,l),l+=o;else a.fillText(i,0,0);a.restore()}}),f.display){var F,O,L=0,R=c(f)/2;if(g)F=e.left+(e.right-e.left)/2,O="bottom"===i.position?e.bottom-R-C.bottom:e.top+R+C.top;else{var V="left"===i.position;F=V?e.left+R+C.top:e.right-R-C.top,O=e.top+(e.bottom-e.top)/2,L=V?-.5*Math.PI:.5*Math.PI}a.save(),a.translate(F,O),a.rotate(L),a.textAlign="center",a.textBaseline="middle",a.fillStyle=k,a.font=S.font,a.fillText(f.labelString,0,0),a.restore()}if(h.drawBorder){a.lineWidth=r.valueAtIndexOrDefault(h.lineWidth,0),a.strokeStyle=r.valueAtIndexOrDefault(h.color,0);var z=e.left,N=e.right+T,E=e.top,W=e.bottom+T,B=r.aliasPixel(a.lineWidth);g?(E=W="top"===i.position?e.bottom:e.top,E+=B,W+=B):(z=N="left"===i.position?e.right:e.left,z+=B,N+=B),a.beginPath(),a.moveTo(z,E),a.lineTo(N,W),a.stroke()}}}})},{26:26,27:27,35:35,46:46}],34:[function(t,e,i){"use strict";var n=t(26),a=t(46),r=t(31);e.exports={constructors:{},defaults:{},registerScaleType:function(t,e,i){this.constructors[t]=e,this.defaults[t]=a.clone(i)},getScaleConstructor:function(t){return this.constructors.hasOwnProperty(t)?this.constructors[t]:void 0},getScaleDefaults:function(t){return this.defaults.hasOwnProperty(t)?a.merge({},[n.scale,this.defaults[t]]):{}},updateScaleDefaults:function(t,e){this.defaults.hasOwnProperty(t)&&(this.defaults[t]=a.extend(this.defaults[t],e))},addScalesToLayout:function(t){a.each(t.scales,function(e){e.fullWidth=e.options.fullWidth,e.position=e.options.position,e.weight=e.options.weight,r.addBox(t,e)})}}},{26:26,31:31,46:46}],35:[function(t,e,i){"use strict";var n=t(46);e.exports={formatters:{values:function(t){return n.isArray(t)?t:""+t},linear:function(t,e,i){var a=i.length>3?i[2]-i[1]:i[1]-i[0];Math.abs(a)>1&&t!==Math.floor(t)&&(a=t-Math.floor(t));var r=n.log10(Math.abs(a)),o="";if(0!==t)if(Math.max(Math.abs(i[0]),Math.abs(i[i.length-1]))<1e-4){var s=n.log10(Math.abs(t));o=t.toExponential(Math.floor(s)-Math.floor(r))}else{var l=-1*Math.floor(r);l=Math.max(Math.min(l,20),0),o=t.toFixed(l)}else o="0";return o},logarithmic:function(t,e,i){var a=t/Math.pow(10,Math.floor(n.log10(t)));return 0===t?"0":1===a||2===a||5===a||0===e||e===i.length-1?t.toExponential():""}}}},{46:46}],36:[function(t,e,i){"use strict";var n=t(26),a=t(27),r=t(46);n._set("global",{tooltips:{enabled:!0,custom:null,mode:"nearest",position:"average",intersect:!0,backgroundColor:"rgba(0,0,0,0.8)",titleFontStyle:"bold",titleSpacing:2,titleMarginBottom:6,titleFontColor:"#fff",titleAlign:"left",bodySpacing:2,bodyFontColor:"#fff",bodyAlign:"left",footerFontStyle:"bold",footerSpacing:2,footerMarginTop:6,footerFontColor:"#fff",footerAlign:"left",yPadding:6,xPadding:6,caretPadding:2,caretSize:5,cornerRadius:6,multiKeyBackground:"#fff",displayColors:!0,borderColor:"rgba(0,0,0,0)",borderWidth:0,callbacks:{beforeTitle:r.noop,title:function(t,e){var i="",n=e.labels,a=n?n.length:0;if(t.length>0){var r=t[0];r.xLabel?i=r.xLabel:a>0&&r.index<a&&(i=n[r.index])}return i},afterTitle:r.noop,beforeBody:r.noop,beforeLabel:r.noop,label:function(t,e){var i=e.datasets[t.datasetIndex].label||"";return i&&(i+=": "),i+=t.yLabel},labelColor:function(t,e){var i=e.getDatasetMeta(t.datasetIndex).data[t.index]._view;return{borderColor:i.borderColor,backgroundColor:i.backgroundColor}},labelTextColor:function(){return this._options.bodyFontColor},afterLabel:r.noop,afterBody:r.noop,beforeFooter:r.noop,footer:r.noop,afterFooter:r.noop}}});var o={average:function(t){if(!t.length)return!1;var e,i,n=0,a=0,r=0;for(e=0,i=t.length;e<i;++e){var o=t[e];if(o&&o.hasValue()){var s=o.tooltipPosition();n+=s.x,a+=s.y,++r}}return{x:Math.round(n/r),y:Math.round(a/r)}},nearest:function(t,e){var i,n,a,o=e.x,s=e.y,l=Number.POSITIVE_INFINITY;for(i=0,n=t.length;i<n;++i){var u=t[i];if(u&&u.hasValue()){var d=u.getCenterPoint(),c=r.distanceBetweenPoints(e,d);c<l&&(l=c,a=u)}}if(a){var h=a.tooltipPosition();o=h.x,s=h.y}return{x:o,y:s}}};function s(t,e){var i=r.color(t);return i.alpha(e*i.alpha()).rgbaString()}function l(t,e){return e&&(r.isArray(e)?Array.prototype.push.apply(t,e):t.push(e)),t}function u(t){return("string"==typeof t||t instanceof String)&&t.indexOf("\n")>-1?t.split("\n"):t}function d(t){var e=n.global,i=r.valueOrDefault;return{xPadding:t.xPadding,yPadding:t.yPadding,xAlign:t.xAlign,yAlign:t.yAlign,bodyFontColor:t.bodyFontColor,_bodyFontFamily:i(t.bodyFontFamily,e.defaultFontFamily),_bodyFontStyle:i(t.bodyFontStyle,e.defaultFontStyle),_bodyAlign:t.bodyAlign,bodyFontSize:i(t.bodyFontSize,e.defaultFontSize),bodySpacing:t.bodySpacing,titleFontColor:t.titleFontColor,_titleFontFamily:i(t.titleFontFamily,e.defaultFontFamily),_titleFontStyle:i(t.titleFontStyle,e.defaultFontStyle),titleFontSize:i(t.titleFontSize,e.defaultFontSize),_titleAlign:t.titleAlign,titleSpacing:t.titleSpacing,titleMarginBottom:t.titleMarginBottom,footerFontColor:t.footerFontColor,_footerFontFamily:i(t.footerFontFamily,e.defaultFontFamily),_footerFontStyle:i(t.footerFontStyle,e.defaultFontStyle),footerFontSize:i(t.footerFontSize,e.defaultFontSize),_footerAlign:t.footerAlign,footerSpacing:t.footerSpacing,footerMarginTop:t.footerMarginTop,caretSize:t.caretSize,cornerRadius:t.cornerRadius,backgroundColor:t.backgroundColor,opacity:0,legendColorBackground:t.multiKeyBackground,displayColors:t.displayColors,borderColor:t.borderColor,borderWidth:t.borderWidth}}function c(t){return l([],u(t))}(e.exports=a.extend({initialize:function(){this._model=d(this._options),this._lastActive=[]},getTitle:function(){var t=this._options.callbacks,e=t.beforeTitle.apply(this,arguments),i=t.title.apply(this,arguments),n=t.afterTitle.apply(this,arguments),a=[];return a=l(a=l(a=l(a,u(e)),u(i)),u(n))},getBeforeBody:function(){return c(this._options.callbacks.beforeBody.apply(this,arguments))},getBody:function(t,e){var i=this,n=i._options.callbacks,a=[];return r.each(t,function(t){var r={before:[],lines:[],after:[]};l(r.before,u(n.beforeLabel.call(i,t,e))),l(r.lines,n.label.call(i,t,e)),l(r.after,u(n.afterLabel.call(i,t,e))),a.push(r)}),a},getAfterBody:function(){return c(this._options.callbacks.afterBody.apply(this,arguments))},getFooter:function(){var t=this._options.callbacks,e=t.beforeFooter.apply(this,arguments),i=t.footer.apply(this,arguments),n=t.afterFooter.apply(this,arguments),a=[];return a=l(a=l(a=l(a,u(e)),u(i)),u(n))},update:function(t){var e,i,n,a,s,l,u,c=this,h=c._options,f=c._model,p=c._model=d(h),g=c._active,m=c._data,v={xAlign:f.xAlign,yAlign:f.yAlign},b={x:f.x,y:f.y},y={width:f.width,height:f.height},x={x:f.caretX,y:f.caretY};if(g.length){p.opacity=1;var w=[],k=[];x=o[h.position].call(c,g,c._eventPosition);var S=[];for(e=0,i=g.length;e<i;++e)S.push((n=g[e],a=void 0,s=void 0,void 0,void 0,a=n._xScale,s=n._yScale||n._scale,l=n._index,u=n._datasetIndex,{xLabel:a?a.getLabelForIndex(l,u):"",yLabel:s?s.getLabelForIndex(l,u):"",index:l,datasetIndex:u,x:n._model.x,y:n._model.y}));h.filter&&(S=S.filter(function(t){return h.filter(t,m)})),h.itemSort&&(S=S.sort(function(t,e){return h.itemSort(t,e,m)})),r.each(S,function(t){w.push(h.callbacks.labelColor.call(c,t,c._chart)),k.push(h.callbacks.labelTextColor.call(c,t,c._chart))}),p.title=c.getTitle(S,m),p.beforeBody=c.getBeforeBody(S,m),p.body=c.getBody(S,m),p.afterBody=c.getAfterBody(S,m),p.footer=c.getFooter(S,m),p.x=Math.round(x.x),p.y=Math.round(x.y),p.caretPadding=h.caretPadding,p.labelColors=w,p.labelTextColors=k,p.dataPoints=S,b=function(t,e,i,n){var a=t.x,r=t.y,o=t.caretSize,s=t.caretPadding,l=t.cornerRadius,u=i.xAlign,d=i.yAlign,c=o+s,h=l+s;return"right"===u?a-=e.width:"center"===u&&((a-=e.width/2)+e.width>n.width&&(a=n.width-e.width),a<0&&(a=0)),"top"===d?r+=c:r-="bottom"===d?e.height+c:e.height/2,"center"===d?"left"===u?a+=c:"right"===u&&(a-=c):"left"===u?a-=h:"right"===u&&(a+=h),{x:a,y:r}}(p,y=function(t,e){var i=t._chart.ctx,n=2*e.yPadding,a=0,o=e.body,s=o.reduce(function(t,e){return t+e.before.length+e.lines.length+e.after.length},0);s+=e.beforeBody.length+e.afterBody.length;var l=e.title.length,u=e.footer.length,d=e.titleFontSize,c=e.bodyFontSize,h=e.footerFontSize;n+=l*d,n+=l?(l-1)*e.titleSpacing:0,n+=l?e.titleMarginBottom:0,n+=s*c,n+=s?(s-1)*e.bodySpacing:0,n+=u?e.footerMarginTop:0,n+=u*h,n+=u?(u-1)*e.footerSpacing:0;var f=0,p=function(t){a=Math.max(a,i.measureText(t).width+f)};return i.font=r.fontString(d,e._titleFontStyle,e._titleFontFamily),r.each(e.title,p),i.font=r.fontString(c,e._bodyFontStyle,e._bodyFontFamily),r.each(e.beforeBody.concat(e.afterBody),p),f=e.displayColors?c+2:0,r.each(o,function(t){r.each(t.before,p),r.each(t.lines,p),r.each(t.after,p)}),f=0,i.font=r.fontString(h,e._footerFontStyle,e._footerFontFamily),r.each(e.footer,p),{width:a+=2*e.xPadding,height:n}}(this,p),v=function(t,e){var i,n,a,r,o,s=t._model,l=t._chart,u=t._chart.chartArea,d="center",c="center";s.y<e.height?c="top":s.y>l.height-e.height&&(c="bottom");var h=(u.left+u.right)/2,f=(u.top+u.bottom)/2;"center"===c?(i=function(t){return t<=h},n=function(t){return t>h}):(i=function(t){return t<=e.width/2},n=function(t){return t>=l.width-e.width/2}),a=function(t){return t+e.width+s.caretSize+s.caretPadding>l.width},r=function(t){return t-e.width-s.caretSize-s.caretPadding<0},o=function(t){return t<=f?"top":"bottom"},i(s.x)?(d="left",a(s.x)&&(d="center",c=o(s.y))):n(s.x)&&(d="right",r(s.x)&&(d="center",c=o(s.y)));var p=t._options;return{xAlign:p.xAlign?p.xAlign:d,yAlign:p.yAlign?p.yAlign:c}}(this,y),c._chart)}else p.opacity=0;return p.xAlign=v.xAlign,p.yAlign=v.yAlign,p.x=b.x,p.y=b.y,p.width=y.width,p.height=y.height,p.caretX=x.x,p.caretY=x.y,c._model=p,t&&h.custom&&h.custom.call(c,p),c},drawCaret:function(t,e){var i=this._chart.ctx,n=this._view,a=this.getCaretPosition(t,e,n);i.lineTo(a.x1,a.y1),i.lineTo(a.x2,a.y2),i.lineTo(a.x3,a.y3)},getCaretPosition:function(t,e,i){var n,a,r,o,s,l,u=i.caretSize,d=i.cornerRadius,c=i.xAlign,h=i.yAlign,f=t.x,p=t.y,g=e.width,m=e.height;if("center"===h)s=p+m/2,"left"===c?(a=(n=f)-u,r=n,o=s+u,l=s-u):(a=(n=f+g)+u,r=n,o=s-u,l=s+u);else if("left"===c?(n=(a=f+d+u)-u,r=a+u):"right"===c?(n=(a=f+g-d-u)-u,r=a+u):(n=(a=i.caretX)-u,r=a+u),"top"===h)s=(o=p)-u,l=o;else{s=(o=p+m)+u,l=o;var v=r;r=n,n=v}return{x1:n,x2:a,x3:r,y1:o,y2:s,y3:l}},drawTitle:function(t,e,i,n){var a=e.title;if(a.length){i.textAlign=e._titleAlign,i.textBaseline="top";var o,l,u=e.titleFontSize,d=e.titleSpacing;for(i.fillStyle=s(e.titleFontColor,n),i.font=r.fontString(u,e._titleFontStyle,e._titleFontFamily),o=0,l=a.length;o<l;++o)i.fillText(a[o],t.x,t.y),t.y+=u+d,o+1===a.length&&(t.y+=e.titleMarginBottom-d)}},drawBody:function(t,e,i,n){var a=e.bodyFontSize,o=e.bodySpacing,l=e.body;i.textAlign=e._bodyAlign,i.textBaseline="top",i.font=r.fontString(a,e._bodyFontStyle,e._bodyFontFamily);var u=0,d=function(e){i.fillText(e,t.x+u,t.y),t.y+=a+o};i.fillStyle=s(e.bodyFontColor,n),r.each(e.beforeBody,d);var c=e.displayColors;u=c?a+2:0,r.each(l,function(o,l){var u=s(e.labelTextColors[l],n);i.fillStyle=u,r.each(o.before,d),r.each(o.lines,function(r){c&&(i.fillStyle=s(e.legendColorBackground,n),i.fillRect(t.x,t.y,a,a),i.lineWidth=1,i.strokeStyle=s(e.labelColors[l].borderColor,n),i.strokeRect(t.x,t.y,a,a),i.fillStyle=s(e.labelColors[l].backgroundColor,n),i.fillRect(t.x+1,t.y+1,a-2,a-2),i.fillStyle=u),d(r)}),r.each(o.after,d)}),u=0,r.each(e.afterBody,d),t.y-=o},drawFooter:function(t,e,i,n){var a=e.footer;a.length&&(t.y+=e.footerMarginTop,i.textAlign=e._footerAlign,i.textBaseline="top",i.fillStyle=s(e.footerFontColor,n),i.font=r.fontString(e.footerFontSize,e._footerFontStyle,e._footerFontFamily),r.each(a,function(n){i.fillText(n,t.x,t.y),t.y+=e.footerFontSize+e.footerSpacing}))},drawBackground:function(t,e,i,n,a){i.fillStyle=s(e.backgroundColor,a),i.strokeStyle=s(e.borderColor,a),i.lineWidth=e.borderWidth;var r=e.xAlign,o=e.yAlign,l=t.x,u=t.y,d=n.width,c=n.height,h=e.cornerRadius;i.beginPath(),i.moveTo(l+h,u),"top"===o&&this.drawCaret(t,n),i.lineTo(l+d-h,u),i.quadraticCurveTo(l+d,u,l+d,u+h),"center"===o&&"right"===r&&this.drawCaret(t,n),i.lineTo(l+d,u+c-h),i.quadraticCurveTo(l+d,u+c,l+d-h,u+c),"bottom"===o&&this.drawCaret(t,n),i.lineTo(l+h,u+c),i.quadraticCurveTo(l,u+c,l,u+c-h),"center"===o&&"left"===r&&this.drawCaret(t,n),i.lineTo(l,u+h),i.quadraticCurveTo(l,u,l+h,u),i.closePath(),i.fill(),e.borderWidth>0&&i.stroke()},draw:function(){var t=this._chart.ctx,e=this._view;if(0!==e.opacity){var i={width:e.width,height:e.height},n={x:e.x,y:e.y},a=Math.abs(e.opacity<.001)?0:e.opacity,r=e.title.length||e.beforeBody.length||e.body.length||e.afterBody.length||e.footer.length;this._options.enabled&&r&&(this.drawBackground(n,e,t,i,a),n.x+=e.xPadding,n.y+=e.yPadding,this.drawTitle(n,e,t,a),this.drawBody(n,e,t,a),this.drawFooter(n,e,t,a))}},handleEvent:function(t){var e,i=this,n=i._options;return i._lastActive=i._lastActive||[],"mouseout"===t.type?i._active=[]:i._active=i._chart.getElementsAtEventForMode(t,n.mode,n),(e=!r.arrayEquals(i._active,i._lastActive))&&(i._lastActive=i._active,(n.enabled||n.custom)&&(i._eventPosition={x:t.x,y:t.y},i.update(!0),i.pivot())),e}})).positioners=o},{26:26,27:27,46:46}],37:[function(t,e,i){"use strict";var n=t(26),a=t(27),r=t(46);n._set("global",{elements:{arc:{backgroundColor:n.global.defaultColor,borderColor:"#fff",borderWidth:2}}}),e.exports=a.extend({inLabelRange:function(t){var e=this._view;return!!e&&Math.pow(t-e.x,2)<Math.pow(e.radius+e.hoverRadius,2)},inRange:function(t,e){var i=this._view;if(i){for(var n=r.getAngleFromPoint(i,{x:t,y:e}),a=n.angle,o=n.distance,s=i.startAngle,l=i.endAngle;l<s;)l+=2*Math.PI;for(;a>l;)a-=2*Math.PI;for(;a<s;)a+=2*Math.PI;var u=a>=s&&a<=l,d=o>=i.innerRadius&&o<=i.outerRadius;return u&&d}return!1},getCenterPoint:function(){var t=this._view,e=(t.startAngle+t.endAngle)/2,i=(t.innerRadius+t.outerRadius)/2;return{x:t.x+Math.cos(e)*i,y:t.y+Math.sin(e)*i}},getArea:function(){var t=this._view;return Math.PI*((t.endAngle-t.startAngle)/(2*Math.PI))*(Math.pow(t.outerRadius,2)-Math.pow(t.innerRadius,2))},tooltipPosition:function(){var t=this._view,e=t.startAngle+(t.endAngle-t.startAngle)/2,i=(t.outerRadius-t.innerRadius)/2+t.innerRadius;return{x:t.x+Math.cos(e)*i,y:t.y+Math.sin(e)*i}},draw:function(){var t=this._chart.ctx,e=this._view,i=e.startAngle,n=e.endAngle;t.beginPath(),t.arc(e.x,e.y,e.outerRadius,i,n),t.arc(e.x,e.y,e.innerRadius,n,i,!0),t.closePath(),t.strokeStyle=e.borderColor,t.lineWidth=e.borderWidth,t.fillStyle=e.backgroundColor,t.fill(),t.lineJoin="bevel",e.borderWidth&&t.stroke()}})},{26:26,27:27,46:46}],38:[function(t,e,i){"use strict";var n=t(26),a=t(27),r=t(46),o=n.global;n._set("global",{elements:{line:{tension:.4,backgroundColor:o.defaultColor,borderWidth:3,borderColor:o.defaultColor,borderCapStyle:"butt",borderDash:[],borderDashOffset:0,borderJoinStyle:"miter",capBezierPoints:!0,fill:!0}}}),e.exports=a.extend({draw:function(){var t,e,i,n,a=this._view,s=this._chart.ctx,l=a.spanGaps,u=this._children.slice(),d=o.elements.line,c=-1;for(this._loop&&u.length&&u.push(u[0]),s.save(),s.lineCap=a.borderCapStyle||d.borderCapStyle,s.setLineDash&&s.setLineDash(a.borderDash||d.borderDash),s.lineDashOffset=a.borderDashOffset||d.borderDashOffset,s.lineJoin=a.borderJoinStyle||d.borderJoinStyle,s.lineWidth=a.borderWidth||d.borderWidth,s.strokeStyle=a.borderColor||o.defaultColor,s.beginPath(),c=-1,t=0;t<u.length;++t)e=u[t],i=r.previousItem(u,t),n=e._view,0===t?n.skip||(s.moveTo(n.x,n.y),c=t):(i=-1===c?i:u[c],n.skip||(c!==t-1&&!l||-1===c?s.moveTo(n.x,n.y):r.canvas.lineTo(s,i._view,e._view),c=t));s.stroke(),s.restore()}})},{26:26,27:27,46:46}],39:[function(t,e,i){"use strict";var n=t(26),a=t(27),r=t(46),o=n.global.defaultColor;function s(t){var e=this._view;return!!e&&Math.abs(t-e.x)<e.radius+e.hitRadius}n._set("global",{elements:{point:{radius:3,pointStyle:"circle",backgroundColor:o,borderColor:o,borderWidth:1,hitRadius:1,hoverRadius:4,hoverBorderWidth:1}}}),e.exports=a.extend({inRange:function(t,e){var i=this._view;return!!i&&Math.pow(t-i.x,2)+Math.pow(e-i.y,2)<Math.pow(i.hitRadius+i.radius,2)},inLabelRange:s,inXRange:s,inYRange:function(t){var e=this._view;return!!e&&Math.abs(t-e.y)<e.radius+e.hitRadius},getCenterPoint:function(){var t=this._view;return{x:t.x,y:t.y}},getArea:function(){return Math.PI*Math.pow(this._view.radius,2)},tooltipPosition:function(){var t=this._view;return{x:t.x,y:t.y,padding:t.radius+t.borderWidth}},draw:function(t){var e=this._view,i=this._model,a=this._chart.ctx,s=e.pointStyle,l=e.rotation,u=e.radius,d=e.x,c=e.y;e.skip||(void 0===t||i.x>=t.left&&1.01*t.right>=i.x&&i.y>=t.top&&1.01*t.bottom>=i.y)&&(a.strokeStyle=e.borderColor||o,a.lineWidth=r.valueOrDefault(e.borderWidth,n.global.elements.point.borderWidth),a.fillStyle=e.backgroundColor||o,r.canvas.drawPoint(a,s,u,d,c,l))}})},{26:26,27:27,46:46}],40:[function(t,e,i){"use strict";var n=t(26),a=t(27);function r(t){return void 0!==t._view.width}function o(t){var e,i,n,a,o=t._view;if(r(t)){var s=o.width/2;e=o.x-s,i=o.x+s,n=Math.min(o.y,o.base),a=Math.max(o.y,o.base)}else{var l=o.height/2;e=Math.min(o.x,o.base),i=Math.max(o.x,o.base),n=o.y-l,a=o.y+l}return{left:e,top:n,right:i,bottom:a}}n._set("global",{elements:{rectangle:{backgroundColor:n.global.defaultColor,borderColor:n.global.defaultColor,borderSkipped:"bottom",borderWidth:0}}}),e.exports=a.extend({draw:function(){var t,e,i,n,a,r,o,s=this._chart.ctx,l=this._view,u=l.borderWidth;if(l.horizontal?(t=l.base,e=l.x,i=l.y-l.height/2,n=l.y+l.height/2,a=e>t?1:-1,r=1,o=l.borderSkipped||"left"):(t=l.x-l.width/2,e=l.x+l.width/2,i=l.y,a=1,r=(n=l.base)>i?1:-1,o=l.borderSkipped||"bottom"),u){var d=Math.min(Math.abs(t-e),Math.abs(i-n)),c=(u=u>d?d:u)/2,h=t+("left"!==o?c*a:0),f=e+("right"!==o?-c*a:0),p=i+("top"!==o?c*r:0),g=n+("bottom"!==o?-c*r:0);h!==f&&(i=p,n=g),p!==g&&(t=h,e=f)}s.beginPath(),s.fillStyle=l.backgroundColor,s.strokeStyle=l.borderColor,s.lineWidth=u;var m=[[t,n],[t,i],[e,i],[e,n]],v=["bottom","left","top","right"].indexOf(o,0);function b(t){return m[(v+t)%4]}-1===v&&(v=0);var y=b(0);s.moveTo(y[0],y[1]);for(var x=1;x<4;x++)y=b(x),s.lineTo(y[0],y[1]);s.fill(),u&&s.stroke()},height:function(){var t=this._view;return t.base-t.y},inRange:function(t,e){var i=!1;if(this._view){var n=o(this);i=t>=n.left&&t<=n.right&&e>=n.top&&e<=n.bottom}return i},inLabelRange:function(t,e){if(!this._view)return!1;var i=o(this);return r(this)?t>=i.left&&t<=i.right:e>=i.top&&e<=i.bottom},inXRange:function(t){var e=o(this);return t>=e.left&&t<=e.right},inYRange:function(t){var e=o(this);return t>=e.top&&t<=e.bottom},getCenterPoint:function(){var t,e,i=this._view;return r(this)?(t=i.x,e=(i.y+i.base)/2):(t=(i.x+i.base)/2,e=i.y),{x:t,y:e}},getArea:function(){var t=this._view;return t.width*Math.abs(t.y-t.base)},tooltipPosition:function(){var t=this._view;return{x:t.x,y:t.y}}})},{26:26,27:27}],41:[function(t,e,i){"use strict";e.exports={},e.exports.Arc=t(37),e.exports.Line=t(38),e.exports.Point=t(39),e.exports.Rectangle=t(40)},{37:37,38:38,39:39,40:40}],42:[function(t,e,i){"use strict";var n=t(43);i=e.exports={clear:function(t){t.ctx.clearRect(0,0,t.width,t.height)},roundedRect:function(t,e,i,n,a,r){if(r){var o=Math.min(r,a/2-1e-7,n/2-1e-7);t.moveTo(e+o,i),t.lineTo(e+n-o,i),t.arcTo(e+n,i,e+n,i+o,o),t.lineTo(e+n,i+a-o),t.arcTo(e+n,i+a,e+n-o,i+a,o),t.lineTo(e+o,i+a),t.arcTo(e,i+a,e,i+a-o,o),t.lineTo(e,i+o),t.arcTo(e,i,e+o,i,o),t.closePath(),t.moveTo(e,i)}else t.rect(e,i,n,a)},drawPoint:function(t,e,i,n,a,r){var o,s,l,u,d,c;if(r=r||0,!e||"object"!=typeof e||"[object HTMLImageElement]"!==(o=e.toString())&&"[object HTMLCanvasElement]"!==o){if(!(isNaN(i)||i<=0)){switch(t.save(),t.translate(n,a),t.rotate(r*Math.PI/180),t.beginPath(),e){default:t.arc(0,0,i,0,2*Math.PI),t.closePath();break;case"triangle":d=(s=3*i/Math.sqrt(3))*Math.sqrt(3)/2,t.moveTo(-s/2,d/3),t.lineTo(s/2,d/3),t.lineTo(0,-2*d/3),t.closePath();break;case"rect":c=1/Math.SQRT2*i,t.rect(-c,-c,2*c,2*c);break;case"rectRounded":var h=i/Math.SQRT2,f=-h,p=-h,g=Math.SQRT2*i;this.roundedRect(t,f,p,g,g,.425*i);break;case"rectRot":c=1/Math.SQRT2*i,t.moveTo(-c,0),t.lineTo(0,c),t.lineTo(c,0),t.lineTo(0,-c),t.closePath();break;case"cross":t.moveTo(0,i),t.lineTo(0,-i),t.moveTo(-i,0),t.lineTo(i,0);break;case"crossRot":l=Math.cos(Math.PI/4)*i,u=Math.sin(Math.PI/4)*i,t.moveTo(-l,-u),t.lineTo(l,u),t.moveTo(-l,u),t.lineTo(l,-u);break;case"star":t.moveTo(0,i),t.lineTo(0,-i),t.moveTo(-i,0),t.lineTo(i,0),l=Math.cos(Math.PI/4)*i,u=Math.sin(Math.PI/4)*i,t.moveTo(-l,-u),t.lineTo(l,u),t.moveTo(-l,u),t.lineTo(l,-u);break;case"line":t.moveTo(-i,0),t.lineTo(i,0);break;case"dash":t.moveTo(0,0),t.lineTo(i,0)}t.fill(),t.stroke(),t.restore()}}else t.drawImage(e,n-e.width/2,a-e.height/2,e.width,e.height)},clipArea:function(t,e){t.save(),t.beginPath(),t.rect(e.left,e.top,e.right-e.left,e.bottom-e.top),t.clip()},unclipArea:function(t){t.restore()},lineTo:function(t,e,i,n){if(i.steppedLine)return"after"===i.steppedLine&&!n||"after"!==i.steppedLine&&n?t.lineTo(e.x,i.y):t.lineTo(i.x,e.y),void t.lineTo(i.x,i.y);i.tension?t.bezierCurveTo(n?e.controlPointPreviousX:e.controlPointNextX,n?e.controlPointPreviousY:e.controlPointNextY,n?i.controlPointNextX:i.controlPointPreviousX,n?i.controlPointNextY:i.controlPointPreviousY,i.x,i.y):t.lineTo(i.x,i.y)}};n.clear=i.clear,n.drawRoundedRectangle=function(t){t.beginPath(),i.roundedRect.apply(i,arguments)}},{43:43}],43:[function(t,e,i){"use strict";var n,a={noop:function(){},uid:(n=0,function(){return n++}),isNullOrUndef:function(t){return null===t||void 0===t},isArray:Array.isArray?Array.isArray:function(t){return"[object Array]"===Object.prototype.toString.call(t)},isObject:function(t){return null!==t&&"[object Object]"===Object.prototype.toString.call(t)},valueOrDefault:function(t,e){return void 0===t?e:t},valueAtIndexOrDefault:function(t,e,i){return a.valueOrDefault(a.isArray(t)?t[e]:t,i)},callback:function(t,e,i){if(t&&"function"==typeof t.call)return t.apply(i,e)},each:function(t,e,i,n){var r,o,s;if(a.isArray(t))if(o=t.length,n)for(r=o-1;r>=0;r--)e.call(i,t[r],r);else for(r=0;r<o;r++)e.call(i,t[r],r);else if(a.isObject(t))for(o=(s=Object.keys(t)).length,r=0;r<o;r++)e.call(i,t[s[r]],s[r])},arrayEquals:function(t,e){var i,n,r,o;if(!t||!e||t.length!==e.length)return!1;for(i=0,n=t.length;i<n;++i)if(r=t[i],o=e[i],r instanceof Array&&o instanceof Array){if(!a.arrayEquals(r,o))return!1}else if(r!==o)return!1;return!0},clone:function(t){if(a.isArray(t))return t.map(a.clone);if(a.isObject(t)){for(var e={},i=Object.keys(t),n=i.length,r=0;r<n;++r)e[i[r]]=a.clone(t[i[r]]);return e}return t},_merger:function(t,e,i,n){var r=e[t],o=i[t];a.isObject(r)&&a.isObject(o)?a.merge(r,o,n):e[t]=a.clone(o)},_mergerIf:function(t,e,i){var n=e[t],r=i[t];a.isObject(n)&&a.isObject(r)?a.mergeIf(n,r):e.hasOwnProperty(t)||(e[t]=a.clone(r))},merge:function(t,e,i){var n,r,o,s,l,u=a.isArray(e)?e:[e],d=u.length;if(!a.isObject(t))return t;for(n=(i=i||{}).merger||a._merger,r=0;r<d;++r)if(e=u[r],a.isObject(e))for(l=0,s=(o=Object.keys(e)).length;l<s;++l)n(o[l],t,e,i);return t},mergeIf:function(t,e){return a.merge(t,e,{merger:a._mergerIf})},extend:function(t){for(var e=function(e,i){t[i]=e},i=1,n=arguments.length;i<n;++i)a.each(arguments[i],e);return t},inherits:function(t){var e=this,i=t&&t.hasOwnProperty("constructor")?t.constructor:function(){return e.apply(this,arguments)},n=function(){this.constructor=i};return n.prototype=e.prototype,i.prototype=new n,i.extend=a.inherits,t&&a.extend(i.prototype,t),i.__super__=e.prototype,i}};e.exports=a,a.callCallback=a.callback,a.indexOf=function(t,e,i){return Array.prototype.indexOf.call(t,e,i)},a.getValueOrDefault=a.valueOrDefault,a.getValueAtIndexOrDefault=a.valueAtIndexOrDefault},{}],44:[function(t,e,i){"use strict";var n=t(43),a={linear:function(t){return t},easeInQuad:function(t){return t*t},easeOutQuad:function(t){return-t*(t-2)},easeInOutQuad:function(t){return(t/=.5)<1?.5*t*t:-.5*(--t*(t-2)-1)},easeInCubic:function(t){return t*t*t},easeOutCubic:function(t){return(t-=1)*t*t+1},easeInOutCubic:function(t){return(t/=.5)<1?.5*t*t*t:.5*((t-=2)*t*t+2)},easeInQuart:function(t){return t*t*t*t},easeOutQuart:function(t){return-((t-=1)*t*t*t-1)},easeInOutQuart:function(t){return(t/=.5)<1?.5*t*t*t*t:-.5*((t-=2)*t*t*t-2)},easeInQuint:function(t){return t*t*t*t*t},easeOutQuint:function(t){return(t-=1)*t*t*t*t+1},easeInOutQuint:function(t){return(t/=.5)<1?.5*t*t*t*t*t:.5*((t-=2)*t*t*t*t+2)},easeInSine:function(t){return 1-Math.cos(t*(Math.PI/2))},easeOutSine:function(t){return Math.sin(t*(Math.PI/2))},easeInOutSine:function(t){return-.5*(Math.cos(Math.PI*t)-1)},easeInExpo:function(t){return 0===t?0:Math.pow(2,10*(t-1))},easeOutExpo:function(t){return 1===t?1:1-Math.pow(2,-10*t)},easeInOutExpo:function(t){return 0===t?0:1===t?1:(t/=.5)<1?.5*Math.pow(2,10*(t-1)):.5*(2-Math.pow(2,-10*--t))},easeInCirc:function(t){return t>=1?t:-(Math.sqrt(1-t*t)-1)},easeOutCirc:function(t){return Math.sqrt(1-(t-=1)*t)},easeInOutCirc:function(t){return(t/=.5)<1?-.5*(Math.sqrt(1-t*t)-1):.5*(Math.sqrt(1-(t-=2)*t)+1)},easeInElastic:function(t){var e=1.70158,i=0,n=1;return 0===t?0:1===t?1:(i||(i=.3),n<1?(n=1,e=i/4):e=i/(2*Math.PI)*Math.asin(1/n),-n*Math.pow(2,10*(t-=1))*Math.sin((t-e)*(2*Math.PI)/i))},easeOutElastic:function(t){var e=1.70158,i=0,n=1;return 0===t?0:1===t?1:(i||(i=.3),n<1?(n=1,e=i/4):e=i/(2*Math.PI)*Math.asin(1/n),n*Math.pow(2,-10*t)*Math.sin((t-e)*(2*Math.PI)/i)+1)},easeInOutElastic:function(t){var e=1.70158,i=0,n=1;return 0===t?0:2==(t/=.5)?1:(i||(i=.45),n<1?(n=1,e=i/4):e=i/(2*Math.PI)*Math.asin(1/n),t<1?n*Math.pow(2,10*(t-=1))*Math.sin((t-e)*(2*Math.PI)/i)*-.5:n*Math.pow(2,-10*(t-=1))*Math.sin((t-e)*(2*Math.PI)/i)*.5+1)},easeInBack:function(t){var e=1.70158;return t*t*((e+1)*t-e)},easeOutBack:function(t){var e=1.70158;return(t-=1)*t*((e+1)*t+e)+1},easeInOutBack:function(t){var e=1.70158;return(t/=.5)<1?t*t*((1+(e*=1.525))*t-e)*.5:.5*((t-=2)*t*((1+(e*=1.525))*t+e)+2)},easeInBounce:function(t){return 1-a.easeOutBounce(1-t)},easeOutBounce:function(t){return t<1/2.75?7.5625*t*t:t<2/2.75?7.5625*(t-=1.5/2.75)*t+.75:t<2.5/2.75?7.5625*(t-=2.25/2.75)*t+.9375:7.5625*(t-=2.625/2.75)*t+.984375},easeInOutBounce:function(t){return t<.5?.5*a.easeInBounce(2*t):.5*a.easeOutBounce(2*t-1)+.5}};e.exports={effects:a},n.easingEffects=a},{43:43}],45:[function(t,e,i){"use strict";var n=t(43);e.exports={toLineHeight:function(t,e){var i=(""+t).match(/^(normal|(\d+(?:\.\d+)?)(px|em|%)?)$/);if(!i||"normal"===i[1])return 1.2*e;switch(t=+i[2],i[3]){case"px":return t;case"%":t/=100}return e*t},toPadding:function(t){var e,i,a,r;return n.isObject(t)?(e=+t.top||0,i=+t.right||0,a=+t.bottom||0,r=+t.left||0):e=i=a=r=+t||0,{top:e,right:i,bottom:a,left:r,height:e+a,width:r+i}},resolve:function(t,e,i){var a,r,o;for(a=0,r=t.length;a<r;++a)if(void 0!==(o=t[a])&&(void 0!==e&&"function"==typeof o&&(o=o(e)),void 0!==i&&n.isArray(o)&&(o=o[i]),void 0!==o))return o}}},{43:43}],46:[function(t,e,i){"use strict";e.exports=t(43),e.exports.easing=t(44),e.exports.canvas=t(42),e.exports.options=t(45)},{42:42,43:43,44:44,45:45}],47:[function(t,e,i){e.exports={acquireContext:function(t){return t&&t.canvas&&(t=t.canvas),t&&t.getContext("2d")||null}}},{}],48:[function(t,e,i){"use strict";var n=t(46),a="$chartjs",r="chartjs-",o=r+"render-monitor",s=r+"render-animation",l=["animationstart","webkitAnimationStart"],u={touchstart:"mousedown",touchmove:"mousemove",touchend:"mouseup",pointerenter:"mouseenter",pointerdown:"mousedown",pointermove:"mousemove",pointerup:"mouseup",pointerleave:"mouseout",pointerout:"mouseout"};function d(t,e){var i=n.getStyle(t,e),a=i&&i.match(/^(\d+)(\.\d+)?px$/);return a?Number(a[1]):void 0}var c=!!function(){var t=!1;try{var e=Object.defineProperty({},"passive",{get:function(){t=!0}});window.addEventListener("e",null,e)}catch(t){}return t}()&&{passive:!0};function h(t,e,i){t.addEventListener(e,i,c)}function f(t,e,i){t.removeEventListener(e,i,c)}function p(t,e,i,n,a){return{type:t,chart:e,native:a||null,x:void 0!==i?i:null,y:void 0!==n?n:null}}function g(t,e,i){var u,d,c,f,g=t[a]||(t[a]={}),m=g.resizer=function(t){var e=document.createElement("div"),i=r+"size-monitor",n="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;";e.style.cssText=n,e.className=i,e.innerHTML='<div class="'+i+'-expand" style="'+n+'"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="'+i+'-shrink" style="'+n+'"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div>';var a=e.childNodes[0],o=e.childNodes[1];e._reset=function(){a.scrollLeft=1e6,a.scrollTop=1e6,o.scrollLeft=1e6,o.scrollTop=1e6};var s=function(){e._reset(),t()};return h(a,"scroll",s.bind(a,"expand")),h(o,"scroll",s.bind(o,"shrink")),e}((u=function(){if(g.resizer)return e(p("resize",i))},c=!1,f=[],function(){f=Array.prototype.slice.call(arguments),d=d||this,c||(c=!0,n.requestAnimFrame.call(window,function(){c=!1,u.apply(d,f)}))}));!function(t,e){var i=t[a]||(t[a]={}),r=i.renderProxy=function(t){t.animationName===s&&e()};n.each(l,function(e){h(t,e,r)}),i.reflow=!!t.offsetParent,t.classList.add(o)}(t,function(){if(g.resizer){var e=t.parentNode;e&&e!==m.parentNode&&e.insertBefore(m,e.firstChild),m._reset()}})}function m(t){var e=t[a]||{},i=e.resizer;delete e.resizer,function(t){var e=t[a]||{},i=e.renderProxy;i&&(n.each(l,function(e){f(t,e,i)}),delete e.renderProxy),t.classList.remove(o)}(t),i&&i.parentNode&&i.parentNode.removeChild(i)}e.exports={_enabled:"undefined"!=typeof window&&"undefined"!=typeof document,initialize:function(){var t,e,i,n="from{opacity:0.99}to{opacity:1}";e="@-webkit-keyframes "+s+"{"+n+"}@keyframes "+s+"{"+n+"}."+o+"{-webkit-animation:"+s+" 0.001s;animation:"+s+" 0.001s;}",i=(t=this)._style||document.createElement("style"),t._style||(t._style=i,e="/* Chart.js */\n"+e,i.setAttribute("type","text/css"),document.getElementsByTagName("head")[0].appendChild(i)),i.appendChild(document.createTextNode(e))},acquireContext:function(t,e){"string"==typeof t?t=document.getElementById(t):t.length&&(t=t[0]),t&&t.canvas&&(t=t.canvas);var i=t&&t.getContext&&t.getContext("2d");return i&&i.canvas===t?(function(t,e){var i=t.style,n=t.getAttribute("height"),r=t.getAttribute("width");if(t[a]={initial:{height:n,width:r,style:{display:i.display,height:i.height,width:i.width}}},i.display=i.display||"block",null===r||""===r){var o=d(t,"width");void 0!==o&&(t.width=o)}if(null===n||""===n)if(""===t.style.height)t.height=t.width/(e.options.aspectRatio||2);else{var s=d(t,"height");void 0!==o&&(t.height=s)}}(t,e),i):null},releaseContext:function(t){var e=t.canvas;if(e[a]){var i=e[a].initial;["height","width"].forEach(function(t){var a=i[t];n.isNullOrUndef(a)?e.removeAttribute(t):e.setAttribute(t,a)}),n.each(i.style||{},function(t,i){e.style[i]=t}),e.width=e.width,delete e[a]}},addEventListener:function(t,e,i){var r=t.canvas;if("resize"!==e){var o=i[a]||(i[a]={});h(r,e,(o.proxies||(o.proxies={}))[t.id+"_"+e]=function(e){i(function(t,e){var i=u[t.type]||t.type,a=n.getRelativePosition(t,e);return p(i,e,a.x,a.y,t)}(e,t))})}else g(r,i,t)},removeEventListener:function(t,e,i){var n=t.canvas;if("resize"!==e){var r=((i[a]||{}).proxies||{})[t.id+"_"+e];r&&f(n,e,r)}else m(n)}},n.addEvent=h,n.removeEvent=f},{46:46}],49:[function(t,e,i){"use strict";var n=t(46),a=t(47),r=t(48),o=r._enabled?r:a;e.exports=n.extend({initialize:function(){},acquireContext:function(){},releaseContext:function(){},addEventListener:function(){},removeEventListener:function(){}},o)},{46:46,47:47,48:48}],50:[function(t,e,i){"use strict";e.exports={},e.exports.filler=t(51),e.exports.legend=t(52),e.exports.title=t(53)},{51:51,52:52,53:53}],51:[function(t,e,i){"use strict";var n=t(26),a=t(41),r=t(46);n._set("global",{plugins:{filler:{propagate:!0}}});var o={dataset:function(t){var e=t.fill,i=t.chart,n=i.getDatasetMeta(e),a=n&&i.isDatasetVisible(e)&&n.dataset._children||[],r=a.length||0;return r?function(t,e){return e<r&&a[e]._view||null}:null},boundary:function(t){var e=t.boundary,i=e?e.x:null,n=e?e.y:null;return function(t){return{x:null===i?t.x:i,y:null===n?t.y:n}}}};function s(t,e,i){var n,a=t._model||{},r=a.fill;if(void 0===r&&(r=!!a.backgroundColor),!1===r||null===r)return!1;if(!0===r)return"origin";if(n=parseFloat(r,10),isFinite(n)&&Math.floor(n)===n)return"-"!==r[0]&&"+"!==r[0]||(n=e+n),!(n===e||n<0||n>=i)&&n;switch(r){case"bottom":return"start";case"top":return"end";case"zero":return"origin";case"origin":case"start":case"end":return r;default:return!1}}function l(t){var e,i=t.el._model||{},n=t.el._scale||{},a=t.fill,r=null;if(isFinite(a))return null;if("start"===a?r=void 0===i.scaleBottom?n.bottom:i.scaleBottom:"end"===a?r=void 0===i.scaleTop?n.top:i.scaleTop:void 0!==i.scaleZero?r=i.scaleZero:n.getBasePosition?r=n.getBasePosition():n.getBasePixel&&(r=n.getBasePixel()),void 0!==r&&null!==r){if(void 0!==r.x&&void 0!==r.y)return r;if("number"==typeof r&&isFinite(r))return{x:(e=n.isHorizontal())?r:null,y:e?null:r}}return null}function u(t,e,i){var n,a=t[e].fill,r=[e];if(!i)return a;for(;!1!==a&&-1===r.indexOf(a);){if(!isFinite(a))return a;if(!(n=t[a]))return!1;if(n.visible)return a;r.push(a),a=n.fill}return!1}function d(t){var e=t.fill,i="dataset";return!1===e?null:(isFinite(e)||(i="boundary"),o[i](t))}function c(t){return t&&!t.skip}function h(t,e,i,n,a){var o;if(n&&a){for(t.moveTo(e[0].x,e[0].y),o=1;o<n;++o)r.canvas.lineTo(t,e[o-1],e[o]);for(t.lineTo(i[a-1].x,i[a-1].y),o=a-1;o>0;--o)r.canvas.lineTo(t,i[o],i[o-1],!0)}}e.exports={id:"filler",afterDatasetsUpdate:function(t,e){var i,n,r,o,c=(t.data.datasets||[]).length,h=e.propagate,f=[];for(n=0;n<c;++n)o=null,(r=(i=t.getDatasetMeta(n)).dataset)&&r._model&&r instanceof a.Line&&(o={visible:t.isDatasetVisible(n),fill:s(r,n,c),chart:t,el:r}),i.$filler=o,f.push(o);for(n=0;n<c;++n)(o=f[n])&&(o.fill=u(f,n,h),o.boundary=l(o),o.mapper=d(o))},beforeDatasetDraw:function(t,e){var i=e.meta.$filler;if(i){var a=t.ctx,o=i.el,s=o._view,l=o._children||[],u=i.mapper,d=s.backgroundColor||n.global.defaultColor;u&&d&&l.length&&(r.canvas.clipArea(a,t.chartArea),function(t,e,i,n,a,r){var o,s,l,u,d,f,p,g=e.length,m=n.spanGaps,v=[],b=[],y=0,x=0;for(t.beginPath(),o=0,s=g+!!r;o<s;++o)d=i(u=e[l=o%g]._view,l,n),f=c(u),p=c(d),f&&p?(y=v.push(u),x=b.push(d)):y&&x&&(m?(f&&v.push(u),p&&b.push(d)):(h(t,v,b,y,x),y=x=0,v=[],b=[]));h(t,v,b,y,x),t.closePath(),t.fillStyle=a,t.fill()}(a,l,u,s,d,o._loop),r.canvas.unclipArea(a))}}}},{26:26,41:41,46:46}],52:[function(t,e,i){"use strict";var n=t(26),a=t(27),r=t(46),o=t(31),s=r.noop;function l(t,e){return t.usePointStyle?e*Math.SQRT2:t.boxWidth}n._set("global",{legend:{display:!0,position:"top",fullWidth:!0,reverse:!1,weight:1e3,onClick:function(t,e){var i=e.datasetIndex,n=this.chart,a=n.getDatasetMeta(i);a.hidden=null===a.hidden?!n.data.datasets[i].hidden:null,n.update()},onHover:null,labels:{boxWidth:40,padding:10,generateLabels:function(t){var e=t.data;return r.isArray(e.datasets)?e.datasets.map(function(e,i){return{text:e.label,fillStyle:r.isArray(e.backgroundColor)?e.backgroundColor[0]:e.backgroundColor,hidden:!t.isDatasetVisible(i),lineCap:e.borderCapStyle,lineDash:e.borderDash,lineDashOffset:e.borderDashOffset,lineJoin:e.borderJoinStyle,lineWidth:e.borderWidth,strokeStyle:e.borderColor,pointStyle:e.pointStyle,datasetIndex:i}},this):[]}}},legendCallback:function(t){var e=[];e.push('<ul class="'+t.id+'-legend">');for(var i=0;i<t.data.datasets.length;i++)e.push('<li><span style="background-color:'+t.data.datasets[i].backgroundColor+'"></span>'),t.data.datasets[i].label&&e.push(t.data.datasets[i].label),e.push("</li>");return e.push("</ul>"),e.join("")}});var u=a.extend({initialize:function(t){r.extend(this,t),this.legendHitBoxes=[],this.doughnutMode=!1},beforeUpdate:s,update:function(t,e,i){var n=this;return n.beforeUpdate(),n.maxWidth=t,n.maxHeight=e,n.margins=i,n.beforeSetDimensions(),n.setDimensions(),n.afterSetDimensions(),n.beforeBuildLabels(),n.buildLabels(),n.afterBuildLabels(),n.beforeFit(),n.fit(),n.afterFit(),n.afterUpdate(),n.minSize},afterUpdate:s,beforeSetDimensions:s,setDimensions:function(){var t=this;t.isHorizontal()?(t.width=t.maxWidth,t.left=0,t.right=t.width):(t.height=t.maxHeight,t.top=0,t.bottom=t.height),t.paddingLeft=0,t.paddingTop=0,t.paddingRight=0,t.paddingBottom=0,t.minSize={width:0,height:0}},afterSetDimensions:s,beforeBuildLabels:s,buildLabels:function(){var t=this,e=t.options.labels||{},i=r.callback(e.generateLabels,[t.chart],t)||[];e.filter&&(i=i.filter(function(i){return e.filter(i,t.chart.data)})),t.options.reverse&&i.reverse(),t.legendItems=i},afterBuildLabels:s,beforeFit:s,fit:function(){var t=this,e=t.options,i=e.labels,a=e.display,o=t.ctx,s=n.global,u=r.valueOrDefault,d=u(i.fontSize,s.defaultFontSize),c=u(i.fontStyle,s.defaultFontStyle),h=u(i.fontFamily,s.defaultFontFamily),f=r.fontString(d,c,h),p=t.legendHitBoxes=[],g=t.minSize,m=t.isHorizontal();if(m?(g.width=t.maxWidth,g.height=a?10:0):(g.width=a?10:0,g.height=t.maxHeight),a)if(o.font=f,m){var v=t.lineWidths=[0],b=t.legendItems.length?d+i.padding:0;o.textAlign="left",o.textBaseline="top",r.each(t.legendItems,function(e,n){var a=l(i,d)+d/2+o.measureText(e.text).width;v[v.length-1]+a+i.padding>=t.width&&(b+=d+i.padding,v[v.length]=t.left),p[n]={left:0,top:0,width:a,height:d},v[v.length-1]+=a+i.padding}),g.height+=b}else{var y=i.padding,x=t.columnWidths=[],w=i.padding,k=0,S=0,C=d+y;r.each(t.legendItems,function(t,e){var n=l(i,d)+d/2+o.measureText(t.text).width;S+C>g.height&&(w+=k+i.padding,x.push(k),k=0,S=0),k=Math.max(k,n),S+=C,p[e]={left:0,top:0,width:n,height:d}}),w+=k,x.push(k),g.width+=w}t.width=g.width,t.height=g.height},afterFit:s,isHorizontal:function(){return"top"===this.options.position||"bottom"===this.options.position},draw:function(){var t=this,e=t.options,i=e.labels,a=n.global,o=a.elements.line,s=t.width,u=t.lineWidths;if(e.display){var d,c=t.ctx,h=r.valueOrDefault,f=h(i.fontColor,a.defaultFontColor),p=h(i.fontSize,a.defaultFontSize),g=h(i.fontStyle,a.defaultFontStyle),m=h(i.fontFamily,a.defaultFontFamily),v=r.fontString(p,g,m);c.textAlign="left",c.textBaseline="middle",c.lineWidth=.5,c.strokeStyle=f,c.fillStyle=f,c.font=v;var b=l(i,p),y=t.legendHitBoxes,x=t.isHorizontal();d=x?{x:t.left+(s-u[0])/2,y:t.top+i.padding,line:0}:{x:t.left+i.padding,y:t.top+i.padding,line:0};var w=p+i.padding;r.each(t.legendItems,function(n,l){var f=c.measureText(n.text).width,g=b+p/2+f,m=d.x,v=d.y;x?m+g>=s&&(v=d.y+=w,d.line++,m=d.x=t.left+(s-u[d.line])/2):v+w>t.bottom&&(m=d.x=m+t.columnWidths[d.line]+i.padding,v=d.y=t.top+i.padding,d.line++),function(t,i,n){if(!(isNaN(b)||b<=0)){c.save(),c.fillStyle=h(n.fillStyle,a.defaultColor),c.lineCap=h(n.lineCap,o.borderCapStyle),c.lineDashOffset=h(n.lineDashOffset,o.borderDashOffset),c.lineJoin=h(n.lineJoin,o.borderJoinStyle),c.lineWidth=h(n.lineWidth,o.borderWidth),c.strokeStyle=h(n.strokeStyle,a.defaultColor);var s=0===h(n.lineWidth,o.borderWidth);if(c.setLineDash&&c.setLineDash(h(n.lineDash,o.borderDash)),e.labels&&e.labels.usePointStyle){var l=p*Math.SQRT2/2,u=l/Math.SQRT2,d=t+u,f=i+u;r.canvas.drawPoint(c,n.pointStyle,l,d,f)}else s||c.strokeRect(t,i,b,p),c.fillRect(t,i,b,p);c.restore()}}(m,v,n),y[l].left=m,y[l].top=v,function(t,e,i,n){var a=p/2,r=b+a+t,o=e+a;c.fillText(i.text,r,o),i.hidden&&(c.beginPath(),c.lineWidth=2,c.moveTo(r,o),c.lineTo(r+n,o),c.stroke())}(m,v,n,f),x?d.x+=g+i.padding:d.y+=w})}},handleEvent:function(t){var e=this,i=e.options,n="mouseup"===t.type?"click":t.type,a=!1;if("mousemove"===n){if(!i.onHover)return}else{if("click"!==n)return;if(!i.onClick)return}var r=t.x,o=t.y;if(r>=e.left&&r<=e.right&&o>=e.top&&o<=e.bottom)for(var s=e.legendHitBoxes,l=0;l<s.length;++l){var u=s[l];if(r>=u.left&&r<=u.left+u.width&&o>=u.top&&o<=u.top+u.height){if("click"===n){i.onClick.call(e,t.native,e.legendItems[l]),a=!0;break}if("mousemove"===n){i.onHover.call(e,t.native,e.legendItems[l]),a=!0;break}}}return a}});function d(t,e){var i=new u({ctx:t.ctx,options:e,chart:t});o.configure(t,i,e),o.addBox(t,i),t.legend=i}e.exports={id:"legend",_element:u,beforeInit:function(t){var e=t.options.legend;e&&d(t,e)},beforeUpdate:function(t){var e=t.options.legend,i=t.legend;e?(r.mergeIf(e,n.global.legend),i?(o.configure(t,i,e),i.options=e):d(t,e)):i&&(o.removeBox(t,i),delete t.legend)},afterEvent:function(t,e){var i=t.legend;i&&i.handleEvent(e)}}},{26:26,27:27,31:31,46:46}],53:[function(t,e,i){"use strict";var n=t(26),a=t(27),r=t(46),o=t(31),s=r.noop;n._set("global",{title:{display:!1,fontStyle:"bold",fullWidth:!0,lineHeight:1.2,padding:10,position:"top",text:"",weight:2e3}});var l=a.extend({initialize:function(t){r.extend(this,t),this.legendHitBoxes=[]},beforeUpdate:s,update:function(t,e,i){var n=this;return n.beforeUpdate(),n.maxWidth=t,n.maxHeight=e,n.margins=i,n.beforeSetDimensions(),n.setDimensions(),n.afterSetDimensions(),n.beforeBuildLabels(),n.buildLabels(),n.afterBuildLabels(),n.beforeFit(),n.fit(),n.afterFit(),n.afterUpdate(),n.minSize},afterUpdate:s,beforeSetDimensions:s,setDimensions:function(){var t=this;t.isHorizontal()?(t.width=t.maxWidth,t.left=0,t.right=t.width):(t.height=t.maxHeight,t.top=0,t.bottom=t.height),t.paddingLeft=0,t.paddingTop=0,t.paddingRight=0,t.paddingBottom=0,t.minSize={width:0,height:0}},afterSetDimensions:s,beforeBuildLabels:s,buildLabels:s,afterBuildLabels:s,beforeFit:s,fit:function(){var t=this,e=r.valueOrDefault,i=t.options,a=i.display,o=e(i.fontSize,n.global.defaultFontSize),s=t.minSize,l=r.isArray(i.text)?i.text.length:1,u=r.options.toLineHeight(i.lineHeight,o),d=a?l*u+2*i.padding:0;t.isHorizontal()?(s.width=t.maxWidth,s.height=d):(s.width=d,s.height=t.maxHeight),t.width=s.width,t.height=s.height},afterFit:s,isHorizontal:function(){var t=this.options.position;return"top"===t||"bottom"===t},draw:function(){var t=this,e=t.ctx,i=r.valueOrDefault,a=t.options,o=n.global;if(a.display){var s,l,u,d=i(a.fontSize,o.defaultFontSize),c=i(a.fontStyle,o.defaultFontStyle),h=i(a.fontFamily,o.defaultFontFamily),f=r.fontString(d,c,h),p=r.options.toLineHeight(a.lineHeight,d),g=p/2+a.padding,m=0,v=t.top,b=t.left,y=t.bottom,x=t.right;e.fillStyle=i(a.fontColor,o.defaultFontColor),e.font=f,t.isHorizontal()?(l=b+(x-b)/2,u=v+g,s=x-b):(l="left"===a.position?b+g:x-g,u=v+(y-v)/2,s=y-v,m=Math.PI*("left"===a.position?-.5:.5)),e.save(),e.translate(l,u),e.rotate(m),e.textAlign="center",e.textBaseline="middle";var w=a.text;if(r.isArray(w))for(var k=0,S=0;S<w.length;++S)e.fillText(w[S],0,k,s),k+=p;else e.fillText(w,0,0,s);e.restore()}}});function u(t,e){var i=new l({ctx:t.ctx,options:e,chart:t});o.configure(t,i,e),o.addBox(t,i),t.titleBlock=i}e.exports={id:"title",_element:l,beforeInit:function(t){var e=t.options.title;e&&u(t,e)},beforeUpdate:function(t){var e=t.options.title,i=t.titleBlock;e?(r.mergeIf(e,n.global.title),i?(o.configure(t,i,e),i.options=e):u(t,e)):i&&(o.removeBox(t,i),delete t.titleBlock)}}},{26:26,27:27,31:31,46:46}],54:[function(t,e,i){"use strict";var n=t(33),a=t(34);e.exports=function(){var t=n.extend({getLabels:function(){var t=this.chart.data;return this.options.labels||(this.isHorizontal()?t.xLabels:t.yLabels)||t.labels},determineDataLimits:function(){var t,e=this,i=e.getLabels();e.minIndex=0,e.maxIndex=i.length-1,void 0!==e.options.ticks.min&&(t=i.indexOf(e.options.ticks.min),e.minIndex=-1!==t?t:e.minIndex),void 0!==e.options.ticks.max&&(t=i.indexOf(e.options.ticks.max),e.maxIndex=-1!==t?t:e.maxIndex),e.min=i[e.minIndex],e.max=i[e.maxIndex]},buildTicks:function(){var t=this,e=t.getLabels();t.ticks=0===t.minIndex&&t.maxIndex===e.length-1?e:e.slice(t.minIndex,t.maxIndex+1)},getLabelForIndex:function(t,e){var i=this,n=i.chart.data,a=i.isHorizontal();return n.yLabels&&!a?i.getRightValue(n.datasets[e].data[t]):i.ticks[t-i.minIndex]},getPixelForValue:function(t,e){var i,n=this,a=n.options.offset,r=Math.max(n.maxIndex+1-n.minIndex-(a?0:1),1);if(void 0!==t&&null!==t&&(i=n.isHorizontal()?t.x:t.y),void 0!==i||void 0!==t&&isNaN(e)){var o=n.getLabels();t=i||t;var s=o.indexOf(t);e=-1!==s?s:e}if(n.isHorizontal()){var l=n.width/r,u=l*(e-n.minIndex);return a&&(u+=l/2),n.left+Math.round(u)}var d=n.height/r,c=d*(e-n.minIndex);return a&&(c+=d/2),n.top+Math.round(c)},getPixelForTick:function(t){return this.getPixelForValue(this.ticks[t],t+this.minIndex,null)},getValueForPixel:function(t){var e=this,i=e.options.offset,n=Math.max(e._ticks.length-(i?0:1),1),a=e.isHorizontal(),r=(a?e.width:e.height)/n;return t-=a?e.left:e.top,i&&(t-=r/2),(t<=0?0:Math.round(t/r))+e.minIndex},getBasePixel:function(){return this.bottom}});a.registerScaleType("category",t,{position:"bottom"})}},{33:33,34:34}],55:[function(t,e,i){"use strict";var n=t(26),a=t(46),r=t(34),o=t(35);e.exports=function(t){var e={position:"left",ticks:{callback:o.formatters.linear}},i=t.LinearScaleBase.extend({determineDataLimits:function(){var t=this,e=t.options,i=t.chart,n=i.data.datasets,r=t.isHorizontal();function o(e){return r?e.xAxisID===t.id:e.yAxisID===t.id}t.min=null,t.max=null;var s=e.stacked;if(void 0===s&&a.each(n,function(t,e){if(!s){var n=i.getDatasetMeta(e);i.isDatasetVisible(e)&&o(n)&&void 0!==n.stack&&(s=!0)}}),e.stacked||s){var l={};a.each(n,function(n,r){var s=i.getDatasetMeta(r),u=[s.type,void 0===e.stacked&&void 0===s.stack?r:"",s.stack].join(".");void 0===l[u]&&(l[u]={positiveValues:[],negativeValues:[]});var d=l[u].positiveValues,c=l[u].negativeValues;i.isDatasetVisible(r)&&o(s)&&a.each(n.data,function(i,n){var a=+t.getRightValue(i);isNaN(a)||s.data[n].hidden||(d[n]=d[n]||0,c[n]=c[n]||0,e.relativePoints?d[n]=100:a<0?c[n]+=a:d[n]+=a)})}),a.each(l,function(e){var i=e.positiveValues.concat(e.negativeValues),n=a.min(i),r=a.max(i);t.min=null===t.min?n:Math.min(t.min,n),t.max=null===t.max?r:Math.max(t.max,r)})}else a.each(n,function(e,n){var r=i.getDatasetMeta(n);i.isDatasetVisible(n)&&o(r)&&a.each(e.data,function(e,i){var n=+t.getRightValue(e);isNaN(n)||r.data[i].hidden||(null===t.min?t.min=n:n<t.min&&(t.min=n),null===t.max?t.max=n:n>t.max&&(t.max=n))})});t.min=isFinite(t.min)&&!isNaN(t.min)?t.min:0,t.max=isFinite(t.max)&&!isNaN(t.max)?t.max:1,this.handleTickRangeOptions()},getTickLimit:function(){var t,e=this.options.ticks;if(this.isHorizontal())t=Math.min(e.maxTicksLimit?e.maxTicksLimit:11,Math.ceil(this.width/50));else{var i=a.valueOrDefault(e.fontSize,n.global.defaultFontSize);t=Math.min(e.maxTicksLimit?e.maxTicksLimit:11,Math.ceil(this.height/(2*i)))}return t},handleDirectionalChanges:function(){this.isHorizontal()||this.ticks.reverse()},getLabelForIndex:function(t,e){return+this.getRightValue(this.chart.data.datasets[e].data[t])},getPixelForValue:function(t){var e=this,i=e.start,n=+e.getRightValue(t),a=e.end-i;return e.isHorizontal()?e.left+e.width/a*(n-i):e.bottom-e.height/a*(n-i)},getValueForPixel:function(t){var e=this,i=e.isHorizontal(),n=i?e.width:e.height,a=(i?t-e.left:e.bottom-t)/n;return e.start+(e.end-e.start)*a},getPixelForTick:function(t){return this.getPixelForValue(this.ticksAsNumbers[t])}});r.registerScaleType("linear",i,e)}},{26:26,34:34,35:35,46:46}],56:[function(t,e,i){"use strict";var n=t(46),a=t(33);e.exports=function(t){var e=n.noop;t.LinearScaleBase=a.extend({getRightValue:function(t){return"string"==typeof t?+t:a.prototype.getRightValue.call(this,t)},handleTickRangeOptions:function(){var t=this,e=t.options.ticks;if(e.beginAtZero){var i=n.sign(t.min),a=n.sign(t.max);i<0&&a<0?t.max=0:i>0&&a>0&&(t.min=0)}var r=void 0!==e.min||void 0!==e.suggestedMin,o=void 0!==e.max||void 0!==e.suggestedMax;void 0!==e.min?t.min=e.min:void 0!==e.suggestedMin&&(null===t.min?t.min=e.suggestedMin:t.min=Math.min(t.min,e.suggestedMin)),void 0!==e.max?t.max=e.max:void 0!==e.suggestedMax&&(null===t.max?t.max=e.suggestedMax:t.max=Math.max(t.max,e.suggestedMax)),r!==o&&t.min>=t.max&&(r?t.max=t.min+1:t.min=t.max-1),t.min===t.max&&(t.max++,e.beginAtZero||t.min--)},getTickLimit:e,handleDirectionalChanges:e,buildTicks:function(){var t=this,e=t.options.ticks,i=t.getTickLimit(),a={maxTicks:i=Math.max(2,i),min:e.min,max:e.max,precision:e.precision,stepSize:n.valueOrDefault(e.fixedStepSize,e.stepSize)},r=t.ticks=function(t,e){var i,a,r,o=[];if(t.stepSize&&t.stepSize>0)r=t.stepSize;else{var s=n.niceNum(e.max-e.min,!1);r=n.niceNum(s/(t.maxTicks-1),!0),void 0!==(a=t.precision)&&(i=Math.pow(10,a),r=Math.ceil(r*i)/i)}var l=Math.floor(e.min/r)*r,u=Math.ceil(e.max/r)*r;n.isNullOrUndef(t.min)||n.isNullOrUndef(t.max)||!t.stepSize||n.almostWhole((t.max-t.min)/t.stepSize,r/1e3)&&(l=t.min,u=t.max);var d=(u-l)/r;d=n.almostEquals(d,Math.round(d),r/1e3)?Math.round(d):Math.ceil(d),a=1,r<1&&(a=Math.pow(10,1-Math.floor(n.log10(r))),l=Math.round(l*a)/a,u=Math.round(u*a)/a),o.push(void 0!==t.min?t.min:l);for(var c=1;c<d;++c)o.push(Math.round((l+c*r)*a)/a);return o.push(void 0!==t.max?t.max:u),o}(a,t);t.handleDirectionalChanges(),t.max=n.max(r),t.min=n.min(r),e.reverse?(r.reverse(),t.start=t.max,t.end=t.min):(t.start=t.min,t.end=t.max)},convertTicksToLabels:function(){var t=this;t.ticksAsNumbers=t.ticks.slice(),t.zeroLineIndex=t.ticks.indexOf(0),a.prototype.convertTicksToLabels.call(t)}})}},{33:33,46:46}],57:[function(t,e,i){"use strict";var n=t(46),a=t(33),r=t(34),o=t(35);e.exports=function(t){var e={position:"left",ticks:{callback:o.formatters.logarithmic}},i=a.extend({determineDataLimits:function(){var t=this,e=t.options,i=t.chart,a=i.data.datasets,r=t.isHorizontal();function o(e){return r?e.xAxisID===t.id:e.yAxisID===t.id}t.min=null,t.max=null,t.minNotZero=null;var s=e.stacked;if(void 0===s&&n.each(a,function(t,e){if(!s){var n=i.getDatasetMeta(e);i.isDatasetVisible(e)&&o(n)&&void 0!==n.stack&&(s=!0)}}),e.stacked||s){var l={};n.each(a,function(a,r){var s=i.getDatasetMeta(r),u=[s.type,void 0===e.stacked&&void 0===s.stack?r:"",s.stack].join(".");i.isDatasetVisible(r)&&o(s)&&(void 0===l[u]&&(l[u]=[]),n.each(a.data,function(e,i){var n=l[u],a=+t.getRightValue(e);isNaN(a)||s.data[i].hidden||a<0||(n[i]=n[i]||0,n[i]+=a)}))}),n.each(l,function(e){if(e.length>0){var i=n.min(e),a=n.max(e);t.min=null===t.min?i:Math.min(t.min,i),t.max=null===t.max?a:Math.max(t.max,a)}})}else n.each(a,function(e,a){var r=i.getDatasetMeta(a);i.isDatasetVisible(a)&&o(r)&&n.each(e.data,function(e,i){var n=+t.getRightValue(e);isNaN(n)||r.data[i].hidden||n<0||(null===t.min?t.min=n:n<t.min&&(t.min=n),null===t.max?t.max=n:n>t.max&&(t.max=n),0!==n&&(null===t.minNotZero||n<t.minNotZero)&&(t.minNotZero=n))})});this.handleTickRangeOptions()},handleTickRangeOptions:function(){var t=this,e=t.options.ticks,i=n.valueOrDefault;t.min=i(e.min,t.min),t.max=i(e.max,t.max),t.min===t.max&&(0!==t.min&&null!==t.min?(t.min=Math.pow(10,Math.floor(n.log10(t.min))-1),t.max=Math.pow(10,Math.floor(n.log10(t.max))+1)):(t.min=1,t.max=10)),null===t.min&&(t.min=Math.pow(10,Math.floor(n.log10(t.max))-1)),null===t.max&&(t.max=0!==t.min?Math.pow(10,Math.floor(n.log10(t.min))+1):10),null===t.minNotZero&&(t.min>0?t.minNotZero=t.min:t.max<1?t.minNotZero=Math.pow(10,Math.floor(n.log10(t.max))):t.minNotZero=1)},buildTicks:function(){var t=this,e=t.options.ticks,i=!t.isHorizontal(),a={min:e.min,max:e.max},r=t.ticks=function(t,e){var i,a,r=[],o=n.valueOrDefault,s=o(t.min,Math.pow(10,Math.floor(n.log10(e.min)))),l=Math.floor(n.log10(e.max)),u=Math.ceil(e.max/Math.pow(10,l));0===s?(i=Math.floor(n.log10(e.minNotZero)),a=Math.floor(e.minNotZero/Math.pow(10,i)),r.push(s),s=a*Math.pow(10,i)):(i=Math.floor(n.log10(s)),a=Math.floor(s/Math.pow(10,i)));var d=i<0?Math.pow(10,Math.abs(i)):1;do{r.push(s),10==++a&&(a=1,d=++i>=0?1:d),s=Math.round(a*Math.pow(10,i)*d)/d}while(i<l||i===l&&a<u);var c=o(t.max,s);return r.push(c),r}(a,t);t.max=n.max(r),t.min=n.min(r),e.reverse?(i=!i,t.start=t.max,t.end=t.min):(t.start=t.min,t.end=t.max),i&&r.reverse()},convertTicksToLabels:function(){this.tickValues=this.ticks.slice(),a.prototype.convertTicksToLabels.call(this)},getLabelForIndex:function(t,e){return+this.getRightValue(this.chart.data.datasets[e].data[t])},getPixelForTick:function(t){return this.getPixelForValue(this.tickValues[t])},_getFirstTickValue:function(t){var e=Math.floor(n.log10(t));return Math.floor(t/Math.pow(10,e))*Math.pow(10,e)},getPixelForValue:function(e){var i,a,r,o,s,l=this,u=l.options.ticks.reverse,d=n.log10,c=l._getFirstTickValue(l.minNotZero),h=0;return e=+l.getRightValue(e),u?(r=l.end,o=l.start,s=-1):(r=l.start,o=l.end,s=1),l.isHorizontal()?(i=l.width,a=u?l.right:l.left):(i=l.height,s*=-1,a=u?l.top:l.bottom),e!==r&&(0===r&&(i-=h=n.getValueOrDefault(l.options.ticks.fontSize,t.defaults.global.defaultFontSize),r=c),0!==e&&(h+=i/(d(o)-d(r))*(d(e)-d(r))),a+=s*h),a},getValueForPixel:function(e){var i,a,r,o,s=this,l=s.options.ticks.reverse,u=n.log10,d=s._getFirstTickValue(s.minNotZero);if(l?(a=s.end,r=s.start):(a=s.start,r=s.end),s.isHorizontal()?(i=s.width,o=l?s.right-e:e-s.left):(i=s.height,o=l?e-s.top:s.bottom-e),o!==a){if(0===a){var c=n.getValueOrDefault(s.options.ticks.fontSize,t.defaults.global.defaultFontSize);o-=c,i-=c,a=d}o*=u(r)-u(a),o/=i,o=Math.pow(10,u(a)+o)}return o}});r.registerScaleType("logarithmic",i,e)}},{33:33,34:34,35:35,46:46}],58:[function(t,e,i){"use strict";var n=t(26),a=t(46),r=t(34),o=t(35);e.exports=function(t){var e=n.global,i={display:!0,animate:!0,position:"chartArea",angleLines:{display:!0,color:"rgba(0, 0, 0, 0.1)",lineWidth:1},gridLines:{circular:!1},ticks:{showLabelBackdrop:!0,backdropColor:"rgba(255,255,255,0.75)",backdropPaddingY:2,backdropPaddingX:2,callback:o.formatters.linear},pointLabels:{display:!0,fontSize:10,callback:function(t){return t}}};function s(t){var e=t.options;return e.angleLines.display||e.pointLabels.display?t.chart.data.labels.length:0}function l(t){var i=t.options.pointLabels,n=a.valueOrDefault(i.fontSize,e.defaultFontSize),r=a.valueOrDefault(i.fontStyle,e.defaultFontStyle),o=a.valueOrDefault(i.fontFamily,e.defaultFontFamily);return{size:n,style:r,family:o,font:a.fontString(n,r,o)}}function u(t,e,i,n,a){return t===n||t===a?{start:e-i/2,end:e+i/2}:t<n||t>a?{start:e-i-5,end:e}:{start:e,end:e+i+5}}function d(t){return 0===t||180===t?"center":t<180?"left":"right"}function c(t,e,i,n){if(a.isArray(e))for(var r=i.y,o=1.5*n,s=0;s<e.length;++s)t.fillText(e[s],i.x,r),r+=o;else t.fillText(e,i.x,i.y)}function h(t,e,i){90===t||270===t?i.y-=e.h/2:(t>270||t<90)&&(i.y-=e.h)}function f(t){return a.isNumber(t)?t:0}var p=t.LinearScaleBase.extend({setDimensions:function(){var t=this,i=t.options,n=i.ticks;t.width=t.maxWidth,t.height=t.maxHeight,t.xCenter=Math.round(t.width/2),t.yCenter=Math.round(t.height/2);var r=a.min([t.height,t.width]),o=a.valueOrDefault(n.fontSize,e.defaultFontSize);t.drawingArea=i.display?r/2-(o/2+n.backdropPaddingY):r/2},determineDataLimits:function(){var t=this,e=t.chart,i=Number.POSITIVE_INFINITY,n=Number.NEGATIVE_INFINITY;a.each(e.data.datasets,function(r,o){if(e.isDatasetVisible(o)){var s=e.getDatasetMeta(o);a.each(r.data,function(e,a){var r=+t.getRightValue(e);isNaN(r)||s.data[a].hidden||(i=Math.min(r,i),n=Math.max(r,n))})}}),t.min=i===Number.POSITIVE_INFINITY?0:i,t.max=n===Number.NEGATIVE_INFINITY?0:n,t.handleTickRangeOptions()},getTickLimit:function(){var t=this.options.ticks,i=a.valueOrDefault(t.fontSize,e.defaultFontSize);return Math.min(t.maxTicksLimit?t.maxTicksLimit:11,Math.ceil(this.drawingArea/(1.5*i)))},convertTicksToLabels:function(){var e=this;t.LinearScaleBase.prototype.convertTicksToLabels.call(e),e.pointLabels=e.chart.data.labels.map(e.options.pointLabels.callback,e)},getLabelForIndex:function(t,e){return+this.getRightValue(this.chart.data.datasets[e].data[t])},fit:function(){var t,e;this.options.pointLabels.display?function(t){var e,i,n,r=l(t),o=Math.min(t.height/2,t.width/2),d={r:t.width,l:0,t:t.height,b:0},c={};t.ctx.font=r.font,t._pointLabelSizes=[];var h,f,p,g=s(t);for(e=0;e<g;e++){n=t.getPointPosition(e,o),h=t.ctx,f=r.size,p=t.pointLabels[e]||"",i=a.isArray(p)?{w:a.longestText(h,h.font,p),h:p.length*f+1.5*(p.length-1)*f}:{w:h.measureText(p).width,h:f},t._pointLabelSizes[e]=i;var m=t.getIndexAngle(e),v=a.toDegrees(m)%360,b=u(v,n.x,i.w,0,180),y=u(v,n.y,i.h,90,270);b.start<d.l&&(d.l=b.start,c.l=m),b.end>d.r&&(d.r=b.end,c.r=m),y.start<d.t&&(d.t=y.start,c.t=m),y.end>d.b&&(d.b=y.end,c.b=m)}t.setReductions(o,d,c)}(this):(t=this,e=Math.min(t.height/2,t.width/2),t.drawingArea=Math.round(e),t.setCenterPoint(0,0,0,0))},setReductions:function(t,e,i){var n=e.l/Math.sin(i.l),a=Math.max(e.r-this.width,0)/Math.sin(i.r),r=-e.t/Math.cos(i.t),o=-Math.max(e.b-this.height,0)/Math.cos(i.b);n=f(n),a=f(a),r=f(r),o=f(o),this.drawingArea=Math.min(Math.round(t-(n+a)/2),Math.round(t-(r+o)/2)),this.setCenterPoint(n,a,r,o)},setCenterPoint:function(t,e,i,n){var a=this,r=a.width-e-a.drawingArea,o=t+a.drawingArea,s=i+a.drawingArea,l=a.height-n-a.drawingArea;a.xCenter=Math.round((o+r)/2+a.left),a.yCenter=Math.round((s+l)/2+a.top)},getIndexAngle:function(t){return t*(2*Math.PI/s(this))+(this.chart.options&&this.chart.options.startAngle?this.chart.options.startAngle:0)*Math.PI*2/360},getDistanceFromCenterForValue:function(t){var e=this;if(null===t)return 0;var i=e.drawingArea/(e.max-e.min);return e.options.ticks.reverse?(e.max-t)*i:(t-e.min)*i},getPointPosition:function(t,e){var i=this.getIndexAngle(t)-Math.PI/2;return{x:Math.round(Math.cos(i)*e)+this.xCenter,y:Math.round(Math.sin(i)*e)+this.yCenter}},getPointPositionForValue:function(t,e){return this.getPointPosition(t,this.getDistanceFromCenterForValue(e))},getBasePosition:function(){var t=this.min,e=this.max;return this.getPointPositionForValue(0,this.beginAtZero?0:t<0&&e<0?e:t>0&&e>0?t:0)},draw:function(){var t=this,i=t.options,n=i.gridLines,r=i.ticks,o=a.valueOrDefault;if(i.display){var u=t.ctx,f=this.getIndexAngle(0),p=o(r.fontSize,e.defaultFontSize),g=o(r.fontStyle,e.defaultFontStyle),m=o(r.fontFamily,e.defaultFontFamily),v=a.fontString(p,g,m);a.each(t.ticks,function(i,l){if(l>0||r.reverse){var d=t.getDistanceFromCenterForValue(t.ticksAsNumbers[l]);if(n.display&&0!==l&&function(t,e,i,n){var r=t.ctx;if(r.strokeStyle=a.valueAtIndexOrDefault(e.color,n-1),r.lineWidth=a.valueAtIndexOrDefault(e.lineWidth,n-1),t.options.gridLines.circular)r.beginPath(),r.arc(t.xCenter,t.yCenter,i,0,2*Math.PI),r.closePath(),r.stroke();else{var o=s(t);if(0===o)return;r.beginPath();var l=t.getPointPosition(0,i);r.moveTo(l.x,l.y);for(var u=1;u<o;u++)l=t.getPointPosition(u,i),r.lineTo(l.x,l.y);r.closePath(),r.stroke()}}(t,n,d,l),r.display){var c=o(r.fontColor,e.defaultFontColor);if(u.font=v,u.save(),u.translate(t.xCenter,t.yCenter),u.rotate(f),r.showLabelBackdrop){var h=u.measureText(i).width;u.fillStyle=r.backdropColor,u.fillRect(-h/2-r.backdropPaddingX,-d-p/2-r.backdropPaddingY,h+2*r.backdropPaddingX,p+2*r.backdropPaddingY)}u.textAlign="center",u.textBaseline="middle",u.fillStyle=c,u.fillText(i,0,-d),u.restore()}}}),(i.angleLines.display||i.pointLabels.display)&&function(t){var i=t.ctx,n=t.options,r=n.angleLines,o=n.pointLabels;i.lineWidth=r.lineWidth,i.strokeStyle=r.color;var u=t.getDistanceFromCenterForValue(n.ticks.reverse?t.min:t.max),f=l(t);i.textBaseline="top";for(var p=s(t)-1;p>=0;p--){if(r.display){var g=t.getPointPosition(p,u);i.beginPath(),i.moveTo(t.xCenter,t.yCenter),i.lineTo(g.x,g.y),i.stroke(),i.closePath()}if(o.display){var m=t.getPointPosition(p,u+5),v=a.valueAtIndexOrDefault(o.fontColor,p,e.defaultFontColor);i.font=f.font,i.fillStyle=v;var b=t.getIndexAngle(p),y=a.toDegrees(b);i.textAlign=d(y),h(y,t._pointLabelSizes[p],m),c(i,t.pointLabels[p]||"",m,f.size)}}}(t)}}});r.registerScaleType("radialLinear",p,i)}},{26:26,34:34,35:35,46:46}],59:[function(t,e,i){"use strict";var n=t(1);n="function"==typeof n?n:window.moment;var a=t(26),r=t(46),o=t(33),s=t(34),l=Number.MIN_SAFE_INTEGER||-9007199254740991,u=Number.MAX_SAFE_INTEGER||9007199254740991,d={millisecond:{common:!0,size:1,steps:[1,2,5,10,20,50,100,250,500]},second:{common:!0,size:1e3,steps:[1,2,5,10,15,30]},minute:{common:!0,size:6e4,steps:[1,2,5,10,15,30]},hour:{common:!0,size:36e5,steps:[1,2,3,6,12]},day:{common:!0,size:864e5,steps:[1,2,5]},week:{common:!1,size:6048e5,steps:[1,2,3,4]},month:{common:!0,size:2628e6,steps:[1,2,3]},quarter:{common:!1,size:7884e6,steps:[1,2,3,4]},year:{common:!0,size:3154e7}},c=Object.keys(d);function h(t,e){return t-e}function f(t){var e,i,n,a={},r=[];for(e=0,i=t.length;e<i;++e)a[n=t[e]]||(a[n]=!0,r.push(n));return r}function p(t,e,i,n){var a=function(t,e,i){for(var n,a,r,o=0,s=t.length-1;o>=0&&o<=s;){if(a=t[(n=o+s>>1)-1]||null,r=t[n],!a)return{lo:null,hi:r};if(r[e]<i)o=n+1;else{if(!(a[e]>i))return{lo:a,hi:r};s=n-1}}return{lo:r,hi:null}}(t,e,i),r=a.lo?a.hi?a.lo:t[t.length-2]:t[0],o=a.lo?a.hi?a.hi:t[t.length-1]:t[1],s=o[e]-r[e],l=s?(i-r[e])/s:0,u=(o[n]-r[n])*l;return r[n]+u}function g(t,e){var i=e.parser,a=e.parser||e.format;return"function"==typeof i?i(t):"string"==typeof t&&"string"==typeof a?n(t,a):(t instanceof n||(t=n(t)),t.isValid()?t:"function"==typeof a?a(t):t)}function m(t,e){if(r.isNullOrUndef(t))return null;var i=e.options.time,n=g(e.getRightValue(t),i);return n.isValid()?(i.round&&n.startOf(i.round),n.valueOf()):null}function v(t){for(var e=c.indexOf(t)+1,i=c.length;e<i;++e)if(d[c[e]].common)return c[e]}function b(t,e,i,a){var o,s=a.time,l=s.unit||function(t,e,i,n){var a,r,o,s=c.length;for(a=c.indexOf(t);a<s-1;++a)if(o=(r=d[c[a]]).steps?r.steps[r.steps.length-1]:u,r.common&&Math.ceil((i-e)/(o*r.size))<=n)return c[a];return c[s-1]}(s.minUnit,t,e,i),h=v(l),f=r.valueOrDefault(s.stepSize,s.unitStepSize),p="week"===l&&s.isoWeekday,g=a.ticks.major.enabled,m=d[l],b=n(t),y=n(e),x=[];for(f||(f=function(t,e,i,n){var a,r,o,s=e-t,l=d[i],u=l.size,c=l.steps;if(!c)return Math.ceil(s/(n*u));for(a=0,r=c.length;a<r&&(o=c[a],!(Math.ceil(s/(u*o))<=n));++a);return o}(t,e,l,i)),p&&(b=b.isoWeekday(p),y=y.isoWeekday(p)),b=b.startOf(p?"day":l),(y=y.startOf(p?"day":l))<e&&y.add(1,l),o=n(b),g&&h&&!p&&!s.round&&(o.startOf(h),o.add(~~((b-o)/(m.size*f))*f,l));o<y;o.add(f,l))x.push(+o);return x.push(+o),x}e.exports=function(){var t=o.extend({initialize:function(){if(!n)throw new Error("Chart.js - Moment.js could not be found! You must include it before Chart.js to use the time scale. Download at https://momentjs.com");this.mergeTicksOptions(),o.prototype.initialize.call(this)},update:function(){var t=this.options;return t.time&&t.time.format&&console.warn("options.time.format is deprecated and replaced by options.time.parser."),o.prototype.update.apply(this,arguments)},getRightValue:function(t){return t&&void 0!==t.t&&(t=t.t),o.prototype.getRightValue.call(this,t)},determineDataLimits:function(){var t,e,i,a,o,s,d=this,c=d.chart,p=d.options.time,g=p.unit||"day",v=u,b=l,y=[],x=[],w=[];for(t=0,i=c.data.labels.length;t<i;++t)w.push(m(c.data.labels[t],d));for(t=0,i=(c.data.datasets||[]).length;t<i;++t)if(c.isDatasetVisible(t))if(o=c.data.datasets[t].data,r.isObject(o[0]))for(x[t]=[],e=0,a=o.length;e<a;++e)s=m(o[e],d),y.push(s),x[t][e]=s;else y.push.apply(y,w),x[t]=w.slice(0);else x[t]=[];w.length&&(w=f(w).sort(h),v=Math.min(v,w[0]),b=Math.max(b,w[w.length-1])),y.length&&(y=f(y).sort(h),v=Math.min(v,y[0]),b=Math.max(b,y[y.length-1])),v=m(p.min,d)||v,b=m(p.max,d)||b,v=v===u?+n().startOf(g):v,b=b===l?+n().endOf(g)+1:b,d.min=Math.min(v,b),d.max=Math.max(v+1,b),d._horizontal=d.isHorizontal(),d._table=[],d._timestamps={data:y,datasets:x,labels:w}},buildTicks:function(){var t,e,i,a=this,r=a.min,o=a.max,s=a.options,l=s.time,u=[],h=[];switch(s.ticks.source){case"data":u=a._timestamps.data;break;case"labels":u=a._timestamps.labels;break;case"auto":default:u=b(r,o,a.getLabelCapacity(r),s)}for("ticks"===s.bounds&&u.length&&(r=u[0],o=u[u.length-1]),r=m(l.min,a)||r,o=m(l.max,a)||o,t=0,e=u.length;t<e;++t)(i=u[t])>=r&&i<=o&&h.push(i);return a.min=r,a.max=o,a._unit=l.unit||function(t,e,i,a){var r,o,s=n.duration(n(a).diff(n(i)));for(r=c.length-1;r>=c.indexOf(e);r--)if(o=c[r],d[o].common&&s.as(o)>=t.length)return o;return c[e?c.indexOf(e):0]}(h,l.minUnit,a.min,a.max),a._majorUnit=v(a._unit),a._table=function(t,e,i,n){if("linear"===n||!t.length)return[{time:e,pos:0},{time:i,pos:1}];var a,r,o,s,l,u=[],d=[e];for(a=0,r=t.length;a<r;++a)(s=t[a])>e&&s<i&&d.push(s);for(d.push(i),a=0,r=d.length;a<r;++a)l=d[a+1],o=d[a-1],s=d[a],void 0!==o&&void 0!==l&&Math.round((l+o)/2)===s||u.push({time:s,pos:a/(r-1)});return u}(a._timestamps.data,r,o,s.distribution),a._offsets=function(t,e,i,n,a){var r,o,s=0,l=0;return a.offset&&e.length&&(a.time.min||(r=e.length>1?e[1]:n,o=e[0],s=(p(t,"time",r,"pos")-p(t,"time",o,"pos"))/2),a.time.max||(r=e[e.length-1],o=e.length>1?e[e.length-2]:i,l=(p(t,"time",r,"pos")-p(t,"time",o,"pos"))/2)),{left:s,right:l}}(a._table,h,r,o,s),a._labelFormat=function(t,e){var i,n,a,r=t.length;for(i=0;i<r;i++){if(0!==(n=g(t[i],e)).millisecond())return"MMM D, YYYY h:mm:ss.SSS a";0===n.second()&&0===n.minute()&&0===n.hour()||(a=!0)}return a?"MMM D, YYYY h:mm:ss a":"MMM D, YYYY"}(a._timestamps.data,l),function(t,e){var i,a,r,o,s=[];for(i=0,a=t.length;i<a;++i)r=t[i],o=!!e&&r===+n(r).startOf(e),s.push({value:r,major:o});return s}(h,a._majorUnit)},getLabelForIndex:function(t,e){var i=this.chart.data,n=this.options.time,a=i.labels&&t<i.labels.length?i.labels[t]:"",o=i.datasets[e].data[t];return r.isObject(o)&&(a=this.getRightValue(o)),n.tooltipFormat?g(a,n).format(n.tooltipFormat):"string"==typeof a?a:g(a,n).format(this._labelFormat)},tickFormatFunction:function(t,e,i,n){var a=this.options,o=t.valueOf(),s=a.time.displayFormats,l=s[this._unit],u=this._majorUnit,d=s[u],c=t.clone().startOf(u).valueOf(),h=a.ticks.major,f=h.enabled&&u&&d&&o===c,p=t.format(n||(f?d:l)),g=f?h:a.ticks.minor,m=r.valueOrDefault(g.callback,g.userCallback);return m?m(p,e,i):p},convertTicksToLabels:function(t){var e,i,a=[];for(e=0,i=t.length;e<i;++e)a.push(this.tickFormatFunction(n(t[e].value),e,t));return a},getPixelForOffset:function(t){var e=this,i=e._horizontal?e.width:e.height,n=e._horizontal?e.left:e.top,a=p(e._table,"time",t,"pos");return n+i*(e._offsets.left+a)/(e._offsets.left+1+e._offsets.right)},getPixelForValue:function(t,e,i){var n=null;if(void 0!==e&&void 0!==i&&(n=this._timestamps.datasets[i][e]),null===n&&(n=m(t,this)),null!==n)return this.getPixelForOffset(n)},getPixelForTick:function(t){var e=this.getTicks();return t>=0&&t<e.length?this.getPixelForOffset(e[t].value):null},getValueForPixel:function(t){var e=this,i=e._horizontal?e.width:e.height,a=e._horizontal?e.left:e.top,r=(i?(t-a)/i:0)*(e._offsets.left+1+e._offsets.left)-e._offsets.right,o=p(e._table,"pos",r,"time");return n(o)},getLabelWidth:function(t){var e=this.options.ticks,i=this.ctx.measureText(t).width,n=r.toRadians(e.maxRotation),o=Math.cos(n),s=Math.sin(n);return i*o+r.valueOrDefault(e.fontSize,a.global.defaultFontSize)*s},getLabelCapacity:function(t){var e=this,i=e.options.time.displayFormats.millisecond,a=e.tickFormatFunction(n(t),0,[],i),r=e.getLabelWidth(a),o=e.isHorizontal()?e.width:e.height,s=Math.floor(o/r);return s>0?s:1}});s.registerScaleType("time",t,{position:"bottom",distribution:"linear",bounds:"data",time:{parser:!1,format:!1,unit:!1,round:!1,displayFormat:!1,isoWeekday:!1,minUnit:"millisecond",displayFormats:{millisecond:"h:mm:ss.SSS a",second:"h:mm:ss a",minute:"h:mm a",hour:"hA",day:"MMM D",week:"ll",month:"MMM YYYY",quarter:"[Q]Q - YYYY",year:"YYYY"}},ticks:{autoSkip:!1,source:"auto",major:{enabled:!1}}})}},{1:1,26:26,33:33,34:34,46:46}]},{},[7])(7)}),function(t){WOW=function(){return{init:function(){var e=[],i=1;function n(){var i=window.innerHeight,n=window.scrollY;t(".wow").each(function(){if("visible"!=t(this).css("visibility")&&(i+n-100>a(this)&&n<a(this)||i+n-100>a(this)+t(this).height()&&n<a(this)+t(this).height()||i+n==t(document).height()&&a(this)+100>t(document).height())){var r=t(this).index(".wow"),o=t(this).attr("data-wow-delay");if(o){o=t(this).attr("data-wow-delay").slice(0,-1);var s=this;parseFloat(o);t(s).addClass("animated"),t(s).css({visibility:"visible"}),t(s).css({"animation-delay":o}),t(s).css({"animation-name":e[r]});var l=1e3*t(this).css("animation-duration").slice(0,-1);t(this).attr("data-wow-delay")&&(l+=1e3*t(this).attr("data-wow-delay").slice(0,-1));s=this;setTimeout(function(){t(s).removeClass("animated")},l)}else{t(this).addClass("animated"),t(this).css({visibility:"visible"}),t(this).css({"animation-name":e[r]});l=1e3*t(this).css("animation-duration").slice(0,-1),s=this;setTimeout(function(){t(s).removeClass("animated")},l)}}})}function a(t){var e=t.getBoundingClientRect(),i=document.body,n=document.documentElement,a=window.pageYOffset||n.scrollTop||i.scrollTop,r=n.clientTop||i.clientTop||0,o=e.top+a-r;return Math.round(o)}t(".wow").each(function(){t(this).css({visibility:"hidden"}),e[t(this).index(".wow")]=t(this).css("animation-name"),t(this).css({"animation-name":"none"})}),t(window).scroll(function(){var e,r;i?(e=window.innerHeight,r=window.scrollY,t(".wow.animated").each(function(){if(e+r-100>a(this)&&r>a(this)+100||e+r-100<a(this)&&r<a(this)+100||a(this)+t(this).height>t(document).height()-100)t(this).removeClass("animated"),t(this).css({"animation-name":"none"}),t(this).css({visibility:"hidden"});else{var i=1e3*t(this).css("animation-duration").slice(0,-1);t(this).attr("data-wow-delay")&&(i+=1e3*t(this).attr("data-wow-delay").slice(0,-1));var n=this;setTimeout(function(){t(n).removeClass("animated")},i)}}),n(),i--):n()}),t(".wow").each(function(){var i=t(this).index(".wow"),n=t(this).attr("data-wow-delay");n?(n=t(this).attr("data-wow-delay").slice(0,-1),parseFloat(n),t(this).addClass("animated"),t(this).css({visibility:"visible"}),t(this).css({"animation-delay":n+"s"}),t(this).css({"animation-name":e[i]})):(t(this).addClass("animated"),t(this).css({visibility:"visible"}),t(this).css({"animation-name":e[i]}))})}}}}(jQuery),function(t){t(window).on("scroll",function(){var e=t(".navbar");e.length&&(e.offset().top>50?t(".scrolling-navbar").addClass("top-nav-collapse"):t(".scrolling-navbar").removeClass("top-nav-collapse"))})}(jQuery),function(t,e){"use strict"; true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function(){return t.Waves=e.call(t),t.Waves}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):"object"==typeof exports?module.exports=e.call(t):t.Waves=e.call(t)}("object"==typeof global?global:this,function(){"use strict";var t=t||{},e=document.querySelectorAll.bind(document),i=Object.prototype.toString,n="ontouchstart"in window;function a(t){var e=typeof t;return"function"===e||"object"===e&&!!t}function r(t){var n,r=i.call(t);return"[object String]"===r?e(t):a(t)&&/^\[object (Array|HTMLCollection|NodeList|Object)\]$/.test(r)&&t.hasOwnProperty("length")?t:a(n=t)&&n.nodeType>0?[t]:[]}function o(t){var e,i,n={top:0,left:0},a=t&&t.ownerDocument;return e=a.documentElement,void 0!==t.getBoundingClientRect&&(n=t.getBoundingClientRect()),i=function(t){return null!==(e=t)&&e===e.window?t:9===t.nodeType&&t.defaultView;var e}(a),{top:n.top+i.pageYOffset-e.clientTop,left:n.left+i.pageXOffset-e.clientLeft}}function s(t){var e="";for(var i in t)t.hasOwnProperty(i)&&(e+=i+":"+t[i]+";");return e}var l={duration:750,delay:200,show:function(t,e,i){if(2===t.button)return!1;e=e||this;var n=document.createElement("div");n.className="waves-ripple waves-rippling",e.appendChild(n);var a=o(e),r=0,u=0;"touches"in t&&t.touches.length?(r=t.touches[0].pageY-a.top,u=t.touches[0].pageX-a.left):(r=t.pageY-a.top,u=t.pageX-a.left),u=u>=0?u:0,r=r>=0?r:0;var d="scale("+e.clientWidth/100*3+")",c="translate(0,0)";i&&(c="translate("+i.x+"px, "+i.y+"px)"),n.setAttribute("data-hold",Date.now()),n.setAttribute("data-x",u),n.setAttribute("data-y",r),n.setAttribute("data-scale",d),n.setAttribute("data-translate",c);var h={top:r+"px",left:u+"px"};n.classList.add("waves-notransition"),n.setAttribute("style",s(h)),n.classList.remove("waves-notransition"),h["-webkit-transform"]=d+" "+c,h["-moz-transform"]=d+" "+c,h["-ms-transform"]=d+" "+c,h["-o-transform"]=d+" "+c,h.transform=d+" "+c,h.opacity="1";var f="mousemove"===t.type?2500:l.duration;h["-webkit-transition-duration"]=f+"ms",h["-moz-transition-duration"]=f+"ms",h["-o-transition-duration"]=f+"ms",h["transition-duration"]=f+"ms",n.setAttribute("style",s(h))},hide:function(t,e){for(var i=(e=e||this).getElementsByClassName("waves-rippling"),a=0,r=i.length;a<r;a++)d(t,e,i[a]);n&&(e.removeEventListener("touchend",l.hide),e.removeEventListener("touchcancel",l.hide)),e.removeEventListener("mouseup",l.hide),e.removeEventListener("mouseleave",l.hide)}},u={input:function(t){var e=t.parentNode;if("span"!==e.tagName.toLowerCase()||!e.classList.contains("waves-effect")){var i=document.createElement("span");i.className="waves-input-wrapper",e.replaceChild(i,t),i.appendChild(t)}},img:function(t){var e=t.parentNode;if("i"!==e.tagName.toLowerCase()||!e.classList.contains("waves-effect")){var i=document.createElement("i");e.replaceChild(i,t),i.appendChild(t)}}};function d(t,e,i){if(i){i.classList.remove("waves-rippling");var n=i.getAttribute("data-x"),a=i.getAttribute("data-y"),r=i.getAttribute("data-scale"),o=i.getAttribute("data-translate"),u=350-(Date.now()-Number(i.getAttribute("data-hold")));u<0&&(u=0),"mousemove"===t.type&&(u=150);var d="mousemove"===t.type?2500:l.duration;setTimeout(function(){var t={top:a+"px",left:n+"px",opacity:"0","-webkit-transition-duration":d+"ms","-moz-transition-duration":d+"ms","-o-transition-duration":d+"ms","transition-duration":d+"ms","-webkit-transform":r+" "+o,"-moz-transform":r+" "+o,"-ms-transform":r+" "+o,"-o-transform":r+" "+o,transform:r+" "+o};i.setAttribute("style",s(t)),setTimeout(function(){try{e.removeChild(i)}catch(t){return!1}},d)},u)}}var c={touches:0,allowEvent:function(t){var e=!0;return/^(mousedown|mousemove)$/.test(t.type)&&c.touches&&(e=!1),e},registerEvent:function(t){var e=t.type;"touchstart"===e?c.touches+=1:/^(touchend|touchcancel)$/.test(e)&&setTimeout(function(){c.touches&&(c.touches-=1)},500)}};function h(t){var e=function(t){if(!1===c.allowEvent(t))return null;for(var e=null,i=t.target||t.srcElement;i.parentElement;){if(!(i instanceof SVGElement)&&i.classList.contains("waves-effect")){e=i;break}i=i.parentElement}return e}(t);if(null!==e){if(e.disabled||e.getAttribute("disabled")||e.classList.contains("disabled"))return;if(c.registerEvent(t),"touchstart"===t.type&&l.delay){var i=!1,a=setTimeout(function(){a=null,l.show(t,e)},l.delay),r=function(n){a&&(clearTimeout(a),a=null,l.show(t,e)),i||(i=!0,l.hide(n,e)),s()},o=function(t){a&&(clearTimeout(a),a=null),r(t),s()};e.addEventListener("touchmove",o,!1),e.addEventListener("touchend",r,!1),e.addEventListener("touchcancel",r,!1);var s=function(){e.removeEventListener("touchmove",o),e.removeEventListener("touchend",r),e.removeEventListener("touchcancel",r)}}else l.show(t,e),n&&(e.addEventListener("touchend",l.hide,!1),e.addEventListener("touchcancel",l.hide,!1)),e.addEventListener("mouseup",l.hide,!1),e.addEventListener("mouseleave",l.hide,!1)}}return t.init=function(t){var e=document.body;"duration"in(t=t||{})&&(l.duration=t.duration),"delay"in t&&(l.delay=t.delay),n&&(e.addEventListener("touchstart",h,!1),e.addEventListener("touchcancel",c.registerEvent,!1),e.addEventListener("touchend",c.registerEvent,!1)),e.addEventListener("mousedown",h,!1)},t.attach=function(t,e){var n,a;t=r(t),"[object Array]"===i.call(e)&&(e=e.join(" ")),e=e?" "+e:"";for(var o=0,s=t.length;o<s;o++)a=(n=t[o]).tagName.toLowerCase(),-1!==["input","img"].indexOf(a)&&(u[a](n),n=n.parentElement),-1===n.className.indexOf("waves-effect")&&(n.className+=" waves-effect"+e)},t.ripple=function(t,e){var i=(t=r(t)).length;if((e=e||{}).wait=e.wait||0,e.position=e.position||null,i)for(var n,a,s,u={},d=0,c={type:"mousedown",button:1},h=function(t,e){return function(){l.hide(t,e)}};d<i;d++)if(n=t[d],a=e.position||{x:n.clientWidth/2,y:n.clientHeight/2},s=o(n),u.x=s.left+a.x,u.y=s.top+a.y,c.pageX=u.x,c.pageY=u.y,l.show(c,n),e.wait>=0&&null!==e.wait){setTimeout(h({type:"mouseup",button:1},n),e.wait)}},t.calm=function(t){for(var e={type:"mouseup",button:1},i=0,n=(t=r(t)).length;i<n;i++)l.hide(e,t[i])},t.displayEffect=function(e){console.error("Waves.displayEffect() has been deprecated and will be removed in future version. Please use Waves.init() to initialize Waves effect"),t.init(e)},t}),Waves.attach(".btn:not(.btn-flat), .btn-floating",["waves-light"]),Waves.attach(".btn-flat",["waves-effect"]),Waves.attach(".chip",["waves-effect"]),Waves.attach(".view a .mask",["waves-light"]),Waves.attach(".waves-light",["waves-light"]),Waves.attach(".navbar-nav a:not(.navbar-brand), .nav-icons li a, .nav-tabs .nav-item:not(.dropdown)",["waves-light"]),Waves.attach(".pager li a",["waves-light"]),Waves.attach(".pagination .page-item .page-link",["waves-effect"]),Waves.init();var _this=void 0;!function(t){var e,i,n="".concat(["text","password","email","url","tel","number","search","search-md"].map(function(t){return"input[type=".concat(t,"]")}).join(", "),", textarea"),a=function(t){var e=t.siblings("label, i"),i=t.val().length,n=t.attr("placeholder");e["".concat(i||n?"add":"remove","Class")]("active")},r=function(t){if(t.hasClass("validate")){var e=t.val(),i=!e.length,n=!t[0].validity.badInput;if(i&&n)t.removeClass("valid").removeClass("invalid");else{var a=t.is(":valid"),r=Number(t.attr("length"))||0;a&&(!r||r>e.length)?t.removeClass("invalid").addClass("valid"):t.removeClass("valid").addClass("invalid")}}},o=function(){var e=t(_this);if(e.val().length){var i=t(".hiddendiv"),n=e.css("font-family"),a=e.css("font-size");a&&i.css("font-size",a),n&&i.css("font-family",n),"off"===e.attr("wrap")&&i.css("overflow-wrap","normal").css("white-space","pre"),i.text("".concat(e.val(),"\n"));var r=i.html().replace(/\n/g,"<br>");i.html(r),i.css("width",e.is(":visible")?e.width():t(window).width()/2),e.css("height",i.height())}};t(n).each(function(e,i){var n=t(i),r=n.siblings("label, i");a(n),i.validity.badInput&&r.addClass("active")}),t(document).on("focus",n,function(e){t(e.target).siblings("label, i").addClass("active")}),t(document).on("blur",n,function(e){var i=t(e.target),n=!i.val(),a=!e.target.validity.badInput,o=void 0===i.attr("placeholder");n&&a&&o&&i.siblings("label, i").removeClass("active"),r(i)}),t(document).on("change",n,function(e){var i=t(e.target);a(i),r(i)}),t("input[autofocus]").siblings("label, i").addClass("active"),t(document).on("reset",function(e){var i=t(e.target);i.is("form")&&(i.find(n).removeClass("valid").removeClass("invalid").each(function(e,i){var n=t(i),a=!n.val(),r=!n.attr("placeholder");a&&r&&n.siblings("label, i").removeClass("active")}),i.find("select.initialized").each(function(e,i){var n=t(i),a=n.siblings("input.select-dropdown"),r=n.children("[selected]").val();n.val(r),a.val(r)}))}),(i=t(".md-textarea-auto")).length&&(e=window.attachEvent?function(t,e,i){t.attachEvent("on".concat(e),i)}:function(t,e,i){t.addEventListener(e,i,!1)},i.each(function(){var t=this;function i(){t.style.height="auto",t.style.height="".concat(t.scrollHeight,"px")}function n(){window.setTimeout(i,0)}e(t,"change",i),e(t,"cut",n),e(t,"paste",n),e(t,"drop",n),e(t,"keydown",n),i()}));var s=t("body");if(!t(".hiddendiv").first().length){var l=t('<div class="hiddendiv common"></div>');s.append(l)}t(".materialize-textarea").each(o),s.on("keyup keydown",".materialize-textarea",o)}(jQuery),$("body").on("shown.bs.modal",".modal",function(){$(".modal-backdrop").length||($modal_dialog=$(this).children(".modal-dialog"),$modal_dialog.hasClass("modal-side")&&($(this).addClass("modal-scrolling"),$("body").addClass("scrollable")),$modal_dialog.hasClass("modal-frame")&&($(this).addClass("modal-content-clickable"),$("body").addClass("scrollable")))}),$("body").on("hidden.bs.modal",".modal",function(){$("body").removeClass("scrollable")});
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 167 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* @preserve
+ * Leaflet 1.3.4, a JS library for interactive maps. http://leafletjs.com
+ * (c) 2010-2018 Vladimir Agafonkin, (c) 2010-2011 CloudMade
+ */
+
+(function (global, factory) {
+	 true ? factory(exports) :
+	typeof define === 'function' && define.amd ? define(['exports'], factory) :
+	(factory((global.L = {})));
+}(this, (function (exports) { 'use strict';
+
+var version = "1.3.4";
+
+/*
+ * @namespace Util
+ *
+ * Various utility functions, used by Leaflet internally.
+ */
+
+var freeze = Object.freeze;
+Object.freeze = function (obj) { return obj; };
+
+// @function extend(dest: Object, src?: Object): Object
+// Merges the properties of the `src` object (or multiple objects) into `dest` object and returns the latter. Has an `L.extend` shortcut.
+function extend(dest) {
+	var i, j, len, src;
+
+	for (j = 1, len = arguments.length; j < len; j++) {
+		src = arguments[j];
+		for (i in src) {
+			dest[i] = src[i];
+		}
+	}
+	return dest;
+}
+
+// @function create(proto: Object, properties?: Object): Object
+// Compatibility polyfill for [Object.create](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
+var create = Object.create || (function () {
+	function F() {}
+	return function (proto) {
+		F.prototype = proto;
+		return new F();
+	};
+})();
+
+// @function bind(fn: Function, …): Function
+// Returns a new function bound to the arguments passed, like [Function.prototype.bind](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Function/bind).
+// Has a `L.bind()` shortcut.
+function bind(fn, obj) {
+	var slice = Array.prototype.slice;
+
+	if (fn.bind) {
+		return fn.bind.apply(fn, slice.call(arguments, 1));
+	}
+
+	var args = slice.call(arguments, 2);
+
+	return function () {
+		return fn.apply(obj, args.length ? args.concat(slice.call(arguments)) : arguments);
+	};
+}
+
+// @property lastId: Number
+// Last unique ID used by [`stamp()`](#util-stamp)
+var lastId = 0;
+
+// @function stamp(obj: Object): Number
+// Returns the unique ID of an object, assigning it one if it doesn't have it.
+function stamp(obj) {
+	/*eslint-disable */
+	obj._leaflet_id = obj._leaflet_id || ++lastId;
+	return obj._leaflet_id;
+	/* eslint-enable */
+}
+
+// @function throttle(fn: Function, time: Number, context: Object): Function
+// Returns a function which executes function `fn` with the given scope `context`
+// (so that the `this` keyword refers to `context` inside `fn`'s code). The function
+// `fn` will be called no more than one time per given amount of `time`. The arguments
+// received by the bound function will be any arguments passed when binding the
+// function, followed by any arguments passed when invoking the bound function.
+// Has an `L.throttle` shortcut.
+function throttle(fn, time, context) {
+	var lock, args, wrapperFn, later;
+
+	later = function () {
+		// reset lock and call if queued
+		lock = false;
+		if (args) {
+			wrapperFn.apply(context, args);
+			args = false;
+		}
+	};
+
+	wrapperFn = function () {
+		if (lock) {
+			// called too soon, queue to call later
+			args = arguments;
+
+		} else {
+			// call and lock until later
+			fn.apply(context, arguments);
+			setTimeout(later, time);
+			lock = true;
+		}
+	};
+
+	return wrapperFn;
+}
+
+// @function wrapNum(num: Number, range: Number[], includeMax?: Boolean): Number
+// Returns the number `num` modulo `range` in such a way so it lies within
+// `range[0]` and `range[1]`. The returned value will be always smaller than
+// `range[1]` unless `includeMax` is set to `true`.
+function wrapNum(x, range, includeMax) {
+	var max = range[1],
+	    min = range[0],
+	    d = max - min;
+	return x === max && includeMax ? x : ((x - min) % d + d) % d + min;
+}
+
+// @function falseFn(): Function
+// Returns a function which always returns `false`.
+function falseFn() { return false; }
+
+// @function formatNum(num: Number, digits?: Number): Number
+// Returns the number `num` rounded to `digits` decimals, or to 6 decimals by default.
+function formatNum(num, digits) {
+	var pow = Math.pow(10, (digits === undefined ? 6 : digits));
+	return Math.round(num * pow) / pow;
+}
+
+// @function trim(str: String): String
+// Compatibility polyfill for [String.prototype.trim](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/Trim)
+function trim(str) {
+	return str.trim ? str.trim() : str.replace(/^\s+|\s+$/g, '');
+}
+
+// @function splitWords(str: String): String[]
+// Trims and splits the string on whitespace and returns the array of parts.
+function splitWords(str) {
+	return trim(str).split(/\s+/);
+}
+
+// @function setOptions(obj: Object, options: Object): Object
+// Merges the given properties to the `options` of the `obj` object, returning the resulting options. See `Class options`. Has an `L.setOptions` shortcut.
+function setOptions(obj, options) {
+	if (!obj.hasOwnProperty('options')) {
+		obj.options = obj.options ? create(obj.options) : {};
+	}
+	for (var i in options) {
+		obj.options[i] = options[i];
+	}
+	return obj.options;
+}
+
+// @function getParamString(obj: Object, existingUrl?: String, uppercase?: Boolean): String
+// Converts an object into a parameter URL string, e.g. `{a: "foo", b: "bar"}`
+// translates to `'?a=foo&b=bar'`. If `existingUrl` is set, the parameters will
+// be appended at the end. If `uppercase` is `true`, the parameter names will
+// be uppercased (e.g. `'?A=foo&B=bar'`)
+function getParamString(obj, existingUrl, uppercase) {
+	var params = [];
+	for (var i in obj) {
+		params.push(encodeURIComponent(uppercase ? i.toUpperCase() : i) + '=' + encodeURIComponent(obj[i]));
+	}
+	return ((!existingUrl || existingUrl.indexOf('?') === -1) ? '?' : '&') + params.join('&');
+}
+
+var templateRe = /\{ *([\w_-]+) *\}/g;
+
+// @function template(str: String, data: Object): String
+// Simple templating facility, accepts a template string of the form `'Hello {a}, {b}'`
+// and a data object like `{a: 'foo', b: 'bar'}`, returns evaluated string
+// `('Hello foo, bar')`. You can also specify functions instead of strings for
+// data values — they will be evaluated passing `data` as an argument.
+function template(str, data) {
+	return str.replace(templateRe, function (str, key) {
+		var value = data[key];
+
+		if (value === undefined) {
+			throw new Error('No value provided for variable ' + str);
+
+		} else if (typeof value === 'function') {
+			value = value(data);
+		}
+		return value;
+	});
+}
+
+// @function isArray(obj): Boolean
+// Compatibility polyfill for [Array.isArray](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
+var isArray = Array.isArray || function (obj) {
+	return (Object.prototype.toString.call(obj) === '[object Array]');
+};
+
+// @function indexOf(array: Array, el: Object): Number
+// Compatibility polyfill for [Array.prototype.indexOf](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+function indexOf(array, el) {
+	for (var i = 0; i < array.length; i++) {
+		if (array[i] === el) { return i; }
+	}
+	return -1;
+}
+
+// @property emptyImageUrl: String
+// Data URI string containing a base64-encoded empty GIF image.
+// Used as a hack to free memory from unused images on WebKit-powered
+// mobile devices (by setting image `src` to this string).
+var emptyImageUrl = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+
+// inspired by http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+
+function getPrefixed(name) {
+	return window['webkit' + name] || window['moz' + name] || window['ms' + name];
+}
+
+var lastTime = 0;
+
+// fallback for IE 7-8
+function timeoutDefer(fn) {
+	var time = +new Date(),
+	    timeToCall = Math.max(0, 16 - (time - lastTime));
+
+	lastTime = time + timeToCall;
+	return window.setTimeout(fn, timeToCall);
+}
+
+var requestFn = window.requestAnimationFrame || getPrefixed('RequestAnimationFrame') || timeoutDefer;
+var cancelFn = window.cancelAnimationFrame || getPrefixed('CancelAnimationFrame') ||
+		getPrefixed('CancelRequestAnimationFrame') || function (id) { window.clearTimeout(id); };
+
+// @function requestAnimFrame(fn: Function, context?: Object, immediate?: Boolean): Number
+// Schedules `fn` to be executed when the browser repaints. `fn` is bound to
+// `context` if given. When `immediate` is set, `fn` is called immediately if
+// the browser doesn't have native support for
+// [`window.requestAnimationFrame`](https://developer.mozilla.org/docs/Web/API/window/requestAnimationFrame),
+// otherwise it's delayed. Returns a request ID that can be used to cancel the request.
+function requestAnimFrame(fn, context, immediate) {
+	if (immediate && requestFn === timeoutDefer) {
+		fn.call(context);
+	} else {
+		return requestFn.call(window, bind(fn, context));
+	}
+}
+
+// @function cancelAnimFrame(id: Number): undefined
+// Cancels a previous `requestAnimFrame`. See also [window.cancelAnimationFrame](https://developer.mozilla.org/docs/Web/API/window/cancelAnimationFrame).
+function cancelAnimFrame(id) {
+	if (id) {
+		cancelFn.call(window, id);
+	}
+}
+
+
+var Util = (Object.freeze || Object)({
+	freeze: freeze,
+	extend: extend,
+	create: create,
+	bind: bind,
+	lastId: lastId,
+	stamp: stamp,
+	throttle: throttle,
+	wrapNum: wrapNum,
+	falseFn: falseFn,
+	formatNum: formatNum,
+	trim: trim,
+	splitWords: splitWords,
+	setOptions: setOptions,
+	getParamString: getParamString,
+	template: template,
+	isArray: isArray,
+	indexOf: indexOf,
+	emptyImageUrl: emptyImageUrl,
+	requestFn: requestFn,
+	cancelFn: cancelFn,
+	requestAnimFrame: requestAnimFrame,
+	cancelAnimFrame: cancelAnimFrame
+});
+
+// @class Class
+// @aka L.Class
+
+// @section
+// @uninheritable
+
+// Thanks to John Resig and Dean Edwards for inspiration!
+
+function Class() {}
+
+Class.extend = function (props) {
+
+	// @function extend(props: Object): Function
+	// [Extends the current class](#class-inheritance) given the properties to be included.
+	// Returns a Javascript function that is a class constructor (to be called with `new`).
+	var NewClass = function () {
+
+		// call the constructor
+		if (this.initialize) {
+			this.initialize.apply(this, arguments);
+		}
+
+		// call all constructor hooks
+		this.callInitHooks();
+	};
+
+	var parentProto = NewClass.__super__ = this.prototype;
+
+	var proto = create(parentProto);
+	proto.constructor = NewClass;
+
+	NewClass.prototype = proto;
+
+	// inherit parent's statics
+	for (var i in this) {
+		if (this.hasOwnProperty(i) && i !== 'prototype' && i !== '__super__') {
+			NewClass[i] = this[i];
+		}
+	}
+
+	// mix static properties into the class
+	if (props.statics) {
+		extend(NewClass, props.statics);
+		delete props.statics;
+	}
+
+	// mix includes into the prototype
+	if (props.includes) {
+		checkDeprecatedMixinEvents(props.includes);
+		extend.apply(null, [proto].concat(props.includes));
+		delete props.includes;
+	}
+
+	// merge options
+	if (proto.options) {
+		props.options = extend(create(proto.options), props.options);
+	}
+
+	// mix given properties into the prototype
+	extend(proto, props);
+
+	proto._initHooks = [];
+
+	// add method for calling all hooks
+	proto.callInitHooks = function () {
+
+		if (this._initHooksCalled) { return; }
+
+		if (parentProto.callInitHooks) {
+			parentProto.callInitHooks.call(this);
+		}
+
+		this._initHooksCalled = true;
+
+		for (var i = 0, len = proto._initHooks.length; i < len; i++) {
+			proto._initHooks[i].call(this);
+		}
+	};
+
+	return NewClass;
+};
+
+
+// @function include(properties: Object): this
+// [Includes a mixin](#class-includes) into the current class.
+Class.include = function (props) {
+	extend(this.prototype, props);
+	return this;
+};
+
+// @function mergeOptions(options: Object): this
+// [Merges `options`](#class-options) into the defaults of the class.
+Class.mergeOptions = function (options) {
+	extend(this.prototype.options, options);
+	return this;
+};
+
+// @function addInitHook(fn: Function): this
+// Adds a [constructor hook](#class-constructor-hooks) to the class.
+Class.addInitHook = function (fn) { // (Function) || (String, args...)
+	var args = Array.prototype.slice.call(arguments, 1);
+
+	var init = typeof fn === 'function' ? fn : function () {
+		this[fn].apply(this, args);
+	};
+
+	this.prototype._initHooks = this.prototype._initHooks || [];
+	this.prototype._initHooks.push(init);
+	return this;
+};
+
+function checkDeprecatedMixinEvents(includes) {
+	if (typeof L === 'undefined' || !L || !L.Mixin) { return; }
+
+	includes = isArray(includes) ? includes : [includes];
+
+	for (var i = 0; i < includes.length; i++) {
+		if (includes[i] === L.Mixin.Events) {
+			console.warn('Deprecated include of L.Mixin.Events: ' +
+				'this property will be removed in future releases, ' +
+				'please inherit from L.Evented instead.', new Error().stack);
+		}
+	}
+}
+
+/*
+ * @class Evented
+ * @aka L.Evented
+ * @inherits Class
+ *
+ * A set of methods shared between event-powered classes (like `Map` and `Marker`). Generally, events allow you to execute some function when something happens with an object (e.g. the user clicks on the map, causing the map to fire `'click'` event).
+ *
+ * @example
+ *
+ * ```js
+ * map.on('click', function(e) {
+ * 	alert(e.latlng);
+ * } );
+ * ```
+ *
+ * Leaflet deals with event listeners by reference, so if you want to add a listener and then remove it, define it as a function:
+ *
+ * ```js
+ * function onClick(e) { ... }
+ *
+ * map.on('click', onClick);
+ * map.off('click', onClick);
+ * ```
+ */
+
+var Events = {
+	/* @method on(type: String, fn: Function, context?: Object): this
+	 * Adds a listener function (`fn`) to a particular event type of the object. You can optionally specify the context of the listener (object the this keyword will point to). You can also pass several space-separated types (e.g. `'click dblclick'`).
+	 *
+	 * @alternative
+	 * @method on(eventMap: Object): this
+	 * Adds a set of type/listener pairs, e.g. `{click: onClick, mousemove: onMouseMove}`
+	 */
+	on: function (types, fn, context) {
+
+		// types can be a map of types/handlers
+		if (typeof types === 'object') {
+			for (var type in types) {
+				// we don't process space-separated events here for performance;
+				// it's a hot path since Layer uses the on(obj) syntax
+				this._on(type, types[type], fn);
+			}
+
+		} else {
+			// types can be a string of space-separated words
+			types = splitWords(types);
+
+			for (var i = 0, len = types.length; i < len; i++) {
+				this._on(types[i], fn, context);
+			}
+		}
+
+		return this;
+	},
+
+	/* @method off(type: String, fn?: Function, context?: Object): this
+	 * Removes a previously added listener function. If no function is specified, it will remove all the listeners of that particular event from the object. Note that if you passed a custom context to `on`, you must pass the same context to `off` in order to remove the listener.
+	 *
+	 * @alternative
+	 * @method off(eventMap: Object): this
+	 * Removes a set of type/listener pairs.
+	 *
+	 * @alternative
+	 * @method off: this
+	 * Removes all listeners to all events on the object.
+	 */
+	off: function (types, fn, context) {
+
+		if (!types) {
+			// clear all listeners if called without arguments
+			delete this._events;
+
+		} else if (typeof types === 'object') {
+			for (var type in types) {
+				this._off(type, types[type], fn);
+			}
+
+		} else {
+			types = splitWords(types);
+
+			for (var i = 0, len = types.length; i < len; i++) {
+				this._off(types[i], fn, context);
+			}
+		}
+
+		return this;
+	},
+
+	// attach listener (without syntactic sugar now)
+	_on: function (type, fn, context) {
+		this._events = this._events || {};
+
+		/* get/init listeners for type */
+		var typeListeners = this._events[type];
+		if (!typeListeners) {
+			typeListeners = [];
+			this._events[type] = typeListeners;
+		}
+
+		if (context === this) {
+			// Less memory footprint.
+			context = undefined;
+		}
+		var newListener = {fn: fn, ctx: context},
+		    listeners = typeListeners;
+
+		// check if fn already there
+		for (var i = 0, len = listeners.length; i < len; i++) {
+			if (listeners[i].fn === fn && listeners[i].ctx === context) {
+				return;
+			}
+		}
+
+		listeners.push(newListener);
+	},
+
+	_off: function (type, fn, context) {
+		var listeners,
+		    i,
+		    len;
+
+		if (!this._events) { return; }
+
+		listeners = this._events[type];
+
+		if (!listeners) {
+			return;
+		}
+
+		if (!fn) {
+			// Set all removed listeners to noop so they are not called if remove happens in fire
+			for (i = 0, len = listeners.length; i < len; i++) {
+				listeners[i].fn = falseFn;
+			}
+			// clear all listeners for a type if function isn't specified
+			delete this._events[type];
+			return;
+		}
+
+		if (context === this) {
+			context = undefined;
+		}
+
+		if (listeners) {
+
+			// find fn and remove it
+			for (i = 0, len = listeners.length; i < len; i++) {
+				var l = listeners[i];
+				if (l.ctx !== context) { continue; }
+				if (l.fn === fn) {
+
+					// set the removed listener to noop so that's not called if remove happens in fire
+					l.fn = falseFn;
+
+					if (this._firingCount) {
+						/* copy array in case events are being fired */
+						this._events[type] = listeners = listeners.slice();
+					}
+					listeners.splice(i, 1);
+
+					return;
+				}
+			}
+		}
+	},
+
+	// @method fire(type: String, data?: Object, propagate?: Boolean): this
+	// Fires an event of the specified type. You can optionally provide an data
+	// object — the first argument of the listener function will contain its
+	// properties. The event can optionally be propagated to event parents.
+	fire: function (type, data, propagate) {
+		if (!this.listens(type, propagate)) { return this; }
+
+		var event = extend({}, data, {
+			type: type,
+			target: this,
+			sourceTarget: data && data.sourceTarget || this
+		});
+
+		if (this._events) {
+			var listeners = this._events[type];
+
+			if (listeners) {
+				this._firingCount = (this._firingCount + 1) || 1;
+				for (var i = 0, len = listeners.length; i < len; i++) {
+					var l = listeners[i];
+					l.fn.call(l.ctx || this, event);
+				}
+
+				this._firingCount--;
+			}
+		}
+
+		if (propagate) {
+			// propagate the event to parents (set with addEventParent)
+			this._propagateEvent(event);
+		}
+
+		return this;
+	},
+
+	// @method listens(type: String): Boolean
+	// Returns `true` if a particular event type has any listeners attached to it.
+	listens: function (type, propagate) {
+		var listeners = this._events && this._events[type];
+		if (listeners && listeners.length) { return true; }
+
+		if (propagate) {
+			// also check parents for listeners if event propagates
+			for (var id in this._eventParents) {
+				if (this._eventParents[id].listens(type, propagate)) { return true; }
+			}
+		}
+		return false;
+	},
+
+	// @method once(…): this
+	// Behaves as [`on(…)`](#evented-on), except the listener will only get fired once and then removed.
+	once: function (types, fn, context) {
+
+		if (typeof types === 'object') {
+			for (var type in types) {
+				this.once(type, types[type], fn);
+			}
+			return this;
+		}
+
+		var handler = bind(function () {
+			this
+			    .off(types, fn, context)
+			    .off(types, handler, context);
+		}, this);
+
+		// add a listener that's executed once and removed after that
+		return this
+		    .on(types, fn, context)
+		    .on(types, handler, context);
+	},
+
+	// @method addEventParent(obj: Evented): this
+	// Adds an event parent - an `Evented` that will receive propagated events
+	addEventParent: function (obj) {
+		this._eventParents = this._eventParents || {};
+		this._eventParents[stamp(obj)] = obj;
+		return this;
+	},
+
+	// @method removeEventParent(obj: Evented): this
+	// Removes an event parent, so it will stop receiving propagated events
+	removeEventParent: function (obj) {
+		if (this._eventParents) {
+			delete this._eventParents[stamp(obj)];
+		}
+		return this;
+	},
+
+	_propagateEvent: function (e) {
+		for (var id in this._eventParents) {
+			this._eventParents[id].fire(e.type, extend({
+				layer: e.target,
+				propagatedFrom: e.target
+			}, e), true);
+		}
+	}
+};
+
+// aliases; we should ditch those eventually
+
+// @method addEventListener(…): this
+// Alias to [`on(…)`](#evented-on)
+Events.addEventListener = Events.on;
+
+// @method removeEventListener(…): this
+// Alias to [`off(…)`](#evented-off)
+
+// @method clearAllEventListeners(…): this
+// Alias to [`off()`](#evented-off)
+Events.removeEventListener = Events.clearAllEventListeners = Events.off;
+
+// @method addOneTimeEventListener(…): this
+// Alias to [`once(…)`](#evented-once)
+Events.addOneTimeEventListener = Events.once;
+
+// @method fireEvent(…): this
+// Alias to [`fire(…)`](#evented-fire)
+Events.fireEvent = Events.fire;
+
+// @method hasEventListeners(…): Boolean
+// Alias to [`listens(…)`](#evented-listens)
+Events.hasEventListeners = Events.listens;
+
+var Evented = Class.extend(Events);
+
+/*
+ * @class Point
+ * @aka L.Point
+ *
+ * Represents a point with `x` and `y` coordinates in pixels.
+ *
+ * @example
+ *
+ * ```js
+ * var point = L.point(200, 300);
+ * ```
+ *
+ * All Leaflet methods and options that accept `Point` objects also accept them in a simple Array form (unless noted otherwise), so these lines are equivalent:
+ *
+ * ```js
+ * map.panBy([200, 300]);
+ * map.panBy(L.point(200, 300));
+ * ```
+ *
+ * Note that `Point` does not inherit from Leafet's `Class` object,
+ * which means new classes can't inherit from it, and new methods
+ * can't be added to it with the `include` function.
+ */
+
+function Point(x, y, round) {
+	// @property x: Number; The `x` coordinate of the point
+	this.x = (round ? Math.round(x) : x);
+	// @property y: Number; The `y` coordinate of the point
+	this.y = (round ? Math.round(y) : y);
+}
+
+var trunc = Math.trunc || function (v) {
+	return v > 0 ? Math.floor(v) : Math.ceil(v);
+};
+
+Point.prototype = {
+
+	// @method clone(): Point
+	// Returns a copy of the current point.
+	clone: function () {
+		return new Point(this.x, this.y);
+	},
+
+	// @method add(otherPoint: Point): Point
+	// Returns the result of addition of the current and the given points.
+	add: function (point) {
+		// non-destructive, returns a new point
+		return this.clone()._add(toPoint(point));
+	},
+
+	_add: function (point) {
+		// destructive, used directly for performance in situations where it's safe to modify existing point
+		this.x += point.x;
+		this.y += point.y;
+		return this;
+	},
+
+	// @method subtract(otherPoint: Point): Point
+	// Returns the result of subtraction of the given point from the current.
+	subtract: function (point) {
+		return this.clone()._subtract(toPoint(point));
+	},
+
+	_subtract: function (point) {
+		this.x -= point.x;
+		this.y -= point.y;
+		return this;
+	},
+
+	// @method divideBy(num: Number): Point
+	// Returns the result of division of the current point by the given number.
+	divideBy: function (num) {
+		return this.clone()._divideBy(num);
+	},
+
+	_divideBy: function (num) {
+		this.x /= num;
+		this.y /= num;
+		return this;
+	},
+
+	// @method multiplyBy(num: Number): Point
+	// Returns the result of multiplication of the current point by the given number.
+	multiplyBy: function (num) {
+		return this.clone()._multiplyBy(num);
+	},
+
+	_multiplyBy: function (num) {
+		this.x *= num;
+		this.y *= num;
+		return this;
+	},
+
+	// @method scaleBy(scale: Point): Point
+	// Multiply each coordinate of the current point by each coordinate of
+	// `scale`. In linear algebra terms, multiply the point by the
+	// [scaling matrix](https://en.wikipedia.org/wiki/Scaling_%28geometry%29#Matrix_representation)
+	// defined by `scale`.
+	scaleBy: function (point) {
+		return new Point(this.x * point.x, this.y * point.y);
+	},
+
+	// @method unscaleBy(scale: Point): Point
+	// Inverse of `scaleBy`. Divide each coordinate of the current point by
+	// each coordinate of `scale`.
+	unscaleBy: function (point) {
+		return new Point(this.x / point.x, this.y / point.y);
+	},
+
+	// @method round(): Point
+	// Returns a copy of the current point with rounded coordinates.
+	round: function () {
+		return this.clone()._round();
+	},
+
+	_round: function () {
+		this.x = Math.round(this.x);
+		this.y = Math.round(this.y);
+		return this;
+	},
+
+	// @method floor(): Point
+	// Returns a copy of the current point with floored coordinates (rounded down).
+	floor: function () {
+		return this.clone()._floor();
+	},
+
+	_floor: function () {
+		this.x = Math.floor(this.x);
+		this.y = Math.floor(this.y);
+		return this;
+	},
+
+	// @method ceil(): Point
+	// Returns a copy of the current point with ceiled coordinates (rounded up).
+	ceil: function () {
+		return this.clone()._ceil();
+	},
+
+	_ceil: function () {
+		this.x = Math.ceil(this.x);
+		this.y = Math.ceil(this.y);
+		return this;
+	},
+
+	// @method trunc(): Point
+	// Returns a copy of the current point with truncated coordinates (rounded towards zero).
+	trunc: function () {
+		return this.clone()._trunc();
+	},
+
+	_trunc: function () {
+		this.x = trunc(this.x);
+		this.y = trunc(this.y);
+		return this;
+	},
+
+	// @method distanceTo(otherPoint: Point): Number
+	// Returns the cartesian distance between the current and the given points.
+	distanceTo: function (point) {
+		point = toPoint(point);
+
+		var x = point.x - this.x,
+		    y = point.y - this.y;
+
+		return Math.sqrt(x * x + y * y);
+	},
+
+	// @method equals(otherPoint: Point): Boolean
+	// Returns `true` if the given point has the same coordinates.
+	equals: function (point) {
+		point = toPoint(point);
+
+		return point.x === this.x &&
+		       point.y === this.y;
+	},
+
+	// @method contains(otherPoint: Point): Boolean
+	// Returns `true` if both coordinates of the given point are less than the corresponding current point coordinates (in absolute values).
+	contains: function (point) {
+		point = toPoint(point);
+
+		return Math.abs(point.x) <= Math.abs(this.x) &&
+		       Math.abs(point.y) <= Math.abs(this.y);
+	},
+
+	// @method toString(): String
+	// Returns a string representation of the point for debugging purposes.
+	toString: function () {
+		return 'Point(' +
+		        formatNum(this.x) + ', ' +
+		        formatNum(this.y) + ')';
+	}
+};
+
+// @factory L.point(x: Number, y: Number, round?: Boolean)
+// Creates a Point object with the given `x` and `y` coordinates. If optional `round` is set to true, rounds the `x` and `y` values.
+
+// @alternative
+// @factory L.point(coords: Number[])
+// Expects an array of the form `[x, y]` instead.
+
+// @alternative
+// @factory L.point(coords: Object)
+// Expects a plain object of the form `{x: Number, y: Number}` instead.
+function toPoint(x, y, round) {
+	if (x instanceof Point) {
+		return x;
+	}
+	if (isArray(x)) {
+		return new Point(x[0], x[1]);
+	}
+	if (x === undefined || x === null) {
+		return x;
+	}
+	if (typeof x === 'object' && 'x' in x && 'y' in x) {
+		return new Point(x.x, x.y);
+	}
+	return new Point(x, y, round);
+}
+
+/*
+ * @class Bounds
+ * @aka L.Bounds
+ *
+ * Represents a rectangular area in pixel coordinates.
+ *
+ * @example
+ *
+ * ```js
+ * var p1 = L.point(10, 10),
+ * p2 = L.point(40, 60),
+ * bounds = L.bounds(p1, p2);
+ * ```
+ *
+ * All Leaflet methods that accept `Bounds` objects also accept them in a simple Array form (unless noted otherwise), so the bounds example above can be passed like this:
+ *
+ * ```js
+ * otherBounds.intersects([[10, 10], [40, 60]]);
+ * ```
+ *
+ * Note that `Bounds` does not inherit from Leafet's `Class` object,
+ * which means new classes can't inherit from it, and new methods
+ * can't be added to it with the `include` function.
+ */
+
+function Bounds(a, b) {
+	if (!a) { return; }
+
+	var points = b ? [a, b] : a;
+
+	for (var i = 0, len = points.length; i < len; i++) {
+		this.extend(points[i]);
+	}
+}
+
+Bounds.prototype = {
+	// @method extend(point: Point): this
+	// Extends the bounds to contain the given point.
+	extend: function (point) { // (Point)
+		point = toPoint(point);
+
+		// @property min: Point
+		// The top left corner of the rectangle.
+		// @property max: Point
+		// The bottom right corner of the rectangle.
+		if (!this.min && !this.max) {
+			this.min = point.clone();
+			this.max = point.clone();
+		} else {
+			this.min.x = Math.min(point.x, this.min.x);
+			this.max.x = Math.max(point.x, this.max.x);
+			this.min.y = Math.min(point.y, this.min.y);
+			this.max.y = Math.max(point.y, this.max.y);
+		}
+		return this;
+	},
+
+	// @method getCenter(round?: Boolean): Point
+	// Returns the center point of the bounds.
+	getCenter: function (round) {
+		return new Point(
+		        (this.min.x + this.max.x) / 2,
+		        (this.min.y + this.max.y) / 2, round);
+	},
+
+	// @method getBottomLeft(): Point
+	// Returns the bottom-left point of the bounds.
+	getBottomLeft: function () {
+		return new Point(this.min.x, this.max.y);
+	},
+
+	// @method getTopRight(): Point
+	// Returns the top-right point of the bounds.
+	getTopRight: function () { // -> Point
+		return new Point(this.max.x, this.min.y);
+	},
+
+	// @method getTopLeft(): Point
+	// Returns the top-left point of the bounds (i.e. [`this.min`](#bounds-min)).
+	getTopLeft: function () {
+		return this.min; // left, top
+	},
+
+	// @method getBottomRight(): Point
+	// Returns the bottom-right point of the bounds (i.e. [`this.max`](#bounds-max)).
+	getBottomRight: function () {
+		return this.max; // right, bottom
+	},
+
+	// @method getSize(): Point
+	// Returns the size of the given bounds
+	getSize: function () {
+		return this.max.subtract(this.min);
+	},
+
+	// @method contains(otherBounds: Bounds): Boolean
+	// Returns `true` if the rectangle contains the given one.
+	// @alternative
+	// @method contains(point: Point): Boolean
+	// Returns `true` if the rectangle contains the given point.
+	contains: function (obj) {
+		var min, max;
+
+		if (typeof obj[0] === 'number' || obj instanceof Point) {
+			obj = toPoint(obj);
+		} else {
+			obj = toBounds(obj);
+		}
+
+		if (obj instanceof Bounds) {
+			min = obj.min;
+			max = obj.max;
+		} else {
+			min = max = obj;
+		}
+
+		return (min.x >= this.min.x) &&
+		       (max.x <= this.max.x) &&
+		       (min.y >= this.min.y) &&
+		       (max.y <= this.max.y);
+	},
+
+	// @method intersects(otherBounds: Bounds): Boolean
+	// Returns `true` if the rectangle intersects the given bounds. Two bounds
+	// intersect if they have at least one point in common.
+	intersects: function (bounds) { // (Bounds) -> Boolean
+		bounds = toBounds(bounds);
+
+		var min = this.min,
+		    max = this.max,
+		    min2 = bounds.min,
+		    max2 = bounds.max,
+		    xIntersects = (max2.x >= min.x) && (min2.x <= max.x),
+		    yIntersects = (max2.y >= min.y) && (min2.y <= max.y);
+
+		return xIntersects && yIntersects;
+	},
+
+	// @method overlaps(otherBounds: Bounds): Boolean
+	// Returns `true` if the rectangle overlaps the given bounds. Two bounds
+	// overlap if their intersection is an area.
+	overlaps: function (bounds) { // (Bounds) -> Boolean
+		bounds = toBounds(bounds);
+
+		var min = this.min,
+		    max = this.max,
+		    min2 = bounds.min,
+		    max2 = bounds.max,
+		    xOverlaps = (max2.x > min.x) && (min2.x < max.x),
+		    yOverlaps = (max2.y > min.y) && (min2.y < max.y);
+
+		return xOverlaps && yOverlaps;
+	},
+
+	isValid: function () {
+		return !!(this.min && this.max);
+	}
+};
+
+
+// @factory L.bounds(corner1: Point, corner2: Point)
+// Creates a Bounds object from two corners coordinate pairs.
+// @alternative
+// @factory L.bounds(points: Point[])
+// Creates a Bounds object from the given array of points.
+function toBounds(a, b) {
+	if (!a || a instanceof Bounds) {
+		return a;
+	}
+	return new Bounds(a, b);
+}
+
+/*
+ * @class LatLngBounds
+ * @aka L.LatLngBounds
+ *
+ * Represents a rectangular geographical area on a map.
+ *
+ * @example
+ *
+ * ```js
+ * var corner1 = L.latLng(40.712, -74.227),
+ * corner2 = L.latLng(40.774, -74.125),
+ * bounds = L.latLngBounds(corner1, corner2);
+ * ```
+ *
+ * All Leaflet methods that accept LatLngBounds objects also accept them in a simple Array form (unless noted otherwise), so the bounds example above can be passed like this:
+ *
+ * ```js
+ * map.fitBounds([
+ * 	[40.712, -74.227],
+ * 	[40.774, -74.125]
+ * ]);
+ * ```
+ *
+ * Caution: if the area crosses the antimeridian (often confused with the International Date Line), you must specify corners _outside_ the [-180, 180] degrees longitude range.
+ *
+ * Note that `LatLngBounds` does not inherit from Leafet's `Class` object,
+ * which means new classes can't inherit from it, and new methods
+ * can't be added to it with the `include` function.
+ */
+
+function LatLngBounds(corner1, corner2) { // (LatLng, LatLng) or (LatLng[])
+	if (!corner1) { return; }
+
+	var latlngs = corner2 ? [corner1, corner2] : corner1;
+
+	for (var i = 0, len = latlngs.length; i < len; i++) {
+		this.extend(latlngs[i]);
+	}
+}
+
+LatLngBounds.prototype = {
+
+	// @method extend(latlng: LatLng): this
+	// Extend the bounds to contain the given point
+
+	// @alternative
+	// @method extend(otherBounds: LatLngBounds): this
+	// Extend the bounds to contain the given bounds
+	extend: function (obj) {
+		var sw = this._southWest,
+		    ne = this._northEast,
+		    sw2, ne2;
+
+		if (obj instanceof LatLng) {
+			sw2 = obj;
+			ne2 = obj;
+
+		} else if (obj instanceof LatLngBounds) {
+			sw2 = obj._southWest;
+			ne2 = obj._northEast;
+
+			if (!sw2 || !ne2) { return this; }
+
+		} else {
+			return obj ? this.extend(toLatLng(obj) || toLatLngBounds(obj)) : this;
+		}
+
+		if (!sw && !ne) {
+			this._southWest = new LatLng(sw2.lat, sw2.lng);
+			this._northEast = new LatLng(ne2.lat, ne2.lng);
+		} else {
+			sw.lat = Math.min(sw2.lat, sw.lat);
+			sw.lng = Math.min(sw2.lng, sw.lng);
+			ne.lat = Math.max(ne2.lat, ne.lat);
+			ne.lng = Math.max(ne2.lng, ne.lng);
+		}
+
+		return this;
+	},
+
+	// @method pad(bufferRatio: Number): LatLngBounds
+	// Returns bounds created by extending or retracting the current bounds by a given ratio in each direction.
+	// For example, a ratio of 0.5 extends the bounds by 50% in each direction.
+	// Negative values will retract the bounds.
+	pad: function (bufferRatio) {
+		var sw = this._southWest,
+		    ne = this._northEast,
+		    heightBuffer = Math.abs(sw.lat - ne.lat) * bufferRatio,
+		    widthBuffer = Math.abs(sw.lng - ne.lng) * bufferRatio;
+
+		return new LatLngBounds(
+		        new LatLng(sw.lat - heightBuffer, sw.lng - widthBuffer),
+		        new LatLng(ne.lat + heightBuffer, ne.lng + widthBuffer));
+	},
+
+	// @method getCenter(): LatLng
+	// Returns the center point of the bounds.
+	getCenter: function () {
+		return new LatLng(
+		        (this._southWest.lat + this._northEast.lat) / 2,
+		        (this._southWest.lng + this._northEast.lng) / 2);
+	},
+
+	// @method getSouthWest(): LatLng
+	// Returns the south-west point of the bounds.
+	getSouthWest: function () {
+		return this._southWest;
+	},
+
+	// @method getNorthEast(): LatLng
+	// Returns the north-east point of the bounds.
+	getNorthEast: function () {
+		return this._northEast;
+	},
+
+	// @method getNorthWest(): LatLng
+	// Returns the north-west point of the bounds.
+	getNorthWest: function () {
+		return new LatLng(this.getNorth(), this.getWest());
+	},
+
+	// @method getSouthEast(): LatLng
+	// Returns the south-east point of the bounds.
+	getSouthEast: function () {
+		return new LatLng(this.getSouth(), this.getEast());
+	},
+
+	// @method getWest(): Number
+	// Returns the west longitude of the bounds
+	getWest: function () {
+		return this._southWest.lng;
+	},
+
+	// @method getSouth(): Number
+	// Returns the south latitude of the bounds
+	getSouth: function () {
+		return this._southWest.lat;
+	},
+
+	// @method getEast(): Number
+	// Returns the east longitude of the bounds
+	getEast: function () {
+		return this._northEast.lng;
+	},
+
+	// @method getNorth(): Number
+	// Returns the north latitude of the bounds
+	getNorth: function () {
+		return this._northEast.lat;
+	},
+
+	// @method contains(otherBounds: LatLngBounds): Boolean
+	// Returns `true` if the rectangle contains the given one.
+
+	// @alternative
+	// @method contains (latlng: LatLng): Boolean
+	// Returns `true` if the rectangle contains the given point.
+	contains: function (obj) { // (LatLngBounds) or (LatLng) -> Boolean
+		if (typeof obj[0] === 'number' || obj instanceof LatLng || 'lat' in obj) {
+			obj = toLatLng(obj);
+		} else {
+			obj = toLatLngBounds(obj);
+		}
+
+		var sw = this._southWest,
+		    ne = this._northEast,
+		    sw2, ne2;
+
+		if (obj instanceof LatLngBounds) {
+			sw2 = obj.getSouthWest();
+			ne2 = obj.getNorthEast();
+		} else {
+			sw2 = ne2 = obj;
+		}
+
+		return (sw2.lat >= sw.lat) && (ne2.lat <= ne.lat) &&
+		       (sw2.lng >= sw.lng) && (ne2.lng <= ne.lng);
+	},
+
+	// @method intersects(otherBounds: LatLngBounds): Boolean
+	// Returns `true` if the rectangle intersects the given bounds. Two bounds intersect if they have at least one point in common.
+	intersects: function (bounds) {
+		bounds = toLatLngBounds(bounds);
+
+		var sw = this._southWest,
+		    ne = this._northEast,
+		    sw2 = bounds.getSouthWest(),
+		    ne2 = bounds.getNorthEast(),
+
+		    latIntersects = (ne2.lat >= sw.lat) && (sw2.lat <= ne.lat),
+		    lngIntersects = (ne2.lng >= sw.lng) && (sw2.lng <= ne.lng);
+
+		return latIntersects && lngIntersects;
+	},
+
+	// @method overlaps(otherBounds: Bounds): Boolean
+	// Returns `true` if the rectangle overlaps the given bounds. Two bounds overlap if their intersection is an area.
+	overlaps: function (bounds) {
+		bounds = toLatLngBounds(bounds);
+
+		var sw = this._southWest,
+		    ne = this._northEast,
+		    sw2 = bounds.getSouthWest(),
+		    ne2 = bounds.getNorthEast(),
+
+		    latOverlaps = (ne2.lat > sw.lat) && (sw2.lat < ne.lat),
+		    lngOverlaps = (ne2.lng > sw.lng) && (sw2.lng < ne.lng);
+
+		return latOverlaps && lngOverlaps;
+	},
+
+	// @method toBBoxString(): String
+	// Returns a string with bounding box coordinates in a 'southwest_lng,southwest_lat,northeast_lng,northeast_lat' format. Useful for sending requests to web services that return geo data.
+	toBBoxString: function () {
+		return [this.getWest(), this.getSouth(), this.getEast(), this.getNorth()].join(',');
+	},
+
+	// @method equals(otherBounds: LatLngBounds, maxMargin?: Number): Boolean
+	// Returns `true` if the rectangle is equivalent (within a small margin of error) to the given bounds. The margin of error can be overridden by setting `maxMargin` to a small number.
+	equals: function (bounds, maxMargin) {
+		if (!bounds) { return false; }
+
+		bounds = toLatLngBounds(bounds);
+
+		return this._southWest.equals(bounds.getSouthWest(), maxMargin) &&
+		       this._northEast.equals(bounds.getNorthEast(), maxMargin);
+	},
+
+	// @method isValid(): Boolean
+	// Returns `true` if the bounds are properly initialized.
+	isValid: function () {
+		return !!(this._southWest && this._northEast);
+	}
+};
+
+// TODO International date line?
+
+// @factory L.latLngBounds(corner1: LatLng, corner2: LatLng)
+// Creates a `LatLngBounds` object by defining two diagonally opposite corners of the rectangle.
+
+// @alternative
+// @factory L.latLngBounds(latlngs: LatLng[])
+// Creates a `LatLngBounds` object defined by the geographical points it contains. Very useful for zooming the map to fit a particular set of locations with [`fitBounds`](#map-fitbounds).
+function toLatLngBounds(a, b) {
+	if (a instanceof LatLngBounds) {
+		return a;
+	}
+	return new LatLngBounds(a, b);
+}
+
+/* @class LatLng
+ * @aka L.LatLng
+ *
+ * Represents a geographical point with a certain latitude and longitude.
+ *
+ * @example
+ *
+ * ```
+ * var latlng = L.latLng(50.5, 30.5);
+ * ```
+ *
+ * All Leaflet methods that accept LatLng objects also accept them in a simple Array form and simple object form (unless noted otherwise), so these lines are equivalent:
+ *
+ * ```
+ * map.panTo([50, 30]);
+ * map.panTo({lon: 30, lat: 50});
+ * map.panTo({lat: 50, lng: 30});
+ * map.panTo(L.latLng(50, 30));
+ * ```
+ *
+ * Note that `LatLng` does not inherit from Leaflet's `Class` object,
+ * which means new classes can't inherit from it, and new methods
+ * can't be added to it with the `include` function.
+ */
+
+function LatLng(lat, lng, alt) {
+	if (isNaN(lat) || isNaN(lng)) {
+		throw new Error('Invalid LatLng object: (' + lat + ', ' + lng + ')');
+	}
+
+	// @property lat: Number
+	// Latitude in degrees
+	this.lat = +lat;
+
+	// @property lng: Number
+	// Longitude in degrees
+	this.lng = +lng;
+
+	// @property alt: Number
+	// Altitude in meters (optional)
+	if (alt !== undefined) {
+		this.alt = +alt;
+	}
+}
+
+LatLng.prototype = {
+	// @method equals(otherLatLng: LatLng, maxMargin?: Number): Boolean
+	// Returns `true` if the given `LatLng` point is at the same position (within a small margin of error). The margin of error can be overridden by setting `maxMargin` to a small number.
+	equals: function (obj, maxMargin) {
+		if (!obj) { return false; }
+
+		obj = toLatLng(obj);
+
+		var margin = Math.max(
+		        Math.abs(this.lat - obj.lat),
+		        Math.abs(this.lng - obj.lng));
+
+		return margin <= (maxMargin === undefined ? 1.0E-9 : maxMargin);
+	},
+
+	// @method toString(): String
+	// Returns a string representation of the point (for debugging purposes).
+	toString: function (precision) {
+		return 'LatLng(' +
+		        formatNum(this.lat, precision) + ', ' +
+		        formatNum(this.lng, precision) + ')';
+	},
+
+	// @method distanceTo(otherLatLng: LatLng): Number
+	// Returns the distance (in meters) to the given `LatLng` calculated using the [Spherical Law of Cosines](https://en.wikipedia.org/wiki/Spherical_law_of_cosines).
+	distanceTo: function (other) {
+		return Earth.distance(this, toLatLng(other));
+	},
+
+	// @method wrap(): LatLng
+	// Returns a new `LatLng` object with the longitude wrapped so it's always between -180 and +180 degrees.
+	wrap: function () {
+		return Earth.wrapLatLng(this);
+	},
+
+	// @method toBounds(sizeInMeters: Number): LatLngBounds
+	// Returns a new `LatLngBounds` object in which each boundary is `sizeInMeters/2` meters apart from the `LatLng`.
+	toBounds: function (sizeInMeters) {
+		var latAccuracy = 180 * sizeInMeters / 40075017,
+		    lngAccuracy = latAccuracy / Math.cos((Math.PI / 180) * this.lat);
+
+		return toLatLngBounds(
+		        [this.lat - latAccuracy, this.lng - lngAccuracy],
+		        [this.lat + latAccuracy, this.lng + lngAccuracy]);
+	},
+
+	clone: function () {
+		return new LatLng(this.lat, this.lng, this.alt);
+	}
+};
+
+
+
+// @factory L.latLng(latitude: Number, longitude: Number, altitude?: Number): LatLng
+// Creates an object representing a geographical point with the given latitude and longitude (and optionally altitude).
+
+// @alternative
+// @factory L.latLng(coords: Array): LatLng
+// Expects an array of the form `[Number, Number]` or `[Number, Number, Number]` instead.
+
+// @alternative
+// @factory L.latLng(coords: Object): LatLng
+// Expects an plain object of the form `{lat: Number, lng: Number}` or `{lat: Number, lng: Number, alt: Number}` instead.
+
+function toLatLng(a, b, c) {
+	if (a instanceof LatLng) {
+		return a;
+	}
+	if (isArray(a) && typeof a[0] !== 'object') {
+		if (a.length === 3) {
+			return new LatLng(a[0], a[1], a[2]);
+		}
+		if (a.length === 2) {
+			return new LatLng(a[0], a[1]);
+		}
+		return null;
+	}
+	if (a === undefined || a === null) {
+		return a;
+	}
+	if (typeof a === 'object' && 'lat' in a) {
+		return new LatLng(a.lat, 'lng' in a ? a.lng : a.lon, a.alt);
+	}
+	if (b === undefined) {
+		return null;
+	}
+	return new LatLng(a, b, c);
+}
+
+/*
+ * @namespace CRS
+ * @crs L.CRS.Base
+ * Object that defines coordinate reference systems for projecting
+ * geographical points into pixel (screen) coordinates and back (and to
+ * coordinates in other units for [WMS](https://en.wikipedia.org/wiki/Web_Map_Service) services). See
+ * [spatial reference system](http://en.wikipedia.org/wiki/Coordinate_reference_system).
+ *
+ * Leaflet defines the most usual CRSs by default. If you want to use a
+ * CRS not defined by default, take a look at the
+ * [Proj4Leaflet](https://github.com/kartena/Proj4Leaflet) plugin.
+ *
+ * Note that the CRS instances do not inherit from Leafet's `Class` object,
+ * and can't be instantiated. Also, new classes can't inherit from them,
+ * and methods can't be added to them with the `include` function.
+ */
+
+var CRS = {
+	// @method latLngToPoint(latlng: LatLng, zoom: Number): Point
+	// Projects geographical coordinates into pixel coordinates for a given zoom.
+	latLngToPoint: function (latlng, zoom) {
+		var projectedPoint = this.projection.project(latlng),
+		    scale = this.scale(zoom);
+
+		return this.transformation._transform(projectedPoint, scale);
+	},
+
+	// @method pointToLatLng(point: Point, zoom: Number): LatLng
+	// The inverse of `latLngToPoint`. Projects pixel coordinates on a given
+	// zoom into geographical coordinates.
+	pointToLatLng: function (point, zoom) {
+		var scale = this.scale(zoom),
+		    untransformedPoint = this.transformation.untransform(point, scale);
+
+		return this.projection.unproject(untransformedPoint);
+	},
+
+	// @method project(latlng: LatLng): Point
+	// Projects geographical coordinates into coordinates in units accepted for
+	// this CRS (e.g. meters for EPSG:3857, for passing it to WMS services).
+	project: function (latlng) {
+		return this.projection.project(latlng);
+	},
+
+	// @method unproject(point: Point): LatLng
+	// Given a projected coordinate returns the corresponding LatLng.
+	// The inverse of `project`.
+	unproject: function (point) {
+		return this.projection.unproject(point);
+	},
+
+	// @method scale(zoom: Number): Number
+	// Returns the scale used when transforming projected coordinates into
+	// pixel coordinates for a particular zoom. For example, it returns
+	// `256 * 2^zoom` for Mercator-based CRS.
+	scale: function (zoom) {
+		return 256 * Math.pow(2, zoom);
+	},
+
+	// @method zoom(scale: Number): Number
+	// Inverse of `scale()`, returns the zoom level corresponding to a scale
+	// factor of `scale`.
+	zoom: function (scale) {
+		return Math.log(scale / 256) / Math.LN2;
+	},
+
+	// @method getProjectedBounds(zoom: Number): Bounds
+	// Returns the projection's bounds scaled and transformed for the provided `zoom`.
+	getProjectedBounds: function (zoom) {
+		if (this.infinite) { return null; }
+
+		var b = this.projection.bounds,
+		    s = this.scale(zoom),
+		    min = this.transformation.transform(b.min, s),
+		    max = this.transformation.transform(b.max, s);
+
+		return new Bounds(min, max);
+	},
+
+	// @method distance(latlng1: LatLng, latlng2: LatLng): Number
+	// Returns the distance between two geographical coordinates.
+
+	// @property code: String
+	// Standard code name of the CRS passed into WMS services (e.g. `'EPSG:3857'`)
+	//
+	// @property wrapLng: Number[]
+	// An array of two numbers defining whether the longitude (horizontal) coordinate
+	// axis wraps around a given range and how. Defaults to `[-180, 180]` in most
+	// geographical CRSs. If `undefined`, the longitude axis does not wrap around.
+	//
+	// @property wrapLat: Number[]
+	// Like `wrapLng`, but for the latitude (vertical) axis.
+
+	// wrapLng: [min, max],
+	// wrapLat: [min, max],
+
+	// @property infinite: Boolean
+	// If true, the coordinate space will be unbounded (infinite in both axes)
+	infinite: false,
+
+	// @method wrapLatLng(latlng: LatLng): LatLng
+	// Returns a `LatLng` where lat and lng has been wrapped according to the
+	// CRS's `wrapLat` and `wrapLng` properties, if they are outside the CRS's bounds.
+	wrapLatLng: function (latlng) {
+		var lng = this.wrapLng ? wrapNum(latlng.lng, this.wrapLng, true) : latlng.lng,
+		    lat = this.wrapLat ? wrapNum(latlng.lat, this.wrapLat, true) : latlng.lat,
+		    alt = latlng.alt;
+
+		return new LatLng(lat, lng, alt);
+	},
+
+	// @method wrapLatLngBounds(bounds: LatLngBounds): LatLngBounds
+	// Returns a `LatLngBounds` with the same size as the given one, ensuring
+	// that its center is within the CRS's bounds.
+	// Only accepts actual `L.LatLngBounds` instances, not arrays.
+	wrapLatLngBounds: function (bounds) {
+		var center = bounds.getCenter(),
+		    newCenter = this.wrapLatLng(center),
+		    latShift = center.lat - newCenter.lat,
+		    lngShift = center.lng - newCenter.lng;
+
+		if (latShift === 0 && lngShift === 0) {
+			return bounds;
+		}
+
+		var sw = bounds.getSouthWest(),
+		    ne = bounds.getNorthEast(),
+		    newSw = new LatLng(sw.lat - latShift, sw.lng - lngShift),
+		    newNe = new LatLng(ne.lat - latShift, ne.lng - lngShift);
+
+		return new LatLngBounds(newSw, newNe);
+	}
+};
+
+/*
+ * @namespace CRS
+ * @crs L.CRS.Earth
+ *
+ * Serves as the base for CRS that are global such that they cover the earth.
+ * Can only be used as the base for other CRS and cannot be used directly,
+ * since it does not have a `code`, `projection` or `transformation`. `distance()` returns
+ * meters.
+ */
+
+var Earth = extend({}, CRS, {
+	wrapLng: [-180, 180],
+
+	// Mean Earth Radius, as recommended for use by
+	// the International Union of Geodesy and Geophysics,
+	// see http://rosettacode.org/wiki/Haversine_formula
+	R: 6371000,
+
+	// distance between two geographical points using spherical law of cosines approximation
+	distance: function (latlng1, latlng2) {
+		var rad = Math.PI / 180,
+		    lat1 = latlng1.lat * rad,
+		    lat2 = latlng2.lat * rad,
+		    sinDLat = Math.sin((latlng2.lat - latlng1.lat) * rad / 2),
+		    sinDLon = Math.sin((latlng2.lng - latlng1.lng) * rad / 2),
+		    a = sinDLat * sinDLat + Math.cos(lat1) * Math.cos(lat2) * sinDLon * sinDLon,
+		    c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+		return this.R * c;
+	}
+});
+
+/*
+ * @namespace Projection
+ * @projection L.Projection.SphericalMercator
+ *
+ * Spherical Mercator projection — the most common projection for online maps,
+ * used by almost all free and commercial tile providers. Assumes that Earth is
+ * a sphere. Used by the `EPSG:3857` CRS.
+ */
+
+var SphericalMercator = {
+
+	R: 6378137,
+	MAX_LATITUDE: 85.0511287798,
+
+	project: function (latlng) {
+		var d = Math.PI / 180,
+		    max = this.MAX_LATITUDE,
+		    lat = Math.max(Math.min(max, latlng.lat), -max),
+		    sin = Math.sin(lat * d);
+
+		return new Point(
+			this.R * latlng.lng * d,
+			this.R * Math.log((1 + sin) / (1 - sin)) / 2);
+	},
+
+	unproject: function (point) {
+		var d = 180 / Math.PI;
+
+		return new LatLng(
+			(2 * Math.atan(Math.exp(point.y / this.R)) - (Math.PI / 2)) * d,
+			point.x * d / this.R);
+	},
+
+	bounds: (function () {
+		var d = 6378137 * Math.PI;
+		return new Bounds([-d, -d], [d, d]);
+	})()
+};
+
+/*
+ * @class Transformation
+ * @aka L.Transformation
+ *
+ * Represents an affine transformation: a set of coefficients `a`, `b`, `c`, `d`
+ * for transforming a point of a form `(x, y)` into `(a*x + b, c*y + d)` and doing
+ * the reverse. Used by Leaflet in its projections code.
+ *
+ * @example
+ *
+ * ```js
+ * var transformation = L.transformation(2, 5, -1, 10),
+ * 	p = L.point(1, 2),
+ * 	p2 = transformation.transform(p), //  L.point(7, 8)
+ * 	p3 = transformation.untransform(p2); //  L.point(1, 2)
+ * ```
+ */
+
+
+// factory new L.Transformation(a: Number, b: Number, c: Number, d: Number)
+// Creates a `Transformation` object with the given coefficients.
+function Transformation(a, b, c, d) {
+	if (isArray(a)) {
+		// use array properties
+		this._a = a[0];
+		this._b = a[1];
+		this._c = a[2];
+		this._d = a[3];
+		return;
+	}
+	this._a = a;
+	this._b = b;
+	this._c = c;
+	this._d = d;
+}
+
+Transformation.prototype = {
+	// @method transform(point: Point, scale?: Number): Point
+	// Returns a transformed point, optionally multiplied by the given scale.
+	// Only accepts actual `L.Point` instances, not arrays.
+	transform: function (point, scale) { // (Point, Number) -> Point
+		return this._transform(point.clone(), scale);
+	},
+
+	// destructive transform (faster)
+	_transform: function (point, scale) {
+		scale = scale || 1;
+		point.x = scale * (this._a * point.x + this._b);
+		point.y = scale * (this._c * point.y + this._d);
+		return point;
+	},
+
+	// @method untransform(point: Point, scale?: Number): Point
+	// Returns the reverse transformation of the given point, optionally divided
+	// by the given scale. Only accepts actual `L.Point` instances, not arrays.
+	untransform: function (point, scale) {
+		scale = scale || 1;
+		return new Point(
+		        (point.x / scale - this._b) / this._a,
+		        (point.y / scale - this._d) / this._c);
+	}
+};
+
+// factory L.transformation(a: Number, b: Number, c: Number, d: Number)
+
+// @factory L.transformation(a: Number, b: Number, c: Number, d: Number)
+// Instantiates a Transformation object with the given coefficients.
+
+// @alternative
+// @factory L.transformation(coefficients: Array): Transformation
+// Expects an coefficients array of the form
+// `[a: Number, b: Number, c: Number, d: Number]`.
+
+function toTransformation(a, b, c, d) {
+	return new Transformation(a, b, c, d);
+}
+
+/*
+ * @namespace CRS
+ * @crs L.CRS.EPSG3857
+ *
+ * The most common CRS for online maps, used by almost all free and commercial
+ * tile providers. Uses Spherical Mercator projection. Set in by default in
+ * Map's `crs` option.
+ */
+
+var EPSG3857 = extend({}, Earth, {
+	code: 'EPSG:3857',
+	projection: SphericalMercator,
+
+	transformation: (function () {
+		var scale = 0.5 / (Math.PI * SphericalMercator.R);
+		return toTransformation(scale, 0.5, -scale, 0.5);
+	}())
+});
+
+var EPSG900913 = extend({}, EPSG3857, {
+	code: 'EPSG:900913'
+});
+
+// @namespace SVG; @section
+// There are several static functions which can be called without instantiating L.SVG:
+
+// @function create(name: String): SVGElement
+// Returns a instance of [SVGElement](https://developer.mozilla.org/docs/Web/API/SVGElement),
+// corresponding to the class name passed. For example, using 'line' will return
+// an instance of [SVGLineElement](https://developer.mozilla.org/docs/Web/API/SVGLineElement).
+function svgCreate(name) {
+	return document.createElementNS('http://www.w3.org/2000/svg', name);
+}
+
+// @function pointsToPath(rings: Point[], closed: Boolean): String
+// Generates a SVG path string for multiple rings, with each ring turning
+// into "M..L..L.." instructions
+function pointsToPath(rings, closed) {
+	var str = '',
+	i, j, len, len2, points, p;
+
+	for (i = 0, len = rings.length; i < len; i++) {
+		points = rings[i];
+
+		for (j = 0, len2 = points.length; j < len2; j++) {
+			p = points[j];
+			str += (j ? 'L' : 'M') + p.x + ' ' + p.y;
+		}
+
+		// closes the ring for polygons; "x" is VML syntax
+		str += closed ? (svg ? 'z' : 'x') : '';
+	}
+
+	// SVG complains about empty path strings
+	return str || 'M0 0';
+}
+
+/*
+ * @namespace Browser
+ * @aka L.Browser
+ *
+ * A namespace with static properties for browser/feature detection used by Leaflet internally.
+ *
+ * @example
+ *
+ * ```js
+ * if (L.Browser.ielt9) {
+ *   alert('Upgrade your browser, dude!');
+ * }
+ * ```
+ */
+
+var style$1 = document.documentElement.style;
+
+// @property ie: Boolean; `true` for all Internet Explorer versions (not Edge).
+var ie = 'ActiveXObject' in window;
+
+// @property ielt9: Boolean; `true` for Internet Explorer versions less than 9.
+var ielt9 = ie && !document.addEventListener;
+
+// @property edge: Boolean; `true` for the Edge web browser.
+var edge = 'msLaunchUri' in navigator && !('documentMode' in document);
+
+// @property webkit: Boolean;
+// `true` for webkit-based browsers like Chrome and Safari (including mobile versions).
+var webkit = userAgentContains('webkit');
+
+// @property android: Boolean
+// `true` for any browser running on an Android platform.
+var android = userAgentContains('android');
+
+// @property android23: Boolean; `true` for browsers running on Android 2 or Android 3.
+var android23 = userAgentContains('android 2') || userAgentContains('android 3');
+
+/* See https://stackoverflow.com/a/17961266 for details on detecting stock Android */
+var webkitVer = parseInt(/WebKit\/([0-9]+)|$/.exec(navigator.userAgent)[1], 10); // also matches AppleWebKit
+// @property androidStock: Boolean; `true` for the Android stock browser (i.e. not Chrome)
+var androidStock = android && userAgentContains('Google') && webkitVer < 537 && !('AudioNode' in window);
+
+// @property opera: Boolean; `true` for the Opera browser
+var opera = !!window.opera;
+
+// @property chrome: Boolean; `true` for the Chrome browser.
+var chrome = userAgentContains('chrome');
+
+// @property gecko: Boolean; `true` for gecko-based browsers like Firefox.
+var gecko = userAgentContains('gecko') && !webkit && !opera && !ie;
+
+// @property safari: Boolean; `true` for the Safari browser.
+var safari = !chrome && userAgentContains('safari');
+
+var phantom = userAgentContains('phantom');
+
+// @property opera12: Boolean
+// `true` for the Opera browser supporting CSS transforms (version 12 or later).
+var opera12 = 'OTransition' in style$1;
+
+// @property win: Boolean; `true` when the browser is running in a Windows platform
+var win = navigator.platform.indexOf('Win') === 0;
+
+// @property ie3d: Boolean; `true` for all Internet Explorer versions supporting CSS transforms.
+var ie3d = ie && ('transition' in style$1);
+
+// @property webkit3d: Boolean; `true` for webkit-based browsers supporting CSS transforms.
+var webkit3d = ('WebKitCSSMatrix' in window) && ('m11' in new window.WebKitCSSMatrix()) && !android23;
+
+// @property gecko3d: Boolean; `true` for gecko-based browsers supporting CSS transforms.
+var gecko3d = 'MozPerspective' in style$1;
+
+// @property any3d: Boolean
+// `true` for all browsers supporting CSS transforms.
+var any3d = !window.L_DISABLE_3D && (ie3d || webkit3d || gecko3d) && !opera12 && !phantom;
+
+// @property mobile: Boolean; `true` for all browsers running in a mobile device.
+var mobile = typeof orientation !== 'undefined' || userAgentContains('mobile');
+
+// @property mobileWebkit: Boolean; `true` for all webkit-based browsers in a mobile device.
+var mobileWebkit = mobile && webkit;
+
+// @property mobileWebkit3d: Boolean
+// `true` for all webkit-based browsers in a mobile device supporting CSS transforms.
+var mobileWebkit3d = mobile && webkit3d;
+
+// @property msPointer: Boolean
+// `true` for browsers implementing the Microsoft touch events model (notably IE10).
+var msPointer = !window.PointerEvent && window.MSPointerEvent;
+
+// @property pointer: Boolean
+// `true` for all browsers supporting [pointer events](https://msdn.microsoft.com/en-us/library/dn433244%28v=vs.85%29.aspx).
+var pointer = !!(window.PointerEvent || msPointer);
+
+// @property touch: Boolean
+// `true` for all browsers supporting [touch events](https://developer.mozilla.org/docs/Web/API/Touch_events).
+// This does not necessarily mean that the browser is running in a computer with
+// a touchscreen, it only means that the browser is capable of understanding
+// touch events.
+var touch = !window.L_NO_TOUCH && (pointer || 'ontouchstart' in window ||
+		(window.DocumentTouch && document instanceof window.DocumentTouch));
+
+// @property mobileOpera: Boolean; `true` for the Opera browser in a mobile device.
+var mobileOpera = mobile && opera;
+
+// @property mobileGecko: Boolean
+// `true` for gecko-based browsers running in a mobile device.
+var mobileGecko = mobile && gecko;
+
+// @property retina: Boolean
+// `true` for browsers on a high-resolution "retina" screen or on any screen when browser's display zoom is more than 100%.
+var retina = (window.devicePixelRatio || (window.screen.deviceXDPI / window.screen.logicalXDPI)) > 1;
+
+
+// @property canvas: Boolean
+// `true` when the browser supports [`<canvas>`](https://developer.mozilla.org/docs/Web/API/Canvas_API).
+var canvas = (function () {
+	return !!document.createElement('canvas').getContext;
+}());
+
+// @property svg: Boolean
+// `true` when the browser supports [SVG](https://developer.mozilla.org/docs/Web/SVG).
+var svg = !!(document.createElementNS && svgCreate('svg').createSVGRect);
+
+// @property vml: Boolean
+// `true` if the browser supports [VML](https://en.wikipedia.org/wiki/Vector_Markup_Language).
+var vml = !svg && (function () {
+	try {
+		var div = document.createElement('div');
+		div.innerHTML = '<v:shape adj="1"/>';
+
+		var shape = div.firstChild;
+		shape.style.behavior = 'url(#default#VML)';
+
+		return shape && (typeof shape.adj === 'object');
+
+	} catch (e) {
+		return false;
+	}
+}());
+
+
+function userAgentContains(str) {
+	return navigator.userAgent.toLowerCase().indexOf(str) >= 0;
+}
+
+
+var Browser = (Object.freeze || Object)({
+	ie: ie,
+	ielt9: ielt9,
+	edge: edge,
+	webkit: webkit,
+	android: android,
+	android23: android23,
+	androidStock: androidStock,
+	opera: opera,
+	chrome: chrome,
+	gecko: gecko,
+	safari: safari,
+	phantom: phantom,
+	opera12: opera12,
+	win: win,
+	ie3d: ie3d,
+	webkit3d: webkit3d,
+	gecko3d: gecko3d,
+	any3d: any3d,
+	mobile: mobile,
+	mobileWebkit: mobileWebkit,
+	mobileWebkit3d: mobileWebkit3d,
+	msPointer: msPointer,
+	pointer: pointer,
+	touch: touch,
+	mobileOpera: mobileOpera,
+	mobileGecko: mobileGecko,
+	retina: retina,
+	canvas: canvas,
+	svg: svg,
+	vml: vml
+});
+
+/*
+ * Extends L.DomEvent to provide touch support for Internet Explorer and Windows-based devices.
+ */
+
+
+var POINTER_DOWN =   msPointer ? 'MSPointerDown'   : 'pointerdown';
+var POINTER_MOVE =   msPointer ? 'MSPointerMove'   : 'pointermove';
+var POINTER_UP =     msPointer ? 'MSPointerUp'     : 'pointerup';
+var POINTER_CANCEL = msPointer ? 'MSPointerCancel' : 'pointercancel';
+var TAG_WHITE_LIST = ['INPUT', 'SELECT', 'OPTION'];
+
+var _pointers = {};
+var _pointerDocListener = false;
+
+// DomEvent.DoubleTap needs to know about this
+var _pointersCount = 0;
+
+// Provides a touch events wrapper for (ms)pointer events.
+// ref http://www.w3.org/TR/pointerevents/ https://www.w3.org/Bugs/Public/show_bug.cgi?id=22890
+
+function addPointerListener(obj, type, handler, id) {
+	if (type === 'touchstart') {
+		_addPointerStart(obj, handler, id);
+
+	} else if (type === 'touchmove') {
+		_addPointerMove(obj, handler, id);
+
+	} else if (type === 'touchend') {
+		_addPointerEnd(obj, handler, id);
+	}
+
+	return this;
+}
+
+function removePointerListener(obj, type, id) {
+	var handler = obj['_leaflet_' + type + id];
+
+	if (type === 'touchstart') {
+		obj.removeEventListener(POINTER_DOWN, handler, false);
+
+	} else if (type === 'touchmove') {
+		obj.removeEventListener(POINTER_MOVE, handler, false);
+
+	} else if (type === 'touchend') {
+		obj.removeEventListener(POINTER_UP, handler, false);
+		obj.removeEventListener(POINTER_CANCEL, handler, false);
+	}
+
+	return this;
+}
+
+function _addPointerStart(obj, handler, id) {
+	var onDown = bind(function (e) {
+		if (e.pointerType !== 'mouse' && e.MSPOINTER_TYPE_MOUSE && e.pointerType !== e.MSPOINTER_TYPE_MOUSE) {
+			// In IE11, some touch events needs to fire for form controls, or
+			// the controls will stop working. We keep a whitelist of tag names that
+			// need these events. For other target tags, we prevent default on the event.
+			if (TAG_WHITE_LIST.indexOf(e.target.tagName) < 0) {
+				preventDefault(e);
+			} else {
+				return;
+			}
+		}
+
+		_handlePointer(e, handler);
+	});
+
+	obj['_leaflet_touchstart' + id] = onDown;
+	obj.addEventListener(POINTER_DOWN, onDown, false);
+
+	// need to keep track of what pointers and how many are active to provide e.touches emulation
+	if (!_pointerDocListener) {
+		// we listen documentElement as any drags that end by moving the touch off the screen get fired there
+		document.documentElement.addEventListener(POINTER_DOWN, _globalPointerDown, true);
+		document.documentElement.addEventListener(POINTER_MOVE, _globalPointerMove, true);
+		document.documentElement.addEventListener(POINTER_UP, _globalPointerUp, true);
+		document.documentElement.addEventListener(POINTER_CANCEL, _globalPointerUp, true);
+
+		_pointerDocListener = true;
+	}
+}
+
+function _globalPointerDown(e) {
+	_pointers[e.pointerId] = e;
+	_pointersCount++;
+}
+
+function _globalPointerMove(e) {
+	if (_pointers[e.pointerId]) {
+		_pointers[e.pointerId] = e;
+	}
+}
+
+function _globalPointerUp(e) {
+	delete _pointers[e.pointerId];
+	_pointersCount--;
+}
+
+function _handlePointer(e, handler) {
+	e.touches = [];
+	for (var i in _pointers) {
+		e.touches.push(_pointers[i]);
+	}
+	e.changedTouches = [e];
+
+	handler(e);
+}
+
+function _addPointerMove(obj, handler, id) {
+	var onMove = function (e) {
+		// don't fire touch moves when mouse isn't down
+		if ((e.pointerType === e.MSPOINTER_TYPE_MOUSE || e.pointerType === 'mouse') && e.buttons === 0) { return; }
+
+		_handlePointer(e, handler);
+	};
+
+	obj['_leaflet_touchmove' + id] = onMove;
+	obj.addEventListener(POINTER_MOVE, onMove, false);
+}
+
+function _addPointerEnd(obj, handler, id) {
+	var onUp = function (e) {
+		_handlePointer(e, handler);
+	};
+
+	obj['_leaflet_touchend' + id] = onUp;
+	obj.addEventListener(POINTER_UP, onUp, false);
+	obj.addEventListener(POINTER_CANCEL, onUp, false);
+}
+
+/*
+ * Extends the event handling code with double tap support for mobile browsers.
+ */
+
+var _touchstart = msPointer ? 'MSPointerDown' : pointer ? 'pointerdown' : 'touchstart';
+var _touchend = msPointer ? 'MSPointerUp' : pointer ? 'pointerup' : 'touchend';
+var _pre = '_leaflet_';
+
+// inspired by Zepto touch code by Thomas Fuchs
+function addDoubleTapListener(obj, handler, id) {
+	var last, touch$$1,
+	    doubleTap = false,
+	    delay = 250;
+
+	function onTouchStart(e) {
+		var count;
+
+		if (pointer) {
+			if ((!edge) || e.pointerType === 'mouse') { return; }
+			count = _pointersCount;
+		} else {
+			count = e.touches.length;
+		}
+
+		if (count > 1) { return; }
+
+		var now = Date.now(),
+		    delta = now - (last || now);
+
+		touch$$1 = e.touches ? e.touches[0] : e;
+		doubleTap = (delta > 0 && delta <= delay);
+		last = now;
+	}
+
+	function onTouchEnd(e) {
+		if (doubleTap && !touch$$1.cancelBubble) {
+			if (pointer) {
+				if ((!edge) || e.pointerType === 'mouse') { return; }
+				// work around .type being readonly with MSPointer* events
+				var newTouch = {},
+				    prop, i;
+
+				for (i in touch$$1) {
+					prop = touch$$1[i];
+					newTouch[i] = prop && prop.bind ? prop.bind(touch$$1) : prop;
+				}
+				touch$$1 = newTouch;
+			}
+			touch$$1.type = 'dblclick';
+			handler(touch$$1);
+			last = null;
+		}
+	}
+
+	obj[_pre + _touchstart + id] = onTouchStart;
+	obj[_pre + _touchend + id] = onTouchEnd;
+	obj[_pre + 'dblclick' + id] = handler;
+
+	obj.addEventListener(_touchstart, onTouchStart, false);
+	obj.addEventListener(_touchend, onTouchEnd, false);
+
+	// On some platforms (notably, chrome<55 on win10 + touchscreen + mouse),
+	// the browser doesn't fire touchend/pointerup events but does fire
+	// native dblclicks. See #4127.
+	// Edge 14 also fires native dblclicks, but only for pointerType mouse, see #5180.
+	obj.addEventListener('dblclick', handler, false);
+
+	return this;
+}
+
+function removeDoubleTapListener(obj, id) {
+	var touchstart = obj[_pre + _touchstart + id],
+	    touchend = obj[_pre + _touchend + id],
+	    dblclick = obj[_pre + 'dblclick' + id];
+
+	obj.removeEventListener(_touchstart, touchstart, false);
+	obj.removeEventListener(_touchend, touchend, false);
+	if (!edge) {
+		obj.removeEventListener('dblclick', dblclick, false);
+	}
+
+	return this;
+}
+
+/*
+ * @namespace DomUtil
+ *
+ * Utility functions to work with the [DOM](https://developer.mozilla.org/docs/Web/API/Document_Object_Model)
+ * tree, used by Leaflet internally.
+ *
+ * Most functions expecting or returning a `HTMLElement` also work for
+ * SVG elements. The only difference is that classes refer to CSS classes
+ * in HTML and SVG classes in SVG.
+ */
+
+
+// @property TRANSFORM: String
+// Vendor-prefixed transform style name (e.g. `'webkitTransform'` for WebKit).
+var TRANSFORM = testProp(
+	['transform', 'webkitTransform', 'OTransform', 'MozTransform', 'msTransform']);
+
+// webkitTransition comes first because some browser versions that drop vendor prefix don't do
+// the same for the transitionend event, in particular the Android 4.1 stock browser
+
+// @property TRANSITION: String
+// Vendor-prefixed transition style name.
+var TRANSITION = testProp(
+	['webkitTransition', 'transition', 'OTransition', 'MozTransition', 'msTransition']);
+
+// @property TRANSITION_END: String
+// Vendor-prefixed transitionend event name.
+var TRANSITION_END =
+	TRANSITION === 'webkitTransition' || TRANSITION === 'OTransition' ? TRANSITION + 'End' : 'transitionend';
+
+
+// @function get(id: String|HTMLElement): HTMLElement
+// Returns an element given its DOM id, or returns the element itself
+// if it was passed directly.
+function get(id) {
+	return typeof id === 'string' ? document.getElementById(id) : id;
+}
+
+// @function getStyle(el: HTMLElement, styleAttrib: String): String
+// Returns the value for a certain style attribute on an element,
+// including computed values or values set through CSS.
+function getStyle(el, style) {
+	var value = el.style[style] || (el.currentStyle && el.currentStyle[style]);
+
+	if ((!value || value === 'auto') && document.defaultView) {
+		var css = document.defaultView.getComputedStyle(el, null);
+		value = css ? css[style] : null;
+	}
+	return value === 'auto' ? null : value;
+}
+
+// @function create(tagName: String, className?: String, container?: HTMLElement): HTMLElement
+// Creates an HTML element with `tagName`, sets its class to `className`, and optionally appends it to `container` element.
+function create$1(tagName, className, container) {
+	var el = document.createElement(tagName);
+	el.className = className || '';
+
+	if (container) {
+		container.appendChild(el);
+	}
+	return el;
+}
+
+// @function remove(el: HTMLElement)
+// Removes `el` from its parent element
+function remove(el) {
+	var parent = el.parentNode;
+	if (parent) {
+		parent.removeChild(el);
+	}
+}
+
+// @function empty(el: HTMLElement)
+// Removes all of `el`'s children elements from `el`
+function empty(el) {
+	while (el.firstChild) {
+		el.removeChild(el.firstChild);
+	}
+}
+
+// @function toFront(el: HTMLElement)
+// Makes `el` the last child of its parent, so it renders in front of the other children.
+function toFront(el) {
+	var parent = el.parentNode;
+	if (parent.lastChild !== el) {
+		parent.appendChild(el);
+	}
+}
+
+// @function toBack(el: HTMLElement)
+// Makes `el` the first child of its parent, so it renders behind the other children.
+function toBack(el) {
+	var parent = el.parentNode;
+	if (parent.firstChild !== el) {
+		parent.insertBefore(el, parent.firstChild);
+	}
+}
+
+// @function hasClass(el: HTMLElement, name: String): Boolean
+// Returns `true` if the element's class attribute contains `name`.
+function hasClass(el, name) {
+	if (el.classList !== undefined) {
+		return el.classList.contains(name);
+	}
+	var className = getClass(el);
+	return className.length > 0 && new RegExp('(^|\\s)' + name + '(\\s|$)').test(className);
+}
+
+// @function addClass(el: HTMLElement, name: String)
+// Adds `name` to the element's class attribute.
+function addClass(el, name) {
+	if (el.classList !== undefined) {
+		var classes = splitWords(name);
+		for (var i = 0, len = classes.length; i < len; i++) {
+			el.classList.add(classes[i]);
+		}
+	} else if (!hasClass(el, name)) {
+		var className = getClass(el);
+		setClass(el, (className ? className + ' ' : '') + name);
+	}
+}
+
+// @function removeClass(el: HTMLElement, name: String)
+// Removes `name` from the element's class attribute.
+function removeClass(el, name) {
+	if (el.classList !== undefined) {
+		el.classList.remove(name);
+	} else {
+		setClass(el, trim((' ' + getClass(el) + ' ').replace(' ' + name + ' ', ' ')));
+	}
+}
+
+// @function setClass(el: HTMLElement, name: String)
+// Sets the element's class.
+function setClass(el, name) {
+	if (el.className.baseVal === undefined) {
+		el.className = name;
+	} else {
+		// in case of SVG element
+		el.className.baseVal = name;
+	}
+}
+
+// @function getClass(el: HTMLElement): String
+// Returns the element's class.
+function getClass(el) {
+	return el.className.baseVal === undefined ? el.className : el.className.baseVal;
+}
+
+// @function setOpacity(el: HTMLElement, opacity: Number)
+// Set the opacity of an element (including old IE support).
+// `opacity` must be a number from `0` to `1`.
+function setOpacity(el, value) {
+	if ('opacity' in el.style) {
+		el.style.opacity = value;
+	} else if ('filter' in el.style) {
+		_setOpacityIE(el, value);
+	}
+}
+
+function _setOpacityIE(el, value) {
+	var filter = false,
+	    filterName = 'DXImageTransform.Microsoft.Alpha';
+
+	// filters collection throws an error if we try to retrieve a filter that doesn't exist
+	try {
+		filter = el.filters.item(filterName);
+	} catch (e) {
+		// don't set opacity to 1 if we haven't already set an opacity,
+		// it isn't needed and breaks transparent pngs.
+		if (value === 1) { return; }
+	}
+
+	value = Math.round(value * 100);
+
+	if (filter) {
+		filter.Enabled = (value !== 100);
+		filter.Opacity = value;
+	} else {
+		el.style.filter += ' progid:' + filterName + '(opacity=' + value + ')';
+	}
+}
+
+// @function testProp(props: String[]): String|false
+// Goes through the array of style names and returns the first name
+// that is a valid style name for an element. If no such name is found,
+// it returns false. Useful for vendor-prefixed styles like `transform`.
+function testProp(props) {
+	var style = document.documentElement.style;
+
+	for (var i = 0; i < props.length; i++) {
+		if (props[i] in style) {
+			return props[i];
+		}
+	}
+	return false;
+}
+
+// @function setTransform(el: HTMLElement, offset: Point, scale?: Number)
+// Resets the 3D CSS transform of `el` so it is translated by `offset` pixels
+// and optionally scaled by `scale`. Does not have an effect if the
+// browser doesn't support 3D CSS transforms.
+function setTransform(el, offset, scale) {
+	var pos = offset || new Point(0, 0);
+
+	el.style[TRANSFORM] =
+		(ie3d ?
+			'translate(' + pos.x + 'px,' + pos.y + 'px)' :
+			'translate3d(' + pos.x + 'px,' + pos.y + 'px,0)') +
+		(scale ? ' scale(' + scale + ')' : '');
+}
+
+// @function setPosition(el: HTMLElement, position: Point)
+// Sets the position of `el` to coordinates specified by `position`,
+// using CSS translate or top/left positioning depending on the browser
+// (used by Leaflet internally to position its layers).
+function setPosition(el, point) {
+
+	/*eslint-disable */
+	el._leaflet_pos = point;
+	/* eslint-enable */
+
+	if (any3d) {
+		setTransform(el, point);
+	} else {
+		el.style.left = point.x + 'px';
+		el.style.top = point.y + 'px';
+	}
+}
+
+// @function getPosition(el: HTMLElement): Point
+// Returns the coordinates of an element previously positioned with setPosition.
+function getPosition(el) {
+	// this method is only used for elements previously positioned using setPosition,
+	// so it's safe to cache the position for performance
+
+	return el._leaflet_pos || new Point(0, 0);
+}
+
+// @function disableTextSelection()
+// Prevents the user from generating `selectstart` DOM events, usually generated
+// when the user drags the mouse through a page with text. Used internally
+// by Leaflet to override the behaviour of any click-and-drag interaction on
+// the map. Affects drag interactions on the whole document.
+
+// @function enableTextSelection()
+// Cancels the effects of a previous [`L.DomUtil.disableTextSelection`](#domutil-disabletextselection).
+var disableTextSelection;
+var enableTextSelection;
+var _userSelect;
+if ('onselectstart' in document) {
+	disableTextSelection = function () {
+		on(window, 'selectstart', preventDefault);
+	};
+	enableTextSelection = function () {
+		off(window, 'selectstart', preventDefault);
+	};
+} else {
+	var userSelectProperty = testProp(
+		['userSelect', 'WebkitUserSelect', 'OUserSelect', 'MozUserSelect', 'msUserSelect']);
+
+	disableTextSelection = function () {
+		if (userSelectProperty) {
+			var style = document.documentElement.style;
+			_userSelect = style[userSelectProperty];
+			style[userSelectProperty] = 'none';
+		}
+	};
+	enableTextSelection = function () {
+		if (userSelectProperty) {
+			document.documentElement.style[userSelectProperty] = _userSelect;
+			_userSelect = undefined;
+		}
+	};
+}
+
+// @function disableImageDrag()
+// As [`L.DomUtil.disableTextSelection`](#domutil-disabletextselection), but
+// for `dragstart` DOM events, usually generated when the user drags an image.
+function disableImageDrag() {
+	on(window, 'dragstart', preventDefault);
+}
+
+// @function enableImageDrag()
+// Cancels the effects of a previous [`L.DomUtil.disableImageDrag`](#domutil-disabletextselection).
+function enableImageDrag() {
+	off(window, 'dragstart', preventDefault);
+}
+
+var _outlineElement;
+var _outlineStyle;
+// @function preventOutline(el: HTMLElement)
+// Makes the [outline](https://developer.mozilla.org/docs/Web/CSS/outline)
+// of the element `el` invisible. Used internally by Leaflet to prevent
+// focusable elements from displaying an outline when the user performs a
+// drag interaction on them.
+function preventOutline(element) {
+	while (element.tabIndex === -1) {
+		element = element.parentNode;
+	}
+	if (!element.style) { return; }
+	restoreOutline();
+	_outlineElement = element;
+	_outlineStyle = element.style.outline;
+	element.style.outline = 'none';
+	on(window, 'keydown', restoreOutline);
+}
+
+// @function restoreOutline()
+// Cancels the effects of a previous [`L.DomUtil.preventOutline`]().
+function restoreOutline() {
+	if (!_outlineElement) { return; }
+	_outlineElement.style.outline = _outlineStyle;
+	_outlineElement = undefined;
+	_outlineStyle = undefined;
+	off(window, 'keydown', restoreOutline);
+}
+
+// @function getSizedParentNode(el: HTMLElement): HTMLElement
+// Finds the closest parent node which size (width and height) is not null.
+function getSizedParentNode(element) {
+	do {
+		element = element.parentNode;
+	} while ((!element.offsetWidth || !element.offsetHeight) && element !== document.body);
+	return element;
+}
+
+// @function getScale(el: HTMLElement): Object
+// Computes the CSS scale currently applied on the element.
+// Returns an object with `x` and `y` members as horizontal and vertical scales respectively,
+// and `boundingClientRect` as the result of [`getBoundingClientRect()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect).
+function getScale(element) {
+	var rect = element.getBoundingClientRect(); // Read-only in old browsers.
+
+	return {
+		x: rect.width / element.offsetWidth || 1,
+		y: rect.height / element.offsetHeight || 1,
+		boundingClientRect: rect
+	};
+}
+
+
+var DomUtil = (Object.freeze || Object)({
+	TRANSFORM: TRANSFORM,
+	TRANSITION: TRANSITION,
+	TRANSITION_END: TRANSITION_END,
+	get: get,
+	getStyle: getStyle,
+	create: create$1,
+	remove: remove,
+	empty: empty,
+	toFront: toFront,
+	toBack: toBack,
+	hasClass: hasClass,
+	addClass: addClass,
+	removeClass: removeClass,
+	setClass: setClass,
+	getClass: getClass,
+	setOpacity: setOpacity,
+	testProp: testProp,
+	setTransform: setTransform,
+	setPosition: setPosition,
+	getPosition: getPosition,
+	disableTextSelection: disableTextSelection,
+	enableTextSelection: enableTextSelection,
+	disableImageDrag: disableImageDrag,
+	enableImageDrag: enableImageDrag,
+	preventOutline: preventOutline,
+	restoreOutline: restoreOutline,
+	getSizedParentNode: getSizedParentNode,
+	getScale: getScale
+});
+
+/*
+ * @namespace DomEvent
+ * Utility functions to work with the [DOM events](https://developer.mozilla.org/docs/Web/API/Event), used by Leaflet internally.
+ */
+
+// Inspired by John Resig, Dean Edwards and YUI addEvent implementations.
+
+// @function on(el: HTMLElement, types: String, fn: Function, context?: Object): this
+// Adds a listener function (`fn`) to a particular DOM event type of the
+// element `el`. You can optionally specify the context of the listener
+// (object the `this` keyword will point to). You can also pass several
+// space-separated types (e.g. `'click dblclick'`).
+
+// @alternative
+// @function on(el: HTMLElement, eventMap: Object, context?: Object): this
+// Adds a set of type/listener pairs, e.g. `{click: onClick, mousemove: onMouseMove}`
+function on(obj, types, fn, context) {
+
+	if (typeof types === 'object') {
+		for (var type in types) {
+			addOne(obj, type, types[type], fn);
+		}
+	} else {
+		types = splitWords(types);
+
+		for (var i = 0, len = types.length; i < len; i++) {
+			addOne(obj, types[i], fn, context);
+		}
+	}
+
+	return this;
+}
+
+var eventsKey = '_leaflet_events';
+
+// @function off(el: HTMLElement, types: String, fn: Function, context?: Object): this
+// Removes a previously added listener function.
+// Note that if you passed a custom context to on, you must pass the same
+// context to `off` in order to remove the listener.
+
+// @alternative
+// @function off(el: HTMLElement, eventMap: Object, context?: Object): this
+// Removes a set of type/listener pairs, e.g. `{click: onClick, mousemove: onMouseMove}`
+function off(obj, types, fn, context) {
+
+	if (typeof types === 'object') {
+		for (var type in types) {
+			removeOne(obj, type, types[type], fn);
+		}
+	} else if (types) {
+		types = splitWords(types);
+
+		for (var i = 0, len = types.length; i < len; i++) {
+			removeOne(obj, types[i], fn, context);
+		}
+	} else {
+		for (var j in obj[eventsKey]) {
+			removeOne(obj, j, obj[eventsKey][j]);
+		}
+		delete obj[eventsKey];
+	}
+
+	return this;
+}
+
+function addOne(obj, type, fn, context) {
+	var id = type + stamp(fn) + (context ? '_' + stamp(context) : '');
+
+	if (obj[eventsKey] && obj[eventsKey][id]) { return this; }
+
+	var handler = function (e) {
+		return fn.call(context || obj, e || window.event);
+	};
+
+	var originalHandler = handler;
+
+	if (pointer && type.indexOf('touch') === 0) {
+		// Needs DomEvent.Pointer.js
+		addPointerListener(obj, type, handler, id);
+
+	} else if (touch && (type === 'dblclick') && addDoubleTapListener &&
+	           !(pointer && chrome)) {
+		// Chrome >55 does not need the synthetic dblclicks from addDoubleTapListener
+		// See #5180
+		addDoubleTapListener(obj, handler, id);
+
+	} else if ('addEventListener' in obj) {
+
+		if (type === 'mousewheel') {
+			obj.addEventListener('onwheel' in obj ? 'wheel' : 'mousewheel', handler, false);
+
+		} else if ((type === 'mouseenter') || (type === 'mouseleave')) {
+			handler = function (e) {
+				e = e || window.event;
+				if (isExternalTarget(obj, e)) {
+					originalHandler(e);
+				}
+			};
+			obj.addEventListener(type === 'mouseenter' ? 'mouseover' : 'mouseout', handler, false);
+
+		} else {
+			if (type === 'click' && android) {
+				handler = function (e) {
+					filterClick(e, originalHandler);
+				};
+			}
+			obj.addEventListener(type, handler, false);
+		}
+
+	} else if ('attachEvent' in obj) {
+		obj.attachEvent('on' + type, handler);
+	}
+
+	obj[eventsKey] = obj[eventsKey] || {};
+	obj[eventsKey][id] = handler;
+}
+
+function removeOne(obj, type, fn, context) {
+
+	var id = type + stamp(fn) + (context ? '_' + stamp(context) : ''),
+	    handler = obj[eventsKey] && obj[eventsKey][id];
+
+	if (!handler) { return this; }
+
+	if (pointer && type.indexOf('touch') === 0) {
+		removePointerListener(obj, type, id);
+
+	} else if (touch && (type === 'dblclick') && removeDoubleTapListener &&
+	           !(pointer && chrome)) {
+		removeDoubleTapListener(obj, id);
+
+	} else if ('removeEventListener' in obj) {
+
+		if (type === 'mousewheel') {
+			obj.removeEventListener('onwheel' in obj ? 'wheel' : 'mousewheel', handler, false);
+
+		} else {
+			obj.removeEventListener(
+				type === 'mouseenter' ? 'mouseover' :
+				type === 'mouseleave' ? 'mouseout' : type, handler, false);
+		}
+
+	} else if ('detachEvent' in obj) {
+		obj.detachEvent('on' + type, handler);
+	}
+
+	obj[eventsKey][id] = null;
+}
+
+// @function stopPropagation(ev: DOMEvent): this
+// Stop the given event from propagation to parent elements. Used inside the listener functions:
+// ```js
+// L.DomEvent.on(div, 'click', function (ev) {
+// 	L.DomEvent.stopPropagation(ev);
+// });
+// ```
+function stopPropagation(e) {
+
+	if (e.stopPropagation) {
+		e.stopPropagation();
+	} else if (e.originalEvent) {  // In case of Leaflet event.
+		e.originalEvent._stopped = true;
+	} else {
+		e.cancelBubble = true;
+	}
+	skipped(e);
+
+	return this;
+}
+
+// @function disableScrollPropagation(el: HTMLElement): this
+// Adds `stopPropagation` to the element's `'mousewheel'` events (plus browser variants).
+function disableScrollPropagation(el) {
+	addOne(el, 'mousewheel', stopPropagation);
+	return this;
+}
+
+// @function disableClickPropagation(el: HTMLElement): this
+// Adds `stopPropagation` to the element's `'click'`, `'doubleclick'`,
+// `'mousedown'` and `'touchstart'` events (plus browser variants).
+function disableClickPropagation(el) {
+	on(el, 'mousedown touchstart dblclick', stopPropagation);
+	addOne(el, 'click', fakeStop);
+	return this;
+}
+
+// @function preventDefault(ev: DOMEvent): this
+// Prevents the default action of the DOM Event `ev` from happening (such as
+// following a link in the href of the a element, or doing a POST request
+// with page reload when a `<form>` is submitted).
+// Use it inside listener functions.
+function preventDefault(e) {
+	if (e.preventDefault) {
+		e.preventDefault();
+	} else {
+		e.returnValue = false;
+	}
+	return this;
+}
+
+// @function stop(ev: DOMEvent): this
+// Does `stopPropagation` and `preventDefault` at the same time.
+function stop(e) {
+	preventDefault(e);
+	stopPropagation(e);
+	return this;
+}
+
+// @function getMousePosition(ev: DOMEvent, container?: HTMLElement): Point
+// Gets normalized mouse position from a DOM event relative to the
+// `container` (border excluded) or to the whole page if not specified.
+function getMousePosition(e, container) {
+	if (!container) {
+		return new Point(e.clientX, e.clientY);
+	}
+
+	var scale = getScale(container),
+	    offset = scale.boundingClientRect; // left and top  values are in page scale (like the event clientX/Y)
+
+	return new Point(
+		// offset.left/top values are in page scale (like clientX/Y),
+		// whereas clientLeft/Top (border width) values are the original values (before CSS scale applies).
+		(e.clientX - offset.left) / scale.x - container.clientLeft,
+		(e.clientY - offset.top) / scale.y - container.clientTop
+	);
+}
+
+// Chrome on Win scrolls double the pixels as in other platforms (see #4538),
+// and Firefox scrolls device pixels, not CSS pixels
+var wheelPxFactor =
+	(win && chrome) ? 2 * window.devicePixelRatio :
+	gecko ? window.devicePixelRatio : 1;
+
+// @function getWheelDelta(ev: DOMEvent): Number
+// Gets normalized wheel delta from a mousewheel DOM event, in vertical
+// pixels scrolled (negative if scrolling down).
+// Events from pointing devices without precise scrolling are mapped to
+// a best guess of 60 pixels.
+function getWheelDelta(e) {
+	return (edge) ? e.wheelDeltaY / 2 : // Don't trust window-geometry-based delta
+	       (e.deltaY && e.deltaMode === 0) ? -e.deltaY / wheelPxFactor : // Pixels
+	       (e.deltaY && e.deltaMode === 1) ? -e.deltaY * 20 : // Lines
+	       (e.deltaY && e.deltaMode === 2) ? -e.deltaY * 60 : // Pages
+	       (e.deltaX || e.deltaZ) ? 0 :	// Skip horizontal/depth wheel events
+	       e.wheelDelta ? (e.wheelDeltaY || e.wheelDelta) / 2 : // Legacy IE pixels
+	       (e.detail && Math.abs(e.detail) < 32765) ? -e.detail * 20 : // Legacy Moz lines
+	       e.detail ? e.detail / -32765 * 60 : // Legacy Moz pages
+	       0;
+}
+
+var skipEvents = {};
+
+function fakeStop(e) {
+	// fakes stopPropagation by setting a special event flag, checked/reset with skipped(e)
+	skipEvents[e.type] = true;
+}
+
+function skipped(e) {
+	var events = skipEvents[e.type];
+	// reset when checking, as it's only used in map container and propagates outside of the map
+	skipEvents[e.type] = false;
+	return events;
+}
+
+// check if element really left/entered the event target (for mouseenter/mouseleave)
+function isExternalTarget(el, e) {
+
+	var related = e.relatedTarget;
+
+	if (!related) { return true; }
+
+	try {
+		while (related && (related !== el)) {
+			related = related.parentNode;
+		}
+	} catch (err) {
+		return false;
+	}
+	return (related !== el);
+}
+
+var lastClick;
+
+// this is a horrible workaround for a bug in Android where a single touch triggers two click events
+function filterClick(e, handler) {
+	var timeStamp = (e.timeStamp || (e.originalEvent && e.originalEvent.timeStamp)),
+	    elapsed = lastClick && (timeStamp - lastClick);
+
+	// are they closer together than 500ms yet more than 100ms?
+	// Android typically triggers them ~300ms apart while multiple listeners
+	// on the same event should be triggered far faster;
+	// or check if click is simulated on the element, and if it is, reject any non-simulated events
+
+	if ((elapsed && elapsed > 100 && elapsed < 500) || (e.target._simulatedClick && !e._simulated)) {
+		stop(e);
+		return;
+	}
+	lastClick = timeStamp;
+
+	handler(e);
+}
+
+
+
+
+var DomEvent = (Object.freeze || Object)({
+	on: on,
+	off: off,
+	stopPropagation: stopPropagation,
+	disableScrollPropagation: disableScrollPropagation,
+	disableClickPropagation: disableClickPropagation,
+	preventDefault: preventDefault,
+	stop: stop,
+	getMousePosition: getMousePosition,
+	getWheelDelta: getWheelDelta,
+	fakeStop: fakeStop,
+	skipped: skipped,
+	isExternalTarget: isExternalTarget,
+	addListener: on,
+	removeListener: off
+});
+
+/*
+ * @class PosAnimation
+ * @aka L.PosAnimation
+ * @inherits Evented
+ * Used internally for panning animations, utilizing CSS3 Transitions for modern browsers and a timer fallback for IE6-9.
+ *
+ * @example
+ * ```js
+ * var fx = new L.PosAnimation();
+ * fx.run(el, [300, 500], 0.5);
+ * ```
+ *
+ * @constructor L.PosAnimation()
+ * Creates a `PosAnimation` object.
+ *
+ */
+
+var PosAnimation = Evented.extend({
+
+	// @method run(el: HTMLElement, newPos: Point, duration?: Number, easeLinearity?: Number)
+	// Run an animation of a given element to a new position, optionally setting
+	// duration in seconds (`0.25` by default) and easing linearity factor (3rd
+	// argument of the [cubic bezier curve](http://cubic-bezier.com/#0,0,.5,1),
+	// `0.5` by default).
+	run: function (el, newPos, duration, easeLinearity) {
+		this.stop();
+
+		this._el = el;
+		this._inProgress = true;
+		this._duration = duration || 0.25;
+		this._easeOutPower = 1 / Math.max(easeLinearity || 0.5, 0.2);
+
+		this._startPos = getPosition(el);
+		this._offset = newPos.subtract(this._startPos);
+		this._startTime = +new Date();
+
+		// @event start: Event
+		// Fired when the animation starts
+		this.fire('start');
+
+		this._animate();
+	},
+
+	// @method stop()
+	// Stops the animation (if currently running).
+	stop: function () {
+		if (!this._inProgress) { return; }
+
+		this._step(true);
+		this._complete();
+	},
+
+	_animate: function () {
+		// animation loop
+		this._animId = requestAnimFrame(this._animate, this);
+		this._step();
+	},
+
+	_step: function (round) {
+		var elapsed = (+new Date()) - this._startTime,
+		    duration = this._duration * 1000;
+
+		if (elapsed < duration) {
+			this._runFrame(this._easeOut(elapsed / duration), round);
+		} else {
+			this._runFrame(1);
+			this._complete();
+		}
+	},
+
+	_runFrame: function (progress, round) {
+		var pos = this._startPos.add(this._offset.multiplyBy(progress));
+		if (round) {
+			pos._round();
+		}
+		setPosition(this._el, pos);
+
+		// @event step: Event
+		// Fired continuously during the animation.
+		this.fire('step');
+	},
+
+	_complete: function () {
+		cancelAnimFrame(this._animId);
+
+		this._inProgress = false;
+		// @event end: Event
+		// Fired when the animation ends.
+		this.fire('end');
+	},
+
+	_easeOut: function (t) {
+		return 1 - Math.pow(1 - t, this._easeOutPower);
+	}
+});
+
+/*
+ * @class Map
+ * @aka L.Map
+ * @inherits Evented
+ *
+ * The central class of the API — it is used to create a map on a page and manipulate it.
+ *
+ * @example
+ *
+ * ```js
+ * // initialize the map on the "map" div with a given center and zoom
+ * var map = L.map('map', {
+ * 	center: [51.505, -0.09],
+ * 	zoom: 13
+ * });
+ * ```
+ *
+ */
+
+var Map = Evented.extend({
+
+	options: {
+		// @section Map State Options
+		// @option crs: CRS = L.CRS.EPSG3857
+		// The [Coordinate Reference System](#crs) to use. Don't change this if you're not
+		// sure what it means.
+		crs: EPSG3857,
+
+		// @option center: LatLng = undefined
+		// Initial geographic center of the map
+		center: undefined,
+
+		// @option zoom: Number = undefined
+		// Initial map zoom level
+		zoom: undefined,
+
+		// @option minZoom: Number = *
+		// Minimum zoom level of the map.
+		// If not specified and at least one `GridLayer` or `TileLayer` is in the map,
+		// the lowest of their `minZoom` options will be used instead.
+		minZoom: undefined,
+
+		// @option maxZoom: Number = *
+		// Maximum zoom level of the map.
+		// If not specified and at least one `GridLayer` or `TileLayer` is in the map,
+		// the highest of their `maxZoom` options will be used instead.
+		maxZoom: undefined,
+
+		// @option layers: Layer[] = []
+		// Array of layers that will be added to the map initially
+		layers: [],
+
+		// @option maxBounds: LatLngBounds = null
+		// When this option is set, the map restricts the view to the given
+		// geographical bounds, bouncing the user back if the user tries to pan
+		// outside the view. To set the restriction dynamically, use
+		// [`setMaxBounds`](#map-setmaxbounds) method.
+		maxBounds: undefined,
+
+		// @option renderer: Renderer = *
+		// The default method for drawing vector layers on the map. `L.SVG`
+		// or `L.Canvas` by default depending on browser support.
+		renderer: undefined,
+
+
+		// @section Animation Options
+		// @option zoomAnimation: Boolean = true
+		// Whether the map zoom animation is enabled. By default it's enabled
+		// in all browsers that support CSS3 Transitions except Android.
+		zoomAnimation: true,
+
+		// @option zoomAnimationThreshold: Number = 4
+		// Won't animate zoom if the zoom difference exceeds this value.
+		zoomAnimationThreshold: 4,
+
+		// @option fadeAnimation: Boolean = true
+		// Whether the tile fade animation is enabled. By default it's enabled
+		// in all browsers that support CSS3 Transitions except Android.
+		fadeAnimation: true,
+
+		// @option markerZoomAnimation: Boolean = true
+		// Whether markers animate their zoom with the zoom animation, if disabled
+		// they will disappear for the length of the animation. By default it's
+		// enabled in all browsers that support CSS3 Transitions except Android.
+		markerZoomAnimation: true,
+
+		// @option transform3DLimit: Number = 2^23
+		// Defines the maximum size of a CSS translation transform. The default
+		// value should not be changed unless a web browser positions layers in
+		// the wrong place after doing a large `panBy`.
+		transform3DLimit: 8388608, // Precision limit of a 32-bit float
+
+		// @section Interaction Options
+		// @option zoomSnap: Number = 1
+		// Forces the map's zoom level to always be a multiple of this, particularly
+		// right after a [`fitBounds()`](#map-fitbounds) or a pinch-zoom.
+		// By default, the zoom level snaps to the nearest integer; lower values
+		// (e.g. `0.5` or `0.1`) allow for greater granularity. A value of `0`
+		// means the zoom level will not be snapped after `fitBounds` or a pinch-zoom.
+		zoomSnap: 1,
+
+		// @option zoomDelta: Number = 1
+		// Controls how much the map's zoom level will change after a
+		// [`zoomIn()`](#map-zoomin), [`zoomOut()`](#map-zoomout), pressing `+`
+		// or `-` on the keyboard, or using the [zoom controls](#control-zoom).
+		// Values smaller than `1` (e.g. `0.5`) allow for greater granularity.
+		zoomDelta: 1,
+
+		// @option trackResize: Boolean = true
+		// Whether the map automatically handles browser window resize to update itself.
+		trackResize: true
+	},
+
+	initialize: function (id, options) { // (HTMLElement or String, Object)
+		options = setOptions(this, options);
+
+		this._initContainer(id);
+		this._initLayout();
+
+		// hack for https://github.com/Leaflet/Leaflet/issues/1980
+		this._onResize = bind(this._onResize, this);
+
+		this._initEvents();
+
+		if (options.maxBounds) {
+			this.setMaxBounds(options.maxBounds);
+		}
+
+		if (options.zoom !== undefined) {
+			this._zoom = this._limitZoom(options.zoom);
+		}
+
+		if (options.center && options.zoom !== undefined) {
+			this.setView(toLatLng(options.center), options.zoom, {reset: true});
+		}
+
+		this._handlers = [];
+		this._layers = {};
+		this._zoomBoundLayers = {};
+		this._sizeChanged = true;
+
+		this.callInitHooks();
+
+		// don't animate on browsers without hardware-accelerated transitions or old Android/Opera
+		this._zoomAnimated = TRANSITION && any3d && !mobileOpera &&
+				this.options.zoomAnimation;
+
+		// zoom transitions run with the same duration for all layers, so if one of transitionend events
+		// happens after starting zoom animation (propagating to the map pane), we know that it ended globally
+		if (this._zoomAnimated) {
+			this._createAnimProxy();
+			on(this._proxy, TRANSITION_END, this._catchTransitionEnd, this);
+		}
+
+		this._addLayers(this.options.layers);
+	},
+
+
+	// @section Methods for modifying map state
+
+	// @method setView(center: LatLng, zoom: Number, options?: Zoom/pan options): this
+	// Sets the view of the map (geographical center and zoom) with the given
+	// animation options.
+	setView: function (center, zoom, options) {
+
+		zoom = zoom === undefined ? this._zoom : this._limitZoom(zoom);
+		center = this._limitCenter(toLatLng(center), zoom, this.options.maxBounds);
+		options = options || {};
+
+		this._stop();
+
+		if (this._loaded && !options.reset && options !== true) {
+
+			if (options.animate !== undefined) {
+				options.zoom = extend({animate: options.animate}, options.zoom);
+				options.pan = extend({animate: options.animate, duration: options.duration}, options.pan);
+			}
+
+			// try animating pan or zoom
+			var moved = (this._zoom !== zoom) ?
+				this._tryAnimatedZoom && this._tryAnimatedZoom(center, zoom, options.zoom) :
+				this._tryAnimatedPan(center, options.pan);
+
+			if (moved) {
+				// prevent resize handler call, the view will refresh after animation anyway
+				clearTimeout(this._sizeTimer);
+				return this;
+			}
+		}
+
+		// animation didn't start, just reset the map view
+		this._resetView(center, zoom);
+
+		return this;
+	},
+
+	// @method setZoom(zoom: Number, options?: Zoom/pan options): this
+	// Sets the zoom of the map.
+	setZoom: function (zoom, options) {
+		if (!this._loaded) {
+			this._zoom = zoom;
+			return this;
+		}
+		return this.setView(this.getCenter(), zoom, {zoom: options});
+	},
+
+	// @method zoomIn(delta?: Number, options?: Zoom options): this
+	// Increases the zoom of the map by `delta` ([`zoomDelta`](#map-zoomdelta) by default).
+	zoomIn: function (delta, options) {
+		delta = delta || (any3d ? this.options.zoomDelta : 1);
+		return this.setZoom(this._zoom + delta, options);
+	},
+
+	// @method zoomOut(delta?: Number, options?: Zoom options): this
+	// Decreases the zoom of the map by `delta` ([`zoomDelta`](#map-zoomdelta) by default).
+	zoomOut: function (delta, options) {
+		delta = delta || (any3d ? this.options.zoomDelta : 1);
+		return this.setZoom(this._zoom - delta, options);
+	},
+
+	// @method setZoomAround(latlng: LatLng, zoom: Number, options: Zoom options): this
+	// Zooms the map while keeping a specified geographical point on the map
+	// stationary (e.g. used internally for scroll zoom and double-click zoom).
+	// @alternative
+	// @method setZoomAround(offset: Point, zoom: Number, options: Zoom options): this
+	// Zooms the map while keeping a specified pixel on the map (relative to the top-left corner) stationary.
+	setZoomAround: function (latlng, zoom, options) {
+		var scale = this.getZoomScale(zoom),
+		    viewHalf = this.getSize().divideBy(2),
+		    containerPoint = latlng instanceof Point ? latlng : this.latLngToContainerPoint(latlng),
+
+		    centerOffset = containerPoint.subtract(viewHalf).multiplyBy(1 - 1 / scale),
+		    newCenter = this.containerPointToLatLng(viewHalf.add(centerOffset));
+
+		return this.setView(newCenter, zoom, {zoom: options});
+	},
+
+	_getBoundsCenterZoom: function (bounds, options) {
+
+		options = options || {};
+		bounds = bounds.getBounds ? bounds.getBounds() : toLatLngBounds(bounds);
+
+		var paddingTL = toPoint(options.paddingTopLeft || options.padding || [0, 0]),
+		    paddingBR = toPoint(options.paddingBottomRight || options.padding || [0, 0]),
+
+		    zoom = this.getBoundsZoom(bounds, false, paddingTL.add(paddingBR));
+
+		zoom = (typeof options.maxZoom === 'number') ? Math.min(options.maxZoom, zoom) : zoom;
+
+		if (zoom === Infinity) {
+			return {
+				center: bounds.getCenter(),
+				zoom: zoom
+			};
+		}
+
+		var paddingOffset = paddingBR.subtract(paddingTL).divideBy(2),
+
+		    swPoint = this.project(bounds.getSouthWest(), zoom),
+		    nePoint = this.project(bounds.getNorthEast(), zoom),
+		    center = this.unproject(swPoint.add(nePoint).divideBy(2).add(paddingOffset), zoom);
+
+		return {
+			center: center,
+			zoom: zoom
+		};
+	},
+
+	// @method fitBounds(bounds: LatLngBounds, options?: fitBounds options): this
+	// Sets a map view that contains the given geographical bounds with the
+	// maximum zoom level possible.
+	fitBounds: function (bounds, options) {
+
+		bounds = toLatLngBounds(bounds);
+
+		if (!bounds.isValid()) {
+			throw new Error('Bounds are not valid.');
+		}
+
+		var target = this._getBoundsCenterZoom(bounds, options);
+		return this.setView(target.center, target.zoom, options);
+	},
+
+	// @method fitWorld(options?: fitBounds options): this
+	// Sets a map view that mostly contains the whole world with the maximum
+	// zoom level possible.
+	fitWorld: function (options) {
+		return this.fitBounds([[-90, -180], [90, 180]], options);
+	},
+
+	// @method panTo(latlng: LatLng, options?: Pan options): this
+	// Pans the map to a given center.
+	panTo: function (center, options) { // (LatLng)
+		return this.setView(center, this._zoom, {pan: options});
+	},
+
+	// @method panBy(offset: Point, options?: Pan options): this
+	// Pans the map by a given number of pixels (animated).
+	panBy: function (offset, options) {
+		offset = toPoint(offset).round();
+		options = options || {};
+
+		if (!offset.x && !offset.y) {
+			return this.fire('moveend');
+		}
+		// If we pan too far, Chrome gets issues with tiles
+		// and makes them disappear or appear in the wrong place (slightly offset) #2602
+		if (options.animate !== true && !this.getSize().contains(offset)) {
+			this._resetView(this.unproject(this.project(this.getCenter()).add(offset)), this.getZoom());
+			return this;
+		}
+
+		if (!this._panAnim) {
+			this._panAnim = new PosAnimation();
+
+			this._panAnim.on({
+				'step': this._onPanTransitionStep,
+				'end': this._onPanTransitionEnd
+			}, this);
+		}
+
+		// don't fire movestart if animating inertia
+		if (!options.noMoveStart) {
+			this.fire('movestart');
+		}
+
+		// animate pan unless animate: false specified
+		if (options.animate !== false) {
+			addClass(this._mapPane, 'leaflet-pan-anim');
+
+			var newPos = this._getMapPanePos().subtract(offset).round();
+			this._panAnim.run(this._mapPane, newPos, options.duration || 0.25, options.easeLinearity);
+		} else {
+			this._rawPanBy(offset);
+			this.fire('move').fire('moveend');
+		}
+
+		return this;
+	},
+
+	// @method flyTo(latlng: LatLng, zoom?: Number, options?: Zoom/pan options): this
+	// Sets the view of the map (geographical center and zoom) performing a smooth
+	// pan-zoom animation.
+	flyTo: function (targetCenter, targetZoom, options) {
+
+		options = options || {};
+		if (options.animate === false || !any3d) {
+			return this.setView(targetCenter, targetZoom, options);
+		}
+
+		this._stop();
+
+		var from = this.project(this.getCenter()),
+		    to = this.project(targetCenter),
+		    size = this.getSize(),
+		    startZoom = this._zoom;
+
+		targetCenter = toLatLng(targetCenter);
+		targetZoom = targetZoom === undefined ? startZoom : targetZoom;
+
+		var w0 = Math.max(size.x, size.y),
+		    w1 = w0 * this.getZoomScale(startZoom, targetZoom),
+		    u1 = (to.distanceTo(from)) || 1,
+		    rho = 1.42,
+		    rho2 = rho * rho;
+
+		function r(i) {
+			var s1 = i ? -1 : 1,
+			    s2 = i ? w1 : w0,
+			    t1 = w1 * w1 - w0 * w0 + s1 * rho2 * rho2 * u1 * u1,
+			    b1 = 2 * s2 * rho2 * u1,
+			    b = t1 / b1,
+			    sq = Math.sqrt(b * b + 1) - b;
+
+			    // workaround for floating point precision bug when sq = 0, log = -Infinite,
+			    // thus triggering an infinite loop in flyTo
+			    var log = sq < 0.000000001 ? -18 : Math.log(sq);
+
+			return log;
+		}
+
+		function sinh(n) { return (Math.exp(n) - Math.exp(-n)) / 2; }
+		function cosh(n) { return (Math.exp(n) + Math.exp(-n)) / 2; }
+		function tanh(n) { return sinh(n) / cosh(n); }
+
+		var r0 = r(0);
+
+		function w(s) { return w0 * (cosh(r0) / cosh(r0 + rho * s)); }
+		function u(s) { return w0 * (cosh(r0) * tanh(r0 + rho * s) - sinh(r0)) / rho2; }
+
+		function easeOut(t) { return 1 - Math.pow(1 - t, 1.5); }
+
+		var start = Date.now(),
+		    S = (r(1) - r0) / rho,
+		    duration = options.duration ? 1000 * options.duration : 1000 * S * 0.8;
+
+		function frame() {
+			var t = (Date.now() - start) / duration,
+			    s = easeOut(t) * S;
+
+			if (t <= 1) {
+				this._flyToFrame = requestAnimFrame(frame, this);
+
+				this._move(
+					this.unproject(from.add(to.subtract(from).multiplyBy(u(s) / u1)), startZoom),
+					this.getScaleZoom(w0 / w(s), startZoom),
+					{flyTo: true});
+
+			} else {
+				this
+					._move(targetCenter, targetZoom)
+					._moveEnd(true);
+			}
+		}
+
+		this._moveStart(true, options.noMoveStart);
+
+		frame.call(this);
+		return this;
+	},
+
+	// @method flyToBounds(bounds: LatLngBounds, options?: fitBounds options): this
+	// Sets the view of the map with a smooth animation like [`flyTo`](#map-flyto),
+	// but takes a bounds parameter like [`fitBounds`](#map-fitbounds).
+	flyToBounds: function (bounds, options) {
+		var target = this._getBoundsCenterZoom(bounds, options);
+		return this.flyTo(target.center, target.zoom, options);
+	},
+
+	// @method setMaxBounds(bounds: Bounds): this
+	// Restricts the map view to the given bounds (see the [maxBounds](#map-maxbounds) option).
+	setMaxBounds: function (bounds) {
+		bounds = toLatLngBounds(bounds);
+
+		if (!bounds.isValid()) {
+			this.options.maxBounds = null;
+			return this.off('moveend', this._panInsideMaxBounds);
+		} else if (this.options.maxBounds) {
+			this.off('moveend', this._panInsideMaxBounds);
+		}
+
+		this.options.maxBounds = bounds;
+
+		if (this._loaded) {
+			this._panInsideMaxBounds();
+		}
+
+		return this.on('moveend', this._panInsideMaxBounds);
+	},
+
+	// @method setMinZoom(zoom: Number): this
+	// Sets the lower limit for the available zoom levels (see the [minZoom](#map-minzoom) option).
+	setMinZoom: function (zoom) {
+		var oldZoom = this.options.minZoom;
+		this.options.minZoom = zoom;
+
+		if (this._loaded && oldZoom !== zoom) {
+			this.fire('zoomlevelschange');
+
+			if (this.getZoom() < this.options.minZoom) {
+				return this.setZoom(zoom);
+			}
+		}
+
+		return this;
+	},
+
+	// @method setMaxZoom(zoom: Number): this
+	// Sets the upper limit for the available zoom levels (see the [maxZoom](#map-maxzoom) option).
+	setMaxZoom: function (zoom) {
+		var oldZoom = this.options.maxZoom;
+		this.options.maxZoom = zoom;
+
+		if (this._loaded && oldZoom !== zoom) {
+			this.fire('zoomlevelschange');
+
+			if (this.getZoom() > this.options.maxZoom) {
+				return this.setZoom(zoom);
+			}
+		}
+
+		return this;
+	},
+
+	// @method panInsideBounds(bounds: LatLngBounds, options?: Pan options): this
+	// Pans the map to the closest view that would lie inside the given bounds (if it's not already), controlling the animation using the options specific, if any.
+	panInsideBounds: function (bounds, options) {
+		this._enforcingBounds = true;
+		var center = this.getCenter(),
+		    newCenter = this._limitCenter(center, this._zoom, toLatLngBounds(bounds));
+
+		if (!center.equals(newCenter)) {
+			this.panTo(newCenter, options);
+		}
+
+		this._enforcingBounds = false;
+		return this;
+	},
+
+	// @method invalidateSize(options: Zoom/pan options): this
+	// Checks if the map container size changed and updates the map if so —
+	// call it after you've changed the map size dynamically, also animating
+	// pan by default. If `options.pan` is `false`, panning will not occur.
+	// If `options.debounceMoveend` is `true`, it will delay `moveend` event so
+	// that it doesn't happen often even if the method is called many
+	// times in a row.
+
+	// @alternative
+	// @method invalidateSize(animate: Boolean): this
+	// Checks if the map container size changed and updates the map if so —
+	// call it after you've changed the map size dynamically, also animating
+	// pan by default.
+	invalidateSize: function (options) {
+		if (!this._loaded) { return this; }
+
+		options = extend({
+			animate: false,
+			pan: true
+		}, options === true ? {animate: true} : options);
+
+		var oldSize = this.getSize();
+		this._sizeChanged = true;
+		this._lastCenter = null;
+
+		var newSize = this.getSize(),
+		    oldCenter = oldSize.divideBy(2).round(),
+		    newCenter = newSize.divideBy(2).round(),
+		    offset = oldCenter.subtract(newCenter);
+
+		if (!offset.x && !offset.y) { return this; }
+
+		if (options.animate && options.pan) {
+			this.panBy(offset);
+
+		} else {
+			if (options.pan) {
+				this._rawPanBy(offset);
+			}
+
+			this.fire('move');
+
+			if (options.debounceMoveend) {
+				clearTimeout(this._sizeTimer);
+				this._sizeTimer = setTimeout(bind(this.fire, this, 'moveend'), 200);
+			} else {
+				this.fire('moveend');
+			}
+		}
+
+		// @section Map state change events
+		// @event resize: ResizeEvent
+		// Fired when the map is resized.
+		return this.fire('resize', {
+			oldSize: oldSize,
+			newSize: newSize
+		});
+	},
+
+	// @section Methods for modifying map state
+	// @method stop(): this
+	// Stops the currently running `panTo` or `flyTo` animation, if any.
+	stop: function () {
+		this.setZoom(this._limitZoom(this._zoom));
+		if (!this.options.zoomSnap) {
+			this.fire('viewreset');
+		}
+		return this._stop();
+	},
+
+	// @section Geolocation methods
+	// @method locate(options?: Locate options): this
+	// Tries to locate the user using the Geolocation API, firing a [`locationfound`](#map-locationfound)
+	// event with location data on success or a [`locationerror`](#map-locationerror) event on failure,
+	// and optionally sets the map view to the user's location with respect to
+	// detection accuracy (or to the world view if geolocation failed).
+	// Note that, if your page doesn't use HTTPS, this method will fail in
+	// modern browsers ([Chrome 50 and newer](https://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-powerful-features-on-insecure-origins))
+	// See `Locate options` for more details.
+	locate: function (options) {
+
+		options = this._locateOptions = extend({
+			timeout: 10000,
+			watch: false
+			// setView: false
+			// maxZoom: <Number>
+			// maximumAge: 0
+			// enableHighAccuracy: false
+		}, options);
+
+		if (!('geolocation' in navigator)) {
+			this._handleGeolocationError({
+				code: 0,
+				message: 'Geolocation not supported.'
+			});
+			return this;
+		}
+
+		var onResponse = bind(this._handleGeolocationResponse, this),
+		    onError = bind(this._handleGeolocationError, this);
+
+		if (options.watch) {
+			this._locationWatchId =
+			        navigator.geolocation.watchPosition(onResponse, onError, options);
+		} else {
+			navigator.geolocation.getCurrentPosition(onResponse, onError, options);
+		}
+		return this;
+	},
+
+	// @method stopLocate(): this
+	// Stops watching location previously initiated by `map.locate({watch: true})`
+	// and aborts resetting the map view if map.locate was called with
+	// `{setView: true}`.
+	stopLocate: function () {
+		if (navigator.geolocation && navigator.geolocation.clearWatch) {
+			navigator.geolocation.clearWatch(this._locationWatchId);
+		}
+		if (this._locateOptions) {
+			this._locateOptions.setView = false;
+		}
+		return this;
+	},
+
+	_handleGeolocationError: function (error) {
+		var c = error.code,
+		    message = error.message ||
+		            (c === 1 ? 'permission denied' :
+		            (c === 2 ? 'position unavailable' : 'timeout'));
+
+		if (this._locateOptions.setView && !this._loaded) {
+			this.fitWorld();
+		}
+
+		// @section Location events
+		// @event locationerror: ErrorEvent
+		// Fired when geolocation (using the [`locate`](#map-locate) method) failed.
+		this.fire('locationerror', {
+			code: c,
+			message: 'Geolocation error: ' + message + '.'
+		});
+	},
+
+	_handleGeolocationResponse: function (pos) {
+		var lat = pos.coords.latitude,
+		    lng = pos.coords.longitude,
+		    latlng = new LatLng(lat, lng),
+		    bounds = latlng.toBounds(pos.coords.accuracy * 2),
+		    options = this._locateOptions;
+
+		if (options.setView) {
+			var zoom = this.getBoundsZoom(bounds);
+			this.setView(latlng, options.maxZoom ? Math.min(zoom, options.maxZoom) : zoom);
+		}
+
+		var data = {
+			latlng: latlng,
+			bounds: bounds,
+			timestamp: pos.timestamp
+		};
+
+		for (var i in pos.coords) {
+			if (typeof pos.coords[i] === 'number') {
+				data[i] = pos.coords[i];
+			}
+		}
+
+		// @event locationfound: LocationEvent
+		// Fired when geolocation (using the [`locate`](#map-locate) method)
+		// went successfully.
+		this.fire('locationfound', data);
+	},
+
+	// TODO Appropriate docs section?
+	// @section Other Methods
+	// @method addHandler(name: String, HandlerClass: Function): this
+	// Adds a new `Handler` to the map, given its name and constructor function.
+	addHandler: function (name, HandlerClass) {
+		if (!HandlerClass) { return this; }
+
+		var handler = this[name] = new HandlerClass(this);
+
+		this._handlers.push(handler);
+
+		if (this.options[name]) {
+			handler.enable();
+		}
+
+		return this;
+	},
+
+	// @method remove(): this
+	// Destroys the map and clears all related event listeners.
+	remove: function () {
+
+		this._initEvents(true);
+
+		if (this._containerId !== this._container._leaflet_id) {
+			throw new Error('Map container is being reused by another instance');
+		}
+
+		try {
+			// throws error in IE6-8
+			delete this._container._leaflet_id;
+			delete this._containerId;
+		} catch (e) {
+			/*eslint-disable */
+			this._container._leaflet_id = undefined;
+			/* eslint-enable */
+			this._containerId = undefined;
+		}
+
+		if (this._locationWatchId !== undefined) {
+			this.stopLocate();
+		}
+
+		this._stop();
+
+		remove(this._mapPane);
+
+		if (this._clearControlPos) {
+			this._clearControlPos();
+		}
+		if (this._resizeRequest) {
+			cancelAnimFrame(this._resizeRequest);
+			this._resizeRequest = null;
+		}
+
+		this._clearHandlers();
+
+		if (this._loaded) {
+			// @section Map state change events
+			// @event unload: Event
+			// Fired when the map is destroyed with [remove](#map-remove) method.
+			this.fire('unload');
+		}
+
+		var i;
+		for (i in this._layers) {
+			this._layers[i].remove();
+		}
+		for (i in this._panes) {
+			remove(this._panes[i]);
+		}
+
+		this._layers = [];
+		this._panes = [];
+		delete this._mapPane;
+		delete this._renderer;
+
+		return this;
+	},
+
+	// @section Other Methods
+	// @method createPane(name: String, container?: HTMLElement): HTMLElement
+	// Creates a new [map pane](#map-pane) with the given name if it doesn't exist already,
+	// then returns it. The pane is created as a child of `container`, or
+	// as a child of the main map pane if not set.
+	createPane: function (name, container) {
+		var className = 'leaflet-pane' + (name ? ' leaflet-' + name.replace('Pane', '') + '-pane' : ''),
+		    pane = create$1('div', className, container || this._mapPane);
+
+		if (name) {
+			this._panes[name] = pane;
+		}
+		return pane;
+	},
+
+	// @section Methods for Getting Map State
+
+	// @method getCenter(): LatLng
+	// Returns the geographical center of the map view
+	getCenter: function () {
+		this._checkIfLoaded();
+
+		if (this._lastCenter && !this._moved()) {
+			return this._lastCenter;
+		}
+		return this.layerPointToLatLng(this._getCenterLayerPoint());
+	},
+
+	// @method getZoom(): Number
+	// Returns the current zoom level of the map view
+	getZoom: function () {
+		return this._zoom;
+	},
+
+	// @method getBounds(): LatLngBounds
+	// Returns the geographical bounds visible in the current map view
+	getBounds: function () {
+		var bounds = this.getPixelBounds(),
+		    sw = this.unproject(bounds.getBottomLeft()),
+		    ne = this.unproject(bounds.getTopRight());
+
+		return new LatLngBounds(sw, ne);
+	},
+
+	// @method getMinZoom(): Number
+	// Returns the minimum zoom level of the map (if set in the `minZoom` option of the map or of any layers), or `0` by default.
+	getMinZoom: function () {
+		return this.options.minZoom === undefined ? this._layersMinZoom || 0 : this.options.minZoom;
+	},
+
+	// @method getMaxZoom(): Number
+	// Returns the maximum zoom level of the map (if set in the `maxZoom` option of the map or of any layers).
+	getMaxZoom: function () {
+		return this.options.maxZoom === undefined ?
+			(this._layersMaxZoom === undefined ? Infinity : this._layersMaxZoom) :
+			this.options.maxZoom;
+	},
+
+	// @method getBoundsZoom(bounds: LatLngBounds, inside?: Boolean, padding?: Point): Number
+	// Returns the maximum zoom level on which the given bounds fit to the map
+	// view in its entirety. If `inside` (optional) is set to `true`, the method
+	// instead returns the minimum zoom level on which the map view fits into
+	// the given bounds in its entirety.
+	getBoundsZoom: function (bounds, inside, padding) { // (LatLngBounds[, Boolean, Point]) -> Number
+		bounds = toLatLngBounds(bounds);
+		padding = toPoint(padding || [0, 0]);
+
+		var zoom = this.getZoom() || 0,
+		    min = this.getMinZoom(),
+		    max = this.getMaxZoom(),
+		    nw = bounds.getNorthWest(),
+		    se = bounds.getSouthEast(),
+		    size = this.getSize().subtract(padding),
+		    boundsSize = toBounds(this.project(se, zoom), this.project(nw, zoom)).getSize(),
+		    snap = any3d ? this.options.zoomSnap : 1,
+		    scalex = size.x / boundsSize.x,
+		    scaley = size.y / boundsSize.y,
+		    scale = inside ? Math.max(scalex, scaley) : Math.min(scalex, scaley);
+
+		zoom = this.getScaleZoom(scale, zoom);
+
+		if (snap) {
+			zoom = Math.round(zoom / (snap / 100)) * (snap / 100); // don't jump if within 1% of a snap level
+			zoom = inside ? Math.ceil(zoom / snap) * snap : Math.floor(zoom / snap) * snap;
+		}
+
+		return Math.max(min, Math.min(max, zoom));
+	},
+
+	// @method getSize(): Point
+	// Returns the current size of the map container (in pixels).
+	getSize: function () {
+		if (!this._size || this._sizeChanged) {
+			this._size = new Point(
+				this._container.clientWidth || 0,
+				this._container.clientHeight || 0);
+
+			this._sizeChanged = false;
+		}
+		return this._size.clone();
+	},
+
+	// @method getPixelBounds(): Bounds
+	// Returns the bounds of the current map view in projected pixel
+	// coordinates (sometimes useful in layer and overlay implementations).
+	getPixelBounds: function (center, zoom) {
+		var topLeftPoint = this._getTopLeftPoint(center, zoom);
+		return new Bounds(topLeftPoint, topLeftPoint.add(this.getSize()));
+	},
+
+	// TODO: Check semantics - isn't the pixel origin the 0,0 coord relative to
+	// the map pane? "left point of the map layer" can be confusing, specially
+	// since there can be negative offsets.
+	// @method getPixelOrigin(): Point
+	// Returns the projected pixel coordinates of the top left point of
+	// the map layer (useful in custom layer and overlay implementations).
+	getPixelOrigin: function () {
+		this._checkIfLoaded();
+		return this._pixelOrigin;
+	},
+
+	// @method getPixelWorldBounds(zoom?: Number): Bounds
+	// Returns the world's bounds in pixel coordinates for zoom level `zoom`.
+	// If `zoom` is omitted, the map's current zoom level is used.
+	getPixelWorldBounds: function (zoom) {
+		return this.options.crs.getProjectedBounds(zoom === undefined ? this.getZoom() : zoom);
+	},
+
+	// @section Other Methods
+
+	// @method getPane(pane: String|HTMLElement): HTMLElement
+	// Returns a [map pane](#map-pane), given its name or its HTML element (its identity).
+	getPane: function (pane) {
+		return typeof pane === 'string' ? this._panes[pane] : pane;
+	},
+
+	// @method getPanes(): Object
+	// Returns a plain object containing the names of all [panes](#map-pane) as keys and
+	// the panes as values.
+	getPanes: function () {
+		return this._panes;
+	},
+
+	// @method getContainer: HTMLElement
+	// Returns the HTML element that contains the map.
+	getContainer: function () {
+		return this._container;
+	},
+
+
+	// @section Conversion Methods
+
+	// @method getZoomScale(toZoom: Number, fromZoom: Number): Number
+	// Returns the scale factor to be applied to a map transition from zoom level
+	// `fromZoom` to `toZoom`. Used internally to help with zoom animations.
+	getZoomScale: function (toZoom, fromZoom) {
+		// TODO replace with universal implementation after refactoring projections
+		var crs = this.options.crs;
+		fromZoom = fromZoom === undefined ? this._zoom : fromZoom;
+		return crs.scale(toZoom) / crs.scale(fromZoom);
+	},
+
+	// @method getScaleZoom(scale: Number, fromZoom: Number): Number
+	// Returns the zoom level that the map would end up at, if it is at `fromZoom`
+	// level and everything is scaled by a factor of `scale`. Inverse of
+	// [`getZoomScale`](#map-getZoomScale).
+	getScaleZoom: function (scale, fromZoom) {
+		var crs = this.options.crs;
+		fromZoom = fromZoom === undefined ? this._zoom : fromZoom;
+		var zoom = crs.zoom(scale * crs.scale(fromZoom));
+		return isNaN(zoom) ? Infinity : zoom;
+	},
+
+	// @method project(latlng: LatLng, zoom: Number): Point
+	// Projects a geographical coordinate `LatLng` according to the projection
+	// of the map's CRS, then scales it according to `zoom` and the CRS's
+	// `Transformation`. The result is pixel coordinate relative to
+	// the CRS origin.
+	project: function (latlng, zoom) {
+		zoom = zoom === undefined ? this._zoom : zoom;
+		return this.options.crs.latLngToPoint(toLatLng(latlng), zoom);
+	},
+
+	// @method unproject(point: Point, zoom: Number): LatLng
+	// Inverse of [`project`](#map-project).
+	unproject: function (point, zoom) {
+		zoom = zoom === undefined ? this._zoom : zoom;
+		return this.options.crs.pointToLatLng(toPoint(point), zoom);
+	},
+
+	// @method layerPointToLatLng(point: Point): LatLng
+	// Given a pixel coordinate relative to the [origin pixel](#map-getpixelorigin),
+	// returns the corresponding geographical coordinate (for the current zoom level).
+	layerPointToLatLng: function (point) {
+		var projectedPoint = toPoint(point).add(this.getPixelOrigin());
+		return this.unproject(projectedPoint);
+	},
+
+	// @method latLngToLayerPoint(latlng: LatLng): Point
+	// Given a geographical coordinate, returns the corresponding pixel coordinate
+	// relative to the [origin pixel](#map-getpixelorigin).
+	latLngToLayerPoint: function (latlng) {
+		var projectedPoint = this.project(toLatLng(latlng))._round();
+		return projectedPoint._subtract(this.getPixelOrigin());
+	},
+
+	// @method wrapLatLng(latlng: LatLng): LatLng
+	// Returns a `LatLng` where `lat` and `lng` has been wrapped according to the
+	// map's CRS's `wrapLat` and `wrapLng` properties, if they are outside the
+	// CRS's bounds.
+	// By default this means longitude is wrapped around the dateline so its
+	// value is between -180 and +180 degrees.
+	wrapLatLng: function (latlng) {
+		return this.options.crs.wrapLatLng(toLatLng(latlng));
+	},
+
+	// @method wrapLatLngBounds(bounds: LatLngBounds): LatLngBounds
+	// Returns a `LatLngBounds` with the same size as the given one, ensuring that
+	// its center is within the CRS's bounds.
+	// By default this means the center longitude is wrapped around the dateline so its
+	// value is between -180 and +180 degrees, and the majority of the bounds
+	// overlaps the CRS's bounds.
+	wrapLatLngBounds: function (latlng) {
+		return this.options.crs.wrapLatLngBounds(toLatLngBounds(latlng));
+	},
+
+	// @method distance(latlng1: LatLng, latlng2: LatLng): Number
+	// Returns the distance between two geographical coordinates according to
+	// the map's CRS. By default this measures distance in meters.
+	distance: function (latlng1, latlng2) {
+		return this.options.crs.distance(toLatLng(latlng1), toLatLng(latlng2));
+	},
+
+	// @method containerPointToLayerPoint(point: Point): Point
+	// Given a pixel coordinate relative to the map container, returns the corresponding
+	// pixel coordinate relative to the [origin pixel](#map-getpixelorigin).
+	containerPointToLayerPoint: function (point) { // (Point)
+		return toPoint(point).subtract(this._getMapPanePos());
+	},
+
+	// @method layerPointToContainerPoint(point: Point): Point
+	// Given a pixel coordinate relative to the [origin pixel](#map-getpixelorigin),
+	// returns the corresponding pixel coordinate relative to the map container.
+	layerPointToContainerPoint: function (point) { // (Point)
+		return toPoint(point).add(this._getMapPanePos());
+	},
+
+	// @method containerPointToLatLng(point: Point): LatLng
+	// Given a pixel coordinate relative to the map container, returns
+	// the corresponding geographical coordinate (for the current zoom level).
+	containerPointToLatLng: function (point) {
+		var layerPoint = this.containerPointToLayerPoint(toPoint(point));
+		return this.layerPointToLatLng(layerPoint);
+	},
+
+	// @method latLngToContainerPoint(latlng: LatLng): Point
+	// Given a geographical coordinate, returns the corresponding pixel coordinate
+	// relative to the map container.
+	latLngToContainerPoint: function (latlng) {
+		return this.layerPointToContainerPoint(this.latLngToLayerPoint(toLatLng(latlng)));
+	},
+
+	// @method mouseEventToContainerPoint(ev: MouseEvent): Point
+	// Given a MouseEvent object, returns the pixel coordinate relative to the
+	// map container where the event took place.
+	mouseEventToContainerPoint: function (e) {
+		return getMousePosition(e, this._container);
+	},
+
+	// @method mouseEventToLayerPoint(ev: MouseEvent): Point
+	// Given a MouseEvent object, returns the pixel coordinate relative to
+	// the [origin pixel](#map-getpixelorigin) where the event took place.
+	mouseEventToLayerPoint: function (e) {
+		return this.containerPointToLayerPoint(this.mouseEventToContainerPoint(e));
+	},
+
+	// @method mouseEventToLatLng(ev: MouseEvent): LatLng
+	// Given a MouseEvent object, returns geographical coordinate where the
+	// event took place.
+	mouseEventToLatLng: function (e) { // (MouseEvent)
+		return this.layerPointToLatLng(this.mouseEventToLayerPoint(e));
+	},
+
+
+	// map initialization methods
+
+	_initContainer: function (id) {
+		var container = this._container = get(id);
+
+		if (!container) {
+			throw new Error('Map container not found.');
+		} else if (container._leaflet_id) {
+			throw new Error('Map container is already initialized.');
+		}
+
+		on(container, 'scroll', this._onScroll, this);
+		this._containerId = stamp(container);
+	},
+
+	_initLayout: function () {
+		var container = this._container;
+
+		this._fadeAnimated = this.options.fadeAnimation && any3d;
+
+		addClass(container, 'leaflet-container' +
+			(touch ? ' leaflet-touch' : '') +
+			(retina ? ' leaflet-retina' : '') +
+			(ielt9 ? ' leaflet-oldie' : '') +
+			(safari ? ' leaflet-safari' : '') +
+			(this._fadeAnimated ? ' leaflet-fade-anim' : ''));
+
+		var position = getStyle(container, 'position');
+
+		if (position !== 'absolute' && position !== 'relative' && position !== 'fixed') {
+			container.style.position = 'relative';
+		}
+
+		this._initPanes();
+
+		if (this._initControlPos) {
+			this._initControlPos();
+		}
+	},
+
+	_initPanes: function () {
+		var panes = this._panes = {};
+		this._paneRenderers = {};
+
+		// @section
+		//
+		// Panes are DOM elements used to control the ordering of layers on the map. You
+		// can access panes with [`map.getPane`](#map-getpane) or
+		// [`map.getPanes`](#map-getpanes) methods. New panes can be created with the
+		// [`map.createPane`](#map-createpane) method.
+		//
+		// Every map has the following default panes that differ only in zIndex.
+		//
+		// @pane mapPane: HTMLElement = 'auto'
+		// Pane that contains all other map panes
+
+		this._mapPane = this.createPane('mapPane', this._container);
+		setPosition(this._mapPane, new Point(0, 0));
+
+		// @pane tilePane: HTMLElement = 200
+		// Pane for `GridLayer`s and `TileLayer`s
+		this.createPane('tilePane');
+		// @pane overlayPane: HTMLElement = 400
+		// Pane for vectors (`Path`s, like `Polyline`s and `Polygon`s), `ImageOverlay`s and `VideoOverlay`s
+		this.createPane('shadowPane');
+		// @pane shadowPane: HTMLElement = 500
+		// Pane for overlay shadows (e.g. `Marker` shadows)
+		this.createPane('overlayPane');
+		// @pane markerPane: HTMLElement = 600
+		// Pane for `Icon`s of `Marker`s
+		this.createPane('markerPane');
+		// @pane tooltipPane: HTMLElement = 650
+		// Pane for `Tooltip`s.
+		this.createPane('tooltipPane');
+		// @pane popupPane: HTMLElement = 700
+		// Pane for `Popup`s.
+		this.createPane('popupPane');
+
+		if (!this.options.markerZoomAnimation) {
+			addClass(panes.markerPane, 'leaflet-zoom-hide');
+			addClass(panes.shadowPane, 'leaflet-zoom-hide');
+		}
+	},
+
+
+	// private methods that modify map state
+
+	// @section Map state change events
+	_resetView: function (center, zoom) {
+		setPosition(this._mapPane, new Point(0, 0));
+
+		var loading = !this._loaded;
+		this._loaded = true;
+		zoom = this._limitZoom(zoom);
+
+		this.fire('viewprereset');
+
+		var zoomChanged = this._zoom !== zoom;
+		this
+			._moveStart(zoomChanged, false)
+			._move(center, zoom)
+			._moveEnd(zoomChanged);
+
+		// @event viewreset: Event
+		// Fired when the map needs to redraw its content (this usually happens
+		// on map zoom or load). Very useful for creating custom overlays.
+		this.fire('viewreset');
+
+		// @event load: Event
+		// Fired when the map is initialized (when its center and zoom are set
+		// for the first time).
+		if (loading) {
+			this.fire('load');
+		}
+	},
+
+	_moveStart: function (zoomChanged, noMoveStart) {
+		// @event zoomstart: Event
+		// Fired when the map zoom is about to change (e.g. before zoom animation).
+		// @event movestart: Event
+		// Fired when the view of the map starts changing (e.g. user starts dragging the map).
+		if (zoomChanged) {
+			this.fire('zoomstart');
+		}
+		if (!noMoveStart) {
+			this.fire('movestart');
+		}
+		return this;
+	},
+
+	_move: function (center, zoom, data) {
+		if (zoom === undefined) {
+			zoom = this._zoom;
+		}
+		var zoomChanged = this._zoom !== zoom;
+
+		this._zoom = zoom;
+		this._lastCenter = center;
+		this._pixelOrigin = this._getNewPixelOrigin(center);
+
+		// @event zoom: Event
+		// Fired repeatedly during any change in zoom level, including zoom
+		// and fly animations.
+		if (zoomChanged || (data && data.pinch)) {	// Always fire 'zoom' if pinching because #3530
+			this.fire('zoom', data);
+		}
+
+		// @event move: Event
+		// Fired repeatedly during any movement of the map, including pan and
+		// fly animations.
+		return this.fire('move', data);
+	},
+
+	_moveEnd: function (zoomChanged) {
+		// @event zoomend: Event
+		// Fired when the map has changed, after any animations.
+		if (zoomChanged) {
+			this.fire('zoomend');
+		}
+
+		// @event moveend: Event
+		// Fired when the center of the map stops changing (e.g. user stopped
+		// dragging the map).
+		return this.fire('moveend');
+	},
+
+	_stop: function () {
+		cancelAnimFrame(this._flyToFrame);
+		if (this._panAnim) {
+			this._panAnim.stop();
+		}
+		return this;
+	},
+
+	_rawPanBy: function (offset) {
+		setPosition(this._mapPane, this._getMapPanePos().subtract(offset));
+	},
+
+	_getZoomSpan: function () {
+		return this.getMaxZoom() - this.getMinZoom();
+	},
+
+	_panInsideMaxBounds: function () {
+		if (!this._enforcingBounds) {
+			this.panInsideBounds(this.options.maxBounds);
+		}
+	},
+
+	_checkIfLoaded: function () {
+		if (!this._loaded) {
+			throw new Error('Set map center and zoom first.');
+		}
+	},
+
+	// DOM event handling
+
+	// @section Interaction events
+	_initEvents: function (remove$$1) {
+		this._targets = {};
+		this._targets[stamp(this._container)] = this;
+
+		var onOff = remove$$1 ? off : on;
+
+		// @event click: MouseEvent
+		// Fired when the user clicks (or taps) the map.
+		// @event dblclick: MouseEvent
+		// Fired when the user double-clicks (or double-taps) the map.
+		// @event mousedown: MouseEvent
+		// Fired when the user pushes the mouse button on the map.
+		// @event mouseup: MouseEvent
+		// Fired when the user releases the mouse button on the map.
+		// @event mouseover: MouseEvent
+		// Fired when the mouse enters the map.
+		// @event mouseout: MouseEvent
+		// Fired when the mouse leaves the map.
+		// @event mousemove: MouseEvent
+		// Fired while the mouse moves over the map.
+		// @event contextmenu: MouseEvent
+		// Fired when the user pushes the right mouse button on the map, prevents
+		// default browser context menu from showing if there are listeners on
+		// this event. Also fired on mobile when the user holds a single touch
+		// for a second (also called long press).
+		// @event keypress: KeyboardEvent
+		// Fired when the user presses a key from the keyboard while the map is focused.
+		onOff(this._container, 'click dblclick mousedown mouseup ' +
+			'mouseover mouseout mousemove contextmenu keypress', this._handleDOMEvent, this);
+
+		if (this.options.trackResize) {
+			onOff(window, 'resize', this._onResize, this);
+		}
+
+		if (any3d && this.options.transform3DLimit) {
+			(remove$$1 ? this.off : this.on).call(this, 'moveend', this._onMoveEnd);
+		}
+	},
+
+	_onResize: function () {
+		cancelAnimFrame(this._resizeRequest);
+		this._resizeRequest = requestAnimFrame(
+		        function () { this.invalidateSize({debounceMoveend: true}); }, this);
+	},
+
+	_onScroll: function () {
+		this._container.scrollTop  = 0;
+		this._container.scrollLeft = 0;
+	},
+
+	_onMoveEnd: function () {
+		var pos = this._getMapPanePos();
+		if (Math.max(Math.abs(pos.x), Math.abs(pos.y)) >= this.options.transform3DLimit) {
+			// https://bugzilla.mozilla.org/show_bug.cgi?id=1203873 but Webkit also have
+			// a pixel offset on very high values, see: http://jsfiddle.net/dg6r5hhb/
+			this._resetView(this.getCenter(), this.getZoom());
+		}
+	},
+
+	_findEventTargets: function (e, type) {
+		var targets = [],
+		    target,
+		    isHover = type === 'mouseout' || type === 'mouseover',
+		    src = e.target || e.srcElement,
+		    dragging = false;
+
+		while (src) {
+			target = this._targets[stamp(src)];
+			if (target && (type === 'click' || type === 'preclick') && !e._simulated && this._draggableMoved(target)) {
+				// Prevent firing click after you just dragged an object.
+				dragging = true;
+				break;
+			}
+			if (target && target.listens(type, true)) {
+				if (isHover && !isExternalTarget(src, e)) { break; }
+				targets.push(target);
+				if (isHover) { break; }
+			}
+			if (src === this._container) { break; }
+			src = src.parentNode;
+		}
+		if (!targets.length && !dragging && !isHover && isExternalTarget(src, e)) {
+			targets = [this];
+		}
+		return targets;
+	},
+
+	_handleDOMEvent: function (e) {
+		if (!this._loaded || skipped(e)) { return; }
+
+		var type = e.type;
+
+		if (type === 'mousedown' || type === 'keypress') {
+			// prevents outline when clicking on keyboard-focusable element
+			preventOutline(e.target || e.srcElement);
+		}
+
+		this._fireDOMEvent(e, type);
+	},
+
+	_mouseEvents: ['click', 'dblclick', 'mouseover', 'mouseout', 'contextmenu'],
+
+	_fireDOMEvent: function (e, type, targets) {
+
+		if (e.type === 'click') {
+			// Fire a synthetic 'preclick' event which propagates up (mainly for closing popups).
+			// @event preclick: MouseEvent
+			// Fired before mouse click on the map (sometimes useful when you
+			// want something to happen on click before any existing click
+			// handlers start running).
+			var synth = extend({}, e);
+			synth.type = 'preclick';
+			this._fireDOMEvent(synth, synth.type, targets);
+		}
+
+		if (e._stopped) { return; }
+
+		// Find the layer the event is propagating from and its parents.
+		targets = (targets || []).concat(this._findEventTargets(e, type));
+
+		if (!targets.length) { return; }
+
+		var target = targets[0];
+		if (type === 'contextmenu' && target.listens(type, true)) {
+			preventDefault(e);
+		}
+
+		var data = {
+			originalEvent: e
+		};
+
+		if (e.type !== 'keypress') {
+			var isMarker = target.getLatLng && (!target._radius || target._radius <= 10);
+			data.containerPoint = isMarker ?
+				this.latLngToContainerPoint(target.getLatLng()) : this.mouseEventToContainerPoint(e);
+			data.layerPoint = this.containerPointToLayerPoint(data.containerPoint);
+			data.latlng = isMarker ? target.getLatLng() : this.layerPointToLatLng(data.layerPoint);
+		}
+
+		for (var i = 0; i < targets.length; i++) {
+			targets[i].fire(type, data, true);
+			if (data.originalEvent._stopped ||
+				(targets[i].options.bubblingMouseEvents === false && indexOf(this._mouseEvents, type) !== -1)) { return; }
+		}
+	},
+
+	_draggableMoved: function (obj) {
+		obj = obj.dragging && obj.dragging.enabled() ? obj : this;
+		return (obj.dragging && obj.dragging.moved()) || (this.boxZoom && this.boxZoom.moved());
+	},
+
+	_clearHandlers: function () {
+		for (var i = 0, len = this._handlers.length; i < len; i++) {
+			this._handlers[i].disable();
+		}
+	},
+
+	// @section Other Methods
+
+	// @method whenReady(fn: Function, context?: Object): this
+	// Runs the given function `fn` when the map gets initialized with
+	// a view (center and zoom) and at least one layer, or immediately
+	// if it's already initialized, optionally passing a function context.
+	whenReady: function (callback, context) {
+		if (this._loaded) {
+			callback.call(context || this, {target: this});
+		} else {
+			this.on('load', callback, context);
+		}
+		return this;
+	},
+
+
+	// private methods for getting map state
+
+	_getMapPanePos: function () {
+		return getPosition(this._mapPane) || new Point(0, 0);
+	},
+
+	_moved: function () {
+		var pos = this._getMapPanePos();
+		return pos && !pos.equals([0, 0]);
+	},
+
+	_getTopLeftPoint: function (center, zoom) {
+		var pixelOrigin = center && zoom !== undefined ?
+			this._getNewPixelOrigin(center, zoom) :
+			this.getPixelOrigin();
+		return pixelOrigin.subtract(this._getMapPanePos());
+	},
+
+	_getNewPixelOrigin: function (center, zoom) {
+		var viewHalf = this.getSize()._divideBy(2);
+		return this.project(center, zoom)._subtract(viewHalf)._add(this._getMapPanePos())._round();
+	},
+
+	_latLngToNewLayerPoint: function (latlng, zoom, center) {
+		var topLeft = this._getNewPixelOrigin(center, zoom);
+		return this.project(latlng, zoom)._subtract(topLeft);
+	},
+
+	_latLngBoundsToNewLayerBounds: function (latLngBounds, zoom, center) {
+		var topLeft = this._getNewPixelOrigin(center, zoom);
+		return toBounds([
+			this.project(latLngBounds.getSouthWest(), zoom)._subtract(topLeft),
+			this.project(latLngBounds.getNorthWest(), zoom)._subtract(topLeft),
+			this.project(latLngBounds.getSouthEast(), zoom)._subtract(topLeft),
+			this.project(latLngBounds.getNorthEast(), zoom)._subtract(topLeft)
+		]);
+	},
+
+	// layer point of the current center
+	_getCenterLayerPoint: function () {
+		return this.containerPointToLayerPoint(this.getSize()._divideBy(2));
+	},
+
+	// offset of the specified place to the current center in pixels
+	_getCenterOffset: function (latlng) {
+		return this.latLngToLayerPoint(latlng).subtract(this._getCenterLayerPoint());
+	},
+
+	// adjust center for view to get inside bounds
+	_limitCenter: function (center, zoom, bounds) {
+
+		if (!bounds) { return center; }
+
+		var centerPoint = this.project(center, zoom),
+		    viewHalf = this.getSize().divideBy(2),
+		    viewBounds = new Bounds(centerPoint.subtract(viewHalf), centerPoint.add(viewHalf)),
+		    offset = this._getBoundsOffset(viewBounds, bounds, zoom);
+
+		// If offset is less than a pixel, ignore.
+		// This prevents unstable projections from getting into
+		// an infinite loop of tiny offsets.
+		if (offset.round().equals([0, 0])) {
+			return center;
+		}
+
+		return this.unproject(centerPoint.add(offset), zoom);
+	},
+
+	// adjust offset for view to get inside bounds
+	_limitOffset: function (offset, bounds) {
+		if (!bounds) { return offset; }
+
+		var viewBounds = this.getPixelBounds(),
+		    newBounds = new Bounds(viewBounds.min.add(offset), viewBounds.max.add(offset));
+
+		return offset.add(this._getBoundsOffset(newBounds, bounds));
+	},
+
+	// returns offset needed for pxBounds to get inside maxBounds at a specified zoom
+	_getBoundsOffset: function (pxBounds, maxBounds, zoom) {
+		var projectedMaxBounds = toBounds(
+		        this.project(maxBounds.getNorthEast(), zoom),
+		        this.project(maxBounds.getSouthWest(), zoom)
+		    ),
+		    minOffset = projectedMaxBounds.min.subtract(pxBounds.min),
+		    maxOffset = projectedMaxBounds.max.subtract(pxBounds.max),
+
+		    dx = this._rebound(minOffset.x, -maxOffset.x),
+		    dy = this._rebound(minOffset.y, -maxOffset.y);
+
+		return new Point(dx, dy);
+	},
+
+	_rebound: function (left, right) {
+		return left + right > 0 ?
+			Math.round(left - right) / 2 :
+			Math.max(0, Math.ceil(left)) - Math.max(0, Math.floor(right));
+	},
+
+	_limitZoom: function (zoom) {
+		var min = this.getMinZoom(),
+		    max = this.getMaxZoom(),
+		    snap = any3d ? this.options.zoomSnap : 1;
+		if (snap) {
+			zoom = Math.round(zoom / snap) * snap;
+		}
+		return Math.max(min, Math.min(max, zoom));
+	},
+
+	_onPanTransitionStep: function () {
+		this.fire('move');
+	},
+
+	_onPanTransitionEnd: function () {
+		removeClass(this._mapPane, 'leaflet-pan-anim');
+		this.fire('moveend');
+	},
+
+	_tryAnimatedPan: function (center, options) {
+		// difference between the new and current centers in pixels
+		var offset = this._getCenterOffset(center)._trunc();
+
+		// don't animate too far unless animate: true specified in options
+		if ((options && options.animate) !== true && !this.getSize().contains(offset)) { return false; }
+
+		this.panBy(offset, options);
+
+		return true;
+	},
+
+	_createAnimProxy: function () {
+
+		var proxy = this._proxy = create$1('div', 'leaflet-proxy leaflet-zoom-animated');
+		this._panes.mapPane.appendChild(proxy);
+
+		this.on('zoomanim', function (e) {
+			var prop = TRANSFORM,
+			    transform = this._proxy.style[prop];
+
+			setTransform(this._proxy, this.project(e.center, e.zoom), this.getZoomScale(e.zoom, 1));
+
+			// workaround for case when transform is the same and so transitionend event is not fired
+			if (transform === this._proxy.style[prop] && this._animatingZoom) {
+				this._onZoomTransitionEnd();
+			}
+		}, this);
+
+		this.on('load moveend', function () {
+			var c = this.getCenter(),
+			    z = this.getZoom();
+			setTransform(this._proxy, this.project(c, z), this.getZoomScale(z, 1));
+		}, this);
+
+		this._on('unload', this._destroyAnimProxy, this);
+	},
+
+	_destroyAnimProxy: function () {
+		remove(this._proxy);
+		delete this._proxy;
+	},
+
+	_catchTransitionEnd: function (e) {
+		if (this._animatingZoom && e.propertyName.indexOf('transform') >= 0) {
+			this._onZoomTransitionEnd();
+		}
+	},
+
+	_nothingToAnimate: function () {
+		return !this._container.getElementsByClassName('leaflet-zoom-animated').length;
+	},
+
+	_tryAnimatedZoom: function (center, zoom, options) {
+
+		if (this._animatingZoom) { return true; }
+
+		options = options || {};
+
+		// don't animate if disabled, not supported or zoom difference is too large
+		if (!this._zoomAnimated || options.animate === false || this._nothingToAnimate() ||
+		        Math.abs(zoom - this._zoom) > this.options.zoomAnimationThreshold) { return false; }
+
+		// offset is the pixel coords of the zoom origin relative to the current center
+		var scale = this.getZoomScale(zoom),
+		    offset = this._getCenterOffset(center)._divideBy(1 - 1 / scale);
+
+		// don't animate if the zoom origin isn't within one screen from the current center, unless forced
+		if (options.animate !== true && !this.getSize().contains(offset)) { return false; }
+
+		requestAnimFrame(function () {
+			this
+			    ._moveStart(true, false)
+			    ._animateZoom(center, zoom, true);
+		}, this);
+
+		return true;
+	},
+
+	_animateZoom: function (center, zoom, startAnim, noUpdate) {
+		if (!this._mapPane) { return; }
+
+		if (startAnim) {
+			this._animatingZoom = true;
+
+			// remember what center/zoom to set after animation
+			this._animateToCenter = center;
+			this._animateToZoom = zoom;
+
+			addClass(this._mapPane, 'leaflet-zoom-anim');
+		}
+
+		// @event zoomanim: ZoomAnimEvent
+		// Fired on every frame of a zoom animation
+		this.fire('zoomanim', {
+			center: center,
+			zoom: zoom,
+			noUpdate: noUpdate
+		});
+
+		// Work around webkit not firing 'transitionend', see https://github.com/Leaflet/Leaflet/issues/3689, 2693
+		setTimeout(bind(this._onZoomTransitionEnd, this), 250);
+	},
+
+	_onZoomTransitionEnd: function () {
+		if (!this._animatingZoom) { return; }
+
+		if (this._mapPane) {
+			removeClass(this._mapPane, 'leaflet-zoom-anim');
+		}
+
+		this._animatingZoom = false;
+
+		this._move(this._animateToCenter, this._animateToZoom);
+
+		// This anim frame should prevent an obscure iOS webkit tile loading race condition.
+		requestAnimFrame(function () {
+			this._moveEnd(true);
+		}, this);
+	}
+});
+
+// @section
+
+// @factory L.map(id: String, options?: Map options)
+// Instantiates a map object given the DOM ID of a `<div>` element
+// and optionally an object literal with `Map options`.
+//
+// @alternative
+// @factory L.map(el: HTMLElement, options?: Map options)
+// Instantiates a map object given an instance of a `<div>` HTML element
+// and optionally an object literal with `Map options`.
+function createMap(id, options) {
+	return new Map(id, options);
+}
+
+/*
+ * @class Control
+ * @aka L.Control
+ * @inherits Class
+ *
+ * L.Control is a base class for implementing map controls. Handles positioning.
+ * All other controls extend from this class.
+ */
+
+var Control = Class.extend({
+	// @section
+	// @aka Control options
+	options: {
+		// @option position: String = 'topright'
+		// The position of the control (one of the map corners). Possible values are `'topleft'`,
+		// `'topright'`, `'bottomleft'` or `'bottomright'`
+		position: 'topright'
+	},
+
+	initialize: function (options) {
+		setOptions(this, options);
+	},
+
+	/* @section
+	 * Classes extending L.Control will inherit the following methods:
+	 *
+	 * @method getPosition: string
+	 * Returns the position of the control.
+	 */
+	getPosition: function () {
+		return this.options.position;
+	},
+
+	// @method setPosition(position: string): this
+	// Sets the position of the control.
+	setPosition: function (position) {
+		var map = this._map;
+
+		if (map) {
+			map.removeControl(this);
+		}
+
+		this.options.position = position;
+
+		if (map) {
+			map.addControl(this);
+		}
+
+		return this;
+	},
+
+	// @method getContainer: HTMLElement
+	// Returns the HTMLElement that contains the control.
+	getContainer: function () {
+		return this._container;
+	},
+
+	// @method addTo(map: Map): this
+	// Adds the control to the given map.
+	addTo: function (map) {
+		this.remove();
+		this._map = map;
+
+		var container = this._container = this.onAdd(map),
+		    pos = this.getPosition(),
+		    corner = map._controlCorners[pos];
+
+		addClass(container, 'leaflet-control');
+
+		if (pos.indexOf('bottom') !== -1) {
+			corner.insertBefore(container, corner.firstChild);
+		} else {
+			corner.appendChild(container);
+		}
+
+		return this;
+	},
+
+	// @method remove: this
+	// Removes the control from the map it is currently active on.
+	remove: function () {
+		if (!this._map) {
+			return this;
+		}
+
+		remove(this._container);
+
+		if (this.onRemove) {
+			this.onRemove(this._map);
+		}
+
+		this._map = null;
+
+		return this;
+	},
+
+	_refocusOnMap: function (e) {
+		// if map exists and event is not a keyboard event
+		if (this._map && e && e.screenX > 0 && e.screenY > 0) {
+			this._map.getContainer().focus();
+		}
+	}
+});
+
+var control = function (options) {
+	return new Control(options);
+};
+
+/* @section Extension methods
+ * @uninheritable
+ *
+ * Every control should extend from `L.Control` and (re-)implement the following methods.
+ *
+ * @method onAdd(map: Map): HTMLElement
+ * Should return the container DOM element for the control and add listeners on relevant map events. Called on [`control.addTo(map)`](#control-addTo).
+ *
+ * @method onRemove(map: Map)
+ * Optional method. Should contain all clean up code that removes the listeners previously added in [`onAdd`](#control-onadd). Called on [`control.remove()`](#control-remove).
+ */
+
+/* @namespace Map
+ * @section Methods for Layers and Controls
+ */
+Map.include({
+	// @method addControl(control: Control): this
+	// Adds the given control to the map
+	addControl: function (control) {
+		control.addTo(this);
+		return this;
+	},
+
+	// @method removeControl(control: Control): this
+	// Removes the given control from the map
+	removeControl: function (control) {
+		control.remove();
+		return this;
+	},
+
+	_initControlPos: function () {
+		var corners = this._controlCorners = {},
+		    l = 'leaflet-',
+		    container = this._controlContainer =
+		            create$1('div', l + 'control-container', this._container);
+
+		function createCorner(vSide, hSide) {
+			var className = l + vSide + ' ' + l + hSide;
+
+			corners[vSide + hSide] = create$1('div', className, container);
+		}
+
+		createCorner('top', 'left');
+		createCorner('top', 'right');
+		createCorner('bottom', 'left');
+		createCorner('bottom', 'right');
+	},
+
+	_clearControlPos: function () {
+		for (var i in this._controlCorners) {
+			remove(this._controlCorners[i]);
+		}
+		remove(this._controlContainer);
+		delete this._controlCorners;
+		delete this._controlContainer;
+	}
+});
+
+/*
+ * @class Control.Layers
+ * @aka L.Control.Layers
+ * @inherits Control
+ *
+ * The layers control gives users the ability to switch between different base layers and switch overlays on/off (check out the [detailed example](http://leafletjs.com/examples/layers-control/)). Extends `Control`.
+ *
+ * @example
+ *
+ * ```js
+ * var baseLayers = {
+ * 	"Mapbox": mapbox,
+ * 	"OpenStreetMap": osm
+ * };
+ *
+ * var overlays = {
+ * 	"Marker": marker,
+ * 	"Roads": roadsLayer
+ * };
+ *
+ * L.control.layers(baseLayers, overlays).addTo(map);
+ * ```
+ *
+ * The `baseLayers` and `overlays` parameters are object literals with layer names as keys and `Layer` objects as values:
+ *
+ * ```js
+ * {
+ *     "<someName1>": layer1,
+ *     "<someName2>": layer2
+ * }
+ * ```
+ *
+ * The layer names can contain HTML, which allows you to add additional styling to the items:
+ *
+ * ```js
+ * {"<img src='my-layer-icon' /> <span class='my-layer-item'>My Layer</span>": myLayer}
+ * ```
+ */
+
+var Layers = Control.extend({
+	// @section
+	// @aka Control.Layers options
+	options: {
+		// @option collapsed: Boolean = true
+		// If `true`, the control will be collapsed into an icon and expanded on mouse hover or touch.
+		collapsed: true,
+		position: 'topright',
+
+		// @option autoZIndex: Boolean = true
+		// If `true`, the control will assign zIndexes in increasing order to all of its layers so that the order is preserved when switching them on/off.
+		autoZIndex: true,
+
+		// @option hideSingleBase: Boolean = false
+		// If `true`, the base layers in the control will be hidden when there is only one.
+		hideSingleBase: false,
+
+		// @option sortLayers: Boolean = false
+		// Whether to sort the layers. When `false`, layers will keep the order
+		// in which they were added to the control.
+		sortLayers: false,
+
+		// @option sortFunction: Function = *
+		// A [compare function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+		// that will be used for sorting the layers, when `sortLayers` is `true`.
+		// The function receives both the `L.Layer` instances and their names, as in
+		// `sortFunction(layerA, layerB, nameA, nameB)`.
+		// By default, it sorts layers alphabetically by their name.
+		sortFunction: function (layerA, layerB, nameA, nameB) {
+			return nameA < nameB ? -1 : (nameB < nameA ? 1 : 0);
+		}
+	},
+
+	initialize: function (baseLayers, overlays, options) {
+		setOptions(this, options);
+
+		this._layerControlInputs = [];
+		this._layers = [];
+		this._lastZIndex = 0;
+		this._handlingClick = false;
+
+		for (var i in baseLayers) {
+			this._addLayer(baseLayers[i], i);
+		}
+
+		for (i in overlays) {
+			this._addLayer(overlays[i], i, true);
+		}
+	},
+
+	onAdd: function (map) {
+		this._initLayout();
+		this._update();
+
+		this._map = map;
+		map.on('zoomend', this._checkDisabledLayers, this);
+
+		for (var i = 0; i < this._layers.length; i++) {
+			this._layers[i].layer.on('add remove', this._onLayerChange, this);
+		}
+
+		return this._container;
+	},
+
+	addTo: function (map) {
+		Control.prototype.addTo.call(this, map);
+		// Trigger expand after Layers Control has been inserted into DOM so that is now has an actual height.
+		return this._expandIfNotCollapsed();
+	},
+
+	onRemove: function () {
+		this._map.off('zoomend', this._checkDisabledLayers, this);
+
+		for (var i = 0; i < this._layers.length; i++) {
+			this._layers[i].layer.off('add remove', this._onLayerChange, this);
+		}
+	},
+
+	// @method addBaseLayer(layer: Layer, name: String): this
+	// Adds a base layer (radio button entry) with the given name to the control.
+	addBaseLayer: function (layer, name) {
+		this._addLayer(layer, name);
+		return (this._map) ? this._update() : this;
+	},
+
+	// @method addOverlay(layer: Layer, name: String): this
+	// Adds an overlay (checkbox entry) with the given name to the control.
+	addOverlay: function (layer, name) {
+		this._addLayer(layer, name, true);
+		return (this._map) ? this._update() : this;
+	},
+
+	// @method removeLayer(layer: Layer): this
+	// Remove the given layer from the control.
+	removeLayer: function (layer) {
+		layer.off('add remove', this._onLayerChange, this);
+
+		var obj = this._getLayer(stamp(layer));
+		if (obj) {
+			this._layers.splice(this._layers.indexOf(obj), 1);
+		}
+		return (this._map) ? this._update() : this;
+	},
+
+	// @method expand(): this
+	// Expand the control container if collapsed.
+	expand: function () {
+		addClass(this._container, 'leaflet-control-layers-expanded');
+		this._form.style.height = null;
+		var acceptableHeight = this._map.getSize().y - (this._container.offsetTop + 50);
+		if (acceptableHeight < this._form.clientHeight) {
+			addClass(this._form, 'leaflet-control-layers-scrollbar');
+			this._form.style.height = acceptableHeight + 'px';
+		} else {
+			removeClass(this._form, 'leaflet-control-layers-scrollbar');
+		}
+		this._checkDisabledLayers();
+		return this;
+	},
+
+	// @method collapse(): this
+	// Collapse the control container if expanded.
+	collapse: function () {
+		removeClass(this._container, 'leaflet-control-layers-expanded');
+		return this;
+	},
+
+	_initLayout: function () {
+		var className = 'leaflet-control-layers',
+		    container = this._container = create$1('div', className),
+		    collapsed = this.options.collapsed;
+
+		// makes this work on IE touch devices by stopping it from firing a mouseout event when the touch is released
+		container.setAttribute('aria-haspopup', true);
+
+		disableClickPropagation(container);
+		disableScrollPropagation(container);
+
+		var form = this._form = create$1('form', className + '-list');
+
+		if (collapsed) {
+			this._map.on('click', this.collapse, this);
+
+			if (!android) {
+				on(container, {
+					mouseenter: this.expand,
+					mouseleave: this.collapse
+				}, this);
+			}
+		}
+
+		var link = this._layersLink = create$1('a', className + '-toggle', container);
+		link.href = '#';
+		link.title = 'Layers';
+
+		if (touch) {
+			on(link, 'click', stop);
+			on(link, 'click', this.expand, this);
+		} else {
+			on(link, 'focus', this.expand, this);
+		}
+
+		if (!collapsed) {
+			this.expand();
+		}
+
+		this._baseLayersList = create$1('div', className + '-base', form);
+		this._separator = create$1('div', className + '-separator', form);
+		this._overlaysList = create$1('div', className + '-overlays', form);
+
+		container.appendChild(form);
+	},
+
+	_getLayer: function (id) {
+		for (var i = 0; i < this._layers.length; i++) {
+
+			if (this._layers[i] && stamp(this._layers[i].layer) === id) {
+				return this._layers[i];
+			}
+		}
+	},
+
+	_addLayer: function (layer, name, overlay) {
+		if (this._map) {
+			layer.on('add remove', this._onLayerChange, this);
+		}
+
+		this._layers.push({
+			layer: layer,
+			name: name,
+			overlay: overlay
+		});
+
+		if (this.options.sortLayers) {
+			this._layers.sort(bind(function (a, b) {
+				return this.options.sortFunction(a.layer, b.layer, a.name, b.name);
+			}, this));
+		}
+
+		if (this.options.autoZIndex && layer.setZIndex) {
+			this._lastZIndex++;
+			layer.setZIndex(this._lastZIndex);
+		}
+
+		this._expandIfNotCollapsed();
+	},
+
+	_update: function () {
+		if (!this._container) { return this; }
+
+		empty(this._baseLayersList);
+		empty(this._overlaysList);
+
+		this._layerControlInputs = [];
+		var baseLayersPresent, overlaysPresent, i, obj, baseLayersCount = 0;
+
+		for (i = 0; i < this._layers.length; i++) {
+			obj = this._layers[i];
+			this._addItem(obj);
+			overlaysPresent = overlaysPresent || obj.overlay;
+			baseLayersPresent = baseLayersPresent || !obj.overlay;
+			baseLayersCount += !obj.overlay ? 1 : 0;
+		}
+
+		// Hide base layers section if there's only one layer.
+		if (this.options.hideSingleBase) {
+			baseLayersPresent = baseLayersPresent && baseLayersCount > 1;
+			this._baseLayersList.style.display = baseLayersPresent ? '' : 'none';
+		}
+
+		this._separator.style.display = overlaysPresent && baseLayersPresent ? '' : 'none';
+
+		return this;
+	},
+
+	_onLayerChange: function (e) {
+		if (!this._handlingClick) {
+			this._update();
+		}
+
+		var obj = this._getLayer(stamp(e.target));
+
+		// @namespace Map
+		// @section Layer events
+		// @event baselayerchange: LayersControlEvent
+		// Fired when the base layer is changed through the [layer control](#control-layers).
+		// @event overlayadd: LayersControlEvent
+		// Fired when an overlay is selected through the [layer control](#control-layers).
+		// @event overlayremove: LayersControlEvent
+		// Fired when an overlay is deselected through the [layer control](#control-layers).
+		// @namespace Control.Layers
+		var type = obj.overlay ?
+			(e.type === 'add' ? 'overlayadd' : 'overlayremove') :
+			(e.type === 'add' ? 'baselayerchange' : null);
+
+		if (type) {
+			this._map.fire(type, obj);
+		}
+	},
+
+	// IE7 bugs out if you create a radio dynamically, so you have to do it this hacky way (see http://bit.ly/PqYLBe)
+	_createRadioElement: function (name, checked) {
+
+		var radioHtml = '<input type="radio" class="leaflet-control-layers-selector" name="' +
+				name + '"' + (checked ? ' checked="checked"' : '') + '/>';
+
+		var radioFragment = document.createElement('div');
+		radioFragment.innerHTML = radioHtml;
+
+		return radioFragment.firstChild;
+	},
+
+	_addItem: function (obj) {
+		var label = document.createElement('label'),
+		    checked = this._map.hasLayer(obj.layer),
+		    input;
+
+		if (obj.overlay) {
+			input = document.createElement('input');
+			input.type = 'checkbox';
+			input.className = 'leaflet-control-layers-selector';
+			input.defaultChecked = checked;
+		} else {
+			input = this._createRadioElement('leaflet-base-layers', checked);
+		}
+
+		this._layerControlInputs.push(input);
+		input.layerId = stamp(obj.layer);
+
+		on(input, 'click', this._onInputClick, this);
+
+		var name = document.createElement('span');
+		name.innerHTML = ' ' + obj.name;
+
+		// Helps from preventing layer control flicker when checkboxes are disabled
+		// https://github.com/Leaflet/Leaflet/issues/2771
+		var holder = document.createElement('div');
+
+		label.appendChild(holder);
+		holder.appendChild(input);
+		holder.appendChild(name);
+
+		var container = obj.overlay ? this._overlaysList : this._baseLayersList;
+		container.appendChild(label);
+
+		this._checkDisabledLayers();
+		return label;
+	},
+
+	_onInputClick: function () {
+		var inputs = this._layerControlInputs,
+		    input, layer;
+		var addedLayers = [],
+		    removedLayers = [];
+
+		this._handlingClick = true;
+
+		for (var i = inputs.length - 1; i >= 0; i--) {
+			input = inputs[i];
+			layer = this._getLayer(input.layerId).layer;
+
+			if (input.checked) {
+				addedLayers.push(layer);
+			} else if (!input.checked) {
+				removedLayers.push(layer);
+			}
+		}
+
+		// Bugfix issue 2318: Should remove all old layers before readding new ones
+		for (i = 0; i < removedLayers.length; i++) {
+			if (this._map.hasLayer(removedLayers[i])) {
+				this._map.removeLayer(removedLayers[i]);
+			}
+		}
+		for (i = 0; i < addedLayers.length; i++) {
+			if (!this._map.hasLayer(addedLayers[i])) {
+				this._map.addLayer(addedLayers[i]);
+			}
+		}
+
+		this._handlingClick = false;
+
+		this._refocusOnMap();
+	},
+
+	_checkDisabledLayers: function () {
+		var inputs = this._layerControlInputs,
+		    input,
+		    layer,
+		    zoom = this._map.getZoom();
+
+		for (var i = inputs.length - 1; i >= 0; i--) {
+			input = inputs[i];
+			layer = this._getLayer(input.layerId).layer;
+			input.disabled = (layer.options.minZoom !== undefined && zoom < layer.options.minZoom) ||
+			                 (layer.options.maxZoom !== undefined && zoom > layer.options.maxZoom);
+
+		}
+	},
+
+	_expandIfNotCollapsed: function () {
+		if (this._map && !this.options.collapsed) {
+			this.expand();
+		}
+		return this;
+	},
+
+	_expand: function () {
+		// Backward compatibility, remove me in 1.1.
+		return this.expand();
+	},
+
+	_collapse: function () {
+		// Backward compatibility, remove me in 1.1.
+		return this.collapse();
+	}
+
+});
+
+
+// @factory L.control.layers(baselayers?: Object, overlays?: Object, options?: Control.Layers options)
+// Creates an attribution control with the given layers. Base layers will be switched with radio buttons, while overlays will be switched with checkboxes. Note that all base layers should be passed in the base layers object, but only one should be added to the map during map instantiation.
+var layers = function (baseLayers, overlays, options) {
+	return new Layers(baseLayers, overlays, options);
+};
+
+/*
+ * @class Control.Zoom
+ * @aka L.Control.Zoom
+ * @inherits Control
+ *
+ * A basic zoom control with two buttons (zoom in and zoom out). It is put on the map by default unless you set its [`zoomControl` option](#map-zoomcontrol) to `false`. Extends `Control`.
+ */
+
+var Zoom = Control.extend({
+	// @section
+	// @aka Control.Zoom options
+	options: {
+		position: 'topleft',
+
+		// @option zoomInText: String = '+'
+		// The text set on the 'zoom in' button.
+		zoomInText: '+',
+
+		// @option zoomInTitle: String = 'Zoom in'
+		// The title set on the 'zoom in' button.
+		zoomInTitle: 'Zoom in',
+
+		// @option zoomOutText: String = '&#x2212;'
+		// The text set on the 'zoom out' button.
+		zoomOutText: '&#x2212;',
+
+		// @option zoomOutTitle: String = 'Zoom out'
+		// The title set on the 'zoom out' button.
+		zoomOutTitle: 'Zoom out'
+	},
+
+	onAdd: function (map) {
+		var zoomName = 'leaflet-control-zoom',
+		    container = create$1('div', zoomName + ' leaflet-bar'),
+		    options = this.options;
+
+		this._zoomInButton  = this._createButton(options.zoomInText, options.zoomInTitle,
+		        zoomName + '-in',  container, this._zoomIn);
+		this._zoomOutButton = this._createButton(options.zoomOutText, options.zoomOutTitle,
+		        zoomName + '-out', container, this._zoomOut);
+
+		this._updateDisabled();
+		map.on('zoomend zoomlevelschange', this._updateDisabled, this);
+
+		return container;
+	},
+
+	onRemove: function (map) {
+		map.off('zoomend zoomlevelschange', this._updateDisabled, this);
+	},
+
+	disable: function () {
+		this._disabled = true;
+		this._updateDisabled();
+		return this;
+	},
+
+	enable: function () {
+		this._disabled = false;
+		this._updateDisabled();
+		return this;
+	},
+
+	_zoomIn: function (e) {
+		if (!this._disabled && this._map._zoom < this._map.getMaxZoom()) {
+			this._map.zoomIn(this._map.options.zoomDelta * (e.shiftKey ? 3 : 1));
+		}
+	},
+
+	_zoomOut: function (e) {
+		if (!this._disabled && this._map._zoom > this._map.getMinZoom()) {
+			this._map.zoomOut(this._map.options.zoomDelta * (e.shiftKey ? 3 : 1));
+		}
+	},
+
+	_createButton: function (html, title, className, container, fn) {
+		var link = create$1('a', className, container);
+		link.innerHTML = html;
+		link.href = '#';
+		link.title = title;
+
+		/*
+		 * Will force screen readers like VoiceOver to read this as "Zoom in - button"
+		 */
+		link.setAttribute('role', 'button');
+		link.setAttribute('aria-label', title);
+
+		disableClickPropagation(link);
+		on(link, 'click', stop);
+		on(link, 'click', fn, this);
+		on(link, 'click', this._refocusOnMap, this);
+
+		return link;
+	},
+
+	_updateDisabled: function () {
+		var map = this._map,
+		    className = 'leaflet-disabled';
+
+		removeClass(this._zoomInButton, className);
+		removeClass(this._zoomOutButton, className);
+
+		if (this._disabled || map._zoom === map.getMinZoom()) {
+			addClass(this._zoomOutButton, className);
+		}
+		if (this._disabled || map._zoom === map.getMaxZoom()) {
+			addClass(this._zoomInButton, className);
+		}
+	}
+});
+
+// @namespace Map
+// @section Control options
+// @option zoomControl: Boolean = true
+// Whether a [zoom control](#control-zoom) is added to the map by default.
+Map.mergeOptions({
+	zoomControl: true
+});
+
+Map.addInitHook(function () {
+	if (this.options.zoomControl) {
+		// @section Controls
+		// @property zoomControl: Control.Zoom
+		// The default zoom control (only available if the
+		// [`zoomControl` option](#map-zoomcontrol) was `true` when creating the map).
+		this.zoomControl = new Zoom();
+		this.addControl(this.zoomControl);
+	}
+});
+
+// @namespace Control.Zoom
+// @factory L.control.zoom(options: Control.Zoom options)
+// Creates a zoom control
+var zoom = function (options) {
+	return new Zoom(options);
+};
+
+/*
+ * @class Control.Scale
+ * @aka L.Control.Scale
+ * @inherits Control
+ *
+ * A simple scale control that shows the scale of the current center of screen in metric (m/km) and imperial (mi/ft) systems. Extends `Control`.
+ *
+ * @example
+ *
+ * ```js
+ * L.control.scale().addTo(map);
+ * ```
+ */
+
+var Scale = Control.extend({
+	// @section
+	// @aka Control.Scale options
+	options: {
+		position: 'bottomleft',
+
+		// @option maxWidth: Number = 100
+		// Maximum width of the control in pixels. The width is set dynamically to show round values (e.g. 100, 200, 500).
+		maxWidth: 100,
+
+		// @option metric: Boolean = True
+		// Whether to show the metric scale line (m/km).
+		metric: true,
+
+		// @option imperial: Boolean = True
+		// Whether to show the imperial scale line (mi/ft).
+		imperial: true
+
+		// @option updateWhenIdle: Boolean = false
+		// If `true`, the control is updated on [`moveend`](#map-moveend), otherwise it's always up-to-date (updated on [`move`](#map-move)).
+	},
+
+	onAdd: function (map) {
+		var className = 'leaflet-control-scale',
+		    container = create$1('div', className),
+		    options = this.options;
+
+		this._addScales(options, className + '-line', container);
+
+		map.on(options.updateWhenIdle ? 'moveend' : 'move', this._update, this);
+		map.whenReady(this._update, this);
+
+		return container;
+	},
+
+	onRemove: function (map) {
+		map.off(this.options.updateWhenIdle ? 'moveend' : 'move', this._update, this);
+	},
+
+	_addScales: function (options, className, container) {
+		if (options.metric) {
+			this._mScale = create$1('div', className, container);
+		}
+		if (options.imperial) {
+			this._iScale = create$1('div', className, container);
+		}
+	},
+
+	_update: function () {
+		var map = this._map,
+		    y = map.getSize().y / 2;
+
+		var maxMeters = map.distance(
+			map.containerPointToLatLng([0, y]),
+			map.containerPointToLatLng([this.options.maxWidth, y]));
+
+		this._updateScales(maxMeters);
+	},
+
+	_updateScales: function (maxMeters) {
+		if (this.options.metric && maxMeters) {
+			this._updateMetric(maxMeters);
+		}
+		if (this.options.imperial && maxMeters) {
+			this._updateImperial(maxMeters);
+		}
+	},
+
+	_updateMetric: function (maxMeters) {
+		var meters = this._getRoundNum(maxMeters),
+		    label = meters < 1000 ? meters + ' m' : (meters / 1000) + ' km';
+
+		this._updateScale(this._mScale, label, meters / maxMeters);
+	},
+
+	_updateImperial: function (maxMeters) {
+		var maxFeet = maxMeters * 3.2808399,
+		    maxMiles, miles, feet;
+
+		if (maxFeet > 5280) {
+			maxMiles = maxFeet / 5280;
+			miles = this._getRoundNum(maxMiles);
+			this._updateScale(this._iScale, miles + ' mi', miles / maxMiles);
+
+		} else {
+			feet = this._getRoundNum(maxFeet);
+			this._updateScale(this._iScale, feet + ' ft', feet / maxFeet);
+		}
+	},
+
+	_updateScale: function (scale, text, ratio) {
+		scale.style.width = Math.round(this.options.maxWidth * ratio) + 'px';
+		scale.innerHTML = text;
+	},
+
+	_getRoundNum: function (num) {
+		var pow10 = Math.pow(10, (Math.floor(num) + '').length - 1),
+		    d = num / pow10;
+
+		d = d >= 10 ? 10 :
+		    d >= 5 ? 5 :
+		    d >= 3 ? 3 :
+		    d >= 2 ? 2 : 1;
+
+		return pow10 * d;
+	}
+});
+
+
+// @factory L.control.scale(options?: Control.Scale options)
+// Creates an scale control with the given options.
+var scale = function (options) {
+	return new Scale(options);
+};
+
+/*
+ * @class Control.Attribution
+ * @aka L.Control.Attribution
+ * @inherits Control
+ *
+ * The attribution control allows you to display attribution data in a small text box on a map. It is put on the map by default unless you set its [`attributionControl` option](#map-attributioncontrol) to `false`, and it fetches attribution texts from layers with the [`getAttribution` method](#layer-getattribution) automatically. Extends Control.
+ */
+
+var Attribution = Control.extend({
+	// @section
+	// @aka Control.Attribution options
+	options: {
+		position: 'bottomright',
+
+		// @option prefix: String = 'Leaflet'
+		// The HTML text shown before the attributions. Pass `false` to disable.
+		prefix: '<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>'
+	},
+
+	initialize: function (options) {
+		setOptions(this, options);
+
+		this._attributions = {};
+	},
+
+	onAdd: function (map) {
+		map.attributionControl = this;
+		this._container = create$1('div', 'leaflet-control-attribution');
+		disableClickPropagation(this._container);
+
+		// TODO ugly, refactor
+		for (var i in map._layers) {
+			if (map._layers[i].getAttribution) {
+				this.addAttribution(map._layers[i].getAttribution());
+			}
+		}
+
+		this._update();
+
+		return this._container;
+	},
+
+	// @method setPrefix(prefix: String): this
+	// Sets the text before the attributions.
+	setPrefix: function (prefix) {
+		this.options.prefix = prefix;
+		this._update();
+		return this;
+	},
+
+	// @method addAttribution(text: String): this
+	// Adds an attribution text (e.g. `'Vector data &copy; Mapbox'`).
+	addAttribution: function (text) {
+		if (!text) { return this; }
+
+		if (!this._attributions[text]) {
+			this._attributions[text] = 0;
+		}
+		this._attributions[text]++;
+
+		this._update();
+
+		return this;
+	},
+
+	// @method removeAttribution(text: String): this
+	// Removes an attribution text.
+	removeAttribution: function (text) {
+		if (!text) { return this; }
+
+		if (this._attributions[text]) {
+			this._attributions[text]--;
+			this._update();
+		}
+
+		return this;
+	},
+
+	_update: function () {
+		if (!this._map) { return; }
+
+		var attribs = [];
+
+		for (var i in this._attributions) {
+			if (this._attributions[i]) {
+				attribs.push(i);
+			}
+		}
+
+		var prefixAndAttribs = [];
+
+		if (this.options.prefix) {
+			prefixAndAttribs.push(this.options.prefix);
+		}
+		if (attribs.length) {
+			prefixAndAttribs.push(attribs.join(', '));
+		}
+
+		this._container.innerHTML = prefixAndAttribs.join(' | ');
+	}
+});
+
+// @namespace Map
+// @section Control options
+// @option attributionControl: Boolean = true
+// Whether a [attribution control](#control-attribution) is added to the map by default.
+Map.mergeOptions({
+	attributionControl: true
+});
+
+Map.addInitHook(function () {
+	if (this.options.attributionControl) {
+		new Attribution().addTo(this);
+	}
+});
+
+// @namespace Control.Attribution
+// @factory L.control.attribution(options: Control.Attribution options)
+// Creates an attribution control.
+var attribution = function (options) {
+	return new Attribution(options);
+};
+
+Control.Layers = Layers;
+Control.Zoom = Zoom;
+Control.Scale = Scale;
+Control.Attribution = Attribution;
+
+control.layers = layers;
+control.zoom = zoom;
+control.scale = scale;
+control.attribution = attribution;
+
+/*
+	L.Handler is a base class for handler classes that are used internally to inject
+	interaction features like dragging to classes like Map and Marker.
+*/
+
+// @class Handler
+// @aka L.Handler
+// Abstract class for map interaction handlers
+
+var Handler = Class.extend({
+	initialize: function (map) {
+		this._map = map;
+	},
+
+	// @method enable(): this
+	// Enables the handler
+	enable: function () {
+		if (this._enabled) { return this; }
+
+		this._enabled = true;
+		this.addHooks();
+		return this;
+	},
+
+	// @method disable(): this
+	// Disables the handler
+	disable: function () {
+		if (!this._enabled) { return this; }
+
+		this._enabled = false;
+		this.removeHooks();
+		return this;
+	},
+
+	// @method enabled(): Boolean
+	// Returns `true` if the handler is enabled
+	enabled: function () {
+		return !!this._enabled;
+	}
+
+	// @section Extension methods
+	// Classes inheriting from `Handler` must implement the two following methods:
+	// @method addHooks()
+	// Called when the handler is enabled, should add event hooks.
+	// @method removeHooks()
+	// Called when the handler is disabled, should remove the event hooks added previously.
+});
+
+// @section There is static function which can be called without instantiating L.Handler:
+// @function addTo(map: Map, name: String): this
+// Adds a new Handler to the given map with the given name.
+Handler.addTo = function (map, name) {
+	map.addHandler(name, this);
+	return this;
+};
+
+var Mixin = {Events: Events};
+
+/*
+ * @class Draggable
+ * @aka L.Draggable
+ * @inherits Evented
+ *
+ * A class for making DOM elements draggable (including touch support).
+ * Used internally for map and marker dragging. Only works for elements
+ * that were positioned with [`L.DomUtil.setPosition`](#domutil-setposition).
+ *
+ * @example
+ * ```js
+ * var draggable = new L.Draggable(elementToDrag);
+ * draggable.enable();
+ * ```
+ */
+
+var START = touch ? 'touchstart mousedown' : 'mousedown';
+var END = {
+	mousedown: 'mouseup',
+	touchstart: 'touchend',
+	pointerdown: 'touchend',
+	MSPointerDown: 'touchend'
+};
+var MOVE = {
+	mousedown: 'mousemove',
+	touchstart: 'touchmove',
+	pointerdown: 'touchmove',
+	MSPointerDown: 'touchmove'
+};
+
+
+var Draggable = Evented.extend({
+
+	options: {
+		// @section
+		// @aka Draggable options
+		// @option clickTolerance: Number = 3
+		// The max number of pixels a user can shift the mouse pointer during a click
+		// for it to be considered a valid click (as opposed to a mouse drag).
+		clickTolerance: 3
+	},
+
+	// @constructor L.Draggable(el: HTMLElement, dragHandle?: HTMLElement, preventOutline?: Boolean, options?: Draggable options)
+	// Creates a `Draggable` object for moving `el` when you start dragging the `dragHandle` element (equals `el` itself by default).
+	initialize: function (element, dragStartTarget, preventOutline$$1, options) {
+		setOptions(this, options);
+
+		this._element = element;
+		this._dragStartTarget = dragStartTarget || element;
+		this._preventOutline = preventOutline$$1;
+	},
+
+	// @method enable()
+	// Enables the dragging ability
+	enable: function () {
+		if (this._enabled) { return; }
+
+		on(this._dragStartTarget, START, this._onDown, this);
+
+		this._enabled = true;
+	},
+
+	// @method disable()
+	// Disables the dragging ability
+	disable: function () {
+		if (!this._enabled) { return; }
+
+		// If we're currently dragging this draggable,
+		// disabling it counts as first ending the drag.
+		if (Draggable._dragging === this) {
+			this.finishDrag();
+		}
+
+		off(this._dragStartTarget, START, this._onDown, this);
+
+		this._enabled = false;
+		this._moved = false;
+	},
+
+	_onDown: function (e) {
+		// Ignore simulated events, since we handle both touch and
+		// mouse explicitly; otherwise we risk getting duplicates of
+		// touch events, see #4315.
+		// Also ignore the event if disabled; this happens in IE11
+		// under some circumstances, see #3666.
+		if (e._simulated || !this._enabled) { return; }
+
+		this._moved = false;
+
+		if (hasClass(this._element, 'leaflet-zoom-anim')) { return; }
+
+		if (Draggable._dragging || e.shiftKey || ((e.which !== 1) && (e.button !== 1) && !e.touches)) { return; }
+		Draggable._dragging = this;  // Prevent dragging multiple objects at once.
+
+		if (this._preventOutline) {
+			preventOutline(this._element);
+		}
+
+		disableImageDrag();
+		disableTextSelection();
+
+		if (this._moving) { return; }
+
+		// @event down: Event
+		// Fired when a drag is about to start.
+		this.fire('down');
+
+		var first = e.touches ? e.touches[0] : e,
+		    sizedParent = getSizedParentNode(this._element);
+
+		this._startPoint = new Point(first.clientX, first.clientY);
+
+		// Cache the scale, so that we can continuously compensate for it during drag (_onMove).
+		this._parentScale = getScale(sizedParent);
+
+		on(document, MOVE[e.type], this._onMove, this);
+		on(document, END[e.type], this._onUp, this);
+	},
+
+	_onMove: function (e) {
+		// Ignore simulated events, since we handle both touch and
+		// mouse explicitly; otherwise we risk getting duplicates of
+		// touch events, see #4315.
+		// Also ignore the event if disabled; this happens in IE11
+		// under some circumstances, see #3666.
+		if (e._simulated || !this._enabled) { return; }
+
+		if (e.touches && e.touches.length > 1) {
+			this._moved = true;
+			return;
+		}
+
+		var first = (e.touches && e.touches.length === 1 ? e.touches[0] : e),
+		    offset = new Point(first.clientX, first.clientY)._subtract(this._startPoint);
+
+		if (!offset.x && !offset.y) { return; }
+		if (Math.abs(offset.x) + Math.abs(offset.y) < this.options.clickTolerance) { return; }
+
+		// We assume that the parent container's position, border and scale do not change for the duration of the drag.
+		// Therefore there is no need to account for the position and border (they are eliminated by the subtraction)
+		// and we can use the cached value for the scale.
+		offset.x /= this._parentScale.x;
+		offset.y /= this._parentScale.y;
+
+		preventDefault(e);
+
+		if (!this._moved) {
+			// @event dragstart: Event
+			// Fired when a drag starts
+			this.fire('dragstart');
+
+			this._moved = true;
+			this._startPos = getPosition(this._element).subtract(offset);
+
+			addClass(document.body, 'leaflet-dragging');
+
+			this._lastTarget = e.target || e.srcElement;
+			// IE and Edge do not give the <use> element, so fetch it
+			// if necessary
+			if ((window.SVGElementInstance) && (this._lastTarget instanceof SVGElementInstance)) {
+				this._lastTarget = this._lastTarget.correspondingUseElement;
+			}
+			addClass(this._lastTarget, 'leaflet-drag-target');
+		}
+
+		this._newPos = this._startPos.add(offset);
+		this._moving = true;
+
+		cancelAnimFrame(this._animRequest);
+		this._lastEvent = e;
+		this._animRequest = requestAnimFrame(this._updatePosition, this, true);
+	},
+
+	_updatePosition: function () {
+		var e = {originalEvent: this._lastEvent};
+
+		// @event predrag: Event
+		// Fired continuously during dragging *before* each corresponding
+		// update of the element's position.
+		this.fire('predrag', e);
+		setPosition(this._element, this._newPos);
+
+		// @event drag: Event
+		// Fired continuously during dragging.
+		this.fire('drag', e);
+	},
+
+	_onUp: function (e) {
+		// Ignore simulated events, since we handle both touch and
+		// mouse explicitly; otherwise we risk getting duplicates of
+		// touch events, see #4315.
+		// Also ignore the event if disabled; this happens in IE11
+		// under some circumstances, see #3666.
+		if (e._simulated || !this._enabled) { return; }
+		this.finishDrag();
+	},
+
+	finishDrag: function () {
+		removeClass(document.body, 'leaflet-dragging');
+
+		if (this._lastTarget) {
+			removeClass(this._lastTarget, 'leaflet-drag-target');
+			this._lastTarget = null;
+		}
+
+		for (var i in MOVE) {
+			off(document, MOVE[i], this._onMove, this);
+			off(document, END[i], this._onUp, this);
+		}
+
+		enableImageDrag();
+		enableTextSelection();
+
+		if (this._moved && this._moving) {
+			// ensure drag is not fired after dragend
+			cancelAnimFrame(this._animRequest);
+
+			// @event dragend: DragEndEvent
+			// Fired when the drag ends.
+			this.fire('dragend', {
+				distance: this._newPos.distanceTo(this._startPos)
+			});
+		}
+
+		this._moving = false;
+		Draggable._dragging = false;
+	}
+
+});
+
+/*
+ * @namespace LineUtil
+ *
+ * Various utility functions for polyline points processing, used by Leaflet internally to make polylines lightning-fast.
+ */
+
+// Simplify polyline with vertex reduction and Douglas-Peucker simplification.
+// Improves rendering performance dramatically by lessening the number of points to draw.
+
+// @function simplify(points: Point[], tolerance: Number): Point[]
+// Dramatically reduces the number of points in a polyline while retaining
+// its shape and returns a new array of simplified points, using the
+// [Douglas-Peucker algorithm](http://en.wikipedia.org/wiki/Douglas-Peucker_algorithm).
+// Used for a huge performance boost when processing/displaying Leaflet polylines for
+// each zoom level and also reducing visual noise. tolerance affects the amount of
+// simplification (lesser value means higher quality but slower and with more points).
+// Also released as a separated micro-library [Simplify.js](http://mourner.github.com/simplify-js/).
+function simplify(points, tolerance) {
+	if (!tolerance || !points.length) {
+		return points.slice();
+	}
+
+	var sqTolerance = tolerance * tolerance;
+
+	    // stage 1: vertex reduction
+	    points = _reducePoints(points, sqTolerance);
+
+	    // stage 2: Douglas-Peucker simplification
+	    points = _simplifyDP(points, sqTolerance);
+
+	return points;
+}
+
+// @function pointToSegmentDistance(p: Point, p1: Point, p2: Point): Number
+// Returns the distance between point `p` and segment `p1` to `p2`.
+function pointToSegmentDistance(p, p1, p2) {
+	return Math.sqrt(_sqClosestPointOnSegment(p, p1, p2, true));
+}
+
+// @function closestPointOnSegment(p: Point, p1: Point, p2: Point): Number
+// Returns the closest point from a point `p` on a segment `p1` to `p2`.
+function closestPointOnSegment(p, p1, p2) {
+	return _sqClosestPointOnSegment(p, p1, p2);
+}
+
+// Douglas-Peucker simplification, see http://en.wikipedia.org/wiki/Douglas-Peucker_algorithm
+function _simplifyDP(points, sqTolerance) {
+
+	var len = points.length,
+	    ArrayConstructor = typeof Uint8Array !== undefined + '' ? Uint8Array : Array,
+	    markers = new ArrayConstructor(len);
+
+	    markers[0] = markers[len - 1] = 1;
+
+	_simplifyDPStep(points, markers, sqTolerance, 0, len - 1);
+
+	var i,
+	    newPoints = [];
+
+	for (i = 0; i < len; i++) {
+		if (markers[i]) {
+			newPoints.push(points[i]);
+		}
+	}
+
+	return newPoints;
+}
+
+function _simplifyDPStep(points, markers, sqTolerance, first, last) {
+
+	var maxSqDist = 0,
+	index, i, sqDist;
+
+	for (i = first + 1; i <= last - 1; i++) {
+		sqDist = _sqClosestPointOnSegment(points[i], points[first], points[last], true);
+
+		if (sqDist > maxSqDist) {
+			index = i;
+			maxSqDist = sqDist;
+		}
+	}
+
+	if (maxSqDist > sqTolerance) {
+		markers[index] = 1;
+
+		_simplifyDPStep(points, markers, sqTolerance, first, index);
+		_simplifyDPStep(points, markers, sqTolerance, index, last);
+	}
+}
+
+// reduce points that are too close to each other to a single point
+function _reducePoints(points, sqTolerance) {
+	var reducedPoints = [points[0]];
+
+	for (var i = 1, prev = 0, len = points.length; i < len; i++) {
+		if (_sqDist(points[i], points[prev]) > sqTolerance) {
+			reducedPoints.push(points[i]);
+			prev = i;
+		}
+	}
+	if (prev < len - 1) {
+		reducedPoints.push(points[len - 1]);
+	}
+	return reducedPoints;
+}
+
+var _lastCode;
+
+// @function clipSegment(a: Point, b: Point, bounds: Bounds, useLastCode?: Boolean, round?: Boolean): Point[]|Boolean
+// Clips the segment a to b by rectangular bounds with the
+// [Cohen-Sutherland algorithm](https://en.wikipedia.org/wiki/Cohen%E2%80%93Sutherland_algorithm)
+// (modifying the segment points directly!). Used by Leaflet to only show polyline
+// points that are on the screen or near, increasing performance.
+function clipSegment(a, b, bounds, useLastCode, round) {
+	var codeA = useLastCode ? _lastCode : _getBitCode(a, bounds),
+	    codeB = _getBitCode(b, bounds),
+
+	    codeOut, p, newCode;
+
+	    // save 2nd code to avoid calculating it on the next segment
+	    _lastCode = codeB;
+
+	while (true) {
+		// if a,b is inside the clip window (trivial accept)
+		if (!(codeA | codeB)) {
+			return [a, b];
+		}
+
+		// if a,b is outside the clip window (trivial reject)
+		if (codeA & codeB) {
+			return false;
+		}
+
+		// other cases
+		codeOut = codeA || codeB;
+		p = _getEdgeIntersection(a, b, codeOut, bounds, round);
+		newCode = _getBitCode(p, bounds);
+
+		if (codeOut === codeA) {
+			a = p;
+			codeA = newCode;
+		} else {
+			b = p;
+			codeB = newCode;
+		}
+	}
+}
+
+function _getEdgeIntersection(a, b, code, bounds, round) {
+	var dx = b.x - a.x,
+	    dy = b.y - a.y,
+	    min = bounds.min,
+	    max = bounds.max,
+	    x, y;
+
+	if (code & 8) { // top
+		x = a.x + dx * (max.y - a.y) / dy;
+		y = max.y;
+
+	} else if (code & 4) { // bottom
+		x = a.x + dx * (min.y - a.y) / dy;
+		y = min.y;
+
+	} else if (code & 2) { // right
+		x = max.x;
+		y = a.y + dy * (max.x - a.x) / dx;
+
+	} else if (code & 1) { // left
+		x = min.x;
+		y = a.y + dy * (min.x - a.x) / dx;
+	}
+
+	return new Point(x, y, round);
+}
+
+function _getBitCode(p, bounds) {
+	var code = 0;
+
+	if (p.x < bounds.min.x) { // left
+		code |= 1;
+	} else if (p.x > bounds.max.x) { // right
+		code |= 2;
+	}
+
+	if (p.y < bounds.min.y) { // bottom
+		code |= 4;
+	} else if (p.y > bounds.max.y) { // top
+		code |= 8;
+	}
+
+	return code;
+}
+
+// square distance (to avoid unnecessary Math.sqrt calls)
+function _sqDist(p1, p2) {
+	var dx = p2.x - p1.x,
+	    dy = p2.y - p1.y;
+	return dx * dx + dy * dy;
+}
+
+// return closest point on segment or distance to that point
+function _sqClosestPointOnSegment(p, p1, p2, sqDist) {
+	var x = p1.x,
+	    y = p1.y,
+	    dx = p2.x - x,
+	    dy = p2.y - y,
+	    dot = dx * dx + dy * dy,
+	    t;
+
+	if (dot > 0) {
+		t = ((p.x - x) * dx + (p.y - y) * dy) / dot;
+
+		if (t > 1) {
+			x = p2.x;
+			y = p2.y;
+		} else if (t > 0) {
+			x += dx * t;
+			y += dy * t;
+		}
+	}
+
+	dx = p.x - x;
+	dy = p.y - y;
+
+	return sqDist ? dx * dx + dy * dy : new Point(x, y);
+}
+
+
+// @function isFlat(latlngs: LatLng[]): Boolean
+// Returns true if `latlngs` is a flat array, false is nested.
+function isFlat(latlngs) {
+	return !isArray(latlngs[0]) || (typeof latlngs[0][0] !== 'object' && typeof latlngs[0][0] !== 'undefined');
+}
+
+function _flat(latlngs) {
+	console.warn('Deprecated use of _flat, please use L.LineUtil.isFlat instead.');
+	return isFlat(latlngs);
+}
+
+
+var LineUtil = (Object.freeze || Object)({
+	simplify: simplify,
+	pointToSegmentDistance: pointToSegmentDistance,
+	closestPointOnSegment: closestPointOnSegment,
+	clipSegment: clipSegment,
+	_getEdgeIntersection: _getEdgeIntersection,
+	_getBitCode: _getBitCode,
+	_sqClosestPointOnSegment: _sqClosestPointOnSegment,
+	isFlat: isFlat,
+	_flat: _flat
+});
+
+/*
+ * @namespace PolyUtil
+ * Various utility functions for polygon geometries.
+ */
+
+/* @function clipPolygon(points: Point[], bounds: Bounds, round?: Boolean): Point[]
+ * Clips the polygon geometry defined by the given `points` by the given bounds (using the [Sutherland-Hodgman algorithm](https://en.wikipedia.org/wiki/Sutherland%E2%80%93Hodgman_algorithm)).
+ * Used by Leaflet to only show polygon points that are on the screen or near, increasing
+ * performance. Note that polygon points needs different algorithm for clipping
+ * than polyline, so there's a separate method for it.
+ */
+function clipPolygon(points, bounds, round) {
+	var clippedPoints,
+	    edges = [1, 4, 2, 8],
+	    i, j, k,
+	    a, b,
+	    len, edge, p;
+
+	for (i = 0, len = points.length; i < len; i++) {
+		points[i]._code = _getBitCode(points[i], bounds);
+	}
+
+	// for each edge (left, bottom, right, top)
+	for (k = 0; k < 4; k++) {
+		edge = edges[k];
+		clippedPoints = [];
+
+		for (i = 0, len = points.length, j = len - 1; i < len; j = i++) {
+			a = points[i];
+			b = points[j];
+
+			// if a is inside the clip window
+			if (!(a._code & edge)) {
+				// if b is outside the clip window (a->b goes out of screen)
+				if (b._code & edge) {
+					p = _getEdgeIntersection(b, a, edge, bounds, round);
+					p._code = _getBitCode(p, bounds);
+					clippedPoints.push(p);
+				}
+				clippedPoints.push(a);
+
+			// else if b is inside the clip window (a->b enters the screen)
+			} else if (!(b._code & edge)) {
+				p = _getEdgeIntersection(b, a, edge, bounds, round);
+				p._code = _getBitCode(p, bounds);
+				clippedPoints.push(p);
+			}
+		}
+		points = clippedPoints;
+	}
+
+	return points;
+}
+
+
+var PolyUtil = (Object.freeze || Object)({
+	clipPolygon: clipPolygon
+});
+
+/*
+ * @namespace Projection
+ * @section
+ * Leaflet comes with a set of already defined Projections out of the box:
+ *
+ * @projection L.Projection.LonLat
+ *
+ * Equirectangular, or Plate Carree projection — the most simple projection,
+ * mostly used by GIS enthusiasts. Directly maps `x` as longitude, and `y` as
+ * latitude. Also suitable for flat worlds, e.g. game maps. Used by the
+ * `EPSG:4326` and `Simple` CRS.
+ */
+
+var LonLat = {
+	project: function (latlng) {
+		return new Point(latlng.lng, latlng.lat);
+	},
+
+	unproject: function (point) {
+		return new LatLng(point.y, point.x);
+	},
+
+	bounds: new Bounds([-180, -90], [180, 90])
+};
+
+/*
+ * @namespace Projection
+ * @projection L.Projection.Mercator
+ *
+ * Elliptical Mercator projection — more complex than Spherical Mercator. Takes into account that Earth is a geoid, not a perfect sphere. Used by the EPSG:3395 CRS.
+ */
+
+var Mercator = {
+	R: 6378137,
+	R_MINOR: 6356752.314245179,
+
+	bounds: new Bounds([-20037508.34279, -15496570.73972], [20037508.34279, 18764656.23138]),
+
+	project: function (latlng) {
+		var d = Math.PI / 180,
+		    r = this.R,
+		    y = latlng.lat * d,
+		    tmp = this.R_MINOR / r,
+		    e = Math.sqrt(1 - tmp * tmp),
+		    con = e * Math.sin(y);
+
+		var ts = Math.tan(Math.PI / 4 - y / 2) / Math.pow((1 - con) / (1 + con), e / 2);
+		y = -r * Math.log(Math.max(ts, 1E-10));
+
+		return new Point(latlng.lng * d * r, y);
+	},
+
+	unproject: function (point) {
+		var d = 180 / Math.PI,
+		    r = this.R,
+		    tmp = this.R_MINOR / r,
+		    e = Math.sqrt(1 - tmp * tmp),
+		    ts = Math.exp(-point.y / r),
+		    phi = Math.PI / 2 - 2 * Math.atan(ts);
+
+		for (var i = 0, dphi = 0.1, con; i < 15 && Math.abs(dphi) > 1e-7; i++) {
+			con = e * Math.sin(phi);
+			con = Math.pow((1 - con) / (1 + con), e / 2);
+			dphi = Math.PI / 2 - 2 * Math.atan(ts * con) - phi;
+			phi += dphi;
+		}
+
+		return new LatLng(phi * d, point.x * d / r);
+	}
+};
+
+/*
+ * @class Projection
+
+ * An object with methods for projecting geographical coordinates of the world onto
+ * a flat surface (and back). See [Map projection](http://en.wikipedia.org/wiki/Map_projection).
+
+ * @property bounds: Bounds
+ * The bounds (specified in CRS units) where the projection is valid
+
+ * @method project(latlng: LatLng): Point
+ * Projects geographical coordinates into a 2D point.
+ * Only accepts actual `L.LatLng` instances, not arrays.
+
+ * @method unproject(point: Point): LatLng
+ * The inverse of `project`. Projects a 2D point into a geographical location.
+ * Only accepts actual `L.Point` instances, not arrays.
+
+ * Note that the projection instances do not inherit from Leafet's `Class` object,
+ * and can't be instantiated. Also, new classes can't inherit from them,
+ * and methods can't be added to them with the `include` function.
+
+ */
+
+
+
+
+var index = (Object.freeze || Object)({
+	LonLat: LonLat,
+	Mercator: Mercator,
+	SphericalMercator: SphericalMercator
+});
+
+/*
+ * @namespace CRS
+ * @crs L.CRS.EPSG3395
+ *
+ * Rarely used by some commercial tile providers. Uses Elliptical Mercator projection.
+ */
+var EPSG3395 = extend({}, Earth, {
+	code: 'EPSG:3395',
+	projection: Mercator,
+
+	transformation: (function () {
+		var scale = 0.5 / (Math.PI * Mercator.R);
+		return toTransformation(scale, 0.5, -scale, 0.5);
+	}())
+});
+
+/*
+ * @namespace CRS
+ * @crs L.CRS.EPSG4326
+ *
+ * A common CRS among GIS enthusiasts. Uses simple Equirectangular projection.
+ *
+ * Leaflet 1.0.x complies with the [TMS coordinate scheme for EPSG:4326](https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification#global-geodetic),
+ * which is a breaking change from 0.7.x behaviour.  If you are using a `TileLayer`
+ * with this CRS, ensure that there are two 256x256 pixel tiles covering the
+ * whole earth at zoom level zero, and that the tile coordinate origin is (-180,+90),
+ * or (-180,-90) for `TileLayer`s with [the `tms` option](#tilelayer-tms) set.
+ */
+
+var EPSG4326 = extend({}, Earth, {
+	code: 'EPSG:4326',
+	projection: LonLat,
+	transformation: toTransformation(1 / 180, 1, -1 / 180, 0.5)
+});
+
+/*
+ * @namespace CRS
+ * @crs L.CRS.Simple
+ *
+ * A simple CRS that maps longitude and latitude into `x` and `y` directly.
+ * May be used for maps of flat surfaces (e.g. game maps). Note that the `y`
+ * axis should still be inverted (going from bottom to top). `distance()` returns
+ * simple euclidean distance.
+ */
+
+var Simple = extend({}, CRS, {
+	projection: LonLat,
+	transformation: toTransformation(1, 0, -1, 0),
+
+	scale: function (zoom) {
+		return Math.pow(2, zoom);
+	},
+
+	zoom: function (scale) {
+		return Math.log(scale) / Math.LN2;
+	},
+
+	distance: function (latlng1, latlng2) {
+		var dx = latlng2.lng - latlng1.lng,
+		    dy = latlng2.lat - latlng1.lat;
+
+		return Math.sqrt(dx * dx + dy * dy);
+	},
+
+	infinite: true
+});
+
+CRS.Earth = Earth;
+CRS.EPSG3395 = EPSG3395;
+CRS.EPSG3857 = EPSG3857;
+CRS.EPSG900913 = EPSG900913;
+CRS.EPSG4326 = EPSG4326;
+CRS.Simple = Simple;
+
+/*
+ * @class Layer
+ * @inherits Evented
+ * @aka L.Layer
+ * @aka ILayer
+ *
+ * A set of methods from the Layer base class that all Leaflet layers use.
+ * Inherits all methods, options and events from `L.Evented`.
+ *
+ * @example
+ *
+ * ```js
+ * var layer = L.Marker(latlng).addTo(map);
+ * layer.addTo(map);
+ * layer.remove();
+ * ```
+ *
+ * @event add: Event
+ * Fired after the layer is added to a map
+ *
+ * @event remove: Event
+ * Fired after the layer is removed from a map
+ */
+
+
+var Layer = Evented.extend({
+
+	// Classes extending `L.Layer` will inherit the following options:
+	options: {
+		// @option pane: String = 'overlayPane'
+		// By default the layer will be added to the map's [overlay pane](#map-overlaypane). Overriding this option will cause the layer to be placed on another pane by default.
+		pane: 'overlayPane',
+
+		// @option attribution: String = null
+		// String to be shown in the attribution control, describes the layer data, e.g. "© Mapbox".
+		attribution: null,
+
+		bubblingMouseEvents: true
+	},
+
+	/* @section
+	 * Classes extending `L.Layer` will inherit the following methods:
+	 *
+	 * @method addTo(map: Map|LayerGroup): this
+	 * Adds the layer to the given map or layer group.
+	 */
+	addTo: function (map) {
+		map.addLayer(this);
+		return this;
+	},
+
+	// @method remove: this
+	// Removes the layer from the map it is currently active on.
+	remove: function () {
+		return this.removeFrom(this._map || this._mapToAdd);
+	},
+
+	// @method removeFrom(map: Map): this
+	// Removes the layer from the given map
+	removeFrom: function (obj) {
+		if (obj) {
+			obj.removeLayer(this);
+		}
+		return this;
+	},
+
+	// @method getPane(name? : String): HTMLElement
+	// Returns the `HTMLElement` representing the named pane on the map. If `name` is omitted, returns the pane for this layer.
+	getPane: function (name) {
+		return this._map.getPane(name ? (this.options[name] || name) : this.options.pane);
+	},
+
+	addInteractiveTarget: function (targetEl) {
+		this._map._targets[stamp(targetEl)] = this;
+		return this;
+	},
+
+	removeInteractiveTarget: function (targetEl) {
+		delete this._map._targets[stamp(targetEl)];
+		return this;
+	},
+
+	// @method getAttribution: String
+	// Used by the `attribution control`, returns the [attribution option](#gridlayer-attribution).
+	getAttribution: function () {
+		return this.options.attribution;
+	},
+
+	_layerAdd: function (e) {
+		var map = e.target;
+
+		// check in case layer gets added and then removed before the map is ready
+		if (!map.hasLayer(this)) { return; }
+
+		this._map = map;
+		this._zoomAnimated = map._zoomAnimated;
+
+		if (this.getEvents) {
+			var events = this.getEvents();
+			map.on(events, this);
+			this.once('remove', function () {
+				map.off(events, this);
+			}, this);
+		}
+
+		this.onAdd(map);
+
+		if (this.getAttribution && map.attributionControl) {
+			map.attributionControl.addAttribution(this.getAttribution());
+		}
+
+		this.fire('add');
+		map.fire('layeradd', {layer: this});
+	}
+});
+
+/* @section Extension methods
+ * @uninheritable
+ *
+ * Every layer should extend from `L.Layer` and (re-)implement the following methods.
+ *
+ * @method onAdd(map: Map): this
+ * Should contain code that creates DOM elements for the layer, adds them to `map panes` where they should belong and puts listeners on relevant map events. Called on [`map.addLayer(layer)`](#map-addlayer).
+ *
+ * @method onRemove(map: Map): this
+ * Should contain all clean up code that removes the layer's elements from the DOM and removes listeners previously added in [`onAdd`](#layer-onadd). Called on [`map.removeLayer(layer)`](#map-removelayer).
+ *
+ * @method getEvents(): Object
+ * This optional method should return an object like `{ viewreset: this._reset }` for [`addEventListener`](#evented-addeventlistener). The event handlers in this object will be automatically added and removed from the map with your layer.
+ *
+ * @method getAttribution(): String
+ * This optional method should return a string containing HTML to be shown on the `Attribution control` whenever the layer is visible.
+ *
+ * @method beforeAdd(map: Map): this
+ * Optional method. Called on [`map.addLayer(layer)`](#map-addlayer), before the layer is added to the map, before events are initialized, without waiting until the map is in a usable state. Use for early initialization only.
+ */
+
+
+/* @namespace Map
+ * @section Layer events
+ *
+ * @event layeradd: LayerEvent
+ * Fired when a new layer is added to the map.
+ *
+ * @event layerremove: LayerEvent
+ * Fired when some layer is removed from the map
+ *
+ * @section Methods for Layers and Controls
+ */
+Map.include({
+	// @method addLayer(layer: Layer): this
+	// Adds the given layer to the map
+	addLayer: function (layer) {
+		if (!layer._layerAdd) {
+			throw new Error('The provided object is not a Layer.');
+		}
+
+		var id = stamp(layer);
+		if (this._layers[id]) { return this; }
+		this._layers[id] = layer;
+
+		layer._mapToAdd = this;
+
+		if (layer.beforeAdd) {
+			layer.beforeAdd(this);
+		}
+
+		this.whenReady(layer._layerAdd, layer);
+
+		return this;
+	},
+
+	// @method removeLayer(layer: Layer): this
+	// Removes the given layer from the map.
+	removeLayer: function (layer) {
+		var id = stamp(layer);
+
+		if (!this._layers[id]) { return this; }
+
+		if (this._loaded) {
+			layer.onRemove(this);
+		}
+
+		if (layer.getAttribution && this.attributionControl) {
+			this.attributionControl.removeAttribution(layer.getAttribution());
+		}
+
+		delete this._layers[id];
+
+		if (this._loaded) {
+			this.fire('layerremove', {layer: layer});
+			layer.fire('remove');
+		}
+
+		layer._map = layer._mapToAdd = null;
+
+		return this;
+	},
+
+	// @method hasLayer(layer: Layer): Boolean
+	// Returns `true` if the given layer is currently added to the map
+	hasLayer: function (layer) {
+		return !!layer && (stamp(layer) in this._layers);
+	},
+
+	/* @method eachLayer(fn: Function, context?: Object): this
+	 * Iterates over the layers of the map, optionally specifying context of the iterator function.
+	 * ```
+	 * map.eachLayer(function(layer){
+	 *     layer.bindPopup('Hello');
+	 * });
+	 * ```
+	 */
+	eachLayer: function (method, context) {
+		for (var i in this._layers) {
+			method.call(context, this._layers[i]);
+		}
+		return this;
+	},
+
+	_addLayers: function (layers) {
+		layers = layers ? (isArray(layers) ? layers : [layers]) : [];
+
+		for (var i = 0, len = layers.length; i < len; i++) {
+			this.addLayer(layers[i]);
+		}
+	},
+
+	_addZoomLimit: function (layer) {
+		if (isNaN(layer.options.maxZoom) || !isNaN(layer.options.minZoom)) {
+			this._zoomBoundLayers[stamp(layer)] = layer;
+			this._updateZoomLevels();
+		}
+	},
+
+	_removeZoomLimit: function (layer) {
+		var id = stamp(layer);
+
+		if (this._zoomBoundLayers[id]) {
+			delete this._zoomBoundLayers[id];
+			this._updateZoomLevels();
+		}
+	},
+
+	_updateZoomLevels: function () {
+		var minZoom = Infinity,
+		    maxZoom = -Infinity,
+		    oldZoomSpan = this._getZoomSpan();
+
+		for (var i in this._zoomBoundLayers) {
+			var options = this._zoomBoundLayers[i].options;
+
+			minZoom = options.minZoom === undefined ? minZoom : Math.min(minZoom, options.minZoom);
+			maxZoom = options.maxZoom === undefined ? maxZoom : Math.max(maxZoom, options.maxZoom);
+		}
+
+		this._layersMaxZoom = maxZoom === -Infinity ? undefined : maxZoom;
+		this._layersMinZoom = minZoom === Infinity ? undefined : minZoom;
+
+		// @section Map state change events
+		// @event zoomlevelschange: Event
+		// Fired when the number of zoomlevels on the map is changed due
+		// to adding or removing a layer.
+		if (oldZoomSpan !== this._getZoomSpan()) {
+			this.fire('zoomlevelschange');
+		}
+
+		if (this.options.maxZoom === undefined && this._layersMaxZoom && this.getZoom() > this._layersMaxZoom) {
+			this.setZoom(this._layersMaxZoom);
+		}
+		if (this.options.minZoom === undefined && this._layersMinZoom && this.getZoom() < this._layersMinZoom) {
+			this.setZoom(this._layersMinZoom);
+		}
+	}
+});
+
+/*
+ * @class LayerGroup
+ * @aka L.LayerGroup
+ * @inherits Layer
+ *
+ * Used to group several layers and handle them as one. If you add it to the map,
+ * any layers added or removed from the group will be added/removed on the map as
+ * well. Extends `Layer`.
+ *
+ * @example
+ *
+ * ```js
+ * L.layerGroup([marker1, marker2])
+ * 	.addLayer(polyline)
+ * 	.addTo(map);
+ * ```
+ */
+
+var LayerGroup = Layer.extend({
+
+	initialize: function (layers, options) {
+		setOptions(this, options);
+
+		this._layers = {};
+
+		var i, len;
+
+		if (layers) {
+			for (i = 0, len = layers.length; i < len; i++) {
+				this.addLayer(layers[i]);
+			}
+		}
+	},
+
+	// @method addLayer(layer: Layer): this
+	// Adds the given layer to the group.
+	addLayer: function (layer) {
+		var id = this.getLayerId(layer);
+
+		this._layers[id] = layer;
+
+		if (this._map) {
+			this._map.addLayer(layer);
+		}
+
+		return this;
+	},
+
+	// @method removeLayer(layer: Layer): this
+	// Removes the given layer from the group.
+	// @alternative
+	// @method removeLayer(id: Number): this
+	// Removes the layer with the given internal ID from the group.
+	removeLayer: function (layer) {
+		var id = layer in this._layers ? layer : this.getLayerId(layer);
+
+		if (this._map && this._layers[id]) {
+			this._map.removeLayer(this._layers[id]);
+		}
+
+		delete this._layers[id];
+
+		return this;
+	},
+
+	// @method hasLayer(layer: Layer): Boolean
+	// Returns `true` if the given layer is currently added to the group.
+	// @alternative
+	// @method hasLayer(id: Number): Boolean
+	// Returns `true` if the given internal ID is currently added to the group.
+	hasLayer: function (layer) {
+		return !!layer && (layer in this._layers || this.getLayerId(layer) in this._layers);
+	},
+
+	// @method clearLayers(): this
+	// Removes all the layers from the group.
+	clearLayers: function () {
+		return this.eachLayer(this.removeLayer, this);
+	},
+
+	// @method invoke(methodName: String, …): this
+	// Calls `methodName` on every layer contained in this group, passing any
+	// additional parameters. Has no effect if the layers contained do not
+	// implement `methodName`.
+	invoke: function (methodName) {
+		var args = Array.prototype.slice.call(arguments, 1),
+		    i, layer;
+
+		for (i in this._layers) {
+			layer = this._layers[i];
+
+			if (layer[methodName]) {
+				layer[methodName].apply(layer, args);
+			}
+		}
+
+		return this;
+	},
+
+	onAdd: function (map) {
+		this.eachLayer(map.addLayer, map);
+	},
+
+	onRemove: function (map) {
+		this.eachLayer(map.removeLayer, map);
+	},
+
+	// @method eachLayer(fn: Function, context?: Object): this
+	// Iterates over the layers of the group, optionally specifying context of the iterator function.
+	// ```js
+	// group.eachLayer(function (layer) {
+	// 	layer.bindPopup('Hello');
+	// });
+	// ```
+	eachLayer: function (method, context) {
+		for (var i in this._layers) {
+			method.call(context, this._layers[i]);
+		}
+		return this;
+	},
+
+	// @method getLayer(id: Number): Layer
+	// Returns the layer with the given internal ID.
+	getLayer: function (id) {
+		return this._layers[id];
+	},
+
+	// @method getLayers(): Layer[]
+	// Returns an array of all the layers added to the group.
+	getLayers: function () {
+		var layers = [];
+		this.eachLayer(layers.push, layers);
+		return layers;
+	},
+
+	// @method setZIndex(zIndex: Number): this
+	// Calls `setZIndex` on every layer contained in this group, passing the z-index.
+	setZIndex: function (zIndex) {
+		return this.invoke('setZIndex', zIndex);
+	},
+
+	// @method getLayerId(layer: Layer): Number
+	// Returns the internal ID for a layer
+	getLayerId: function (layer) {
+		return stamp(layer);
+	}
+});
+
+
+// @factory L.layerGroup(layers?: Layer[], options?: Object)
+// Create a layer group, optionally given an initial set of layers and an `options` object.
+var layerGroup = function (layers, options) {
+	return new LayerGroup(layers, options);
+};
+
+/*
+ * @class FeatureGroup
+ * @aka L.FeatureGroup
+ * @inherits LayerGroup
+ *
+ * Extended `LayerGroup` that makes it easier to do the same thing to all its member layers:
+ *  * [`bindPopup`](#layer-bindpopup) binds a popup to all of the layers at once (likewise with [`bindTooltip`](#layer-bindtooltip))
+ *  * Events are propagated to the `FeatureGroup`, so if the group has an event
+ * handler, it will handle events from any of the layers. This includes mouse events
+ * and custom events.
+ *  * Has `layeradd` and `layerremove` events
+ *
+ * @example
+ *
+ * ```js
+ * L.featureGroup([marker1, marker2, polyline])
+ * 	.bindPopup('Hello world!')
+ * 	.on('click', function() { alert('Clicked on a member of the group!'); })
+ * 	.addTo(map);
+ * ```
+ */
+
+var FeatureGroup = LayerGroup.extend({
+
+	addLayer: function (layer) {
+		if (this.hasLayer(layer)) {
+			return this;
+		}
+
+		layer.addEventParent(this);
+
+		LayerGroup.prototype.addLayer.call(this, layer);
+
+		// @event layeradd: LayerEvent
+		// Fired when a layer is added to this `FeatureGroup`
+		return this.fire('layeradd', {layer: layer});
+	},
+
+	removeLayer: function (layer) {
+		if (!this.hasLayer(layer)) {
+			return this;
+		}
+		if (layer in this._layers) {
+			layer = this._layers[layer];
+		}
+
+		layer.removeEventParent(this);
+
+		LayerGroup.prototype.removeLayer.call(this, layer);
+
+		// @event layerremove: LayerEvent
+		// Fired when a layer is removed from this `FeatureGroup`
+		return this.fire('layerremove', {layer: layer});
+	},
+
+	// @method setStyle(style: Path options): this
+	// Sets the given path options to each layer of the group that has a `setStyle` method.
+	setStyle: function (style) {
+		return this.invoke('setStyle', style);
+	},
+
+	// @method bringToFront(): this
+	// Brings the layer group to the top of all other layers
+	bringToFront: function () {
+		return this.invoke('bringToFront');
+	},
+
+	// @method bringToBack(): this
+	// Brings the layer group to the back of all other layers
+	bringToBack: function () {
+		return this.invoke('bringToBack');
+	},
+
+	// @method getBounds(): LatLngBounds
+	// Returns the LatLngBounds of the Feature Group (created from bounds and coordinates of its children).
+	getBounds: function () {
+		var bounds = new LatLngBounds();
+
+		for (var id in this._layers) {
+			var layer = this._layers[id];
+			bounds.extend(layer.getBounds ? layer.getBounds() : layer.getLatLng());
+		}
+		return bounds;
+	}
+});
+
+// @factory L.featureGroup(layers: Layer[])
+// Create a feature group, optionally given an initial set of layers.
+var featureGroup = function (layers) {
+	return new FeatureGroup(layers);
+};
+
+/*
+ * @class Icon
+ * @aka L.Icon
+ *
+ * Represents an icon to provide when creating a marker.
+ *
+ * @example
+ *
+ * ```js
+ * var myIcon = L.icon({
+ *     iconUrl: 'my-icon.png',
+ *     iconRetinaUrl: 'my-icon@2x.png',
+ *     iconSize: [38, 95],
+ *     iconAnchor: [22, 94],
+ *     popupAnchor: [-3, -76],
+ *     shadowUrl: 'my-icon-shadow.png',
+ *     shadowRetinaUrl: 'my-icon-shadow@2x.png',
+ *     shadowSize: [68, 95],
+ *     shadowAnchor: [22, 94]
+ * });
+ *
+ * L.marker([50.505, 30.57], {icon: myIcon}).addTo(map);
+ * ```
+ *
+ * `L.Icon.Default` extends `L.Icon` and is the blue icon Leaflet uses for markers by default.
+ *
+ */
+
+var Icon = Class.extend({
+
+	/* @section
+	 * @aka Icon options
+	 *
+	 * @option iconUrl: String = null
+	 * **(required)** The URL to the icon image (absolute or relative to your script path).
+	 *
+	 * @option iconRetinaUrl: String = null
+	 * The URL to a retina sized version of the icon image (absolute or relative to your
+	 * script path). Used for Retina screen devices.
+	 *
+	 * @option iconSize: Point = null
+	 * Size of the icon image in pixels.
+	 *
+	 * @option iconAnchor: Point = null
+	 * The coordinates of the "tip" of the icon (relative to its top left corner). The icon
+	 * will be aligned so that this point is at the marker's geographical location. Centered
+	 * by default if size is specified, also can be set in CSS with negative margins.
+	 *
+	 * @option popupAnchor: Point = [0, 0]
+	 * The coordinates of the point from which popups will "open", relative to the icon anchor.
+	 *
+	 * @option tooltipAnchor: Point = [0, 0]
+	 * The coordinates of the point from which tooltips will "open", relative to the icon anchor.
+	 *
+	 * @option shadowUrl: String = null
+	 * The URL to the icon shadow image. If not specified, no shadow image will be created.
+	 *
+	 * @option shadowRetinaUrl: String = null
+	 *
+	 * @option shadowSize: Point = null
+	 * Size of the shadow image in pixels.
+	 *
+	 * @option shadowAnchor: Point = null
+	 * The coordinates of the "tip" of the shadow (relative to its top left corner) (the same
+	 * as iconAnchor if not specified).
+	 *
+	 * @option className: String = ''
+	 * A custom class name to assign to both icon and shadow images. Empty by default.
+	 */
+
+	options: {
+		popupAnchor: [0, 0],
+		tooltipAnchor: [0, 0]
+	},
+
+	initialize: function (options) {
+		setOptions(this, options);
+	},
+
+	// @method createIcon(oldIcon?: HTMLElement): HTMLElement
+	// Called internally when the icon has to be shown, returns a `<img>` HTML element
+	// styled according to the options.
+	createIcon: function (oldIcon) {
+		return this._createIcon('icon', oldIcon);
+	},
+
+	// @method createShadow(oldIcon?: HTMLElement): HTMLElement
+	// As `createIcon`, but for the shadow beneath it.
+	createShadow: function (oldIcon) {
+		return this._createIcon('shadow', oldIcon);
+	},
+
+	_createIcon: function (name, oldIcon) {
+		var src = this._getIconUrl(name);
+
+		if (!src) {
+			if (name === 'icon') {
+				throw new Error('iconUrl not set in Icon options (see the docs).');
+			}
+			return null;
+		}
+
+		var img = this._createImg(src, oldIcon && oldIcon.tagName === 'IMG' ? oldIcon : null);
+		this._setIconStyles(img, name);
+
+		return img;
+	},
+
+	_setIconStyles: function (img, name) {
+		var options = this.options;
+		var sizeOption = options[name + 'Size'];
+
+		if (typeof sizeOption === 'number') {
+			sizeOption = [sizeOption, sizeOption];
+		}
+
+		var size = toPoint(sizeOption),
+		    anchor = toPoint(name === 'shadow' && options.shadowAnchor || options.iconAnchor ||
+		            size && size.divideBy(2, true));
+
+		img.className = 'leaflet-marker-' + name + ' ' + (options.className || '');
+
+		if (anchor) {
+			img.style.marginLeft = (-anchor.x) + 'px';
+			img.style.marginTop  = (-anchor.y) + 'px';
+		}
+
+		if (size) {
+			img.style.width  = size.x + 'px';
+			img.style.height = size.y + 'px';
+		}
+	},
+
+	_createImg: function (src, el) {
+		el = el || document.createElement('img');
+		el.src = src;
+		return el;
+	},
+
+	_getIconUrl: function (name) {
+		return retina && this.options[name + 'RetinaUrl'] || this.options[name + 'Url'];
+	}
+});
+
+
+// @factory L.icon(options: Icon options)
+// Creates an icon instance with the given options.
+function icon(options) {
+	return new Icon(options);
+}
+
+/*
+ * @miniclass Icon.Default (Icon)
+ * @aka L.Icon.Default
+ * @section
+ *
+ * A trivial subclass of `Icon`, represents the icon to use in `Marker`s when
+ * no icon is specified. Points to the blue marker image distributed with Leaflet
+ * releases.
+ *
+ * In order to customize the default icon, just change the properties of `L.Icon.Default.prototype.options`
+ * (which is a set of `Icon options`).
+ *
+ * If you want to _completely_ replace the default icon, override the
+ * `L.Marker.prototype.options.icon` with your own icon instead.
+ */
+
+var IconDefault = Icon.extend({
+
+	options: {
+		iconUrl:       'marker-icon.png',
+		iconRetinaUrl: 'marker-icon-2x.png',
+		shadowUrl:     'marker-shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	},
+
+	_getIconUrl: function (name) {
+		if (!IconDefault.imagePath) {	// Deprecated, backwards-compatibility only
+			IconDefault.imagePath = this._detectIconPath();
+		}
+
+		// @option imagePath: String
+		// `Icon.Default` will try to auto-detect the location of the
+		// blue icon images. If you are placing these images in a non-standard
+		// way, set this option to point to the right path.
+		return (this.options.imagePath || IconDefault.imagePath) + Icon.prototype._getIconUrl.call(this, name);
+	},
+
+	_detectIconPath: function () {
+		var el = create$1('div',  'leaflet-default-icon-path', document.body);
+		var path = getStyle(el, 'background-image') ||
+		           getStyle(el, 'backgroundImage');	// IE8
+
+		document.body.removeChild(el);
+
+		if (path === null || path.indexOf('url') !== 0) {
+			path = '';
+		} else {
+			path = path.replace(/^url\(["']?/, '').replace(/marker-icon\.png["']?\)$/, '');
+		}
+
+		return path;
+	}
+});
+
+/*
+ * L.Handler.MarkerDrag is used internally by L.Marker to make the markers draggable.
+ */
+
+
+/* @namespace Marker
+ * @section Interaction handlers
+ *
+ * Interaction handlers are properties of a marker instance that allow you to control interaction behavior in runtime, enabling or disabling certain features such as dragging (see `Handler` methods). Example:
+ *
+ * ```js
+ * marker.dragging.disable();
+ * ```
+ *
+ * @property dragging: Handler
+ * Marker dragging handler (by both mouse and touch). Only valid when the marker is on the map (Otherwise set [`marker.options.draggable`](#marker-draggable)).
+ */
+
+var MarkerDrag = Handler.extend({
+	initialize: function (marker) {
+		this._marker = marker;
+	},
+
+	addHooks: function () {
+		var icon = this._marker._icon;
+
+		if (!this._draggable) {
+			this._draggable = new Draggable(icon, icon, true);
+		}
+
+		this._draggable.on({
+			dragstart: this._onDragStart,
+			predrag: this._onPreDrag,
+			drag: this._onDrag,
+			dragend: this._onDragEnd
+		}, this).enable();
+
+		addClass(icon, 'leaflet-marker-draggable');
+	},
+
+	removeHooks: function () {
+		this._draggable.off({
+			dragstart: this._onDragStart,
+			predrag: this._onPreDrag,
+			drag: this._onDrag,
+			dragend: this._onDragEnd
+		}, this).disable();
+
+		if (this._marker._icon) {
+			removeClass(this._marker._icon, 'leaflet-marker-draggable');
+		}
+	},
+
+	moved: function () {
+		return this._draggable && this._draggable._moved;
+	},
+
+	_adjustPan: function (e) {
+		var marker = this._marker,
+		    map = marker._map,
+		    speed = this._marker.options.autoPanSpeed,
+		    padding = this._marker.options.autoPanPadding,
+		    iconPos = getPosition(marker._icon),
+		    bounds = map.getPixelBounds(),
+		    origin = map.getPixelOrigin();
+
+		var panBounds = toBounds(
+			bounds.min._subtract(origin).add(padding),
+			bounds.max._subtract(origin).subtract(padding)
+		);
+
+		if (!panBounds.contains(iconPos)) {
+			// Compute incremental movement
+			var movement = toPoint(
+				(Math.max(panBounds.max.x, iconPos.x) - panBounds.max.x) / (bounds.max.x - panBounds.max.x) -
+				(Math.min(panBounds.min.x, iconPos.x) - panBounds.min.x) / (bounds.min.x - panBounds.min.x),
+
+				(Math.max(panBounds.max.y, iconPos.y) - panBounds.max.y) / (bounds.max.y - panBounds.max.y) -
+				(Math.min(panBounds.min.y, iconPos.y) - panBounds.min.y) / (bounds.min.y - panBounds.min.y)
+			).multiplyBy(speed);
+
+			map.panBy(movement, {animate: false});
+
+			this._draggable._newPos._add(movement);
+			this._draggable._startPos._add(movement);
+
+			setPosition(marker._icon, this._draggable._newPos);
+			this._onDrag(e);
+
+			this._panRequest = requestAnimFrame(this._adjustPan.bind(this, e));
+		}
+	},
+
+	_onDragStart: function () {
+		// @section Dragging events
+		// @event dragstart: Event
+		// Fired when the user starts dragging the marker.
+
+		// @event movestart: Event
+		// Fired when the marker starts moving (because of dragging).
+
+		this._oldLatLng = this._marker.getLatLng();
+		this._marker
+		    .closePopup()
+		    .fire('movestart')
+		    .fire('dragstart');
+	},
+
+	_onPreDrag: function (e) {
+		if (this._marker.options.autoPan) {
+			cancelAnimFrame(this._panRequest);
+			this._panRequest = requestAnimFrame(this._adjustPan.bind(this, e));
+		}
+	},
+
+	_onDrag: function (e) {
+		var marker = this._marker,
+		    shadow = marker._shadow,
+		    iconPos = getPosition(marker._icon),
+		    latlng = marker._map.layerPointToLatLng(iconPos);
+
+		// update shadow position
+		if (shadow) {
+			setPosition(shadow, iconPos);
+		}
+
+		marker._latlng = latlng;
+		e.latlng = latlng;
+		e.oldLatLng = this._oldLatLng;
+
+		// @event drag: Event
+		// Fired repeatedly while the user drags the marker.
+		marker
+		    .fire('move', e)
+		    .fire('drag', e);
+	},
+
+	_onDragEnd: function (e) {
+		// @event dragend: DragEndEvent
+		// Fired when the user stops dragging the marker.
+
+		 cancelAnimFrame(this._panRequest);
+
+		// @event moveend: Event
+		// Fired when the marker stops moving (because of dragging).
+		delete this._oldLatLng;
+		this._marker
+		    .fire('moveend')
+		    .fire('dragend', e);
+	}
+});
+
+/*
+ * @class Marker
+ * @inherits Interactive layer
+ * @aka L.Marker
+ * L.Marker is used to display clickable/draggable icons on the map. Extends `Layer`.
+ *
+ * @example
+ *
+ * ```js
+ * L.marker([50.5, 30.5]).addTo(map);
+ * ```
+ */
+
+var Marker = Layer.extend({
+
+	// @section
+	// @aka Marker options
+	options: {
+		// @option icon: Icon = *
+		// Icon instance to use for rendering the marker.
+		// See [Icon documentation](#L.Icon) for details on how to customize the marker icon.
+		// If not specified, a common instance of `L.Icon.Default` is used.
+		icon: new IconDefault(),
+
+		// Option inherited from "Interactive layer" abstract class
+		interactive: true,
+
+		// @option keyboard: Boolean = true
+		// Whether the marker can be tabbed to with a keyboard and clicked by pressing enter.
+		keyboard: true,
+
+		// @option title: String = ''
+		// Text for the browser tooltip that appear on marker hover (no tooltip by default).
+		title: '',
+
+		// @option alt: String = ''
+		// Text for the `alt` attribute of the icon image (useful for accessibility).
+		alt: '',
+
+		// @option zIndexOffset: Number = 0
+		// By default, marker images zIndex is set automatically based on its latitude. Use this option if you want to put the marker on top of all others (or below), specifying a high value like `1000` (or high negative value, respectively).
+		zIndexOffset: 0,
+
+		// @option opacity: Number = 1.0
+		// The opacity of the marker.
+		opacity: 1,
+
+		// @option riseOnHover: Boolean = false
+		// If `true`, the marker will get on top of others when you hover the mouse over it.
+		riseOnHover: false,
+
+		// @option riseOffset: Number = 250
+		// The z-index offset used for the `riseOnHover` feature.
+		riseOffset: 250,
+
+		// @option pane: String = 'markerPane'
+		// `Map pane` where the markers icon will be added.
+		pane: 'markerPane',
+
+		// @option bubblingMouseEvents: Boolean = false
+		// When `true`, a mouse event on this marker will trigger the same event on the map
+		// (unless [`L.DomEvent.stopPropagation`](#domevent-stoppropagation) is used).
+		bubblingMouseEvents: false,
+
+		// @section Draggable marker options
+		// @option draggable: Boolean = false
+		// Whether the marker is draggable with mouse/touch or not.
+		draggable: false,
+
+		// @option autoPan: Boolean = false
+		// Whether to pan the map when dragging this marker near its edge or not.
+		autoPan: false,
+
+		// @option autoPanPadding: Point = Point(50, 50)
+		// Distance (in pixels to the left/right and to the top/bottom) of the
+		// map edge to start panning the map.
+		autoPanPadding: [50, 50],
+
+		// @option autoPanSpeed: Number = 10
+		// Number of pixels the map should pan by.
+		autoPanSpeed: 10
+	},
+
+	/* @section
+	 *
+	 * In addition to [shared layer methods](#Layer) like `addTo()` and `remove()` and [popup methods](#Popup) like bindPopup() you can also use the following methods:
+	 */
+
+	initialize: function (latlng, options) {
+		setOptions(this, options);
+		this._latlng = toLatLng(latlng);
+	},
+
+	onAdd: function (map) {
+		this._zoomAnimated = this._zoomAnimated && map.options.markerZoomAnimation;
+
+		if (this._zoomAnimated) {
+			map.on('zoomanim', this._animateZoom, this);
+		}
+
+		this._initIcon();
+		this.update();
+	},
+
+	onRemove: function (map) {
+		if (this.dragging && this.dragging.enabled()) {
+			this.options.draggable = true;
+			this.dragging.removeHooks();
+		}
+		delete this.dragging;
+
+		if (this._zoomAnimated) {
+			map.off('zoomanim', this._animateZoom, this);
+		}
+
+		this._removeIcon();
+		this._removeShadow();
+	},
+
+	getEvents: function () {
+		return {
+			zoom: this.update,
+			viewreset: this.update
+		};
+	},
+
+	// @method getLatLng: LatLng
+	// Returns the current geographical position of the marker.
+	getLatLng: function () {
+		return this._latlng;
+	},
+
+	// @method setLatLng(latlng: LatLng): this
+	// Changes the marker position to the given point.
+	setLatLng: function (latlng) {
+		var oldLatLng = this._latlng;
+		this._latlng = toLatLng(latlng);
+		this.update();
+
+		// @event move: Event
+		// Fired when the marker is moved via [`setLatLng`](#marker-setlatlng) or by [dragging](#marker-dragging). Old and new coordinates are included in event arguments as `oldLatLng`, `latlng`.
+		return this.fire('move', {oldLatLng: oldLatLng, latlng: this._latlng});
+	},
+
+	// @method setZIndexOffset(offset: Number): this
+	// Changes the [zIndex offset](#marker-zindexoffset) of the marker.
+	setZIndexOffset: function (offset) {
+		this.options.zIndexOffset = offset;
+		return this.update();
+	},
+
+	// @method setIcon(icon: Icon): this
+	// Changes the marker icon.
+	setIcon: function (icon) {
+
+		this.options.icon = icon;
+
+		if (this._map) {
+			this._initIcon();
+			this.update();
+		}
+
+		if (this._popup) {
+			this.bindPopup(this._popup, this._popup.options);
+		}
+
+		return this;
+	},
+
+	getElement: function () {
+		return this._icon;
+	},
+
+	update: function () {
+
+		if (this._icon && this._map) {
+			var pos = this._map.latLngToLayerPoint(this._latlng).round();
+			this._setPos(pos);
+		}
+
+		return this;
+	},
+
+	_initIcon: function () {
+		var options = this.options,
+		    classToAdd = 'leaflet-zoom-' + (this._zoomAnimated ? 'animated' : 'hide');
+
+		var icon = options.icon.createIcon(this._icon),
+		    addIcon = false;
+
+		// if we're not reusing the icon, remove the old one and init new one
+		if (icon !== this._icon) {
+			if (this._icon) {
+				this._removeIcon();
+			}
+			addIcon = true;
+
+			if (options.title) {
+				icon.title = options.title;
+			}
+
+			if (icon.tagName === 'IMG') {
+				icon.alt = options.alt || '';
+			}
+		}
+
+		addClass(icon, classToAdd);
+
+		if (options.keyboard) {
+			icon.tabIndex = '0';
+		}
+
+		this._icon = icon;
+
+		if (options.riseOnHover) {
+			this.on({
+				mouseover: this._bringToFront,
+				mouseout: this._resetZIndex
+			});
+		}
+
+		var newShadow = options.icon.createShadow(this._shadow),
+		    addShadow = false;
+
+		if (newShadow !== this._shadow) {
+			this._removeShadow();
+			addShadow = true;
+		}
+
+		if (newShadow) {
+			addClass(newShadow, classToAdd);
+			newShadow.alt = '';
+		}
+		this._shadow = newShadow;
+
+
+		if (options.opacity < 1) {
+			this._updateOpacity();
+		}
+
+
+		if (addIcon) {
+			this.getPane().appendChild(this._icon);
+		}
+		this._initInteraction();
+		if (newShadow && addShadow) {
+			this.getPane('shadowPane').appendChild(this._shadow);
+		}
+	},
+
+	_removeIcon: function () {
+		if (this.options.riseOnHover) {
+			this.off({
+				mouseover: this._bringToFront,
+				mouseout: this._resetZIndex
+			});
+		}
+
+		remove(this._icon);
+		this.removeInteractiveTarget(this._icon);
+
+		this._icon = null;
+	},
+
+	_removeShadow: function () {
+		if (this._shadow) {
+			remove(this._shadow);
+		}
+		this._shadow = null;
+	},
+
+	_setPos: function (pos) {
+		setPosition(this._icon, pos);
+
+		if (this._shadow) {
+			setPosition(this._shadow, pos);
+		}
+
+		this._zIndex = pos.y + this.options.zIndexOffset;
+
+		this._resetZIndex();
+	},
+
+	_updateZIndex: function (offset) {
+		this._icon.style.zIndex = this._zIndex + offset;
+	},
+
+	_animateZoom: function (opt) {
+		var pos = this._map._latLngToNewLayerPoint(this._latlng, opt.zoom, opt.center).round();
+
+		this._setPos(pos);
+	},
+
+	_initInteraction: function () {
+
+		if (!this.options.interactive) { return; }
+
+		addClass(this._icon, 'leaflet-interactive');
+
+		this.addInteractiveTarget(this._icon);
+
+		if (MarkerDrag) {
+			var draggable = this.options.draggable;
+			if (this.dragging) {
+				draggable = this.dragging.enabled();
+				this.dragging.disable();
+			}
+
+			this.dragging = new MarkerDrag(this);
+
+			if (draggable) {
+				this.dragging.enable();
+			}
+		}
+	},
+
+	// @method setOpacity(opacity: Number): this
+	// Changes the opacity of the marker.
+	setOpacity: function (opacity) {
+		this.options.opacity = opacity;
+		if (this._map) {
+			this._updateOpacity();
+		}
+
+		return this;
+	},
+
+	_updateOpacity: function () {
+		var opacity = this.options.opacity;
+
+		setOpacity(this._icon, opacity);
+
+		if (this._shadow) {
+			setOpacity(this._shadow, opacity);
+		}
+	},
+
+	_bringToFront: function () {
+		this._updateZIndex(this.options.riseOffset);
+	},
+
+	_resetZIndex: function () {
+		this._updateZIndex(0);
+	},
+
+	_getPopupAnchor: function () {
+		return this.options.icon.options.popupAnchor;
+	},
+
+	_getTooltipAnchor: function () {
+		return this.options.icon.options.tooltipAnchor;
+	}
+});
+
+
+// factory L.marker(latlng: LatLng, options? : Marker options)
+
+// @factory L.marker(latlng: LatLng, options? : Marker options)
+// Instantiates a Marker object given a geographical point and optionally an options object.
+function marker(latlng, options) {
+	return new Marker(latlng, options);
+}
+
+/*
+ * @class Path
+ * @aka L.Path
+ * @inherits Interactive layer
+ *
+ * An abstract class that contains options and constants shared between vector
+ * overlays (Polygon, Polyline, Circle). Do not use it directly. Extends `Layer`.
+ */
+
+var Path = Layer.extend({
+
+	// @section
+	// @aka Path options
+	options: {
+		// @option stroke: Boolean = true
+		// Whether to draw stroke along the path. Set it to `false` to disable borders on polygons or circles.
+		stroke: true,
+
+		// @option color: String = '#3388ff'
+		// Stroke color
+		color: '#3388ff',
+
+		// @option weight: Number = 3
+		// Stroke width in pixels
+		weight: 3,
+
+		// @option opacity: Number = 1.0
+		// Stroke opacity
+		opacity: 1,
+
+		// @option lineCap: String= 'round'
+		// A string that defines [shape to be used at the end](https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linecap) of the stroke.
+		lineCap: 'round',
+
+		// @option lineJoin: String = 'round'
+		// A string that defines [shape to be used at the corners](https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linejoin) of the stroke.
+		lineJoin: 'round',
+
+		// @option dashArray: String = null
+		// A string that defines the stroke [dash pattern](https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dasharray). Doesn't work on `Canvas`-powered layers in [some old browsers](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility).
+		dashArray: null,
+
+		// @option dashOffset: String = null
+		// A string that defines the [distance into the dash pattern to start the dash](https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dashoffset). Doesn't work on `Canvas`-powered layers in [some old browsers](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility).
+		dashOffset: null,
+
+		// @option fill: Boolean = depends
+		// Whether to fill the path with color. Set it to `false` to disable filling on polygons or circles.
+		fill: false,
+
+		// @option fillColor: String = *
+		// Fill color. Defaults to the value of the [`color`](#path-color) option
+		fillColor: null,
+
+		// @option fillOpacity: Number = 0.2
+		// Fill opacity.
+		fillOpacity: 0.2,
+
+		// @option fillRule: String = 'evenodd'
+		// A string that defines [how the inside of a shape](https://developer.mozilla.org/docs/Web/SVG/Attribute/fill-rule) is determined.
+		fillRule: 'evenodd',
+
+		// className: '',
+
+		// Option inherited from "Interactive layer" abstract class
+		interactive: true,
+
+		// @option bubblingMouseEvents: Boolean = true
+		// When `true`, a mouse event on this path will trigger the same event on the map
+		// (unless [`L.DomEvent.stopPropagation`](#domevent-stoppropagation) is used).
+		bubblingMouseEvents: true
+	},
+
+	beforeAdd: function (map) {
+		// Renderer is set here because we need to call renderer.getEvents
+		// before this.getEvents.
+		this._renderer = map.getRenderer(this);
+	},
+
+	onAdd: function () {
+		this._renderer._initPath(this);
+		this._reset();
+		this._renderer._addPath(this);
+	},
+
+	onRemove: function () {
+		this._renderer._removePath(this);
+	},
+
+	// @method redraw(): this
+	// Redraws the layer. Sometimes useful after you changed the coordinates that the path uses.
+	redraw: function () {
+		if (this._map) {
+			this._renderer._updatePath(this);
+		}
+		return this;
+	},
+
+	// @method setStyle(style: Path options): this
+	// Changes the appearance of a Path based on the options in the `Path options` object.
+	setStyle: function (style) {
+		setOptions(this, style);
+		if (this._renderer) {
+			this._renderer._updateStyle(this);
+		}
+		return this;
+	},
+
+	// @method bringToFront(): this
+	// Brings the layer to the top of all path layers.
+	bringToFront: function () {
+		if (this._renderer) {
+			this._renderer._bringToFront(this);
+		}
+		return this;
+	},
+
+	// @method bringToBack(): this
+	// Brings the layer to the bottom of all path layers.
+	bringToBack: function () {
+		if (this._renderer) {
+			this._renderer._bringToBack(this);
+		}
+		return this;
+	},
+
+	getElement: function () {
+		return this._path;
+	},
+
+	_reset: function () {
+		// defined in child classes
+		this._project();
+		this._update();
+	},
+
+	_clickTolerance: function () {
+		// used when doing hit detection for Canvas layers
+		return (this.options.stroke ? this.options.weight / 2 : 0) + this._renderer.options.tolerance;
+	}
+});
+
+/*
+ * @class CircleMarker
+ * @aka L.CircleMarker
+ * @inherits Path
+ *
+ * A circle of a fixed size with radius specified in pixels. Extends `Path`.
+ */
+
+var CircleMarker = Path.extend({
+
+	// @section
+	// @aka CircleMarker options
+	options: {
+		fill: true,
+
+		// @option radius: Number = 10
+		// Radius of the circle marker, in pixels
+		radius: 10
+	},
+
+	initialize: function (latlng, options) {
+		setOptions(this, options);
+		this._latlng = toLatLng(latlng);
+		this._radius = this.options.radius;
+	},
+
+	// @method setLatLng(latLng: LatLng): this
+	// Sets the position of a circle marker to a new location.
+	setLatLng: function (latlng) {
+		this._latlng = toLatLng(latlng);
+		this.redraw();
+		return this.fire('move', {latlng: this._latlng});
+	},
+
+	// @method getLatLng(): LatLng
+	// Returns the current geographical position of the circle marker
+	getLatLng: function () {
+		return this._latlng;
+	},
+
+	// @method setRadius(radius: Number): this
+	// Sets the radius of a circle marker. Units are in pixels.
+	setRadius: function (radius) {
+		this.options.radius = this._radius = radius;
+		return this.redraw();
+	},
+
+	// @method getRadius(): Number
+	// Returns the current radius of the circle
+	getRadius: function () {
+		return this._radius;
+	},
+
+	setStyle : function (options) {
+		var radius = options && options.radius || this._radius;
+		Path.prototype.setStyle.call(this, options);
+		this.setRadius(radius);
+		return this;
+	},
+
+	_project: function () {
+		this._point = this._map.latLngToLayerPoint(this._latlng);
+		this._updateBounds();
+	},
+
+	_updateBounds: function () {
+		var r = this._radius,
+		    r2 = this._radiusY || r,
+		    w = this._clickTolerance(),
+		    p = [r + w, r2 + w];
+		this._pxBounds = new Bounds(this._point.subtract(p), this._point.add(p));
+	},
+
+	_update: function () {
+		if (this._map) {
+			this._updatePath();
+		}
+	},
+
+	_updatePath: function () {
+		this._renderer._updateCircle(this);
+	},
+
+	_empty: function () {
+		return this._radius && !this._renderer._bounds.intersects(this._pxBounds);
+	},
+
+	// Needed by the `Canvas` renderer for interactivity
+	_containsPoint: function (p) {
+		return p.distanceTo(this._point) <= this._radius + this._clickTolerance();
+	}
+});
+
+
+// @factory L.circleMarker(latlng: LatLng, options?: CircleMarker options)
+// Instantiates a circle marker object given a geographical point, and an optional options object.
+function circleMarker(latlng, options) {
+	return new CircleMarker(latlng, options);
+}
+
+/*
+ * @class Circle
+ * @aka L.Circle
+ * @inherits CircleMarker
+ *
+ * A class for drawing circle overlays on a map. Extends `CircleMarker`.
+ *
+ * It's an approximation and starts to diverge from a real circle closer to poles (due to projection distortion).
+ *
+ * @example
+ *
+ * ```js
+ * L.circle([50.5, 30.5], {radius: 200}).addTo(map);
+ * ```
+ */
+
+var Circle = CircleMarker.extend({
+
+	initialize: function (latlng, options, legacyOptions) {
+		if (typeof options === 'number') {
+			// Backwards compatibility with 0.7.x factory (latlng, radius, options?)
+			options = extend({}, legacyOptions, {radius: options});
+		}
+		setOptions(this, options);
+		this._latlng = toLatLng(latlng);
+
+		if (isNaN(this.options.radius)) { throw new Error('Circle radius cannot be NaN'); }
+
+		// @section
+		// @aka Circle options
+		// @option radius: Number; Radius of the circle, in meters.
+		this._mRadius = this.options.radius;
+	},
+
+	// @method setRadius(radius: Number): this
+	// Sets the radius of a circle. Units are in meters.
+	setRadius: function (radius) {
+		this._mRadius = radius;
+		return this.redraw();
+	},
+
+	// @method getRadius(): Number
+	// Returns the current radius of a circle. Units are in meters.
+	getRadius: function () {
+		return this._mRadius;
+	},
+
+	// @method getBounds(): LatLngBounds
+	// Returns the `LatLngBounds` of the path.
+	getBounds: function () {
+		var half = [this._radius, this._radiusY || this._radius];
+
+		return new LatLngBounds(
+			this._map.layerPointToLatLng(this._point.subtract(half)),
+			this._map.layerPointToLatLng(this._point.add(half)));
+	},
+
+	setStyle: Path.prototype.setStyle,
+
+	_project: function () {
+
+		var lng = this._latlng.lng,
+		    lat = this._latlng.lat,
+		    map = this._map,
+		    crs = map.options.crs;
+
+		if (crs.distance === Earth.distance) {
+			var d = Math.PI / 180,
+			    latR = (this._mRadius / Earth.R) / d,
+			    top = map.project([lat + latR, lng]),
+			    bottom = map.project([lat - latR, lng]),
+			    p = top.add(bottom).divideBy(2),
+			    lat2 = map.unproject(p).lat,
+			    lngR = Math.acos((Math.cos(latR * d) - Math.sin(lat * d) * Math.sin(lat2 * d)) /
+			            (Math.cos(lat * d) * Math.cos(lat2 * d))) / d;
+
+			if (isNaN(lngR) || lngR === 0) {
+				lngR = latR / Math.cos(Math.PI / 180 * lat); // Fallback for edge case, #2425
+			}
+
+			this._point = p.subtract(map.getPixelOrigin());
+			this._radius = isNaN(lngR) ? 0 : p.x - map.project([lat2, lng - lngR]).x;
+			this._radiusY = p.y - top.y;
+
+		} else {
+			var latlng2 = crs.unproject(crs.project(this._latlng).subtract([this._mRadius, 0]));
+
+			this._point = map.latLngToLayerPoint(this._latlng);
+			this._radius = this._point.x - map.latLngToLayerPoint(latlng2).x;
+		}
+
+		this._updateBounds();
+	}
+});
+
+// @factory L.circle(latlng: LatLng, options?: Circle options)
+// Instantiates a circle object given a geographical point, and an options object
+// which contains the circle radius.
+// @alternative
+// @factory L.circle(latlng: LatLng, radius: Number, options?: Circle options)
+// Obsolete way of instantiating a circle, for compatibility with 0.7.x code.
+// Do not use in new applications or plugins.
+function circle(latlng, options, legacyOptions) {
+	return new Circle(latlng, options, legacyOptions);
+}
+
+/*
+ * @class Polyline
+ * @aka L.Polyline
+ * @inherits Path
+ *
+ * A class for drawing polyline overlays on a map. Extends `Path`.
+ *
+ * @example
+ *
+ * ```js
+ * // create a red polyline from an array of LatLng points
+ * var latlngs = [
+ * 	[45.51, -122.68],
+ * 	[37.77, -122.43],
+ * 	[34.04, -118.2]
+ * ];
+ *
+ * var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+ *
+ * // zoom the map to the polyline
+ * map.fitBounds(polyline.getBounds());
+ * ```
+ *
+ * You can also pass a multi-dimensional array to represent a `MultiPolyline` shape:
+ *
+ * ```js
+ * // create a red polyline from an array of arrays of LatLng points
+ * var latlngs = [
+ * 	[[45.51, -122.68],
+ * 	 [37.77, -122.43],
+ * 	 [34.04, -118.2]],
+ * 	[[40.78, -73.91],
+ * 	 [41.83, -87.62],
+ * 	 [32.76, -96.72]]
+ * ];
+ * ```
+ */
+
+
+var Polyline = Path.extend({
+
+	// @section
+	// @aka Polyline options
+	options: {
+		// @option smoothFactor: Number = 1.0
+		// How much to simplify the polyline on each zoom level. More means
+		// better performance and smoother look, and less means more accurate representation.
+		smoothFactor: 1.0,
+
+		// @option noClip: Boolean = false
+		// Disable polyline clipping.
+		noClip: false
+	},
+
+	initialize: function (latlngs, options) {
+		setOptions(this, options);
+		this._setLatLngs(latlngs);
+	},
+
+	// @method getLatLngs(): LatLng[]
+	// Returns an array of the points in the path, or nested arrays of points in case of multi-polyline.
+	getLatLngs: function () {
+		return this._latlngs;
+	},
+
+	// @method setLatLngs(latlngs: LatLng[]): this
+	// Replaces all the points in the polyline with the given array of geographical points.
+	setLatLngs: function (latlngs) {
+		this._setLatLngs(latlngs);
+		return this.redraw();
+	},
+
+	// @method isEmpty(): Boolean
+	// Returns `true` if the Polyline has no LatLngs.
+	isEmpty: function () {
+		return !this._latlngs.length;
+	},
+
+	// @method closestLayerPoint(p: Point): Point
+	// Returns the point closest to `p` on the Polyline.
+	closestLayerPoint: function (p) {
+		var minDistance = Infinity,
+		    minPoint = null,
+		    closest = _sqClosestPointOnSegment,
+		    p1, p2;
+
+		for (var j = 0, jLen = this._parts.length; j < jLen; j++) {
+			var points = this._parts[j];
+
+			for (var i = 1, len = points.length; i < len; i++) {
+				p1 = points[i - 1];
+				p2 = points[i];
+
+				var sqDist = closest(p, p1, p2, true);
+
+				if (sqDist < minDistance) {
+					minDistance = sqDist;
+					minPoint = closest(p, p1, p2);
+				}
+			}
+		}
+		if (minPoint) {
+			minPoint.distance = Math.sqrt(minDistance);
+		}
+		return minPoint;
+	},
+
+	// @method getCenter(): LatLng
+	// Returns the center ([centroid](http://en.wikipedia.org/wiki/Centroid)) of the polyline.
+	getCenter: function () {
+		// throws error when not yet added to map as this center calculation requires projected coordinates
+		if (!this._map) {
+			throw new Error('Must add layer to map before using getCenter()');
+		}
+
+		var i, halfDist, segDist, dist, p1, p2, ratio,
+		    points = this._rings[0],
+		    len = points.length;
+
+		if (!len) { return null; }
+
+		// polyline centroid algorithm; only uses the first ring if there are multiple
+
+		for (i = 0, halfDist = 0; i < len - 1; i++) {
+			halfDist += points[i].distanceTo(points[i + 1]) / 2;
+		}
+
+		// The line is so small in the current view that all points are on the same pixel.
+		if (halfDist === 0) {
+			return this._map.layerPointToLatLng(points[0]);
+		}
+
+		for (i = 0, dist = 0; i < len - 1; i++) {
+			p1 = points[i];
+			p2 = points[i + 1];
+			segDist = p1.distanceTo(p2);
+			dist += segDist;
+
+			if (dist > halfDist) {
+				ratio = (dist - halfDist) / segDist;
+				return this._map.layerPointToLatLng([
+					p2.x - ratio * (p2.x - p1.x),
+					p2.y - ratio * (p2.y - p1.y)
+				]);
+			}
+		}
+	},
+
+	// @method getBounds(): LatLngBounds
+	// Returns the `LatLngBounds` of the path.
+	getBounds: function () {
+		return this._bounds;
+	},
+
+	// @method addLatLng(latlng: LatLng, latlngs? LatLng[]): this
+	// Adds a given point to the polyline. By default, adds to the first ring of
+	// the polyline in case of a multi-polyline, but can be overridden by passing
+	// a specific ring as a LatLng array (that you can earlier access with [`getLatLngs`](#polyline-getlatlngs)).
+	addLatLng: function (latlng, latlngs) {
+		latlngs = latlngs || this._defaultShape();
+		latlng = toLatLng(latlng);
+		latlngs.push(latlng);
+		this._bounds.extend(latlng);
+		return this.redraw();
+	},
+
+	_setLatLngs: function (latlngs) {
+		this._bounds = new LatLngBounds();
+		this._latlngs = this._convertLatLngs(latlngs);
+	},
+
+	_defaultShape: function () {
+		return isFlat(this._latlngs) ? this._latlngs : this._latlngs[0];
+	},
+
+	// recursively convert latlngs input into actual LatLng instances; calculate bounds along the way
+	_convertLatLngs: function (latlngs) {
+		var result = [],
+		    flat = isFlat(latlngs);
+
+		for (var i = 0, len = latlngs.length; i < len; i++) {
+			if (flat) {
+				result[i] = toLatLng(latlngs[i]);
+				this._bounds.extend(result[i]);
+			} else {
+				result[i] = this._convertLatLngs(latlngs[i]);
+			}
+		}
+
+		return result;
+	},
+
+	_project: function () {
+		var pxBounds = new Bounds();
+		this._rings = [];
+		this._projectLatlngs(this._latlngs, this._rings, pxBounds);
+
+		var w = this._clickTolerance(),
+		    p = new Point(w, w);
+
+		if (this._bounds.isValid() && pxBounds.isValid()) {
+			pxBounds.min._subtract(p);
+			pxBounds.max._add(p);
+			this._pxBounds = pxBounds;
+		}
+	},
+
+	// recursively turns latlngs into a set of rings with projected coordinates
+	_projectLatlngs: function (latlngs, result, projectedBounds) {
+		var flat = latlngs[0] instanceof LatLng,
+		    len = latlngs.length,
+		    i, ring;
+
+		if (flat) {
+			ring = [];
+			for (i = 0; i < len; i++) {
+				ring[i] = this._map.latLngToLayerPoint(latlngs[i]);
+				projectedBounds.extend(ring[i]);
+			}
+			result.push(ring);
+		} else {
+			for (i = 0; i < len; i++) {
+				this._projectLatlngs(latlngs[i], result, projectedBounds);
+			}
+		}
+	},
+
+	// clip polyline by renderer bounds so that we have less to render for performance
+	_clipPoints: function () {
+		var bounds = this._renderer._bounds;
+
+		this._parts = [];
+		if (!this._pxBounds || !this._pxBounds.intersects(bounds)) {
+			return;
+		}
+
+		if (this.options.noClip) {
+			this._parts = this._rings;
+			return;
+		}
+
+		var parts = this._parts,
+		    i, j, k, len, len2, segment, points;
+
+		for (i = 0, k = 0, len = this._rings.length; i < len; i++) {
+			points = this._rings[i];
+
+			for (j = 0, len2 = points.length; j < len2 - 1; j++) {
+				segment = clipSegment(points[j], points[j + 1], bounds, j, true);
+
+				if (!segment) { continue; }
+
+				parts[k] = parts[k] || [];
+				parts[k].push(segment[0]);
+
+				// if segment goes out of screen, or it's the last one, it's the end of the line part
+				if ((segment[1] !== points[j + 1]) || (j === len2 - 2)) {
+					parts[k].push(segment[1]);
+					k++;
+				}
+			}
+		}
+	},
+
+	// simplify each clipped part of the polyline for performance
+	_simplifyPoints: function () {
+		var parts = this._parts,
+		    tolerance = this.options.smoothFactor;
+
+		for (var i = 0, len = parts.length; i < len; i++) {
+			parts[i] = simplify(parts[i], tolerance);
+		}
+	},
+
+	_update: function () {
+		if (!this._map) { return; }
+
+		this._clipPoints();
+		this._simplifyPoints();
+		this._updatePath();
+	},
+
+	_updatePath: function () {
+		this._renderer._updatePoly(this);
+	},
+
+	// Needed by the `Canvas` renderer for interactivity
+	_containsPoint: function (p, closed) {
+		var i, j, k, len, len2, part,
+		    w = this._clickTolerance();
+
+		if (!this._pxBounds || !this._pxBounds.contains(p)) { return false; }
+
+		// hit detection for polylines
+		for (i = 0, len = this._parts.length; i < len; i++) {
+			part = this._parts[i];
+
+			for (j = 0, len2 = part.length, k = len2 - 1; j < len2; k = j++) {
+				if (!closed && (j === 0)) { continue; }
+
+				if (pointToSegmentDistance(p, part[k], part[j]) <= w) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+});
+
+// @factory L.polyline(latlngs: LatLng[], options?: Polyline options)
+// Instantiates a polyline object given an array of geographical points and
+// optionally an options object. You can create a `Polyline` object with
+// multiple separate lines (`MultiPolyline`) by passing an array of arrays
+// of geographic points.
+function polyline(latlngs, options) {
+	return new Polyline(latlngs, options);
+}
+
+// Retrocompat. Allow plugins to support Leaflet versions before and after 1.1.
+Polyline._flat = _flat;
+
+/*
+ * @class Polygon
+ * @aka L.Polygon
+ * @inherits Polyline
+ *
+ * A class for drawing polygon overlays on a map. Extends `Polyline`.
+ *
+ * Note that points you pass when creating a polygon shouldn't have an additional last point equal to the first one — it's better to filter out such points.
+ *
+ *
+ * @example
+ *
+ * ```js
+ * // create a red polygon from an array of LatLng points
+ * var latlngs = [[37, -109.05],[41, -109.03],[41, -102.05],[37, -102.04]];
+ *
+ * var polygon = L.polygon(latlngs, {color: 'red'}).addTo(map);
+ *
+ * // zoom the map to the polygon
+ * map.fitBounds(polygon.getBounds());
+ * ```
+ *
+ * You can also pass an array of arrays of latlngs, with the first array representing the outer shape and the other arrays representing holes in the outer shape:
+ *
+ * ```js
+ * var latlngs = [
+ *   [[37, -109.05],[41, -109.03],[41, -102.05],[37, -102.04]], // outer ring
+ *   [[37.29, -108.58],[40.71, -108.58],[40.71, -102.50],[37.29, -102.50]] // hole
+ * ];
+ * ```
+ *
+ * Additionally, you can pass a multi-dimensional array to represent a MultiPolygon shape.
+ *
+ * ```js
+ * var latlngs = [
+ *   [ // first polygon
+ *     [[37, -109.05],[41, -109.03],[41, -102.05],[37, -102.04]], // outer ring
+ *     [[37.29, -108.58],[40.71, -108.58],[40.71, -102.50],[37.29, -102.50]] // hole
+ *   ],
+ *   [ // second polygon
+ *     [[41, -111.03],[45, -111.04],[45, -104.05],[41, -104.05]]
+ *   ]
+ * ];
+ * ```
+ */
+
+var Polygon = Polyline.extend({
+
+	options: {
+		fill: true
+	},
+
+	isEmpty: function () {
+		return !this._latlngs.length || !this._latlngs[0].length;
+	},
+
+	getCenter: function () {
+		// throws error when not yet added to map as this center calculation requires projected coordinates
+		if (!this._map) {
+			throw new Error('Must add layer to map before using getCenter()');
+		}
+
+		var i, j, p1, p2, f, area, x, y, center,
+		    points = this._rings[0],
+		    len = points.length;
+
+		if (!len) { return null; }
+
+		// polygon centroid algorithm; only uses the first ring if there are multiple
+
+		area = x = y = 0;
+
+		for (i = 0, j = len - 1; i < len; j = i++) {
+			p1 = points[i];
+			p2 = points[j];
+
+			f = p1.y * p2.x - p2.y * p1.x;
+			x += (p1.x + p2.x) * f;
+			y += (p1.y + p2.y) * f;
+			area += f * 3;
+		}
+
+		if (area === 0) {
+			// Polygon is so small that all points are on same pixel.
+			center = points[0];
+		} else {
+			center = [x / area, y / area];
+		}
+		return this._map.layerPointToLatLng(center);
+	},
+
+	_convertLatLngs: function (latlngs) {
+		var result = Polyline.prototype._convertLatLngs.call(this, latlngs),
+		    len = result.length;
+
+		// remove last point if it equals first one
+		if (len >= 2 && result[0] instanceof LatLng && result[0].equals(result[len - 1])) {
+			result.pop();
+		}
+		return result;
+	},
+
+	_setLatLngs: function (latlngs) {
+		Polyline.prototype._setLatLngs.call(this, latlngs);
+		if (isFlat(this._latlngs)) {
+			this._latlngs = [this._latlngs];
+		}
+	},
+
+	_defaultShape: function () {
+		return isFlat(this._latlngs[0]) ? this._latlngs[0] : this._latlngs[0][0];
+	},
+
+	_clipPoints: function () {
+		// polygons need a different clipping algorithm so we redefine that
+
+		var bounds = this._renderer._bounds,
+		    w = this.options.weight,
+		    p = new Point(w, w);
+
+		// increase clip padding by stroke width to avoid stroke on clip edges
+		bounds = new Bounds(bounds.min.subtract(p), bounds.max.add(p));
+
+		this._parts = [];
+		if (!this._pxBounds || !this._pxBounds.intersects(bounds)) {
+			return;
+		}
+
+		if (this.options.noClip) {
+			this._parts = this._rings;
+			return;
+		}
+
+		for (var i = 0, len = this._rings.length, clipped; i < len; i++) {
+			clipped = clipPolygon(this._rings[i], bounds, true);
+			if (clipped.length) {
+				this._parts.push(clipped);
+			}
+		}
+	},
+
+	_updatePath: function () {
+		this._renderer._updatePoly(this, true);
+	},
+
+	// Needed by the `Canvas` renderer for interactivity
+	_containsPoint: function (p) {
+		var inside = false,
+		    part, p1, p2, i, j, k, len, len2;
+
+		if (!this._pxBounds || !this._pxBounds.contains(p)) { return false; }
+
+		// ray casting algorithm for detecting if point is in polygon
+		for (i = 0, len = this._parts.length; i < len; i++) {
+			part = this._parts[i];
+
+			for (j = 0, len2 = part.length, k = len2 - 1; j < len2; k = j++) {
+				p1 = part[j];
+				p2 = part[k];
+
+				if (((p1.y > p.y) !== (p2.y > p.y)) && (p.x < (p2.x - p1.x) * (p.y - p1.y) / (p2.y - p1.y) + p1.x)) {
+					inside = !inside;
+				}
+			}
+		}
+
+		// also check if it's on polygon stroke
+		return inside || Polyline.prototype._containsPoint.call(this, p, true);
+	}
+
+});
+
+
+// @factory L.polygon(latlngs: LatLng[], options?: Polyline options)
+function polygon(latlngs, options) {
+	return new Polygon(latlngs, options);
+}
+
+/*
+ * @class GeoJSON
+ * @aka L.GeoJSON
+ * @inherits FeatureGroup
+ *
+ * Represents a GeoJSON object or an array of GeoJSON objects. Allows you to parse
+ * GeoJSON data and display it on the map. Extends `FeatureGroup`.
+ *
+ * @example
+ *
+ * ```js
+ * L.geoJSON(data, {
+ * 	style: function (feature) {
+ * 		return {color: feature.properties.color};
+ * 	}
+ * }).bindPopup(function (layer) {
+ * 	return layer.feature.properties.description;
+ * }).addTo(map);
+ * ```
+ */
+
+var GeoJSON = FeatureGroup.extend({
+
+	/* @section
+	 * @aka GeoJSON options
+	 *
+	 * @option pointToLayer: Function = *
+	 * A `Function` defining how GeoJSON points spawn Leaflet layers. It is internally
+	 * called when data is added, passing the GeoJSON point feature and its `LatLng`.
+	 * The default is to spawn a default `Marker`:
+	 * ```js
+	 * function(geoJsonPoint, latlng) {
+	 * 	return L.marker(latlng);
+	 * }
+	 * ```
+	 *
+	 * @option style: Function = *
+	 * A `Function` defining the `Path options` for styling GeoJSON lines and polygons,
+	 * called internally when data is added.
+	 * The default value is to not override any defaults:
+	 * ```js
+	 * function (geoJsonFeature) {
+	 * 	return {}
+	 * }
+	 * ```
+	 *
+	 * @option onEachFeature: Function = *
+	 * A `Function` that will be called once for each created `Feature`, after it has
+	 * been created and styled. Useful for attaching events and popups to features.
+	 * The default is to do nothing with the newly created layers:
+	 * ```js
+	 * function (feature, layer) {}
+	 * ```
+	 *
+	 * @option filter: Function = *
+	 * A `Function` that will be used to decide whether to include a feature or not.
+	 * The default is to include all features:
+	 * ```js
+	 * function (geoJsonFeature) {
+	 * 	return true;
+	 * }
+	 * ```
+	 * Note: dynamically changing the `filter` option will have effect only on newly
+	 * added data. It will _not_ re-evaluate already included features.
+	 *
+	 * @option coordsToLatLng: Function = *
+	 * A `Function` that will be used for converting GeoJSON coordinates to `LatLng`s.
+	 * The default is the `coordsToLatLng` static method.
+	 */
+
+	initialize: function (geojson, options) {
+		setOptions(this, options);
+
+		this._layers = {};
+
+		if (geojson) {
+			this.addData(geojson);
+		}
+	},
+
+	// @method addData( <GeoJSON> data ): this
+	// Adds a GeoJSON object to the layer.
+	addData: function (geojson) {
+		var features = isArray(geojson) ? geojson : geojson.features,
+		    i, len, feature;
+
+		if (features) {
+			for (i = 0, len = features.length; i < len; i++) {
+				// only add this if geometry or geometries are set and not null
+				feature = features[i];
+				if (feature.geometries || feature.geometry || feature.features || feature.coordinates) {
+					this.addData(feature);
+				}
+			}
+			return this;
+		}
+
+		var options = this.options;
+
+		if (options.filter && !options.filter(geojson)) { return this; }
+
+		var layer = geometryToLayer(geojson, options);
+		if (!layer) {
+			return this;
+		}
+		layer.feature = asFeature(geojson);
+
+		layer.defaultOptions = layer.options;
+		this.resetStyle(layer);
+
+		if (options.onEachFeature) {
+			options.onEachFeature(geojson, layer);
+		}
+
+		return this.addLayer(layer);
+	},
+
+	// @method resetStyle( <Path> layer ): this
+	// Resets the given vector layer's style to the original GeoJSON style, useful for resetting style after hover events.
+	resetStyle: function (layer) {
+		// reset any custom styles
+		layer.options = extend({}, layer.defaultOptions);
+		this._setLayerStyle(layer, this.options.style);
+		return this;
+	},
+
+	// @method setStyle( <Function> style ): this
+	// Changes styles of GeoJSON vector layers with the given style function.
+	setStyle: function (style) {
+		return this.eachLayer(function (layer) {
+			this._setLayerStyle(layer, style);
+		}, this);
+	},
+
+	_setLayerStyle: function (layer, style) {
+		if (typeof style === 'function') {
+			style = style(layer.feature);
+		}
+		if (layer.setStyle) {
+			layer.setStyle(style);
+		}
+	}
+});
+
+// @section
+// There are several static functions which can be called without instantiating L.GeoJSON:
+
+// @function geometryToLayer(featureData: Object, options?: GeoJSON options): Layer
+// Creates a `Layer` from a given GeoJSON feature. Can use a custom
+// [`pointToLayer`](#geojson-pointtolayer) and/or [`coordsToLatLng`](#geojson-coordstolatlng)
+// functions if provided as options.
+function geometryToLayer(geojson, options) {
+
+	var geometry = geojson.type === 'Feature' ? geojson.geometry : geojson,
+	    coords = geometry ? geometry.coordinates : null,
+	    layers = [],
+	    pointToLayer = options && options.pointToLayer,
+	    _coordsToLatLng = options && options.coordsToLatLng || coordsToLatLng,
+	    latlng, latlngs, i, len;
+
+	if (!coords && !geometry) {
+		return null;
+	}
+
+	switch (geometry.type) {
+	case 'Point':
+		latlng = _coordsToLatLng(coords);
+		return pointToLayer ? pointToLayer(geojson, latlng) : new Marker(latlng);
+
+	case 'MultiPoint':
+		for (i = 0, len = coords.length; i < len; i++) {
+			latlng = _coordsToLatLng(coords[i]);
+			layers.push(pointToLayer ? pointToLayer(geojson, latlng) : new Marker(latlng));
+		}
+		return new FeatureGroup(layers);
+
+	case 'LineString':
+	case 'MultiLineString':
+		latlngs = coordsToLatLngs(coords, geometry.type === 'LineString' ? 0 : 1, _coordsToLatLng);
+		return new Polyline(latlngs, options);
+
+	case 'Polygon':
+	case 'MultiPolygon':
+		latlngs = coordsToLatLngs(coords, geometry.type === 'Polygon' ? 1 : 2, _coordsToLatLng);
+		return new Polygon(latlngs, options);
+
+	case 'GeometryCollection':
+		for (i = 0, len = geometry.geometries.length; i < len; i++) {
+			var layer = geometryToLayer({
+				geometry: geometry.geometries[i],
+				type: 'Feature',
+				properties: geojson.properties
+			}, options);
+
+			if (layer) {
+				layers.push(layer);
+			}
+		}
+		return new FeatureGroup(layers);
+
+	default:
+		throw new Error('Invalid GeoJSON object.');
+	}
+}
+
+// @function coordsToLatLng(coords: Array): LatLng
+// Creates a `LatLng` object from an array of 2 numbers (longitude, latitude)
+// or 3 numbers (longitude, latitude, altitude) used in GeoJSON for points.
+function coordsToLatLng(coords) {
+	return new LatLng(coords[1], coords[0], coords[2]);
+}
+
+// @function coordsToLatLngs(coords: Array, levelsDeep?: Number, coordsToLatLng?: Function): Array
+// Creates a multidimensional array of `LatLng`s from a GeoJSON coordinates array.
+// `levelsDeep` specifies the nesting level (0 is for an array of points, 1 for an array of arrays of points, etc., 0 by default).
+// Can use a custom [`coordsToLatLng`](#geojson-coordstolatlng) function.
+function coordsToLatLngs(coords, levelsDeep, _coordsToLatLng) {
+	var latlngs = [];
+
+	for (var i = 0, len = coords.length, latlng; i < len; i++) {
+		latlng = levelsDeep ?
+			coordsToLatLngs(coords[i], levelsDeep - 1, _coordsToLatLng) :
+			(_coordsToLatLng || coordsToLatLng)(coords[i]);
+
+		latlngs.push(latlng);
+	}
+
+	return latlngs;
+}
+
+// @function latLngToCoords(latlng: LatLng, precision?: Number): Array
+// Reverse of [`coordsToLatLng`](#geojson-coordstolatlng)
+function latLngToCoords(latlng, precision) {
+	precision = typeof precision === 'number' ? precision : 6;
+	return latlng.alt !== undefined ?
+		[formatNum(latlng.lng, precision), formatNum(latlng.lat, precision), formatNum(latlng.alt, precision)] :
+		[formatNum(latlng.lng, precision), formatNum(latlng.lat, precision)];
+}
+
+// @function latLngsToCoords(latlngs: Array, levelsDeep?: Number, closed?: Boolean): Array
+// Reverse of [`coordsToLatLngs`](#geojson-coordstolatlngs)
+// `closed` determines whether the first point should be appended to the end of the array to close the feature, only used when `levelsDeep` is 0. False by default.
+function latLngsToCoords(latlngs, levelsDeep, closed, precision) {
+	var coords = [];
+
+	for (var i = 0, len = latlngs.length; i < len; i++) {
+		coords.push(levelsDeep ?
+			latLngsToCoords(latlngs[i], levelsDeep - 1, closed, precision) :
+			latLngToCoords(latlngs[i], precision));
+	}
+
+	if (!levelsDeep && closed) {
+		coords.push(coords[0]);
+	}
+
+	return coords;
+}
+
+function getFeature(layer, newGeometry) {
+	return layer.feature ?
+		extend({}, layer.feature, {geometry: newGeometry}) :
+		asFeature(newGeometry);
+}
+
+// @function asFeature(geojson: Object): Object
+// Normalize GeoJSON geometries/features into GeoJSON features.
+function asFeature(geojson) {
+	if (geojson.type === 'Feature' || geojson.type === 'FeatureCollection') {
+		return geojson;
+	}
+
+	return {
+		type: 'Feature',
+		properties: {},
+		geometry: geojson
+	};
+}
+
+var PointToGeoJSON = {
+	toGeoJSON: function (precision) {
+		return getFeature(this, {
+			type: 'Point',
+			coordinates: latLngToCoords(this.getLatLng(), precision)
+		});
+	}
+};
+
+// @namespace Marker
+// @method toGeoJSON(): Object
+// Returns a [`GeoJSON`](http://en.wikipedia.org/wiki/GeoJSON) representation of the marker (as a GeoJSON `Point` Feature).
+Marker.include(PointToGeoJSON);
+
+// @namespace CircleMarker
+// @method toGeoJSON(): Object
+// Returns a [`GeoJSON`](http://en.wikipedia.org/wiki/GeoJSON) representation of the circle marker (as a GeoJSON `Point` Feature).
+Circle.include(PointToGeoJSON);
+CircleMarker.include(PointToGeoJSON);
+
+
+// @namespace Polyline
+// @method toGeoJSON(): Object
+// Returns a [`GeoJSON`](http://en.wikipedia.org/wiki/GeoJSON) representation of the polyline (as a GeoJSON `LineString` or `MultiLineString` Feature).
+Polyline.include({
+	toGeoJSON: function (precision) {
+		var multi = !isFlat(this._latlngs);
+
+		var coords = latLngsToCoords(this._latlngs, multi ? 1 : 0, false, precision);
+
+		return getFeature(this, {
+			type: (multi ? 'Multi' : '') + 'LineString',
+			coordinates: coords
+		});
+	}
+});
+
+// @namespace Polygon
+// @method toGeoJSON(): Object
+// Returns a [`GeoJSON`](http://en.wikipedia.org/wiki/GeoJSON) representation of the polygon (as a GeoJSON `Polygon` or `MultiPolygon` Feature).
+Polygon.include({
+	toGeoJSON: function (precision) {
+		var holes = !isFlat(this._latlngs),
+		    multi = holes && !isFlat(this._latlngs[0]);
+
+		var coords = latLngsToCoords(this._latlngs, multi ? 2 : holes ? 1 : 0, true, precision);
+
+		if (!holes) {
+			coords = [coords];
+		}
+
+		return getFeature(this, {
+			type: (multi ? 'Multi' : '') + 'Polygon',
+			coordinates: coords
+		});
+	}
+});
+
+
+// @namespace LayerGroup
+LayerGroup.include({
+	toMultiPoint: function (precision) {
+		var coords = [];
+
+		this.eachLayer(function (layer) {
+			coords.push(layer.toGeoJSON(precision).geometry.coordinates);
+		});
+
+		return getFeature(this, {
+			type: 'MultiPoint',
+			coordinates: coords
+		});
+	},
+
+	// @method toGeoJSON(): Object
+	// Returns a [`GeoJSON`](http://en.wikipedia.org/wiki/GeoJSON) representation of the layer group (as a GeoJSON `FeatureCollection`, `GeometryCollection`, or `MultiPoint`).
+	toGeoJSON: function (precision) {
+
+		var type = this.feature && this.feature.geometry && this.feature.geometry.type;
+
+		if (type === 'MultiPoint') {
+			return this.toMultiPoint(precision);
+		}
+
+		var isGeometryCollection = type === 'GeometryCollection',
+		    jsons = [];
+
+		this.eachLayer(function (layer) {
+			if (layer.toGeoJSON) {
+				var json = layer.toGeoJSON(precision);
+				if (isGeometryCollection) {
+					jsons.push(json.geometry);
+				} else {
+					var feature = asFeature(json);
+					// Squash nested feature collections
+					if (feature.type === 'FeatureCollection') {
+						jsons.push.apply(jsons, feature.features);
+					} else {
+						jsons.push(feature);
+					}
+				}
+			}
+		});
+
+		if (isGeometryCollection) {
+			return getFeature(this, {
+				geometries: jsons,
+				type: 'GeometryCollection'
+			});
+		}
+
+		return {
+			type: 'FeatureCollection',
+			features: jsons
+		};
+	}
+});
+
+// @namespace GeoJSON
+// @factory L.geoJSON(geojson?: Object, options?: GeoJSON options)
+// Creates a GeoJSON layer. Optionally accepts an object in
+// [GeoJSON format](https://tools.ietf.org/html/rfc7946) to display on the map
+// (you can alternatively add it later with `addData` method) and an `options` object.
+function geoJSON(geojson, options) {
+	return new GeoJSON(geojson, options);
+}
+
+// Backward compatibility.
+var geoJson = geoJSON;
+
+/*
+ * @class ImageOverlay
+ * @aka L.ImageOverlay
+ * @inherits Interactive layer
+ *
+ * Used to load and display a single image over specific bounds of the map. Extends `Layer`.
+ *
+ * @example
+ *
+ * ```js
+ * var imageUrl = 'http://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg',
+ * 	imageBounds = [[40.712216, -74.22655], [40.773941, -74.12544]];
+ * L.imageOverlay(imageUrl, imageBounds).addTo(map);
+ * ```
+ */
+
+var ImageOverlay = Layer.extend({
+
+	// @section
+	// @aka ImageOverlay options
+	options: {
+		// @option opacity: Number = 1.0
+		// The opacity of the image overlay.
+		opacity: 1,
+
+		// @option alt: String = ''
+		// Text for the `alt` attribute of the image (useful for accessibility).
+		alt: '',
+
+		// @option interactive: Boolean = false
+		// If `true`, the image overlay will emit [mouse events](#interactive-layer) when clicked or hovered.
+		interactive: false,
+
+		// @option crossOrigin: Boolean|String = false
+		// Whether the crossOrigin attribute will be added to the image.
+		// If a String is provided, the image will have its crossOrigin attribute set to the String provided. This is needed if you want to access image pixel data.
+		// Refer to [CORS Settings](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) for valid String values.
+		crossOrigin: false,
+
+		// @option errorOverlayUrl: String = ''
+		// URL to the overlay image to show in place of the overlay that failed to load.
+		errorOverlayUrl: '',
+
+		// @option zIndex: Number = 1
+		// The explicit [zIndex](https://developer.mozilla.org/docs/Web/CSS/CSS_Positioning/Understanding_z_index) of the overlay layer.
+		zIndex: 1,
+
+		// @option className: String = ''
+		// A custom class name to assign to the image. Empty by default.
+		className: ''
+	},
+
+	initialize: function (url, bounds, options) { // (String, LatLngBounds, Object)
+		this._url = url;
+		this._bounds = toLatLngBounds(bounds);
+
+		setOptions(this, options);
+	},
+
+	onAdd: function () {
+		if (!this._image) {
+			this._initImage();
+
+			if (this.options.opacity < 1) {
+				this._updateOpacity();
+			}
+		}
+
+		if (this.options.interactive) {
+			addClass(this._image, 'leaflet-interactive');
+			this.addInteractiveTarget(this._image);
+		}
+
+		this.getPane().appendChild(this._image);
+		this._reset();
+	},
+
+	onRemove: function () {
+		remove(this._image);
+		if (this.options.interactive) {
+			this.removeInteractiveTarget(this._image);
+		}
+	},
+
+	// @method setOpacity(opacity: Number): this
+	// Sets the opacity of the overlay.
+	setOpacity: function (opacity) {
+		this.options.opacity = opacity;
+
+		if (this._image) {
+			this._updateOpacity();
+		}
+		return this;
+	},
+
+	setStyle: function (styleOpts) {
+		if (styleOpts.opacity) {
+			this.setOpacity(styleOpts.opacity);
+		}
+		return this;
+	},
+
+	// @method bringToFront(): this
+	// Brings the layer to the top of all overlays.
+	bringToFront: function () {
+		if (this._map) {
+			toFront(this._image);
+		}
+		return this;
+	},
+
+	// @method bringToBack(): this
+	// Brings the layer to the bottom of all overlays.
+	bringToBack: function () {
+		if (this._map) {
+			toBack(this._image);
+		}
+		return this;
+	},
+
+	// @method setUrl(url: String): this
+	// Changes the URL of the image.
+	setUrl: function (url) {
+		this._url = url;
+
+		if (this._image) {
+			this._image.src = url;
+		}
+		return this;
+	},
+
+	// @method setBounds(bounds: LatLngBounds): this
+	// Update the bounds that this ImageOverlay covers
+	setBounds: function (bounds) {
+		this._bounds = toLatLngBounds(bounds);
+
+		if (this._map) {
+			this._reset();
+		}
+		return this;
+	},
+
+	getEvents: function () {
+		var events = {
+			zoom: this._reset,
+			viewreset: this._reset
+		};
+
+		if (this._zoomAnimated) {
+			events.zoomanim = this._animateZoom;
+		}
+
+		return events;
+	},
+
+	// @method setZIndex(value: Number): this
+	// Changes the [zIndex](#imageoverlay-zindex) of the image overlay.
+	setZIndex: function (value) {
+		this.options.zIndex = value;
+		this._updateZIndex();
+		return this;
+	},
+
+	// @method getBounds(): LatLngBounds
+	// Get the bounds that this ImageOverlay covers
+	getBounds: function () {
+		return this._bounds;
+	},
+
+	// @method getElement(): HTMLElement
+	// Returns the instance of [`HTMLImageElement`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement)
+	// used by this overlay.
+	getElement: function () {
+		return this._image;
+	},
+
+	_initImage: function () {
+		var wasElementSupplied = this._url.tagName === 'IMG';
+		var img = this._image = wasElementSupplied ? this._url : create$1('img');
+
+		addClass(img, 'leaflet-image-layer');
+		if (this._zoomAnimated) { addClass(img, 'leaflet-zoom-animated'); }
+		if (this.options.className) { addClass(img, this.options.className); }
+
+		img.onselectstart = falseFn;
+		img.onmousemove = falseFn;
+
+		// @event load: Event
+		// Fired when the ImageOverlay layer has loaded its image
+		img.onload = bind(this.fire, this, 'load');
+		img.onerror = bind(this._overlayOnError, this, 'error');
+
+		if (this.options.crossOrigin || this.options.crossOrigin === '') {
+			img.crossOrigin = this.options.crossOrigin === true ? '' : this.options.crossOrigin;
+		}
+
+		if (this.options.zIndex) {
+			this._updateZIndex();
+		}
+
+		if (wasElementSupplied) {
+			this._url = img.src;
+			return;
+		}
+
+		img.src = this._url;
+		img.alt = this.options.alt;
+	},
+
+	_animateZoom: function (e) {
+		var scale = this._map.getZoomScale(e.zoom),
+		    offset = this._map._latLngBoundsToNewLayerBounds(this._bounds, e.zoom, e.center).min;
+
+		setTransform(this._image, offset, scale);
+	},
+
+	_reset: function () {
+		var image = this._image,
+		    bounds = new Bounds(
+		        this._map.latLngToLayerPoint(this._bounds.getNorthWest()),
+		        this._map.latLngToLayerPoint(this._bounds.getSouthEast())),
+		    size = bounds.getSize();
+
+		setPosition(image, bounds.min);
+
+		image.style.width  = size.x + 'px';
+		image.style.height = size.y + 'px';
+	},
+
+	_updateOpacity: function () {
+		setOpacity(this._image, this.options.opacity);
+	},
+
+	_updateZIndex: function () {
+		if (this._image && this.options.zIndex !== undefined && this.options.zIndex !== null) {
+			this._image.style.zIndex = this.options.zIndex;
+		}
+	},
+
+	_overlayOnError: function () {
+		// @event error: Event
+		// Fired when the ImageOverlay layer fails to load its image
+		this.fire('error');
+
+		var errorUrl = this.options.errorOverlayUrl;
+		if (errorUrl && this._url !== errorUrl) {
+			this._url = errorUrl;
+			this._image.src = errorUrl;
+		}
+	}
+});
+
+// @factory L.imageOverlay(imageUrl: String, bounds: LatLngBounds, options?: ImageOverlay options)
+// Instantiates an image overlay object given the URL of the image and the
+// geographical bounds it is tied to.
+var imageOverlay = function (url, bounds, options) {
+	return new ImageOverlay(url, bounds, options);
+};
+
+/*
+ * @class VideoOverlay
+ * @aka L.VideoOverlay
+ * @inherits ImageOverlay
+ *
+ * Used to load and display a video player over specific bounds of the map. Extends `ImageOverlay`.
+ *
+ * A video overlay uses the [`<video>`](https://developer.mozilla.org/docs/Web/HTML/Element/video)
+ * HTML5 element.
+ *
+ * @example
+ *
+ * ```js
+ * var videoUrl = 'https://www.mapbox.com/bites/00188/patricia_nasa.webm',
+ * 	videoBounds = [[ 32, -130], [ 13, -100]];
+ * L.videoOverlay(videoUrl, videoBounds ).addTo(map);
+ * ```
+ */
+
+var VideoOverlay = ImageOverlay.extend({
+
+	// @section
+	// @aka VideoOverlay options
+	options: {
+		// @option autoplay: Boolean = true
+		// Whether the video starts playing automatically when loaded.
+		autoplay: true,
+
+		// @option loop: Boolean = true
+		// Whether the video will loop back to the beginning when played.
+		loop: true
+	},
+
+	_initImage: function () {
+		var wasElementSupplied = this._url.tagName === 'VIDEO';
+		var vid = this._image = wasElementSupplied ? this._url : create$1('video');
+
+		addClass(vid, 'leaflet-image-layer');
+		if (this._zoomAnimated) { addClass(vid, 'leaflet-zoom-animated'); }
+
+		vid.onselectstart = falseFn;
+		vid.onmousemove = falseFn;
+
+		// @event load: Event
+		// Fired when the video has finished loading the first frame
+		vid.onloadeddata = bind(this.fire, this, 'load');
+
+		if (wasElementSupplied) {
+			var sourceElements = vid.getElementsByTagName('source');
+			var sources = [];
+			for (var j = 0; j < sourceElements.length; j++) {
+				sources.push(sourceElements[j].src);
+			}
+
+			this._url = (sourceElements.length > 0) ? sources : [vid.src];
+			return;
+		}
+
+		if (!isArray(this._url)) { this._url = [this._url]; }
+
+		vid.autoplay = !!this.options.autoplay;
+		vid.loop = !!this.options.loop;
+		for (var i = 0; i < this._url.length; i++) {
+			var source = create$1('source');
+			source.src = this._url[i];
+			vid.appendChild(source);
+		}
+	}
+
+	// @method getElement(): HTMLVideoElement
+	// Returns the instance of [`HTMLVideoElement`](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement)
+	// used by this overlay.
+});
+
+
+// @factory L.videoOverlay(video: String|Array|HTMLVideoElement, bounds: LatLngBounds, options?: VideoOverlay options)
+// Instantiates an image overlay object given the URL of the video (or array of URLs, or even a video element) and the
+// geographical bounds it is tied to.
+
+function videoOverlay(video, bounds, options) {
+	return new VideoOverlay(video, bounds, options);
+}
+
+/*
+ * @class DivOverlay
+ * @inherits Layer
+ * @aka L.DivOverlay
+ * Base model for L.Popup and L.Tooltip. Inherit from it for custom popup like plugins.
+ */
+
+// @namespace DivOverlay
+var DivOverlay = Layer.extend({
+
+	// @section
+	// @aka DivOverlay options
+	options: {
+		// @option offset: Point = Point(0, 7)
+		// The offset of the popup position. Useful to control the anchor
+		// of the popup when opening it on some overlays.
+		offset: [0, 7],
+
+		// @option className: String = ''
+		// A custom CSS class name to assign to the popup.
+		className: '',
+
+		// @option pane: String = 'popupPane'
+		// `Map pane` where the popup will be added.
+		pane: 'popupPane'
+	},
+
+	initialize: function (options, source) {
+		setOptions(this, options);
+
+		this._source = source;
+	},
+
+	onAdd: function (map) {
+		this._zoomAnimated = map._zoomAnimated;
+
+		if (!this._container) {
+			this._initLayout();
+		}
+
+		if (map._fadeAnimated) {
+			setOpacity(this._container, 0);
+		}
+
+		clearTimeout(this._removeTimeout);
+		this.getPane().appendChild(this._container);
+		this.update();
+
+		if (map._fadeAnimated) {
+			setOpacity(this._container, 1);
+		}
+
+		this.bringToFront();
+	},
+
+	onRemove: function (map) {
+		if (map._fadeAnimated) {
+			setOpacity(this._container, 0);
+			this._removeTimeout = setTimeout(bind(remove, undefined, this._container), 200);
+		} else {
+			remove(this._container);
+		}
+	},
+
+	// @namespace Popup
+	// @method getLatLng: LatLng
+	// Returns the geographical point of popup.
+	getLatLng: function () {
+		return this._latlng;
+	},
+
+	// @method setLatLng(latlng: LatLng): this
+	// Sets the geographical point where the popup will open.
+	setLatLng: function (latlng) {
+		this._latlng = toLatLng(latlng);
+		if (this._map) {
+			this._updatePosition();
+			this._adjustPan();
+		}
+		return this;
+	},
+
+	// @method getContent: String|HTMLElement
+	// Returns the content of the popup.
+	getContent: function () {
+		return this._content;
+	},
+
+	// @method setContent(htmlContent: String|HTMLElement|Function): this
+	// Sets the HTML content of the popup. If a function is passed the source layer will be passed to the function. The function should return a `String` or `HTMLElement` to be used in the popup.
+	setContent: function (content) {
+		this._content = content;
+		this.update();
+		return this;
+	},
+
+	// @method getElement: String|HTMLElement
+	// Alias for [getContent()](#popup-getcontent)
+	getElement: function () {
+		return this._container;
+	},
+
+	// @method update: null
+	// Updates the popup content, layout and position. Useful for updating the popup after something inside changed, e.g. image loaded.
+	update: function () {
+		if (!this._map) { return; }
+
+		this._container.style.visibility = 'hidden';
+
+		this._updateContent();
+		this._updateLayout();
+		this._updatePosition();
+
+		this._container.style.visibility = '';
+
+		this._adjustPan();
+	},
+
+	getEvents: function () {
+		var events = {
+			zoom: this._updatePosition,
+			viewreset: this._updatePosition
+		};
+
+		if (this._zoomAnimated) {
+			events.zoomanim = this._animateZoom;
+		}
+		return events;
+	},
+
+	// @method isOpen: Boolean
+	// Returns `true` when the popup is visible on the map.
+	isOpen: function () {
+		return !!this._map && this._map.hasLayer(this);
+	},
+
+	// @method bringToFront: this
+	// Brings this popup in front of other popups (in the same map pane).
+	bringToFront: function () {
+		if (this._map) {
+			toFront(this._container);
+		}
+		return this;
+	},
+
+	// @method bringToBack: this
+	// Brings this popup to the back of other popups (in the same map pane).
+	bringToBack: function () {
+		if (this._map) {
+			toBack(this._container);
+		}
+		return this;
+	},
+
+	_updateContent: function () {
+		if (!this._content) { return; }
+
+		var node = this._contentNode;
+		var content = (typeof this._content === 'function') ? this._content(this._source || this) : this._content;
+
+		if (typeof content === 'string') {
+			node.innerHTML = content;
+		} else {
+			while (node.hasChildNodes()) {
+				node.removeChild(node.firstChild);
+			}
+			node.appendChild(content);
+		}
+		this.fire('contentupdate');
+	},
+
+	_updatePosition: function () {
+		if (!this._map) { return; }
+
+		var pos = this._map.latLngToLayerPoint(this._latlng),
+		    offset = toPoint(this.options.offset),
+		    anchor = this._getAnchor();
+
+		if (this._zoomAnimated) {
+			setPosition(this._container, pos.add(anchor));
+		} else {
+			offset = offset.add(pos).add(anchor);
+		}
+
+		var bottom = this._containerBottom = -offset.y,
+		    left = this._containerLeft = -Math.round(this._containerWidth / 2) + offset.x;
+
+		// bottom position the popup in case the height of the popup changes (images loading etc)
+		this._container.style.bottom = bottom + 'px';
+		this._container.style.left = left + 'px';
+	},
+
+	_getAnchor: function () {
+		return [0, 0];
+	}
+
+});
+
+/*
+ * @class Popup
+ * @inherits DivOverlay
+ * @aka L.Popup
+ * Used to open popups in certain places of the map. Use [Map.openPopup](#map-openpopup) to
+ * open popups while making sure that only one popup is open at one time
+ * (recommended for usability), or use [Map.addLayer](#map-addlayer) to open as many as you want.
+ *
+ * @example
+ *
+ * If you want to just bind a popup to marker click and then open it, it's really easy:
+ *
+ * ```js
+ * marker.bindPopup(popupContent).openPopup();
+ * ```
+ * Path overlays like polylines also have a `bindPopup` method.
+ * Here's a more complicated way to open a popup on a map:
+ *
+ * ```js
+ * var popup = L.popup()
+ * 	.setLatLng(latlng)
+ * 	.setContent('<p>Hello world!<br />This is a nice popup.</p>')
+ * 	.openOn(map);
+ * ```
+ */
+
+
+// @namespace Popup
+var Popup = DivOverlay.extend({
+
+	// @section
+	// @aka Popup options
+	options: {
+		// @option maxWidth: Number = 300
+		// Max width of the popup, in pixels.
+		maxWidth: 300,
+
+		// @option minWidth: Number = 50
+		// Min width of the popup, in pixels.
+		minWidth: 50,
+
+		// @option maxHeight: Number = null
+		// If set, creates a scrollable container of the given height
+		// inside a popup if its content exceeds it.
+		maxHeight: null,
+
+		// @option autoPan: Boolean = true
+		// Set it to `false` if you don't want the map to do panning animation
+		// to fit the opened popup.
+		autoPan: true,
+
+		// @option autoPanPaddingTopLeft: Point = null
+		// The margin between the popup and the top left corner of the map
+		// view after autopanning was performed.
+		autoPanPaddingTopLeft: null,
+
+		// @option autoPanPaddingBottomRight: Point = null
+		// The margin between the popup and the bottom right corner of the map
+		// view after autopanning was performed.
+		autoPanPaddingBottomRight: null,
+
+		// @option autoPanPadding: Point = Point(5, 5)
+		// Equivalent of setting both top left and bottom right autopan padding to the same value.
+		autoPanPadding: [5, 5],
+
+		// @option keepInView: Boolean = false
+		// Set it to `true` if you want to prevent users from panning the popup
+		// off of the screen while it is open.
+		keepInView: false,
+
+		// @option closeButton: Boolean = true
+		// Controls the presence of a close button in the popup.
+		closeButton: true,
+
+		// @option autoClose: Boolean = true
+		// Set it to `false` if you want to override the default behavior of
+		// the popup closing when another popup is opened.
+		autoClose: true,
+
+		// @option closeOnEscapeKey: Boolean = true
+		// Set it to `false` if you want to override the default behavior of
+		// the ESC key for closing of the popup.
+		closeOnEscapeKey: true,
+
+		// @option closeOnClick: Boolean = *
+		// Set it if you want to override the default behavior of the popup closing when user clicks
+		// on the map. Defaults to the map's [`closePopupOnClick`](#map-closepopuponclick) option.
+
+		// @option className: String = ''
+		// A custom CSS class name to assign to the popup.
+		className: ''
+	},
+
+	// @namespace Popup
+	// @method openOn(map: Map): this
+	// Adds the popup to the map and closes the previous one. The same as `map.openPopup(popup)`.
+	openOn: function (map) {
+		map.openPopup(this);
+		return this;
+	},
+
+	onAdd: function (map) {
+		DivOverlay.prototype.onAdd.call(this, map);
+
+		// @namespace Map
+		// @section Popup events
+		// @event popupopen: PopupEvent
+		// Fired when a popup is opened in the map
+		map.fire('popupopen', {popup: this});
+
+		if (this._source) {
+			// @namespace Layer
+			// @section Popup events
+			// @event popupopen: PopupEvent
+			// Fired when a popup bound to this layer is opened
+			this._source.fire('popupopen', {popup: this}, true);
+			// For non-path layers, we toggle the popup when clicking
+			// again the layer, so prevent the map to reopen it.
+			if (!(this._source instanceof Path)) {
+				this._source.on('preclick', stopPropagation);
+			}
+		}
+	},
+
+	onRemove: function (map) {
+		DivOverlay.prototype.onRemove.call(this, map);
+
+		// @namespace Map
+		// @section Popup events
+		// @event popupclose: PopupEvent
+		// Fired when a popup in the map is closed
+		map.fire('popupclose', {popup: this});
+
+		if (this._source) {
+			// @namespace Layer
+			// @section Popup events
+			// @event popupclose: PopupEvent
+			// Fired when a popup bound to this layer is closed
+			this._source.fire('popupclose', {popup: this}, true);
+			if (!(this._source instanceof Path)) {
+				this._source.off('preclick', stopPropagation);
+			}
+		}
+	},
+
+	getEvents: function () {
+		var events = DivOverlay.prototype.getEvents.call(this);
+
+		if (this.options.closeOnClick !== undefined ? this.options.closeOnClick : this._map.options.closePopupOnClick) {
+			events.preclick = this._close;
+		}
+
+		if (this.options.keepInView) {
+			events.moveend = this._adjustPan;
+		}
+
+		return events;
+	},
+
+	_close: function () {
+		if (this._map) {
+			this._map.closePopup(this);
+		}
+	},
+
+	_initLayout: function () {
+		var prefix = 'leaflet-popup',
+		    container = this._container = create$1('div',
+			prefix + ' ' + (this.options.className || '') +
+			' leaflet-zoom-animated');
+
+		var wrapper = this._wrapper = create$1('div', prefix + '-content-wrapper', container);
+		this._contentNode = create$1('div', prefix + '-content', wrapper);
+
+		disableClickPropagation(wrapper);
+		disableScrollPropagation(this._contentNode);
+		on(wrapper, 'contextmenu', stopPropagation);
+
+		this._tipContainer = create$1('div', prefix + '-tip-container', container);
+		this._tip = create$1('div', prefix + '-tip', this._tipContainer);
+
+		if (this.options.closeButton) {
+			var closeButton = this._closeButton = create$1('a', prefix + '-close-button', container);
+			closeButton.href = '#close';
+			closeButton.innerHTML = '&#215;';
+
+			on(closeButton, 'click', this._onCloseButtonClick, this);
+		}
+	},
+
+	_updateLayout: function () {
+		var container = this._contentNode,
+		    style = container.style;
+
+		style.width = '';
+		style.whiteSpace = 'nowrap';
+
+		var width = container.offsetWidth;
+		width = Math.min(width, this.options.maxWidth);
+		width = Math.max(width, this.options.minWidth);
+
+		style.width = (width + 1) + 'px';
+		style.whiteSpace = '';
+
+		style.height = '';
+
+		var height = container.offsetHeight,
+		    maxHeight = this.options.maxHeight,
+		    scrolledClass = 'leaflet-popup-scrolled';
+
+		if (maxHeight && height > maxHeight) {
+			style.height = maxHeight + 'px';
+			addClass(container, scrolledClass);
+		} else {
+			removeClass(container, scrolledClass);
+		}
+
+		this._containerWidth = this._container.offsetWidth;
+	},
+
+	_animateZoom: function (e) {
+		var pos = this._map._latLngToNewLayerPoint(this._latlng, e.zoom, e.center),
+		    anchor = this._getAnchor();
+		setPosition(this._container, pos.add(anchor));
+	},
+
+	_adjustPan: function () {
+		if (!this.options.autoPan || (this._map._panAnim && this._map._panAnim._inProgress)) { return; }
+
+		var map = this._map,
+		    marginBottom = parseInt(getStyle(this._container, 'marginBottom'), 10) || 0,
+		    containerHeight = this._container.offsetHeight + marginBottom,
+		    containerWidth = this._containerWidth,
+		    layerPos = new Point(this._containerLeft, -containerHeight - this._containerBottom);
+
+		layerPos._add(getPosition(this._container));
+
+		var containerPos = map.layerPointToContainerPoint(layerPos),
+		    padding = toPoint(this.options.autoPanPadding),
+		    paddingTL = toPoint(this.options.autoPanPaddingTopLeft || padding),
+		    paddingBR = toPoint(this.options.autoPanPaddingBottomRight || padding),
+		    size = map.getSize(),
+		    dx = 0,
+		    dy = 0;
+
+		if (containerPos.x + containerWidth + paddingBR.x > size.x) { // right
+			dx = containerPos.x + containerWidth - size.x + paddingBR.x;
+		}
+		if (containerPos.x - dx - paddingTL.x < 0) { // left
+			dx = containerPos.x - paddingTL.x;
+		}
+		if (containerPos.y + containerHeight + paddingBR.y > size.y) { // bottom
+			dy = containerPos.y + containerHeight - size.y + paddingBR.y;
+		}
+		if (containerPos.y - dy - paddingTL.y < 0) { // top
+			dy = containerPos.y - paddingTL.y;
+		}
+
+		// @namespace Map
+		// @section Popup events
+		// @event autopanstart: Event
+		// Fired when the map starts autopanning when opening a popup.
+		if (dx || dy) {
+			map
+			    .fire('autopanstart')
+			    .panBy([dx, dy]);
+		}
+	},
+
+	_onCloseButtonClick: function (e) {
+		this._close();
+		stop(e);
+	},
+
+	_getAnchor: function () {
+		// Where should we anchor the popup on the source layer?
+		return toPoint(this._source && this._source._getPopupAnchor ? this._source._getPopupAnchor() : [0, 0]);
+	}
+
+});
+
+// @namespace Popup
+// @factory L.popup(options?: Popup options, source?: Layer)
+// Instantiates a `Popup` object given an optional `options` object that describes its appearance and location and an optional `source` object that is used to tag the popup with a reference to the Layer to which it refers.
+var popup = function (options, source) {
+	return new Popup(options, source);
+};
+
+
+/* @namespace Map
+ * @section Interaction Options
+ * @option closePopupOnClick: Boolean = true
+ * Set it to `false` if you don't want popups to close when user clicks the map.
+ */
+Map.mergeOptions({
+	closePopupOnClick: true
+});
+
+
+// @namespace Map
+// @section Methods for Layers and Controls
+Map.include({
+	// @method openPopup(popup: Popup): this
+	// Opens the specified popup while closing the previously opened (to make sure only one is opened at one time for usability).
+	// @alternative
+	// @method openPopup(content: String|HTMLElement, latlng: LatLng, options?: Popup options): this
+	// Creates a popup with the specified content and options and opens it in the given point on a map.
+	openPopup: function (popup, latlng, options) {
+		if (!(popup instanceof Popup)) {
+			popup = new Popup(options).setContent(popup);
+		}
+
+		if (latlng) {
+			popup.setLatLng(latlng);
+		}
+
+		if (this.hasLayer(popup)) {
+			return this;
+		}
+
+		if (this._popup && this._popup.options.autoClose) {
+			this.closePopup();
+		}
+
+		this._popup = popup;
+		return this.addLayer(popup);
+	},
+
+	// @method closePopup(popup?: Popup): this
+	// Closes the popup previously opened with [openPopup](#map-openpopup) (or the given one).
+	closePopup: function (popup) {
+		if (!popup || popup === this._popup) {
+			popup = this._popup;
+			this._popup = null;
+		}
+		if (popup) {
+			this.removeLayer(popup);
+		}
+		return this;
+	}
+});
+
+/*
+ * @namespace Layer
+ * @section Popup methods example
+ *
+ * All layers share a set of methods convenient for binding popups to it.
+ *
+ * ```js
+ * var layer = L.Polygon(latlngs).bindPopup('Hi There!').addTo(map);
+ * layer.openPopup();
+ * layer.closePopup();
+ * ```
+ *
+ * Popups will also be automatically opened when the layer is clicked on and closed when the layer is removed from the map or another popup is opened.
+ */
+
+// @section Popup methods
+Layer.include({
+
+	// @method bindPopup(content: String|HTMLElement|Function|Popup, options?: Popup options): this
+	// Binds a popup to the layer with the passed `content` and sets up the
+	// necessary event listeners. If a `Function` is passed it will receive
+	// the layer as the first argument and should return a `String` or `HTMLElement`.
+	bindPopup: function (content, options) {
+
+		if (content instanceof Popup) {
+			setOptions(content, options);
+			this._popup = content;
+			content._source = this;
+		} else {
+			if (!this._popup || options) {
+				this._popup = new Popup(options, this);
+			}
+			this._popup.setContent(content);
+		}
+
+		if (!this._popupHandlersAdded) {
+			this.on({
+				click: this._openPopup,
+				keypress: this._onKeyPress,
+				remove: this.closePopup,
+				move: this._movePopup
+			});
+			this._popupHandlersAdded = true;
+		}
+
+		return this;
+	},
+
+	// @method unbindPopup(): this
+	// Removes the popup previously bound with `bindPopup`.
+	unbindPopup: function () {
+		if (this._popup) {
+			this.off({
+				click: this._openPopup,
+				keypress: this._onKeyPress,
+				remove: this.closePopup,
+				move: this._movePopup
+			});
+			this._popupHandlersAdded = false;
+			this._popup = null;
+		}
+		return this;
+	},
+
+	// @method openPopup(latlng?: LatLng): this
+	// Opens the bound popup at the specified `latlng` or at the default popup anchor if no `latlng` is passed.
+	openPopup: function (layer, latlng) {
+		if (!(layer instanceof Layer)) {
+			latlng = layer;
+			layer = this;
+		}
+
+		if (layer instanceof FeatureGroup) {
+			for (var id in this._layers) {
+				layer = this._layers[id];
+				break;
+			}
+		}
+
+		if (!latlng) {
+			latlng = layer.getCenter ? layer.getCenter() : layer.getLatLng();
+		}
+
+		if (this._popup && this._map) {
+			// set popup source to this layer
+			this._popup._source = layer;
+
+			// update the popup (content, layout, ect...)
+			this._popup.update();
+
+			// open the popup on the map
+			this._map.openPopup(this._popup, latlng);
+		}
+
+		return this;
+	},
+
+	// @method closePopup(): this
+	// Closes the popup bound to this layer if it is open.
+	closePopup: function () {
+		if (this._popup) {
+			this._popup._close();
+		}
+		return this;
+	},
+
+	// @method togglePopup(): this
+	// Opens or closes the popup bound to this layer depending on its current state.
+	togglePopup: function (target) {
+		if (this._popup) {
+			if (this._popup._map) {
+				this.closePopup();
+			} else {
+				this.openPopup(target);
+			}
+		}
+		return this;
+	},
+
+	// @method isPopupOpen(): boolean
+	// Returns `true` if the popup bound to this layer is currently open.
+	isPopupOpen: function () {
+		return (this._popup ? this._popup.isOpen() : false);
+	},
+
+	// @method setPopupContent(content: String|HTMLElement|Popup): this
+	// Sets the content of the popup bound to this layer.
+	setPopupContent: function (content) {
+		if (this._popup) {
+			this._popup.setContent(content);
+		}
+		return this;
+	},
+
+	// @method getPopup(): Popup
+	// Returns the popup bound to this layer.
+	getPopup: function () {
+		return this._popup;
+	},
+
+	_openPopup: function (e) {
+		var layer = e.layer || e.target;
+
+		if (!this._popup) {
+			return;
+		}
+
+		if (!this._map) {
+			return;
+		}
+
+		// prevent map click
+		stop(e);
+
+		// if this inherits from Path its a vector and we can just
+		// open the popup at the new location
+		if (layer instanceof Path) {
+			this.openPopup(e.layer || e.target, e.latlng);
+			return;
+		}
+
+		// otherwise treat it like a marker and figure out
+		// if we should toggle it open/closed
+		if (this._map.hasLayer(this._popup) && this._popup._source === layer) {
+			this.closePopup();
+		} else {
+			this.openPopup(layer, e.latlng);
+		}
+	},
+
+	_movePopup: function (e) {
+		this._popup.setLatLng(e.latlng);
+	},
+
+	_onKeyPress: function (e) {
+		if (e.originalEvent.keyCode === 13) {
+			this._openPopup(e);
+		}
+	}
+});
+
+/*
+ * @class Tooltip
+ * @inherits DivOverlay
+ * @aka L.Tooltip
+ * Used to display small texts on top of map layers.
+ *
+ * @example
+ *
+ * ```js
+ * marker.bindTooltip("my tooltip text").openTooltip();
+ * ```
+ * Note about tooltip offset. Leaflet takes two options in consideration
+ * for computing tooltip offsetting:
+ * - the `offset` Tooltip option: it defaults to [0, 0], and it's specific to one tooltip.
+ *   Add a positive x offset to move the tooltip to the right, and a positive y offset to
+ *   move it to the bottom. Negatives will move to the left and top.
+ * - the `tooltipAnchor` Icon option: this will only be considered for Marker. You
+ *   should adapt this value if you use a custom icon.
+ */
+
+
+// @namespace Tooltip
+var Tooltip = DivOverlay.extend({
+
+	// @section
+	// @aka Tooltip options
+	options: {
+		// @option pane: String = 'tooltipPane'
+		// `Map pane` where the tooltip will be added.
+		pane: 'tooltipPane',
+
+		// @option offset: Point = Point(0, 0)
+		// Optional offset of the tooltip position.
+		offset: [0, 0],
+
+		// @option direction: String = 'auto'
+		// Direction where to open the tooltip. Possible values are: `right`, `left`,
+		// `top`, `bottom`, `center`, `auto`.
+		// `auto` will dynamically switch between `right` and `left` according to the tooltip
+		// position on the map.
+		direction: 'auto',
+
+		// @option permanent: Boolean = false
+		// Whether to open the tooltip permanently or only on mouseover.
+		permanent: false,
+
+		// @option sticky: Boolean = false
+		// If true, the tooltip will follow the mouse instead of being fixed at the feature center.
+		sticky: false,
+
+		// @option interactive: Boolean = false
+		// If true, the tooltip will listen to the feature events.
+		interactive: false,
+
+		// @option opacity: Number = 0.9
+		// Tooltip container opacity.
+		opacity: 0.9
+	},
+
+	onAdd: function (map) {
+		DivOverlay.prototype.onAdd.call(this, map);
+		this.setOpacity(this.options.opacity);
+
+		// @namespace Map
+		// @section Tooltip events
+		// @event tooltipopen: TooltipEvent
+		// Fired when a tooltip is opened in the map.
+		map.fire('tooltipopen', {tooltip: this});
+
+		if (this._source) {
+			// @namespace Layer
+			// @section Tooltip events
+			// @event tooltipopen: TooltipEvent
+			// Fired when a tooltip bound to this layer is opened.
+			this._source.fire('tooltipopen', {tooltip: this}, true);
+		}
+	},
+
+	onRemove: function (map) {
+		DivOverlay.prototype.onRemove.call(this, map);
+
+		// @namespace Map
+		// @section Tooltip events
+		// @event tooltipclose: TooltipEvent
+		// Fired when a tooltip in the map is closed.
+		map.fire('tooltipclose', {tooltip: this});
+
+		if (this._source) {
+			// @namespace Layer
+			// @section Tooltip events
+			// @event tooltipclose: TooltipEvent
+			// Fired when a tooltip bound to this layer is closed.
+			this._source.fire('tooltipclose', {tooltip: this}, true);
+		}
+	},
+
+	getEvents: function () {
+		var events = DivOverlay.prototype.getEvents.call(this);
+
+		if (touch && !this.options.permanent) {
+			events.preclick = this._close;
+		}
+
+		return events;
+	},
+
+	_close: function () {
+		if (this._map) {
+			this._map.closeTooltip(this);
+		}
+	},
+
+	_initLayout: function () {
+		var prefix = 'leaflet-tooltip',
+		    className = prefix + ' ' + (this.options.className || '') + ' leaflet-zoom-' + (this._zoomAnimated ? 'animated' : 'hide');
+
+		this._contentNode = this._container = create$1('div', className);
+	},
+
+	_updateLayout: function () {},
+
+	_adjustPan: function () {},
+
+	_setPosition: function (pos) {
+		var map = this._map,
+		    container = this._container,
+		    centerPoint = map.latLngToContainerPoint(map.getCenter()),
+		    tooltipPoint = map.layerPointToContainerPoint(pos),
+		    direction = this.options.direction,
+		    tooltipWidth = container.offsetWidth,
+		    tooltipHeight = container.offsetHeight,
+		    offset = toPoint(this.options.offset),
+		    anchor = this._getAnchor();
+
+		if (direction === 'top') {
+			pos = pos.add(toPoint(-tooltipWidth / 2 + offset.x, -tooltipHeight + offset.y + anchor.y, true));
+		} else if (direction === 'bottom') {
+			pos = pos.subtract(toPoint(tooltipWidth / 2 - offset.x, -offset.y, true));
+		} else if (direction === 'center') {
+			pos = pos.subtract(toPoint(tooltipWidth / 2 + offset.x, tooltipHeight / 2 - anchor.y + offset.y, true));
+		} else if (direction === 'right' || direction === 'auto' && tooltipPoint.x < centerPoint.x) {
+			direction = 'right';
+			pos = pos.add(toPoint(offset.x + anchor.x, anchor.y - tooltipHeight / 2 + offset.y, true));
+		} else {
+			direction = 'left';
+			pos = pos.subtract(toPoint(tooltipWidth + anchor.x - offset.x, tooltipHeight / 2 - anchor.y - offset.y, true));
+		}
+
+		removeClass(container, 'leaflet-tooltip-right');
+		removeClass(container, 'leaflet-tooltip-left');
+		removeClass(container, 'leaflet-tooltip-top');
+		removeClass(container, 'leaflet-tooltip-bottom');
+		addClass(container, 'leaflet-tooltip-' + direction);
+		setPosition(container, pos);
+	},
+
+	_updatePosition: function () {
+		var pos = this._map.latLngToLayerPoint(this._latlng);
+		this._setPosition(pos);
+	},
+
+	setOpacity: function (opacity) {
+		this.options.opacity = opacity;
+
+		if (this._container) {
+			setOpacity(this._container, opacity);
+		}
+	},
+
+	_animateZoom: function (e) {
+		var pos = this._map._latLngToNewLayerPoint(this._latlng, e.zoom, e.center);
+		this._setPosition(pos);
+	},
+
+	_getAnchor: function () {
+		// Where should we anchor the tooltip on the source layer?
+		return toPoint(this._source && this._source._getTooltipAnchor && !this.options.sticky ? this._source._getTooltipAnchor() : [0, 0]);
+	}
+
+});
+
+// @namespace Tooltip
+// @factory L.tooltip(options?: Tooltip options, source?: Layer)
+// Instantiates a Tooltip object given an optional `options` object that describes its appearance and location and an optional `source` object that is used to tag the tooltip with a reference to the Layer to which it refers.
+var tooltip = function (options, source) {
+	return new Tooltip(options, source);
+};
+
+// @namespace Map
+// @section Methods for Layers and Controls
+Map.include({
+
+	// @method openTooltip(tooltip: Tooltip): this
+	// Opens the specified tooltip.
+	// @alternative
+	// @method openTooltip(content: String|HTMLElement, latlng: LatLng, options?: Tooltip options): this
+	// Creates a tooltip with the specified content and options and open it.
+	openTooltip: function (tooltip, latlng, options) {
+		if (!(tooltip instanceof Tooltip)) {
+			tooltip = new Tooltip(options).setContent(tooltip);
+		}
+
+		if (latlng) {
+			tooltip.setLatLng(latlng);
+		}
+
+		if (this.hasLayer(tooltip)) {
+			return this;
+		}
+
+		return this.addLayer(tooltip);
+	},
+
+	// @method closeTooltip(tooltip?: Tooltip): this
+	// Closes the tooltip given as parameter.
+	closeTooltip: function (tooltip) {
+		if (tooltip) {
+			this.removeLayer(tooltip);
+		}
+		return this;
+	}
+
+});
+
+/*
+ * @namespace Layer
+ * @section Tooltip methods example
+ *
+ * All layers share a set of methods convenient for binding tooltips to it.
+ *
+ * ```js
+ * var layer = L.Polygon(latlngs).bindTooltip('Hi There!').addTo(map);
+ * layer.openTooltip();
+ * layer.closeTooltip();
+ * ```
+ */
+
+// @section Tooltip methods
+Layer.include({
+
+	// @method bindTooltip(content: String|HTMLElement|Function|Tooltip, options?: Tooltip options): this
+	// Binds a tooltip to the layer with the passed `content` and sets up the
+	// necessary event listeners. If a `Function` is passed it will receive
+	// the layer as the first argument and should return a `String` or `HTMLElement`.
+	bindTooltip: function (content, options) {
+
+		if (content instanceof Tooltip) {
+			setOptions(content, options);
+			this._tooltip = content;
+			content._source = this;
+		} else {
+			if (!this._tooltip || options) {
+				this._tooltip = new Tooltip(options, this);
+			}
+			this._tooltip.setContent(content);
+
+		}
+
+		this._initTooltipInteractions();
+
+		if (this._tooltip.options.permanent && this._map && this._map.hasLayer(this)) {
+			this.openTooltip();
+		}
+
+		return this;
+	},
+
+	// @method unbindTooltip(): this
+	// Removes the tooltip previously bound with `bindTooltip`.
+	unbindTooltip: function () {
+		if (this._tooltip) {
+			this._initTooltipInteractions(true);
+			this.closeTooltip();
+			this._tooltip = null;
+		}
+		return this;
+	},
+
+	_initTooltipInteractions: function (remove$$1) {
+		if (!remove$$1 && this._tooltipHandlersAdded) { return; }
+		var onOff = remove$$1 ? 'off' : 'on',
+		    events = {
+			remove: this.closeTooltip,
+			move: this._moveTooltip
+		    };
+		if (!this._tooltip.options.permanent) {
+			events.mouseover = this._openTooltip;
+			events.mouseout = this.closeTooltip;
+			if (this._tooltip.options.sticky) {
+				events.mousemove = this._moveTooltip;
+			}
+			if (touch) {
+				events.click = this._openTooltip;
+			}
+		} else {
+			events.add = this._openTooltip;
+		}
+		this[onOff](events);
+		this._tooltipHandlersAdded = !remove$$1;
+	},
+
+	// @method openTooltip(latlng?: LatLng): this
+	// Opens the bound tooltip at the specified `latlng` or at the default tooltip anchor if no `latlng` is passed.
+	openTooltip: function (layer, latlng) {
+		if (!(layer instanceof Layer)) {
+			latlng = layer;
+			layer = this;
+		}
+
+		if (layer instanceof FeatureGroup) {
+			for (var id in this._layers) {
+				layer = this._layers[id];
+				break;
+			}
+		}
+
+		if (!latlng) {
+			latlng = layer.getCenter ? layer.getCenter() : layer.getLatLng();
+		}
+
+		if (this._tooltip && this._map) {
+
+			// set tooltip source to this layer
+			this._tooltip._source = layer;
+
+			// update the tooltip (content, layout, ect...)
+			this._tooltip.update();
+
+			// open the tooltip on the map
+			this._map.openTooltip(this._tooltip, latlng);
+
+			// Tooltip container may not be defined if not permanent and never
+			// opened.
+			if (this._tooltip.options.interactive && this._tooltip._container) {
+				addClass(this._tooltip._container, 'leaflet-clickable');
+				this.addInteractiveTarget(this._tooltip._container);
+			}
+		}
+
+		return this;
+	},
+
+	// @method closeTooltip(): this
+	// Closes the tooltip bound to this layer if it is open.
+	closeTooltip: function () {
+		if (this._tooltip) {
+			this._tooltip._close();
+			if (this._tooltip.options.interactive && this._tooltip._container) {
+				removeClass(this._tooltip._container, 'leaflet-clickable');
+				this.removeInteractiveTarget(this._tooltip._container);
+			}
+		}
+		return this;
+	},
+
+	// @method toggleTooltip(): this
+	// Opens or closes the tooltip bound to this layer depending on its current state.
+	toggleTooltip: function (target) {
+		if (this._tooltip) {
+			if (this._tooltip._map) {
+				this.closeTooltip();
+			} else {
+				this.openTooltip(target);
+			}
+		}
+		return this;
+	},
+
+	// @method isTooltipOpen(): boolean
+	// Returns `true` if the tooltip bound to this layer is currently open.
+	isTooltipOpen: function () {
+		return this._tooltip.isOpen();
+	},
+
+	// @method setTooltipContent(content: String|HTMLElement|Tooltip): this
+	// Sets the content of the tooltip bound to this layer.
+	setTooltipContent: function (content) {
+		if (this._tooltip) {
+			this._tooltip.setContent(content);
+		}
+		return this;
+	},
+
+	// @method getTooltip(): Tooltip
+	// Returns the tooltip bound to this layer.
+	getTooltip: function () {
+		return this._tooltip;
+	},
+
+	_openTooltip: function (e) {
+		var layer = e.layer || e.target;
+
+		if (!this._tooltip || !this._map) {
+			return;
+		}
+		this.openTooltip(layer, this._tooltip.options.sticky ? e.latlng : undefined);
+	},
+
+	_moveTooltip: function (e) {
+		var latlng = e.latlng, containerPoint, layerPoint;
+		if (this._tooltip.options.sticky && e.originalEvent) {
+			containerPoint = this._map.mouseEventToContainerPoint(e.originalEvent);
+			layerPoint = this._map.containerPointToLayerPoint(containerPoint);
+			latlng = this._map.layerPointToLatLng(layerPoint);
+		}
+		this._tooltip.setLatLng(latlng);
+	}
+});
+
+/*
+ * @class DivIcon
+ * @aka L.DivIcon
+ * @inherits Icon
+ *
+ * Represents a lightweight icon for markers that uses a simple `<div>`
+ * element instead of an image. Inherits from `Icon` but ignores the `iconUrl` and shadow options.
+ *
+ * @example
+ * ```js
+ * var myIcon = L.divIcon({className: 'my-div-icon'});
+ * // you can set .my-div-icon styles in CSS
+ *
+ * L.marker([50.505, 30.57], {icon: myIcon}).addTo(map);
+ * ```
+ *
+ * By default, it has a 'leaflet-div-icon' CSS class and is styled as a little white square with a shadow.
+ */
+
+var DivIcon = Icon.extend({
+	options: {
+		// @section
+		// @aka DivIcon options
+		iconSize: [12, 12], // also can be set through CSS
+
+		// iconAnchor: (Point),
+		// popupAnchor: (Point),
+
+		// @option html: String = ''
+		// Custom HTML code to put inside the div element, empty by default.
+		html: false,
+
+		// @option bgPos: Point = [0, 0]
+		// Optional relative position of the background, in pixels
+		bgPos: null,
+
+		className: 'leaflet-div-icon'
+	},
+
+	createIcon: function (oldIcon) {
+		var div = (oldIcon && oldIcon.tagName === 'DIV') ? oldIcon : document.createElement('div'),
+		    options = this.options;
+
+		div.innerHTML = options.html !== false ? options.html : '';
+
+		if (options.bgPos) {
+			var bgPos = toPoint(options.bgPos);
+			div.style.backgroundPosition = (-bgPos.x) + 'px ' + (-bgPos.y) + 'px';
+		}
+		this._setIconStyles(div, 'icon');
+
+		return div;
+	},
+
+	createShadow: function () {
+		return null;
+	}
+});
+
+// @factory L.divIcon(options: DivIcon options)
+// Creates a `DivIcon` instance with the given options.
+function divIcon(options) {
+	return new DivIcon(options);
+}
+
+Icon.Default = IconDefault;
+
+/*
+ * @class GridLayer
+ * @inherits Layer
+ * @aka L.GridLayer
+ *
+ * Generic class for handling a tiled grid of HTML elements. This is the base class for all tile layers and replaces `TileLayer.Canvas`.
+ * GridLayer can be extended to create a tiled grid of HTML elements like `<canvas>`, `<img>` or `<div>`. GridLayer will handle creating and animating these DOM elements for you.
+ *
+ *
+ * @section Synchronous usage
+ * @example
+ *
+ * To create a custom layer, extend GridLayer and implement the `createTile()` method, which will be passed a `Point` object with the `x`, `y`, and `z` (zoom level) coordinates to draw your tile.
+ *
+ * ```js
+ * var CanvasLayer = L.GridLayer.extend({
+ *     createTile: function(coords){
+ *         // create a <canvas> element for drawing
+ *         var tile = L.DomUtil.create('canvas', 'leaflet-tile');
+ *
+ *         // setup tile width and height according to the options
+ *         var size = this.getTileSize();
+ *         tile.width = size.x;
+ *         tile.height = size.y;
+ *
+ *         // get a canvas context and draw something on it using coords.x, coords.y and coords.z
+ *         var ctx = tile.getContext('2d');
+ *
+ *         // return the tile so it can be rendered on screen
+ *         return tile;
+ *     }
+ * });
+ * ```
+ *
+ * @section Asynchronous usage
+ * @example
+ *
+ * Tile creation can also be asynchronous, this is useful when using a third-party drawing library. Once the tile is finished drawing it can be passed to the `done()` callback.
+ *
+ * ```js
+ * var CanvasLayer = L.GridLayer.extend({
+ *     createTile: function(coords, done){
+ *         var error;
+ *
+ *         // create a <canvas> element for drawing
+ *         var tile = L.DomUtil.create('canvas', 'leaflet-tile');
+ *
+ *         // setup tile width and height according to the options
+ *         var size = this.getTileSize();
+ *         tile.width = size.x;
+ *         tile.height = size.y;
+ *
+ *         // draw something asynchronously and pass the tile to the done() callback
+ *         setTimeout(function() {
+ *             done(error, tile);
+ *         }, 1000);
+ *
+ *         return tile;
+ *     }
+ * });
+ * ```
+ *
+ * @section
+ */
+
+
+var GridLayer = Layer.extend({
+
+	// @section
+	// @aka GridLayer options
+	options: {
+		// @option tileSize: Number|Point = 256
+		// Width and height of tiles in the grid. Use a number if width and height are equal, or `L.point(width, height)` otherwise.
+		tileSize: 256,
+
+		// @option opacity: Number = 1.0
+		// Opacity of the tiles. Can be used in the `createTile()` function.
+		opacity: 1,
+
+		// @option updateWhenIdle: Boolean = (depends)
+		// Load new tiles only when panning ends.
+		// `true` by default on mobile browsers, in order to avoid too many requests and keep smooth navigation.
+		// `false` otherwise in order to display new tiles _during_ panning, since it is easy to pan outside the
+		// [`keepBuffer`](#gridlayer-keepbuffer) option in desktop browsers.
+		updateWhenIdle: mobile,
+
+		// @option updateWhenZooming: Boolean = true
+		// By default, a smooth zoom animation (during a [touch zoom](#map-touchzoom) or a [`flyTo()`](#map-flyto)) will update grid layers every integer zoom level. Setting this option to `false` will update the grid layer only when the smooth animation ends.
+		updateWhenZooming: true,
+
+		// @option updateInterval: Number = 200
+		// Tiles will not update more than once every `updateInterval` milliseconds when panning.
+		updateInterval: 200,
+
+		// @option zIndex: Number = 1
+		// The explicit zIndex of the tile layer.
+		zIndex: 1,
+
+		// @option bounds: LatLngBounds = undefined
+		// If set, tiles will only be loaded inside the set `LatLngBounds`.
+		bounds: null,
+
+		// @option minZoom: Number = 0
+		// The minimum zoom level down to which this layer will be displayed (inclusive).
+		minZoom: 0,
+
+		// @option maxZoom: Number = undefined
+		// The maximum zoom level up to which this layer will be displayed (inclusive).
+		maxZoom: undefined,
+
+		// @option maxNativeZoom: Number = undefined
+		// Maximum zoom number the tile source has available. If it is specified,
+		// the tiles on all zoom levels higher than `maxNativeZoom` will be loaded
+		// from `maxNativeZoom` level and auto-scaled.
+		maxNativeZoom: undefined,
+
+		// @option minNativeZoom: Number = undefined
+		// Minimum zoom number the tile source has available. If it is specified,
+		// the tiles on all zoom levels lower than `minNativeZoom` will be loaded
+		// from `minNativeZoom` level and auto-scaled.
+		minNativeZoom: undefined,
+
+		// @option noWrap: Boolean = false
+		// Whether the layer is wrapped around the antimeridian. If `true`, the
+		// GridLayer will only be displayed once at low zoom levels. Has no
+		// effect when the [map CRS](#map-crs) doesn't wrap around. Can be used
+		// in combination with [`bounds`](#gridlayer-bounds) to prevent requesting
+		// tiles outside the CRS limits.
+		noWrap: false,
+
+		// @option pane: String = 'tilePane'
+		// `Map pane` where the grid layer will be added.
+		pane: 'tilePane',
+
+		// @option className: String = ''
+		// A custom class name to assign to the tile layer. Empty by default.
+		className: '',
+
+		// @option keepBuffer: Number = 2
+		// When panning the map, keep this many rows and columns of tiles before unloading them.
+		keepBuffer: 2
+	},
+
+	initialize: function (options) {
+		setOptions(this, options);
+	},
+
+	onAdd: function () {
+		this._initContainer();
+
+		this._levels = {};
+		this._tiles = {};
+
+		this._resetView();
+		this._update();
+	},
+
+	beforeAdd: function (map) {
+		map._addZoomLimit(this);
+	},
+
+	onRemove: function (map) {
+		this._removeAllTiles();
+		remove(this._container);
+		map._removeZoomLimit(this);
+		this._container = null;
+		this._tileZoom = undefined;
+	},
+
+	// @method bringToFront: this
+	// Brings the tile layer to the top of all tile layers.
+	bringToFront: function () {
+		if (this._map) {
+			toFront(this._container);
+			this._setAutoZIndex(Math.max);
+		}
+		return this;
+	},
+
+	// @method bringToBack: this
+	// Brings the tile layer to the bottom of all tile layers.
+	bringToBack: function () {
+		if (this._map) {
+			toBack(this._container);
+			this._setAutoZIndex(Math.min);
+		}
+		return this;
+	},
+
+	// @method getContainer: HTMLElement
+	// Returns the HTML element that contains the tiles for this layer.
+	getContainer: function () {
+		return this._container;
+	},
+
+	// @method setOpacity(opacity: Number): this
+	// Changes the [opacity](#gridlayer-opacity) of the grid layer.
+	setOpacity: function (opacity) {
+		this.options.opacity = opacity;
+		this._updateOpacity();
+		return this;
+	},
+
+	// @method setZIndex(zIndex: Number): this
+	// Changes the [zIndex](#gridlayer-zindex) of the grid layer.
+	setZIndex: function (zIndex) {
+		this.options.zIndex = zIndex;
+		this._updateZIndex();
+
+		return this;
+	},
+
+	// @method isLoading: Boolean
+	// Returns `true` if any tile in the grid layer has not finished loading.
+	isLoading: function () {
+		return this._loading;
+	},
+
+	// @method redraw: this
+	// Causes the layer to clear all the tiles and request them again.
+	redraw: function () {
+		if (this._map) {
+			this._removeAllTiles();
+			this._update();
+		}
+		return this;
+	},
+
+	getEvents: function () {
+		var events = {
+			viewprereset: this._invalidateAll,
+			viewreset: this._resetView,
+			zoom: this._resetView,
+			moveend: this._onMoveEnd
+		};
+
+		if (!this.options.updateWhenIdle) {
+			// update tiles on move, but not more often than once per given interval
+			if (!this._onMove) {
+				this._onMove = throttle(this._onMoveEnd, this.options.updateInterval, this);
+			}
+
+			events.move = this._onMove;
+		}
+
+		if (this._zoomAnimated) {
+			events.zoomanim = this._animateZoom;
+		}
+
+		return events;
+	},
+
+	// @section Extension methods
+	// Layers extending `GridLayer` shall reimplement the following method.
+	// @method createTile(coords: Object, done?: Function): HTMLElement
+	// Called only internally, must be overridden by classes extending `GridLayer`.
+	// Returns the `HTMLElement` corresponding to the given `coords`. If the `done` callback
+	// is specified, it must be called when the tile has finished loading and drawing.
+	createTile: function () {
+		return document.createElement('div');
+	},
+
+	// @section
+	// @method getTileSize: Point
+	// Normalizes the [tileSize option](#gridlayer-tilesize) into a point. Used by the `createTile()` method.
+	getTileSize: function () {
+		var s = this.options.tileSize;
+		return s instanceof Point ? s : new Point(s, s);
+	},
+
+	_updateZIndex: function () {
+		if (this._container && this.options.zIndex !== undefined && this.options.zIndex !== null) {
+			this._container.style.zIndex = this.options.zIndex;
+		}
+	},
+
+	_setAutoZIndex: function (compare) {
+		// go through all other layers of the same pane, set zIndex to max + 1 (front) or min - 1 (back)
+
+		var layers = this.getPane().children,
+		    edgeZIndex = -compare(-Infinity, Infinity); // -Infinity for max, Infinity for min
+
+		for (var i = 0, len = layers.length, zIndex; i < len; i++) {
+
+			zIndex = layers[i].style.zIndex;
+
+			if (layers[i] !== this._container && zIndex) {
+				edgeZIndex = compare(edgeZIndex, +zIndex);
+			}
+		}
+
+		if (isFinite(edgeZIndex)) {
+			this.options.zIndex = edgeZIndex + compare(-1, 1);
+			this._updateZIndex();
+		}
+	},
+
+	_updateOpacity: function () {
+		if (!this._map) { return; }
+
+		// IE doesn't inherit filter opacity properly, so we're forced to set it on tiles
+		if (ielt9) { return; }
+
+		setOpacity(this._container, this.options.opacity);
+
+		var now = +new Date(),
+		    nextFrame = false,
+		    willPrune = false;
+
+		for (var key in this._tiles) {
+			var tile = this._tiles[key];
+			if (!tile.current || !tile.loaded) { continue; }
+
+			var fade = Math.min(1, (now - tile.loaded) / 200);
+
+			setOpacity(tile.el, fade);
+			if (fade < 1) {
+				nextFrame = true;
+			} else {
+				if (tile.active) {
+					willPrune = true;
+				} else {
+					this._onOpaqueTile(tile);
+				}
+				tile.active = true;
+			}
+		}
+
+		if (willPrune && !this._noPrune) { this._pruneTiles(); }
+
+		if (nextFrame) {
+			cancelAnimFrame(this._fadeFrame);
+			this._fadeFrame = requestAnimFrame(this._updateOpacity, this);
+		}
+	},
+
+	_onOpaqueTile: falseFn,
+
+	_initContainer: function () {
+		if (this._container) { return; }
+
+		this._container = create$1('div', 'leaflet-layer ' + (this.options.className || ''));
+		this._updateZIndex();
+
+		if (this.options.opacity < 1) {
+			this._updateOpacity();
+		}
+
+		this.getPane().appendChild(this._container);
+	},
+
+	_updateLevels: function () {
+
+		var zoom = this._tileZoom,
+		    maxZoom = this.options.maxZoom;
+
+		if (zoom === undefined) { return undefined; }
+
+		for (var z in this._levels) {
+			if (this._levels[z].el.children.length || z === zoom) {
+				this._levels[z].el.style.zIndex = maxZoom - Math.abs(zoom - z);
+				this._onUpdateLevel(z);
+			} else {
+				remove(this._levels[z].el);
+				this._removeTilesAtZoom(z);
+				this._onRemoveLevel(z);
+				delete this._levels[z];
+			}
+		}
+
+		var level = this._levels[zoom],
+		    map = this._map;
+
+		if (!level) {
+			level = this._levels[zoom] = {};
+
+			level.el = create$1('div', 'leaflet-tile-container leaflet-zoom-animated', this._container);
+			level.el.style.zIndex = maxZoom;
+
+			level.origin = map.project(map.unproject(map.getPixelOrigin()), zoom).round();
+			level.zoom = zoom;
+
+			this._setZoomTransform(level, map.getCenter(), map.getZoom());
+
+			// force the browser to consider the newly added element for transition
+			falseFn(level.el.offsetWidth);
+
+			this._onCreateLevel(level);
+		}
+
+		this._level = level;
+
+		return level;
+	},
+
+	_onUpdateLevel: falseFn,
+
+	_onRemoveLevel: falseFn,
+
+	_onCreateLevel: falseFn,
+
+	_pruneTiles: function () {
+		if (!this._map) {
+			return;
+		}
+
+		var key, tile;
+
+		var zoom = this._map.getZoom();
+		if (zoom > this.options.maxZoom ||
+			zoom < this.options.minZoom) {
+			this._removeAllTiles();
+			return;
+		}
+
+		for (key in this._tiles) {
+			tile = this._tiles[key];
+			tile.retain = tile.current;
+		}
+
+		for (key in this._tiles) {
+			tile = this._tiles[key];
+			if (tile.current && !tile.active) {
+				var coords = tile.coords;
+				if (!this._retainParent(coords.x, coords.y, coords.z, coords.z - 5)) {
+					this._retainChildren(coords.x, coords.y, coords.z, coords.z + 2);
+				}
+			}
+		}
+
+		for (key in this._tiles) {
+			if (!this._tiles[key].retain) {
+				this._removeTile(key);
+			}
+		}
+	},
+
+	_removeTilesAtZoom: function (zoom) {
+		for (var key in this._tiles) {
+			if (this._tiles[key].coords.z !== zoom) {
+				continue;
+			}
+			this._removeTile(key);
+		}
+	},
+
+	_removeAllTiles: function () {
+		for (var key in this._tiles) {
+			this._removeTile(key);
+		}
+	},
+
+	_invalidateAll: function () {
+		for (var z in this._levels) {
+			remove(this._levels[z].el);
+			this._onRemoveLevel(z);
+			delete this._levels[z];
+		}
+		this._removeAllTiles();
+
+		this._tileZoom = undefined;
+	},
+
+	_retainParent: function (x, y, z, minZoom) {
+		var x2 = Math.floor(x / 2),
+		    y2 = Math.floor(y / 2),
+		    z2 = z - 1,
+		    coords2 = new Point(+x2, +y2);
+		coords2.z = +z2;
+
+		var key = this._tileCoordsToKey(coords2),
+		    tile = this._tiles[key];
+
+		if (tile && tile.active) {
+			tile.retain = true;
+			return true;
+
+		} else if (tile && tile.loaded) {
+			tile.retain = true;
+		}
+
+		if (z2 > minZoom) {
+			return this._retainParent(x2, y2, z2, minZoom);
+		}
+
+		return false;
+	},
+
+	_retainChildren: function (x, y, z, maxZoom) {
+
+		for (var i = 2 * x; i < 2 * x + 2; i++) {
+			for (var j = 2 * y; j < 2 * y + 2; j++) {
+
+				var coords = new Point(i, j);
+				coords.z = z + 1;
+
+				var key = this._tileCoordsToKey(coords),
+				    tile = this._tiles[key];
+
+				if (tile && tile.active) {
+					tile.retain = true;
+					continue;
+
+				} else if (tile && tile.loaded) {
+					tile.retain = true;
+				}
+
+				if (z + 1 < maxZoom) {
+					this._retainChildren(i, j, z + 1, maxZoom);
+				}
+			}
+		}
+	},
+
+	_resetView: function (e) {
+		var animating = e && (e.pinch || e.flyTo);
+		this._setView(this._map.getCenter(), this._map.getZoom(), animating, animating);
+	},
+
+	_animateZoom: function (e) {
+		this._setView(e.center, e.zoom, true, e.noUpdate);
+	},
+
+	_clampZoom: function (zoom) {
+		var options = this.options;
+
+		if (undefined !== options.minNativeZoom && zoom < options.minNativeZoom) {
+			return options.minNativeZoom;
+		}
+
+		if (undefined !== options.maxNativeZoom && options.maxNativeZoom < zoom) {
+			return options.maxNativeZoom;
+		}
+
+		return zoom;
+	},
+
+	_setView: function (center, zoom, noPrune, noUpdate) {
+		var tileZoom = this._clampZoom(Math.round(zoom));
+		if ((this.options.maxZoom !== undefined && tileZoom > this.options.maxZoom) ||
+		    (this.options.minZoom !== undefined && tileZoom < this.options.minZoom)) {
+			tileZoom = undefined;
+		}
+
+		var tileZoomChanged = this.options.updateWhenZooming && (tileZoom !== this._tileZoom);
+
+		if (!noUpdate || tileZoomChanged) {
+
+			this._tileZoom = tileZoom;
+
+			if (this._abortLoading) {
+				this._abortLoading();
+			}
+
+			this._updateLevels();
+			this._resetGrid();
+
+			if (tileZoom !== undefined) {
+				this._update(center);
+			}
+
+			if (!noPrune) {
+				this._pruneTiles();
+			}
+
+			// Flag to prevent _updateOpacity from pruning tiles during
+			// a zoom anim or a pinch gesture
+			this._noPrune = !!noPrune;
+		}
+
+		this._setZoomTransforms(center, zoom);
+	},
+
+	_setZoomTransforms: function (center, zoom) {
+		for (var i in this._levels) {
+			this._setZoomTransform(this._levels[i], center, zoom);
+		}
+	},
+
+	_setZoomTransform: function (level, center, zoom) {
+		var scale = this._map.getZoomScale(zoom, level.zoom),
+		    translate = level.origin.multiplyBy(scale)
+		        .subtract(this._map._getNewPixelOrigin(center, zoom)).round();
+
+		if (any3d) {
+			setTransform(level.el, translate, scale);
+		} else {
+			setPosition(level.el, translate);
+		}
+	},
+
+	_resetGrid: function () {
+		var map = this._map,
+		    crs = map.options.crs,
+		    tileSize = this._tileSize = this.getTileSize(),
+		    tileZoom = this._tileZoom;
+
+		var bounds = this._map.getPixelWorldBounds(this._tileZoom);
+		if (bounds) {
+			this._globalTileRange = this._pxBoundsToTileRange(bounds);
+		}
+
+		this._wrapX = crs.wrapLng && !this.options.noWrap && [
+			Math.floor(map.project([0, crs.wrapLng[0]], tileZoom).x / tileSize.x),
+			Math.ceil(map.project([0, crs.wrapLng[1]], tileZoom).x / tileSize.y)
+		];
+		this._wrapY = crs.wrapLat && !this.options.noWrap && [
+			Math.floor(map.project([crs.wrapLat[0], 0], tileZoom).y / tileSize.x),
+			Math.ceil(map.project([crs.wrapLat[1], 0], tileZoom).y / tileSize.y)
+		];
+	},
+
+	_onMoveEnd: function () {
+		if (!this._map || this._map._animatingZoom) { return; }
+
+		this._update();
+	},
+
+	_getTiledPixelBounds: function (center) {
+		var map = this._map,
+		    mapZoom = map._animatingZoom ? Math.max(map._animateToZoom, map.getZoom()) : map.getZoom(),
+		    scale = map.getZoomScale(mapZoom, this._tileZoom),
+		    pixelCenter = map.project(center, this._tileZoom).floor(),
+		    halfSize = map.getSize().divideBy(scale * 2);
+
+		return new Bounds(pixelCenter.subtract(halfSize), pixelCenter.add(halfSize));
+	},
+
+	// Private method to load tiles in the grid's active zoom level according to map bounds
+	_update: function (center) {
+		var map = this._map;
+		if (!map) { return; }
+		var zoom = this._clampZoom(map.getZoom());
+
+		if (center === undefined) { center = map.getCenter(); }
+		if (this._tileZoom === undefined) { return; }	// if out of minzoom/maxzoom
+
+		var pixelBounds = this._getTiledPixelBounds(center),
+		    tileRange = this._pxBoundsToTileRange(pixelBounds),
+		    tileCenter = tileRange.getCenter(),
+		    queue = [],
+		    margin = this.options.keepBuffer,
+		    noPruneRange = new Bounds(tileRange.getBottomLeft().subtract([margin, -margin]),
+		                              tileRange.getTopRight().add([margin, -margin]));
+
+		// Sanity check: panic if the tile range contains Infinity somewhere.
+		if (!(isFinite(tileRange.min.x) &&
+		      isFinite(tileRange.min.y) &&
+		      isFinite(tileRange.max.x) &&
+		      isFinite(tileRange.max.y))) { throw new Error('Attempted to load an infinite number of tiles'); }
+
+		for (var key in this._tiles) {
+			var c = this._tiles[key].coords;
+			if (c.z !== this._tileZoom || !noPruneRange.contains(new Point(c.x, c.y))) {
+				this._tiles[key].current = false;
+			}
+		}
+
+		// _update just loads more tiles. If the tile zoom level differs too much
+		// from the map's, let _setView reset levels and prune old tiles.
+		if (Math.abs(zoom - this._tileZoom) > 1) { this._setView(center, zoom); return; }
+
+		// create a queue of coordinates to load tiles from
+		for (var j = tileRange.min.y; j <= tileRange.max.y; j++) {
+			for (var i = tileRange.min.x; i <= tileRange.max.x; i++) {
+				var coords = new Point(i, j);
+				coords.z = this._tileZoom;
+
+				if (!this._isValidTile(coords)) { continue; }
+
+				var tile = this._tiles[this._tileCoordsToKey(coords)];
+				if (tile) {
+					tile.current = true;
+				} else {
+					queue.push(coords);
+				}
+			}
+		}
+
+		// sort tile queue to load tiles in order of their distance to center
+		queue.sort(function (a, b) {
+			return a.distanceTo(tileCenter) - b.distanceTo(tileCenter);
+		});
+
+		if (queue.length !== 0) {
+			// if it's the first batch of tiles to load
+			if (!this._loading) {
+				this._loading = true;
+				// @event loading: Event
+				// Fired when the grid layer starts loading tiles.
+				this.fire('loading');
+			}
+
+			// create DOM fragment to append tiles in one batch
+			var fragment = document.createDocumentFragment();
+
+			for (i = 0; i < queue.length; i++) {
+				this._addTile(queue[i], fragment);
+			}
+
+			this._level.el.appendChild(fragment);
+		}
+	},
+
+	_isValidTile: function (coords) {
+		var crs = this._map.options.crs;
+
+		if (!crs.infinite) {
+			// don't load tile if it's out of bounds and not wrapped
+			var bounds = this._globalTileRange;
+			if ((!crs.wrapLng && (coords.x < bounds.min.x || coords.x > bounds.max.x)) ||
+			    (!crs.wrapLat && (coords.y < bounds.min.y || coords.y > bounds.max.y))) { return false; }
+		}
+
+		if (!this.options.bounds) { return true; }
+
+		// don't load tile if it doesn't intersect the bounds in options
+		var tileBounds = this._tileCoordsToBounds(coords);
+		return toLatLngBounds(this.options.bounds).overlaps(tileBounds);
+	},
+
+	_keyToBounds: function (key) {
+		return this._tileCoordsToBounds(this._keyToTileCoords(key));
+	},
+
+	_tileCoordsToNwSe: function (coords) {
+		var map = this._map,
+		    tileSize = this.getTileSize(),
+		    nwPoint = coords.scaleBy(tileSize),
+		    sePoint = nwPoint.add(tileSize),
+		    nw = map.unproject(nwPoint, coords.z),
+		    se = map.unproject(sePoint, coords.z);
+		return [nw, se];
+	},
+
+	// converts tile coordinates to its geographical bounds
+	_tileCoordsToBounds: function (coords) {
+		var bp = this._tileCoordsToNwSe(coords),
+		    bounds = new LatLngBounds(bp[0], bp[1]);
+
+		if (!this.options.noWrap) {
+			bounds = this._map.wrapLatLngBounds(bounds);
+		}
+		return bounds;
+	},
+	// converts tile coordinates to key for the tile cache
+	_tileCoordsToKey: function (coords) {
+		return coords.x + ':' + coords.y + ':' + coords.z;
+	},
+
+	// converts tile cache key to coordinates
+	_keyToTileCoords: function (key) {
+		var k = key.split(':'),
+		    coords = new Point(+k[0], +k[1]);
+		coords.z = +k[2];
+		return coords;
+	},
+
+	_removeTile: function (key) {
+		var tile = this._tiles[key];
+		if (!tile) { return; }
+
+		remove(tile.el);
+
+		delete this._tiles[key];
+
+		// @event tileunload: TileEvent
+		// Fired when a tile is removed (e.g. when a tile goes off the screen).
+		this.fire('tileunload', {
+			tile: tile.el,
+			coords: this._keyToTileCoords(key)
+		});
+	},
+
+	_initTile: function (tile) {
+		addClass(tile, 'leaflet-tile');
+
+		var tileSize = this.getTileSize();
+		tile.style.width = tileSize.x + 'px';
+		tile.style.height = tileSize.y + 'px';
+
+		tile.onselectstart = falseFn;
+		tile.onmousemove = falseFn;
+
+		// update opacity on tiles in IE7-8 because of filter inheritance problems
+		if (ielt9 && this.options.opacity < 1) {
+			setOpacity(tile, this.options.opacity);
+		}
+
+		// without this hack, tiles disappear after zoom on Chrome for Android
+		// https://github.com/Leaflet/Leaflet/issues/2078
+		if (android && !android23) {
+			tile.style.WebkitBackfaceVisibility = 'hidden';
+		}
+	},
+
+	_addTile: function (coords, container) {
+		var tilePos = this._getTilePos(coords),
+		    key = this._tileCoordsToKey(coords);
+
+		var tile = this.createTile(this._wrapCoords(coords), bind(this._tileReady, this, coords));
+
+		this._initTile(tile);
+
+		// if createTile is defined with a second argument ("done" callback),
+		// we know that tile is async and will be ready later; otherwise
+		if (this.createTile.length < 2) {
+			// mark tile as ready, but delay one frame for opacity animation to happen
+			requestAnimFrame(bind(this._tileReady, this, coords, null, tile));
+		}
+
+		setPosition(tile, tilePos);
+
+		// save tile in cache
+		this._tiles[key] = {
+			el: tile,
+			coords: coords,
+			current: true
+		};
+
+		container.appendChild(tile);
+		// @event tileloadstart: TileEvent
+		// Fired when a tile is requested and starts loading.
+		this.fire('tileloadstart', {
+			tile: tile,
+			coords: coords
+		});
+	},
+
+	_tileReady: function (coords, err, tile) {
+		if (err) {
+			// @event tileerror: TileErrorEvent
+			// Fired when there is an error loading a tile.
+			this.fire('tileerror', {
+				error: err,
+				tile: tile,
+				coords: coords
+			});
+		}
+
+		var key = this._tileCoordsToKey(coords);
+
+		tile = this._tiles[key];
+		if (!tile) { return; }
+
+		tile.loaded = +new Date();
+		if (this._map._fadeAnimated) {
+			setOpacity(tile.el, 0);
+			cancelAnimFrame(this._fadeFrame);
+			this._fadeFrame = requestAnimFrame(this._updateOpacity, this);
+		} else {
+			tile.active = true;
+			this._pruneTiles();
+		}
+
+		if (!err) {
+			addClass(tile.el, 'leaflet-tile-loaded');
+
+			// @event tileload: TileEvent
+			// Fired when a tile loads.
+			this.fire('tileload', {
+				tile: tile.el,
+				coords: coords
+			});
+		}
+
+		if (this._noTilesToLoad()) {
+			this._loading = false;
+			// @event load: Event
+			// Fired when the grid layer loaded all visible tiles.
+			this.fire('load');
+
+			if (ielt9 || !this._map._fadeAnimated) {
+				requestAnimFrame(this._pruneTiles, this);
+			} else {
+				// Wait a bit more than 0.2 secs (the duration of the tile fade-in)
+				// to trigger a pruning.
+				setTimeout(bind(this._pruneTiles, this), 250);
+			}
+		}
+	},
+
+	_getTilePos: function (coords) {
+		return coords.scaleBy(this.getTileSize()).subtract(this._level.origin);
+	},
+
+	_wrapCoords: function (coords) {
+		var newCoords = new Point(
+			this._wrapX ? wrapNum(coords.x, this._wrapX) : coords.x,
+			this._wrapY ? wrapNum(coords.y, this._wrapY) : coords.y);
+		newCoords.z = coords.z;
+		return newCoords;
+	},
+
+	_pxBoundsToTileRange: function (bounds) {
+		var tileSize = this.getTileSize();
+		return new Bounds(
+			bounds.min.unscaleBy(tileSize).floor(),
+			bounds.max.unscaleBy(tileSize).ceil().subtract([1, 1]));
+	},
+
+	_noTilesToLoad: function () {
+		for (var key in this._tiles) {
+			if (!this._tiles[key].loaded) { return false; }
+		}
+		return true;
+	}
+});
+
+// @factory L.gridLayer(options?: GridLayer options)
+// Creates a new instance of GridLayer with the supplied options.
+function gridLayer(options) {
+	return new GridLayer(options);
+}
+
+/*
+ * @class TileLayer
+ * @inherits GridLayer
+ * @aka L.TileLayer
+ * Used to load and display tile layers on the map. Extends `GridLayer`.
+ *
+ * @example
+ *
+ * ```js
+ * L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar'}).addTo(map);
+ * ```
+ *
+ * @section URL template
+ * @example
+ *
+ * A string of the following form:
+ *
+ * ```
+ * 'http://{s}.somedomain.com/blabla/{z}/{x}/{y}{r}.png'
+ * ```
+ *
+ * `{s}` means one of the available subdomains (used sequentially to help with browser parallel requests per domain limitation; subdomain values are specified in options; `a`, `b` or `c` by default, can be omitted), `{z}` — zoom level, `{x}` and `{y}` — tile coordinates. `{r}` can be used to add "&commat;2x" to the URL to load retina tiles.
+ *
+ * You can use custom keys in the template, which will be [evaluated](#util-template) from TileLayer options, like this:
+ *
+ * ```
+ * L.tileLayer('http://{s}.somedomain.com/{foo}/{z}/{x}/{y}.png', {foo: 'bar'});
+ * ```
+ */
+
+
+var TileLayer = GridLayer.extend({
+
+	// @section
+	// @aka TileLayer options
+	options: {
+		// @option minZoom: Number = 0
+		// The minimum zoom level down to which this layer will be displayed (inclusive).
+		minZoom: 0,
+
+		// @option maxZoom: Number = 18
+		// The maximum zoom level up to which this layer will be displayed (inclusive).
+		maxZoom: 18,
+
+		// @option subdomains: String|String[] = 'abc'
+		// Subdomains of the tile service. Can be passed in the form of one string (where each letter is a subdomain name) or an array of strings.
+		subdomains: 'abc',
+
+		// @option errorTileUrl: String = ''
+		// URL to the tile image to show in place of the tile that failed to load.
+		errorTileUrl: '',
+
+		// @option zoomOffset: Number = 0
+		// The zoom number used in tile URLs will be offset with this value.
+		zoomOffset: 0,
+
+		// @option tms: Boolean = false
+		// If `true`, inverses Y axis numbering for tiles (turn this on for [TMS](https://en.wikipedia.org/wiki/Tile_Map_Service) services).
+		tms: false,
+
+		// @option zoomReverse: Boolean = false
+		// If set to true, the zoom number used in tile URLs will be reversed (`maxZoom - zoom` instead of `zoom`)
+		zoomReverse: false,
+
+		// @option detectRetina: Boolean = false
+		// If `true` and user is on a retina display, it will request four tiles of half the specified size and a bigger zoom level in place of one to utilize the high resolution.
+		detectRetina: false,
+
+		// @option crossOrigin: Boolean|String = false
+		// Whether the crossOrigin attribute will be added to the tiles.
+		// If a String is provided, all tiles will have their crossOrigin attribute set to the String provided. This is needed if you want to access tile pixel data.
+		// Refer to [CORS Settings](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) for valid String values.
+		crossOrigin: false
+	},
+
+	initialize: function (url, options) {
+
+		this._url = url;
+
+		options = setOptions(this, options);
+
+		// detecting retina displays, adjusting tileSize and zoom levels
+		if (options.detectRetina && retina && options.maxZoom > 0) {
+
+			options.tileSize = Math.floor(options.tileSize / 2);
+
+			if (!options.zoomReverse) {
+				options.zoomOffset++;
+				options.maxZoom--;
+			} else {
+				options.zoomOffset--;
+				options.minZoom++;
+			}
+
+			options.minZoom = Math.max(0, options.minZoom);
+		}
+
+		if (typeof options.subdomains === 'string') {
+			options.subdomains = options.subdomains.split('');
+		}
+
+		// for https://github.com/Leaflet/Leaflet/issues/137
+		if (!android) {
+			this.on('tileunload', this._onTileRemove);
+		}
+	},
+
+	// @method setUrl(url: String, noRedraw?: Boolean): this
+	// Updates the layer's URL template and redraws it (unless `noRedraw` is set to `true`).
+	setUrl: function (url, noRedraw) {
+		this._url = url;
+
+		if (!noRedraw) {
+			this.redraw();
+		}
+		return this;
+	},
+
+	// @method createTile(coords: Object, done?: Function): HTMLElement
+	// Called only internally, overrides GridLayer's [`createTile()`](#gridlayer-createtile)
+	// to return an `<img>` HTML element with the appropriate image URL given `coords`. The `done`
+	// callback is called when the tile has been loaded.
+	createTile: function (coords, done) {
+		var tile = document.createElement('img');
+
+		on(tile, 'load', bind(this._tileOnLoad, this, done, tile));
+		on(tile, 'error', bind(this._tileOnError, this, done, tile));
+
+		if (this.options.crossOrigin || this.options.crossOrigin === '') {
+			tile.crossOrigin = this.options.crossOrigin === true ? '' : this.options.crossOrigin;
+		}
+
+		/*
+		 Alt tag is set to empty string to keep screen readers from reading URL and for compliance reasons
+		 http://www.w3.org/TR/WCAG20-TECHS/H67
+		*/
+		tile.alt = '';
+
+		/*
+		 Set role="presentation" to force screen readers to ignore this
+		 https://www.w3.org/TR/wai-aria/roles#textalternativecomputation
+		*/
+		tile.setAttribute('role', 'presentation');
+
+		tile.src = this.getTileUrl(coords);
+
+		return tile;
+	},
+
+	// @section Extension methods
+	// @uninheritable
+	// Layers extending `TileLayer` might reimplement the following method.
+	// @method getTileUrl(coords: Object): String
+	// Called only internally, returns the URL for a tile given its coordinates.
+	// Classes extending `TileLayer` can override this function to provide custom tile URL naming schemes.
+	getTileUrl: function (coords) {
+		var data = {
+			r: retina ? '@2x' : '',
+			s: this._getSubdomain(coords),
+			x: coords.x,
+			y: coords.y,
+			z: this._getZoomForUrl()
+		};
+		if (this._map && !this._map.options.crs.infinite) {
+			var invertedY = this._globalTileRange.max.y - coords.y;
+			if (this.options.tms) {
+				data['y'] = invertedY;
+			}
+			data['-y'] = invertedY;
+		}
+
+		return template(this._url, extend(data, this.options));
+	},
+
+	_tileOnLoad: function (done, tile) {
+		// For https://github.com/Leaflet/Leaflet/issues/3332
+		if (ielt9) {
+			setTimeout(bind(done, this, null, tile), 0);
+		} else {
+			done(null, tile);
+		}
+	},
+
+	_tileOnError: function (done, tile, e) {
+		var errorUrl = this.options.errorTileUrl;
+		if (errorUrl && tile.getAttribute('src') !== errorUrl) {
+			tile.src = errorUrl;
+		}
+		done(e, tile);
+	},
+
+	_onTileRemove: function (e) {
+		e.tile.onload = null;
+	},
+
+	_getZoomForUrl: function () {
+		var zoom = this._tileZoom,
+		maxZoom = this.options.maxZoom,
+		zoomReverse = this.options.zoomReverse,
+		zoomOffset = this.options.zoomOffset;
+
+		if (zoomReverse) {
+			zoom = maxZoom - zoom;
+		}
+
+		return zoom + zoomOffset;
+	},
+
+	_getSubdomain: function (tilePoint) {
+		var index = Math.abs(tilePoint.x + tilePoint.y) % this.options.subdomains.length;
+		return this.options.subdomains[index];
+	},
+
+	// stops loading all tiles in the background layer
+	_abortLoading: function () {
+		var i, tile;
+		for (i in this._tiles) {
+			if (this._tiles[i].coords.z !== this._tileZoom) {
+				tile = this._tiles[i].el;
+
+				tile.onload = falseFn;
+				tile.onerror = falseFn;
+
+				if (!tile.complete) {
+					tile.src = emptyImageUrl;
+					remove(tile);
+					delete this._tiles[i];
+				}
+			}
+		}
+	},
+
+	_removeTile: function (key) {
+		var tile = this._tiles[key];
+		if (!tile) { return; }
+
+		// Cancels any pending http requests associated with the tile
+		// unless we're on Android's stock browser,
+		// see https://github.com/Leaflet/Leaflet/issues/137
+		if (!androidStock) {
+			tile.el.setAttribute('src', emptyImageUrl);
+		}
+
+		return GridLayer.prototype._removeTile.call(this, key);
+	},
+
+	_tileReady: function (coords, err, tile) {
+		if (!this._map || (tile && tile.getAttribute('src') === emptyImageUrl)) {
+			return;
+		}
+
+		return GridLayer.prototype._tileReady.call(this, coords, err, tile);
+	}
+});
+
+
+// @factory L.tilelayer(urlTemplate: String, options?: TileLayer options)
+// Instantiates a tile layer object given a `URL template` and optionally an options object.
+
+function tileLayer(url, options) {
+	return new TileLayer(url, options);
+}
+
+/*
+ * @class TileLayer.WMS
+ * @inherits TileLayer
+ * @aka L.TileLayer.WMS
+ * Used to display [WMS](https://en.wikipedia.org/wiki/Web_Map_Service) services as tile layers on the map. Extends `TileLayer`.
+ *
+ * @example
+ *
+ * ```js
+ * var nexrad = L.tileLayer.wms("http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi", {
+ * 	layers: 'nexrad-n0r-900913',
+ * 	format: 'image/png',
+ * 	transparent: true,
+ * 	attribution: "Weather data © 2012 IEM Nexrad"
+ * });
+ * ```
+ */
+
+var TileLayerWMS = TileLayer.extend({
+
+	// @section
+	// @aka TileLayer.WMS options
+	// If any custom options not documented here are used, they will be sent to the
+	// WMS server as extra parameters in each request URL. This can be useful for
+	// [non-standard vendor WMS parameters](http://docs.geoserver.org/stable/en/user/services/wms/vendor.html).
+	defaultWmsParams: {
+		service: 'WMS',
+		request: 'GetMap',
+
+		// @option layers: String = ''
+		// **(required)** Comma-separated list of WMS layers to show.
+		layers: '',
+
+		// @option styles: String = ''
+		// Comma-separated list of WMS styles.
+		styles: '',
+
+		// @option format: String = 'image/jpeg'
+		// WMS image format (use `'image/png'` for layers with transparency).
+		format: 'image/jpeg',
+
+		// @option transparent: Boolean = false
+		// If `true`, the WMS service will return images with transparency.
+		transparent: false,
+
+		// @option version: String = '1.1.1'
+		// Version of the WMS service to use
+		version: '1.1.1'
+	},
+
+	options: {
+		// @option crs: CRS = null
+		// Coordinate Reference System to use for the WMS requests, defaults to
+		// map CRS. Don't change this if you're not sure what it means.
+		crs: null,
+
+		// @option uppercase: Boolean = false
+		// If `true`, WMS request parameter keys will be uppercase.
+		uppercase: false
+	},
+
+	initialize: function (url, options) {
+
+		this._url = url;
+
+		var wmsParams = extend({}, this.defaultWmsParams);
+
+		// all keys that are not TileLayer options go to WMS params
+		for (var i in options) {
+			if (!(i in this.options)) {
+				wmsParams[i] = options[i];
+			}
+		}
+
+		options = setOptions(this, options);
+
+		var realRetina = options.detectRetina && retina ? 2 : 1;
+		var tileSize = this.getTileSize();
+		wmsParams.width = tileSize.x * realRetina;
+		wmsParams.height = tileSize.y * realRetina;
+
+		this.wmsParams = wmsParams;
+	},
+
+	onAdd: function (map) {
+
+		this._crs = this.options.crs || map.options.crs;
+		this._wmsVersion = parseFloat(this.wmsParams.version);
+
+		var projectionKey = this._wmsVersion >= 1.3 ? 'crs' : 'srs';
+		this.wmsParams[projectionKey] = this._crs.code;
+
+		TileLayer.prototype.onAdd.call(this, map);
+	},
+
+	getTileUrl: function (coords) {
+
+		var tileBounds = this._tileCoordsToNwSe(coords),
+		    crs = this._crs,
+		    bounds = toBounds(crs.project(tileBounds[0]), crs.project(tileBounds[1])),
+		    min = bounds.min,
+		    max = bounds.max,
+		    bbox = (this._wmsVersion >= 1.3 && this._crs === EPSG4326 ?
+		    [min.y, min.x, max.y, max.x] :
+		    [min.x, min.y, max.x, max.y]).join(','),
+		    url = TileLayer.prototype.getTileUrl.call(this, coords);
+		return url +
+			getParamString(this.wmsParams, url, this.options.uppercase) +
+			(this.options.uppercase ? '&BBOX=' : '&bbox=') + bbox;
+	},
+
+	// @method setParams(params: Object, noRedraw?: Boolean): this
+	// Merges an object with the new parameters and re-requests tiles on the current screen (unless `noRedraw` was set to true).
+	setParams: function (params, noRedraw) {
+
+		extend(this.wmsParams, params);
+
+		if (!noRedraw) {
+			this.redraw();
+		}
+
+		return this;
+	}
+});
+
+
+// @factory L.tileLayer.wms(baseUrl: String, options: TileLayer.WMS options)
+// Instantiates a WMS tile layer object given a base URL of the WMS service and a WMS parameters/options object.
+function tileLayerWMS(url, options) {
+	return new TileLayerWMS(url, options);
+}
+
+TileLayer.WMS = TileLayerWMS;
+tileLayer.wms = tileLayerWMS;
+
+/*
+ * @class Renderer
+ * @inherits Layer
+ * @aka L.Renderer
+ *
+ * Base class for vector renderer implementations (`SVG`, `Canvas`). Handles the
+ * DOM container of the renderer, its bounds, and its zoom animation.
+ *
+ * A `Renderer` works as an implicit layer group for all `Path`s - the renderer
+ * itself can be added or removed to the map. All paths use a renderer, which can
+ * be implicit (the map will decide the type of renderer and use it automatically)
+ * or explicit (using the [`renderer`](#path-renderer) option of the path).
+ *
+ * Do not use this class directly, use `SVG` and `Canvas` instead.
+ *
+ * @event update: Event
+ * Fired when the renderer updates its bounds, center and zoom, for example when
+ * its map has moved
+ */
+
+var Renderer = Layer.extend({
+
+	// @section
+	// @aka Renderer options
+	options: {
+		// @option padding: Number = 0.1
+		// How much to extend the clip area around the map view (relative to its size)
+		// e.g. 0.1 would be 10% of map view in each direction
+		padding: 0.1,
+
+		// @option tolerance: Number = 0
+		// How much to extend click tolerance round a path/object on the map
+		tolerance : 0
+	},
+
+	initialize: function (options) {
+		setOptions(this, options);
+		stamp(this);
+		this._layers = this._layers || {};
+	},
+
+	onAdd: function () {
+		if (!this._container) {
+			this._initContainer(); // defined by renderer implementations
+
+			if (this._zoomAnimated) {
+				addClass(this._container, 'leaflet-zoom-animated');
+			}
+		}
+
+		this.getPane().appendChild(this._container);
+		this._update();
+		this.on('update', this._updatePaths, this);
+	},
+
+	onRemove: function () {
+		this.off('update', this._updatePaths, this);
+		this._destroyContainer();
+	},
+
+	getEvents: function () {
+		var events = {
+			viewreset: this._reset,
+			zoom: this._onZoom,
+			moveend: this._update,
+			zoomend: this._onZoomEnd
+		};
+		if (this._zoomAnimated) {
+			events.zoomanim = this._onAnimZoom;
+		}
+		return events;
+	},
+
+	_onAnimZoom: function (ev) {
+		this._updateTransform(ev.center, ev.zoom);
+	},
+
+	_onZoom: function () {
+		this._updateTransform(this._map.getCenter(), this._map.getZoom());
+	},
+
+	_updateTransform: function (center, zoom) {
+		var scale = this._map.getZoomScale(zoom, this._zoom),
+		    position = getPosition(this._container),
+		    viewHalf = this._map.getSize().multiplyBy(0.5 + this.options.padding),
+		    currentCenterPoint = this._map.project(this._center, zoom),
+		    destCenterPoint = this._map.project(center, zoom),
+		    centerOffset = destCenterPoint.subtract(currentCenterPoint),
+
+		    topLeftOffset = viewHalf.multiplyBy(-scale).add(position).add(viewHalf).subtract(centerOffset);
+
+		if (any3d) {
+			setTransform(this._container, topLeftOffset, scale);
+		} else {
+			setPosition(this._container, topLeftOffset);
+		}
+	},
+
+	_reset: function () {
+		this._update();
+		this._updateTransform(this._center, this._zoom);
+
+		for (var id in this._layers) {
+			this._layers[id]._reset();
+		}
+	},
+
+	_onZoomEnd: function () {
+		for (var id in this._layers) {
+			this._layers[id]._project();
+		}
+	},
+
+	_updatePaths: function () {
+		for (var id in this._layers) {
+			this._layers[id]._update();
+		}
+	},
+
+	_update: function () {
+		// Update pixel bounds of renderer container (for positioning/sizing/clipping later)
+		// Subclasses are responsible of firing the 'update' event.
+		var p = this.options.padding,
+		    size = this._map.getSize(),
+		    min = this._map.containerPointToLayerPoint(size.multiplyBy(-p)).round();
+
+		this._bounds = new Bounds(min, min.add(size.multiplyBy(1 + p * 2)).round());
+
+		this._center = this._map.getCenter();
+		this._zoom = this._map.getZoom();
+	}
+});
+
+/*
+ * @class Canvas
+ * @inherits Renderer
+ * @aka L.Canvas
+ *
+ * Allows vector layers to be displayed with [`<canvas>`](https://developer.mozilla.org/docs/Web/API/Canvas_API).
+ * Inherits `Renderer`.
+ *
+ * Due to [technical limitations](http://caniuse.com/#search=canvas), Canvas is not
+ * available in all web browsers, notably IE8, and overlapping geometries might
+ * not display properly in some edge cases.
+ *
+ * @example
+ *
+ * Use Canvas by default for all paths in the map:
+ *
+ * ```js
+ * var map = L.map('map', {
+ * 	renderer: L.canvas()
+ * });
+ * ```
+ *
+ * Use a Canvas renderer with extra padding for specific vector geometries:
+ *
+ * ```js
+ * var map = L.map('map');
+ * var myRenderer = L.canvas({ padding: 0.5 });
+ * var line = L.polyline( coordinates, { renderer: myRenderer } );
+ * var circle = L.circle( center, { renderer: myRenderer } );
+ * ```
+ */
+
+var Canvas = Renderer.extend({
+	getEvents: function () {
+		var events = Renderer.prototype.getEvents.call(this);
+		events.viewprereset = this._onViewPreReset;
+		return events;
+	},
+
+	_onViewPreReset: function () {
+		// Set a flag so that a viewprereset+moveend+viewreset only updates&redraws once
+		this._postponeUpdatePaths = true;
+	},
+
+	onAdd: function () {
+		Renderer.prototype.onAdd.call(this);
+
+		// Redraw vectors since canvas is cleared upon removal,
+		// in case of removing the renderer itself from the map.
+		this._draw();
+	},
+
+	_initContainer: function () {
+		var container = this._container = document.createElement('canvas');
+
+		on(container, 'mousemove', throttle(this._onMouseMove, 32, this), this);
+		on(container, 'click dblclick mousedown mouseup contextmenu', this._onClick, this);
+		on(container, 'mouseout', this._handleMouseOut, this);
+
+		this._ctx = container.getContext('2d');
+	},
+
+	_destroyContainer: function () {
+		cancelAnimFrame(this._redrawRequest);
+		delete this._ctx;
+		remove(this._container);
+		off(this._container);
+		delete this._container;
+	},
+
+	_updatePaths: function () {
+		if (this._postponeUpdatePaths) { return; }
+
+		var layer;
+		this._redrawBounds = null;
+		for (var id in this._layers) {
+			layer = this._layers[id];
+			layer._update();
+		}
+		this._redraw();
+	},
+
+	_update: function () {
+		if (this._map._animatingZoom && this._bounds) { return; }
+
+		this._drawnLayers = {};
+
+		Renderer.prototype._update.call(this);
+
+		var b = this._bounds,
+		    container = this._container,
+		    size = b.getSize(),
+		    m = retina ? 2 : 1;
+
+		setPosition(container, b.min);
+
+		// set canvas size (also clearing it); use double size on retina
+		container.width = m * size.x;
+		container.height = m * size.y;
+		container.style.width = size.x + 'px';
+		container.style.height = size.y + 'px';
+
+		if (retina) {
+			this._ctx.scale(2, 2);
+		}
+
+		// translate so we use the same path coordinates after canvas element moves
+		this._ctx.translate(-b.min.x, -b.min.y);
+
+		// Tell paths to redraw themselves
+		this.fire('update');
+	},
+
+	_reset: function () {
+		Renderer.prototype._reset.call(this);
+
+		if (this._postponeUpdatePaths) {
+			this._postponeUpdatePaths = false;
+			this._updatePaths();
+		}
+	},
+
+	_initPath: function (layer) {
+		this._updateDashArray(layer);
+		this._layers[stamp(layer)] = layer;
+
+		var order = layer._order = {
+			layer: layer,
+			prev: this._drawLast,
+			next: null
+		};
+		if (this._drawLast) { this._drawLast.next = order; }
+		this._drawLast = order;
+		this._drawFirst = this._drawFirst || this._drawLast;
+	},
+
+	_addPath: function (layer) {
+		this._requestRedraw(layer);
+	},
+
+	_removePath: function (layer) {
+		var order = layer._order;
+		var next = order.next;
+		var prev = order.prev;
+
+		if (next) {
+			next.prev = prev;
+		} else {
+			this._drawLast = prev;
+		}
+		if (prev) {
+			prev.next = next;
+		} else {
+			this._drawFirst = next;
+		}
+
+		delete this._drawnLayers[layer._leaflet_id];
+
+		delete layer._order;
+
+		delete this._layers[stamp(layer)];
+
+		this._requestRedraw(layer);
+	},
+
+	_updatePath: function (layer) {
+		// Redraw the union of the layer's old pixel
+		// bounds and the new pixel bounds.
+		this._extendRedrawBounds(layer);
+		layer._project();
+		layer._update();
+		// The redraw will extend the redraw bounds
+		// with the new pixel bounds.
+		this._requestRedraw(layer);
+	},
+
+	_updateStyle: function (layer) {
+		this._updateDashArray(layer);
+		this._requestRedraw(layer);
+	},
+
+	_updateDashArray: function (layer) {
+		if (typeof layer.options.dashArray === 'string') {
+			var parts = layer.options.dashArray.split(/[, ]+/),
+			    dashArray = [],
+			    i;
+			for (i = 0; i < parts.length; i++) {
+				dashArray.push(Number(parts[i]));
+			}
+			layer.options._dashArray = dashArray;
+		} else {
+			layer.options._dashArray = layer.options.dashArray;
+		}
+	},
+
+	_requestRedraw: function (layer) {
+		if (!this._map) { return; }
+
+		this._extendRedrawBounds(layer);
+		this._redrawRequest = this._redrawRequest || requestAnimFrame(this._redraw, this);
+	},
+
+	_extendRedrawBounds: function (layer) {
+		if (layer._pxBounds) {
+			var padding = (layer.options.weight || 0) + 1;
+			this._redrawBounds = this._redrawBounds || new Bounds();
+			this._redrawBounds.extend(layer._pxBounds.min.subtract([padding, padding]));
+			this._redrawBounds.extend(layer._pxBounds.max.add([padding, padding]));
+		}
+	},
+
+	_redraw: function () {
+		this._redrawRequest = null;
+
+		if (this._redrawBounds) {
+			this._redrawBounds.min._floor();
+			this._redrawBounds.max._ceil();
+		}
+
+		this._clear(); // clear layers in redraw bounds
+		this._draw(); // draw layers
+
+		this._redrawBounds = null;
+	},
+
+	_clear: function () {
+		var bounds = this._redrawBounds;
+		if (bounds) {
+			var size = bounds.getSize();
+			this._ctx.clearRect(bounds.min.x, bounds.min.y, size.x, size.y);
+		} else {
+			this._ctx.clearRect(0, 0, this._container.width, this._container.height);
+		}
+	},
+
+	_draw: function () {
+		var layer, bounds = this._redrawBounds;
+		this._ctx.save();
+		if (bounds) {
+			var size = bounds.getSize();
+			this._ctx.beginPath();
+			this._ctx.rect(bounds.min.x, bounds.min.y, size.x, size.y);
+			this._ctx.clip();
+		}
+
+		this._drawing = true;
+
+		for (var order = this._drawFirst; order; order = order.next) {
+			layer = order.layer;
+			if (!bounds || (layer._pxBounds && layer._pxBounds.intersects(bounds))) {
+				layer._updatePath();
+			}
+		}
+
+		this._drawing = false;
+
+		this._ctx.restore();  // Restore state before clipping.
+	},
+
+	_updatePoly: function (layer, closed) {
+		if (!this._drawing) { return; }
+
+		var i, j, len2, p,
+		    parts = layer._parts,
+		    len = parts.length,
+		    ctx = this._ctx;
+
+		if (!len) { return; }
+
+		this._drawnLayers[layer._leaflet_id] = layer;
+
+		ctx.beginPath();
+
+		for (i = 0; i < len; i++) {
+			for (j = 0, len2 = parts[i].length; j < len2; j++) {
+				p = parts[i][j];
+				ctx[j ? 'lineTo' : 'moveTo'](p.x, p.y);
+			}
+			if (closed) {
+				ctx.closePath();
+			}
+		}
+
+		this._fillStroke(ctx, layer);
+
+		// TODO optimization: 1 fill/stroke for all features with equal style instead of 1 for each feature
+	},
+
+	_updateCircle: function (layer) {
+
+		if (!this._drawing || layer._empty()) { return; }
+
+		var p = layer._point,
+		    ctx = this._ctx,
+		    r = Math.max(Math.round(layer._radius), 1),
+		    s = (Math.max(Math.round(layer._radiusY), 1) || r) / r;
+
+		this._drawnLayers[layer._leaflet_id] = layer;
+
+		if (s !== 1) {
+			ctx.save();
+			ctx.scale(1, s);
+		}
+
+		ctx.beginPath();
+		ctx.arc(p.x, p.y / s, r, 0, Math.PI * 2, false);
+
+		if (s !== 1) {
+			ctx.restore();
+		}
+
+		this._fillStroke(ctx, layer);
+	},
+
+	_fillStroke: function (ctx, layer) {
+		var options = layer.options;
+
+		if (options.fill) {
+			ctx.globalAlpha = options.fillOpacity;
+			ctx.fillStyle = options.fillColor || options.color;
+			ctx.fill(options.fillRule || 'evenodd');
+		}
+
+		if (options.stroke && options.weight !== 0) {
+			if (ctx.setLineDash) {
+				ctx.setLineDash(layer.options && layer.options._dashArray || []);
+			}
+			ctx.globalAlpha = options.opacity;
+			ctx.lineWidth = options.weight;
+			ctx.strokeStyle = options.color;
+			ctx.lineCap = options.lineCap;
+			ctx.lineJoin = options.lineJoin;
+			ctx.stroke();
+		}
+	},
+
+	// Canvas obviously doesn't have mouse events for individual drawn objects,
+	// so we emulate that by calculating what's under the mouse on mousemove/click manually
+
+	_onClick: function (e) {
+		var point = this._map.mouseEventToLayerPoint(e), layer, clickedLayer;
+
+		for (var order = this._drawFirst; order; order = order.next) {
+			layer = order.layer;
+			if (layer.options.interactive && layer._containsPoint(point) && !this._map._draggableMoved(layer)) {
+				clickedLayer = layer;
+			}
+		}
+		if (clickedLayer)  {
+			fakeStop(e);
+			this._fireEvent([clickedLayer], e);
+		}
+	},
+
+	_onMouseMove: function (e) {
+		if (!this._map || this._map.dragging.moving() || this._map._animatingZoom) { return; }
+
+		var point = this._map.mouseEventToLayerPoint(e);
+		this._handleMouseHover(e, point);
+	},
+
+
+	_handleMouseOut: function (e) {
+		var layer = this._hoveredLayer;
+		if (layer) {
+			// if we're leaving the layer, fire mouseout
+			removeClass(this._container, 'leaflet-interactive');
+			this._fireEvent([layer], e, 'mouseout');
+			this._hoveredLayer = null;
+		}
+	},
+
+	_handleMouseHover: function (e, point) {
+		var layer, candidateHoveredLayer;
+
+		for (var order = this._drawFirst; order; order = order.next) {
+			layer = order.layer;
+			if (layer.options.interactive && layer._containsPoint(point)) {
+				candidateHoveredLayer = layer;
+			}
+		}
+
+		if (candidateHoveredLayer !== this._hoveredLayer) {
+			this._handleMouseOut(e);
+
+			if (candidateHoveredLayer) {
+				addClass(this._container, 'leaflet-interactive'); // change cursor
+				this._fireEvent([candidateHoveredLayer], e, 'mouseover');
+				this._hoveredLayer = candidateHoveredLayer;
+			}
+		}
+
+		if (this._hoveredLayer) {
+			this._fireEvent([this._hoveredLayer], e);
+		}
+	},
+
+	_fireEvent: function (layers, e, type) {
+		this._map._fireDOMEvent(e, type || e.type, layers);
+	},
+
+	_bringToFront: function (layer) {
+		var order = layer._order;
+		var next = order.next;
+		var prev = order.prev;
+
+		if (next) {
+			next.prev = prev;
+		} else {
+			// Already last
+			return;
+		}
+		if (prev) {
+			prev.next = next;
+		} else if (next) {
+			// Update first entry unless this is the
+			// single entry
+			this._drawFirst = next;
+		}
+
+		order.prev = this._drawLast;
+		this._drawLast.next = order;
+
+		order.next = null;
+		this._drawLast = order;
+
+		this._requestRedraw(layer);
+	},
+
+	_bringToBack: function (layer) {
+		var order = layer._order;
+		var next = order.next;
+		var prev = order.prev;
+
+		if (prev) {
+			prev.next = next;
+		} else {
+			// Already first
+			return;
+		}
+		if (next) {
+			next.prev = prev;
+		} else if (prev) {
+			// Update last entry unless this is the
+			// single entry
+			this._drawLast = prev;
+		}
+
+		order.prev = null;
+
+		order.next = this._drawFirst;
+		this._drawFirst.prev = order;
+		this._drawFirst = order;
+
+		this._requestRedraw(layer);
+	}
+});
+
+// @factory L.canvas(options?: Renderer options)
+// Creates a Canvas renderer with the given options.
+function canvas$1(options) {
+	return canvas ? new Canvas(options) : null;
+}
+
+/*
+ * Thanks to Dmitry Baranovsky and his Raphael library for inspiration!
+ */
+
+
+var vmlCreate = (function () {
+	try {
+		document.namespaces.add('lvml', 'urn:schemas-microsoft-com:vml');
+		return function (name) {
+			return document.createElement('<lvml:' + name + ' class="lvml">');
+		};
+	} catch (e) {
+		return function (name) {
+			return document.createElement('<' + name + ' xmlns="urn:schemas-microsoft.com:vml" class="lvml">');
+		};
+	}
+})();
+
+
+/*
+ * @class SVG
+ *
+ * Although SVG is not available on IE7 and IE8, these browsers support [VML](https://en.wikipedia.org/wiki/Vector_Markup_Language), and the SVG renderer will fall back to VML in this case.
+ *
+ * VML was deprecated in 2012, which means VML functionality exists only for backwards compatibility
+ * with old versions of Internet Explorer.
+ */
+
+// mixin to redefine some SVG methods to handle VML syntax which is similar but with some differences
+var vmlMixin = {
+
+	_initContainer: function () {
+		this._container = create$1('div', 'leaflet-vml-container');
+	},
+
+	_update: function () {
+		if (this._map._animatingZoom) { return; }
+		Renderer.prototype._update.call(this);
+		this.fire('update');
+	},
+
+	_initPath: function (layer) {
+		var container = layer._container = vmlCreate('shape');
+
+		addClass(container, 'leaflet-vml-shape ' + (this.options.className || ''));
+
+		container.coordsize = '1 1';
+
+		layer._path = vmlCreate('path');
+		container.appendChild(layer._path);
+
+		this._updateStyle(layer);
+		this._layers[stamp(layer)] = layer;
+	},
+
+	_addPath: function (layer) {
+		var container = layer._container;
+		this._container.appendChild(container);
+
+		if (layer.options.interactive) {
+			layer.addInteractiveTarget(container);
+		}
+	},
+
+	_removePath: function (layer) {
+		var container = layer._container;
+		remove(container);
+		layer.removeInteractiveTarget(container);
+		delete this._layers[stamp(layer)];
+	},
+
+	_updateStyle: function (layer) {
+		var stroke = layer._stroke,
+		    fill = layer._fill,
+		    options = layer.options,
+		    container = layer._container;
+
+		container.stroked = !!options.stroke;
+		container.filled = !!options.fill;
+
+		if (options.stroke) {
+			if (!stroke) {
+				stroke = layer._stroke = vmlCreate('stroke');
+			}
+			container.appendChild(stroke);
+			stroke.weight = options.weight + 'px';
+			stroke.color = options.color;
+			stroke.opacity = options.opacity;
+
+			if (options.dashArray) {
+				stroke.dashStyle = isArray(options.dashArray) ?
+				    options.dashArray.join(' ') :
+				    options.dashArray.replace(/( *, *)/g, ' ');
+			} else {
+				stroke.dashStyle = '';
+			}
+			stroke.endcap = options.lineCap.replace('butt', 'flat');
+			stroke.joinstyle = options.lineJoin;
+
+		} else if (stroke) {
+			container.removeChild(stroke);
+			layer._stroke = null;
+		}
+
+		if (options.fill) {
+			if (!fill) {
+				fill = layer._fill = vmlCreate('fill');
+			}
+			container.appendChild(fill);
+			fill.color = options.fillColor || options.color;
+			fill.opacity = options.fillOpacity;
+
+		} else if (fill) {
+			container.removeChild(fill);
+			layer._fill = null;
+		}
+	},
+
+	_updateCircle: function (layer) {
+		var p = layer._point.round(),
+		    r = Math.round(layer._radius),
+		    r2 = Math.round(layer._radiusY || r);
+
+		this._setPath(layer, layer._empty() ? 'M0 0' :
+			'AL ' + p.x + ',' + p.y + ' ' + r + ',' + r2 + ' 0,' + (65535 * 360));
+	},
+
+	_setPath: function (layer, path) {
+		layer._path.v = path;
+	},
+
+	_bringToFront: function (layer) {
+		toFront(layer._container);
+	},
+
+	_bringToBack: function (layer) {
+		toBack(layer._container);
+	}
+};
+
+var create$2 = vml ? vmlCreate : svgCreate;
+
+/*
+ * @class SVG
+ * @inherits Renderer
+ * @aka L.SVG
+ *
+ * Allows vector layers to be displayed with [SVG](https://developer.mozilla.org/docs/Web/SVG).
+ * Inherits `Renderer`.
+ *
+ * Due to [technical limitations](http://caniuse.com/#search=svg), SVG is not
+ * available in all web browsers, notably Android 2.x and 3.x.
+ *
+ * Although SVG is not available on IE7 and IE8, these browsers support
+ * [VML](https://en.wikipedia.org/wiki/Vector_Markup_Language)
+ * (a now deprecated technology), and the SVG renderer will fall back to VML in
+ * this case.
+ *
+ * @example
+ *
+ * Use SVG by default for all paths in the map:
+ *
+ * ```js
+ * var map = L.map('map', {
+ * 	renderer: L.svg()
+ * });
+ * ```
+ *
+ * Use a SVG renderer with extra padding for specific vector geometries:
+ *
+ * ```js
+ * var map = L.map('map');
+ * var myRenderer = L.svg({ padding: 0.5 });
+ * var line = L.polyline( coordinates, { renderer: myRenderer } );
+ * var circle = L.circle( center, { renderer: myRenderer } );
+ * ```
+ */
+
+var SVG = Renderer.extend({
+
+	getEvents: function () {
+		var events = Renderer.prototype.getEvents.call(this);
+		events.zoomstart = this._onZoomStart;
+		return events;
+	},
+
+	_initContainer: function () {
+		this._container = create$2('svg');
+
+		// makes it possible to click through svg root; we'll reset it back in individual paths
+		this._container.setAttribute('pointer-events', 'none');
+
+		this._rootGroup = create$2('g');
+		this._container.appendChild(this._rootGroup);
+	},
+
+	_destroyContainer: function () {
+		remove(this._container);
+		off(this._container);
+		delete this._container;
+		delete this._rootGroup;
+		delete this._svgSize;
+	},
+
+	_onZoomStart: function () {
+		// Drag-then-pinch interactions might mess up the center and zoom.
+		// In this case, the easiest way to prevent this is re-do the renderer
+		//   bounds and padding when the zooming starts.
+		this._update();
+	},
+
+	_update: function () {
+		if (this._map._animatingZoom && this._bounds) { return; }
+
+		Renderer.prototype._update.call(this);
+
+		var b = this._bounds,
+		    size = b.getSize(),
+		    container = this._container;
+
+		// set size of svg-container if changed
+		if (!this._svgSize || !this._svgSize.equals(size)) {
+			this._svgSize = size;
+			container.setAttribute('width', size.x);
+			container.setAttribute('height', size.y);
+		}
+
+		// movement: update container viewBox so that we don't have to change coordinates of individual layers
+		setPosition(container, b.min);
+		container.setAttribute('viewBox', [b.min.x, b.min.y, size.x, size.y].join(' '));
+
+		this.fire('update');
+	},
+
+	// methods below are called by vector layers implementations
+
+	_initPath: function (layer) {
+		var path = layer._path = create$2('path');
+
+		// @namespace Path
+		// @option className: String = null
+		// Custom class name set on an element. Only for SVG renderer.
+		if (layer.options.className) {
+			addClass(path, layer.options.className);
+		}
+
+		if (layer.options.interactive) {
+			addClass(path, 'leaflet-interactive');
+		}
+
+		this._updateStyle(layer);
+		this._layers[stamp(layer)] = layer;
+	},
+
+	_addPath: function (layer) {
+		if (!this._rootGroup) { this._initContainer(); }
+		this._rootGroup.appendChild(layer._path);
+		layer.addInteractiveTarget(layer._path);
+	},
+
+	_removePath: function (layer) {
+		remove(layer._path);
+		layer.removeInteractiveTarget(layer._path);
+		delete this._layers[stamp(layer)];
+	},
+
+	_updatePath: function (layer) {
+		layer._project();
+		layer._update();
+	},
+
+	_updateStyle: function (layer) {
+		var path = layer._path,
+		    options = layer.options;
+
+		if (!path) { return; }
+
+		if (options.stroke) {
+			path.setAttribute('stroke', options.color);
+			path.setAttribute('stroke-opacity', options.opacity);
+			path.setAttribute('stroke-width', options.weight);
+			path.setAttribute('stroke-linecap', options.lineCap);
+			path.setAttribute('stroke-linejoin', options.lineJoin);
+
+			if (options.dashArray) {
+				path.setAttribute('stroke-dasharray', options.dashArray);
+			} else {
+				path.removeAttribute('stroke-dasharray');
+			}
+
+			if (options.dashOffset) {
+				path.setAttribute('stroke-dashoffset', options.dashOffset);
+			} else {
+				path.removeAttribute('stroke-dashoffset');
+			}
+		} else {
+			path.setAttribute('stroke', 'none');
+		}
+
+		if (options.fill) {
+			path.setAttribute('fill', options.fillColor || options.color);
+			path.setAttribute('fill-opacity', options.fillOpacity);
+			path.setAttribute('fill-rule', options.fillRule || 'evenodd');
+		} else {
+			path.setAttribute('fill', 'none');
+		}
+	},
+
+	_updatePoly: function (layer, closed) {
+		this._setPath(layer, pointsToPath(layer._parts, closed));
+	},
+
+	_updateCircle: function (layer) {
+		var p = layer._point,
+		    r = Math.max(Math.round(layer._radius), 1),
+		    r2 = Math.max(Math.round(layer._radiusY), 1) || r,
+		    arc = 'a' + r + ',' + r2 + ' 0 1,0 ';
+
+		// drawing a circle with two half-arcs
+		var d = layer._empty() ? 'M0 0' :
+			'M' + (p.x - r) + ',' + p.y +
+			arc + (r * 2) + ',0 ' +
+			arc + (-r * 2) + ',0 ';
+
+		this._setPath(layer, d);
+	},
+
+	_setPath: function (layer, path) {
+		layer._path.setAttribute('d', path);
+	},
+
+	// SVG does not have the concept of zIndex so we resort to changing the DOM order of elements
+	_bringToFront: function (layer) {
+		toFront(layer._path);
+	},
+
+	_bringToBack: function (layer) {
+		toBack(layer._path);
+	}
+});
+
+if (vml) {
+	SVG.include(vmlMixin);
+}
+
+// @namespace SVG
+// @factory L.svg(options?: Renderer options)
+// Creates a SVG renderer with the given options.
+function svg$1(options) {
+	return svg || vml ? new SVG(options) : null;
+}
+
+Map.include({
+	// @namespace Map; @method getRenderer(layer: Path): Renderer
+	// Returns the instance of `Renderer` that should be used to render the given
+	// `Path`. It will ensure that the `renderer` options of the map and paths
+	// are respected, and that the renderers do exist on the map.
+	getRenderer: function (layer) {
+		// @namespace Path; @option renderer: Renderer
+		// Use this specific instance of `Renderer` for this path. Takes
+		// precedence over the map's [default renderer](#map-renderer).
+		var renderer = layer.options.renderer || this._getPaneRenderer(layer.options.pane) || this.options.renderer || this._renderer;
+
+		if (!renderer) {
+			renderer = this._renderer = this._createRenderer();
+		}
+
+		if (!this.hasLayer(renderer)) {
+			this.addLayer(renderer);
+		}
+		return renderer;
+	},
+
+	_getPaneRenderer: function (name) {
+		if (name === 'overlayPane' || name === undefined) {
+			return false;
+		}
+
+		var renderer = this._paneRenderers[name];
+		if (renderer === undefined) {
+			renderer = this._createRenderer({pane: name});
+			this._paneRenderers[name] = renderer;
+		}
+		return renderer;
+	},
+
+	_createRenderer: function (options) {
+		// @namespace Map; @option preferCanvas: Boolean = false
+		// Whether `Path`s should be rendered on a `Canvas` renderer.
+		// By default, all `Path`s are rendered in a `SVG` renderer.
+		return (this.options.preferCanvas && canvas$1(options)) || svg$1(options);
+	}
+});
+
+/*
+ * L.Rectangle extends Polygon and creates a rectangle when passed a LatLngBounds object.
+ */
+
+/*
+ * @class Rectangle
+ * @aka L.Rectangle
+ * @inherits Polygon
+ *
+ * A class for drawing rectangle overlays on a map. Extends `Polygon`.
+ *
+ * @example
+ *
+ * ```js
+ * // define rectangle geographical bounds
+ * var bounds = [[54.559322, -5.767822], [56.1210604, -3.021240]];
+ *
+ * // create an orange rectangle
+ * L.rectangle(bounds, {color: "#ff7800", weight: 1}).addTo(map);
+ *
+ * // zoom the map to the rectangle bounds
+ * map.fitBounds(bounds);
+ * ```
+ *
+ */
+
+
+var Rectangle = Polygon.extend({
+	initialize: function (latLngBounds, options) {
+		Polygon.prototype.initialize.call(this, this._boundsToLatLngs(latLngBounds), options);
+	},
+
+	// @method setBounds(latLngBounds: LatLngBounds): this
+	// Redraws the rectangle with the passed bounds.
+	setBounds: function (latLngBounds) {
+		return this.setLatLngs(this._boundsToLatLngs(latLngBounds));
+	},
+
+	_boundsToLatLngs: function (latLngBounds) {
+		latLngBounds = toLatLngBounds(latLngBounds);
+		return [
+			latLngBounds.getSouthWest(),
+			latLngBounds.getNorthWest(),
+			latLngBounds.getNorthEast(),
+			latLngBounds.getSouthEast()
+		];
+	}
+});
+
+
+// @factory L.rectangle(latLngBounds: LatLngBounds, options?: Polyline options)
+function rectangle(latLngBounds, options) {
+	return new Rectangle(latLngBounds, options);
+}
+
+SVG.create = create$2;
+SVG.pointsToPath = pointsToPath;
+
+GeoJSON.geometryToLayer = geometryToLayer;
+GeoJSON.coordsToLatLng = coordsToLatLng;
+GeoJSON.coordsToLatLngs = coordsToLatLngs;
+GeoJSON.latLngToCoords = latLngToCoords;
+GeoJSON.latLngsToCoords = latLngsToCoords;
+GeoJSON.getFeature = getFeature;
+GeoJSON.asFeature = asFeature;
+
+/*
+ * L.Handler.BoxZoom is used to add shift-drag zoom interaction to the map
+ * (zoom to a selected bounding box), enabled by default.
+ */
+
+// @namespace Map
+// @section Interaction Options
+Map.mergeOptions({
+	// @option boxZoom: Boolean = true
+	// Whether the map can be zoomed to a rectangular area specified by
+	// dragging the mouse while pressing the shift key.
+	boxZoom: true
+});
+
+var BoxZoom = Handler.extend({
+	initialize: function (map) {
+		this._map = map;
+		this._container = map._container;
+		this._pane = map._panes.overlayPane;
+		this._resetStateTimeout = 0;
+		map.on('unload', this._destroy, this);
+	},
+
+	addHooks: function () {
+		on(this._container, 'mousedown', this._onMouseDown, this);
+	},
+
+	removeHooks: function () {
+		off(this._container, 'mousedown', this._onMouseDown, this);
+	},
+
+	moved: function () {
+		return this._moved;
+	},
+
+	_destroy: function () {
+		remove(this._pane);
+		delete this._pane;
+	},
+
+	_resetState: function () {
+		this._resetStateTimeout = 0;
+		this._moved = false;
+	},
+
+	_clearDeferredResetState: function () {
+		if (this._resetStateTimeout !== 0) {
+			clearTimeout(this._resetStateTimeout);
+			this._resetStateTimeout = 0;
+		}
+	},
+
+	_onMouseDown: function (e) {
+		if (!e.shiftKey || ((e.which !== 1) && (e.button !== 1))) { return false; }
+
+		// Clear the deferred resetState if it hasn't executed yet, otherwise it
+		// will interrupt the interaction and orphan a box element in the container.
+		this._clearDeferredResetState();
+		this._resetState();
+
+		disableTextSelection();
+		disableImageDrag();
+
+		this._startPoint = this._map.mouseEventToContainerPoint(e);
+
+		on(document, {
+			contextmenu: stop,
+			mousemove: this._onMouseMove,
+			mouseup: this._onMouseUp,
+			keydown: this._onKeyDown
+		}, this);
+	},
+
+	_onMouseMove: function (e) {
+		if (!this._moved) {
+			this._moved = true;
+
+			this._box = create$1('div', 'leaflet-zoom-box', this._container);
+			addClass(this._container, 'leaflet-crosshair');
+
+			this._map.fire('boxzoomstart');
+		}
+
+		this._point = this._map.mouseEventToContainerPoint(e);
+
+		var bounds = new Bounds(this._point, this._startPoint),
+		    size = bounds.getSize();
+
+		setPosition(this._box, bounds.min);
+
+		this._box.style.width  = size.x + 'px';
+		this._box.style.height = size.y + 'px';
+	},
+
+	_finish: function () {
+		if (this._moved) {
+			remove(this._box);
+			removeClass(this._container, 'leaflet-crosshair');
+		}
+
+		enableTextSelection();
+		enableImageDrag();
+
+		off(document, {
+			contextmenu: stop,
+			mousemove: this._onMouseMove,
+			mouseup: this._onMouseUp,
+			keydown: this._onKeyDown
+		}, this);
+	},
+
+	_onMouseUp: function (e) {
+		if ((e.which !== 1) && (e.button !== 1)) { return; }
+
+		this._finish();
+
+		if (!this._moved) { return; }
+		// Postpone to next JS tick so internal click event handling
+		// still see it as "moved".
+		this._clearDeferredResetState();
+		this._resetStateTimeout = setTimeout(bind(this._resetState, this), 0);
+
+		var bounds = new LatLngBounds(
+		        this._map.containerPointToLatLng(this._startPoint),
+		        this._map.containerPointToLatLng(this._point));
+
+		this._map
+			.fitBounds(bounds)
+			.fire('boxzoomend', {boxZoomBounds: bounds});
+	},
+
+	_onKeyDown: function (e) {
+		if (e.keyCode === 27) {
+			this._finish();
+		}
+	}
+});
+
+// @section Handlers
+// @property boxZoom: Handler
+// Box (shift-drag with mouse) zoom handler.
+Map.addInitHook('addHandler', 'boxZoom', BoxZoom);
+
+/*
+ * L.Handler.DoubleClickZoom is used to handle double-click zoom on the map, enabled by default.
+ */
+
+// @namespace Map
+// @section Interaction Options
+
+Map.mergeOptions({
+	// @option doubleClickZoom: Boolean|String = true
+	// Whether the map can be zoomed in by double clicking on it and
+	// zoomed out by double clicking while holding shift. If passed
+	// `'center'`, double-click zoom will zoom to the center of the
+	//  view regardless of where the mouse was.
+	doubleClickZoom: true
+});
+
+var DoubleClickZoom = Handler.extend({
+	addHooks: function () {
+		this._map.on('dblclick', this._onDoubleClick, this);
+	},
+
+	removeHooks: function () {
+		this._map.off('dblclick', this._onDoubleClick, this);
+	},
+
+	_onDoubleClick: function (e) {
+		var map = this._map,
+		    oldZoom = map.getZoom(),
+		    delta = map.options.zoomDelta,
+		    zoom = e.originalEvent.shiftKey ? oldZoom - delta : oldZoom + delta;
+
+		if (map.options.doubleClickZoom === 'center') {
+			map.setZoom(zoom);
+		} else {
+			map.setZoomAround(e.containerPoint, zoom);
+		}
+	}
+});
+
+// @section Handlers
+//
+// Map properties include interaction handlers that allow you to control
+// interaction behavior in runtime, enabling or disabling certain features such
+// as dragging or touch zoom (see `Handler` methods). For example:
+//
+// ```js
+// map.doubleClickZoom.disable();
+// ```
+//
+// @property doubleClickZoom: Handler
+// Double click zoom handler.
+Map.addInitHook('addHandler', 'doubleClickZoom', DoubleClickZoom);
+
+/*
+ * L.Handler.MapDrag is used to make the map draggable (with panning inertia), enabled by default.
+ */
+
+// @namespace Map
+// @section Interaction Options
+Map.mergeOptions({
+	// @option dragging: Boolean = true
+	// Whether the map be draggable with mouse/touch or not.
+	dragging: true,
+
+	// @section Panning Inertia Options
+	// @option inertia: Boolean = *
+	// If enabled, panning of the map will have an inertia effect where
+	// the map builds momentum while dragging and continues moving in
+	// the same direction for some time. Feels especially nice on touch
+	// devices. Enabled by default unless running on old Android devices.
+	inertia: !android23,
+
+	// @option inertiaDeceleration: Number = 3000
+	// The rate with which the inertial movement slows down, in pixels/second².
+	inertiaDeceleration: 3400, // px/s^2
+
+	// @option inertiaMaxSpeed: Number = Infinity
+	// Max speed of the inertial movement, in pixels/second.
+	inertiaMaxSpeed: Infinity, // px/s
+
+	// @option easeLinearity: Number = 0.2
+	easeLinearity: 0.2,
+
+	// TODO refactor, move to CRS
+	// @option worldCopyJump: Boolean = false
+	// With this option enabled, the map tracks when you pan to another "copy"
+	// of the world and seamlessly jumps to the original one so that all overlays
+	// like markers and vector layers are still visible.
+	worldCopyJump: false,
+
+	// @option maxBoundsViscosity: Number = 0.0
+	// If `maxBounds` is set, this option will control how solid the bounds
+	// are when dragging the map around. The default value of `0.0` allows the
+	// user to drag outside the bounds at normal speed, higher values will
+	// slow down map dragging outside bounds, and `1.0` makes the bounds fully
+	// solid, preventing the user from dragging outside the bounds.
+	maxBoundsViscosity: 0.0
+});
+
+var Drag = Handler.extend({
+	addHooks: function () {
+		if (!this._draggable) {
+			var map = this._map;
+
+			this._draggable = new Draggable(map._mapPane, map._container);
+
+			this._draggable.on({
+				dragstart: this._onDragStart,
+				drag: this._onDrag,
+				dragend: this._onDragEnd
+			}, this);
+
+			this._draggable.on('predrag', this._onPreDragLimit, this);
+			if (map.options.worldCopyJump) {
+				this._draggable.on('predrag', this._onPreDragWrap, this);
+				map.on('zoomend', this._onZoomEnd, this);
+
+				map.whenReady(this._onZoomEnd, this);
+			}
+		}
+		addClass(this._map._container, 'leaflet-grab leaflet-touch-drag');
+		this._draggable.enable();
+		this._positions = [];
+		this._times = [];
+	},
+
+	removeHooks: function () {
+		removeClass(this._map._container, 'leaflet-grab');
+		removeClass(this._map._container, 'leaflet-touch-drag');
+		this._draggable.disable();
+	},
+
+	moved: function () {
+		return this._draggable && this._draggable._moved;
+	},
+
+	moving: function () {
+		return this._draggable && this._draggable._moving;
+	},
+
+	_onDragStart: function () {
+		var map = this._map;
+
+		map._stop();
+		if (this._map.options.maxBounds && this._map.options.maxBoundsViscosity) {
+			var bounds = toLatLngBounds(this._map.options.maxBounds);
+
+			this._offsetLimit = toBounds(
+				this._map.latLngToContainerPoint(bounds.getNorthWest()).multiplyBy(-1),
+				this._map.latLngToContainerPoint(bounds.getSouthEast()).multiplyBy(-1)
+					.add(this._map.getSize()));
+
+			this._viscosity = Math.min(1.0, Math.max(0.0, this._map.options.maxBoundsViscosity));
+		} else {
+			this._offsetLimit = null;
+		}
+
+		map
+		    .fire('movestart')
+		    .fire('dragstart');
+
+		if (map.options.inertia) {
+			this._positions = [];
+			this._times = [];
+		}
+	},
+
+	_onDrag: function (e) {
+		if (this._map.options.inertia) {
+			var time = this._lastTime = +new Date(),
+			    pos = this._lastPos = this._draggable._absPos || this._draggable._newPos;
+
+			this._positions.push(pos);
+			this._times.push(time);
+
+			this._prunePositions(time);
+		}
+
+		this._map
+		    .fire('move', e)
+		    .fire('drag', e);
+	},
+
+	_prunePositions: function (time) {
+		while (this._positions.length > 1 && time - this._times[0] > 50) {
+			this._positions.shift();
+			this._times.shift();
+		}
+	},
+
+	_onZoomEnd: function () {
+		var pxCenter = this._map.getSize().divideBy(2),
+		    pxWorldCenter = this._map.latLngToLayerPoint([0, 0]);
+
+		this._initialWorldOffset = pxWorldCenter.subtract(pxCenter).x;
+		this._worldWidth = this._map.getPixelWorldBounds().getSize().x;
+	},
+
+	_viscousLimit: function (value, threshold) {
+		return value - (value - threshold) * this._viscosity;
+	},
+
+	_onPreDragLimit: function () {
+		if (!this._viscosity || !this._offsetLimit) { return; }
+
+		var offset = this._draggable._newPos.subtract(this._draggable._startPos);
+
+		var limit = this._offsetLimit;
+		if (offset.x < limit.min.x) { offset.x = this._viscousLimit(offset.x, limit.min.x); }
+		if (offset.y < limit.min.y) { offset.y = this._viscousLimit(offset.y, limit.min.y); }
+		if (offset.x > limit.max.x) { offset.x = this._viscousLimit(offset.x, limit.max.x); }
+		if (offset.y > limit.max.y) { offset.y = this._viscousLimit(offset.y, limit.max.y); }
+
+		this._draggable._newPos = this._draggable._startPos.add(offset);
+	},
+
+	_onPreDragWrap: function () {
+		// TODO refactor to be able to adjust map pane position after zoom
+		var worldWidth = this._worldWidth,
+		    halfWidth = Math.round(worldWidth / 2),
+		    dx = this._initialWorldOffset,
+		    x = this._draggable._newPos.x,
+		    newX1 = (x - halfWidth + dx) % worldWidth + halfWidth - dx,
+		    newX2 = (x + halfWidth + dx) % worldWidth - halfWidth - dx,
+		    newX = Math.abs(newX1 + dx) < Math.abs(newX2 + dx) ? newX1 : newX2;
+
+		this._draggable._absPos = this._draggable._newPos.clone();
+		this._draggable._newPos.x = newX;
+	},
+
+	_onDragEnd: function (e) {
+		var map = this._map,
+		    options = map.options,
+
+		    noInertia = !options.inertia || this._times.length < 2;
+
+		map.fire('dragend', e);
+
+		if (noInertia) {
+			map.fire('moveend');
+
+		} else {
+			this._prunePositions(+new Date());
+
+			var direction = this._lastPos.subtract(this._positions[0]),
+			    duration = (this._lastTime - this._times[0]) / 1000,
+			    ease = options.easeLinearity,
+
+			    speedVector = direction.multiplyBy(ease / duration),
+			    speed = speedVector.distanceTo([0, 0]),
+
+			    limitedSpeed = Math.min(options.inertiaMaxSpeed, speed),
+			    limitedSpeedVector = speedVector.multiplyBy(limitedSpeed / speed),
+
+			    decelerationDuration = limitedSpeed / (options.inertiaDeceleration * ease),
+			    offset = limitedSpeedVector.multiplyBy(-decelerationDuration / 2).round();
+
+			if (!offset.x && !offset.y) {
+				map.fire('moveend');
+
+			} else {
+				offset = map._limitOffset(offset, map.options.maxBounds);
+
+				requestAnimFrame(function () {
+					map.panBy(offset, {
+						duration: decelerationDuration,
+						easeLinearity: ease,
+						noMoveStart: true,
+						animate: true
+					});
+				});
+			}
+		}
+	}
+});
+
+// @section Handlers
+// @property dragging: Handler
+// Map dragging handler (by both mouse and touch).
+Map.addInitHook('addHandler', 'dragging', Drag);
+
+/*
+ * L.Map.Keyboard is handling keyboard interaction with the map, enabled by default.
+ */
+
+// @namespace Map
+// @section Keyboard Navigation Options
+Map.mergeOptions({
+	// @option keyboard: Boolean = true
+	// Makes the map focusable and allows users to navigate the map with keyboard
+	// arrows and `+`/`-` keys.
+	keyboard: true,
+
+	// @option keyboardPanDelta: Number = 80
+	// Amount of pixels to pan when pressing an arrow key.
+	keyboardPanDelta: 80
+});
+
+var Keyboard = Handler.extend({
+
+	keyCodes: {
+		left:    [37],
+		right:   [39],
+		down:    [40],
+		up:      [38],
+		zoomIn:  [187, 107, 61, 171],
+		zoomOut: [189, 109, 54, 173]
+	},
+
+	initialize: function (map) {
+		this._map = map;
+
+		this._setPanDelta(map.options.keyboardPanDelta);
+		this._setZoomDelta(map.options.zoomDelta);
+	},
+
+	addHooks: function () {
+		var container = this._map._container;
+
+		// make the container focusable by tabbing
+		if (container.tabIndex <= 0) {
+			container.tabIndex = '0';
+		}
+
+		on(container, {
+			focus: this._onFocus,
+			blur: this._onBlur,
+			mousedown: this._onMouseDown
+		}, this);
+
+		this._map.on({
+			focus: this._addHooks,
+			blur: this._removeHooks
+		}, this);
+	},
+
+	removeHooks: function () {
+		this._removeHooks();
+
+		off(this._map._container, {
+			focus: this._onFocus,
+			blur: this._onBlur,
+			mousedown: this._onMouseDown
+		}, this);
+
+		this._map.off({
+			focus: this._addHooks,
+			blur: this._removeHooks
+		}, this);
+	},
+
+	_onMouseDown: function () {
+		if (this._focused) { return; }
+
+		var body = document.body,
+		    docEl = document.documentElement,
+		    top = body.scrollTop || docEl.scrollTop,
+		    left = body.scrollLeft || docEl.scrollLeft;
+
+		this._map._container.focus();
+
+		window.scrollTo(left, top);
+	},
+
+	_onFocus: function () {
+		this._focused = true;
+		this._map.fire('focus');
+	},
+
+	_onBlur: function () {
+		this._focused = false;
+		this._map.fire('blur');
+	},
+
+	_setPanDelta: function (panDelta) {
+		var keys = this._panKeys = {},
+		    codes = this.keyCodes,
+		    i, len;
+
+		for (i = 0, len = codes.left.length; i < len; i++) {
+			keys[codes.left[i]] = [-1 * panDelta, 0];
+		}
+		for (i = 0, len = codes.right.length; i < len; i++) {
+			keys[codes.right[i]] = [panDelta, 0];
+		}
+		for (i = 0, len = codes.down.length; i < len; i++) {
+			keys[codes.down[i]] = [0, panDelta];
+		}
+		for (i = 0, len = codes.up.length; i < len; i++) {
+			keys[codes.up[i]] = [0, -1 * panDelta];
+		}
+	},
+
+	_setZoomDelta: function (zoomDelta) {
+		var keys = this._zoomKeys = {},
+		    codes = this.keyCodes,
+		    i, len;
+
+		for (i = 0, len = codes.zoomIn.length; i < len; i++) {
+			keys[codes.zoomIn[i]] = zoomDelta;
+		}
+		for (i = 0, len = codes.zoomOut.length; i < len; i++) {
+			keys[codes.zoomOut[i]] = -zoomDelta;
+		}
+	},
+
+	_addHooks: function () {
+		on(document, 'keydown', this._onKeyDown, this);
+	},
+
+	_removeHooks: function () {
+		off(document, 'keydown', this._onKeyDown, this);
+	},
+
+	_onKeyDown: function (e) {
+		if (e.altKey || e.ctrlKey || e.metaKey) { return; }
+
+		var key = e.keyCode,
+		    map = this._map,
+		    offset;
+
+		if (key in this._panKeys) {
+			if (!map._panAnim || !map._panAnim._inProgress) {
+				offset = this._panKeys[key];
+				if (e.shiftKey) {
+					offset = toPoint(offset).multiplyBy(3);
+				}
+
+				map.panBy(offset);
+
+				if (map.options.maxBounds) {
+					map.panInsideBounds(map.options.maxBounds);
+				}
+			}
+		} else if (key in this._zoomKeys) {
+			map.setZoom(map.getZoom() + (e.shiftKey ? 3 : 1) * this._zoomKeys[key]);
+
+		} else if (key === 27 && map._popup && map._popup.options.closeOnEscapeKey) {
+			map.closePopup();
+
+		} else {
+			return;
+		}
+
+		stop(e);
+	}
+});
+
+// @section Handlers
+// @section Handlers
+// @property keyboard: Handler
+// Keyboard navigation handler.
+Map.addInitHook('addHandler', 'keyboard', Keyboard);
+
+/*
+ * L.Handler.ScrollWheelZoom is used by L.Map to enable mouse scroll wheel zoom on the map.
+ */
+
+// @namespace Map
+// @section Interaction Options
+Map.mergeOptions({
+	// @section Mousewheel options
+	// @option scrollWheelZoom: Boolean|String = true
+	// Whether the map can be zoomed by using the mouse wheel. If passed `'center'`,
+	// it will zoom to the center of the view regardless of where the mouse was.
+	scrollWheelZoom: true,
+
+	// @option wheelDebounceTime: Number = 40
+	// Limits the rate at which a wheel can fire (in milliseconds). By default
+	// user can't zoom via wheel more often than once per 40 ms.
+	wheelDebounceTime: 40,
+
+	// @option wheelPxPerZoomLevel: Number = 60
+	// How many scroll pixels (as reported by [L.DomEvent.getWheelDelta](#domevent-getwheeldelta))
+	// mean a change of one full zoom level. Smaller values will make wheel-zooming
+	// faster (and vice versa).
+	wheelPxPerZoomLevel: 60
+});
+
+var ScrollWheelZoom = Handler.extend({
+	addHooks: function () {
+		on(this._map._container, 'mousewheel', this._onWheelScroll, this);
+
+		this._delta = 0;
+	},
+
+	removeHooks: function () {
+		off(this._map._container, 'mousewheel', this._onWheelScroll, this);
+	},
+
+	_onWheelScroll: function (e) {
+		var delta = getWheelDelta(e);
+
+		var debounce = this._map.options.wheelDebounceTime;
+
+		this._delta += delta;
+		this._lastMousePos = this._map.mouseEventToContainerPoint(e);
+
+		if (!this._startTime) {
+			this._startTime = +new Date();
+		}
+
+		var left = Math.max(debounce - (+new Date() - this._startTime), 0);
+
+		clearTimeout(this._timer);
+		this._timer = setTimeout(bind(this._performZoom, this), left);
+
+		stop(e);
+	},
+
+	_performZoom: function () {
+		var map = this._map,
+		    zoom = map.getZoom(),
+		    snap = this._map.options.zoomSnap || 0;
+
+		map._stop(); // stop panning and fly animations if any
+
+		// map the delta with a sigmoid function to -4..4 range leaning on -1..1
+		var d2 = this._delta / (this._map.options.wheelPxPerZoomLevel * 4),
+		    d3 = 4 * Math.log(2 / (1 + Math.exp(-Math.abs(d2)))) / Math.LN2,
+		    d4 = snap ? Math.ceil(d3 / snap) * snap : d3,
+		    delta = map._limitZoom(zoom + (this._delta > 0 ? d4 : -d4)) - zoom;
+
+		this._delta = 0;
+		this._startTime = null;
+
+		if (!delta) { return; }
+
+		if (map.options.scrollWheelZoom === 'center') {
+			map.setZoom(zoom + delta);
+		} else {
+			map.setZoomAround(this._lastMousePos, zoom + delta);
+		}
+	}
+});
+
+// @section Handlers
+// @property scrollWheelZoom: Handler
+// Scroll wheel zoom handler.
+Map.addInitHook('addHandler', 'scrollWheelZoom', ScrollWheelZoom);
+
+/*
+ * L.Map.Tap is used to enable mobile hacks like quick taps and long hold.
+ */
+
+// @namespace Map
+// @section Interaction Options
+Map.mergeOptions({
+	// @section Touch interaction options
+	// @option tap: Boolean = true
+	// Enables mobile hacks for supporting instant taps (fixing 200ms click
+	// delay on iOS/Android) and touch holds (fired as `contextmenu` events).
+	tap: true,
+
+	// @option tapTolerance: Number = 15
+	// The max number of pixels a user can shift his finger during touch
+	// for it to be considered a valid tap.
+	tapTolerance: 15
+});
+
+var Tap = Handler.extend({
+	addHooks: function () {
+		on(this._map._container, 'touchstart', this._onDown, this);
+	},
+
+	removeHooks: function () {
+		off(this._map._container, 'touchstart', this._onDown, this);
+	},
+
+	_onDown: function (e) {
+		if (!e.touches) { return; }
+
+		preventDefault(e);
+
+		this._fireClick = true;
+
+		// don't simulate click or track longpress if more than 1 touch
+		if (e.touches.length > 1) {
+			this._fireClick = false;
+			clearTimeout(this._holdTimeout);
+			return;
+		}
+
+		var first = e.touches[0],
+		    el = first.target;
+
+		this._startPos = this._newPos = new Point(first.clientX, first.clientY);
+
+		// if touching a link, highlight it
+		if (el.tagName && el.tagName.toLowerCase() === 'a') {
+			addClass(el, 'leaflet-active');
+		}
+
+		// simulate long hold but setting a timeout
+		this._holdTimeout = setTimeout(bind(function () {
+			if (this._isTapValid()) {
+				this._fireClick = false;
+				this._onUp();
+				this._simulateEvent('contextmenu', first);
+			}
+		}, this), 1000);
+
+		this._simulateEvent('mousedown', first);
+
+		on(document, {
+			touchmove: this._onMove,
+			touchend: this._onUp
+		}, this);
+	},
+
+	_onUp: function (e) {
+		clearTimeout(this._holdTimeout);
+
+		off(document, {
+			touchmove: this._onMove,
+			touchend: this._onUp
+		}, this);
+
+		if (this._fireClick && e && e.changedTouches) {
+
+			var first = e.changedTouches[0],
+			    el = first.target;
+
+			if (el && el.tagName && el.tagName.toLowerCase() === 'a') {
+				removeClass(el, 'leaflet-active');
+			}
+
+			this._simulateEvent('mouseup', first);
+
+			// simulate click if the touch didn't move too much
+			if (this._isTapValid()) {
+				this._simulateEvent('click', first);
+			}
+		}
+	},
+
+	_isTapValid: function () {
+		return this._newPos.distanceTo(this._startPos) <= this._map.options.tapTolerance;
+	},
+
+	_onMove: function (e) {
+		var first = e.touches[0];
+		this._newPos = new Point(first.clientX, first.clientY);
+		this._simulateEvent('mousemove', first);
+	},
+
+	_simulateEvent: function (type, e) {
+		var simulatedEvent = document.createEvent('MouseEvents');
+
+		simulatedEvent._simulated = true;
+		e.target._simulatedClick = true;
+
+		simulatedEvent.initMouseEvent(
+		        type, true, true, window, 1,
+		        e.screenX, e.screenY,
+		        e.clientX, e.clientY,
+		        false, false, false, false, 0, null);
+
+		e.target.dispatchEvent(simulatedEvent);
+	}
+});
+
+// @section Handlers
+// @property tap: Handler
+// Mobile touch hacks (quick tap and touch hold) handler.
+if (touch && !pointer) {
+	Map.addInitHook('addHandler', 'tap', Tap);
+}
+
+/*
+ * L.Handler.TouchZoom is used by L.Map to add pinch zoom on supported mobile browsers.
+ */
+
+// @namespace Map
+// @section Interaction Options
+Map.mergeOptions({
+	// @section Touch interaction options
+	// @option touchZoom: Boolean|String = *
+	// Whether the map can be zoomed by touch-dragging with two fingers. If
+	// passed `'center'`, it will zoom to the center of the view regardless of
+	// where the touch events (fingers) were. Enabled for touch-capable web
+	// browsers except for old Androids.
+	touchZoom: touch && !android23,
+
+	// @option bounceAtZoomLimits: Boolean = true
+	// Set it to false if you don't want the map to zoom beyond min/max zoom
+	// and then bounce back when pinch-zooming.
+	bounceAtZoomLimits: true
+});
+
+var TouchZoom = Handler.extend({
+	addHooks: function () {
+		addClass(this._map._container, 'leaflet-touch-zoom');
+		on(this._map._container, 'touchstart', this._onTouchStart, this);
+	},
+
+	removeHooks: function () {
+		removeClass(this._map._container, 'leaflet-touch-zoom');
+		off(this._map._container, 'touchstart', this._onTouchStart, this);
+	},
+
+	_onTouchStart: function (e) {
+		var map = this._map;
+		if (!e.touches || e.touches.length !== 2 || map._animatingZoom || this._zooming) { return; }
+
+		var p1 = map.mouseEventToContainerPoint(e.touches[0]),
+		    p2 = map.mouseEventToContainerPoint(e.touches[1]);
+
+		this._centerPoint = map.getSize()._divideBy(2);
+		this._startLatLng = map.containerPointToLatLng(this._centerPoint);
+		if (map.options.touchZoom !== 'center') {
+			this._pinchStartLatLng = map.containerPointToLatLng(p1.add(p2)._divideBy(2));
+		}
+
+		this._startDist = p1.distanceTo(p2);
+		this._startZoom = map.getZoom();
+
+		this._moved = false;
+		this._zooming = true;
+
+		map._stop();
+
+		on(document, 'touchmove', this._onTouchMove, this);
+		on(document, 'touchend', this._onTouchEnd, this);
+
+		preventDefault(e);
+	},
+
+	_onTouchMove: function (e) {
+		if (!e.touches || e.touches.length !== 2 || !this._zooming) { return; }
+
+		var map = this._map,
+		    p1 = map.mouseEventToContainerPoint(e.touches[0]),
+		    p2 = map.mouseEventToContainerPoint(e.touches[1]),
+		    scale = p1.distanceTo(p2) / this._startDist;
+
+		this._zoom = map.getScaleZoom(scale, this._startZoom);
+
+		if (!map.options.bounceAtZoomLimits && (
+			(this._zoom < map.getMinZoom() && scale < 1) ||
+			(this._zoom > map.getMaxZoom() && scale > 1))) {
+			this._zoom = map._limitZoom(this._zoom);
+		}
+
+		if (map.options.touchZoom === 'center') {
+			this._center = this._startLatLng;
+			if (scale === 1) { return; }
+		} else {
+			// Get delta from pinch to center, so centerLatLng is delta applied to initial pinchLatLng
+			var delta = p1._add(p2)._divideBy(2)._subtract(this._centerPoint);
+			if (scale === 1 && delta.x === 0 && delta.y === 0) { return; }
+			this._center = map.unproject(map.project(this._pinchStartLatLng, this._zoom).subtract(delta), this._zoom);
+		}
+
+		if (!this._moved) {
+			map._moveStart(true, false);
+			this._moved = true;
+		}
+
+		cancelAnimFrame(this._animRequest);
+
+		var moveFn = bind(map._move, map, this._center, this._zoom, {pinch: true, round: false});
+		this._animRequest = requestAnimFrame(moveFn, this, true);
+
+		preventDefault(e);
+	},
+
+	_onTouchEnd: function () {
+		if (!this._moved || !this._zooming) {
+			this._zooming = false;
+			return;
+		}
+
+		this._zooming = false;
+		cancelAnimFrame(this._animRequest);
+
+		off(document, 'touchmove', this._onTouchMove);
+		off(document, 'touchend', this._onTouchEnd);
+
+		// Pinch updates GridLayers' levels only when zoomSnap is off, so zoomSnap becomes noUpdate.
+		if (this._map.options.zoomAnimation) {
+			this._map._animateZoom(this._center, this._map._limitZoom(this._zoom), true, this._map.options.zoomSnap);
+		} else {
+			this._map._resetView(this._center, this._map._limitZoom(this._zoom));
+		}
+	}
+});
+
+// @section Handlers
+// @property touchZoom: Handler
+// Touch zoom handler.
+Map.addInitHook('addHandler', 'touchZoom', TouchZoom);
+
+Map.BoxZoom = BoxZoom;
+Map.DoubleClickZoom = DoubleClickZoom;
+Map.Drag = Drag;
+Map.Keyboard = Keyboard;
+Map.ScrollWheelZoom = ScrollWheelZoom;
+Map.Tap = Tap;
+Map.TouchZoom = TouchZoom;
+
+Object.freeze = freeze;
+
+exports.version = version;
+exports.Control = Control;
+exports.control = control;
+exports.Browser = Browser;
+exports.Evented = Evented;
+exports.Mixin = Mixin;
+exports.Util = Util;
+exports.Class = Class;
+exports.Handler = Handler;
+exports.extend = extend;
+exports.bind = bind;
+exports.stamp = stamp;
+exports.setOptions = setOptions;
+exports.DomEvent = DomEvent;
+exports.DomUtil = DomUtil;
+exports.PosAnimation = PosAnimation;
+exports.Draggable = Draggable;
+exports.LineUtil = LineUtil;
+exports.PolyUtil = PolyUtil;
+exports.Point = Point;
+exports.point = toPoint;
+exports.Bounds = Bounds;
+exports.bounds = toBounds;
+exports.Transformation = Transformation;
+exports.transformation = toTransformation;
+exports.Projection = index;
+exports.LatLng = LatLng;
+exports.latLng = toLatLng;
+exports.LatLngBounds = LatLngBounds;
+exports.latLngBounds = toLatLngBounds;
+exports.CRS = CRS;
+exports.GeoJSON = GeoJSON;
+exports.geoJSON = geoJSON;
+exports.geoJson = geoJson;
+exports.Layer = Layer;
+exports.LayerGroup = LayerGroup;
+exports.layerGroup = layerGroup;
+exports.FeatureGroup = FeatureGroup;
+exports.featureGroup = featureGroup;
+exports.ImageOverlay = ImageOverlay;
+exports.imageOverlay = imageOverlay;
+exports.VideoOverlay = VideoOverlay;
+exports.videoOverlay = videoOverlay;
+exports.DivOverlay = DivOverlay;
+exports.Popup = Popup;
+exports.popup = popup;
+exports.Tooltip = Tooltip;
+exports.tooltip = tooltip;
+exports.Icon = Icon;
+exports.icon = icon;
+exports.DivIcon = DivIcon;
+exports.divIcon = divIcon;
+exports.Marker = Marker;
+exports.marker = marker;
+exports.TileLayer = TileLayer;
+exports.tileLayer = tileLayer;
+exports.GridLayer = GridLayer;
+exports.gridLayer = gridLayer;
+exports.SVG = SVG;
+exports.svg = svg$1;
+exports.Renderer = Renderer;
+exports.Canvas = Canvas;
+exports.canvas = canvas$1;
+exports.Path = Path;
+exports.CircleMarker = CircleMarker;
+exports.circleMarker = circleMarker;
+exports.Circle = Circle;
+exports.circle = circle;
+exports.Polyline = Polyline;
+exports.polyline = polyline;
+exports.Polygon = Polygon;
+exports.polygon = polygon;
+exports.Rectangle = Rectangle;
+exports.rectangle = rectangle;
+exports.Map = Map;
+exports.map = createMap;
+
+var oldL = window.L;
+exports.noConflict = function() {
+	window.L = oldL;
+	return this;
+}
+
+// Always export us to window global (see #2364)
+window.L = exports;
+
+})));
+//# sourceMappingURL=leaflet-src.js.map
+
+
+/***/ }),
+/* 168 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 169 */
@@ -36471,6 +50354,18 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 /***/ }),
 /* 177 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 178 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 179 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

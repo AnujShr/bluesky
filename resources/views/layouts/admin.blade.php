@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>blueSky</title>
-    <link href="{{asset('css/admin/app.css')}}" rel="stylesheet">
+    <link href="{{ asset(mix('css/admin/app.css')) }}" rel="stylesheet">
     <script>
         var activeRoute = '{{Route::currentRouteName()}}'
     </script>

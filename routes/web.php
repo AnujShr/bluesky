@@ -1,19 +1,7 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('front.home');
-})->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/about', function () {
     return view('front.about');
@@ -83,7 +71,23 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'Ad
      */
     Route::get('/settings/site-setting', 'SiteSettingController@index')->name('admin.setting.site');
     Route::post('/settings/site-setting', 'SiteSettingController@store')->name('admin.setting.site');
-    Route::get('/settings/home-setting', 'HomeSettingController@index')->name('admin.setting.home');
+
+    Route::get('/settings/feature-property', 'HomeSettingController@featureProperty')->name('admin.setting.feature-property');
+    Route::post('/settings/feature-property', 'HomeSettingController@storeFeatureProperty')->name('admin.setting.feature-property');
+
+    Route::get('/settings/feature-town', 'HomeSettingController@featureTown')->name('admin.setting.feature-town');
+    Route::post('/settings/feature-town', 'HomeSettingController@storeFeatureTown')->name('admin.setting.feature-town');
+
+    Route::get('/setting/testimonial', 'TestimonialController@index')->name('admin.testimonial');
+    Route::get('/setting/testimonial/create', 'TestimonialController@create')->name('admin.testimonial.create');
+//    Route::get('/setting/testimonial', 'TestimonialController@edit')->name('admin.testimonial.edit');
+});
+
+
+Route::group(['middleware' => ['realtors'], 'prefix' => 'realtors'], function () {
+    Route::get('/', 'RealtorController@index')->name('realtors');
+    Route::get('/add-property', 'PropertyController@index');
+
 });
 
 Auth::routes();

@@ -3,10 +3,12 @@ function slugToTitle($text) // Converts $title to Title Case, and returns the re
 {
     // Our array of 'small words' which shouldn't be capitalised if
     // they aren't the first word. Add your own words to taste.
-    $smallwords = ['of', 'a', 'the', 'and', 'an', 'or', 'nor', 'but', 'is', 'if', 'then', 'else', 'when', 'at', 'from', 'by', 'on', 'off', 'for', 'in', 'out', 'over', 'to', 'into', 'with'];
+    $smallWords = ['of', 'a', 'the', 'and', 'an', 'or', 'nor', 'but', 'is', 'if',
+        'then', 'else', 'when', 'at', 'from', 'by', 'on', 'off', 'for', 'in', 'out', 'over', 'to', 'into', 'with'];
+
     $words = explode('-', $text);
     foreach ($words as $key => $word) {
-        if ($key == 0 || !in_array($word, $smallwords)) {
+        if ($key == 0 || !in_array($word, $smallWords)) {
             $words[$key] = ucfirst($word);
         }
     }

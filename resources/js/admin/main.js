@@ -1,5 +1,6 @@
 $(function () {
     $('#datatable-responsives').DataTable();
+
     $SIDEBAR_MENU = $('#sidebar-menu');
     let $CURRENT_URL;
     if (!$SIDEBAR_MENU.find('.current-page').length) {
@@ -15,7 +16,6 @@ $(function () {
     //Summernote JS using smiley
     $.ajax({
         url: 'https://api.github.com/emojis',
-        async: false
     }).then(function (data) {
         window.emojis = Object.keys(data);
         window.emojiUrls = data;
@@ -23,9 +23,6 @@ $(function () {
 
     $('.summernote').summernote({
         minHeight: 150,
-        codemirror: { // codemirror options
-            theme: 'monokai'
-        },
         hint: {
             match: /:([\-+\w]+)$/,
             search: function (keyword, callback) {
@@ -45,15 +42,6 @@ $(function () {
                 return '';
             }
         },
-        toolbar: [
-            // [groupName, [list of button]]
-            ['style', ['bold', 'italic', 'underline', 'clear']],
-            ['font', ['strikethrough', 'superscript', 'subscript']],
-            ['fontsize', ['fontsize']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['height', ['height']]
-        ]
     });
     $('.text').val = '';
     $(document).on('change', '.btn-file :file', function () {
@@ -92,6 +80,10 @@ $(function () {
 
     $("#imgInp").change(function () {
         readURL(this);
+    });
+
+    $('.delete-confirm').on('click', function (e) {
+        return confirm('Are you sure?');
     });
 
 });

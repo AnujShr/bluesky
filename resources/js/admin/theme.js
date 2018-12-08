@@ -473,7 +473,6 @@ $(document).ready(function () {
     init_select2();
     init_DataTables();
     init_compose();
-
 });
 
 

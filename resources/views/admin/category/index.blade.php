@@ -29,7 +29,7 @@
                         ]) !!}
 
                             <a href="{{route('admin.category.edit',$category->id)}}"
-                               class="btn btn-info">Edit</a>{!! Form::submit('DELETE',['class' => 'delete-category btn btn-danger']) !!}
+                               class="btn btn-info">Edit</a>{!! Form::submit('DELETE',['class' => 'delete-confirm btn btn-danger']) !!}
                         {!! Form::close() !!}
                     </tr>
                 @endforeach

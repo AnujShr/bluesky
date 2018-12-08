@@ -1,16 +1,23 @@
 if (activeRoute === 'admin.category.edit' || activeRoute === 'admin.category.add' || activeRoute === 'admin.category.index') {
     $(function () {
-            $('.delete-category').on('click', function (e) {
-                return confirm('Are you sure?');
-            });
 
-            $('#title').keyup(function (e) {
-                e.preventDefault();
+            $('#title').keyup(function () {
+                $('#slug').val('');
                 let text = $(this).val();
-                your_func(text);
+                delay(function () {
+                    console.log(text);
+                    send_data(text);
+                }, 1000);
             });
+            let delay = (function () {
+                let timer = 0;
+                return function (callback, ms) {
+                    clearTimeout(timer);
+                    timer = setTimeout(callback, ms);
+                };
+            })();
 
-            function your_func(text) {
+            function send_data(text) {
                 if (typeof id === 'undefined' || id === null) {
                     id = null;
                 }

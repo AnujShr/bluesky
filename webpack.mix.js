@@ -13,6 +13,8 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/admin/app.js', 'public/js/admin')
+    .js('resources/js/realtors/realtors.js', 'public/js/realtors')
+    .js('resources/js/material/app.js', 'public/js/material')
     .js('resources/js/home.js', 'public/js')
     .js('resources/js/about.js', 'public/js')
     .js('resources/js/properties.js', 'public/js')
@@ -27,5 +29,8 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/contact.scss', 'public/css')
     .sass('resources/sass/property.scss', 'public/css')
     .sass('resources/sass/admin/app.scss', 'public/css/admin')
-    .sass('resources/sass/login.scss','public/css/');
+    .sass('resources/sass/login.scss', 'public/css/')
+    .sass('resources/sass/realtors/realtors.scss', 'public/css')
+    .less('resources/sass/material/material-cards.less', 'public/css/material')
+    .sass('resources/sass/material/app.scss', 'public/css/material');
 // .copy('node_modules/gentelella/build/', 'resources/gentellea/',false);

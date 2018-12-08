@@ -13,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
+    {if(config('app.env') === 'production') {
+        \URL::forceScheme('https');
+    }
         Schema::defaultStringLength(191);
 
         \Blade::directive('errorBlock', function ($input) {

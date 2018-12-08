@@ -1,6 +1,7 @@
 {
     "/js/admin/app.js": "/js/admin/app.js",
     "/js/app.js": "/js/app.js",
+    "/css/material/material-cards.css": "/css/material/material-cards.css",
     "/css/app.css": "/css/app.css",
     "/css/home.css": "/css/home.css",
     "/css/about.css": "/css/about.css",
@@ -10,10 +11,14 @@
     "/css/property.css": "/css/property.css",
     "/css/admin/app.css": "/css/admin/app.css",
     "/css/login.css": "/css/login.css",
+    "/css/realtors.css": "/css/realtors.css",
+    "/css/material/app.css": "/css/material/app.css",
+    "/js/material/app.js": "/js/material/app.js",
     "/js/property.js": "/js/property.js",
     "/js/properties.js": "/js/properties.js",
     "/js/about.js": "/js/about.js",
     "/js/contact.js": "/js/contact.js",
     "/js/home.js": "/js/home.js",
-    "/js/news.js": "/js/news.js"
+    "/js/news.js": "/js/news.js",
+    "/js/realtors/realtors.js": "/js/realtors/realtors.js"
 }

@@ -45,7 +45,7 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param CategoryFormRequest $requestw
+     * @param CategoryFormRequest $request
      * @return void
      */
     public function store(CategoryFormRequest $request)
@@ -115,6 +115,9 @@ class CategoryController extends Controller
     {
         $data = request()->text;
         $id = request()->id ?? null;
+        if (!$data) {
+            return '';
+        }
         return Category::getSlug($data, $id);
     }
 }

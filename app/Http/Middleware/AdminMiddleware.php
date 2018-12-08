@@ -18,7 +18,6 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-
         $user = Auth::authenticate();
         if ($user->user_type != 'admin') {
             abort(403);

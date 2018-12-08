@@ -2,10 +2,23 @@
 
 namespace App;
 
+use Cviebrock\EloquentSluggable\Services\SlugService;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
+    use Sluggable;
+
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
+
     protected $fillable = ['slug', 'name'];
 
     public function articles()
@@ -26,6 +39,16 @@ class Category extends Model
     }
 
     public static function getSlug($data, $id)
+    {
+        $slug = self::query()->where('id', $id)->first();
+        if ($slug && strtolower($slug->name) == strtolower($data)) {
+            return $slug->slug;
+        }
+        $slug = SlugService::createSlug(self::class, 'slug', $data);
+        return $slug;
+    }
+
+    public static function g2etSlug($data, $id)
     {
         $slug = self::query()->where('slug', $data);
         if ($slug->exists() && is_null($id)) {
