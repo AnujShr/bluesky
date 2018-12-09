@@ -22,7 +22,6 @@
         "vue": "^2.5.18"
     },
     "dependencies": {
-        "bootstrap-select": "^1.13.3",
         "codemirror": "^5.42.0",
         "datatables.net-bs": "^1.10.19",
         "font-awesome": "^4.7.0",

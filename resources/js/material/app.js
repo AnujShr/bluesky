@@ -5,15 +5,14 @@ require('material-dashboard/assets/js/core/bootstrap-material-design.min');
 require('material-dashboard/assets/js/plugins/perfect-scrollbar.jquery.min');
 
 require('../material/matrial-dashboard');
-require('bootstrap-select/dist/js/bootstrap-select.min');
+require('select2/dist/js/select2');
 require('../../plugins/material-cards-master/js/jquery.material-cards');
 $(function () {
-
-    $('select').select2({
+    $('.select').select2({
         minimumResultsForSearch: -1,
-        placeholder: "Pick Area Unit",
         theme: "material"
     });
+
     $(".select2-selection__arrow")
         .addClass("material-icons")
         .html("arrow_drop_down");
