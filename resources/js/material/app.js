@@ -8,6 +8,16 @@ require('../material/matrial-dashboard');
 require('bootstrap-select/dist/js/bootstrap-select.min');
 require('../../plugins/material-cards-master/js/jquery.material-cards');
 $(function () {
+
+    $('select').select2({
+        minimumResultsForSearch: -1,
+        placeholder: "Pick Area Unit",
+        theme: "material"
+    });
+    $(".select2-selection__arrow")
+        .addClass("material-icons")
+        .html("arrow_drop_down");
+
     $('.list-card > .mc-btn-action').click(function () {
         var card = $(this).parent('.list-card');
         var icon = $(this).children('i');
