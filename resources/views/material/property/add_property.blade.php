@@ -109,7 +109,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    {{--<div class="row">
+                                    <div class="row">
                                         <div class="col-md-2">
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">External Area</label>
@@ -126,27 +126,49 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">City</label>
-                                                <input type="text" class="form-control">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-8">
+                                                            <h3>Property Title</h3>
+                                                            <div class="form-group  margin-left">
+                                                                <label class="bmd-label-floating">Title</label>
+                                                                <input type="text" class="form-control">
+                                                                <small id="titleHelp" class="form-text text-muted">
+                                                                    Max-length:255
+                                                                </small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <h3>Property Address</h3>
+                                                            <div class="form-group">
+                                                                <label class="bmd-label-floating">Country</label>
+                                                                {!! Form::select('country',$countries,null,['class'=>'form-control select']) !!}
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="bmd-label-floating">City</label>
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="bmd-label-floating">Address</label>
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div id="mapid"></div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">Country</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">Postal Code</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>--}}
+                                    </div>
                                     <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
-                                    <div class="clearfix"></div>
                                 </form>
                             </div>
                         </div>
@@ -155,5 +177,4 @@
             </div>
         </div>
     </div>
-
 @endsection

@@ -35,6 +35,7 @@ $(function () {
     L.marker([51.5, -0.09], {icon: marker}).addTo(map)
         .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
         .openPopup();
+
     let form = $('#contact-form');
     form[0].reset();
 

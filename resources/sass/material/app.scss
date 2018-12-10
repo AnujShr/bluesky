@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons");
 @import "~material-dashboard/assets/scss/material-dashboard";
 @import "~select2/dist/css/select2.min.css";
+@import "~leaflet/dist/leaflet.css";
 @import "main.scss";
+@import '~flag-icon-css/sass/flag-icon.scss';
 
 .dropdown-item.active {
   background-color: #9c27b0;
@@ -12,3 +14,4 @@
 .bootstrap-select .dropdown-toggle:focus {
   outline: none !important;
 }
+

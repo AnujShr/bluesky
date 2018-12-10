@@ -18,7 +18,8 @@
           name='viewport'/>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-    <!-- CSS Files -->
+
+
     <link href="{{asset('css/material/app.css')}}" rel="stylesheet"/>
     <link href="{{asset('css/material/material-cards.css')}}" rel="stylesheet"/>
 
@@ -38,15 +39,10 @@
         @yield('content')
     </div>
 </div>
-<!--   Core JS Files   -->
-<!--  Google Maps Plugin    -->
-<!-- Chartist JS -->
-<!--  Notifications Plugin    -->
-<!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="{{asset('/js/material/app.js')}}"></script>
 
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>--}}
 
 </html>
 

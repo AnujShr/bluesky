@@ -1,3 +1,9 @@
+#mapid {
+  height: 390px;
+  width: 450px;
+  margin-left: 20px;
+}
+
 .add_prop {
   h3 {
     margin-bottom: -10px;
@@ -218,7 +224,7 @@
     margin: 0;
     //display: none;
     min-width: 100px;
-    max-height: 650px;
+    max-height: 350px;
     overflow-y: auto;
     //opacity: 0;
     //position: absolute;
@@ -330,4 +336,8 @@
       }
     }
   }
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

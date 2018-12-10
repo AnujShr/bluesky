@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 222);
+/******/ 	return __webpack_require__(__webpack_require__.s = 221);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -93,22 +93,22 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 222:
+/***/ 221:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(223);
+module.exports = __webpack_require__(222);
 
 
 /***/ }),
 
-/***/ 223:
+/***/ 222:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_izitoast__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_izitoast__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_izitoast___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_izitoast__);
-__webpack_require__(224);
+__webpack_require__(223);
 
 
 var marker = L.icon({
@@ -142,6 +142,7 @@ $(function () {
     }).addTo(map);
 
     L.marker([51.5, -0.09], { icon: marker }).addTo(map).bindPopup('A pretty CSS3 popup.<br> Easily customizable.').openPopup();
+
     var form = $('#contact-form');
     form[0].reset();
 
@@ -215,7 +216,7 @@ $(function () {
 
 /***/ }),
 
-/***/ 224:
+/***/ 223:
 /***/ (function(module, exports) {
 
 /* JS Document */
@@ -355,7 +356,7 @@ $(document).ready(function () {
 
 /***/ }),
 
-/***/ 225:
+/***/ 224:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
