@@ -22,7 +22,7 @@
 
     <link href="{{asset('css/material/app.css')}}" rel="stylesheet"/>
     <link href="{{asset('css/material/material-cards.css')}}" rel="stylesheet"/>
-
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
     <style>
 
     </style>
@@ -39,10 +39,13 @@
         @yield('content')
     </div>
 </div>
+<script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+<script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=VEmkGxQ03GpPqxAa4wOJePszcKvlXmgK"></script>
+<script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-geocoding.js?key=VEmkGxQ03GpPqxAa4wOJePszcKvlXmgK"></script>
 <script src="{{asset('/js/material/app.js')}}"></script>
 
 </body>
-{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>--}}
 
 </html>
 

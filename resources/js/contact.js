@@ -91,7 +91,7 @@ $(function () {
 
     var lat, lng;
 
-    map.addEventListener('mousemove', function(ev) {
+    map.addEventListener('mousemove', function (ev) {
         lat = ev.latlng.lat;
         lng = ev.latlng.lng;
     });
