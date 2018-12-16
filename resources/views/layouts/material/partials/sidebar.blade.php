@@ -18,7 +18,7 @@
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="./user.html">
+                <a class="nav-link" href="{{route('realtor.add_property')}}">
                     <i class="material-icons">home</i>
                     <p>Add a Property</p>
                 </a>

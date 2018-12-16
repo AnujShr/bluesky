@@ -15,7 +15,6 @@ class UsersTableSeeder extends Seeder
     {
         $role[] = Role::query()->whereName('admin')->first();
         $role[] = Role::query()->whereName('realtor')->first();
-        User::query()->truncate();
         $users = [
             ['user_type' => 'admin',
                 'name' => 'Anuj Shrestha',

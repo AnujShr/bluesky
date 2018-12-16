@@ -86,7 +86,7 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin', 'namespace' => 'Ad
 
 Route::group(['middleware' => ['realtors'], 'prefix' => 'realtors'], function () {
     Route::get('/', 'RealtorController@index')->name('realtors');
-    Route::get('/add-property', 'PropertyController@index');
+    Route::get('/add-property', 'PropertyController@index')->name('realtor.add_property');
     Route::get('/get-city', 'PropertyController@getCity');
 
 

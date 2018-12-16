@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 221);
+/******/ 	return __webpack_require__(__webpack_require__.s = 222);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -93,22 +93,22 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 221:
+/***/ 222:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(222);
+module.exports = __webpack_require__(223);
 
 
 /***/ }),
 
-/***/ 222:
+/***/ 223:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_izitoast__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_izitoast__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_izitoast___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_izitoast__);
-__webpack_require__(223);
+__webpack_require__(224);
 
 
 var marker = L.icon({
@@ -142,7 +142,6 @@ $(function () {
     }).addTo(map);
 
     L.marker([51.5, -0.09], { icon: marker }).addTo(map).bindPopup('A pretty CSS3 popup.<br> Easily customizable.').openPopup();
-
     var form = $('#contact-form');
     form[0].reset();
 
@@ -216,7 +215,7 @@ $(function () {
 
 /***/ }),
 
-/***/ 223:
+/***/ 224:
 /***/ (function(module, exports) {
 
 /* JS Document */
@@ -229,7 +228,7 @@ $(function () {
  2. Set Header
  3. Init Menu
  4. Init Google Map
- ca
+ca
 
 
  ******************************/
@@ -311,11 +310,52 @@ $(document).ready(function () {
         menu.removeClass('active');
         menuActive = false;
     }
+
+    /*
+    4. Init Google Map
+    */
+
+    function initGoogleMap() {
+        var myLatlng = new google.maps.LatLng(34.063685, -118.272936);
+        var uluru = { lat: 34.063685, lng: -118.272936 };
+        var mapOptions = {
+            center: myLatlng,
+            zoom: 14,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            draggable: true,
+            scrollwheel: false,
+            zoomControl: true,
+            zoomControlOptions: {
+                position: google.maps.ControlPosition.RIGHT_CENTER
+            },
+            mapTypeControl: false,
+            scaleControl: false,
+            streetViewControl: false,
+            rotateControl: false,
+            fullscreenControl: true,
+            styles: [{
+                "featureType": "road.highway",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                    "color": "#ffeba1"
+                }]
+            }]
+
+            // Initialize a map with options
+        };map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        // Re-center map after window resize
+        google.maps.event.addDomListener(window, 'resize', function () {
+            setTimeout(function () {
+                google.maps.event.trigger(map, "resize");
+                map.setCenter(myLatlng);
+            }, 1400);
+        });
+    }
 });
 
 /***/ }),
 
-/***/ 224:
+/***/ 225:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*

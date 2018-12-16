@@ -1,5 +1,5 @@
 <?php
-function slugToTitle($text) // Converts $title to Title Case, and returns the result.
+function slugToTitle($text)
 {
     // Our array of 'small words' which shouldn't be capitalised if
     // they aren't the first word. Add your own words to taste.
