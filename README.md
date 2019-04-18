@@ -66,7 +66,7 @@ Gentelella Admin is a free to use Bootstrap admin template. This template uses t
 
 ## Authors
 
-* **Anuj Shrestha** - *Learning Laravel at Present*
+* **Anuj Shrestha**
 
 ## License
 
